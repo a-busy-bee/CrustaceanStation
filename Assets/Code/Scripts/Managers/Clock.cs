@@ -9,7 +9,7 @@ public class Clock : MonoBehaviour
     // CLOCK INFO
     // day is 8am to 8pm, each hour is 2 minutes
     private int startTime = 0;
-    private int endTime = 24;
+    private int endTime = 12;
     private int currentTime = 0;
     private float rotateAmount = 30.0f;
     [SerializeField] private float rotDuration = 1.0f;

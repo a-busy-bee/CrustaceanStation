@@ -6584,9 +6584,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.050000012
+    y: 0
     width: 1
-    height: 0.9
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -7031,6 +7031,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f09a797db9a14161a7c91ef00a38b85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TrainSelection
+  spriteRenderer: {fileID: 0}
   filled: {fileID: 0}
   cartInfo: {fileID: 0}
 --- !u!212 &1262717230
@@ -8131,6 +8132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f09a797db9a14161a7c91ef00a38b85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TrainSelection
+  spriteRenderer: {fileID: 0}
   filled: {fileID: 0}
   cartInfo: {fileID: 0}
 --- !u!212 &1523912262
@@ -9193,7 +9195,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4395356341235400049, guid: 07d89025467ac40eba9cb2a07162510b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8353256970907160308, guid: 07d89025467ac40eba9cb2a07162510b, type: 3}
       propertyPath: m_Pivot.x
@@ -9687,7 +9689,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4470328998970745515, guid: 1e13cdceacbba40ef95661f52913016e, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 465
+      value: 319.19
       objectReference: {fileID: 0}
     - target: {fileID: 4470328998970745515, guid: 1e13cdceacbba40ef95661f52913016e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -9707,7 +9709,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5251569547339575649, guid: 1e13cdceacbba40ef95661f52913016e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10231,6 +10233,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f09a797db9a14161a7c91ef00a38b85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TrainSelection
+  spriteRenderer: {fileID: 0}
   filled: {fileID: 0}
   cartInfo: {fileID: 0}
 --- !u!212 &1897903384
@@ -11714,7 +11717,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7086981350262757556, guid: f7c8fb15bd75e4d3eb245927d163f78c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11820,7 +11823,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1275598292169338475, guid: 923d1f532bea94e438968bd67f597a00, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
