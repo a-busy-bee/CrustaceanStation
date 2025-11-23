@@ -5,7 +5,6 @@ public class RatingGoal : MonoBehaviour
 {
     /*
     TODO: 
-        show rating in kiosk
         highlight background green when valid rating
         function to give player extra coins if they beat the goal
     */
@@ -20,6 +19,11 @@ public class RatingGoal : MonoBehaviour
 
     [SerializeField] private Slider goalScreenSlider;
 
+    // SLIDER MOVEMENT
+    private float ratingValue;
+    private float movementSpeed = 5f;
+    private bool updating = false;
+
     private void Awake()
     {
         ratingsSlider.value = 1;
@@ -29,7 +33,7 @@ public class RatingGoal : MonoBehaviour
 
     public void UpdateRating(float newRating)
     {
-        ratingsSlider.value = newRating;
+        updating = true;
         rating = newRating;
     }
 
@@ -56,5 +60,20 @@ public class RatingGoal : MonoBehaviour
     public bool WasGoalAchieved()
     {
         return rating >= goal;
+    }
+
+    void Update()
+    {
+        if (updating)
+        {
+            ratingsSlider.value = Mathf.Lerp(ratingsSlider.value, rating, movementSpeed * Time.deltaTime);
+
+            if (Mathf.Abs(ratingsSlider.value - rating) < 0.01f)
+            {
+                updating = false;
+                ratingsSlider.value = rating;
+            }
+        }
+        
     }
 }

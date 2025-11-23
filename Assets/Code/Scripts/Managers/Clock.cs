@@ -14,8 +14,6 @@ public class Clock : MonoBehaviour
     private float rotateAmount = 30.0f;
     [SerializeField] private float rotDuration = 1.0f;
 
-    private bool isPaused = false;
-
 
     // TRAIN INFO
     //[System.Serializable]

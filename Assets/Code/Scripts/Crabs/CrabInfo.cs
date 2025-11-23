@@ -25,6 +25,19 @@ public class CrabInfo : ScriptableObject
 	}
 
 	public CrabType type;
+
+	public enum WeatherType
+	{
+		Sunny,
+		Rainy,
+		Stormy,
+		Cloudy,
+		Foggy, 
+		Windy
+	}
+
+	public WeatherType[] weatherTypes;
+
 	//TODO LATER
 	// sfx
 }

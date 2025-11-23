@@ -30,7 +30,6 @@ public class LevelManager : MonoBehaviour
 
     // Player goals for the day
     private bool isRating = false;
-    private bool isCrabCount = false;
     private bool dayStarted = false;
 
     private void Awake()
@@ -124,7 +123,6 @@ public class LevelManager : MonoBehaviour
         }
         else
         {
-            isCrabCount = true;
             goalCrabCount.SetActive(true);
             crabCountGoalScript.SetGoalActive();
         }
@@ -154,7 +152,6 @@ public class LevelManager : MonoBehaviour
     private void ActivateUpgrades()
     {
         int trackCount = PlayerPrefs.GetInt("numTracks"); // starts at 0, so need to add one when updating track num in clock
-        int crabRate = PlayerPrefs.GetInt("crabDropRate");
 
         // activate tracks
         for (int i = 0; i < trackCount; i++)
@@ -165,8 +162,6 @@ public class LevelManager : MonoBehaviour
         // update train controllers
         clock.UpdateNumTracks(trackCount + 1);
 
-
-        // TODO : CRAB UPGRADE
 
     }
 
