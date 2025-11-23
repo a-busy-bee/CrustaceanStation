@@ -162,7 +162,7 @@ public class Clock : MonoBehaviour
                 yield return WaitThenSummonCrabs();
             }
 
-            yield return new WaitForSeconds(15f);            // CHANGES HOW FAST THE CLOCK MOVES
+            yield return new WaitForSeconds(30f);            // CHANGES HOW FAST THE CLOCK MOVES
 
             // rotate clock hand
             yield return RotateHand();
