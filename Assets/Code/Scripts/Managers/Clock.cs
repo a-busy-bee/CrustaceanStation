@@ -9,7 +9,7 @@ public class Clock : MonoBehaviour
     // CLOCK INFO
     // day is 8am to 8pm, each hour is 2 minutes
     private int startTime = 0;
-    private int endTime = 24;
+    private int endTime = 12;
     private int currentTime = 0;
     private float rotateAmount = 30.0f;
     [SerializeField] private float rotDuration = 1.0f;
@@ -162,7 +162,7 @@ public class Clock : MonoBehaviour
                 yield return WaitThenSummonCrabs();
             }
 
-            yield return new WaitForSeconds(15f);            // CHANGES HOW FAST THE CLOCK MOVES
+            yield return new WaitForSeconds(30f);            // CHANGES HOW FAST THE CLOCK MOVES
 
             // rotate clock hand
             yield return RotateHand();

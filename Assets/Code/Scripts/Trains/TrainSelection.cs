@@ -7,7 +7,7 @@ public class TrainSelection : MonoBehaviour, IPointerClickHandler
     private bool isFull = false;
     private Kiosk kiosk;
 
-    private Image spriteRenderer;
+    [SerializeField] private Image spriteRenderer;
     [SerializeField] private Sprite filled;
     private TrainController trainController;
 
@@ -49,10 +49,6 @@ public class TrainSelection : MonoBehaviour, IPointerClickHandler
         return isFull;
     }
 
-	private void Awake()
-    {
-        spriteRenderer = GetComponent<Image>();
-    }
 	public void OnPointerClick(PointerEventData eventData)
     {
         if (isClickable && !isFull)

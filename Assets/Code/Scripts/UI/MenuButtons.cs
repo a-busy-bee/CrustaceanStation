@@ -9,7 +9,7 @@ public class MenuButtons : MonoBehaviour
     {
         PlayerPrefs.DeleteAll();
         PlayerPrefs.SetInt("coins", 100);
-        PlayerPrefs.SetInt("numTracks", 1);
+        PlayerPrefs.SetInt("numTracks", 3);
         PlayerPrefs.SetInt("crabDropRate", 3);
         PlayerPrefs.SetInt("cartQuality", 3);
     }
