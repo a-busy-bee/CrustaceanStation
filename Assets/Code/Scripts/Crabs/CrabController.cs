@@ -179,6 +179,11 @@ public class CrabController : MonoBehaviour
         return cartType;
     }
 
+    public CrabInfo GetCrabInfo()
+    {
+        return crabInfo;
+    }
+
     public bool IsValid()
     {
         return isValid;

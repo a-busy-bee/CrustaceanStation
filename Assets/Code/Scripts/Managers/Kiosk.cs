@@ -49,6 +49,8 @@ public class Kiosk : MonoBehaviour
         controller.SetClockAndKiosk(clock, this);
         controller.SetTicketAndIDParentObject(ticketParentObject);
         controller.MakeAppear();
+
+        Crabdex.instance.HasBeenDiscovered(controller.GetCrabInfo()); // crabdex!!!
     }
     public void OnApprove()
     {

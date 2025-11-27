@@ -151,7 +151,7 @@ public class CrabNameGenerator : MonoBehaviour
         "Crabstopher"
     };
 
-    private List<string> mustache = new List<string>
+    private List<string> ghost = new List<string>
     {
         "Shelly",
         "Molt",
@@ -185,7 +185,7 @@ public class CrabNameGenerator : MonoBehaviour
                           .Concat(hermit)
                           .Concat(isopod)
                           .Concat(tall)
-                          .Concat(mustache).ToList();
+                          .Concat(ghost).ToList();
     }
 
     public string GetNameByType(CrabInfo.CrabType type)
@@ -231,9 +231,9 @@ public class CrabNameGenerator : MonoBehaviour
         {
             return isopod[Random.Range(0, isopod.Count)];
         }
-        else if (type == CrabInfo.CrabType.mustache && Random.Range(0, 3) <= 2)
+        else if (type == CrabInfo.CrabType.ghost && Random.Range(0, 3) <= 2)
         {
-            return mustache[Random.Range(0, mustache.Count)];
+            return ghost[Random.Range(0, ghost.Count)];
         }
         else if (type == CrabInfo.CrabType.tall && Random.Range(0, 3) <= 2)
         {

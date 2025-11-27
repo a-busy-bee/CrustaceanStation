@@ -4,9 +4,9 @@ using UnityEngine;
 public class CrabInfo : ScriptableObject
 {
 	public Sprite sprite;
-	public string crabName;
+	public string crabName; // individual name ie Crusty Shawn
 
-	public enum CrabType
+	public enum CrabType // for naming purposes
 	{
 		catfish,
 		horseshoe,
@@ -19,25 +19,32 @@ public class CrabInfo : ScriptableObject
 		seamonkeys,
 		isopod,
 		tall,
-		mustache,
+		ghost,
 		isopodTiny,
-		ittybitty
+		ittybitty,
+		amphipod,
+		axolotl
 	}
 
 	public CrabType type;
 
+	// WEATHER
 	public enum WeatherType
 	{
 		Sunny,
 		Rainy,
 		Stormy,
 		Cloudy,
-		Foggy, 
-		Windy
+		Foggy
 	}
 
-	public WeatherType[] weatherTypes;
+	public WeatherType[] favoriteWeatherTypes;
 
+	[Header("Crabdex")]
+	public string crabdexName; // general name used in crabdex, ie soldier
+	public bool isVariant;
+	public string variantName; // variant name used in crabdex, ie teen_blue
+	
 	//TODO LATER
 	// sfx
 }

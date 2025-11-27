@@ -47,6 +47,7 @@ public class Settings : MonoBehaviour
     public void OnResetYes()
     {
         PlayerPrefs.DeleteAll();
+        PlayerPrefs.SetInt("ResetCrabdex", 1);
         areYouSurePanel.SetActive(false);
     }
 
