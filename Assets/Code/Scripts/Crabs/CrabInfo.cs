@@ -32,10 +32,8 @@ public class CrabInfo : ScriptableObject
 	public enum WeatherType
 	{
 		Sunny,
-		Rainy,
-		Stormy,
-		Cloudy,
-		Foggy
+		LightRain,
+		DarkRain
 	}
 
 	public WeatherType[] favoriteWeatherTypes;

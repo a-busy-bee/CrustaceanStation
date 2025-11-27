@@ -106,11 +106,19 @@ public class Clock : MonoBehaviour
 
     public string GetRandomCurrentTrainID()
     {
+        if (currentTrains.Count == 0)
+        {
+            return "A1";
+        }
         return currentTrains[Random.Range(0, currentTrains.Count)].GetID();
     }
 
     public Cart.Type GetRandomCurrentCartType()
     {
+        if (currentTrains.Count == 0)
+        {
+            return Cart.Type.Economy;
+        }
         return currentTrains[Random.Range(0, currentTrains.Count)].GetRandomCartType();
     }
 
@@ -160,13 +168,19 @@ public class Clock : MonoBehaviour
                 yield return WaitThenSummonCrabs();
             }
 
-            yield return new WaitForSeconds(30f);            // CHANGES HOW FAST THE CLOCK MOVES
+            yield return new WaitForSeconds(15f);            // CHANGES HOW FAST THE CLOCK MOVES
 
             // rotate clock hand
             yield return RotateHand();
             currentTime++;
 
             CheckTrains();
+
+            if (currentTime % 3 == 0) // chance to change weather every 3 hours
+            {
+                WeatherManager.instance.ChangeWeather();
+            }
+            
 
             if (currentTime == endTime)
             {
