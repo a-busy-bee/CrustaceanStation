@@ -64,7 +64,13 @@ public class Clock : MonoBehaviour
         List<GameObject> trainsInLine = new List<GameObject>();
 
         int arrival = Random.Range(0, 2);
-        int timeSpent = Random.Range(3, 5);         // time spent at station
+        int timeSpent = Random.Range(1, 3);         // time spent at station
+
+        if (PlayerPrefs.GetInt("numTracks") == 0)
+        {
+            timeSpent = 1;
+        }
+
         int departure = arrival + timeSpent;
 
         GameObject train = Instantiate(trainPrefab, trainParent.transform);
@@ -78,8 +84,14 @@ public class Clock : MonoBehaviour
 
         while (!doneWithThisID)                     // while there is still time for more trains
         {
-            arrival = Random.Range(prevDeparture + 1, prevDeparture + 3);  // new start time (with some padding after previous train)
-            timeSpent = Random.Range(3, 6);
+            arrival = prevDeparture + 1; //Random.Range(prevDeparture + 1, prevDeparture + 2);  // new start time (with some padding after previous train)
+            timeSpent = Random.Range(1, 3);
+
+            if (PlayerPrefs.GetInt("numTracks") == 0)
+            {
+                timeSpent = 1;
+            }
+
             departure = arrival + timeSpent;
 
             if (departure > endTime)                // latest departure time, so we're done here

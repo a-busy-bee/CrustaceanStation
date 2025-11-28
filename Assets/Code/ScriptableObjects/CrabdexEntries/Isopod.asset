@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc3c725a349a0491c8d75298c82f4d5e, type: 3}
+  m_Name: Isopod
+  m_EditorClassIdentifier: Assembly-CSharp::CrabdexEntry
+  crabName: isopod
+  formalName: Isopod
+  scientificName: Isopoda
+  description: 
+  isCrustacean: 1
+  typicalSprite: {fileID: 21300000, guid: 042d5ca4a481f4a008b8bbe0cd1e1f8e, type: 3}
+  generalVariantDiscovered: 0
+  variants:
+  - variantName: purple
+    formalVariantName: Purple
+    sprite: {fileID: 21300000, guid: 08ed1cecf4978429089c778a84569070, type: 3}
+    hasBeenDiscovered: 0
+  - variantName: beautiful
+    formalVariantName: Beautiful
+    sprite: {fileID: 21300000, guid: 1849f93556815446ebfaf997719f4b10, type: 3}
+    hasBeenDiscovered: 0
+  - variantName: tiny_beige
+    formalVariantName: Tiny, Beige
+    sprite: {fileID: 21300000, guid: e7ba7c6bedc224f13a829f1e2cf82887, type: 3}
+    hasBeenDiscovered: 0
+  - variantName: tiny_dark
+    formalVariantName: Tiny, Dark
+    sprite: {fileID: 21300000, guid: 3338bc5f264544397ab0cca3d3e263c1, type: 3}
+    hasBeenDiscovered: 0
+  - variantName: tiny_orange
+    formalVariantName: Tiny, Orange
+    sprite: {fileID: 21300000, guid: bacd853c65fff40b29bdf5c8af49ce55, type: 3}
+    hasBeenDiscovered: 0

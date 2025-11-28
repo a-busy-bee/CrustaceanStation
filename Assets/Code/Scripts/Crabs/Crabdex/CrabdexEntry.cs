@@ -16,8 +16,7 @@ public class CrabdexEntry : ScriptableObject
 	{
 		public string variantName;  // teen_blue
 		public string formalVariantName; // Teen, blue
-		public Sprite sprite;
-		public bool hasBeenDiscovered;
+		public Sprite sprite; 		public bool hasBeenDiscovered;
 	}
 
 	public Variant[] variants;

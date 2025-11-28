@@ -33,7 +33,8 @@ public class CrabInfo : ScriptableObject
 	{
 		Sunny,
 		LightRain,
-		DarkRain
+		DarkRain,
+		Fog
 	}
 
 	public WeatherType[] favoriteWeatherTypes;

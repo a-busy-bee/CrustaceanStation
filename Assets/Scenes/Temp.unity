@@ -16922,7 +16922,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.7999, y: -2.8382}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 524.6881, y: 165.5482}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1678893449
@@ -20563,9 +20563,45 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Crabdex
   crabdexEntries:
+  - {fileID: 11400000, guid: bf7996602f9b0412086be277e3916f0d, type: 2}
+  - {fileID: 11400000, guid: 573979b13107042d9b946ea4bea9373f, type: 2}
+  - {fileID: 11400000, guid: 073d8cd5554e04ea28cd944ec847a1ff, type: 2}
+  - {fileID: 11400000, guid: ea1518c3a5c79425fa42c9b4e5a11e46, type: 2}
+  - {fileID: 11400000, guid: d29ef7b816d41421a9206035dc901278, type: 2}
+  - {fileID: 11400000, guid: d62d80512ea10475499fda51250d8598, type: 2}
+  - {fileID: 11400000, guid: 65d95b88ccb484a23ab53054ebaadece, type: 2}
+  - {fileID: 11400000, guid: e6d198aecbfc14ef2990af0dc7713af6, type: 2}
+  - {fileID: 11400000, guid: d1b16f58b814e4cffb6c04b09c85a391, type: 2}
+  - {fileID: 11400000, guid: 31b3b5a63a05441ec8a261c2275a36d1, type: 2}
+  - {fileID: 11400000, guid: 2d07fd228832947c4a6ef1549f83a53a, type: 2}
+  - {fileID: 11400000, guid: 30f00df90b0ff4c6fa491d3583396674, type: 2}
+  - {fileID: 11400000, guid: 715f6952b7a604296baaf80d1f1fb815, type: 2}
+  - {fileID: 11400000, guid: 56f77abda9f6c40269b1c959b05e7dd5, type: 2}
+  - {fileID: 11400000, guid: 66c6d62393a57475d82283a7122b83c4, type: 2}
+  - {fileID: 11400000, guid: c2961c8cce15940849a98d3690ce958d, type: 2}
   - {fileID: 11400000, guid: e1eecad68f0b7434883e5a9bddc9c244, type: 2}
+  - {fileID: 11400000, guid: a15eb2dd2961a48d0b84b567c1818fe8, type: 2}
+  - {fileID: 11400000, guid: d0ef94de657a1404ab86f86f6e897b3c, type: 2}
   contentsPageEntries:
   - {fileID: 1413437552}
+  - {fileID: 937734267}
+  - {fileID: 1060412610}
+  - {fileID: 234679261}
+  - {fileID: 1357919132}
+  - {fileID: 1653210671}
+  - {fileID: 569111917}
+  - {fileID: 1964029181}
+  - {fileID: 399663343}
+  - {fileID: 464076631}
+  - {fileID: 1800849140}
+  - {fileID: 1161385758}
+  - {fileID: 479837208}
+  - {fileID: 648835771}
+  - {fileID: 876826357}
+  - {fileID: 915779044}
+  - {fileID: 263859363}
+  - {fileID: 1086672071}
+  - {fileID: 784571713}
   popup: {fileID: 0}
   crabdexContents: {fileID: 5777970}
   crabdexPage: {fileID: 2004804214}

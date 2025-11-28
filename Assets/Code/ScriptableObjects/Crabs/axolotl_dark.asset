@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CrabInfo
   sprite: {fileID: 21300000, guid: fc59dbbdf67c342c1a9cf636a2838462, type: 3}
   crabName: 
-  type: 4
-  favoriteWeatherTypes: 
-  crabdexName: 
-  isVariant: 0
-  variantName: 
+  type: 15
+  favoriteWeatherTypes: 0100000002000000
+  crabdexName: axolotl
+  isVariant: 1
+  variantName: dark

@@ -63,12 +63,15 @@ public class CrabdexPageBuilder : MonoBehaviour
 
         for (int i = 0; i < variantNames.Length; i++)
         {
+            
             if (i >= entry.variants.Length)
             {
+                Debug.Log(entry.variants.Length);
                 variantBlocks[i].SetActive(false);
             }
             else
             {
+                variantBlocks[i].SetActive(true);
                 if (entry.variants[i].hasBeenDiscovered)
                 {
                     variantSprites[i].sprite = entry.variants[i].sprite;

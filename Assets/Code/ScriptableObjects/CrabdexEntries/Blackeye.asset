@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc3c725a349a0491c8d75298c82f4d5e, type: 3}
+  m_Name: Blackeye
+  m_EditorClassIdentifier: Assembly-CSharp::CrabdexEntry
+  crabName: blackeye
+  formalName: Black-Eyed Hermit Crab
+  scientificName: P. Armatus
+  description: Ah yes, the classic
+  isCrustacean: 1
+  typicalSprite: {fileID: 21300000, guid: 516d2a30a981d47f9adad65802326d9c, type: 3}
+  generalVariantDiscovered: 0
+  variants:
+  - variantName: hermie
+    formalVariantName: Hermie
+    sprite: {fileID: 21300000, guid: bec719692de264bd08f098f45fcdc473, type: 3}
+    hasBeenDiscovered: 0
+  - variantName: orange
+    formalVariantName: Orange
+    sprite: {fileID: 21300000, guid: fd8d45034eebf4589831508828cbb3dd, type: 3}
+    hasBeenDiscovered: 0
+  - variantName: strawberry
+    formalVariantName: Strawberry
+    sprite: {fileID: 21300000, guid: 85f6277a3eba94c6d9c3a07a01952566, type: 3}
+    hasBeenDiscovered: 0

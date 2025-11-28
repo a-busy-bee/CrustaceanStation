@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc3c725a349a0491c8d75298c82f4d5e, type: 3}
+  m_Name: Amphipod
+  m_EditorClassIdentifier: Assembly-CSharp::CrabdexEntry
+  crabName: amphipod
+  formalName: Amphipod
+  scientificName: Amphipoda
+  description: 
+  isCrustacean: 1
+  typicalSprite: {fileID: 21300000, guid: 17f83f75122ec43cabc9d379555fb515, type: 3}
+  generalVariantDiscovered: 0
+  variants:
+  - variantName: coral
+    formalVariantName: Coral
+    sprite: {fileID: 21300000, guid: 92e2721e764c0462fbbb959bbabc0291, type: 3}
+    hasBeenDiscovered: 0
+  - variantName: desert
+    formalVariantName: Desert
+    sprite: {fileID: 21300000, guid: 9670fdc63edbb4428804ffa3a86f05cf, type: 3}
+    hasBeenDiscovered: 0

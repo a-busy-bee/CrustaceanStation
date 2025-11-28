@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: linguini
   m_EditorClassIdentifier: Assembly-CSharp::CrabInfo
   sprite: {fileID: 21300000, guid: df6b0e6da4657421394c0f39117ca56e, type: 3}
-  crabName: Molt
+  crabName: 
   type: 11
-  favoriteWeatherTypes: 
-  crabdexName: 
-  isVariant: 0
-  variantName: 
+  favoriteWeatherTypes: 00000000010000000200000003000000
+  crabdexName: ghost
+  isVariant: 1
+  variantName: chef
