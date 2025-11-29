@@ -5,6 +5,8 @@ public class DisplayKiosk : MonoBehaviour
 {
     private GameObject target;
     public Decor decor;
+
+    // update the kiosk slot item
     public void DisplayDecoItem(int slot, int index)
     { 
         Debug.Log(transform.GetChild(slot).gameObject);

@@ -45,7 +45,7 @@ public class Decor : MonoBehaviour
             PlayerPrefs.SetInt("kioskType", 0);
             foreach (DecorItems item in items) 
             {
-                // the first elem is the default/no item
+                // the first elem is the default/no item, which is null for now
                 if (item != null) 
                 {
                     item.bought = false;
@@ -60,7 +60,7 @@ public class Decor : MonoBehaviour
         UpgradeKiosk();
     }
 
-    public void UpgradeKiosk()   // only 1 page, so don't display next/prev buttons
+    public void UpgradeKiosk()   
     {
         KioskStyle.SetActive(true);
         DeskItems.SetActive(false);
@@ -146,11 +146,12 @@ public class Decor : MonoBehaviour
         }
     }
 
-    public void setKioskStyle(int index)
+    public void setKioskStyle(int index) // to be implemented
     { 
         
     }
 
+    // change the item placed in the slot on the kiosk
     public void setDecoSlotItem(int index)
     {
         if (currDecoSlot == 1)

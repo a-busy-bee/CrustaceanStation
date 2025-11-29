@@ -35,7 +35,7 @@ public class DisplayItem : MonoBehaviour
         
     }
 
-    public void KioskUpgrade() 
+    public void KioskUpgrade() // to be implemented
     { }
 
     // set the deco slot to the selected item if bought, otherwise check if we can buy -> set the deco slot, change player pref
