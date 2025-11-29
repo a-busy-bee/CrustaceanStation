@@ -8,9 +8,9 @@ using Unity.VisualScripting;
 
 public class Shop : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI coinCountText; // update coins
+    [SerializeField] public TextMeshProUGUI coinCountText; // update coins
 
-    // will probably need to set these from player pref first, update throughout shop scene, then update player pref
+    // set these from player pref first, update throughout shop scene, then update player pref
     [SerializeField] private int numTracks; // update number of tracks
     [SerializeField] private int crabDropRate; // moar crabz
     [SerializeField] private int cartQuality; // unlocked train cart qualities
@@ -30,10 +30,16 @@ public class Shop : MonoBehaviour
     [SerializeField] private TextMeshProUGUI cartPriceText;
     [SerializeField] private GameObject cartUpgradePanel;
 
-    private int shopMenu; // 1 for decor/upgrade, 2 for decor menu, 3 for upgrade menu
+    private enum shopMenu // 1 for shop main, 2 for decor menu, 3 for upgrade menu
+    { 
+        shopMain,
+        Upgrades,
+        Decor
+    }
+    private shopMenu menu;
 
     [Header("Other")]
-    public GameObject ShopFns, Upgrades;
+    public GameObject ShopFns, Upgrades, DecorBg, Decor;
     [SerializeField] private bool debug;
 
     [SerializeField] private Color unavailable; // #BFBFBF
@@ -41,7 +47,7 @@ public class Shop : MonoBehaviour
     private void Awake()
     {
         coinCountText.text = PlayerPrefs.GetInt("coins").ToString();
-        // maybe a multiplier for each level of upgrade?
+        // multiplier for each level of upgrade
     }
     void Start()
     {
@@ -52,9 +58,12 @@ public class Shop : MonoBehaviour
             PlayerPrefs.SetInt("crabDropRate", 0);
             PlayerPrefs.SetInt("cartQuality", 0);
         }
-        shopMenu = 1;
+        menu = shopMenu.shopMain;
+        transform.position = new Vector3(483, 540, 0);
         ShopFns.SetActive(true);
         Upgrades.SetActive(false);
+        Decor.SetActive(false);
+        DecorBg.SetActive(false);
         coinCountText.text = PlayerPrefs.GetInt("coins").ToString();
 
         numTracks = PlayerPrefs.GetInt("numTracks");
@@ -70,7 +79,7 @@ public class Shop : MonoBehaviour
     // switch to upgrade menu
     public void Upgrade()
     {
-        shopMenu = 3;
+        menu = shopMenu.Upgrades;
         ShopFns.SetActive(false);
         Upgrades.SetActive(true);
         if (numTracks != 3)
@@ -103,30 +112,39 @@ public class Shop : MonoBehaviour
     }
 
     // switch to decor menu
-    public void Decor()
+    public void DecorMenu()
     {
-        shopMenu = 2;
+        menu = shopMenu.Decor;
+        ShopFns.SetActive(false);
+        Decor.SetActive(true);
+        DecorBg.SetActive(true);
+        transform.position += new Vector3((transform.position.x)*2, 0, 0);
     }
 
     // switch to shop main menu
     public void ShopMain()
     {
-        shopMenu = 1;
+        menu = shopMenu.shopMain;
         ShopFns.SetActive(true);
     }
 
-    // go back to main shop menu or kiosk (kiosk or main menu?)
+    // go back to main shop menu or kiosk
     public void Back()
     {
-        if (shopMenu == 1)
+        if (menu == shopMenu.shopMain)
         {
             SceneManager.LoadScene("Temp");
         }
-        else if (shopMenu == 2)
+        else if (menu == shopMenu.Decor)
         {
+            Decor.SetActive(false);
+            DecorBg.SetActive(false);
+            //Debug.Log(transform.position.x);
+            transform.position -= new Vector3((transform.position.x)*2/3, 0, 0);
+            //Debug.Log(transform.position.x);
             ShopMain();
         }
-        else if (shopMenu == 3)
+        else if (menu == shopMenu.Upgrades)
         {
             Upgrades.SetActive(false);
             ShopMain();
@@ -140,7 +158,7 @@ public class Shop : MonoBehaviour
         {
             Purchase(trackPrice);
             numTracks++;
-            // update price and text here?
+            // update price and text
             PlayerPrefs.SetInt("numTracks", numTracks);
             trackPrice = (int)(25 * (numTracks + 1));
             trackPriceText.text = (trackPrice).ToString();
@@ -163,7 +181,7 @@ public class Shop : MonoBehaviour
         {
             Purchase(crabPrice);
             crabDropRate++;
-            // update price and text here?
+            // update price and text
             PlayerPrefs.SetInt("crabDropRate", crabDropRate);
             crabPrice = (int)(25 * (crabDropRate + 1));
             crabPriceText.text = (crabPrice).ToString();
@@ -185,7 +203,7 @@ public class Shop : MonoBehaviour
         {
             Purchase(cartPrice);
             cartQuality++;
-            // update price and text here?
+            // update price and text
             PlayerPrefs.SetInt("cartQuality", cartQuality);
             cartPrice = (int)(50 * (cartQuality + 1));
             cartPriceText.text = (cartPrice).ToString();
