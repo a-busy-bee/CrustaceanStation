@@ -26,7 +26,6 @@ public class Ticket : MonoBehaviour
     {
         crabName = newName;
         nameText.text = crabName;
-        Debug.Log("name set: " + crabName);
     }
 
     public void SetTrainID(string newTrainID)

@@ -18,7 +18,6 @@ public class TrainController : MonoBehaviour
     private Vector3 startingPosArrive; // where the train is before it moves into the station
     private Vector3 startingPosDepart; // also endPosArrive
     private Vector3 endPosDepart; // where the train goes to be completely offscreen
-    //private float speed = 600.0f;
     private Vector3 currentVelocity;
 
     // IDS and INFO
@@ -274,7 +273,7 @@ public class TrainController : MonoBehaviour
 
     private int GetRandomCart() // to get a random cart type when instantiating the train
     {
-        // TODO : ADD CART UPGRADE STUFF HERE
+        // TODO : Fix cart quality upgrade
         int maxCartQuality = LevelManager.instance.GetCartQuality() + 1;
         int totalWeight = 0;
         //for (CartType type in cartTypes)

@@ -25,7 +25,6 @@ public class CrabController : MonoBehaviour
 
     //MOVEMENT
     private bool isMoving = false;
-    private float speed = 750f;
     private bool approachingKiosk = false;
     private bool leavingKiosk = false;
     private Vector3 kioskEndPos; // where we want the crab to be when it's at the kiosk
@@ -37,6 +36,7 @@ public class CrabController : MonoBehaviour
 
     //MISC
     private Clock clock;
+    private Kiosk kiosk;
 
     void Awake()
     {
@@ -87,9 +87,11 @@ public class CrabController : MonoBehaviour
     {
         crabSelector = newSelector;
     }
-    
-    public void SetClock(Clock newClock) {
+
+    public void SetClockAndKiosk(Clock newClock, Kiosk newKiosk)
+    {
         clock = newClock;
+        kiosk = newKiosk;
     }
 
     public void SetTicketAndIDParentObject(GameObject newParent)
@@ -177,6 +179,11 @@ public class CrabController : MonoBehaviour
         return cartType;
     }
 
+    public CrabInfo GetCrabInfo()
+    {
+        return crabInfo;
+    }
+
     public bool IsValid()
     {
         return isValid;
@@ -213,12 +220,15 @@ public class CrabController : MonoBehaviour
                 {
                     presented = true;
                     PresentTicketAndID();
+                    kiosk.EnableButtons();
                 }
                 else if (Vector2.Distance(rectTransform.anchoredPosition, kioskEndPos) < 0.1f)
                 {
                     approachingKiosk = false;
                     isMoving = false;
                     rectTransform.anchoredPosition = kioskEndPos;
+
+
 
                 }
                 
@@ -232,6 +242,8 @@ public class CrabController : MonoBehaviour
                     leavingKiosk = false;
                     isMoving = false;
                     rectTransform.anchoredPosition = kioskStartPos;
+
+                    kiosk.DisableButtons();
                 }
 
             }

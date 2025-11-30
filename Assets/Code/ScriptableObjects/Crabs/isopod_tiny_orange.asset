@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78e9b5b3f91a34cb3b12441421826e1c, type: 3}
   m_Name: isopod_tiny_orange
   m_EditorClassIdentifier: Assembly-CSharp::CrabInfo
-  sprite: {fileID: 21300000, guid: ad254cbd9eac34cbabcbba367accacc6, type: 3}
-  crabName: Sheldon
+  sprite: {fileID: 21300000, guid: bacd853c65fff40b29bdf5c8af49ce55, type: 3}
+  crabName: 
   type: 12
+  favoriteWeatherTypes: 00000000010000000200000003000000
+  crabdexName: isopod
+  isVariant: 1
+  variantName: tiny_orange
