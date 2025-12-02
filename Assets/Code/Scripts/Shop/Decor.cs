@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UIElements.Experimental;
 using UnityEngine.UI;
 using Unity.VisualScripting;
-
+ 
 public class Decor : MonoBehaviour
 {
     public GameObject KioskStyle, DeskItems, Next, Prev;
@@ -17,8 +17,9 @@ public class Decor : MonoBehaviour
     // kiosk stuff? idk if player can switch kiosk styles, or if it's just upwards upgrading
 
 
-    public int decoItem1;
-    public int decoItem2;
+    public int decor_left;
+    public int decor_right;
+    public int decor_top;
     public int kioskType;
 
     public int pg = 1;
@@ -35,13 +36,20 @@ public class Decor : MonoBehaviour
 
     [SerializeField] private bool debug;
 
-    void Start()
-    {
+	private void Awake()
+	{
+		// TODO: if reset in settings, reset playerprefs & scriptable objects (like crabdex)
+	}
+
+
+	void Start()
+    {   
         // reset values
         if (debug) 
         {
-            PlayerPrefs.SetInt("decoItem1", 0);
-            PlayerPrefs.SetInt("decoItem2", 0);
+            PlayerPrefs.SetInt("decor_left", 0);
+            PlayerPrefs.SetInt("decor_right", 0);
+            PlayerPrefs.SetInt("decor_top", 0);
             PlayerPrefs.SetInt("kioskType", 0);
             foreach (DecorItems item in items) 
             {
@@ -54,8 +62,9 @@ public class Decor : MonoBehaviour
             }
         }
         // player prefs
-        decoItem1 = PlayerPrefs.GetInt("decoItem1");
-        decoItem2 = PlayerPrefs.GetInt("decoItem2");
+        decor_left = PlayerPrefs.GetInt("decor_left");
+        decor_right = PlayerPrefs.GetInt("decor_right");
+        decor_top = PlayerPrefs.GetInt("decor_top");
         kioskType = PlayerPrefs.GetInt("kioskType");
         UpgradeKiosk();
     }
@@ -70,15 +79,21 @@ public class Decor : MonoBehaviour
     }
     
     // keep track of which slot we are on
-    public void selectDeco1() 
+    public void selectDecor_Left() 
     {
         currDecoSlot = 1; // left
         DeskDeco();
     }
 
-    public void selectDeco2()
+    public void selectDecor_Right()
     {
         currDecoSlot = 2; // right
+        DeskDeco();
+    }
+
+    public void selectDecor_Top()
+    {
+        currDecoSlot = 3; // right
         DeskDeco();
     }
 
@@ -87,6 +102,7 @@ public class Decor : MonoBehaviour
     {
         KioskStyle.SetActive(false);
         DeskItems.SetActive(true);
+
         type = ItemType.DeskItems;
         pg = 1;
         DisplayPage(pg);
@@ -156,14 +172,18 @@ public class Decor : MonoBehaviour
     {
         if (currDecoSlot == 1)
         {
-            PlayerPrefs.SetInt("decoItem1", index);
+            PlayerPrefs.SetInt("decor_left", index);
             displayKiosk.DisplayDecoItem(currDecoSlot, index);
         }
         else if (currDecoSlot == 2)
         {
-            PlayerPrefs.SetInt("decoItem2", index);
+            PlayerPrefs.SetInt("decor_right", index);
             displayKiosk.DisplayDecoItem(currDecoSlot, index);
         }
-        
+        else if (currDecoSlot == 3)
+        {
+            PlayerPrefs.SetInt("decor_top", index);
+            displayKiosk.DisplayDecoItem(currDecoSlot, index);
+        }
     }
 }

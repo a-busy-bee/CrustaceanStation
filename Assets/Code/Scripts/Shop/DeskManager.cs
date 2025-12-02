@@ -11,7 +11,7 @@ public class DeskManager : MonoBehaviour
         int item = 1;
         foreach (Transform opt in transform)
         {
-            int index = (item % 5 + (4 * (pg - 1)));
+            int index = item % 7 + (6 * (pg - 1));
             //Debug.Log(index);
             //Debug.Log(decor.items.Length);
             if (index >= decor.items.Length)
@@ -35,3 +35,4 @@ public class DeskManager : MonoBehaviour
         }
     }
 }
+ 

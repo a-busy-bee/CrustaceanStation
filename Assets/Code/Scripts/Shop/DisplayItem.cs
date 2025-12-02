@@ -16,7 +16,7 @@ public class DisplayItem : MonoBehaviour
 
     public void Display(int pg)
     {
-        index = (item % 5 + (4 * (pg-1)));
+        index = (item % 7 + (6 * (pg-1)));
         //Debug.Log(index);
         //Debug.Log(decor.items.Length);
 
@@ -34,7 +34,7 @@ public class DisplayItem : MonoBehaviour
         sprite.sprite = decor.items[index].sprite;
         
     }
-
+ 
     public void KioskUpgrade() // to be implemented
     { }
 
