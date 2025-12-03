@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: candle
   m_EditorClassIdentifier: Assembly-CSharp::DecorItems
   sprite: {fileID: 21300000, guid: 099dcd7d6c7bb4998bd6c4af35e3fa58, type: 3}
+  isTopItem: 0
   cost: 100
   bought: 0
   placed: 0

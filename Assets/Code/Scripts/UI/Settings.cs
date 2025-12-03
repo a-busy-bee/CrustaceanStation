@@ -48,6 +48,7 @@ public class Settings : MonoBehaviour
     {
         PlayerPrefs.DeleteAll();
         PlayerPrefs.SetInt("ResetCrabdex", 1);
+        PlayerPrefs.SetInt("ResetDecor", 1);
         areYouSurePanel.SetActive(false);
     }
 

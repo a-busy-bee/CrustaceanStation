@@ -14,39 +14,75 @@ public class DisplayItem : MonoBehaviour
     public Image priceCoin;
     public Image sprite;
 
-    public void Display(int pg)
+    bool topDecorOpen = false;
+
+    public void Display(int pg, bool isTopDecorOpen)
     {
-        index = (item % 7 + (6 * (pg-1)));
+        topDecorOpen = isTopDecorOpen;
+        index = item % 7 + (6 * (pg - 1));
         //Debug.Log(index);
         //Debug.Log(decor.items.Length);
 
-        // show price if haven't bought yet
-        if (!decor.items[index].bought)
+        if (topDecorOpen)
         {
-            price.text = decor.items[index].cost.ToString();
-            priceCoin.enabled = true;
+            DisplayCostAndSprite(decor.topDecor);
         }
-        else 
+        else
+        {
+            DisplayCostAndSprite(decor.items);
+        }
+    }
+
+    private void DisplayCostAndSprite(DecorItems[] decorItems)
+    {
+        if (decorItems[index].isRemoveItem)
         {
             price.text = "";
             priceCoin.enabled = false;
         }
-        sprite.sprite = decor.items[index].sprite;
-        
+        else
+        {
+            // show price if haven't bought yet
+            if (!decorItems[index].bought)
+            {
+                price.text = decorItems[index].cost.ToString();
+                priceCoin.enabled = true;
+            }
+            else
+            {
+                price.text = "";
+                priceCoin.enabled = false;
+            }
+        }
+
+        sprite.sprite = decorItems[index].sprite;
     }
- 
+
     public void KioskUpgrade() // to be implemented
-    { }
+    { 
+        //decor.setKioskStyle(index);
+    }
 
     // set the deco slot to the selected item if bought, otherwise check if we can buy -> set the deco slot, change player pref
     public void DeskBuy()
-    { 
-        DecorItems item = decor.items[index];
+    {
+        if (topDecorOpen)
+        {
+            Select(decor.topDecor[index]);
+        }
+        else
+        {
+            Select(decor.items[index]);
+        }
+    }
+
+    private void Select(DecorItems item)
+    {        
         if (item.bought)
         {
             decor.setDecoSlotItem(index);
         }
-        else 
+        else
         {
             if (PlayerPrefs.GetInt("coins") >= item.cost)
             {

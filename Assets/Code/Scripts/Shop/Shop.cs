@@ -30,7 +30,7 @@ public class Shop : MonoBehaviour
     [SerializeField] private TextMeshProUGUI cartPriceText;
     [SerializeField] private GameObject cartUpgradePanel;
 
-    private enum shopMenu // 1 for shop main, 2 for decor menu, 3 for upgrade menu
+    public enum shopMenu // 1 for shop main, 2 for decor menu, 3 for upgrade menu
     { 
         shopMain,
         Upgrades,
@@ -43,6 +43,7 @@ public class Shop : MonoBehaviour
     [SerializeField] private bool debug;
 
     [SerializeField] private Color unavailable; // #BFBFBF
+    [SerializeField] private Decor decor;
 
     private void Awake()
     {
@@ -60,7 +61,7 @@ public class Shop : MonoBehaviour
         }
         menu = shopMenu.shopMain;
         transform.position = new Vector3(483, 540, 0);
-        ShopFns.SetActive(true);
+        ShopFns.SetActive(false);
         Upgrades.SetActive(false);
         Decor.SetActive(false);
         DecorBg.SetActive(false);
@@ -82,6 +83,7 @@ public class Shop : MonoBehaviour
         menu = shopMenu.Upgrades;
         ShopFns.SetActive(false);
         Upgrades.SetActive(true);
+
         if (numTracks != 3)
         {
             trackPriceText.text = trackPrice.ToString();
@@ -111,14 +113,20 @@ public class Shop : MonoBehaviour
         
     }
 
+    public shopMenu GetCurrentMenu()
+    {
+        return menu;
+    }
+
     // switch to decor menu
     public void DecorMenu()
     {
+        decor.Reset();
         menu = shopMenu.Decor;
         ShopFns.SetActive(false);
         Decor.SetActive(true);
         DecorBg.SetActive(true);
-        transform.position += new Vector3((transform.position.x)*2, 0, 0);
+        transform.position += new Vector3((transform.position.x) * 2, 0, 0);
     }
 
     // switch to shop main menu
@@ -140,7 +148,7 @@ public class Shop : MonoBehaviour
             Decor.SetActive(false);
             DecorBg.SetActive(false);
             //Debug.Log(transform.position.x);
-            transform.position -= new Vector3((transform.position.x)*2/3, 0, 0);
+            transform.position -= new Vector3((transform.position.x) * 2 / 3, 0, 0);
             //Debug.Log(transform.position.x);
             ShopMain();
         }

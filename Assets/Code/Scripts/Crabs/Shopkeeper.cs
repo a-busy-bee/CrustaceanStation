@@ -4,6 +4,7 @@ using UnityEngine.EventSystems;
 
 public class Shopkeeper : MonoBehaviour, IPointerClickHandler
 {
+    [SerializeField] private Shop shop;
     [SerializeField] private GameObject wares;
     [SerializeField] private RectTransform rectTransform;
     private bool isMoving = false;
@@ -48,6 +49,7 @@ public class Shopkeeper : MonoBehaviour, IPointerClickHandler
 
     private void PresentWares()
     {
+        if (shop.GetCurrentMenu() != Shop.shopMenu.shopMain) return;
         //show all buttons
         wares.SetActive(true);
     }

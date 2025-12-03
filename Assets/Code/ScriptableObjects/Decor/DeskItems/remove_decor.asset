@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ab8a143ea462606418fabc6ab5867b48, type: 3}
-  m_Name: teapot
+  m_Name: remove_decor
   m_EditorClassIdentifier: Assembly-CSharp::DecorItems
-  sprite: {fileID: 1670004839, guid: 8382980bb46d844a2a38d10be842d5b9, type: 3}
-  isRemoveItem: 0
-  cost: 30
+  sprite: {fileID: 21300000, guid: d52b69e1abc1244149e7690c1081e1ef, type: 3}
+  isRemoveItem: 1
+  cost: 0
   bought: 1
   placed: 0

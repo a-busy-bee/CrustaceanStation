@@ -1,7 +1,8 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
@@ -22,6 +23,16 @@ public class LevelManager : MonoBehaviour
 
     [Header("Track Upgrade")]
     [SerializeField] private GameObject[] tracks;
+
+
+    [Header("Decor")]
+    [SerializeField] private DecorItems[] items;
+    [SerializeField] private DecorItems[] topDecor;
+    [SerializeField] private GameObject leftSlot;
+    [SerializeField] private GameObject rightSlot;
+    [SerializeField] private GameObject topSlot;
+
+
 
     // UI background 
     [Header("Other")]
@@ -48,9 +59,10 @@ public class LevelManager : MonoBehaviour
         summaryMenu.SetActive(false);
     }
 
-    public void Start()
+    private void Start()
     {
         ActivateUpgrades();
+        ShowDecor();
 
         StartCoroutine(ShowGoalForTheDay());
     }
@@ -161,8 +173,43 @@ public class LevelManager : MonoBehaviour
 
         // update train controllers
         clock.UpdateNumTracks(trackCount + 1);
+    }
 
+    private void ShowDecor()
+    {
+        int top = PlayerPrefs.GetInt("decor_top");
+        int left = PlayerPrefs.GetInt("decor_left");
+        int right = PlayerPrefs.GetInt("decor_right");
 
+        if (top > 1)
+        {
+            topSlot.SetActive(true);
+            topSlot.GetComponent<Image>().sprite = topDecor[top].sprite;
+        }
+        else
+        {
+            topSlot.SetActive(false);
+        }
+
+        if (left > 1)
+        {
+            leftSlot.SetActive(true);
+            leftSlot.GetComponent<Image>().sprite = items[left].sprite;
+        }
+        else
+        {
+            leftSlot.SetActive(false);
+        }
+
+        if (right > 1)
+        {
+            rightSlot.SetActive(true);
+            rightSlot.GetComponent<Image>().sprite = items[right].sprite;
+        }
+        else
+        {
+            rightSlot.SetActive(false);
+        }
     }
 
     public int GetCartQuality()
