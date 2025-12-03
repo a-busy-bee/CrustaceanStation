@@ -90,6 +90,10 @@ public class Shop : MonoBehaviour
         }
         else
         {
+            ApplyBlur(trackUpgradePanel);
+            trackPriceText.text = "";
+            trackUpgradePanel.GetComponent<RectTransform>().Find("Text").Find("Desc").GetComponent<TMP_Text>().text = "Fully Upgraded";
+            trackUpgradePanel.GetComponent<RectTransform>().Find("Images").Find("PriceIcon").gameObject.SetActive(false);
             trackUpgradePanel.GetComponent<Button>().interactable = false;
         }
 
@@ -99,6 +103,10 @@ public class Shop : MonoBehaviour
         }
         else
         {
+            ApplyBlur(crabUpgradePanel);
+            crabPriceText.text = "";
+            crabUpgradePanel.GetComponent<RectTransform>().Find("Text").Find("Desc").GetComponent<TMP_Text>().text = "Fully Upgraded";
+            crabUpgradePanel.GetComponent<RectTransform>().Find("Images").Find("PriceIcon").gameObject.SetActive(false);
             crabUpgradePanel.GetComponent<Button>().interactable = false;
         }
 
@@ -108,6 +116,10 @@ public class Shop : MonoBehaviour
         }
         else
         {
+            ApplyBlur(cartUpgradePanel);
+            cartPriceText.text = "";
+            cartUpgradePanel.GetComponent<RectTransform>().Find("Text").Find("Desc").GetComponent<TMP_Text>().text = "Fully Upgraded";
+            cartUpgradePanel.GetComponent<RectTransform>().Find("Images").Find("PriceIcon").gameObject.SetActive(false);
             cartUpgradePanel.GetComponent<Button>().interactable = false;
         }
         
