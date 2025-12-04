@@ -1,6 +1,10 @@
+using System.Collections.Generic;
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class Crabdex : MonoBehaviour
 {
@@ -10,7 +14,7 @@ public class Crabdex : MonoBehaviour
 
     public static Crabdex instance { get; private set; }
 
-    [SerializeField] private CrabdexEntry[] crabdexEntries;     // classification of crab
+    [SerializeField] private List<CrabdexEntry> crabdexEntries;     // classification of crab
     [SerializeField] private GameObject[] contentsPageEntries;  // buttons
     [SerializeField] private GameObject crabdexContents;
     [SerializeField] private GameObject crabdexPage;
@@ -44,14 +48,25 @@ public class Crabdex : MonoBehaviour
         }
     }
 
-    private void Start()
+    IEnumerator Start()
     {
         // set up ID for each button
         for (int i = 0; i < contentsPageEntries.Length; i++)
         {
             contentsPageEntries[i].GetComponent<ContentsButton>().SetID(i);
         }
+
+
+        var entryHandle = Addressables.LoadAssetsAsync<CrabdexEntry>("CrabdexEntries", entry =>
+        {
+            crabdexEntries.Add(entry);
+        });
+
+        yield return entryHandle;
+
+
     }
+
     public void OnCrabEntryPress(int id)
     {
         crabdexPage.SetActive(true);
@@ -120,4 +135,15 @@ public class Crabdex : MonoBehaviour
         screenDim.SetActive(false);
     }
 
+    public bool IsCrustacean(string id)
+    {
+        foreach (CrabdexEntry entry in crabdexEntries)
+        {
+            if (entry.crabName == id)
+            {
+                return entry.isCrustacean;
+            }
+        }
+        return false; // failsafe
+    }
 }

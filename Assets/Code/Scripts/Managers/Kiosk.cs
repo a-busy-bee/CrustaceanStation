@@ -14,10 +14,10 @@ public class Kiosk : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI coinCountText;
     private bool isOpen = false;
-
     private int crabsToday = 0;
     private float wrong = 0f;
     private int total = 0;
+    private bool isCurrentCrabCrustacean = false;
 
     [Header("Goals")]
     [SerializeField] private RatingGoal ratingGoal;
@@ -51,6 +51,8 @@ public class Kiosk : MonoBehaviour
         controller.MakeAppear();
 
         Crabdex.instance.HasBeenDiscovered(controller.GetCrabInfo()); // crabdex!!!
+
+        isCurrentCrabCrustacean = Crabdex.instance.IsCrustacean(controller.GetCrabdexName());
     }
     public void OnApprove()
     {
@@ -65,9 +67,8 @@ public class Kiosk : MonoBehaviour
 
         clock.SetTrainsClickable(true);
 
-        if (!currentCrab.GetComponent<CrabController>().IsValid() || !trainExists)
+        if (!currentCrab.GetComponent<CrabController>().IsValid() || !trainExists || !isCurrentCrabCrustacean) 
         {
-            //Debug.Log("approve, wrong");
             wrong++;
         }
     }
@@ -85,7 +86,6 @@ public class Kiosk : MonoBehaviour
 
         if (currentCrab.GetComponent<CrabController>().IsValid() && trainExists)
         {
-            //Debug.Log("reject, wrong");
             wrong++;
         }
 
@@ -99,13 +99,11 @@ public class Kiosk : MonoBehaviour
 
     public void DowngradedCart()
     {
-        //Debug.Log("downgraded");
         wrong+=0.5f;
     }
 
     public void UpgradedCart()
     {
-        //Debug.Log("upgraded");
         total++;
     }
 
@@ -119,7 +117,6 @@ public class Kiosk : MonoBehaviour
         PlayerPrefs.SetInt("coins", PlayerPrefs.GetInt("coins") + (int)(newCoins * ratingGoal.GetRating()));
         coinCountText.text = PlayerPrefs.GetInt("coins").ToString();
     }
-
     public void DisappearCrab()
     {
         crabsToday++;

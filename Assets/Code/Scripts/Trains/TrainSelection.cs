@@ -6,6 +6,7 @@ public class TrainSelection : MonoBehaviour, IPointerClickHandler
     private bool isClickable = false;
     private bool isFull = false;
     private Kiosk kiosk;
+    private Clock clock;
 
     [SerializeField] private Image spriteRenderer;
     [SerializeField] private Sprite filled;
@@ -82,7 +83,7 @@ public class TrainSelection : MonoBehaviour, IPointerClickHandler
             // show that cart is full
             spriteRenderer.sprite = filled;
 
-            isClickable = false;
+            Clock.instance.SetTrainsClickable(false);
             isFull = true;
         }
     }

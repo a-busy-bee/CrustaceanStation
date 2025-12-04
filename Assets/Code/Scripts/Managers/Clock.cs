@@ -6,6 +6,8 @@ using UnityEngine.Analytics;
 
 public class Clock : MonoBehaviour
 {
+    public static Clock instance { get; private set; }
+
     // CLOCK INFO
     // day is 8am to 8pm, each hour is 2 minutes
     private int startTime = 0;
@@ -16,15 +18,8 @@ public class Clock : MonoBehaviour
 
 
     // TRAIN INFO
-    //[System.Serializable]
-    /*public struct TrainInfoPair
-    {
-        public Train trainInfo;
-        public bool chosen;
-    }*/
     [SerializeField] private GameObject trainPrefab;
     [SerializeField] private GameObject trainParent;
-    //[SerializeField] private TrainInfoPair[] trainInfos;
     private List<TrainController> currentTrains = new List<TrainController>();
 
     [SerializeField] private GameObject clockHand;
@@ -36,8 +31,19 @@ public class Clock : MonoBehaviour
     // TRAIN ARRAYS
     private List<GameObject>[] allTrains;
     private int numActiveTracks = 1;
+    private bool isSelectingTrain = false;
 
-
+    private void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+        }
+    }
     private void AddTrains()
     {
         bool startingTrain = false;    // is there a train that arrives before the first crab does?
@@ -51,7 +57,7 @@ public class Clock : MonoBehaviour
                 startingTrain = true;
             }
         }
-        
+
         if (!startingTrain)
         {
             allTrains[Random.Range(0, numActiveTracks)][0].GetComponent<TrainController>().SetArrivalTime();
@@ -152,6 +158,8 @@ public class Clock : MonoBehaviour
         {
             train.SetThisClickable(allowClick);
         }
+
+        isSelectingTrain = true;
     }
 
     public void UpdateNumTracks(int tracks)
@@ -180,7 +188,7 @@ public class Clock : MonoBehaviour
                 yield return WaitThenSummonCrabs();
             }
 
-            yield return new WaitForSeconds(15f);            // CHANGES HOW FAST THE CLOCK MOVES
+            yield return new WaitForSeconds(5f);            // CHANGES HOW FAST THE CLOCK MOVES
 
             // rotate clock hand
             yield return RotateHand();
@@ -192,7 +200,7 @@ public class Clock : MonoBehaviour
             {
                 WeatherManager.instance.ChangeWeather();
             }
-            
+
 
             if (currentTime == endTime)
             {
@@ -271,5 +279,19 @@ public class Clock : MonoBehaviour
         yield return new WaitForSeconds(1f);
         kiosk.SummonCrab();
         kiosk.OpenKiosk();
+    }
+
+    private void Update()
+    {
+        if (isSelectingTrain)
+        {
+            if (currentTrains.Count == 0)
+            {
+                SetTrainsClickable(false);
+                kiosk.OnReject();
+
+                isSelectingTrain = false;
+            }
+        }
     }
 }

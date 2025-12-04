@@ -1,15 +1,36 @@
 using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class CrabSelector : MonoBehaviour
 {
-    [SerializeField] private GameObject[] prefabs;
-    [SerializeField] private Sprite[] sprites;
+    public List<GameObject> prefabs;
+    public List<Sprite> sprites;
 
     private List<int> idxsChosenRecently = new List<int>();
+
+    IEnumerator Start()
+    {
+        var prefabHandle = Addressables.LoadAssetsAsync<GameObject>("CharacterPrefabs", prefab =>
+        {
+            prefabs.Add(prefab);
+        });
+
+        yield return prefabHandle;
+
+        var spriteHandle = Addressables.LoadAssetsAsync<Sprite>("CharacterSprites", sprite =>
+        {
+            sprites.Add(sprite);
+        });
+
+        yield return spriteHandle;
+    }
+
     public GameObject ChooseCrab()
     {
-        int chosenCrabIdx = Random.Range(0, prefabs.Length);
+        int chosenCrabIdx = Random.Range(0, prefabs.Count);
         //idxsChosenRecently.Add(chosenCrabIdx);
 
         if (idxsChosenRecently.Count == 15)
@@ -26,7 +47,7 @@ public class CrabSelector : MonoBehaviour
         {
             while (idxsChosenRecently.Exists(i => i == chosenCrabIdx))
             {
-                chosenCrabIdx = Random.Range(0, prefabs.Length);
+                chosenCrabIdx = Random.Range(0, prefabs.Count);
             }
 
             idxsChosenRecently.Add(chosenCrabIdx);
@@ -36,6 +57,6 @@ public class CrabSelector : MonoBehaviour
 
     public Sprite ChooseSprite()
     {
-        return sprites[Random.Range(0, sprites.Length)];
+        return sprites[Random.Range(0, sprites.Count)];
     }
 }

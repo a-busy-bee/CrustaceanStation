@@ -42,7 +42,7 @@ public class Tutorial : MonoBehaviour
 
     public void OnNextPage()
     {
-        if (!isNewGame && currentPage == 4)  // last page in new game is different than the last page in settings/pause
+        if (!isNewGame && currentPage == 5)  // last page in new game is different than the last page in settings/pause
         {
             pages[currentPage].SetActive(false);
             finalPageNotNewGame.SetActive(true);

@@ -169,6 +169,10 @@ public class CrabController : MonoBehaviour
         ticket.GetComponent<Ticket>().SetSprite(cartType);
     }
 
+    public string GetCrabdexName()
+    {
+        return crabInfo.crabdexName;
+    }
     public string GetTrainID()
     {
         return trainID;

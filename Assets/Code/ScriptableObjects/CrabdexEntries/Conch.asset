@@ -19,4 +19,8 @@ MonoBehaviour:
   isCrustacean: 0
   typicalSprite: {fileID: 21300000, guid: 8d4cd4c16f7854f5894b5920badbfcb3, type: 3}
   generalVariantDiscovered: 0
-  variants: []
+  variants:
+  - variantName: yellow
+    formalVariantName: Yellow
+    sprite: {fileID: 21300000, guid: 0f41273b5eee4438fb1f73ae4d94c351, type: 3}
+    hasBeenDiscovered: 0

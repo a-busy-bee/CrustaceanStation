@@ -21541,6 +21541,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d0ef94de657a1404ab86f86f6e897b3c, type: 2}
   - {fileID: 11400000, guid: 244972ac3c5a940f3871653c32855749, type: 2}
   - {fileID: 11400000, guid: 1fecaad1698e443a8b86b6b81c27759d, type: 2}
+  - {fileID: 11400000, guid: 6305328ff7080472d9fc5d1bde818407, type: 2}
+  - {fileID: 11400000, guid: 27f75caf7255a40b78bb5b052fb153a1, type: 2}
   contentsPageEntries:
   - {fileID: 1413437552}
   - {fileID: 937734267}
@@ -21563,6 +21565,8 @@ MonoBehaviour:
   - {fileID: 784571713}
   - {fileID: 1050279868}
   - {fileID: 291145615}
+  - {fileID: 354553562}
+  - {fileID: 1909974482}
   crabdexContents: {fileID: 5777970}
   crabdexPage: {fileID: 2004804214}
   screenDim: {fileID: 148456986}
@@ -24223,26 +24227,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5264055640674105400, guid: 0a5805489d054475f965cc7dc3138d52, type: 3}
-      propertyPath: finalPageNotNewGame
-      value: 
-      objectReference: {fileID: 1959492845234858786}
-    - target: {fileID: 5512785353214715055, guid: 0a5805489d054475f965cc7dc3138d52, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 524
-      objectReference: {fileID: 0}
-    - target: {fileID: 5512785353214715055, guid: 0a5805489d054475f965cc7dc3138d52, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -429
-      objectReference: {fileID: 0}
-    - target: {fileID: 6017078330122110375, guid: 0a5805489d054475f965cc7dc3138d52, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6208943624078920513, guid: 0a5805489d054475f965cc7dc3138d52, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -24259,11 +24243,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26f05b60f42354aca91ae7cac543801c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Tutorial
---- !u!1 &1959492845234858786 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1396999529529959631, guid: 0a5805489d054475f965cc7dc3138d52, type: 3}
-  m_PrefabInstance: {fileID: 1959492845234858784}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &2074754442309132543 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6182215521950669315, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}

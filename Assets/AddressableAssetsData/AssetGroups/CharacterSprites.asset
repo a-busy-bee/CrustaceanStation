@@ -1,0 +1,425 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: CharacterSprites
+  m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
+  m_GroupName: CharacterSprites
+  m_GUID: 5d5c27983c2b347a69a88b138ee13175
+  m_SerializeEntries:
+  - m_GUID: 013b198e32eaf45c3a05fe6c20e3525f
+    m_Address: Assets/Art/Sprites/Crabs/armatus_periwinkle.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterSprites
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0292ddb48b1c04bab8af1885d27160cd
+    m_Address: Assets/Art/Sprites/Crabs/hermitcrab-electric.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterSprites
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 042d5ca4a481f4a008b8bbe0cd1e1f8e
+    m_Address: Assets/Art/Sprites/Crabs/isopod_salmon.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterSprites
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 06f377b47db184c6fbbf99a1e7aeec36
+    m_Address: Assets/Art/Sprites/Crabs/mustachecrab_linguini.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterSprites
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 07c37a4269fa04bf29be7a0f2965f5dc
+    m_Address: Assets/Art/Sprites/Crabs/crablong_pearl.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterSprites
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 08ed1cecf4978429089c778a84569070
+    m_Address: Assets/Art/Sprites/Crabs/isopod_purp.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterSprites
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0ab82ac55c1334a3fa15b4f4efdb5751
+    m_Address: Assets/Art/Sprites/Crabs/shrimp-gramps.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterSprites
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0cb94e148dcc645b58e70653abd5d7a0
+    m_Address: Assets/Art/Sprites/Crabs/sea_monkies_many.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterSprites
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0db8292c2f19347f8b30644161be703c
+    m_Address: Assets/Art/Sprites/Crabs/axolotl_black.PNG
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterSprites
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0f41273b5eee4438fb1f73ae4d94c351
+    m_Address: Assets/Art/Sprites/Crabs/conch2.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterSprites
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 17f83f75122ec43cabc9d379555fb515
+    m_Address: Assets/Art/Sprites/Crabs/amphipod.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterSprites
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1849f93556815446ebfaf997719f4b10
+    m_Address: Assets/Art/Sprites/Crabs/isopod_beautiful.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterSprites
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 18ea6a763c93f4fd88a9ffed60b64cd1
+    m_Address: Assets/Art/Sprites/Crabs/purpureus_big.PNG
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterSprites
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1ae63aec37eac4d1a92a2e892428df8c
+    m_Address: Assets/Art/Sprites/Crabs/pillbug_gang.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterSprites
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 247d3a17c1cfe4fc69a2321b18aad180
+    m_Address: Assets/Art/Sprites/Crabs/axolotl.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterSprites
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 26c4a1189a5e64f9b8b10108ebe4eb15
+    m_Address: Assets/Art/Sprites/Crabs/nautilus_red.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterSprites
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3338bc5f264544397ab0cca3d3e263c1
+    m_Address: Assets/Art/Sprites/Crabs/isopodtiny_dark.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterSprites
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3724774a4b67d41e58361c6d8ba04082
+    m_Address: Assets/Art/Sprites/Crabs/lobster_orange.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterSprites
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 41dd554510c844beba81acd40c4c4825
+    m_Address: Assets/Art/Sprites/Crabs/tallcrab.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterSprites
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 49d5079f2231e419f93f23ad9fb4dc4e
+    m_Address: Assets/Art/Sprites/Crabs/lobster_brown.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterSprites
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4c0f1809b0f5141caaa7e3ae48c0baf0
+    m_Address: Assets/Art/Sprites/Crabs/pillbug_cold.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterSprites
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4c7a294fa8eee4e2fbda1ee5a40b902a
+    m_Address: Assets/Art/Sprites/Crabs/rugosus_lime.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterSprites
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 516d2a30a981d47f9adad65802326d9c
+    m_Address: Assets/Art/Sprites/Crabs/armatus.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterSprites
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5604c0486cf5546fdba4452639de8f81
+    m_Address: Assets/Art/Sprites/Crabs/rugosus_banana.PNG
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterSprites
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5a2d154841ea84ccdae09a36bfe5ca6e
+    m_Address: Assets/Art/Sprites/Crabs/tallcrab_purp.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterSprites
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5c38133a8036748389c98e5cf2a32763
+    m_Address: Assets/Art/Sprites/Crabs/tallcrab_orange.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterSprites
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 65fa5e92e306f40e69e7e40f7cfe15b6
+    m_Address: Assets/Art/Sprites/Crabs/axolotl_golden.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterSprites
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 688cc6c8d2e6f40279006e159f7a181f
+    m_Address: Assets/Art/Sprites/Crabs/lobster_scarf_purp.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterSprites
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6a96016dcc20e44dab3df7eb725df978
+    m_Address: Assets/Art/Sprites/Crabs/crablong_orange.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterSprites
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 781c2592a8242449cb48e59b04f9d479
+    m_Address: Assets/Art/Sprites/Crabs/sardines_purple.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterSprites
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7d27975897fb2444199cc2432224f37e
+    m_Address: Assets/Art/Sprites/Crabs/shrimp_granny.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterSprites
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7d3b0953fd8c247d0832414dea5dcd7c
+    m_Address: Assets/Art/Sprites/Crabs/lobster_with_hat.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterSprites
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8016ad7fc1404421bab35344af080264
+    m_Address: Assets/Art/Sprites/Crabs/shrimp_drowned.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterSprites
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 83493d429cea14ddcb247c8bc74d61db
+    m_Address: Assets/Art/Sprites/Crabs/purpureus.PNG
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterSprites
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 85f6277a3eba94c6d9c3a07a01952566
+    m_Address: Assets/Art/Sprites/Crabs/armatus_strawberry.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterSprites
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 86b040e50825d489d83614cc7896be4d
+    m_Address: Assets/Art/Sprites/Crabs/ghostcrab_magenta.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterSprites
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 88d2faebcc809400187a4b29847ad3c5
+    m_Address: Assets/Art/Sprites/Crabs/crab_frog.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterSprites
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8bfbcdb6b79e64ad7ac74767114892d8
+    m_Address: Assets/Art/Sprites/Crabs/hermitcrab_coquette.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterSprites
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8ce4a1acdffae49c580c19e5ec7d8711
+    m_Address: Assets/Art/Sprites/Crabs/lobster_scarf.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterSprites
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8d4cd4c16f7854f5894b5920badbfcb3
+    m_Address: Assets/Art/Sprites/Crabs/conch.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterSprites
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 90cac0dbdb4df483d824d549644403b9
+    m_Address: Assets/Art/Sprites/Crabs/ghostcrab_orange.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterSprites
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 92e2721e764c0462fbbb959bbabc0291
+    m_Address: Assets/Art/Sprites/Crabs/amphipod_coral.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterSprites
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 93be0e8079f6946c1899d609f31b4cb4
+    m_Address: Assets/Art/Sprites/Crabs/crab_cottoncandy.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterSprites
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9428176af787e46768cd0d29cce3cd01
+    m_Address: Assets/Art/Sprites/Crabs/hermitcrab_orchid.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterSprites
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9670fdc63edbb4428804ffa3a86f05cf
+    m_Address: Assets/Art/Sprites/Crabs/amphipod_desert.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterSprites
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9b0b6d6e87d0548889864b710f36140b
+    m_Address: Assets/Art/Sprites/Crabs/sea_monkies_blue.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterSprites
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a97c80b3eaf734ae488cacd5655f9f53
+    m_Address: Assets/Art/Sprites/Crabs/lobster_purple.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterSprites
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a98b74882226a4f37a431987ee833e11
+    m_Address: Assets/Art/Sprites/Crabs/sea_monkies.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterSprites
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ad254cbd9eac34cbabcbba367accacc6
+    m_Address: Assets/Art/Sprites/Crabs/trianglecrab_purple.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterSprites
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bacd853c65fff40b29bdf5c8af49ce55
+    m_Address: Assets/Art/Sprites/Crabs/isopodtiny_orange.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterSprites
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bec719692de264bd08f098f45fcdc473
+    m_Address: Assets/Art/Sprites/Crabs/hermitcrab.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterSprites
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bedc34cef839042a4bf5d4101ee200a3
+    m_Address: Assets/Art/Sprites/Crabs/horseshoe_crab.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterSprites
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c07703af217bf4bdf8bed9ff8dc71444
+    m_Address: Assets/Art/Sprites/Crabs/seasheep.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterSprites
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c5d83dd39705c4911bfdcb127b4aea4f
+    m_Address: Assets/Art/Sprites/Crabs/kid_crab.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterSprites
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cda6a53d5fa3f414cb03246cf4effb0c
+    m_Address: Assets/Art/Sprites/Crabs/shrimp_family.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterSprites
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cdd218345830a4c0e84299e4de609f31
+    m_Address: Assets/Art/Sprites/Crabs/sardines.PNG
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterSprites
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d485e293365ca48e7b170513e733e141
+    m_Address: Assets/Art/Sprites/Crabs/trianglecrab.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterSprites
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d4c8fe97a3a5f46d08db3fcd0ff793f7
+    m_Address: Assets/Art/Sprites/Crabs/lobster_lime.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterSprites
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d53d8eceeb5eb4f9dbed00f62e3cefb3
+    m_Address: Assets/Art/Sprites/Crabs/scope_creep.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterSprites
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dddb534c4326c4ea687cb5e7aa36fc8e
+    m_Address: Assets/Art/Sprites/Crabs/pillbug_warm.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterSprites
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: df6b0e6da4657421394c0f39117ca56e
+    m_Address: Assets/Art/Sprites/Crabs/ghostcrab_chef.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterSprites
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e142788fe75194624939529c10ed6cf3
+    m_Address: Assets/Art/Sprites/Crabs/nautilus.PNG
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterSprites
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e7ba7c6bedc224f13a829f1e2cf82887
+    m_Address: Assets/Art/Sprites/Crabs/isopodtiny.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterSprites
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f43b2346c76f1456bb000c49dfdccd2d
+    m_Address: Assets/Art/Sprites/Crabs/protestor_catfish.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterSprites
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fa491b031a97c43b1952b0a9734cb107
+    m_Address: Assets/Art/Sprites/Crabs/flounder.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterSprites
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fc59dbbdf67c342c1a9cf636a2838462
+    m_Address: Assets/Art/Sprites/Crabs/axolotl_dark.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterSprites
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fd8d45034eebf4589831508828cbb3dd
+    m_Address: Assets/Art/Sprites/Crabs/purpureus_orange.PNG
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterSprites
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 68f053f7e443b4f2383ac9aa604bb6bd, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: b973d32e3579a4664a3bbadaeb3f3626, type: 2}
+    - {fileID: 11400000, guid: ba41afc9c6c7949e683b0ad800ab6163, type: 2}
