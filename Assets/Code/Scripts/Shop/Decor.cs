@@ -183,11 +183,11 @@ public class Decor : MonoBehaviour
     {
         if (isTopDecorOpen)
         {
-            deskPg = 1 + topDecor.Length / 6;
+            deskPg = 1 + (topDecor.Length - 1) / 6;
         }
         else
         {
-            deskPg = 1 + items.Length / 6;
+            deskPg = 1 + (items.Length - 1) / 6;
         }
 
         if (type == ItemType.Kiosk) // kiosk upgrade not implemented yet

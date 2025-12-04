@@ -55,7 +55,7 @@ public class DisplayItem : MonoBehaviour
             }
         }
 
-        sprite.sprite = decorItems[index].sprite;
+        sprite.sprite = decorItems[index].iconSprite;
     }
 
     public void KioskUpgrade() // to be implemented

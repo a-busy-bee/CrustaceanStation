@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: purple_crystal
   m_EditorClassIdentifier: Assembly-CSharp::DecorItems
   sprite: {fileID: 479768375, guid: 04bcd2edb44a64248b42c6267ab284af, type: 3}
+  iconSprite: {fileID: -681384797, guid: 04bcd2edb44a64248b42c6267ab284af, type: 3}
   isRemoveItem: 0
   cost: 10
   bought: 0

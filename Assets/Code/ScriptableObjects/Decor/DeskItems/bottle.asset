@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: bottle
   m_EditorClassIdentifier: Assembly-CSharp::DecorItems
   sprite: {fileID: -533058519, guid: 428c1117a1dbf40c69f6754020ca1431, type: 3}
+  iconSprite: {fileID: 21300000, guid: defba71de31884b77a78a423f5154344, type: 3}
   isRemoveItem: 0
   cost: 10
   bought: 0

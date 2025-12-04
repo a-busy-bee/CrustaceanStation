@@ -105,7 +105,7 @@ TextureImporter:
         width: 618
         height: 761
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -114,6 +114,28 @@ TextureImporter:
       bones: []
       spriteID: 06595d237a9f54b28afd2392a9a8f8f0
       internalID: -1773462515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crystals_pink_1
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 7
+        width: 378
+        height: 457
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4007304b855c4d579b75b8ed6caa76e
+      internalID: 1507178730
       vertices: []
       indices: 
       edges: []
@@ -133,6 +155,7 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       crystals_pink_0: -1773462515
+      crystals_pink_1: 1507178730
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

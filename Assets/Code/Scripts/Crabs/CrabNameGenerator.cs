@@ -16,7 +16,6 @@ public class CrabNameGenerator : MonoBehaviour
         "Podrick",
         "Brac",
         "Rab",
-        "Sir Pin",
         "Cara",
         "Sean",
         "Shawn",
@@ -28,8 +27,29 @@ public class CrabNameGenerator : MonoBehaviour
         "Cragglin",
         "Clay",
         "Dringle",
-        "Lilik"
-
+        "Lilik",
+        "Finn",
+        "Axl",
+        "Amphie",
+        "Newton",
+        "Pinky",
+        "Smolo",
+        "Avogadro",
+        "Socrates",
+        "Plato",
+        "Stoy",
+        "Kale",
+        "Callum",
+        "Bait",
+        "Spabloo",
+        "Gobo",
+        "Loto",
+        "Rin",
+        "Dewy",
+        "Bran",
+        "Echo",
+        "Mona",
+        "Clyde"
     };
     private List<string> catfish = new List<string>
     {
@@ -41,7 +61,13 @@ public class CrabNameGenerator : MonoBehaviour
         "Smudge",
         "Calypso",
         "Chester",
-        "Clay"
+        "Clay",
+        "Finn",
+        "Axl",
+        "Newton",
+        "Kale",
+        "Callum",
+        "Echo"
     };
     private List<string> horseshoe = new List<string>
     {
@@ -50,7 +76,13 @@ public class CrabNameGenerator : MonoBehaviour
         "Sheldon",
         "Limul",
         "Ancient Being",
-        "Clay"
+        "Clay",
+        "Newton",
+        "Avogadro",
+        "Socrates",
+        "Plato",
+        "Echo",
+        "The Time Keeper"
     };
     private List<string> scopeCreep = new List<string>
     {
@@ -70,7 +102,14 @@ public class CrabNameGenerator : MonoBehaviour
         "Margot",
         "Clawdette",
         "Odette",
-        "Luna"
+        "Luna",
+        "Amphie",
+        "Pinky",
+        "Loto",
+        "Rin",
+        "Dewy",
+        "Echo",
+        "Mona"
     };
     private List<string> crab = new List<string>
     {
@@ -81,7 +120,12 @@ public class CrabNameGenerator : MonoBehaviour
         "Taxi Crab",
         "Clawdette",
         "Crusty Shawn",
-        "Crabstopher"
+        "Crabstopher",
+        "Newton",
+        "Kale",
+        "Callum",
+        "Mona",
+        "Clyde"
     };
     private List<string> shrimp = new List<string>
     {
@@ -92,7 +136,18 @@ public class CrabNameGenerator : MonoBehaviour
         "Ryan",
         "Crusty Shawn",
         "Granny",
-        "Gramps"
+        "Gramps",
+        "Amphie",
+        "Newton",
+        "Pinky",
+        "Smolo",
+        "Avogadro",
+        "Callum",
+        "Bait",
+        "Spabloo",
+        "Gobo",
+        "Loto",
+        "Rin"
     };
     private List<string> lobster = new List<string>
     {
@@ -104,7 +159,12 @@ public class CrabNameGenerator : MonoBehaviour
         "Lord Clawington III",
         "Clawdette",
         "Crusty Shawn",
-        "Lobber"
+        "Lobber",
+        "Newton",
+        "Kale",
+        "Callum",
+        "Mona",
+        "Clyde"
     };
     private List<string> hermit = new List<string>
     {
@@ -119,14 +179,29 @@ public class CrabNameGenerator : MonoBehaviour
         "Crusty Shawn",
         "Hermie",
         "Rocky",
-        "Crabstopher"
+        "Crabstopher",
+        "Newton",
+        "Kale",
+        "Callum",
+        "Mona",
+        "Clyde",
+        "Avogadro",
+        "Socrates",
+        "Plato"
     };
     private List<string> seamonkeys = new List<string>
     {
         "Cray",
         "Bubbles",
         "Sallies",
-        "Mimimimimi"
+        "Mimimimimi",
+        "Bait",
+        "Spabloo",
+        "Gobo",
+        "Loto",
+        "Pinky",
+        "Amphie",
+        "The Time Keepers",
     };
 
     private List<string> isopod = new List<string>
@@ -136,7 +211,16 @@ public class CrabNameGenerator : MonoBehaviour
         "Sheldon",
         "Limul",
         "Molt",
-        "Clay"
+        "Clay",
+        "Newton",
+        "Avogadro",
+        "The Depth's Judge",
+        "Socrates",
+        "Plato",
+        "Echo",
+        "The Time Keeper",
+        "Mona",
+        "Clyde"
     };
 
     private List<string> tall = new List<string>
@@ -148,7 +232,14 @@ public class CrabNameGenerator : MonoBehaviour
         "Taxi Crab",
         "Clawdette",
         "Crusty Shawn",
-        "Crabstopher"
+        "Crabstopher",
+        "Loto",
+        "Rin",
+        "Dewy",
+        "Bran",
+        "Echo",
+        "Mona",
+        "Clyde"
     };
 
     private List<string> ghost = new List<string>
@@ -160,10 +251,121 @@ public class CrabNameGenerator : MonoBehaviour
         "Taxi Crab",
         "Clawdette",
         "Crusty Shawn",
-        "Crabstopher"
+        "Crabstopher",
+        "Echo"
     };
 
-    private List<string> allNames;
+    private List<string> ittybitty = new List<string>
+    {
+        "Fiddley",
+        "Podrick",
+        "Kale",
+        "Callum",
+        "Itty Bitty",
+        "Henry",
+        "Benjamin",
+        "Maxie",
+        "Oliver",
+        "Nikki"
+    };
+    private List<string> amphipod = new List<string>
+    {
+        "Molt",
+        "Fiddley",
+        "Brac",
+        "Rab",
+        "Cara",
+        "Braxius",
+        "Depo",
+        "Cragglin",
+        "Clay",
+        "Dringle",
+        "Lilik",
+        "Axl",
+        "Avogadro",
+        "Plato",
+        "Stoy",
+        "Callum",
+        "Loto",
+        "Rin",
+        "Bran",
+        "Echo",
+        "Clyde"
+    };
+    private List<string> axolotl = new List<string>
+    {
+        "Podrick",
+        "Brac",
+        "Rab",
+        "Cara",
+        "Portia",
+        "Clay",
+        "Lilik",
+        "Finn",
+        "Axl",
+        "Axie",
+        "Amphie",
+        "Newton",
+        "Pinky",
+        "Smolo",
+        "Avogadro",
+        "Socrates",
+        "Plato",
+        "Stoy",
+        "Callum",
+        "Spabloo",
+        "Gobo",
+        "Rin",
+        "Dewy",
+        "Bran",
+        "Echo",
+        "Mona",
+        "Clyde",
+        "Jeemo"
+    };
+    private List<string> conch = new List<string>
+    {
+        "Shelly",
+        "Molt",
+        "Depo",
+        "Honshoo",
+        "Cragglin",
+        "Dringle",
+        "Socrates",
+        "Plato",
+        "Sheldon"
+    };
+    private List<string> seaSheep = new List<string>
+    {
+        "Bethy",
+        "Fleece",
+        "Hector",
+        "Rosie",
+        "Fluffy",
+        "Millie",
+        "Dolly",
+    };
+
+    private List<string> fish = new List<string>
+    {
+        "Podrick",
+        "Brac",
+        "Rab",
+        "Cara",
+        "Finn",
+        "Kale",
+        "Callum",
+        "Bait",
+        "Spabloo",
+        "Gobo",
+        "Loto",
+        "Rin",
+        "Dewy",
+        "Bran",
+        "Mona"
+    };
+    private Dictionary<CrabInfo.CrabType, List<string>> nameDictionary;
+
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -175,78 +377,45 @@ public class CrabNameGenerator : MonoBehaviour
             instance = this;
         }
 
-        allNames = general.Concat(catfish)
-                          .Concat(horseshoe)
-                          .Concat(horseshoe)
-                          .Concat(coquette)
-                          .Concat(crab)
-                          .Concat(shrimp)
-                          .Concat(lobster)
-                          .Concat(hermit)
-                          .Concat(isopod)
-                          .Concat(tall)
-                          .Concat(ghost).ToList();
+        nameDictionary = new Dictionary<CrabInfo.CrabType, List<string>>()
+        {
+            { CrabInfo.CrabType.catfish, catfish },
+            { CrabInfo.CrabType.horseshoe, horseshoe },
+            { CrabInfo.CrabType.scopeCreep, scopeCreep },
+            { CrabInfo.CrabType.coquette, coquette },
+            { CrabInfo.CrabType.crab, crab },
+            { CrabInfo.CrabType.shrimp, shrimp },
+            { CrabInfo.CrabType.lobster, lobster },
+            { CrabInfo.CrabType.hermit, hermit },
+            { CrabInfo.CrabType.seamonkeys, seamonkeys },
+            { CrabInfo.CrabType.isopod, isopod },
+            { CrabInfo.CrabType.ghost, ghost },
+            { CrabInfo.CrabType.isopodTiny, isopod },
+            { CrabInfo.CrabType.ittybitty, ittybitty },
+            { CrabInfo.CrabType.amphipod, amphipod },
+            { CrabInfo.CrabType.axolotl, axolotl },
+            { CrabInfo.CrabType.conch, conch },
+            { CrabInfo.CrabType.seaSheep, seaSheep },
+            { CrabInfo.CrabType.pillbug, isopod },
+            { CrabInfo.CrabType.tall, tall },
+            { CrabInfo.CrabType.fish, fish }
+        };
     }
 
     public string GetNameByType(CrabInfo.CrabType type)
     {
-
-        if (type == CrabInfo.CrabType.catfish && Random.Range(0, 3) <= 2)
+        if (Random.Range(0, 3) <= 2)
         {
-            return catfish[Random.Range(0, catfish.Count)];
+            int idx = Random.Range(0, nameDictionary[type].Count);
+            return nameDictionary[type][idx];
         }
-        else if (type == CrabInfo.CrabType.horseshoe && Random.Range(0, 3) <= 2)
-        {
-            return horseshoe[Random.Range(0, horseshoe.Count)];
-        }
-        else if (type == CrabInfo.CrabType.scopeCreep && Random.Range(0, 3) <= 2)
-        {
-            return scopeCreep[Random.Range(0, scopeCreep.Count)];
-        }
-        else if (type == CrabInfo.CrabType.coquette && Random.Range(0, 3) <= 2)
-        {
-            return coquette[Random.Range(0, coquette.Count)];
-        }
-        else if (type == CrabInfo.CrabType.crab && Random.Range(0, 3) <= 2)
-        {
-            return crab[Random.Range(0, crab.Count)];
-        }
-        else if (type == CrabInfo.CrabType.shrimp && Random.Range(0, 3) <= 2)
-        {
-            return shrimp[Random.Range(0, shrimp.Count)];
-        }
-        else if (type == CrabInfo.CrabType.lobster && Random.Range(0, 3) <= 2)
-        {
-            return lobster[Random.Range(0, lobster.Count)];
-        }
-        else if (type == CrabInfo.CrabType.hermit && Random.Range(0, 3) <= 2)
-        {
-            return hermit[Random.Range(0, hermit.Count)];
-        }
-        else if (type == CrabInfo.CrabType.seamonkeys && Random.Range(0, 3) <= 2)
-        {
-            return seamonkeys[Random.Range(0, seamonkeys.Count)];
-        }
-        else if (type == CrabInfo.CrabType.isopod && Random.Range(0, 3) <= 2)
-        {
-            return isopod[Random.Range(0, isopod.Count)];
-        }
-        else if (type == CrabInfo.CrabType.ghost && Random.Range(0, 3) <= 2)
-        {
-            return ghost[Random.Range(0, ghost.Count)];
-        }
-        else if (type == CrabInfo.CrabType.tall && Random.Range(0, 3) <= 2)
-        {
-            return tall[Random.Range(0, tall.Count)];
-        }
-        else
-        {
-            return general[Random.Range(0, general.Count)];
-        }
+            
+        // fallback
+        return general[Random.Range(0, general.Count)];
     }
 
     public string GetAnyName()
     {
-        return allNames[Random.Range(0, allNames.Count)];
+        return general[Random.Range(0, general.Count)];
     }
 }

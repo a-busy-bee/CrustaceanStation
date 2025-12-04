@@ -23,7 +23,11 @@ public class CrabInfo : ScriptableObject
 		isopodTiny,
 		ittybitty,
 		amphipod,
-		axolotl
+		axolotl,
+		conch,
+		seaSheep,
+		pillbug,
+		fish
 	}
 
 	public CrabType type;

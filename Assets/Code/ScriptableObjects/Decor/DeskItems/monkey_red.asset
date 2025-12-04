@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: monkey_red
   m_EditorClassIdentifier: Assembly-CSharp::DecorItems
   sprite: {fileID: 21300000, guid: 190be1bc95509461fa93fbfd3d9891d9, type: 3}
-  isTopItem: 1
+  iconSprite: {fileID: 21300000, guid: e362f208c08a34a849bb91a79030d765, type: 3}
+  isRemoveItem: 0
   cost: 20
   bought: 0
   placed: 0

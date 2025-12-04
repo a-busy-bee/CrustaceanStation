@@ -105,7 +105,7 @@ TextureImporter:
         width: 618
         height: 761
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -114,6 +114,28 @@ TextureImporter:
       bones: []
       spriteID: 8fc6513403cbc49b19784aa56cb831c8
       internalID: 1954022915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: snail_1
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 12
+        width: 360
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb3ceecde247a4489a81acb9988862b3
+      internalID: -292516028
       vertices: []
       indices: 
       edges: []
@@ -133,6 +155,7 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       snail_0: 1954022915
+      snail_1: -292516028
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

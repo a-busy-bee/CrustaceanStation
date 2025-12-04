@@ -61,6 +61,13 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
+        if (PlayerPrefs.GetInt("newGame") == 1)
+        {
+            PlayerPrefs.SetInt("newGame", -1); // set so that it's not replayed unless progress is reset
+
+            // TODO: Play the tutorial
+        }
+
         ActivateUpgrades();
         ShowDecor();
 

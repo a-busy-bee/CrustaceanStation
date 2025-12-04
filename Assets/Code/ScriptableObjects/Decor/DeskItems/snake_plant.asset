@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: snake_plant
   m_EditorClassIdentifier: Assembly-CSharp::DecorItems
   sprite: {fileID: 1693352494, guid: 0fe540743b316483887b80cec5219548, type: 3}
+  iconSprite: {fileID: 1845802428, guid: 0fe540743b316483887b80cec5219548, type: 3}
   isRemoveItem: 0
   cost: 20
   bought: 0

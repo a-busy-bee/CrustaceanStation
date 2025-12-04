@@ -105,7 +105,7 @@ TextureImporter:
         width: 618
         height: 761
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -114,6 +114,28 @@ TextureImporter:
       bones: []
       spriteID: 4ab0585bf93a34117954f562f191e8f5
       internalID: 1670004839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teapot_1
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 25
+        width: 376
+        height: 284
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5caf177d671b047b49996b139cf8f08b
+      internalID: -1262098086
       vertices: []
       indices: 
       edges: []
@@ -133,6 +155,7 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       teapot_0: 1670004839
+      teapot_1: -1262098086
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

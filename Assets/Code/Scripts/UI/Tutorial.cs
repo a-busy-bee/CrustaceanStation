@@ -7,6 +7,8 @@ public class Tutorial : MonoBehaviour
     private int currentPage = 0;
     [SerializeField] GameObject pauseBlur;
     [SerializeField] GameObject settingsBlur;
+
+    // TODO: Turn off last page if it's not the first time
     private void Awake()
     {
         Debug.Log(currentPage);
