@@ -38,6 +38,7 @@ public class LevelManager : MonoBehaviour
     [Header("Other")]
     [SerializeField] private GameObject transparentOverlay;
     [SerializeField] private AudioManager audioManager;
+    [SerializeField] private Tutorial tutorial;
 
     // Player goals for the day
     private bool isRating = false;
@@ -66,6 +67,8 @@ public class LevelManager : MonoBehaviour
             PlayerPrefs.SetInt("newGame", -1); // set so that it's not replayed unless progress is reset
 
             // TODO: Play the tutorial
+            tutorial.gameObject.SetActive(true);
+            tutorial.Play(true);
         }
 
         ActivateUpgrades();

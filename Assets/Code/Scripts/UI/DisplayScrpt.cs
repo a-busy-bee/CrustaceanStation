@@ -112,5 +112,6 @@ public class DisplayScrpt : MonoBehaviour
     public void OnTutorial()
     {
         tutorial.SetActive(true);
+        tutorial.GetComponent<Tutorial>().Play(false);
     }
 }

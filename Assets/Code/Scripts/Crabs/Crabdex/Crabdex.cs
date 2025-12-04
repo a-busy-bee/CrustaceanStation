@@ -12,10 +12,9 @@ public class Crabdex : MonoBehaviour
 
     [SerializeField] private CrabdexEntry[] crabdexEntries;     // classification of crab
     [SerializeField] private GameObject[] contentsPageEntries;  // buttons
-
-    [SerializeField] private GameObject popup;
     [SerializeField] private GameObject crabdexContents;
     [SerializeField] private GameObject crabdexPage;
+    [SerializeField] private GameObject screenDim;
 
     private void Awake()
     {
@@ -32,7 +31,7 @@ public class Crabdex : MonoBehaviour
         if (PlayerPrefs.GetInt("ResetCrabdex") == 1)
         {
             PlayerPrefs.SetInt("ResetCrabdex", 0);
-            
+
             foreach (CrabdexEntry entry in crabdexEntries)
             {
                 entry.generalVariantDiscovered = false;
@@ -61,8 +60,6 @@ public class Crabdex : MonoBehaviour
 
     public void HasBeenDiscovered(CrabInfo crabInfo) // called when a crab approaches the kiosk
     {
-        bool newDiscovery = false;
-
         // loop through crabdex entries
         foreach (CrabdexEntry entry in crabdexEntries)
         {
@@ -77,7 +74,6 @@ public class Crabdex : MonoBehaviour
                         // check if this variant type has been discovered
                         if (entry.variants[i].variantName == crabInfo.variantName && !entry.variants[i].hasBeenDiscovered)
                         {
-                            newDiscovery = true;
                             //crabInfo.hasBeenDiscovered = true;
                             entry.variants[i].hasBeenDiscovered = true;
 
@@ -89,7 +85,6 @@ public class Crabdex : MonoBehaviour
                 {
                     if (!entry.generalVariantDiscovered)
                     {
-                        newDiscovery = true;
                         //crabInfo.hasBeenDiscovered = true;
                         entry.generalVariantDiscovered = true;
                     }
@@ -98,16 +93,11 @@ public class Crabdex : MonoBehaviour
                 break; // no need to loop through the rest since we've found our crab
             }
         }
-
-        // new crab discovered, show popup
-        if (newDiscovery)
-        {
-            // show popup
-        }
     }
 
     public void ShowCodex()
     {
+        screenDim.SetActive(true);
         crabdexPage.SetActive(false);
 
         // show codex starting from contents page
@@ -127,6 +117,7 @@ public class Crabdex : MonoBehaviour
         // hide codex
         crabdexPage.SetActive(false);
         crabdexContents.SetActive(false);
+        screenDim.SetActive(false);
     }
 
 }

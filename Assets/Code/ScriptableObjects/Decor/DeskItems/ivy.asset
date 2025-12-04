@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab8a143ea462606418fabc6ab5867b48, type: 3}
   m_Name: ivy
   m_EditorClassIdentifier: Assembly-CSharp::DecorItems
-  sprite: {fileID: 21300000, guid: fa3a8618614004849a3503a1272f809b, type: 3}
+  sprite: {fileID: 21300000, guid: 790d567e1c53043a48403e27a612858b, type: 3}
   iconSprite: {fileID: 21300000, guid: 40ecea7ff5aba4b47bac69f6b8d80235, type: 3}
   isRemoveItem: 0
   cost: 20
-  bought: 0
+  bought: 1
   placed: 0
