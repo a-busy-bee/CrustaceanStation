@@ -8549,11 +8549,11 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 6322bc9e4a93a074895850f1a528c453, type: 2}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 911d290de34c6467cbb18e05c52e6f49, type: 3}
+  m_Resource: {fileID: 8300000, guid: 13f090fafac0140868ae44f38d7024aa, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -20782,6 +20782,7 @@ GameObject:
   - component: {fileID: 1851375869}
   - component: {fileID: 1851375868}
   - component: {fileID: 1851375866}
+  - component: {fileID: 1851375870}
   m_Layer: 0
   m_Name: RainCamera
   m_TagString: MainCamera
@@ -20802,7 +20803,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalCameraData
   m_RenderShadows: 1
-  m_RequiresDepthTextureOption: 2
+  m_RequiresDepthTextureOption: 0
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
   m_Cameras: []
@@ -20903,6 +20904,19 @@ RectTransform:
   m_AnchoredPosition: {x: -256, y: 2}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1851375870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1851375862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24ca10886a97343e38aebbb40da3630b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraRain
+  renderTexture: {fileID: 8400000, guid: e9daeb7d436d144c1bcff9fc50b312dd, type: 2}
 --- !u!1 &1859890354
 GameObject:
   m_ObjectHideFlags: 0

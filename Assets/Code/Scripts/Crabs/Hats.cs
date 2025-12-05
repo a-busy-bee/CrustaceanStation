@@ -36,9 +36,9 @@ public class Hats : MonoBehaviour
             hat.color = color;
         }
 
-        if (Random.Range(0, 3) == 1)
+        if (Random.Range(0, 3) == 1) // only for the holidays
         {
-            hat.sprite = hatOptions[hatOptions.Count - 1];
+            hat.sprite = hatOptions[6];
 
             Color color = hat.color;
             color.a = 1;

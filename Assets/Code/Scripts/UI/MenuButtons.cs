@@ -4,7 +4,6 @@ public class MenuButtons : MonoBehaviour
 {
     [SerializeField] private GameObject settingsPanel;
     [SerializeField] private GameObject backgroundPanel;
-
     public void quitGame()
     {
         Debug.Log("Quit!");
@@ -30,6 +29,6 @@ public class MenuButtons : MonoBehaviour
 
     public void Credits()
     {
-        //SceneManager.LoadScene("Credits");
+        SceneManager.LoadScene("Credits");
     }
 }
