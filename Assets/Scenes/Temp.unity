@@ -8390,7 +8390,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 728166980}
         m_TargetAssemblyTypeName: Kiosk, Assembly-CSharp
-        m_MethodName: OnReject
+        m_MethodName: OnWait
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

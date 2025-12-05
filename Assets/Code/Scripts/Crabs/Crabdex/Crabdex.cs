@@ -56,14 +56,11 @@ public class Crabdex : MonoBehaviour
             contentsPageEntries[i].GetComponent<ContentsButton>().SetID(i);
         }
 
-
-        var entryHandle = Addressables.LoadAssetsAsync<CrabdexEntry>("CrabdexEntries", entry =>
-        {
-            crabdexEntries.Add(entry);
-        });
-
+        crabdexEntries.Clear();
+        var entryHandle = Addressables.LoadAssetsAsync<CrabdexEntry>("CrabdexEntries", null);
         yield return entryHandle;
 
+        crabdexEntries = new List<CrabdexEntry>(entryHandle.Result);
 
     }
 

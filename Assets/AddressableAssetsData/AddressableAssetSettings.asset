@@ -60,6 +60,7 @@ MonoBehaviour:
   m_BuildAddressablesWithPlayerBuild: 0
   m_overridePlayerVersion: '[UnityEditor.PlayerSettings.bundleVersion]'
   m_GroupAssets:
+  - {fileID: 11400000, guid: b3fc0b168ea5f45459b0380d625895c3, type: 2}
   - {fileID: 11400000, guid: eead02e0defb74f06b1dcb6f4e9865d0, type: 2}
   - {fileID: 11400000, guid: 906658cf44c8a49de99299a7b3d3a5a3, type: 2}
   - {fileID: 11400000, guid: 82847f94b826a4d80ad7e8075a009c9e, type: 2}
@@ -105,6 +106,7 @@ MonoBehaviour:
     - CharacterPrefabs
     - CharacterSprites
     - CrabdexEntries
+    - Hats
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: b6a69171fc1a04534a14a85b9975b82e, type: 2}

@@ -37,13 +37,14 @@ public class CrabController : MonoBehaviour
     //MISC
     private Clock clock;
     private Kiosk kiosk;
+    private Emotion emotion;
 
     void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
 
         kioskStartPos = new Vector3(-470, -500, 0);
-        kioskEndPos = new Vector3(-470, 89, 0); 
+        kioskEndPos = new Vector3(-470, 89, 0);
 
         if (crabInfo.type == CrabInfo.CrabType.scopeCreep)
         {
@@ -77,6 +78,7 @@ public class CrabController : MonoBehaviour
         rectTransform.anchoredPosition = kioskStartPos;
 
         crabInfo.crabName = CrabNameGenerator.instance.GetNameByType(crabInfo.type);
+        emotion = GetComponent<RectTransform>().Find("Emotions").GetComponent<Emotion>();
 	}
 
     public void SetCanvas(Canvas newCanvas)
@@ -173,6 +175,11 @@ public class CrabController : MonoBehaviour
     {
         return crabInfo.crabdexName;
     }
+
+    public CrabInfo.WeatherType[] GetFavoriteWeather()
+    {
+        return crabInfo.favoriteWeatherTypes;
+    }
     public string GetTrainID()
     {
         return trainID;
@@ -198,6 +205,10 @@ public class CrabController : MonoBehaviour
         Destroy(id);
     }
 
+    public void PlayEmotion(string emotionToPlay)
+    {
+        emotion.PlayEmotion(emotionToPlay);
+    }
     public void MakeAppear()
     {
         isMoving = true;

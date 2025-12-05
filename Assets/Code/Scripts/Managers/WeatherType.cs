@@ -4,6 +4,7 @@ using UnityEngine;
 public class WeatherType : ScriptableObject
 {
 	public string type;
+	public CrabInfo.WeatherType weatherType;
 
 	[Header("Foreground")]
 	public Color cloudsTop;

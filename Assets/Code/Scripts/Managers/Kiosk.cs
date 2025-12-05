@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -27,6 +28,9 @@ public class Kiosk : MonoBehaviour
     [SerializeField] private Button approveButton;
     [SerializeField] private Button rejectButton;
 
+    [Header("Wait")]
+    private List<GameObject> waitingCrabs = new List<GameObject>();
+
     private int crabSpeed = 5;
 
     private void Awake()
@@ -41,7 +45,38 @@ public class Kiosk : MonoBehaviour
 
     public void SummonCrab()
     {
-        currentCrab = Instantiate(crabSelector.ChooseCrab(), crabParentObject.transform);
+        var (chosen, chosenIdx) = crabSelector.ChooseCrab();
+        WeatherType currWeather = WeatherManager.instance.GetCurrentWeather();
+        CrabInfo.WeatherType[] chosenWeather = chosen.GetComponent<CrabController>().GetFavoriteWeather();
+
+        bool validWeather = false;
+        foreach (CrabInfo.WeatherType weatherType in chosenWeather)
+        {
+            if (weatherType == currWeather.weatherType)
+            {
+                validWeather = true;
+                break;
+            }
+        }
+
+        while (!validWeather)
+        {
+            (chosen, chosenIdx) = crabSelector.ChooseCrab();
+            currWeather = WeatherManager.instance.GetCurrentWeather();
+            chosenWeather = chosen.GetComponent<CrabController>().GetFavoriteWeather();
+            foreach (CrabInfo.WeatherType weatherType in chosenWeather)
+
+            {
+                if (weatherType == currWeather.weatherType)
+                {
+                    validWeather = true;
+                    break;
+                }
+            }
+        }
+
+        crabSelector.AddToQueue(chosenIdx);
+        currentCrab = Instantiate(chosen, crabParentObject.transform);
 
         CrabController controller = currentCrab.GetComponent<CrabController>();
         controller.SetCanvas(canvas.GetComponent<Canvas>());
@@ -56,6 +91,7 @@ public class Kiosk : MonoBehaviour
     }
     public void OnApprove()
     {
+        
         rejectButton.interactable = false;
         approveButton.interactable = false;
 
@@ -67,9 +103,10 @@ public class Kiosk : MonoBehaviour
 
         clock.SetTrainsClickable(true);
 
-        if (!currentCrab.GetComponent<CrabController>().IsValid() || !trainExists || !isCurrentCrabCrustacean) 
+        if (!currentCrab.GetComponent<CrabController>().IsValid() || !trainExists || !isCurrentCrabCrustacean)
         {
             wrong++;
+            
         }
     }
 
@@ -84,12 +121,23 @@ public class Kiosk : MonoBehaviour
             trainExists = true;
         }
 
-        if (currentCrab.GetComponent<CrabController>().IsValid() && trainExists)
+        if (currentCrab.GetComponent<CrabController>().IsValid() && trainExists && isCurrentCrabCrustacean)
         {
             wrong++;
+
+            currentCrab.GetComponent<CrabController>().PlayEmotion("any and confused");
+        }
+        else
+        {
+            currentCrab.GetComponent<CrabController>().PlayEmotion("any");
         }
 
         DisappearCrab();
+    }
+
+    public void OnWait()
+    {
+        waitingCrabs.Add(currentCrab);
     }
 
     public bool IsCrabValid()
@@ -119,15 +167,7 @@ public class Kiosk : MonoBehaviour
     }
     public void DisappearCrab()
     {
-        crabsToday++;
-        total++;
-
-        UpdateRating();
-
-        crabCountGoal.IncrementGoal(crabsToday);
-
-        currentCrab.GetComponent<CrabController>().MakeDisappear();
-        StartCoroutine(WaitAMoment());
+        StartCoroutine(WaitForAnimEnd());
     }
 
     private void UpdateRating()
@@ -146,6 +186,21 @@ public class Kiosk : MonoBehaviour
         currentCrab.GetComponent<CrabController>().MakeDisappear();
     }
 
+    private IEnumerator WaitForAnimEnd()
+    {
+        yield return new WaitForSeconds(0.5f);
+
+        crabsToday++;
+        total++;
+
+        UpdateRating();
+
+        crabCountGoal.IncrementGoal(crabsToday);
+
+        currentCrab.GetComponent<CrabController>().MakeDisappear();
+        StartCoroutine(WaitAMoment());
+
+    }
     private IEnumerator WaitAMoment()
     {
         yield return new WaitForSeconds(crabSpeed);

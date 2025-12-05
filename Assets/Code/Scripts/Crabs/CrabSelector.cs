@@ -13,25 +13,22 @@ public class CrabSelector : MonoBehaviour
 
     IEnumerator Start()
     {
-        var prefabHandle = Addressables.LoadAssetsAsync<GameObject>("CharacterPrefabs", prefab =>
-        {
-            prefabs.Add(prefab);
-        });
-
+        prefabs.Clear();
+        var prefabHandle = Addressables.LoadAssetsAsync<GameObject>("CharacterPrefabs", null);
         yield return prefabHandle;
 
-        var spriteHandle = Addressables.LoadAssetsAsync<Sprite>("CharacterSprites", sprite =>
-        {
-            sprites.Add(sprite);
-        });
+        prefabs = new List<GameObject>(prefabHandle.Result);
 
+        sprites.Clear();
+        var spriteHandle = Addressables.LoadAssetsAsync<Sprite>("CharacterSprites", null);
         yield return spriteHandle;
+
+        sprites = new List<Sprite>(spriteHandle.Result);
     }
 
-    public GameObject ChooseCrab()
+    public (GameObject, int) ChooseCrab()
     {
         int chosenCrabIdx = Random.Range(0, prefabs.Count);
-        //idxsChosenRecently.Add(chosenCrabIdx);
 
         if (idxsChosenRecently.Count == 15)
         {
@@ -40,8 +37,7 @@ public class CrabSelector : MonoBehaviour
 
         if (!idxsChosenRecently.Exists(i => i == chosenCrabIdx))
         {
-            idxsChosenRecently.Add(chosenCrabIdx);
-            return prefabs[chosenCrabIdx];
+            return (prefabs[chosenCrabIdx], chosenCrabIdx);
         }
         else
         {
@@ -50,9 +46,13 @@ public class CrabSelector : MonoBehaviour
                 chosenCrabIdx = Random.Range(0, prefabs.Count);
             }
 
-            idxsChosenRecently.Add(chosenCrabIdx);
-            return prefabs[chosenCrabIdx];
+            return (prefabs[chosenCrabIdx], chosenCrabIdx);
         }
+    }
+
+    public void AddToQueue(int idx)
+    {
+        idxsChosenRecently.Add(idx);
     }
 
     public Sprite ChooseSprite()
