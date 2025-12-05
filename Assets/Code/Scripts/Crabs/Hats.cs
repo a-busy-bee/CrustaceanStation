@@ -35,5 +35,14 @@ public class Hats : MonoBehaviour
             color.a = 0;
             hat.color = color;
         }
+
+        if (Random.Range(0, 3) == 1)
+        {
+            hat.sprite = hatOptions[hatOptions.Count - 1];
+
+            Color color = hat.color;
+            color.a = 1;
+            hat.color = color;
+        }
     }
 }
