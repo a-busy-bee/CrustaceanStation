@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.Analytics;
+using UnityEngine.UI;
 
 public class Clock : MonoBehaviour
 {
@@ -11,11 +11,11 @@ public class Clock : MonoBehaviour
     // CLOCK INFO
     // day is 8am to 8pm, each hour is 2 minutes
     private int startTime = 0;
-    private int endTime = 12;
+    private int endTime = 24;
     private int currentTime = 0;
-    private float rotateAmount = 30.0f;
+    private float rotateAmount = 15.0f;
     [SerializeField] private float rotDuration = 1.0f;
-
+    [SerializeField] private Image fill;
 
     // TRAIN INFO
     [SerializeField] private GameObject trainPrefab;
@@ -43,6 +43,8 @@ public class Clock : MonoBehaviour
         {
             instance = this;
         }
+
+        fill.fillAmount = 0;
     }
     private void AddTrains()
     {
@@ -126,7 +128,7 @@ public class Clock : MonoBehaviour
     {
         if (currentTrains.Count == 0)
         {
-            return "A1";
+            return "none";
         }
         return currentTrains[Random.Range(0, currentTrains.Count)].GetID();
     }
@@ -188,7 +190,7 @@ public class Clock : MonoBehaviour
                 yield return WaitThenSummonCrabs();
             }
 
-            yield return new WaitForSeconds(50f);            // CHANGES HOW FAST THE CLOCK MOVES
+            yield return new WaitForSeconds(7.5f);            // CHANGES HOW FAST THE CLOCK MOVES
 
             // rotate clock hand
             yield return RotateHand();
@@ -196,7 +198,7 @@ public class Clock : MonoBehaviour
 
             CheckTrains();
 
-            if (currentTime % 3 == 0) // chance to change weather every 3 hours
+            if (currentTime % 2 == 0) // chance to change weather every 2 hours
             {
                 WeatherManager.instance.ChangeWeather();
             }
@@ -262,15 +264,20 @@ public class Clock : MonoBehaviour
         Quaternion startRot = clockHand.transform.rotation;
         Quaternion endRot = startRot * Quaternion.Euler(0, 0, -rotateAmount);
 
+        float startFill = fill.fillAmount;
+        float endFill = startFill + (rotateAmount / 360.0f);
+
         float elapsed = 0f;
         while (elapsed < rotDuration)
         {
             clockHand.transform.rotation = Quaternion.Slerp(startRot, endRot, elapsed / rotDuration);
+            fill.fillAmount = Mathf.Lerp(startFill, endFill, elapsed / rotDuration);
             elapsed += Time.deltaTime;
             yield return null;
         }
 
         clockHand.transform.rotation = endRot;
+        fill.fillAmount = endFill;
 
     }
 
@@ -288,8 +295,7 @@ public class Clock : MonoBehaviour
             if (currentTrains.Count == 0)
             {
                 SetTrainsClickable(false);
-                kiosk.OnReject();
-
+                kiosk.EnableButtons();
                 isSelectingTrain = false;
             }
         }

@@ -163,6 +163,11 @@ public class CrabController : MonoBehaviour
         {
             trainID = clock.GetRandomCurrentTrainID();
 
+            if (trainID == "none")
+            {
+                trainID = ticket.GetComponent<Ticket>().GetRandomTrainID();
+            }
+
         }
         ticket.GetComponent<Ticket>().SetTrainID(trainID);
 
