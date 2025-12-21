@@ -483,8 +483,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Clock
   rotDuration: 1
   fill: {fileID: 1932063820}
-  trainPrefab: {fileID: 1275598292169338475, guid: 923d1f532bea94e438968bd67f597a00, type: 3}
-  trainParent: {fileID: 1186851180}
   clockHand: {fileID: 2146684423}
   kiosk: {fileID: 728166980}
 --- !u!1 &50939476
@@ -13312,9 +13310,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0
+    y: 0.0499458
     width: 1
-    height: 1
+    height: 0.9001084
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -16681,6 +16679,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LevelManager
   clock: {fileID: 49544119}
   kiosk: {fileID: 728166980}
+  trainPrefab: {fileID: 1275598292169338475, guid: 923d1f532bea94e438968bd67f597a00, type: 3}
+  trainParent: {fileID: 1186851180}
   pauseMenu: {fileID: 5841282443364214792, guid: 619a19cf8b084b14badb6a03bd352f25, type: 3}
   goalRating: {fileID: 128804150}
   ratingGoalScript: {fileID: 988069017}

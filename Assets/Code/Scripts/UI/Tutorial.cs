@@ -82,9 +82,13 @@ public class Tutorial : MonoBehaviour
             pages[currentPage].SetActive(true);
             Time.timeScale = 1;
         }
-        
-        
+
         gameObject.SetActive(false);
+
+        if (SceneManager.GetActiveScene().name == "Temp" && LevelManager.instance.lmState == LevelManager.LMState.Setup)
+        {
+            LevelManager.instance.SetState(LevelManager.LMState.Game);
+        }
     }
 
     public void SetSettingsBlur()

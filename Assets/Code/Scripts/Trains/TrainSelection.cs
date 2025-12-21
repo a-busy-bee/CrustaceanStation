@@ -3,17 +3,21 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 public class TrainSelection : MonoBehaviour, IPointerClickHandler
 {
+    private TrainController trainController;
+    private Kiosk kiosk;
+
+    // CART CONTROLS
     private bool isClickable = false;
     private bool isFull = false;
-    private Kiosk kiosk;
-    private Clock clock;
+    
+    // CART TYPE
+    [SerializeField] private Cart cartInfo;
 
+    // VISUALS
     [SerializeField] private Image spriteRenderer;
     [SerializeField] private Sprite filled;
-    private TrainController trainController;
 
-    // CART INFO
-    [SerializeField] private Cart cartInfo;
+    
 
     public void SetThisClickable(bool newIsClickable)
     {
@@ -75,7 +79,7 @@ public class TrainSelection : MonoBehaviour, IPointerClickHandler
             }
 
             // disappear crab
-            kiosk.DisappearCrab();
+            kiosk.SetState(Kiosk.KioskState.CrabLeaving);
 
             // add to how many coins the train has collected 
             trainController.AddToCrabsOnTrain(cartInfo.ticketCost);
@@ -83,7 +87,7 @@ public class TrainSelection : MonoBehaviour, IPointerClickHandler
             // show that cart is full
             spriteRenderer.sprite = filled;
 
-            Clock.instance.SetTrainsClickable(false);
+            LevelManager.instance.SetTrainsClickable(false);
             isFull = true;
         }
     }

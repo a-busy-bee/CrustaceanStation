@@ -44,7 +44,7 @@ public class DisplayScrpt : MonoBehaviour
 
                 if (LevelManager.instance != null)
                 {
-                    LevelManager.instance.OnResume();
+                    LevelManager.instance.SetState(LevelManager.LMState.Game);
                 }
             }
             Debug.Log(paused);
@@ -79,7 +79,7 @@ public class DisplayScrpt : MonoBehaviour
                     // stop the clock! 
                     if (LevelManager.instance != null)
                     {
-                        LevelManager.instance.OnPause();
+                        LevelManager.instance.SetState(LevelManager.LMState.Paused);
                     }
                 }
             }
