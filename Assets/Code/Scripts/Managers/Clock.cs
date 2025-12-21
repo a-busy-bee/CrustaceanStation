@@ -101,4 +101,8 @@ public class Clock : MonoBehaviour
         kiosk.SetState(Kiosk.KioskState.Empty);
     }
 
+    public int GetCurrentTime()
+    {
+        return currentTime;
+    }
 }

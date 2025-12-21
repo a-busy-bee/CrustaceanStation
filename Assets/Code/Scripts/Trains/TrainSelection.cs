@@ -89,6 +89,8 @@ public class TrainSelection : MonoBehaviour, IPointerClickHandler
 
             LevelManager.instance.SetTrainsClickable(false);
             isFull = true;
+
+            trainController.CheckIfFull();
         }
     }
 

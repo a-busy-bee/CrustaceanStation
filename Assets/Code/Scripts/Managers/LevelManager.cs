@@ -18,7 +18,8 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private GameObject trainPrefab;    // train head
     [SerializeField] private GameObject trainParent;
     private List<TrainController> currentTrains = new List<TrainController>();  // trains currently at the station
-    private List<GameObject>[] allTrains;                                       // all scheduled trains
+    //private List<GameObject>[] allTrains;                                       // all scheduled trains
+    private GameObject[] trackManager;  // null = no train on track, !null = train on track
     private int numActiveTracks = 1;
 
 
@@ -155,7 +156,7 @@ public class LevelManager : MonoBehaviour
 
                     foreach (TrainController train in currentTrains)
                     {
-                        train.SetState(TrainController.TrainState.Arriving);
+                        train.SetState(TrainController.TrainState.Departing);
                     }
 
                     // show prefab
@@ -239,131 +240,64 @@ public class LevelManager : MonoBehaviour
         UpdateNumTracks(trackCount + 1);
     }
 
-    private void InitTrains()
+    private GameObject GenerateTrain(int trainID)
     {
-        bool startingTrain = false;    // is there a train that arrives before the first crab does?
-
-        // goes through all of the trainIDs (lines) and fills it with disjoint trains
-        for (int i = 0; i < numActiveTracks; i++)
-        {
-            allTrains[i] = AddTrainsToLine(i + 1);
-            if (allTrains[i][0].GetComponent<TrainController>().IsStartTime0())
-            {
-                startingTrain = true;
-            }
-        }
-
-        if (!startingTrain)
-        {
-            allTrains[Random.Range(0, numActiveTracks)][0].GetComponent<TrainController>().SetArrivalTime();
-        }
-    }
-
-    private List<GameObject> AddTrainsToLine(int trainID)
-    {
-        List<GameObject> trainsInLine = new List<GameObject>();
-
-        int arrival = Random.Range(0, 2);
-        int timeSpent = Random.Range(1, 3);         // time spent at station
-
-        if (PlayerPrefs.GetInt("numTracks") == 0)
-        {
-            timeSpent = 1;
-        }
+        int arrival = clock.GetCurrentTime(); // new start time
+        int timeSpent = Random.Range(3, 6); // TODO: make longer trains stay in station longer?
 
         int departure = arrival + timeSpent;
 
+        if (departure > Constants.CLOCK_END_TIME)                // latest departure time, so we're done here
+        {
+            departure = Constants.CLOCK_END_TIME;
+        }
+
         GameObject train = Instantiate(trainPrefab, trainParent.transform);
+
         train.SetActive(true);
         train.GetComponent<TrainController>().SetKiosk(kiosk);
         train.GetComponent<TrainController>().InitTrain(arrival, departure, trainID);
-        trainsInLine.Add(train);
 
-        int prevDeparture = departure;
-        bool doneWithThisID = false;
+        return train;
+    }
 
-        while (!doneWithThisID)                     // while there is still time for more trains
+    private void InitTrains()
+    {
+        // goes through all of the trainIDs (lines) and generate first train
+        for (int i = 0; i < numActiveTracks; i++)
         {
-            arrival = prevDeparture + 1; // new start time
-            timeSpent = Random.Range(1, 3);
-
-            if (PlayerPrefs.GetInt("numTracks") == 0)
-            {
-                timeSpent = 1;
-            }
-
-            departure = arrival + timeSpent;
-
-            if (departure > Constants.CLOCK_END_TIME)                // latest departure time, so we're done here
-            {
-                departure = Constants.CLOCK_END_TIME;
-                doneWithThisID = true;
-            }
-            else if (departure >= (Constants.CLOCK_END_TIME - 3))    // not enough time for another train, so we're done here
-            {
-                doneWithThisID = true;
-            }
-
-            train = Instantiate(trainPrefab, trainParent.transform);
-            train.SetActive(true);
-            
-            train.GetComponent<TrainController>().SetKiosk(kiosk);
-            train.GetComponent<TrainController>().InitTrain(arrival, departure, trainID);
-            
-            trainsInLine.Add(train);
-
-            prevDeparture = departure;
+            trackManager[i] = GenerateTrain(i + 1);
+            StartCoroutine(WaitThenArriveTrain(trackManager[i]));
         }
-
-        return trainsInLine;
     }
 
     public void CheckTrains(int currentTime)
     {
-        List<int> removeIndex = new List<int>();
-
         // checks for new arrivals and departures
-        foreach (List<GameObject> trainID in allTrains)
+        for (int i = 0; i < trackManager.Length; i++)
         {
-            for (int i = 0; i < trainID.Count; i++)
+            GameObject train = trackManager[i];
+
+            TrainController controller = train.GetComponent<TrainController>();
+            if (controller != null)
             {
-                GameObject train = trainID[i];
-                if (train == null) { continue; } // all trains have departed on this line, so we can skip it
-
-                TrainController controller = train.GetComponent<TrainController>();
-                if (controller != null)
+                if (currentTime == controller.GetDepartureTime() - 1)
                 {
-                    if (currentTime == controller.GetArrivalTime())
-                    {
-                        currentTrains.Add(controller);
-                        controller.SetState(TrainController.TrainState.Arriving);
-
-                        if (kiosk.kioskState == Kiosk.KioskState.CrabApproved)
-                        {
-                            controller.SetState(TrainController.TrainState.Boarding);
-                        }
-                    }
-                    else if (currentTime == controller.GetDepartureTime())
-                    {
-                        currentTrains.Remove(controller);
-                        removeIndex.Add(i);
-                        controller.SetState(TrainController.TrainState.Departing);
-                    }
-                    else if (currentTime == controller.GetDepartureTime() - 1)
-                    {
-                        controller.AboutToDepartAlert();
-                    }
-
+                    controller.AboutToDepartAlert();
                 }
 
             }
 
-            foreach (int index in removeIndex)
-            {
-                trainID.RemoveAt(index);
-            }
-            removeIndex.Clear();
         }
+    }
+
+    public void RemoveCurrentTrain(TrainController controller)
+    {  
+        currentTrains.Remove(controller);
+
+        int id = controller.GetTrainLine();
+        trackManager[id - 1] = GenerateTrain(id);
+        StartCoroutine(WaitThenArriveTrain(trackManager[id - 1]));
     }
 
     public string GetRandomCurrentTrainID()
@@ -374,7 +308,10 @@ public class LevelManager : MonoBehaviour
         }
         return currentTrains[Random.Range(0, currentTrains.Count)].GetID();
     }
-
+    public int GetCartQuality()
+    {
+        return PlayerPrefs.GetInt("cartQuality");
+    }
     public Cart.Type GetRandomCurrentCartType()
     {
         if (currentTrains.Count == 0)
@@ -402,19 +339,20 @@ public class LevelManager : MonoBehaviour
         {
             if (allowClick)
             {
-                train.SetState(TrainController.TrainState.Boarding);
+                train.SetBoarding(true);
             }
             else
             {
-                train.SetState(TrainController.TrainState.NotBoarding);
+                train.SetBoarding(false);
             }
             
         }
     }
 
-    public void UpdateNumTracks(int tracks)
+    private void UpdateNumTracks(int tracks)
     {
-        allTrains = new List<GameObject>[tracks];
+        //allTrains = new List<GameObject>[tracks];
+        trackManager = new GameObject[tracks];
         numActiveTracks = tracks;
     }
 
@@ -447,9 +385,18 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    public int GetCartQuality()
+    private IEnumerator WaitThenArriveTrain(GameObject train)
     {
-        return PlayerPrefs.GetInt("cartQuality");
+        yield return new WaitForSeconds(Random.Range(1, 3));
+
+        TrainController controller = train.GetComponent<TrainController>();
+
+        if (controller != null)
+        {
+            currentTrains.Add(controller);
+            controller.SetState(TrainController.TrainState.Arriving);
+        }
+        
     }
 
 }

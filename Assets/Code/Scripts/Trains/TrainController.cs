@@ -52,6 +52,7 @@ public class TrainController : MonoBehaviour
         Departed        // train is offscreen
     }
     public TrainState trainState { get; private set; }
+    bool boardAfterArrival = false;
 
 
 
@@ -117,7 +118,9 @@ public class TrainController : MonoBehaviour
                 
             case TrainState.Departed:
                 {
-                    Destroy(this);
+                    LevelManager.instance.RemoveCurrentTrain(this);
+
+                    Destroy(gameObject);
                 }
                 break;
         }
@@ -176,7 +179,6 @@ public class TrainController : MonoBehaviour
             trainSelections.Add(selection);
 
             // set kiosk
-            Debug.Log(kiosk);
             selection.SetKiosk(kiosk);
             selection.SetController(this);
         }
@@ -207,6 +209,10 @@ public class TrainController : MonoBehaviour
     {
         kiosk = newKiosk;
     }
+    public int GetTrainLine()
+    {
+        return trainInfo.trainID;
+    }
     public string GetID()
     {
         return trainID;
@@ -220,11 +226,20 @@ public class TrainController : MonoBehaviour
     }
     public void AboutToDepartAlert()
     {
-        isAlerting = true;
-        StartCoroutine(Alert());
+        if (!isAlerting)
+        {
+            isAlerting = true;
+            StartCoroutine(Alert());
+        }
     }
 
-
+    public void CheckIfFull()
+    {
+        if (IsTrainFull())
+        {
+            AboutToDepartAlert();
+        }
+    }
     public void AddToCrabsOnTrain(int ticketCost)
     {
         coins += ticketCost;
@@ -236,6 +251,8 @@ public class TrainController : MonoBehaviour
         {
             case TrainState.Arriving:
                 {
+                    Debug.Log(trainInfo.trainID + " " + trainTransform.anchoredPosition.y + "  -285f");
+
                     // move train down from offscreen
                     trainTransform.anchoredPosition = Vector3.SmoothDamp(trainTransform.anchoredPosition, startingPosDepart, ref currentVelocity, 0.5f);
 
@@ -255,14 +272,15 @@ public class TrainController : MonoBehaviour
 
             case TrainState.Departing:
                 {
+                    Debug.Log(trainInfo.trainID + " " + trainTransform.anchoredPosition.y + "  -285f");
+
                     // move train down from onscreen
                     trainTransform.anchoredPosition = Vector3.SmoothDamp(trainTransform.anchoredPosition, endPosDepart, ref currentVelocity, 0.5f);
 
-                    if (Vector2.Distance(trainTransform.anchoredPosition, endPosDepart) < 0.1f)
+                    if (Vector2.Distance(trainTransform.anchoredPosition, endPosDepart) < 100f)
                     {
                         SetState(TrainState.Departed);
                     }
-
                 }
                 break;
         }
@@ -278,6 +296,23 @@ public class TrainController : MonoBehaviour
                 yield return new WaitForSeconds(0.5f);
                 alertObject.SetActive(false);
                 yield return new WaitForSeconds(0.5f);
+            }
+        }
+
+        SetState(TrainState.Departing);
+    }
+
+    public void SetBoarding(bool isBoarding)
+    {
+        if (trainState == TrainState.NotBoarding || trainState == TrainState.Boarding)
+        {
+            if (isBoarding)
+            {
+                SetState(TrainState.Boarding);
+            }
+            else
+            {
+                SetState(TrainState.NotBoarding);
             }
         }
     }

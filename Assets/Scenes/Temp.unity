@@ -8000,14 +8000,12 @@ MonoBehaviour:
   clock: {fileID: 49544119}
   crabParentObject: {fileID: 460184287}
   ticketParentObject: {fileID: 1931240438}
-  canvas: {fileID: 728166974}
   coinCountText: {fileID: 1692852620}
   ratingGoal: {fileID: 988069017}
   crabCountGoal: {fileID: 1569839516}
   approveButton: {fileID: 632948970}
   rejectButton: {fileID: 948339231}
   waitButton: {fileID: 749285105}
-  waitingCrabs: []
 --- !u!1 &732722036
 GameObject:
   m_ObjectHideFlags: 0
@@ -13310,9 +13308,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.0499458
+    y: 0.050000012
     width: 1
-    height: 0.9001084
+    height: 0.9
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
