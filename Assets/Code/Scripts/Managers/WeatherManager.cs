@@ -18,6 +18,8 @@ public class WeatherManager : MonoBehaviour
     [Header("Rain Particle Systems")]
     [SerializeField] private ParticleSystem darkRainParticles;
     [SerializeField] private ParticleSystem lightRainParticles;
+    [SerializeField] private ParticleSystem darkRainParticlesBkg;
+    [SerializeField] private ParticleSystem lightRainParticlesBkg;
 
     [Header("Fog")]
     [SerializeField] private GameObject fogOverlay;
@@ -59,7 +61,6 @@ public class WeatherManager : MonoBehaviour
 
         // choose random state
         int startingWeather = Random.Range(0, 4);
-        startingWeather = 2;
         WeatherType startingType = types[startingWeather];
         currentType = startingType;
 
@@ -80,10 +81,13 @@ public class WeatherManager : MonoBehaviour
             if (startingType.rainType == WeatherType.RainType.light)
             {
                 lightRainParticles.Play();
+                lightRainParticlesBkg.Play();
             }
             else if (startingType.rainType == WeatherType.RainType.dark)
             {
                 darkRainParticles.Play();
+                darkRainParticlesBkg.Play();
+                
             }
         }
     }
@@ -105,8 +109,6 @@ public class WeatherManager : MonoBehaviour
         {
             MakeRainy();
         }
-
-        MakeRainy();
     }
 
     private void MakeSunny()
@@ -118,11 +120,14 @@ public class WeatherManager : MonoBehaviour
         if (currentType.rainType == WeatherType.RainType.light)
         {
             lightRainParticles.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+            lightRainParticlesBkg.Stop(true, ParticleSystemStopBehavior.StopEmitting);
         }
         else
         {
             darkRainParticles.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+            darkRainParticlesBkg.Stop(true, ParticleSystemStopBehavior.StopEmitting);
             lightRainParticles.Play();
+            lightRainParticlesBkg.Play();
             newWeather = 1;
         }
 
@@ -143,11 +148,13 @@ public class WeatherManager : MonoBehaviour
         if (typeOfRain == 0)
         {
             lightRainParticles.Play();
+            lightRainParticlesBkg.Play();
             typeOfRain = 1;
         }
         else
         {
             darkRainParticles.Play();
+            darkRainParticlesBkg.Play();
             typeOfRain = 2;
         }
         currentType = types[typeOfRain];

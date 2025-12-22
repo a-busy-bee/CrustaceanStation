@@ -38,8 +38,14 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: UI
+  - name: BackgroundUI
+    uniqueID: 3915382945
+    locked: 0
+  - name: Rain
     uniqueID: 3953704331
+    locked: 0
+  - name: ForegroundUI
+    uniqueID: 3465113639
     locked: 0
   - name: Default
     uniqueID: 0
