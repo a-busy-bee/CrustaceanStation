@@ -54,7 +54,7 @@ public class Ticket : MonoBehaviour
         rectTransform.rotation = Quaternion.Euler(0, 0, -28.8f);
 
         // move position
-        rectTransform.anchoredPosition = new Vector3(-363, -335, 64);
+        rectTransform.anchoredPosition = new Vector3(-445, -419.2f, 0);
 
         // remove blur
         blur.SetActive(true);
@@ -66,7 +66,7 @@ public class Ticket : MonoBehaviour
         rectTransform.rotation = Quaternion.Euler(0, 0, 0);
 
         // move position
-        rectTransform.anchoredPosition = new Vector3(-373f, -361.2999f, 44.85482f);
+        rectTransform.anchoredPosition = new Vector3(-384, -450.8f, 44.85482f);
 
         // remove blur
         blur.SetActive(false);

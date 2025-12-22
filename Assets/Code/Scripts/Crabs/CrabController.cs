@@ -27,7 +27,6 @@ public class CrabController : MonoBehaviour
     private Vector3 kioskEndPos; // where we want the crab to be when it's at the kiosk
     private Vector3 kioskStartPos; // where we want the crab to pop out from when it approaches the kiosk
     private Vector3 currentVelocity;
-    private Dictionary<CrabInfo.CrabType, float> kioskEndPosY;
 
 
     //MISC
@@ -52,24 +51,7 @@ public class CrabController : MonoBehaviour
         rectTransform = GetComponent<RectTransform>();
 
         kioskStartPos = new Vector3(-470, -500, 0);
-        kioskEndPos = new Vector3(-470, 89, 0);
-
-        // some sprites need to approach at a diff y position
-        kioskEndPosY = new Dictionary<CrabInfo.CrabType, float>() {
-            { CrabInfo.CrabType.scopeCreep,     31 },
-            { CrabInfo.CrabType.catfish,        45.8f },
-            { CrabInfo.CrabType.horseshoe,      129 },
-            { CrabInfo.CrabType.isopod,         71 },
-            { CrabInfo.CrabType.seamonkeys,     111 },
-            { CrabInfo.CrabType.ittybitty,      115 },
-            { CrabInfo.CrabType.isopodTiny,     102 },
-            { CrabInfo.CrabType.hermit,         102 }
-        };
-
-        if (kioskEndPosY.ContainsKey(crabInfo.type))
-        {
-            kioskEndPos.y = kioskEndPosY[crabInfo.type];
-        }
+        kioskEndPos = new Vector3(-470, crabInfo.kioskHeight, 0);
 
         rectTransform.anchoredPosition = kioskStartPos;
 

@@ -13,8 +13,10 @@ public class Shopkeeper : MonoBehaviour, IPointerClickHandler
     private bool presented = false;
     private Animator animator;
 
+
     [Header("Tapped")]
     [SerializeField] private GameObject coin;
+    private bool isTapped = false;
 
     private void Awake()
     {
@@ -56,12 +58,13 @@ public class Shopkeeper : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        if (isTapped) return;
+
+        isTapped = true;
+
         coin.SetActive(true);
         coin.GetComponent<Coin>().Clicked();
         
         animator.SetTrigger("tapped");
-        //give player a coin
-
-        
     }
 }

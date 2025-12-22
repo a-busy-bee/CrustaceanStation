@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: linguini
   m_EditorClassIdentifier: Assembly-CSharp::CrabInfo
   sprite: {fileID: 21300000, guid: df6b0e6da4657421394c0f39117ca56e, type: 3}
+  kioskHeight: 89
   crabName: 
-  type: 11
+  type: 17
   favoriteWeatherTypes: 00000000010000000200000003000000
   crabdexName: ghost
   isVariant: 1

@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: pillbug_warm
   m_EditorClassIdentifier: Assembly-CSharp::CrabInfo
   sprite: {fileID: 21300000, guid: dddb534c4326c4ea687cb5e7aa36fc8e, type: 3}
+  kioskHeight: 89
   crabName: 
-  type: 18
+  type: 13
   favoriteWeatherTypes: 000000000100000003000000
   crabdexName: pillbug
   isVariant: 0

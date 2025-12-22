@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: catfish
   m_EditorClassIdentifier: Assembly-CSharp::CrabInfo
   sprite: {fileID: 21300000, guid: f43b2346c76f1456bb000c49dfdccd2d, type: 3}
+  kioskHeight: 45.8
   crabName: 
-  type: 0
+  type: 10
   favoriteWeatherTypes: 0100000002000000
   crabdexName: catfish
   isVariant: 0

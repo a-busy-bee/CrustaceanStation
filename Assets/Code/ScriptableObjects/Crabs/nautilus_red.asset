@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: nautilus_red
   m_EditorClassIdentifier: Assembly-CSharp::CrabInfo
   sprite: {fileID: 21300000, guid: 26c4a1189a5e64f9b8b10108ebe4eb15, type: 3}
+  kioskHeight: 89
   crabName: 
-  type: 14
+  type: 9
   favoriteWeatherTypes: 0100000002000000
   crabdexName: nautilus
   isVariant: 1

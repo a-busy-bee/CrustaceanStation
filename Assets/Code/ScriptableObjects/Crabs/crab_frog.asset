@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: crab_frog
   m_EditorClassIdentifier: Assembly-CSharp::CrabInfo
   sprite: {fileID: 21300000, guid: 88d2faebcc809400187a4b29847ad3c5, type: 3}
+  kioskHeight: 89
   crabName: 
-  type: 4
+  type: 19
   favoriteWeatherTypes: 00000000010000000200000003000000
   crabdexName: soldier
   isVariant: 1

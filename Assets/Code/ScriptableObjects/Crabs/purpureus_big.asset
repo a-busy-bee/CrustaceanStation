@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: purpureus_big
   m_EditorClassIdentifier: Assembly-CSharp::CrabInfo
   sprite: {fileID: 21300000, guid: 18ea6a763c93f4fd88a9ffed60b64cd1, type: 3}
+  kioskHeight: 102
   crabName: 
-  type: 7
+  type: 16
   favoriteWeatherTypes: 01000000020000000000000003000000
   crabdexName: purpureus
   isVariant: 1

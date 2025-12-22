@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: axolotl_golden
   m_EditorClassIdentifier: Assembly-CSharp::CrabInfo
   sprite: {fileID: 21300000, guid: 65fa5e92e306f40e69e7e40f7cfe15b6, type: 3}
+  kioskHeight: 89
   crabName: 
-  type: 15
+  type: 6
   favoriteWeatherTypes: 0100000002000000
   crabdexName: axolotl
   isVariant: 1

@@ -60,7 +60,9 @@ public class Shop : MonoBehaviour
             PlayerPrefs.SetInt("cartQuality", 0);
         }
         menu = shopMenu.shopMain;
-        transform.position = new Vector3(483, 540, 0);
+
+        GetComponent<RectTransform>().anchoredPosition = new Vector3(-472, 0, 0);
+
         ShopFns.SetActive(false);
         Upgrades.SetActive(false);
         Decor.SetActive(false);
@@ -70,9 +72,9 @@ public class Shop : MonoBehaviour
         numTracks = PlayerPrefs.GetInt("numTracks");
         crabDropRate = PlayerPrefs.GetInt("crabDropRate");
         cartQuality = PlayerPrefs.GetInt("cartQuality");
-        trackPrice = (int)(25 * (numTracks + 1)); //(Mathf.Pow(2f, (float)numTracks)));
-        crabPrice = (int)(25 * (crabDropRate + 1)); //(Mathf.Pow(2f, (float)crabDropRate)));
-        cartPrice = (int)(50 * (cartQuality + 1)); //(Mathf.Pow(2f, (float)crabDropRate)));
+        trackPrice = (int)(25 * (numTracks + 1)); 
+        crabPrice = (int)(25 * (crabDropRate + 1));
+        cartPrice = (int)(50 * (cartQuality + 1));
 
         CheckBlur();
     }
@@ -138,7 +140,7 @@ public class Shop : MonoBehaviour
         ShopFns.SetActive(false);
         Decor.SetActive(true);
         DecorBg.SetActive(true);
-        transform.position += new Vector3((transform.position.x) * 2, 0, 0);
+        GetComponent<RectTransform>().anchoredPosition = new Vector3(459, 0, 0);
     }
 
     // switch to shop main menu
@@ -160,7 +162,7 @@ public class Shop : MonoBehaviour
             Decor.SetActive(false);
             DecorBg.SetActive(false);
             //Debug.Log(transform.position.x);
-            transform.position -= new Vector3((transform.position.x) * 2 / 3, 0, 0);
+            GetComponent<RectTransform>().anchoredPosition = new Vector3(-472, 0, 0);
             //Debug.Log(transform.position.x);
             ShopMain();
         }
@@ -277,7 +279,7 @@ public class Shop : MonoBehaviour
 
         foreach (Transform image in imageChild)
         {
-            image.gameObject.GetComponent<UnityEngine.UI.Image>().color = unavailable;
+            image.gameObject.GetComponent<Image>().color = unavailable;
         }
         foreach (Transform text in textChild)
         {

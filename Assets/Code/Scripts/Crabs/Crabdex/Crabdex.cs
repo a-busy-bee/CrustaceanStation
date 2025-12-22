@@ -14,7 +14,7 @@ public class Crabdex : MonoBehaviour
 
     public static Crabdex instance { get; private set; }
 
-    [SerializeField] private List<CrabdexEntry> crabdexEntries;     // classification of crab
+    private List<CrabdexEntry> crabdexEntries;     // classification of crab
     [SerializeField] private GameObject[] contentsPageEntries;  // buttons
     [SerializeField] private GameObject crabdexContents;
     [SerializeField] private GameObject crabdexPage;
@@ -30,6 +30,20 @@ public class Crabdex : MonoBehaviour
         {
             instance = this;
         }
+    }
+
+    IEnumerator Start()
+    {
+        // set up ID for each button
+        for (int i = 0; i < contentsPageEntries.Length; i++)
+        {
+            contentsPageEntries[i].GetComponent<ContentsButton>().SetID(i);
+        }
+
+        var entryHandle = Addressables.LoadAssetsAsync<CrabdexEntry>("CrabdexEntries", null);
+        yield return entryHandle;
+
+        crabdexEntries = new List<CrabdexEntry>(entryHandle.Result);
 
         // Set all hasBeenDiscovered to false
         if (PlayerPrefs.GetInt("ResetCrabdex") == 1)
@@ -46,21 +60,6 @@ public class Crabdex : MonoBehaviour
                 }
             }
         }
-    }
-
-    IEnumerator Start()
-    {
-        // set up ID for each button
-        for (int i = 0; i < contentsPageEntries.Length; i++)
-        {
-            contentsPageEntries[i].GetComponent<ContentsButton>().SetID(i);
-        }
-
-        crabdexEntries.Clear();
-        var entryHandle = Addressables.LoadAssetsAsync<CrabdexEntry>("CrabdexEntries", null);
-        yield return entryHandle;
-
-        crabdexEntries = new List<CrabdexEntry>(entryHandle.Result);
 
     }
 
