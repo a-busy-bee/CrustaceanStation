@@ -93,6 +93,11 @@ public class DisplayScrpt : MonoBehaviour
         {
             moving = true;
             paused = false;
+
+            if (LevelManager.instance != null)
+            {
+                LevelManager.instance.SetState(LevelManager.LMState.Game);
+            }
         }
         Debug.Log(paused);
     }

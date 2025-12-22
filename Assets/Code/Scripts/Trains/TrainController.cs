@@ -251,8 +251,6 @@ public class TrainController : MonoBehaviour
         {
             case TrainState.Arriving:
                 {
-                    Debug.Log(trainInfo.trainID + " " + trainTransform.anchoredPosition.y + "  -285f");
-
                     // move train down from offscreen
                     trainTransform.anchoredPosition = Vector3.SmoothDamp(trainTransform.anchoredPosition, startingPosDepart, ref currentVelocity, 0.5f);
 
@@ -272,8 +270,6 @@ public class TrainController : MonoBehaviour
 
             case TrainState.Departing:
                 {
-                    Debug.Log(trainInfo.trainID + " " + trainTransform.anchoredPosition.y + "  -285f");
-
                     // move train down from onscreen
                     trainTransform.anchoredPosition = Vector3.SmoothDamp(trainTransform.anchoredPosition, endPosDepart, ref currentVelocity, 0.5f);
 

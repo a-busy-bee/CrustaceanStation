@@ -59,6 +59,7 @@ public class WeatherManager : MonoBehaviour
 
         // choose random state
         int startingWeather = Random.Range(0, 4);
+        startingWeather = 2;
         WeatherType startingType = types[startingWeather];
         currentType = startingType;
 
@@ -104,6 +105,8 @@ public class WeatherManager : MonoBehaviour
         {
             MakeRainy();
         }
+
+        MakeRainy();
     }
 
     private void MakeSunny()
