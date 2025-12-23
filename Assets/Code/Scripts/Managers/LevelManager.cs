@@ -38,14 +38,6 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private GameObject[] tracks;
 
 
-    [Header("Decor")]
-    [SerializeField] private DecorItems[] items;
-    [SerializeField] private DecorItems[] topDecor;
-    [SerializeField] private GameObject leftSlot;
-    [SerializeField] private GameObject rightSlot;
-    [SerializeField] private GameObject topSlot;
-
-
     // UI background 
     [Header("Other")]
     [SerializeField] private GameObject transparentOverlay;
@@ -104,7 +96,7 @@ public class LevelManager : MonoBehaviour
                     }
 
                     ActivateUpgrades();
-                    ShowDecor();
+                    kiosk.ShowDecor();
                     InitTrains();
 
                     SetState(LMState.Goal);
@@ -354,35 +346,6 @@ public class LevelManager : MonoBehaviour
         //allTrains = new List<GameObject>[tracks];
         trackManager = new GameObject[tracks];
         numActiveTracks = tracks;
-    }
-
-    private void ShowDecor()
-    {
-        int top = PlayerPrefs.GetInt("decor_top");
-        int left = PlayerPrefs.GetInt("decor_left");
-        int right = PlayerPrefs.GetInt("decor_right");
-
-        topSlot.SetActive(false);
-        leftSlot.SetActive(false);
-        rightSlot.SetActive(false);
-
-        if (top > 1)
-        {
-            topSlot.SetActive(true);
-            topSlot.GetComponent<Image>().sprite = topDecor[top].sprite;
-        }
-
-        if (left > 1)
-        {
-            leftSlot.SetActive(true);
-            leftSlot.GetComponent<Image>().sprite = items[left].sprite;
-        }
-
-        if (right > 1)
-        {
-            rightSlot.SetActive(true);
-            rightSlot.GetComponent<Image>().sprite = items[right].sprite;
-        }
     }
 
     private IEnumerator WaitThenArriveTrain(GameObject train)

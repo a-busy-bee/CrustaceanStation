@@ -7,21 +7,22 @@ public class Kiosk : MonoBehaviour
 {
     [SerializeField] private Clock clock;
     //private bool isOpen = false;
-    
+
 
     // CURRENT CRAB
     private GameObject currentCrab;
     private bool isCurrentCrabCrustacean = false;
     private CrabSelector crabSelector;
     private int crabSpeed = 5;
-    
+    private float crabPositionInKiosk = -470;
+
 
     [Header("Kiosk Objects")]
     [SerializeField] private GameObject crabParentObject; // in scene hierarchy: canvas > crabs
     [SerializeField] private GameObject ticketParentObject;
     [SerializeField] private TextMeshProUGUI coinCountText;
 
-    
+
     [Header("Goals")]
     [SerializeField] private RatingGoal ratingGoal;
     [SerializeField] private CrabCountGoal crabCountGoal;
@@ -34,27 +35,17 @@ public class Kiosk : MonoBehaviour
     [SerializeField] private Button approveButton;
     [SerializeField] private Button rejectButton;
     [SerializeField] private Button waitButton;
-    //private bool isCrabBeingProcessed = false;
 
 
-    /*// WAITING
-    [System.Serializable]
-    public struct WaitingCrab
-    {
-        public GameObject crab;
-        public int id;
-
-        public WaitingCrab(GameObject newCrab, int newID)
-        {
-            crab = newCrab;
-            id = newID;
-        }
-    }
-
-    [Header("Wait")]
-    public List<WaitingCrab> waitingCrabs = new List<WaitingCrab>();
-    private bool isWaiting;
-    //private int currentCrabIdx; // for waiting crabs, ignore for now*/
+    [Header("Decor")]
+    [SerializeField] private GameObject kioskChildren;
+    [SerializeField] private GameObject kioskImage;
+    [SerializeField] private KioskStyle[] kioskStyles;
+    [SerializeField] private DecorItems[] items;
+    [SerializeField] private DecorItems[] topDecor;
+    [SerializeField] private GameObject leftSlot;
+    [SerializeField] private GameObject rightSlot;
+    [SerializeField] private GameObject topSlot;
 
     public enum KioskState
     {
@@ -188,32 +179,6 @@ public class Kiosk : MonoBehaviour
 
     private void SummonCrab()
     {
-        /*if (isCrabBeingProcessed) return;
-        isCrabBeingProcessed = true;
-
-        isWaiting = false;
-
-        // check that the weather for that crab is valid
-        WeatherType currWeather = WeatherManager.instance.GetCurrentWeather();
-
-        var (chosen, chosenIdx) = crabSelector.ChooseCrab(); // failsafe in case there are no valid waiting crabs
-
-        foreach (WaitingCrab waitingCrab in waitingCrabs)  // check if there are any new trains that waiting crabs can board
-        {
-            if (CheckWeather(waitingCrab.crab, currWeather)) // check if this waiting crab is cool with the current weather
-            {
-                CrabController crabController = waitingCrab.crab.GetComponent<CrabController>();
-
-                if (clock.CheckTrainIDValidity(crabController.GetTrainID()))
-                {
-                    chosen = waitingCrab.crab;
-                    chosenIdx = waitingCrab.id;
-                    break;
-                }
-            }
-
-        }
-        */
         WeatherType currWeather = WeatherManager.instance.GetCurrentWeather();
         var (chosen, chosenIdx) = crabSelector.ChooseCrab();
 
@@ -265,31 +230,6 @@ public class Kiosk : MonoBehaviour
     {
         SetState(KioskState.CrabRejected);
     }
-
-    /*public void OnWait()
-    {
-        DisableButtons();
-
-        isWaiting = true;
-
-        WaitingCrab crab = new WaitingCrab (currentCrab, currentCrabIdx);
-        waitingCrabs.Add(crab);
-
-        if (!currentCrab.GetComponent<CrabController>().IsValid() || !isCurrentCrabCrustacean)
-        {
-            wrong++;
-        }
-
-        crabsToday++;
-        total++;
-
-        UpdateRating();
-
-        crabCountGoal.IncrementGoal(crabsToday);
-
-        currentCrab.GetComponent<CrabController>().SetState(CrabController.CrabState.Waiting);
-        StartCoroutine(WaitAMoment());
-    }*/
 
     private IEnumerator WaitForAnimEnd()
     {
@@ -360,6 +300,11 @@ public class Kiosk : MonoBehaviour
         return crabsToday;
     }
 
+    public float GetCrabPositionInKiosk()
+    {
+        return crabPositionInKiosk;
+    }
+
     public void EnableButtons()
     {
         rejectButton.interactable = true;
@@ -371,6 +316,42 @@ public class Kiosk : MonoBehaviour
         rejectButton.interactable = false;
         approveButton.interactable = false;
         waitButton.interactable = false;
+    }
+
+    // DECOR
+    public void ShowDecor()
+    {
+        KioskStyle kioskStyle = kioskStyles[PlayerPrefs.GetInt("kioskStyle")];
+        int top = PlayerPrefs.GetInt("decor_top");
+        int left = PlayerPrefs.GetInt("decor_left");
+        int right = PlayerPrefs.GetInt("decor_right");
+
+        topSlot.SetActive(false);
+        leftSlot.SetActive(false);
+        rightSlot.SetActive(false);
+
+        if (top > 1)
+        {
+            topSlot.SetActive(true);
+            topSlot.GetComponent<Image>().sprite = topDecor[top].sprite;
+        }
+
+        if (left > 1)
+        {
+            leftSlot.SetActive(true);
+            leftSlot.GetComponent<Image>().sprite = items[left].sprite;
+        }
+
+        if (right > 1)
+        {
+            rightSlot.SetActive(true);
+            rightSlot.GetComponent<Image>().sprite = items[right].sprite;
+        }
+
+        kioskImage.GetComponent<Image>().sprite = kioskStyle.sprite;
+        kioskImage.GetComponent<RectTransform>().anchoredPosition = new Vector3(kioskStyle.position.x, kioskStyle.position.y, 0);
+        kioskChildren.GetComponent<RectTransform>().anchoredPosition = new Vector3(kioskStyle.positionChildren.x, kioskStyle.positionChildren.y, 0);
+        crabPositionInKiosk = kioskStyle.crabposition;
     }
 
 }

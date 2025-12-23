@@ -50,13 +50,16 @@ public class CrabController : MonoBehaviour
     {
         rectTransform = GetComponent<RectTransform>();
 
-        kioskStartPos = new Vector3(-470, -500, 0);
-        kioskEndPos = new Vector3(-470, crabInfo.kioskHeight, 0);
-
-        rectTransform.anchoredPosition = kioskStartPos;
-
         crabInfo.crabName = CrabNameGenerator.instance.GetNameByType(crabInfo.type);
         emotion = GetComponent<RectTransform>().Find("Emotions").GetComponent<Emotion>();
+    }
+
+    private void Start()
+    {
+        kioskStartPos = new Vector3(kiosk.GetCrabPositionInKiosk(), -500, 0);
+        kioskEndPos = new Vector3(kiosk.GetCrabPositionInKiosk(), crabInfo.kioskHeight, 0);
+
+        rectTransform.anchoredPosition = kioskStartPos;
     }
 
     // State machine go brrrrr

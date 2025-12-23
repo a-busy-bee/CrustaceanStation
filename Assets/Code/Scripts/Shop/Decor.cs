@@ -54,7 +54,7 @@ public class Decor : MonoBehaviour
 
     private void Awake()
     {
-        PlayerPrefs.SetInt("coins", 1000);
+        //PlayerPrefs.SetInt("coins", 1000);
         // TODO: if reset in settings, reset playerprefs & scriptable objects (like crabdex)
         if (PlayerPrefs.GetInt("ResetDecor") == 1)
         {
