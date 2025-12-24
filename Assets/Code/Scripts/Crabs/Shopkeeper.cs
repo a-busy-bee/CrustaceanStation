@@ -4,6 +4,7 @@ using UnityEngine.EventSystems;
 
 public class Shopkeeper : MonoBehaviour, IPointerClickHandler
 {
+    [SerializeField] private Shop shop;
     [SerializeField] private GameObject wares;
     [SerializeField] private RectTransform rectTransform;
     private bool isMoving = false;
@@ -12,8 +13,10 @@ public class Shopkeeper : MonoBehaviour, IPointerClickHandler
     private bool presented = false;
     private Animator animator;
 
+
     [Header("Tapped")]
     [SerializeField] private GameObject coin;
+    private bool isTapped = false;
 
     private void Awake()
     {
@@ -48,18 +51,20 @@ public class Shopkeeper : MonoBehaviour, IPointerClickHandler
 
     private void PresentWares()
     {
+        if (shop.GetCurrentMenu() != Shop.shopMenu.shopMain) return;
         //show all buttons
         wares.SetActive(true);
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        if (isTapped) return;
+
+        isTapped = true;
+
         coin.SetActive(true);
         coin.GetComponent<Coin>().Clicked();
         
         animator.SetTrigger("tapped");
-        //give player a coin
-
-        
     }
 }

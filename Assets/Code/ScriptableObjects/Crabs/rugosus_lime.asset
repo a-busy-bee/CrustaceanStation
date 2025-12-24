@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: rugosus_lime
   m_EditorClassIdentifier: Assembly-CSharp::CrabInfo
   sprite: {fileID: 21300000, guid: 4c7a294fa8eee4e2fbda1ee5a40b902a, type: 3}
+  kioskHeight: 102
   crabName: 
-  type: 7
+  type: 16
   favoriteWeatherTypes: 00000000010000000200000003000000
   crabdexName: tawny
   isVariant: 0

@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: LightRain
   m_EditorClassIdentifier: Assembly-CSharp::WeatherType
   type: lightRain
+  weatherType: 1
   cloudsTop: {r: 0.3019608, g: 0.3019608, b: 0.3019608, a: 0.4745098}
   backgroundTop: {r: 0, g: 0, b: 0, a: 0.5254902}
   cloudsBottom: {r: 0.3019608, g: 0.3019608, b: 0.3019608, a: 1}
   backgroundBottom: {r: 0.5647059, g: 0.5647059, b: 0.5647059, a: 1}
+  isFoggy: 0
   isRainy: 1
   rainType: 1

@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: itty_bitty
   m_EditorClassIdentifier: Assembly-CSharp::CrabInfo
   sprite: {fileID: 21300000, guid: c5d83dd39705c4911bfdcb127b4aea4f, type: 3}
+  kioskHeight: 115
   crabName: 
-  type: 13
+  type: 1
   favoriteWeatherTypes: 00000000010000000200000003000000
   crabdexName: ittybitty
   isVariant: 0

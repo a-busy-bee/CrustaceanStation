@@ -1,95 +1,247 @@
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 public class Kiosk : MonoBehaviour
 {
-    private CrabSelector crabSelector;
-    private GameObject currentCrab;
     [SerializeField] private Clock clock;
+    //private bool isOpen = false;
 
+
+    // CURRENT CRAB
+    private GameObject currentCrab;
+    private bool isCurrentCrabCrustacean = false;
+    private CrabSelector crabSelector;
+    private int crabSpeed = 5;
+    private float crabPositionInKiosk = -470;
+
+
+    [Header("Kiosk Objects")]
     [SerializeField] private GameObject crabParentObject; // in scene hierarchy: canvas > crabs
     [SerializeField] private GameObject ticketParentObject;
-    [SerializeField] private GameObject canvas;
-
     [SerializeField] private TextMeshProUGUI coinCountText;
-    private bool isOpen = false;
 
-    private int crabsToday = 0;
-    private float wrong = 0f;
-    private int total = 0;
 
     [Header("Goals")]
     [SerializeField] private RatingGoal ratingGoal;
     [SerializeField] private CrabCountGoal crabCountGoal;
+    private int crabsToday = 0;
+    private float wrong = 0f;
+    private int total = 0;
+
 
     [Header("Buttons")]
     [SerializeField] private Button approveButton;
     [SerializeField] private Button rejectButton;
+    [SerializeField] private Button waitButton;
 
-    private int crabSpeed = 5;
+
+    [Header("Decor")]
+    [SerializeField] private GameObject kioskChildren;
+    [SerializeField] private GameObject kioskImage;
+    [SerializeField] private KioskStyle[] kioskStyles;
+    [SerializeField] private DecorItems[] items;
+    [SerializeField] private DecorItems[] topDecor;
+    [SerializeField] private GameObject leftSlot;
+    [SerializeField] private GameObject rightSlot;
+    [SerializeField] private GameObject topSlot;
+
+    public enum KioskState
+    {
+        NotOpenYet,         // before the start of the day
+        Empty,              // a crab hasn't walked up to the kiosk yet
+        CrabPresent,        // crab has presented its ID & ticket for review
+        CrabApproved,       // crab has been approved & is selecting train
+        CrabWaiting,        // crab has been told to wait
+        CrabRejected,       // crab has been rejected
+        CrabLeaving,        // crab is leaving 
+        EndOfDay            // day is over, close kiosk
+    }
+    public KioskState kioskState { get; private set; }
 
     private void Awake()
     {
-        rejectButton.interactable = false;
-        approveButton.interactable = false;
+        SetState(KioskState.NotOpenYet);
 
-        crabSelector = GetComponent<CrabSelector>();
-        coinCountText.text = PlayerPrefs.GetInt("coins").ToString();
-        SetCrabSpeedUpgrade();
+        PlayerPrefs.SetInt("kioskStyle", 1);
     }
 
-    public void SummonCrab()
+    // state machine go brrrrr
+    public void SetState(KioskState newState)
     {
-        currentCrab = Instantiate(crabSelector.ChooseCrab(), crabParentObject.transform);
+        KioskState prevState = kioskState;
+        kioskState = newState;
+
+        switch (kioskState)
+        {
+            case KioskState.NotOpenYet:
+                {
+                    DisableButtons();
+
+                    crabSelector = GetComponent<CrabSelector>();
+                    coinCountText.text = PlayerPrefs.GetInt("coins").ToString();
+                    SetCrabSpeedUpgrade();
+                }
+                break;
+
+            case KioskState.Empty:
+                {
+                    if (prevState != KioskState.NotOpenYet)
+                    {
+                        StartCoroutine(WaitBeforeSummon());
+                    }
+                    else
+                    {
+                        SummonCrab();
+                    }
+                }
+                break;
+
+            case KioskState.CrabPresent:
+                {
+                    EnableButtons();
+                }
+                break;
+
+            case KioskState.CrabApproved:
+                {
+                    DisableButtons();
+                    bool trainExists = false;
+                    if (LevelManager.instance.CheckTrainIDValidity(currentCrab.GetComponent<CrabController>().GetTrainID()))
+                    {
+                        trainExists = true;
+                    }
+
+                    LevelManager.instance.SetTrainsClickable(true);
+
+                    if (!currentCrab.GetComponent<CrabController>().IsValid() || !trainExists || !isCurrentCrabCrustacean)
+                    {
+                        wrong++;
+                    }
+                }
+                break;
+
+            case KioskState.CrabWaiting:
+                {
+                    //DisableButtons();
+                    //SetState(KioskState.CrabLeaving);
+
+                    // do nothing for now
+                }
+                break;
+
+            case KioskState.CrabRejected:
+                {
+                    DisableButtons();
+
+                    bool trainExists = false;
+                    if (LevelManager.instance.CheckTrainIDValidity(currentCrab.GetComponent<CrabController>().GetTrainID()))
+                    {
+                        trainExists = true;
+                    }
+
+                    if (currentCrab.GetComponent<CrabController>().IsValid() && trainExists && isCurrentCrabCrustacean)
+                    {
+                        wrong++;
+
+                        currentCrab.GetComponent<CrabController>().SetState(CrabController.CrabState.Emoting, "any and confused");
+                    }
+                    else
+                    {
+                        currentCrab.GetComponent<CrabController>().SetState(CrabController.CrabState.Emoting, "any");
+                    }
+
+                    StartCoroutine(WaitForAnimEnd());
+                }
+                break;
+
+            case KioskState.CrabLeaving:
+                {
+                    crabsToday++;
+                    total++;
+
+                    UpdateRating();
+
+                    crabCountGoal.IncrementGoal(crabsToday);
+
+                    currentCrab.GetComponent<CrabController>().SetState(CrabController.CrabState.Leaving);
+
+                    SetState(KioskState.Empty);
+                }
+                break;
+
+            case KioskState.EndOfDay:
+                {
+                    currentCrab.GetComponent<CrabController>().SetState(CrabController.CrabState.Leaving);
+                }
+                break;
+        }
+    }
+
+    private void SummonCrab()
+    {
+        WeatherType currWeather = WeatherManager.instance.GetCurrentWeather();
+        var (chosen, chosenIdx) = crabSelector.ChooseCrab();
+
+        bool validWeather = CheckWeather(chosen, currWeather);
+
+        while (!validWeather)   // check if the chosen crab is cool with the current weather
+        {
+            (chosen, chosenIdx) = crabSelector.ChooseCrab();
+            validWeather = CheckWeather(chosen, currWeather);
+        }
+
+        crabSelector.AddToQueue(chosenIdx);
+        currentCrab = Instantiate(chosen, crabParentObject.transform);
+        //currentCrabIdx = chosenIdx;
 
         CrabController controller = currentCrab.GetComponent<CrabController>();
-        controller.SetCanvas(canvas.GetComponent<Canvas>());
+        //controller.SetCanvas(canvas.GetComponent<Canvas>());
         controller.SetCrabSelector(crabSelector);
         controller.SetClockAndKiosk(clock, this);
         controller.SetTicketAndIDParentObject(ticketParentObject);
-        controller.MakeAppear();
+        controller.SetState(CrabController.CrabState.Summoned);
 
         Crabdex.instance.HasBeenDiscovered(controller.GetCrabInfo()); // crabdex!!!
+
+        isCurrentCrabCrustacean = Crabdex.instance.IsCrustacean(controller.GetCrabdexName());
     }
+
+    private bool CheckWeather(GameObject crab, WeatherType currWeather)
+    {
+        CrabInfo.WeatherType[] chosenWeather = crab.GetComponent<CrabController>().GetFavoriteWeather();
+
+        foreach (CrabInfo.WeatherType weatherType in chosenWeather)
+        {
+            if (weatherType == currWeather.weatherType)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     public void OnApprove()
     {
-        rejectButton.interactable = false;
-        approveButton.interactable = false;
-
-        bool trainExists = false;
-        if (clock.CheckTrainIDValidity(currentCrab.GetComponent<CrabController>().GetTrainID()))
-        {
-            trainExists = true;
-        }
-
-        clock.SetTrainsClickable(true);
-
-        if (!currentCrab.GetComponent<CrabController>().IsValid() || !trainExists)
-        {
-            //Debug.Log("approve, wrong");
-            wrong++;
-        }
+        SetState(KioskState.CrabApproved);
     }
 
     public void OnReject()
     {
-        rejectButton.interactable = false;
-        approveButton.interactable = false;
+        SetState(KioskState.CrabRejected);
+    }
 
-        bool trainExists = false;
-        if (clock.CheckTrainIDValidity(currentCrab.GetComponent<CrabController>().GetTrainID()))
-        {
-            trainExists = true;
-        }
-
-        if (currentCrab.GetComponent<CrabController>().IsValid() && trainExists)
-        {
-            //Debug.Log("reject, wrong");
-            wrong++;
-        }
-
-        DisappearCrab();
+    private IEnumerator WaitForAnimEnd()
+    {
+        yield return new WaitForSeconds(0.5f);
+        SetState(KioskState.CrabLeaving);
+    }
+    private IEnumerator WaitBeforeSummon()
+    {
+        yield return new WaitForSeconds(crabSpeed);
+        SummonCrab();
     }
 
     public bool IsCrabValid()
@@ -99,13 +251,11 @@ public class Kiosk : MonoBehaviour
 
     public void DowngradedCart()
     {
-        //Debug.Log("downgraded");
-        wrong+=0.5f;
+        wrong += 0.5f;
     }
 
     public void UpgradedCart()
     {
-        //Debug.Log("upgraded");
         total++;
     }
 
@@ -120,45 +270,9 @@ public class Kiosk : MonoBehaviour
         coinCountText.text = PlayerPrefs.GetInt("coins").ToString();
     }
 
-    public void DisappearCrab()
-    {
-        crabsToday++;
-        total++;
-
-        UpdateRating();
-
-        crabCountGoal.IncrementGoal(crabsToday);
-
-        currentCrab.GetComponent<CrabController>().MakeDisappear();
-        StartCoroutine(WaitAMoment());
-    }
-
     private void UpdateRating()
     {
         ratingGoal.UpdateRating((total - wrong) / (float)total);
-    }
-
-    public void OpenKiosk()
-    {
-        isOpen = true;
-    }
-
-    public void CloseKiosk()
-    {
-        isOpen = false;
-        currentCrab.GetComponent<CrabController>().MakeDisappear();
-    }
-
-    private IEnumerator WaitAMoment()
-    {
-        yield return new WaitForSeconds(crabSpeed);
-
-        Destroy(currentCrab);
-
-        if (isOpen)
-        {
-            SummonCrab();
-        }
     }
 
     public void SetCrabSpeedUpgrade()
@@ -188,16 +302,58 @@ public class Kiosk : MonoBehaviour
         return crabsToday;
     }
 
+    public float GetCrabPositionInKiosk()
+    {
+        return crabPositionInKiosk;
+    }
+
     public void EnableButtons()
     {
         rejectButton.interactable = true;
         approveButton.interactable = true;
+        waitButton.interactable = true;
     }
-
     public void DisableButtons()
     {
         rejectButton.interactable = false;
         approveButton.interactable = false;
+        waitButton.interactable = false;
+    }
+
+    // DECOR
+    public void ShowDecor()
+    {
+        KioskStyle kioskStyle = kioskStyles[PlayerPrefs.GetInt("kioskStyle")];
+        int top = PlayerPrefs.GetInt("decor_top");
+        int left = PlayerPrefs.GetInt("decor_left");
+        int right = PlayerPrefs.GetInt("decor_right");
+
+        topSlot.SetActive(false);
+        leftSlot.SetActive(false);
+        rightSlot.SetActive(false);
+
+        if (top > 1)
+        {
+            topSlot.SetActive(true);
+            topSlot.GetComponent<Image>().sprite = topDecor[top].sprite;
+        }
+
+        if (left > 1)
+        {
+            leftSlot.SetActive(true);
+            leftSlot.GetComponent<Image>().sprite = items[left].sprite;
+        }
+
+        if (right > 1)
+        {
+            rightSlot.SetActive(true);
+            rightSlot.GetComponent<Image>().sprite = items[right].sprite;
+        }
+
+        kioskImage.GetComponent<Image>().sprite = kioskStyle.sprite;
+        kioskImage.GetComponent<RectTransform>().anchoredPosition = new Vector3(kioskStyle.position.x, kioskStyle.position.y, 0);
+        kioskChildren.GetComponent<RectTransform>().anchoredPosition = new Vector3(kioskStyle.positionChildren.x, kioskStyle.positionChildren.y, 0);
+        crabPositionInKiosk = kioskStyle.crabposition;
     }
 
 }

@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: shrimp_drowned
   m_EditorClassIdentifier: Assembly-CSharp::CrabInfo
   sprite: {fileID: 21300000, guid: 8016ad7fc1404421bab35344af080264, type: 3}
+  kioskHeight: 89
   crabName: 
-  type: 5
+  type: 18
   favoriteWeatherTypes: 00000000010000000200000003000000
   crabdexName: shrimp
   isVariant: 0

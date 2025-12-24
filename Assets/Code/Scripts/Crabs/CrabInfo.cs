@@ -4,26 +4,32 @@ using UnityEngine;
 public class CrabInfo : ScriptableObject
 {
 	public Sprite sprite;
+	public float kioskHeight = 89;
 	public string crabName; // individual name ie Crusty Shawn
 
 	public enum CrabType // for naming purposes
 	{
-		catfish,
-		horseshoe,
-		scopeCreep,
-		coquette,
-		crab,
-		shrimp,
-		lobster,
-		hermit,
-		seamonkeys,
-		isopod,
-		tall,
-		ghost,
-		isopodTiny,
-		ittybitty,
-		amphipod,
-		axolotl
+		Multiple,
+		IttyBitty,
+		SeaSheep,
+		ScopeCreep,
+		BlueLobster,
+		Coquette,
+		Axolotl,
+		Conch,
+		Horseshoe,
+		Nautilus,
+		Catfish,
+		Fish,
+		Pillbug,
+		Isopod,
+		Amphipod,
+		Lobster,
+		Hermit,
+		Ghost,
+		Shrimp,
+		Crab,
+		Tall
 	}
 
 	public CrabType type;

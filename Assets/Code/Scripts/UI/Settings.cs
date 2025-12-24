@@ -36,6 +36,7 @@ public class Settings : MonoBehaviour
     public void OnTutorial()
     {
         tutorial.SetActive(true);
+        tutorial.GetComponent<Tutorial>().Play(false);
         tutorial.GetComponent<Tutorial>().SetSettingsBlur();
     }
 
@@ -48,6 +49,8 @@ public class Settings : MonoBehaviour
     {
         PlayerPrefs.DeleteAll();
         PlayerPrefs.SetInt("ResetCrabdex", 1);
+        PlayerPrefs.SetInt("ResetDecor", 1);
+        PlayerPrefs.SetInt("kioskStyle", 1);
         areYouSurePanel.SetActive(false);
     }
 

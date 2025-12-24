@@ -8,16 +8,18 @@ public class WeatherManager : MonoBehaviour
     private WeatherType currentType;
 
     [Header("Foreground")]
-	[SerializeField] private Image cloudsTop;
-	[SerializeField] private Image backgroundTop;
+    [SerializeField] private Image cloudsTop;
+    [SerializeField] private Image backgroundTop;
 
-	[Header("Background")]
-	[SerializeField] private Image cloudsBottom;
-	[SerializeField] private Image backgroundBottom;
+    [Header("Background")]
+    [SerializeField] private Image cloudsBottom;
+    [SerializeField] private Image backgroundBottom;
 
     [Header("Rain Particle Systems")]
     [SerializeField] private ParticleSystem darkRainParticles;
     [SerializeField] private ParticleSystem lightRainParticles;
+    [SerializeField] private ParticleSystem darkRainParticlesBkg;
+    [SerializeField] private ParticleSystem lightRainParticlesBkg;
 
     [Header("Fog")]
     [SerializeField] private GameObject fogOverlay;
@@ -79,10 +81,13 @@ public class WeatherManager : MonoBehaviour
             if (startingType.rainType == WeatherType.RainType.light)
             {
                 lightRainParticles.Play();
+                lightRainParticlesBkg.Play();
             }
             else if (startingType.rainType == WeatherType.RainType.dark)
             {
                 darkRainParticles.Play();
+                darkRainParticlesBkg.Play();
+                
             }
         }
     }
@@ -115,11 +120,14 @@ public class WeatherManager : MonoBehaviour
         if (currentType.rainType == WeatherType.RainType.light)
         {
             lightRainParticles.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+            lightRainParticlesBkg.Stop(true, ParticleSystemStopBehavior.StopEmitting);
         }
         else
         {
             darkRainParticles.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+            darkRainParticlesBkg.Stop(true, ParticleSystemStopBehavior.StopEmitting);
             lightRainParticles.Play();
+            lightRainParticlesBkg.Play();
             newWeather = 1;
         }
 
@@ -140,11 +148,13 @@ public class WeatherManager : MonoBehaviour
         if (typeOfRain == 0)
         {
             lightRainParticles.Play();
+            lightRainParticlesBkg.Play();
             typeOfRain = 1;
         }
         else
         {
             darkRainParticles.Play();
+            darkRainParticlesBkg.Play();
             typeOfRain = 2;
         }
         currentType = types[typeOfRain];
@@ -180,7 +190,6 @@ public class WeatherManager : MonoBehaviour
 
             if (t >= 1f)
             {
-                Debug.Log("done");
                 isTransitioning = false;
                 transitionTime = 0;
                 fogOverlay.SetActive(false);
@@ -192,6 +201,11 @@ public class WeatherManager : MonoBehaviour
                 }
             }
         }
-    } 
+    }
+
+    public WeatherType GetCurrentWeather()
+    {
+        return currentType;
+    }
 
 }

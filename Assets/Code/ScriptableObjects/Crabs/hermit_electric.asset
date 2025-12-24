@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: hermit_electric
   m_EditorClassIdentifier: Assembly-CSharp::CrabInfo
   sprite: {fileID: 21300000, guid: 0292ddb48b1c04bab8af1885d27160cd, type: 3}
+  kioskHeight: 102
   crabName: 
-  type: 7
+  type: 16
   favoriteWeatherTypes: 0000000003000000
   crabdexName: blueberry
   isVariant: 1

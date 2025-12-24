@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Foggy
   m_EditorClassIdentifier: Assembly-CSharp::WeatherType
   type: foggy
+  weatherType: 3
   cloudsTop: {r: 1, g: 1, b: 1, a: 0}
   backgroundTop: {r: 0.54509807, g: 0.6901961, b: 0.7529412, a: 0.34901962}
   cloudsBottom: {r: 1, g: 1, b: 1, a: 1}

@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: armatus_strawberry
   m_EditorClassIdentifier: Assembly-CSharp::CrabInfo
   sprite: {fileID: 21300000, guid: 85f6277a3eba94c6d9c3a07a01952566, type: 3}
+  kioskHeight: 102
   crabName: 
-  type: 7
+  type: 16
   favoriteWeatherTypes: 00000000010000000200000003000000
   crabdexName: blackeye
   isVariant: 1

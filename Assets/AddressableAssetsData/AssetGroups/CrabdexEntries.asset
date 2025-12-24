@@ -1,0 +1,173 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: CrabdexEntries
+  m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
+  m_GroupName: CrabdexEntries
+  m_GUID: 4f911e6289d0a4223aaa1f0a0b3c8f0a
+  m_SerializeEntries:
+  - m_GUID: 073d8cd5554e04ea28cd944ec847a1ff
+    m_Address: Assets/Code/ScriptableObjects/CrabdexEntries/Bigclaw.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CrabdexEntries
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1fecaad1698e443a8b86b6b81c27759d
+    m_Address: Assets/Code/ScriptableObjects/CrabdexEntries/Conch.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CrabdexEntries
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 244972ac3c5a940f3871653c32855749
+    m_Address: Assets/Code/ScriptableObjects/CrabdexEntries/SeaSheep.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CrabdexEntries
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 27f75caf7255a40b78bb5b052fb153a1
+    m_Address: Assets/Code/ScriptableObjects/CrabdexEntries/Nautilus.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CrabdexEntries
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2d07fd228832947c4a6ef1549f83a53a
+    m_Address: Assets/Code/ScriptableObjects/CrabdexEntries/Lobber.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CrabdexEntries
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 30f00df90b0ff4c6fa491d3583396674
+    m_Address: Assets/Code/ScriptableObjects/CrabdexEntries/Scarf.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CrabdexEntries
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 31b3b5a63a05441ec8a261c2275a36d1
+    m_Address: Assets/Code/ScriptableObjects/CrabdexEntries/Ittybitty.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CrabdexEntries
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 56f77abda9f6c40269b1c959b05e7dd5
+    m_Address: Assets/Code/ScriptableObjects/CrabdexEntries/Seamonkey.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CrabdexEntries
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 573979b13107042d9b946ea4bea9373f
+    m_Address: Assets/Code/ScriptableObjects/CrabdexEntries/Axolotl.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CrabdexEntries
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6305328ff7080472d9fc5d1bde818407
+    m_Address: Assets/Code/ScriptableObjects/CrabdexEntries/Sardines.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CrabdexEntries
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 65d95b88ccb484a23ab53054ebaadece
+    m_Address: Assets/Code/ScriptableObjects/CrabdexEntries/Ghost.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CrabdexEntries
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 66c6d62393a57475d82283a7122b83c4
+    m_Address: Assets/Code/ScriptableObjects/CrabdexEntries/Shrimp.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CrabdexEntries
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 715f6952b7a604296baaf80d1f1fb815
+    m_Address: Assets/Code/ScriptableObjects/CrabdexEntries/Scopecreep.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CrabdexEntries
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9eb3c07e2ee284e009c224940cbac227
+    m_Address: Assets/Code/ScriptableObjects/CrabdexEntries/Flounder.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CrabdexEntries
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a15eb2dd2961a48d0b84b567c1818fe8
+    m_Address: Assets/Code/ScriptableObjects/CrabdexEntries/Tawny.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CrabdexEntries
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bf7996602f9b0412086be277e3916f0d
+    m_Address: Assets/Code/ScriptableObjects/CrabdexEntries/Amphipod.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CrabdexEntries
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c2961c8cce15940849a98d3690ce958d
+    m_Address: Assets/Code/ScriptableObjects/CrabdexEntries/Smallclaw.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CrabdexEntries
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d0ef94de657a1404ab86f86f6e897b3c
+    m_Address: Assets/Code/ScriptableObjects/CrabdexEntries/Umbrella.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CrabdexEntries
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d1b16f58b814e4cffb6c04b09c85a391
+    m_Address: Assets/Code/ScriptableObjects/CrabdexEntries/Isopod.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CrabdexEntries
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d29ef7b816d41421a9206035dc901278
+    m_Address: Assets/Code/ScriptableObjects/CrabdexEntries/Blueberry.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CrabdexEntries
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d62d80512ea10475499fda51250d8598
+    m_Address: Assets/Code/ScriptableObjects/CrabdexEntries/Catfish.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CrabdexEntries
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e0b93766c4efb4520b9e1968cd6328e3
+    m_Address: Assets/Code/ScriptableObjects/CrabdexEntries/Pillbug.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CrabdexEntries
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e1eecad68f0b7434883e5a9bddc9c244
+    m_Address: Assets/Code/ScriptableObjects/CrabdexEntries/Soldier.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CrabdexEntries
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e6d198aecbfc14ef2990af0dc7713af6
+    m_Address: Assets/Code/ScriptableObjects/CrabdexEntries/Horseshoe.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CrabdexEntries
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ea1518c3a5c79425fa42c9b4e5a11e46
+    m_Address: Assets/Code/ScriptableObjects/CrabdexEntries/Blackeye.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CrabdexEntries
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 68f053f7e443b4f2383ac9aa604bb6bd, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: c28f403da80c94187a0706671d0db1a8, type: 2}
+    - {fileID: 11400000, guid: 210fbc4a4f3e34667a8c2c176b5674ca, type: 2}

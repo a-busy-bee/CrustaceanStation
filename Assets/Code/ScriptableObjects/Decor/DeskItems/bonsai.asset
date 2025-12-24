@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab8a143ea462606418fabc6ab5867b48, type: 3}
   m_Name: bonsai
   m_EditorClassIdentifier: Assembly-CSharp::DecorItems
-  sprite: {fileID: 21300000, guid: 95f0c885bd33228438c176143c2bcc91, type: 3}
-  cost: 200
+  sprite: {fileID: -252559297, guid: ce921d5ce161b4c04b053d4f3188057c, type: 3}
+  iconSprite: {fileID: 21300000, guid: 5eabcb1a244b1475a8e3bc954b88af69, type: 3}
+  isRemoveItem: 0
+  cost: 100
   bought: 0
+  placed: 0

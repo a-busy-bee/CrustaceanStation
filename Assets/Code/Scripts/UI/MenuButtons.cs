@@ -4,7 +4,6 @@ public class MenuButtons : MonoBehaviour
 {
     [SerializeField] private GameObject settingsPanel;
     [SerializeField] private GameObject backgroundPanel;
-
     public void quitGame()
     {
         Debug.Log("Quit!");
@@ -14,6 +13,12 @@ public class MenuButtons : MonoBehaviour
     public void startGame()
     {
         SceneManager.LoadScene("Temp");
+
+        if (PlayerPrefs.GetInt("newGame") != -1)
+        {
+            PlayerPrefs.SetInt("newGame", 1);
+            PlayerPrefs.SetInt("kioskStyle", 1);
+        }
     }
 
     public void Settings()
@@ -25,6 +30,6 @@ public class MenuButtons : MonoBehaviour
 
     public void Credits()
     {
-        //SceneManager.LoadScene("Credits");
+        SceneManager.LoadScene("Credits");
     }
 }

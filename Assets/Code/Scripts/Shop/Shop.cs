@@ -30,7 +30,7 @@ public class Shop : MonoBehaviour
     [SerializeField] private TextMeshProUGUI cartPriceText;
     [SerializeField] private GameObject cartUpgradePanel;
 
-    private enum shopMenu // 1 for shop main, 2 for decor menu, 3 for upgrade menu
+    public enum shopMenu // 1 for shop main, 2 for decor menu, 3 for upgrade menu
     { 
         shopMain,
         Upgrades,
@@ -43,6 +43,7 @@ public class Shop : MonoBehaviour
     [SerializeField] private bool debug;
 
     [SerializeField] private Color unavailable; // #BFBFBF
+    [SerializeField] private Decor decor;
 
     private void Awake()
     {
@@ -59,8 +60,10 @@ public class Shop : MonoBehaviour
             PlayerPrefs.SetInt("cartQuality", 0);
         }
         menu = shopMenu.shopMain;
-        transform.position = new Vector3(483, 540, 0);
-        ShopFns.SetActive(true);
+
+        GetComponent<RectTransform>().anchoredPosition = new Vector3(-472, 0, 0);
+
+        ShopFns.SetActive(false);
         Upgrades.SetActive(false);
         Decor.SetActive(false);
         DecorBg.SetActive(false);
@@ -69,9 +72,9 @@ public class Shop : MonoBehaviour
         numTracks = PlayerPrefs.GetInt("numTracks");
         crabDropRate = PlayerPrefs.GetInt("crabDropRate");
         cartQuality = PlayerPrefs.GetInt("cartQuality");
-        trackPrice = (int)(25 * (numTracks + 1)); //(Mathf.Pow(2f, (float)numTracks)));
-        crabPrice = (int)(25 * (crabDropRate + 1)); //(Mathf.Pow(2f, (float)crabDropRate)));
-        cartPrice = (int)(50 * (cartQuality + 1)); //(Mathf.Pow(2f, (float)crabDropRate)));
+        trackPrice = (int)(25 * (numTracks + 1)); 
+        crabPrice = (int)(25 * (crabDropRate + 1));
+        cartPrice = (int)(50 * (cartQuality + 1));
 
         CheckBlur();
     }
@@ -82,12 +85,17 @@ public class Shop : MonoBehaviour
         menu = shopMenu.Upgrades;
         ShopFns.SetActive(false);
         Upgrades.SetActive(true);
+
         if (numTracks != 3)
         {
             trackPriceText.text = trackPrice.ToString();
         }
         else
         {
+            ApplyBlur(trackUpgradePanel);
+            trackPriceText.text = "";
+            trackUpgradePanel.GetComponent<RectTransform>().Find("Text").Find("Desc").GetComponent<TMP_Text>().text = "Fully Upgraded";
+            trackUpgradePanel.GetComponent<RectTransform>().Find("Images").Find("PriceIcon").gameObject.SetActive(false);
             trackUpgradePanel.GetComponent<Button>().interactable = false;
         }
 
@@ -97,6 +105,10 @@ public class Shop : MonoBehaviour
         }
         else
         {
+            ApplyBlur(crabUpgradePanel);
+            crabPriceText.text = "";
+            crabUpgradePanel.GetComponent<RectTransform>().Find("Text").Find("Desc").GetComponent<TMP_Text>().text = "Fully Upgraded";
+            crabUpgradePanel.GetComponent<RectTransform>().Find("Images").Find("PriceIcon").gameObject.SetActive(false);
             crabUpgradePanel.GetComponent<Button>().interactable = false;
         }
 
@@ -106,19 +118,29 @@ public class Shop : MonoBehaviour
         }
         else
         {
+            ApplyBlur(cartUpgradePanel);
+            cartPriceText.text = "";
+            cartUpgradePanel.GetComponent<RectTransform>().Find("Text").Find("Desc").GetComponent<TMP_Text>().text = "Fully Upgraded";
+            cartUpgradePanel.GetComponent<RectTransform>().Find("Images").Find("PriceIcon").gameObject.SetActive(false);
             cartUpgradePanel.GetComponent<Button>().interactable = false;
         }
         
     }
 
+    public shopMenu GetCurrentMenu()
+    {
+        return menu;
+    }
+
     // switch to decor menu
     public void DecorMenu()
     {
+        decor.Reset();
         menu = shopMenu.Decor;
         ShopFns.SetActive(false);
         Decor.SetActive(true);
         DecorBg.SetActive(true);
-        transform.position += new Vector3((transform.position.x)*2, 0, 0);
+        GetComponent<RectTransform>().anchoredPosition = new Vector3(459, 0, 0);
     }
 
     // switch to shop main menu
@@ -140,7 +162,7 @@ public class Shop : MonoBehaviour
             Decor.SetActive(false);
             DecorBg.SetActive(false);
             //Debug.Log(transform.position.x);
-            transform.position -= new Vector3((transform.position.x)*2/3, 0, 0);
+            GetComponent<RectTransform>().anchoredPosition = new Vector3(-472, 0, 0);
             //Debug.Log(transform.position.x);
             ShopMain();
         }
@@ -257,7 +279,7 @@ public class Shop : MonoBehaviour
 
         foreach (Transform image in imageChild)
         {
-            image.gameObject.GetComponent<UnityEngine.UI.Image>().color = unavailable;
+            image.gameObject.GetComponent<Image>().color = unavailable;
         }
         foreach (Transform text in textChild)
         {

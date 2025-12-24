@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: isopod_tiny_orange
   m_EditorClassIdentifier: Assembly-CSharp::CrabInfo
   sprite: {fileID: 21300000, guid: bacd853c65fff40b29bdf5c8af49ce55, type: 3}
+  kioskHeight: 102
   crabName: 
-  type: 12
+  type: 13
   favoriteWeatherTypes: 00000000010000000200000003000000
   crabdexName: isopod
   isVariant: 1

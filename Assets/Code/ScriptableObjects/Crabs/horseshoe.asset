@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: horseshoe
   m_EditorClassIdentifier: Assembly-CSharp::CrabInfo
   sprite: {fileID: 21300000, guid: bedc34cef839042a4bf5d4101ee200a3, type: 3}
+  kioskHeight: 129
   crabName: 
-  type: 1
+  type: 8
   favoriteWeatherTypes: 00000000010000000200000003000000
   crabdexName: horseshoe
   isVariant: 0

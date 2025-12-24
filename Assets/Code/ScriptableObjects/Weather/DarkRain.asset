@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: DarkRain
   m_EditorClassIdentifier: Assembly-CSharp::WeatherType
   type: darkRain
+  weatherType: 2
   cloudsTop: {r: 0.24705882, g: 0.24705882, b: 0.24705882, a: 0.69411767}
   backgroundTop: {r: 0, g: 0, b: 0, a: 0.6117647}
   cloudsBottom: {r: 0.3019608, g: 0.3019608, b: 0.3019608, a: 1}
   backgroundBottom: {r: 0.5176471, g: 0.5176471, b: 0.5176471, a: 1}
+  isFoggy: 0
   isRainy: 1
   rainType: 2

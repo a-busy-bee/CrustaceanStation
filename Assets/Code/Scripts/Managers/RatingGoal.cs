@@ -59,7 +59,7 @@ public class RatingGoal : MonoBehaviour
 
     public bool WasGoalAchieved()
     {
-        return rating >= goal;
+        return rating >= goalScreenSlider.value;
     }
 
     void Update()

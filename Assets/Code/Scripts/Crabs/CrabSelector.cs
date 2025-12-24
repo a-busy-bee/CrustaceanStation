@@ -1,16 +1,34 @@
 using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class CrabSelector : MonoBehaviour
 {
-    [SerializeField] private GameObject[] prefabs;
-    [SerializeField] private Sprite[] sprites;
+    public List<GameObject> prefabs;
+    public List<Sprite> sprites;
 
     private List<int> idxsChosenRecently = new List<int>();
-    public GameObject ChooseCrab()
+
+    IEnumerator Start()
     {
-        int chosenCrabIdx = Random.Range(0, prefabs.Length);
-        //idxsChosenRecently.Add(chosenCrabIdx);
+        prefabs.Clear();
+        var prefabHandle = Addressables.LoadAssetsAsync<GameObject>("CharacterPrefabs", null);
+        yield return prefabHandle;
+
+        prefabs = new List<GameObject>(prefabHandle.Result);
+
+        sprites.Clear();
+        var spriteHandle = Addressables.LoadAssetsAsync<Sprite>("CharacterSprites", null);
+        yield return spriteHandle;
+
+        sprites = new List<Sprite>(spriteHandle.Result);
+    }
+
+    public (GameObject, int) ChooseCrab()
+    {
+        int chosenCrabIdx = Random.Range(0, prefabs.Count);
 
         if (idxsChosenRecently.Count == 15)
         {
@@ -19,23 +37,26 @@ public class CrabSelector : MonoBehaviour
 
         if (!idxsChosenRecently.Exists(i => i == chosenCrabIdx))
         {
-            idxsChosenRecently.Add(chosenCrabIdx);
-            return prefabs[chosenCrabIdx];
+            return (prefabs[chosenCrabIdx], chosenCrabIdx);
         }
         else
         {
             while (idxsChosenRecently.Exists(i => i == chosenCrabIdx))
             {
-                chosenCrabIdx = Random.Range(0, prefabs.Length);
+                chosenCrabIdx = Random.Range(0, prefabs.Count);
             }
 
-            idxsChosenRecently.Add(chosenCrabIdx);
-            return prefabs[chosenCrabIdx];
+            return (prefabs[chosenCrabIdx], chosenCrabIdx);
         }
+    }
+
+    public void AddToQueue(int idx)
+    {
+        idxsChosenRecently.Add(idx);
     }
 
     public Sprite ChooseSprite()
     {
-        return sprites[Random.Range(0, sprites.Length)];
+        return sprites[Random.Range(0, sprites.Count)];
     }
 }
