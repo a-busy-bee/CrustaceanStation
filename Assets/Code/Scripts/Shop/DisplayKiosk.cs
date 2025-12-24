@@ -17,6 +17,8 @@ public class DisplayKiosk : MonoBehaviour
     [SerializeField] private GameObject leftSlot;
     [SerializeField] private GameObject rightSlot;
     [SerializeField] private GameObject topSlot;
+    [SerializeField] private GameObject kiosk;
+    [SerializeField] private GameObject kioskChildren;
     
     private void Start()
     {
@@ -59,7 +61,7 @@ public class DisplayKiosk : MonoBehaviour
             rightSlot.SetActive(false);
             rightSlotEmpty.SetActive(true);
         }
-        
+
     }
 
 
@@ -121,9 +123,12 @@ public class DisplayKiosk : MonoBehaviour
 
     }
 
-    public void DisplayKioskStyle()
+    public void DisplayKioskStyle(int idx)
     {
-
+        KioskStyle style = decor.kioskStyles[idx];
+        kiosk.GetComponent<Image>().sprite = style.sprite;
+        kiosk.GetComponent<RectTransform>().anchoredPosition = new Vector3(style.shopPosition.x, style.shopPosition.y, 0);
+        kioskChildren.GetComponent<RectTransform>().anchoredPosition = new Vector3(style.shopPositionChildren.x, style.shopPositionChildren.y, 0);
     }
 }
  

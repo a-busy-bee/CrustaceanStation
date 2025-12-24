@@ -11,10 +11,12 @@ public class Decor : MonoBehaviour
 {
     public GameObject KioskStyle, DeskItems, Next, Prev;
     public DeskManager desk;
+    public DeskManager deskKiosk;
     public DisplayKiosk displayKiosk;
     // I'm not exactly sure on how to save whether an item is bought or not across sessions without using a bunch of player.prefs...
     public DecorItems[] items;
     public DecorItems[] topDecor;
+    public KioskStyle[] kioskStyles;
     [SerializeField] private GameObject startingText;
     
 
@@ -119,7 +121,7 @@ public class Decor : MonoBehaviour
 
 	public void UpgradeKiosk()
     {
-        /*startingText.SetActive(false);
+        startingText.SetActive(false);
 
         KioskStyle.SetActive(true);
         DeskItems.SetActive(false);
@@ -127,7 +129,12 @@ public class Decor : MonoBehaviour
         pg = 1;
         DisplayPage(pg);
         
-        currentSlot = SlotType.kiosk;*/
+        currentSlot = SlotType.kiosk;
+    }
+
+    public void SelectKioskStyle(int idx)
+    {
+        displayKiosk.DisplayKioskStyle(idx);
     }
 
     // keep track of which slot we are on
@@ -192,8 +199,10 @@ public class Decor : MonoBehaviour
 
         if (type == ItemType.Kiosk) // kiosk upgrade not implemented yet
         {
+            //kioskPg = 1 + (kioskStyles.Length - 1) / 3;
             DisplayNextPrev(pg, kioskPg);
             desk.pg = pg;
+            deskKiosk.DisplayKioskStyles();
         }
         else if (type == ItemType.DeskItems) // max 2 pages rn
         {
@@ -231,7 +240,8 @@ public class Decor : MonoBehaviour
 
     public void setKioskStyle(int index) // to be implemented
     {
-        
+        PlayerPrefs.SetInt("kioskStyle", index);
+        displayKiosk.DisplayKioskStyle(index);
     }
 
     // change the item placed in the slot on the kiosk

@@ -59,5 +59,30 @@ public class DeskManager : MonoBehaviour
         }
     }
 
+    public void DisplayKioskStyles()
+    {
+        int item = 1;
+
+        foreach (Transform opt in transform)
+        {
+            int index = item % 4 + (3 * (pg - 1));
+
+            if (index >= decor.kioskStyles.Length)
+            {
+                opt.gameObject.SetActive(false);
+            }
+            else
+            {
+                opt.gameObject.SetActive(true);
+            }
+            item++;
+        }
+
+        foreach (DisplayItem opt in GetComponentsInChildren<DisplayItem>())
+        {
+            opt.DisplayKioskStyleItem(pg);
+        }
+    }
+
 }
  

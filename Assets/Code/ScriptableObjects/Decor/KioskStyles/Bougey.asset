@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8202c4e12eac64216adfead5d558d9d3, type: 3}
-  m_Name: Default
+  m_Name: Bougey
   m_EditorClassIdentifier: Assembly-CSharp::KioskStyle
-  sprite: {fileID: 1145052007, guid: 724d1190249a4415b899f4f17b29f3ce, type: 3}
-  styleName: Shabby Kiosk
-  cost: 0
-  bought: 1
-  position: {x: -478, y: 18.42}
-  positionChildren: {x: 109.72, y: -76}
-  crabposition: -470
-  shopPosition: {x: -447, y: 22.926}
-  shopPositionChildren: {x: -18.92, y: 4.167}
+  sprite: {fileID: 21300000, guid: 99ac3654fef51476cacc6a7528789bed, type: 3}
+  styleName: Bougey Kiosk
+  cost: 500
+  bought: 0
+  position: {x: -513, y: 35}
+  positionChildren: {x: 159, y: -93}
+  crabposition: -439
+  shopPosition: {x: -520, y: 37.6}
+  shopPositionChildren: {x: 40, y: -17}

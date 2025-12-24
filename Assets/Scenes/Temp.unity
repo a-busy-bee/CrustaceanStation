@@ -351,7 +351,7 @@ MonoBehaviour:
   rotDuration: 1
   fill: {fileID: 1932063820}
   clockHand: {fileID: 2146684423}
-  kiosk: {fileID: 0}
+  kiosk: {fileID: 728166980}
 --- !u!1 &50939476
 GameObject:
   m_ObjectHideFlags: 0
@@ -6837,7 +6837,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 728166980}
         m_TargetAssemblyTypeName: Kiosk, Assembly-CSharp
         m_MethodName: OnApprove
         m_Mode: 1
@@ -8082,19 +8082,23 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6b9bb0c836cdb4b33b90f21c821b2184, type: 2}
   - {fileID: 11400000, guid: b03487456ce0b40799ecaef1a61a9456, type: 2}
   items:
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 30c2a5b684faa4141aff56d3e5b642f4, type: 2}
   - {fileID: 11400000, guid: 1faaa4366ef493f488bea08f9ef3e709, type: 2}
   - {fileID: 11400000, guid: 0a093b0e1c924e84f90a7d8b03fcd2b9, type: 2}
   - {fileID: 11400000, guid: dc6544fd27e1b471daf196d0a902d33c, type: 2}
   - {fileID: 11400000, guid: 833c790d290ccd54bb255d631cbc7fe2, type: 2}
-  - {fileID: 11400000, guid: a3c03cc8fc27741e78db0f145ee96c67, type: 2}
   - {fileID: 11400000, guid: 4cd23e2d235f8b442931d1e371ee385c, type: 2}
   - {fileID: 11400000, guid: e5c5a50d6e964ab47a66c4f65e6c6ea1, type: 2}
   - {fileID: 11400000, guid: 7bd887e12bd1d8241b6ec51cf9d5bb2a, type: 2}
   - {fileID: 11400000, guid: f302dc328e2f347f998d89ecc2d4dc80, type: 2}
   topDecor:
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 30c2a5b684faa4141aff56d3e5b642f4, type: 2}
   - {fileID: 11400000, guid: 043319a7360dd41e48d12fcc573e1fbd, type: 2}
   - {fileID: 11400000, guid: f8043d0f8f6ad4aafaa63ecde95e4870, type: 2}
   - {fileID: 11400000, guid: 92dac135805754475bda31993fa10546, type: 2}
+  - {fileID: 11400000, guid: a079b6ea59d614a0e81821f7c83b2cdf, type: 2}
   leftSlot: {fileID: 742117174}
   rightSlot: {fileID: 1164846260}
   topSlot: {fileID: 1629576520}
@@ -8481,9 +8485,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 728166974}
         m_TargetAssemblyTypeName: Kiosk, Assembly-CSharp
-        m_MethodName: OnWait
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10154,7 +10158,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 728166980}
         m_TargetAssemblyTypeName: Kiosk, Assembly-CSharp
         m_MethodName: OnReject
         m_Mode: 1
@@ -16370,7 +16374,7 @@ MonoBehaviour:
   kioskText: {fileID: 568418319}
   kioskTextOther: {fileID: 1769165372}
   accomplishedText: {fileID: 523041859}
-  kiosk: {fileID: 0}
+  kiosk: {fileID: 728166980}
 --- !u!1 &1579866173
 GameObject:
   m_ObjectHideFlags: 0
@@ -24677,6 +24681,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -219.00003
       objectReference: {fileID: 0}
+    - target: {fileID: 1772381858733471594, guid: 4de3e27ee11244dfc8f80c9f950e5da8, type: 3}
+      propertyPath: tutorial
+      value: 
+      objectReference: {fileID: 215463317}
     - target: {fileID: 1772381858733471594, guid: 4de3e27ee11244dfc8f80c9f950e5da8, type: 3}
       propertyPath: backgroundDisplay
       value: 

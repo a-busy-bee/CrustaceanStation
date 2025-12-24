@@ -13,6 +13,7 @@ public class DisplayItem : MonoBehaviour
     public TextMeshProUGUI price;
     public Image priceCoin;
     public Image sprite;
+    public TextMeshProUGUI kioskStyleName;
 
     bool topDecorOpen = false;
 
@@ -31,6 +32,27 @@ public class DisplayItem : MonoBehaviour
         {
             DisplayCostAndSprite(decor.items);
         }
+    }
+
+    public void DisplayKioskStyleItem(int pg)
+    {
+        index = item % 4 + (3 * (pg - 1));
+
+        KioskStyle[] styles = decor.kioskStyles;
+
+        // show price if haven't bought yet
+        if (!styles[index].bought)
+        {
+            price.text = styles[index].cost.ToString();
+            priceCoin.enabled = true;
+        }
+        else
+        {
+            price.text = "";
+            priceCoin.enabled = false;
+        }
+
+        kioskStyleName.text = styles[index].styleName;
     }
 
     private void DisplayCostAndSprite(DecorItems[] decorItems)
@@ -59,8 +81,29 @@ public class DisplayItem : MonoBehaviour
     }
 
     public void KioskUpgrade() // to be implemented
-    { 
-        //decor.setKioskStyle(index);
+    {
+        SelectKioskStyle(decor.kioskStyles[index]);
+    }
+
+    private void SelectKioskStyle(KioskStyle style)
+    {
+        if (style.bought)
+        {
+            decor.setKioskStyle(index);
+        }
+
+        else
+        {
+            if (PlayerPrefs.GetInt("coins") >= style.cost)
+            {
+                PlayerPrefs.SetInt("coins", PlayerPrefs.GetInt("coins") - style.cost);
+                shop.coinCountText.text = PlayerPrefs.GetInt("coins").ToString();
+                style.bought = true;
+                price.text = "";
+                priceCoin.enabled = false;
+                decor.setKioskStyle(index);
+            }
+        }
     }
 
     // set the deco slot to the selected item if bought, otherwise check if we can buy -> set the deco slot, change player pref
@@ -77,7 +120,7 @@ public class DisplayItem : MonoBehaviour
     }
 
     private void Select(DecorItems item)
-    {        
+    {
         if (item.bought)
         {
             decor.setDecoSlotItem(index);
@@ -95,4 +138,5 @@ public class DisplayItem : MonoBehaviour
             }
         }
     }
+    
 }
