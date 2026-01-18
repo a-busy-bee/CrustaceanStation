@@ -28,26 +28,27 @@ public class CrabSelector : MonoBehaviour
 
     public (GameObject, int) ChooseCrab()
     {
-        int chosenCrabIdx = Random.Range(0, prefabs.Count);
+        if (idxsChosenRecently.Count >= prefabs.Count)
+        {
+            idxsChosenRecently.Clear();
+        }
 
-        if (idxsChosenRecently.Count == 15)
+        int chosenCrabIdx;
+
+        do
+        {
+            chosenCrabIdx = Random.Range(0, prefabs.Count);
+        }
+        while (idxsChosenRecently.Contains(chosenCrabIdx));
+
+        idxsChosenRecently.Add(chosenCrabIdx);
+
+        if (idxsChosenRecently.Count > 15)
         {
             idxsChosenRecently.RemoveAt(0);
         }
 
-        if (!idxsChosenRecently.Exists(i => i == chosenCrabIdx))
-        {
-            return (prefabs[chosenCrabIdx], chosenCrabIdx);
-        }
-        else
-        {
-            while (idxsChosenRecently.Exists(i => i == chosenCrabIdx))
-            {
-                chosenCrabIdx = Random.Range(0, prefabs.Count);
-            }
-
-            return (prefabs[chosenCrabIdx], chosenCrabIdx);
-        }
+        return (prefabs[chosenCrabIdx], chosenCrabIdx);
     }
 
     public void AddToQueue(int idx)

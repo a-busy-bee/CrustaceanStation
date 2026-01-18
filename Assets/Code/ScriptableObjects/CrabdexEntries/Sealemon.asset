@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc3c725a349a0491c8d75298c82f4d5e, type: 3}
+  m_Name: Sealemon
+  m_EditorClassIdentifier: Assembly-CSharp::CrabdexEntry
+  crabName: sealemon
+  formalName: Sea Lemon
+  scientificName: Dorididae
+  description: 
+  isCrustacean: 0
+  typicalSprite: {fileID: 21300000, guid: 620d08e24184548878ff0cd75a22b63a, type: 3}
+  generalVariantDiscovered: 0
+  variants:
+  - variantName: black
+    formalVariantName: Black
+    sprite: {fileID: 21300000, guid: 475c87c4fa05546e9ba47762f043ce51, type: 3}
+    hasBeenDiscovered: 0

@@ -29,7 +29,10 @@ public class CrabInfo : ScriptableObject
 		Ghost,
 		Shrimp,
 		Crab,
-		Tall
+		Tall,
+		Bird,
+		SeaLion,
+		SeaLemon
 	}
 
 	public CrabType type;
