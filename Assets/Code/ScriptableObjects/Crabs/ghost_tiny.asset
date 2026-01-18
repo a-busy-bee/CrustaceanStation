@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 78e9b5b3f91a34cb3b12441421826e1c, type: 3}
-  m_Name: rugosus_banana
+  m_Name: ghost_tiny
   m_EditorClassIdentifier: Assembly-CSharp::CrabInfo
-  sprite: {fileID: 21300000, guid: 5604c0486cf5546fdba4452639de8f81, type: 3}
-  kioskHeight: 102
+  sprite: {fileID: 21300000, guid: 9d5fb5df5624a471c8f014167d67b88d, type: 3}
+  kioskHeight: 89
   crabName: 
-  type: 16
+  type: 17
   favoriteWeatherTypes: 01000000020000000000000003000000
-  crabdexName: tawny
+  crabdexName: ghost
   isVariant: 1
-  variantName: Banana
+  variantName: tiny

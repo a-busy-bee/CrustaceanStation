@@ -12,13 +12,13 @@ public class MenuButtons : MonoBehaviour
 
     public void startGame()
     {
-        SceneManager.LoadScene("Temp");
-
         if (PlayerPrefs.GetInt("newGame") != -1)
         {
             PlayerPrefs.SetInt("newGame", 1);
             PlayerPrefs.SetInt("kioskStyle", 1);
         }
+
+        SceneManager.LoadScene("Temp");
     }
 
     public void Settings()
