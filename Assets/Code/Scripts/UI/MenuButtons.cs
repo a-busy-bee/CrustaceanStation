@@ -15,7 +15,7 @@ public class MenuButtons : MonoBehaviour
         if (PlayerPrefs.GetInt("newGame") != -1)
         {
             PlayerPrefs.SetInt("newGame", 1);
-            PlayerPrefs.SetInt("kioskStyle", 1);
+            PlayerPrefs.SetInt("kioskStyle", 0);
         }
 
         SceneManager.LoadScene("Temp");

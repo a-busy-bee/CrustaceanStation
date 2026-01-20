@@ -8129,7 +8129,7 @@ MonoBehaviour:
   Upgrades: {fileID: 1125329318}
   DecorBg: {fileID: 1687433431}
   Decor: {fileID: 1547509546}
-  debug: 0
+  debug: 1
   unavailable: {r: 0.7490196, g: 0.7490196, b: 0.7490196, a: 1}
   decor: {fileID: 1547509548}
 --- !u!1 &1300895843
@@ -9942,7 +9942,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: bbfcab061531a4e85ba481a5785554b8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c296336b3618045cda083307669b4bc3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

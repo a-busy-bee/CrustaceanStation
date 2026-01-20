@@ -64,7 +64,7 @@ public class Kiosk : MonoBehaviour
     {
         SetState(KioskState.NotOpenYet);
 
-        PlayerPrefs.SetInt("kioskStyle", 1);
+        PlayerPrefs.SetInt("kioskStyle", 0);
     }
 
     // state machine go brrrrr

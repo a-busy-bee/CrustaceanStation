@@ -50,7 +50,7 @@ public class Settings : MonoBehaviour
         PlayerPrefs.DeleteAll();
         PlayerPrefs.SetInt("ResetCrabdex", 1);
         PlayerPrefs.SetInt("ResetDecor", 1);
-        PlayerPrefs.SetInt("kioskStyle", 1);
+        PlayerPrefs.SetInt("kioskStyle", 0);
         PlayerPrefs.SetInt("newGame", 1);
         areYouSurePanel.SetActive(false);
     }
