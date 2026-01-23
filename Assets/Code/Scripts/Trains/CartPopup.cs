@@ -39,7 +39,13 @@ public class CartPopup : MonoBehaviour
     [SerializeField] private Mini defaultEmpty;
 
 
+    private bool initialized = false;
     private void Start()
+    {
+        InitPopup();
+    }
+
+    private void InitPopup()
     {
         // convert long seatsAll list to neat little grid for seatObjects
         for (int i = 0; i < seatsAll.Count; i++)
@@ -49,9 +55,9 @@ public class CartPopup : MonoBehaviour
             seatObjects[row, col] = seatsAll[i];
         }
 
-
         // INIT SEAT DICTIONARY
         int rails = LevelManager.instance.GetNumberOfRails();
+
         for (int i = 0; i < rails; i++)
         {
             seatDictionary[i] = new Mini[3, 4];
@@ -67,7 +73,29 @@ public class CartPopup : MonoBehaviour
             }
         }
 
-        gameObject.SetActive(false);
+        initialized = true;
+    }
+
+    public void Show(int railNumber)
+    {
+        if (!initialized) InitPopup();
+
+        // get crabinfo from kiosk
+        CrabInfo info = Kiosk.instance.GetCrabInfo();
+        currMini = info.mini;
+        currID = railNumber;
+
+        Mini[,] minis = seatDictionary[railNumber];
+
+        for (int row = 0; row < 3; row++)
+        {
+            for (int col = 0; col < 4; col++)
+            {
+                seatObjects[row, col].Populate(minis[row, col]);
+                seatObjects[row, col].SetCharacter(currMini);
+                seatObjects[row, col].HasSelected(false);
+            }
+        }
     }
 
     public void PlayAnim(int row, int column)
@@ -110,28 +138,10 @@ public class CartPopup : MonoBehaviour
 
         StartCoroutine(WaitThenClose());
     }
-
-    public void Populate(int railNumber)
-    {
-        // get crabinfo from kiosk
-        CrabInfo info = Kiosk.instance.GetCrabInfo();
-        currMini = info.mini;
-
-        Mini[,] minis = seatDictionary[railNumber];
-
-        for (int row = 0; row < 3; row++)
-        {
-            for (int col = 0; col < 4; col++)
-            {
-                seatObjects[row, col].Populate(minis[row, col]);
-                seatObjects[row, col].SetCharacter(currMini);
-                seatObjects[row, col].HasSelected(false);
-            }
-        }
-    }
-
     public int DepartTrain(int railNumber)
     {
+        if (!initialized) InitPopup();
+
         // figure out how many coins to give the player
         int coins = 0;
 
@@ -145,8 +155,12 @@ public class CartPopup : MonoBehaviour
         {
             for (int col = 0; col < 4; col++)
             {
-                minis[row, col] = defaultEmpty;
-                coins += 3;
+                if (minis[row, col] != defaultEmpty)
+                {
+                    // TODO: here's where we add the emotion-specific bonuses/debuffs
+                    coins += 3;
+                    minis[row, col] = defaultEmpty;
+                }
             }
         }
 
@@ -157,6 +171,6 @@ public class CartPopup : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         // close popup
-        gameObject.SetActive(false);
+        PopupManager.instance.Close();
     }
 }
