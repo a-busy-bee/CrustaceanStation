@@ -4819,8 +4819,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1016.11896, y: -23.274033}
-  m_SizeDelta: {x: 2126.2537, y: 1245.852}
+  m_AnchoredPosition: {x: -515, y: 333}
+  m_SizeDelta: {x: 724.07, y: 424.26}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &457801354
 MonoBehaviour:
@@ -4842,9 +4842,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3fe34cea9c09d4a0f816e04618a6bd6c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4dfeb8af2be9648408dbdd12e782ae62, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -13175,9 +13175,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.05007556
+    y: 0.050043702
     width: 1
-    height: 0.8998489
+    height: 0.8999126
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -14663,8 +14663,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 180}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 978.99994, y: 226.06241}
-  m_SizeDelta: {x: 2270.9705, y: 1330.6428}
+  m_AnchoredPosition: {x: 495.83, y: 570}
+  m_SizeDelta: {x: 897.43, y: 525.83}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1399518706
 MonoBehaviour:
@@ -14686,9 +14686,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3fe34cea9c09d4a0f816e04618a6bd6c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4dfeb8af2be9648408dbdd12e782ae62, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1

@@ -52,7 +52,11 @@ public class CrabInfo : ScriptableObject
 	public string crabdexName; // general name used in crabdex, ie soldier
 	public bool isVariant;
 	public string variantName; // variant name used in crabdex, ie teen_blue
-	
+
 	//TODO LATER
 	// sfx
+
+	[Header("Cart Popup")]
+	public Mini mini;
+	public bool isMultiple;
 }

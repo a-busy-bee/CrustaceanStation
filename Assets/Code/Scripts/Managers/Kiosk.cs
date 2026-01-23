@@ -5,8 +5,8 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Kiosk : MonoBehaviour
 {
+    public static Kiosk instance { get; private set; }
     [SerializeField] private Clock clock;
-    //private bool isOpen = false;
 
 
     // CURRENT CRAB
@@ -62,8 +62,16 @@ public class Kiosk : MonoBehaviour
 
     private void Awake()
     {
-        SetState(KioskState.NotOpenYet);
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+        }
 
+        SetState(KioskState.NotOpenYet);
         PlayerPrefs.SetInt("kioskStyle", 0);
     }
 
@@ -247,6 +255,11 @@ public class Kiosk : MonoBehaviour
     public bool IsCrabValid()
     {
         return currentCrab.GetComponent<CrabController>().IsValid();
+    }
+
+    public CrabInfo GetCrabInfo()
+    {
+        return currentCrab.GetComponent<CrabController>().GetCrabInfo();
     }
 
     public void DowngradedCart()

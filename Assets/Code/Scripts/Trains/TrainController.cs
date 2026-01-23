@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 public class TrainController : MonoBehaviour
 {
-    private Kiosk kiosk;
+    private Rail rail;
 
     // MOVEMENT
     [SerializeField] private RectTransform trainTransform;
@@ -16,34 +16,21 @@ public class TrainController : MonoBehaviour
     private Vector3 currentVelocity;
 
     // IDS and INFO
-    [SerializeField] private TextMeshProUGUI text; // text that displays train ID
-    private Train trainInfo;
-    private string[] trainIDLetters = { "A", "B", "C", "D", "E", "F" };
-    private string trainID = "";
+    private Rail.RailDirection railDirection;
+    private int railNumber;
     private int coins = 0;
 
     // CARTS
-    [Serializable]
-    private struct CartType
-    {
-        public GameObject cartPrefab;
-        public int weight;
-    }
-    [SerializeField] private GameObject cartParent;
-    [SerializeField] private CartType[] cartTypes;
-    private List<TrainSelection> trainSelections = new List<TrainSelection>();
-    private float cartPosStartingPoint = 0f;
-
+    [SerializeField] private List<TrainSelection> trainSelections = new List<TrainSelection>();
 
     // ALERT
     [SerializeField] private GameObject alertObject;
-    private bool isAlerting;
 
 
     // STATE MACHINE
     public enum TrainState
     {
-        Setup,          // initialize the train (carts, id, etc) 
+        Setup,          // initialize the train  
         NotArrived,     // train hasn't moved into station yet
         Arriving,       // train is moving into the station
         NotBoarding,    // train is in station but not boarding (crab hasn't been approved)
@@ -52,15 +39,10 @@ public class TrainController : MonoBehaviour
         Departed        // train is offscreen
     }
     public TrainState trainState { get; private set; }
-    bool boardAfterArrival = false;
+    private bool boardAfterArrival = false;
 
+    [SerializeField] private List<TrainPosition> trainPositionsBasedOnDirection;
 
-
-    private void Start()
-    {
-        text.text = "";
-        SetState(TrainState.Setup);
-    }
 
     // State machine go brrrrr
     public void SetState(TrainState newState)
@@ -85,7 +67,7 @@ public class TrainController : MonoBehaviour
 
             case TrainState.Arriving:
                 {
-                    text.text = trainID;
+                    // nothing to do here, all logic in Update()
                 }
                 break;
 
@@ -103,22 +85,22 @@ public class TrainController : MonoBehaviour
 
             case TrainState.Departing:
                 {
-                    text.text = "";
-                    isAlerting = false;
-
                     // give player coins
-                    kiosk.GivePlayerCoins(coins);
+                    coins = 0;
 
                     foreach (TrainSelection ts in trainSelections)
                     {
                         ts.SetThisClickable(false);
+                        coins += ts.DepartTrain();
                     }
+                    Kiosk.instance.GivePlayerCoins(coins);
                 }
                 break;
                 
             case TrainState.Departed:
                 {
                     LevelManager.instance.RemoveCurrentTrain(this);
+                    rail.SummonTrain();
 
                     Destroy(gameObject);
                 }
@@ -126,64 +108,29 @@ public class TrainController : MonoBehaviour
         }
     }
 
-    // GETTERS
-    public float GetArrivalTime()
+    public void InitTrain(Rail.RailDirection newTrainDirection, Rail newRail, GameObject newStandardCart, GameObject newEconomyCart, int newRailNumber)
     {
-        return trainInfo.arrivalTimeHour;
-    }
-    public float GetDepartureTime()
-    {
-        return trainInfo.departureTimeHour;
-    }
-    public void InitTrain(int newArrivalTime, int newDepartureTime, int newTrainID)
-    {
-        trainInfo = ScriptableObject.CreateInstance<Train>();
-        trainInfo.arrivalTimeHour = newArrivalTime;
-        trainInfo.departureTimeHour = newDepartureTime;
-        trainInfo.trainID = newTrainID;
+        railDirection = newTrainDirection;
+        rail = newRail;
+        railNumber = newRailNumber;
 
-        trainID = trainIDLetters[UnityEngine.Random.Range(0, trainIDLetters.Length)] + trainInfo.trainID.ToString();
+        TrainPosition trainPosition = trainPositionsBasedOnDirection[(int)railDirection];
 
-        float x = trainInfo.trainID * 200 - 52; // (1, 148), (2, 348), (3, 548), (4, 748)
-        startingPosArrive = new Vector3(x, 830, 0);
-        startingPosDepart = new Vector3(x, -285f, 0);
-        endPosDepart = new Vector3(x, -2426, 0);
+        startingPosArrive = new Vector3(0, trainPosition.startingPosArrive, 0);
+        startingPosDepart = new Vector3(0, trainPosition.startingPosDepart, 0);
+        endPosDepart = new Vector3(0, trainPosition.endPosDepart, 0);
+
+        GetComponent<RectTransform>().rotation = Quaternion.Euler(0, 0, trainPosition.rotation);
 
         // set up carts
-        int numOfCarts = UnityEngine.Random.Range(1, 6);
-        for (int i = 0; i < numOfCarts; i++)
+        foreach (TrainSelection selection in trainSelections)
         {
-            // instantiate cart as child
-            GameObject cart = Instantiate(cartTypes[GetRandomCart()].cartPrefab, cartParent.transform);
-            TrainSelection selection = cart.GetComponent<TrainSelection>();
-
-            // figure out position
-            if (i == 0)
-            {
-                // set position based on cart type
-                cart.transform.localPosition = new Vector3(0, 44, 0);
-
-                // add to cartPosStartingPoint
-                cartPosStartingPoint += 44 + 137;
-            }
-            else
-            {
-                // set position based on cartPosStartingPoint
-                cart.transform.localPosition = new Vector3(0, cartPosStartingPoint, 0);
-
-                // add to cartPosStartingPoint
-                cartPosStartingPoint += 137;
-            }
-
-            // add trainSelection to list
-            trainSelections.Add(selection);
-
-            // set kiosk
-            selection.SetKiosk(kiosk);
             selection.SetController(this);
+            selection.SetRailNumber(railNumber);
         }
 
-        SetState(TrainState.NotArrived);
+        trainTransform.anchoredPosition = startingPosArrive;
+        SetState(TrainState.Arriving);
     }
     public bool IsTrainFull()
     {
@@ -197,25 +144,9 @@ public class TrainController : MonoBehaviour
 
         return true;
     }
-    public bool IsStartTime0()
-    {
-        return trainInfo.arrivalTimeHour == 0;
-    }
-    public void SetArrivalTime()
-    {
-        trainInfo.arrivalTimeHour = 0;
-    }
-    public void SetKiosk(Kiosk newKiosk)
-    {
-        kiosk = newKiosk;
-    }
-    public int GetTrainLine()
-    {
-        return trainInfo.trainID;
-    }
     public string GetID()
     {
-        return trainID;
+        return "temp";
     }
     private void SetThisClickable(bool isClickable)
     {
@@ -224,20 +155,12 @@ public class TrainController : MonoBehaviour
             ts.SetThisClickable(isClickable);
         }
     }
-    public void AboutToDepartAlert()
-    {
-        if (!isAlerting)
-        {
-            isAlerting = true;
-            StartCoroutine(Alert());
-        }
-    }
 
     public void CheckIfFull()
     {
         if (IsTrainFull())
         {
-            AboutToDepartAlert();
+            rail.FlashFullAlert();
         }
     }
     public void AddToCrabsOnTrain(int ticketCost)
@@ -256,7 +179,7 @@ public class TrainController : MonoBehaviour
 
                     if (Vector2.Distance(trainTransform.anchoredPosition, startingPosDepart) < 0.1f)
                     {
-                        if (kiosk.kioskState == Kiosk.KioskState.CrabApproved)
+                        if (Kiosk.instance.kioskState == Kiosk.KioskState.CrabApproved)
                         {
                             SetState(TrainState.Boarding);
                         }
@@ -282,22 +205,6 @@ public class TrainController : MonoBehaviour
         }
     }
 
-    private IEnumerator Alert()
-    {
-        if (isAlerting)
-        {
-            for (int i = 0; i < 5; i++)
-            {
-                alertObject.SetActive(true);
-                yield return new WaitForSeconds(0.5f);
-                alertObject.SetActive(false);
-                yield return new WaitForSeconds(0.5f);
-            }
-        }
-
-        SetState(TrainState.Departing);
-    }
-
     public void SetBoarding(bool isBoarding)
     {
         if (trainState == TrainState.NotBoarding || trainState == TrainState.Boarding)
@@ -311,33 +218,6 @@ public class TrainController : MonoBehaviour
                 SetState(TrainState.NotBoarding);
             }
         }
-    }
-
-    private int GetRandomCart() // to get a random cart type when instantiating the train
-    {
-        // TODO : Fix cart quality upgrade
-        int maxCartQuality = LevelManager.instance.GetCartQuality() + 1;
-        int totalWeight = 0;
-        //for (CartType type in cartTypes)
-        for (int i = 0; i < 3; i++)
-        {
-            totalWeight += cartTypes[i].weight;
-        }
-
-        int rand = UnityEngine.Random.Range(0, totalWeight);
-
-        for (int i = 0; i < cartTypes.Length; i++)
-        {
-            if (rand < cartTypes[i].weight)
-            {
-                return i;
-            }
-
-            rand -= cartTypes[i].weight;
-        }
-
-        // failsafe
-        return 0;
     }
 
     public Cart.Type GetRandomCartType() // get a random cart type when instantiating the ticket
