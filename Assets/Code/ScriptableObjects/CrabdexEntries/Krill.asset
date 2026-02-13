@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc3c725a349a0491c8d75298c82f4d5e, type: 3}
+  m_Name: Krill
+  m_EditorClassIdentifier: Assembly-CSharp::CrabdexEntry
+  crabName: Krill
+  formalName: Krill
+  scientificName: Euphausiacea
+  description: They're pretty small.
+  isCrustacean: 1
+  typicalSprite: {fileID: 21300000, guid: 34f790e4b510444438c01df328bd3f96, type: 3}
+  generalVariantDiscovered: 0
+  variants:
+  - variantName: antarctic
+    formalVariantName: Antarctic
+    sprite: {fileID: 21300000, guid: b47f290b3be294421b5315f7f5d0fccc, type: 3}
+    hasBeenDiscovered: 0
+  - variantName: mustache
+    formalVariantName: Mustache
+    sprite: {fileID: 21300000, guid: 656b927ebb3674c24a4f3fc92bf2d384, type: 3}
+    hasBeenDiscovered: 0

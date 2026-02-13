@@ -5,6 +5,7 @@ public class CrabInfo : ScriptableObject
 {
 	public Sprite sprite;
 	public float kioskHeight = 89;
+	public bool isLarge;
 	public string crabName; // individual name ie Crusty Shawn
 
 	public enum CrabType // for naming purposes

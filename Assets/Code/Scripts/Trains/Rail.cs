@@ -50,11 +50,16 @@ public class Rail : MonoBehaviour
     public void SetRailNumber(int newNumber)
     {
         railNumber = newNumber;
-    } 
+    }
 
-    public bool CheckTrainValidity(string id)
+    public RailDirection GetRailDirection()
     {
-        return false;
+        return railDirection;
+    }
+
+    public bool CheckTrainValidity(Rail.RailDirection id)
+    {
+        return id == railDirection;
     }
 
     public void DepartTrain()

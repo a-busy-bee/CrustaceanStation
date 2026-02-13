@@ -231,7 +231,7 @@ public class LevelManager : MonoBehaviour
         //StartCoroutine(WaitThenArriveTrain(trackManager[id - 1]));
     }
 
-    public string GetRandomCurrentTrainID()
+    public Rail.RailDirection GetRandomCurrentTrainDirection()
     {
         /*if (currentTrains.Count == 0)
         {
@@ -239,7 +239,18 @@ public class LevelManager : MonoBehaviour
         }
         return currentTrains[Random.Range(0, currentTrains.Count)].GetID();*/
 
-        return "temp";
+        if (rails.Count == 0)
+        {
+            return Rail.RailDirection.North;
+
+        }
+
+        return rails[Random.Range(0, rails.Count)].GetRailDirection();
+    }
+
+    public Rail.RailDirection GetRandomTrainDirection()
+    {
+        return (Rail.RailDirection)Random.Range(0, 4);
     }
 
     public GameObject GetStandardCartPopup()
@@ -271,7 +282,7 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    public bool CheckTrainIDValidity(string id)
+    public bool CheckTrainIDValidity(Rail.RailDirection id)
     {
         foreach (Rail rail in rails)
         {

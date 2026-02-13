@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78e9b5b3f91a34cb3b12441421826e1c, type: 3}
+  m_Name: krill
+  m_EditorClassIdentifier: Assembly-CSharp::CrabInfo
+  sprite: {fileID: 21300000, guid: 34f790e4b510444438c01df328bd3f96, type: 3}
+  kioskHeight: 89
+  crabName: 
+  type: 18
+  favoriteWeatherTypes: 010000000000000003000000
+  crabdexName: Krill
+  isVariant: 0
+  variantName: 
+  mini: {fileID: 11400000, guid: 864942151aacc4157b3d741b12e6c6ef, type: 2}
+  isMultiple: 0

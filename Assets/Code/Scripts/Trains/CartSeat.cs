@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -15,7 +16,35 @@ public class CartSeat : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     [SerializeField] private Color emptyAlpha;
     [SerializeField] private Color ghostAlpha;
     [SerializeField] private Color baseColor;
-    
+
+
+    // ANIMATED REACTION
+    public enum ReactionType
+    {
+        toxicSelf,  // toxic critter if paired with anyone nontoxic
+        toxicOther, // nontoxic critter if paired with toxic
+        happy,      // heart anim
+        comrade,    // handshake anim
+        neutral,    // :/ anim
+        swords,     // crossed swords anim
+        yummy,      // devour anim
+        fear        // sweat anim
+    }
+    private Dictionary<ReactionType, string> reactions = new Dictionary<ReactionType, string>()
+    {
+        { ReactionType.toxicSelf,   "toxicSelf" },
+        { ReactionType.toxicOther,  "toxicOther" },
+        { ReactionType.happy,       "happy" },
+        { ReactionType.comrade,     "comrade" },
+        { ReactionType.neutral,     "neutral" },
+        { ReactionType.swords,      "swords" },
+        { ReactionType.yummy,       "yummy" }, 
+        { ReactionType.fear,        "fear" }, 
+    };
+    private GameObject reactionObject;
+
+
+    // STATE
     private Mini currMini;
     private bool isTaken;
     private bool hasSelected;
@@ -24,8 +53,20 @@ public class CartSeat : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         image = GetComponent<Image>();
     }
+ 
+    private void Start()
+    {
+        reactionObject = GetComponent<RectTransform>().GetChild(0).gameObject;
+        reactionObject.SetActive(false);
+    }
 
-    public void InitSeat(CartPopup newPopup, int newRow, int newColumn)
+	private void OnEnable()
+	{
+        if (reactionObject == null) return;
+		reactionObject.SetActive(false);
+	}
+
+	public void InitSeat(CartPopup newPopup, int newRow, int newColumn)
     {
         cartPopup = newPopup;
         row = newRow;
@@ -73,7 +114,15 @@ public class CartSeat : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         image.sprite = currMini.miniSprite;
         image.color = ghostAlpha;
 
-        cartPopup.PlayAnim(row, column);
+        cartPopup.CheckRelationship(row, column);
+    }
+
+    public void PlayAnim(ReactionType reactionType)
+    {
+        // play anim of the mini beside the placed one, if possible
+        //Debug.Log("play anim for " + row + " and " + column);
+        reactionObject.SetActive(true);
+        reactionObject.GetComponent<Animator>().Play(reactions[reactionType]);
     }
 
     public void OnPointerExit(PointerEventData eventData)
@@ -83,6 +132,7 @@ public class CartSeat : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         // hide ghost sprite
         image.sprite = null;
         image.color = emptyAlpha;
+        reactionObject.SetActive(false);
     }
 
     public void OnPointerClick(PointerEventData eventData)

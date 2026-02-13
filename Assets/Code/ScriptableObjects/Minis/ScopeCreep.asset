@@ -14,8 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Mini
   miniType: 12
   miniSprite: {fileID: 21300000, guid: 651f5a4ed0ca948e48fb8333eb9dfc08, type: 3}
-  isMultiple: 0
   isWipeOut: 0
-  preyTo: 
-  neutralTo: 
-  predatorTo: 
+  type: 1
+  strength: 0

@@ -47,6 +47,10 @@ public class Kiosk : MonoBehaviour
     [SerializeField] private GameObject rightSlot;
     [SerializeField] private GameObject topSlot;
 
+    [Header("Debug")]
+    [SerializeField] private bool debugMode;
+    [SerializeField] private List<GameObject> charactersToForce = new List<GameObject>();
+
     public enum KioskState
     {
         NotOpenYet,         // before the start of the day
@@ -200,6 +204,12 @@ public class Kiosk : MonoBehaviour
             validWeather = CheckWeather(chosen, currWeather);
         }
 
+        if (debugMode && charactersToForce.Count != 0)
+        {
+            chosen = charactersToForce[0];
+            charactersToForce.RemoveAt(0);
+        }
+
         crabSelector.AddToQueue(chosenIdx);
         currentCrab = Instantiate(chosen, crabParentObject.transform);
         //currentCrabIdx = chosenIdx;
@@ -290,23 +300,7 @@ public class Kiosk : MonoBehaviour
 
     public void SetCrabSpeedUpgrade()
     {
-        int dropRate = PlayerPrefs.GetInt("crabDropRate");
-        if (dropRate == 0)
-        {
-            crabSpeed = Random.Range(3, 5);
-        }
-        else if (dropRate == 1)
-        {
-            crabSpeed = Random.Range(2, 4);
-        }
-        else if (dropRate == 2)
-        {
-            crabSpeed = Random.Range(1, 3);
-        }
-        else if (dropRate == 3)
-        {
-            crabSpeed = Random.Range(1, 2);
-        }
+        crabSpeed = Random.Range(1, 3);
 
     }
 
