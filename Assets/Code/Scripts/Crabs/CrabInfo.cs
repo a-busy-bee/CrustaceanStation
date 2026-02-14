@@ -5,6 +5,7 @@ public class CrabInfo : ScriptableObject
 {
 	public Sprite sprite;
 	public float kioskHeight = 89;
+	public bool isLarge;
 	public string crabName; // individual name ie Crusty Shawn
 
 	public enum CrabType // for naming purposes
@@ -52,7 +53,11 @@ public class CrabInfo : ScriptableObject
 	public string crabdexName; // general name used in crabdex, ie soldier
 	public bool isVariant;
 	public string variantName; // variant name used in crabdex, ie teen_blue
-	
+
 	//TODO LATER
 	// sfx
+
+	[Header("Cart Popup")]
+	public Mini mini;
+	public bool isMultiple;
 }

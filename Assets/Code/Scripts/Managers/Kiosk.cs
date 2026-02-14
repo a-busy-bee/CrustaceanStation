@@ -5,8 +5,8 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Kiosk : MonoBehaviour
 {
+    public static Kiosk instance { get; private set; }
     [SerializeField] private Clock clock;
-    //private bool isOpen = false;
 
 
     // CURRENT CRAB
@@ -34,7 +34,7 @@ public class Kiosk : MonoBehaviour
     [Header("Buttons")]
     [SerializeField] private Button approveButton;
     [SerializeField] private Button rejectButton;
-    [SerializeField] private Button waitButton;
+    //[SerializeField] private Button waitButton;
 
 
     [Header("Decor")]
@@ -46,6 +46,10 @@ public class Kiosk : MonoBehaviour
     [SerializeField] private GameObject leftSlot;
     [SerializeField] private GameObject rightSlot;
     [SerializeField] private GameObject topSlot;
+
+    [Header("Debug")]
+    [SerializeField] private bool debugMode;
+    [SerializeField] private List<GameObject> charactersToForce = new List<GameObject>();
 
     public enum KioskState
     {
@@ -62,9 +66,17 @@ public class Kiosk : MonoBehaviour
 
     private void Awake()
     {
-        SetState(KioskState.NotOpenYet);
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+        }
 
-        PlayerPrefs.SetInt("kioskStyle", 1);
+        SetState(KioskState.NotOpenYet);
+        PlayerPrefs.SetInt("kioskStyle", 0);
     }
 
     // state machine go brrrrr
@@ -192,6 +204,12 @@ public class Kiosk : MonoBehaviour
             validWeather = CheckWeather(chosen, currWeather);
         }
 
+        if (debugMode && charactersToForce.Count != 0)
+        {
+            chosen = charactersToForce[0];
+            charactersToForce.RemoveAt(0);
+        }
+
         crabSelector.AddToQueue(chosenIdx);
         currentCrab = Instantiate(chosen, crabParentObject.transform);
         //currentCrabIdx = chosenIdx;
@@ -249,6 +267,11 @@ public class Kiosk : MonoBehaviour
         return currentCrab.GetComponent<CrabController>().IsValid();
     }
 
+    public CrabInfo GetCrabInfo()
+    {
+        return currentCrab.GetComponent<CrabController>().GetCrabInfo();
+    }
+
     public void DowngradedCart()
     {
         wrong += 0.5f;
@@ -277,23 +300,7 @@ public class Kiosk : MonoBehaviour
 
     public void SetCrabSpeedUpgrade()
     {
-        int dropRate = PlayerPrefs.GetInt("crabDropRate");
-        if (dropRate == 0)
-        {
-            crabSpeed = Random.Range(3, 5);
-        }
-        else if (dropRate == 1)
-        {
-            crabSpeed = Random.Range(2, 4);
-        }
-        else if (dropRate == 2)
-        {
-            crabSpeed = Random.Range(1, 3);
-        }
-        else if (dropRate == 3)
-        {
-            crabSpeed = Random.Range(1, 2);
-        }
+        crabSpeed = Random.Range(1, 3);
 
     }
 
@@ -311,13 +318,13 @@ public class Kiosk : MonoBehaviour
     {
         rejectButton.interactable = true;
         approveButton.interactable = true;
-        waitButton.interactable = true;
+        //waitButton.interactable = true;
     }
     public void DisableButtons()
     {
         rejectButton.interactable = false;
         approveButton.interactable = false;
-        waitButton.interactable = false;
+        //waitButton.interactable = false;
     }
 
     // DECOR

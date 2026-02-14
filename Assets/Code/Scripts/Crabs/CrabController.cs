@@ -14,7 +14,7 @@ public class CrabController : MonoBehaviour
     [SerializeField] private GameObject idPrefab;
     private GameObject id;
     private CrabSelector crabSelector;
-    private string trainID = "";
+    private Rail.RailDirection trainID = Rail.RailDirection.North;
     private Cart.Type cartType;
     private bool presented = false;
 
@@ -56,8 +56,13 @@ public class CrabController : MonoBehaviour
 
     private void Start()
     {
-        kioskStartPos = new Vector3(kiosk.GetCrabPositionInKiosk(), -500, 0);
-        kioskEndPos = new Vector3(kiosk.GetCrabPositionInKiosk(), crabInfo.kioskHeight, 0);
+        float xPos = kiosk.GetCrabPositionInKiosk();
+        if (crabInfo.isLarge) {
+            xPos = -492;
+        }
+
+        kioskStartPos = new Vector3(xPos, -600, 0);
+        kioskEndPos = new Vector3(xPos, crabInfo.kioskHeight, 0);
 
         rectTransform.anchoredPosition = kioskStartPos;
     }
@@ -210,19 +215,13 @@ public class CrabController : MonoBehaviour
         // TRAIN ID FORGERY (OR NOT)
         if (Random.Range(0, 10) > 8)                                            // MORE FORGERY! - TRAIN ID
         {
-            trainID = ticket.GetComponent<Ticket>().GetRandomTrainID();
+            trainID = LevelManager.instance.GetRandomTrainDirection();
         }
         else
         {
-            trainID = LevelManager.instance.GetRandomCurrentTrainID();
-
-            if (trainID == "none")
-            {
-                trainID = ticket.GetComponent<Ticket>().GetRandomTrainID();
-            }
-
+            trainID = LevelManager.instance.GetRandomCurrentTrainDirection();
         }
-        ticket.GetComponent<Ticket>().SetTrainID(trainID);
+        ticket.GetComponent<Ticket>().SetTrainDirection(trainID);
 
         // TRAIN CART TYPE FORGERY (OR NOT)
         cartType = LevelManager.instance.GetRandomCurrentCartType();
@@ -254,7 +253,7 @@ public class CrabController : MonoBehaviour
     {
         return crabInfo.favoriteWeatherTypes;
     }
-    public string GetTrainID()
+    public Rail.RailDirection GetTrainID()
     {
         return trainID;
     }

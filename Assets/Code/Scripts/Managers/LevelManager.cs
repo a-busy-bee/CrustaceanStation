@@ -11,16 +11,12 @@ public class LevelManager : MonoBehaviour
 
     [Header("Main")]
     [SerializeField] private Clock clock;
-    [SerializeField] private Kiosk kiosk;
 
 
     [Header("Trains")]
-    [SerializeField] private GameObject trainPrefab;    // train head
-    [SerializeField] private GameObject trainParent;
-    private List<TrainController> currentTrains = new List<TrainController>();  // trains currently at the station
-    //private List<GameObject>[] allTrains;                                       // all scheduled trains
-    private GameObject[] trackManager;  // null = no train on track, !null = train on track
-    private int numActiveTracks = 1;
+    [SerializeField] private List<Rail> rails = new List<Rail>();  // all rails
+    [SerializeField] private GameObject cartPopupStandard;
+    [SerializeField] private GameObject cartPopupEconomy; 
 
 
     [Header("Goals & Summary")]
@@ -32,10 +28,6 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private GameObject summaryMenu;
     private bool isRating = false;
     private bool dayStarted = false;
-
-
-    [Header("Track Upgrade")]
-    [SerializeField] private GameObject[] tracks;
 
 
     // UI background 
@@ -95,8 +87,7 @@ public class LevelManager : MonoBehaviour
                         tutorial.Play(true);
                     }
 
-                    ActivateUpgrades();
-                    kiosk.ShowDecor();
+                    Kiosk.instance.ShowDecor();
                     InitTrains();
 
                     SetState(LMState.Goal);
@@ -142,20 +133,15 @@ public class LevelManager : MonoBehaviour
                 break;
 
 
-            case LMState.Summary:
+            case LMState.Summary: // TODO: have summary show after all characters are seen
                 {
-                    kiosk.SetState(Kiosk.KioskState.EndOfDay);
-
-                    foreach (TrainController train in currentTrains)
-                    {
-                        train.SetState(TrainController.TrainState.Departing);
-                    }
+                    Kiosk.instance.SetState(Kiosk.KioskState.EndOfDay);
 
                     // show prefab
                     transparentOverlay.SetActive(true);
                     summaryMenu.SetActive(true);
                     summaryMenu.GetComponent<Summary>().SetRating(ratingGoalScript.GetRating());
-                    summaryMenu.GetComponent<Summary>().SetCrabsProcessed(kiosk.GetTotalCrabs());
+                    summaryMenu.GetComponent<Summary>().SetCrabsProcessed(Kiosk.instance.GetTotalCrabs());
 
                     dayStarted = false;
                 }
@@ -175,7 +161,7 @@ public class LevelManager : MonoBehaviour
 
     public void OnNewDay()
     {
-        SceneManager.LoadScene("Temp");
+        SceneManager.LoadScene("BaseArea");
     }
 
 
@@ -218,148 +204,85 @@ public class LevelManager : MonoBehaviour
         return dayStarted;
     }
 
-    private void ActivateUpgrades()
-    {
-        int trackCount = PlayerPrefs.GetInt("numTracks"); // starts at 0, so need to add one when updating track num in clock
-
-        // activate tracks
-        for (int i = 0; i < trackCount; i++)
-        {
-            tracks[i].SetActive(true);
-        }
-
-        // update train controllers
-        UpdateNumTracks(trackCount + 1);
-    }
-
-    private GameObject GenerateTrain(int trainID)
-    {
-        int arrival = clock.GetCurrentTime(); // new start time
-        int timeSpent = Random.Range(3, 6); // TODO: make longer trains stay in station longer?
-
-        int departure = arrival + timeSpent;
-
-        if (departure > Constants.CLOCK_END_TIME)                // latest departure time, so we're done here
-        {
-            departure = Constants.CLOCK_END_TIME;
-        }
-
-        GameObject train = Instantiate(trainPrefab, trainParent.transform);
-
-        train.SetActive(true);
-        train.GetComponent<TrainController>().SetKiosk(kiosk);
-        train.GetComponent<TrainController>().InitTrain(arrival, departure, trainID);
-
-        return train;
-    }
-
     private void InitTrains()
     {
+        int id = 0;
         // goes through all of the trainIDs (lines) and generate first train
-        for (int i = 0; i < numActiveTracks; i++)
+        foreach (Rail rail in rails)
         {
-            trackManager[i] = GenerateTrain(i + 1);
-            StartCoroutine(WaitThenArriveTrain(trackManager[i]));
+            rail.SetRailNumber(id);
+            rail.SummonTrain();
+
+            id++;
         }
     }
 
-    public void CheckTrains(int currentTime)
+    public int GetNumberOfRails()
     {
-        // checks for new arrivals and departures
-        for (int i = 0; i < trackManager.Length; i++)
-        {
-            GameObject train = trackManager[i];
-
-            TrainController controller = train.GetComponent<TrainController>();
-            if (controller != null)
-            {
-                if (currentTime == controller.GetDepartureTime() - 1)
-                {
-                    controller.AboutToDepartAlert();
-                }
-
-            }
-
-        }
+        return rails.Count;
     }
 
-    public void RemoveCurrentTrain(TrainController controller)
-    {  
-        currentTrains.Remove(controller);
-
-        int id = controller.GetTrainLine();
-        trackManager[id - 1] = GenerateTrain(id);
-        StartCoroutine(WaitThenArriveTrain(trackManager[id - 1]));
-    }
-
-    public string GetRandomCurrentTrainID()
+    public Rail.RailDirection GetRandomCurrentTrainDirection()
     {
-        if (currentTrains.Count == 0)
+        if (rails.Count == 0)
         {
-            return "none";
+            return Rail.RailDirection.North;
+
         }
-        return currentTrains[Random.Range(0, currentTrains.Count)].GetID();
+
+        return rails[Random.Range(0, rails.Count)].GetRailDirection();
     }
+
+    public Rail.RailDirection GetRandomTrainDirection()
+    {
+        return (Rail.RailDirection)Random.Range(0, 4);
+    }
+
+    public GameObject GetStandardCartPopup()
+    {
+        return cartPopupStandard;
+    }
+
+    public GameObject GetEconomyCartPopup()
+    {
+        return cartPopupEconomy;
+    }
+
     public int GetCartQuality()
     {
         return PlayerPrefs.GetInt("cartQuality");
     }
     public Cart.Type GetRandomCurrentCartType()
     {
-        if (currentTrains.Count == 0)
+        int totalWeight = 30; // economy = 20, standard = 10
+        int rand = Random.Range(0, totalWeight);
+
+        if (rand < 10)
+        {
+            return Cart.Type.Standard;
+        }
+        else
         {
             return Cart.Type.Economy;
         }
-        return currentTrains[Random.Range(0, currentTrains.Count)].GetRandomCartType();
     }
 
-    public bool CheckTrainIDValidity(string id)
+    public bool CheckTrainIDValidity(Rail.RailDirection id)
     {
-        foreach (TrainController train in currentTrains)
+        foreach (Rail rail in rails)
         {
-            if (id == train.GetID() && !train.IsTrainFull())
-            {
-                return true;
-            }
+            if (rail.CheckTrainValidity(id)) return true;
         }
+
         return false;
     }
 
     public void SetTrainsClickable(bool allowClick)
     {
-        foreach (TrainController train in currentTrains)
+        foreach (Rail rail in rails)
         {
-            if (allowClick)
-            {
-                train.SetBoarding(true);
-            }
-            else
-            {
-                train.SetBoarding(false);
-            }
-            
+            rail.SetTrainClickable(allowClick);
         }
-    }
-
-    private void UpdateNumTracks(int tracks)
-    {
-        //allTrains = new List<GameObject>[tracks];
-        trackManager = new GameObject[tracks];
-        numActiveTracks = tracks;
-    }
-
-    private IEnumerator WaitThenArriveTrain(GameObject train)
-    {
-        yield return new WaitForSeconds(Random.Range(1, 3));
-
-        TrainController controller = train.GetComponent<TrainController>();
-
-        if (controller != null)
-        {
-            currentTrains.Add(controller);
-            controller.SetState(TrainController.TrainState.Arriving);
-        }
-        
     }
 
 }

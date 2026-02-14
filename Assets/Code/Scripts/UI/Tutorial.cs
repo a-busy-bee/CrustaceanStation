@@ -20,7 +20,7 @@ public class Tutorial : MonoBehaviour
             settingsBlur.SetActive(false);
 
             // blur settings page?
-            if (SceneManager.GetActiveScene().name == "Temp")
+            if (SceneManager.GetActiveScene().name == "BaseArea")
             {
                 pauseBlur.SetActive(true);
             }
@@ -60,7 +60,7 @@ public class Tutorial : MonoBehaviour
 
     public void OnFinish()
     {
-        if (SceneManager.GetActiveScene().name == "Temp")
+        if (SceneManager.GetActiveScene().name == "BaseArea")
         {
             pauseBlur.SetActive(false);
         }
@@ -85,7 +85,7 @@ public class Tutorial : MonoBehaviour
 
         gameObject.SetActive(false);
 
-        if (SceneManager.GetActiveScene().name == "Temp" && LevelManager.instance.lmState == LevelManager.LMState.Setup)
+        if (SceneManager.GetActiveScene().name == "BaseArea" && LevelManager.instance.lmState == LevelManager.LMState.Setup)
         {
             LevelManager.instance.SetState(LevelManager.LMState.Game);
         }

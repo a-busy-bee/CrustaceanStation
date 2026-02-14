@@ -11,7 +11,7 @@ public class Settings : MonoBehaviour
     {
         gameObject.SetActive(false);
 
-        if (SceneManager.GetActiveScene().name != "Temp")
+        if (SceneManager.GetActiveScene().name != "BaseArea")
         {
             backgroundDisplay.SetActive(false);
         }
@@ -26,7 +26,7 @@ public class Settings : MonoBehaviour
         {
             gameObject.SetActive(false);
 
-            if (SceneManager.GetActiveScene().name != "Temp")
+            if (SceneManager.GetActiveScene().name != "BaseArea")
             {
                 backgroundDisplay.SetActive(false);
             }
@@ -50,7 +50,7 @@ public class Settings : MonoBehaviour
         PlayerPrefs.DeleteAll();
         PlayerPrefs.SetInt("ResetCrabdex", 1);
         PlayerPrefs.SetInt("ResetDecor", 1);
-        PlayerPrefs.SetInt("kioskStyle", 1);
+        PlayerPrefs.SetInt("kioskStyle", 0);
         PlayerPrefs.SetInt("newGame", 1);
         areYouSurePanel.SetActive(false);
     }

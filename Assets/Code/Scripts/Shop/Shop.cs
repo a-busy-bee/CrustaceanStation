@@ -155,7 +155,7 @@ public class Shop : MonoBehaviour
     {
         if (menu == shopMenu.shopMain)
         {
-            SceneManager.LoadScene("Temp");
+            SceneManager.LoadScene("BaseArea");
         }
         else if (menu == shopMenu.Decor)
         {

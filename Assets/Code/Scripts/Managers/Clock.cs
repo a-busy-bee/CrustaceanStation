@@ -46,10 +46,9 @@ public class Clock : MonoBehaviour
     {
         while (currentTime < endTime)
         {
-
             if (currentTime == startTime)
             {
-                LevelManager.instance.CheckTrains(startTime);
+                //LevelManager.instance.CheckTrains(startTime);
                 yield return WaitThenSummonCrabs();
             }
 
@@ -59,7 +58,7 @@ public class Clock : MonoBehaviour
             yield return RotateHand();
             currentTime++;
 
-            LevelManager.instance.CheckTrains(currentTime);
+            //LevelManager.instance.CheckTrains(currentTime);
 
             if (currentTime % 2 == 0) // chance to change weather every 2 hours
             {

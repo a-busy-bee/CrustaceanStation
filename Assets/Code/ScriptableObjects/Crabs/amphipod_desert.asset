@@ -13,9 +13,12 @@ MonoBehaviour:
   m_Name: amphipod_desert
   m_EditorClassIdentifier: Assembly-CSharp::CrabInfo
   sprite: {fileID: 21300000, guid: 9670fdc63edbb4428804ffa3a86f05cf, type: 3}
+  kioskHeight: 89
   crabName: 
   type: 14
   favoriteWeatherTypes: 00000000010000000200000003000000
   crabdexName: amphipod
   isVariant: 1
   variantName: desert
+  mini: {fileID: 11400000, guid: 864942151aacc4157b3d741b12e6c6ef, type: 2}
+  isMultiple: 0

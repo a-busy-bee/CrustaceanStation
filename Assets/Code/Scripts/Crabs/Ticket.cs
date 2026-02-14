@@ -6,21 +6,24 @@ public class Ticket : MonoBehaviour
     [SerializeField] private TextMeshProUGUI nameText;
     private string crabName;
 
-    [SerializeField] private TextMeshProUGUI trainIDText;
-    private string trainID = "G5";
-
-    private string[] letters = { "A", "B", "C", "D", "E", "F" };
-    private int[] numbers = { 1, 2, 3, 4 };
-
     [SerializeField] private GameObject blur;
     [SerializeField] private RectTransform rectTransform;
     private ID id;
 
+    // RAIL DIRECTION
+    [SerializeField] private GameObject direction;
+    private float[] zRotations;
+    private Rail.RailDirection railDirection;
 
     // SPRITES
     [SerializeField] private Sprite[] ticketSprites;
     [SerializeField] private Image ticketImg;
     [SerializeField] private Image blurImg;
+
+    private void Awake()
+    {
+        zRotations = new float[] { 0, 180, 270, 90 };
+    }
 
     public void SetName(string newName)
     {
@@ -28,10 +31,15 @@ public class Ticket : MonoBehaviour
         nameText.text = crabName;
     }
 
-    public void SetTrainID(string newTrainID)
+    public void SetTrainDirection(Rail.RailDirection newDirection)
     {
-        trainID = newTrainID;
-        trainIDText.text = trainID;
+        railDirection = newDirection;
+
+        direction.GetComponent<RectTransform>().localRotation = Quaternion.Euler(0, 0, zRotations[(int)railDirection]);
+    }
+    public Rail.RailDirection GetRailDirection()
+    {
+        return railDirection;
     }
 
     public void SetID(ID newID)
@@ -39,15 +47,12 @@ public class Ticket : MonoBehaviour
         id = newID;
     }
 
-    public string GetRandomTrainID()
+    public Rail.RailDirection GetRandomTrainID()
     {
-        return letters[Random.Range(0, letters.Length)] + numbers[Random.Range(0, numbers.Length)].ToString();
+        return (Rail.RailDirection)Random.Range(0, 4);
     }
 
-    public string GetTrainID()
-    {
-        return trainID;
-    }
+
 
     public void PushBack()
     {
