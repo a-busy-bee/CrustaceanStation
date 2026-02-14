@@ -99,7 +99,7 @@ public class TrainController : MonoBehaviour
                 
             case TrainState.Departed:
                 {
-                    LevelManager.instance.RemoveCurrentTrain(this);
+                    //LevelManager.instance.RemoveCurrentTrain(this);
                     rail.SummonTrain();
 
                     Destroy(gameObject);

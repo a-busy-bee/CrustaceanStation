@@ -18,7 +18,7 @@ public class MenuButtons : MonoBehaviour
             PlayerPrefs.SetInt("kioskStyle", 0);
         }
 
-        SceneManager.LoadScene("Temp");
+        SceneManager.LoadScene("BaseArea");
     }
 
     public void Settings()

@@ -20,6 +20,9 @@ public class Mini : ScriptableObject
 	[Header("Cart Popup")]
 	public CartPopup.MiniType miniType;
 	public Sprite miniSprite;
+
+	public bool isMultiple;
+	public Sprite multSprite;
 	public bool isWipeOut; // for seagulls
 
 	[Header("Pred-Prey Relationships")]

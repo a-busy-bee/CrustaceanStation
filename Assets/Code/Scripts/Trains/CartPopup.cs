@@ -30,7 +30,8 @@ public class CartPopup : MonoBehaviour
         seaMonkies,
         seaSheep,
         shrimp,
-        nautilus
+        nautilus,
+        family
     }
     private Mini currMini;
     private Cart.Type type;
@@ -126,9 +127,30 @@ public class CartPopup : MonoBehaviour
         {
             for (int col = 0; col < 4; col++)
             {
-                seatObjects[row, col].Populate(minis[row, col]);
-                seatObjects[row, col].SetCharacter(currMini);
-                seatObjects[row, col].HasSelected(false);
+                if (minis[row, col].isMultiple)
+                {
+                    seatObjects[row, col].Populate(minis[row, col]);
+                    seatObjects[row, col].SetCharacter(currMini);
+                    seatObjects[row, col].HasSelected(false);
+
+                    if (col == 0 || col == 2)
+                    {
+                        seatObjects[row, col + 1].PopulateForMultiple(minis[row, col].multSprite);
+                        col++; // skip next one
+                    }
+                    else
+                    {
+                        seatObjects[row, col - 1].PopulateForMultiple(minis[row, col].multSprite);
+                    }
+                    
+                }
+                else
+                {
+                    seatObjects[row, col].Populate(minis[row, col]);
+                    seatObjects[row, col].SetCharacter(currMini);
+                    seatObjects[row, col].HasSelected(false);
+                }
+                
             }
         }
     }
@@ -188,11 +210,13 @@ public class CartPopup : MonoBehaviour
                 if (minis[row, col] != defaultEmpty)
                 {
                     // TODO: here's where we add the emotion-specific bonuses/debuffs
-                    coins += 3;
+                    coins += 2;
                     minis[row, col] = defaultEmpty;
                 }
             }
         }
+
+        coins -= badness;
 
         return coins;
     }
@@ -244,7 +268,7 @@ public class CartPopup : MonoBehaviour
                     howBad = predXprey[indexOfPredXPrey[new miniPair(otherMini.type, otherMini.strength)],
                                        indexOfPredXPrey[new miniPair(currMini.type, currMini.strength)]];
                 }
-                
+
             }
         }
 
@@ -388,6 +412,44 @@ public class CartPopup : MonoBehaviour
             }
 
             currHowBad = 2;
+        }
+    }
+
+    public void TurnOffAnims(int row, int col)
+    {
+        seatObjects[row, seatPairs[col]].StopAnim();
+    }
+
+    public bool CheckIfBothSeatsAreOpen(int row, int col)
+    {
+        return !seatObjects[row, seatPairs[col]].IsTaken();
+    }
+
+    public void ShowGhostMultiple(Sprite mult, int row, int col)
+    {
+        seatObjects[row, seatPairs[col]].ShowGhostSpriteForMultiple(mult);
+    }
+
+    public void HideGhostMultiple(int row, int col)
+    {
+        seatObjects[row, seatPairs[col]].HideGhostSpriteForMultiple();
+    }
+
+    public void PlayGhostAnim(int row, int col)
+    {
+        seatObjects[row, seatPairs[col]].PlayAnim(CartSeat.ReactionType.happy);
+    }
+
+    public void SeatMultiple(Sprite mult, int row, int col)
+    {
+        seatObjects[row, seatPairs[col]].SetSpriteForMultiple(mult);
+        seatDictionary[currID][row, col] = currMini;
+        for (int rowIdx = 0; rowIdx < 3; rowIdx++)
+        {
+            for (int colIdx = 0; colIdx < 4; colIdx++)
+            {
+                seatObjects[rowIdx, colIdx].HasSelected(true);
+            }
         }
     }
 }

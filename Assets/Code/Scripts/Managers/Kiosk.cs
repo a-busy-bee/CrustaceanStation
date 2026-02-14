@@ -34,7 +34,7 @@ public class Kiosk : MonoBehaviour
     [Header("Buttons")]
     [SerializeField] private Button approveButton;
     [SerializeField] private Button rejectButton;
-    [SerializeField] private Button waitButton;
+    //[SerializeField] private Button waitButton;
 
 
     [Header("Decor")]
@@ -318,13 +318,13 @@ public class Kiosk : MonoBehaviour
     {
         rejectButton.interactable = true;
         approveButton.interactable = true;
-        waitButton.interactable = true;
+        //waitButton.interactable = true;
     }
     public void DisableButtons()
     {
         rejectButton.interactable = false;
         approveButton.interactable = false;
-        waitButton.interactable = false;
+        //waitButton.interactable = false;
     }
 
     // DECOR

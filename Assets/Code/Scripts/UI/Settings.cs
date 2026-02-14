@@ -11,7 +11,7 @@ public class Settings : MonoBehaviour
     {
         gameObject.SetActive(false);
 
-        if (SceneManager.GetActiveScene().name != "Temp")
+        if (SceneManager.GetActiveScene().name != "BaseArea")
         {
             backgroundDisplay.SetActive(false);
         }
@@ -26,7 +26,7 @@ public class Settings : MonoBehaviour
         {
             gameObject.SetActive(false);
 
-            if (SceneManager.GetActiveScene().name != "Temp")
+            if (SceneManager.GetActiveScene().name != "BaseArea")
             {
                 backgroundDisplay.SetActive(false);
             }

@@ -83,6 +83,11 @@ public class CartSeat : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         return (row, column);
     }
 
+    public bool IsTaken()
+    {
+        return isTaken;
+    }
+
     public void SetCharacter(Mini newMini)
     {
         currMini = newMini;
@@ -109,12 +114,56 @@ public class CartSeat : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public void OnPointerEnter(PointerEventData eventData)
     {
         if (isTaken || hasSelected) return;
-        
-        // show ghost sprite
-        image.sprite = currMini.miniSprite;
-        image.color = ghostAlpha;
 
-        cartPopup.CheckRelationship(row, column);
+        if (currMini.isMultiple && !cartPopup.CheckIfBothSeatsAreOpen(row, column)) return;
+
+        if (currMini.isMultiple)
+        {
+            image.sprite = currMini.miniSprite;
+            image.color = ghostAlpha;
+
+            cartPopup.ShowGhostMultiple(currMini.multSprite, row, column);
+
+            PlayAnim(ReactionType.happy);
+            cartPopup.PlayGhostAnim(row, column);
+        }
+        else
+        {
+            // show ghost sprite
+            image.sprite = currMini.miniSprite;
+            image.color = ghostAlpha;
+
+            cartPopup.CheckRelationship(row, column);
+        }
+
+    }
+
+    public void ShowGhostSpriteForMultiple(Sprite alt)
+    {
+        image.sprite = alt;
+        image.color = ghostAlpha;
+    }
+
+    public void HideGhostSpriteForMultiple()
+    {
+        image.sprite = null;
+        image.color = emptyAlpha;
+        reactionObject.SetActive(false);
+    }
+
+    public void SetSpriteForMultiple(Sprite alt)
+    {
+        image.sprite = alt;
+        image.color = baseColor;
+
+        isTaken = true;
+    }
+
+    public void PopulateForMultiple(Sprite alt)
+    {
+        isTaken = true;
+        image.sprite = alt;
+        image.color = baseColor;
     }
 
     public void PlayAnim(ReactionType reactionType)
@@ -125,19 +174,28 @@ public class CartSeat : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         reactionObject.GetComponent<Animator>().Play(reactions[reactionType]);
     }
 
+    public void StopAnim()
+    {
+        reactionObject.SetActive(false);
+    }
+
     public void OnPointerExit(PointerEventData eventData)
     {
         if (isTaken || hasSelected) return;
+        if (currMini.isMultiple && (isTaken || !cartPopup.CheckIfBothSeatsAreOpen(row, column))) return;
+        if (currMini.isMultiple) cartPopup.HideGhostMultiple(row, column);
 
         // hide ghost sprite
         image.sprite = null;
         image.color = emptyAlpha;
         reactionObject.SetActive(false);
+        cartPopup.TurnOffAnims(row, column);
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
         if (isTaken || hasSelected) return;
+        if (currMini.isMultiple) cartPopup.SeatMultiple(currMini.multSprite, row, column);
 
         image.sprite = currMini.miniSprite;
         image.color = baseColor;

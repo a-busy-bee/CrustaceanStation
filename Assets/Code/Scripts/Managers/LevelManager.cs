@@ -161,7 +161,7 @@ public class LevelManager : MonoBehaviour
 
     public void OnNewDay()
     {
-        SceneManager.LoadScene("Temp");
+        SceneManager.LoadScene("BaseArea");
     }
 
 
@@ -222,23 +222,8 @@ public class LevelManager : MonoBehaviour
         return rails.Count;
     }
 
-    public void RemoveCurrentTrain(TrainController controller)
-    {
-        //currentTrains.Remove(controller);
-
-        //int id = controller.GetTrainLine();
-        //trackManager[id - 1] = GenerateTrain(id);
-        //StartCoroutine(WaitThenArriveTrain(trackManager[id - 1]));
-    }
-
     public Rail.RailDirection GetRandomCurrentTrainDirection()
     {
-        /*if (currentTrains.Count == 0)
-        {
-            return "none";
-        }
-        return currentTrains[Random.Range(0, currentTrains.Count)].GetID();*/
-
         if (rails.Count == 0)
         {
             return Rail.RailDirection.North;

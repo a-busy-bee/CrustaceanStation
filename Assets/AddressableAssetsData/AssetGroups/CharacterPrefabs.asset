@@ -171,6 +171,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - CharacterPrefabs
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4a5e41442a6c54a14a5850afcd577edb
+    m_Address: Assets/Code/Prefabs/Crabs/sealion_yellow.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterPrefabs
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4e47f4526bdd642a7aac88135d015e6c
     m_Address: Assets/Code/Prefabs/Crabs/tall_purple.prefab
     m_ReadOnly: 0
@@ -207,6 +213,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - CrabdexEntries
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 59a14dd0cc7204d1b8c33fa6f38c99c2
+    m_Address: Assets/Code/Prefabs/Crabs/sealion_blue.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterPrefabs
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 5a1c153d5f33e405499730ed9af973cf
     m_Address: Assets/Code/Prefabs/Crabs/ghost_tiny.prefab
     m_ReadOnly: 0
@@ -233,6 +245,12 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 66c6d62393a57475d82283a7122b83c4
     m_Address: Assets/Code/ScriptableObjects/CrabdexEntries/Shrimp.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CrabdexEntries
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6c746fa31181c451280a1e27532337cc
+    m_Address: Assets/Code/ScriptableObjects/CrabdexEntries/Krill.asset
     m_ReadOnly: 0
     m_SerializedLabels:
     - CrabdexEntries
@@ -371,6 +389,12 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a1dda88b982b549e9aca6352e9d54486
     m_Address: Assets/Code/Prefabs/Crabs/sardines.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterPrefabs
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a56348eeec240457480bca73e1151c32
+    m_Address: Assets/Code/Prefabs/Crabs/sealion_purple.prefab
     m_ReadOnly: 0
     m_SerializedLabels:
     - CharacterPrefabs
@@ -623,6 +647,12 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f1575823c3917496185dabeb83d7b7e5
     m_Address: Assets/Code/Prefabs/Crabs/sealion_large.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterPrefabs
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f50522c7b487d4802960b3908c74faf3
+    m_Address: Assets/Code/Prefabs/Crabs/sealion_coffee.prefab
     m_ReadOnly: 0
     m_SerializedLabels:
     - CharacterPrefabs
