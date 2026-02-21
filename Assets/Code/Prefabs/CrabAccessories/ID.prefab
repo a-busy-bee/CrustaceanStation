@@ -253,6 +253,7 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -372,6 +373,7 @@ GameObject:
   - component: {fileID: 9019425930988651157}
   - component: {fileID: 3979020930645888592}
   - component: {fileID: 6889979033266849278}
+  - component: {fileID: 2209203363107726758}
   m_Layer: 5
   m_Name: ID
   m_TagString: Untagged
@@ -427,6 +429,19 @@ MonoBehaviour:
   image: {fileID: 1684863310094501700}
   blur: {fileID: 6845583141951043755}
   rectTransform: {fileID: 9019425930988651157}
+  canvasGroup: {fileID: 2209203363107726758}
+--- !u!225 &2209203363107726758
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5256601893285506828}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &6845583141951043755
 GameObject:
   m_ObjectHideFlags: 0

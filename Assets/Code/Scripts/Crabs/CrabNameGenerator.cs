@@ -28,7 +28,7 @@ public class CrabNameGenerator : MonoBehaviour
 
     public string GetNameByType(CrabInfo.CrabType type)
     {
-        if (Random.Range(0, 3) <= 2)
+        if (nameDictionary.ContainsKey(type) && Random.Range(0, 3) <= 2)
         {
             int idx = Random.Range(0, nameDictionary[type].Count);
             return nameDictionary[type][idx];

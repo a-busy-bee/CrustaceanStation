@@ -24,7 +24,7 @@ public class Kiosk : MonoBehaviour
 
 
     [Header("Goals")]
-    [SerializeField] private RatingGoal ratingGoal;
+    //[SerializeField] private RatingGoal ratingGoal;
     [SerializeField] private CrabCountGoal crabCountGoal;
     private int crabsToday = 0;
     private float wrong = 0f;
@@ -57,7 +57,6 @@ public class Kiosk : MonoBehaviour
         Empty,              // a crab hasn't walked up to the kiosk yet
         CrabPresent,        // crab has presented its ID & ticket for review
         CrabApproved,       // crab has been approved & is selecting train
-        CrabWaiting,        // crab has been told to wait
         CrabRejected,       // crab has been rejected
         CrabLeaving,        // crab is leaving 
         EndOfDay            // day is over, close kiosk
@@ -131,15 +130,6 @@ public class Kiosk : MonoBehaviour
                     {
                         wrong++;
                     }
-                }
-                break;
-
-            case KioskState.CrabWaiting:
-                {
-                    //DisableButtons();
-                    //SetState(KioskState.CrabLeaving);
-
-                    // do nothing for now
                 }
                 break;
 
@@ -289,13 +279,13 @@ public class Kiosk : MonoBehaviour
 
     public void GivePlayerCoins(int newCoins)
     {
-        PlayerPrefs.SetInt("coins", PlayerPrefs.GetInt("coins") + (int)(newCoins * ratingGoal.GetRating()));
+        PlayerPrefs.SetInt("coins", PlayerPrefs.GetInt("coins") + newCoins);
         coinCountText.text = PlayerPrefs.GetInt("coins").ToString();
     }
 
     private void UpdateRating()
     {
-        ratingGoal.UpdateRating((total - wrong) / (float)total);
+        //ratingGoal.UpdateRating((total - wrong) / (float)total);
     }
 
     public void SetCrabSpeedUpgrade()

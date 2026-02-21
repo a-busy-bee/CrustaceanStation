@@ -103,6 +103,7 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -147,6 +148,7 @@ GameObject:
   - component: {fileID: 6530686145522743809}
   - component: {fileID: 1375898490629199829}
   - component: {fileID: 9159087145189798066}
+  - component: {fileID: 8158084900486435732}
   m_Layer: 5
   m_Name: Ticket
   m_TagString: Untagged
@@ -207,6 +209,19 @@ MonoBehaviour:
   - {fileID: 21300000, guid: c90855886b3724d1ebd4745abe54133d, type: 3}
   ticketImg: {fileID: 6244236569825186139}
   blurImg: {fileID: 4120710630050837951}
+  canvasGroup: {fileID: 8158084900486435732}
+--- !u!225 &8158084900486435732
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088732259898174776}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1221432070851049970
 GameObject:
   m_ObjectHideFlags: 0
@@ -638,6 +653,7 @@ MonoBehaviour:
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0

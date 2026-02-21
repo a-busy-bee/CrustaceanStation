@@ -111,6 +111,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - CharacterPrefabs
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 27732f7af80a7453f97f9cbf1c204009
+    m_Address: Assets/Code/Prefabs/Crabs/orca.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterPrefabs
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 27f75caf7255a40b78bb5b052fb153a1
     m_Address: Assets/Code/ScriptableObjects/CrabdexEntries/Nautilus.asset
     m_ReadOnly: 0
@@ -411,6 +417,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - CharacterPrefabs
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: afc139df7668947869c4a4985d97e9f9
+    m_Address: Assets/Code/ScriptableObjects/CrabdexEntries/Orca.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CrabdexEntries
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: affa167d9c40f429dad1d1151ff833ca
     m_Address: Assets/Code/Prefabs/Crabs/rugosus_banana.prefab
     m_ReadOnly: 0
@@ -485,6 +497,12 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c2f8b39f139d04ee2916e5b91eb44164
     m_Address: Assets/Code/Prefabs/Crabs/purpureus_orange.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterPrefabs
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c3c9bd610b6b14c02b6c43235f4db9d8
+    m_Address: Assets/Code/Prefabs/Crabs/orcaShy.prefab
     m_ReadOnly: 0
     m_SerializedLabels:
     - CharacterPrefabs

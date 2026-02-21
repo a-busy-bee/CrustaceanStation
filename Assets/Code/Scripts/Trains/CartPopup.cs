@@ -31,7 +31,8 @@ public class CartPopup : MonoBehaviour
         seaSheep,
         shrimp,
         nautilus,
-        family
+        family,
+        orca
     }
     private Mini currMini;
     private Cart.Type type;
@@ -210,7 +211,7 @@ public class CartPopup : MonoBehaviour
                 if (minis[row, col] != defaultEmpty)
                 {
                     // TODO: here's where we add the emotion-specific bonuses/debuffs
-                    coins += 2;
+                    coins += 3;
                     minis[row, col] = defaultEmpty;
                 }
             }
