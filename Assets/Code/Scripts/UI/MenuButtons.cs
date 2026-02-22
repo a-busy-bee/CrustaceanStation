@@ -18,7 +18,7 @@ public class MenuButtons : MonoBehaviour
             PlayerPrefs.SetInt("kioskStyle", 1);
         }
 
-        SceneManager.LoadScene("Temp");
+        SceneManager.LoadScene("Home");
     }
 
     public void Settings()
@@ -31,5 +31,15 @@ public class MenuButtons : MonoBehaviour
     public void Credits()
     {
         SceneManager.LoadScene("Credits");
+    }
+
+    public void Shop()
+    {
+        SceneManager.LoadScene("Shop");
+    }
+
+    public void startDay()
+    {
+        SceneManager.LoadScene("Temp");
     }
 }
