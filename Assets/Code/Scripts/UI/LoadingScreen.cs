@@ -2,6 +2,7 @@ using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using TMPro;
 
 public class LoadingScreen : MonoBehaviour
 {
@@ -12,7 +13,21 @@ public class LoadingScreen : MonoBehaviour
     [SerializeField] private float fadeSpeed;
     [SerializeField] private CanvasGroup group;
     [SerializeField] private GameObject sliderParent;
+    [SerializeField] private TextMeshProUGUI tooltipText;
     private float sinFreq = 20f;
+
+    private string[] tooltips = {
+        "Summoning crabs...",
+        "Fighting off seagulls...",
+        "Distracting whales...",
+        "Finding Itty Bitty's lollipop",
+        "Tip: whales take up two seats",
+        "Tip: Don't forget to check the name on the ticket",
+        "Tip: Try tapping the shopkeeper",
+        "Tapping shopkeepers...",
+        "Decorating the kiosk...",
+        "Watching sunsets..."
+    };
 
     private void Start()
     {
@@ -34,6 +49,7 @@ public class LoadingScreen : MonoBehaviour
     {
         sliderParent.SetActive(true);
         slider.value = 0;
+        tooltipText.text = tooltips[Random.Range(0, tooltips.Length)];
 
         while (slider.value < 0.67f)
         {

@@ -1936,6 +1936,7 @@ MonoBehaviour:
   - {fileID: 884700881}
   - {fileID: 1979564572}
   defaultEmpty: {fileID: 11400000, guid: e1300a792471245d184b48b93aa88892, type: 2}
+  miniAssets: []
 --- !u!114 &154638096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10873,11 +10874,10 @@ MonoBehaviour:
   leftSlot: {fileID: 742117174}
   rightSlot: {fileID: 1164846260}
   topSlot: {fileID: 1629576520}
-  debugMode: 0
+  debugMode: 1
   charactersToForce:
   - {fileID: 1918681812830035428, guid: 27732f7af80a7453f97f9cbf1c204009, type: 3}
-  - {fileID: 1918681812830035428, guid: 153176e41cbf6425e942ff0f154b8af4, type: 3}
-  - {fileID: 1918681812830035428, guid: c3c9bd610b6b14c02b6c43235f4db9d8, type: 3}
+  - {fileID: 1918681812830035428, guid: da5ef5e57ceba428497614c5a3fa97db, type: 3}
 --- !u!1 &732722036
 GameObject:
   m_ObjectHideFlags: 0
@@ -12429,7 +12429,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &866408564
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12526,6 +12526,7 @@ MonoBehaviour:
   - {fileID: 1407751690}
   - {fileID: 1753687326}
   defaultEmpty: {fileID: 11400000, guid: e1300a792471245d184b48b93aa88892, type: 2}
+  miniAssets: []
 --- !u!1 &876826357
 GameObject:
   m_ObjectHideFlags: 0
@@ -17338,9 +17339,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.049957007
+    y: 0.04992771
     width: 1
-    height: 0.900086
+    height: 0.9001446
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -31277,7 +31278,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6182215521950669315, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -18.83319
+      value: -18.83313
       objectReference: {fileID: 0}
     - target: {fileID: 6182215521950669315, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
