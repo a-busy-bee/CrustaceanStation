@@ -35,4 +35,14 @@ public class MenuButtons : MonoBehaviour
     {
         SceneManager.LoadScene("Credits");
     }
+
+    public void Shop()
+    {
+        SceneManager.LoadScene("Shop");
+    }
+
+    public void startDay()
+    {
+        SceneManager.LoadScene("BaseArea");
+    }
 }
