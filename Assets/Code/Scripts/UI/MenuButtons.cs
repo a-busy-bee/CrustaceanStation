@@ -4,6 +4,7 @@ public class MenuButtons : MonoBehaviour
 {
     [SerializeField] private GameObject settingsPanel;
     [SerializeField] private GameObject backgroundPanel;
+    [SerializeField] private GameObject loadingScreenPanel;
     public void quitGame()
     {
         Debug.Log("Quit!");
@@ -14,11 +15,13 @@ public class MenuButtons : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("newGame") != -1)
         {
+            Debug.Log("newGame");
             PlayerPrefs.SetInt("newGame", 1);
             PlayerPrefs.SetInt("kioskStyle", 0);
         }
 
-        SceneManager.LoadScene("BaseArea");
+        loadingScreenPanel.SetActive(true);
+        loadingScreenPanel.GetComponent<LoadingScreen>().PlayLoad();
     }
 
     public void Settings()

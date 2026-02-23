@@ -165,7 +165,7 @@ public class CartSeat : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         image.sprite = alt;
         image.color = baseColor;
     }
-
+ 
     public void PlayAnim(ReactionType reactionType)
     {
         // play anim of the mini beside the placed one, if possible
@@ -195,6 +195,7 @@ public class CartSeat : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public void OnPointerClick(PointerEventData eventData)
     {
         if (isTaken || hasSelected) return;
+        if (currMini.isMultiple && (isTaken || !cartPopup.CheckIfBothSeatsAreOpen(row, column))) return;
         if (currMini.isMultiple) cartPopup.SeatMultiple(currMini.multSprite, row, column);
 
         image.sprite = currMini.miniSprite;

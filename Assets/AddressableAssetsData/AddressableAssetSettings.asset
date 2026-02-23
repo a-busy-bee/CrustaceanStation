@@ -15,7 +15,7 @@ MonoBehaviour:
   m_DefaultGroup: 707c9a73fd72548fea7afe8fec8ab63e
   m_currentHash:
     serializedVersion: 2
-    Hash: 009d7ce45e349c44e212d3ecb3df40c1
+    Hash: a00693160b8f8e20743a60fd6d12c33c
   m_OptimizeCatalogSize: 0
   m_BuildRemoteCatalog: 0
   m_CatalogRequestsTimeout: 0
@@ -107,6 +107,7 @@ MonoBehaviour:
     - CharacterSprites
     - CrabdexEntries
     - Hats
+    - Minis
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: b6a69171fc1a04534a14a85b9975b82e, type: 2}

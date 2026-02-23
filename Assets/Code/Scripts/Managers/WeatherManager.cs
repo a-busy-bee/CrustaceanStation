@@ -101,7 +101,7 @@ public class WeatherManager : MonoBehaviour
 
         int changeIdx = Random.Range(0, 4);
 
-        if (changeIdx == 0 && !(currentType.type == "sunny"))
+        if (changeIdx == 0 || changeIdx == 2 && !(currentType.type == "sunny"))
         {
             MakeSunny();
         }

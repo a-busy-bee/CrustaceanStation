@@ -61,7 +61,7 @@ public class CrabController : MonoBehaviour
             xPos = -492;
         }
 
-        kioskStartPos = new Vector3(xPos, -600, 0);
+        kioskStartPos = new Vector3(xPos, -700, 0);
         kioskEndPos = new Vector3(xPos, crabInfo.kioskHeight, 0);
 
         rectTransform.anchoredPosition = kioskStartPos;

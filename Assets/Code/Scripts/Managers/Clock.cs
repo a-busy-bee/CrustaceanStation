@@ -21,6 +21,11 @@ public class Clock : MonoBehaviour
     // CRABS
     [SerializeField] private Kiosk kiosk;
 
+    // FILL COLOR
+    [SerializeField] private Color red;
+    [SerializeField] private Color grey;
+
+
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -65,6 +70,11 @@ public class Clock : MonoBehaviour
                 WeatherManager.instance.ChangeWeather();
             }
 
+            if (currentTime == endTime - 2)
+            {
+                StartCoroutine(FlashEOD());
+            }
+
             if (currentTime == endTime)
             {
                 LevelManager.instance.SetState(LevelManager.LMState.Summary);
@@ -103,5 +113,20 @@ public class Clock : MonoBehaviour
     public int GetCurrentTime()
     {
         return currentTime;
+    }
+
+    private IEnumerator FlashEOD()
+    {
+        for (int i = 0; i < (int)Constants.CLOCK_SPEED * 3; i++)
+        {
+            yield return new WaitForSeconds(0.5f);
+
+            fill.color = red;
+
+            yield return new WaitForSeconds(0.5f);
+
+            fill.color = grey;
+        }
+        
     }
 }

@@ -1,4 +1,7 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.AddressableAssets;
 
 public class PopupManager : MonoBehaviour
 {
@@ -18,6 +21,8 @@ public class PopupManager : MonoBehaviour
     private bool currActive = false;
     private (int, Cart.Type) hoveredTrain = (-1, Cart.Type.Null);
 
+    public List<Mini> miniAssets;
+
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -33,6 +38,22 @@ public class PopupManager : MonoBehaviour
         standardPopup.SetActive(false);
         background.SetActive(false);
         blurParent.SetActive(false);
+    }
+
+    IEnumerator Start()
+    {
+        miniAssets.Clear();
+        var miniHandle = Addressables.LoadAssetsAsync<Mini>("Minis", null);
+        yield return miniHandle;
+
+        miniAssets = new List<Mini>(miniHandle.Result);
+
+        yield return null;
+    }
+
+    public List<Mini> GetMinis()
+    {
+        return miniAssets;
     }
 
     public int DepartTrain(int railNumber, Cart.Type cartType)

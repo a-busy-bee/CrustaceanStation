@@ -1,14 +1,14 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Collections;
 using UnityEngine.EventSystems;
+using UnityEngine.AddressableAssets;
 
 using miniPair = System.Tuple<Mini.Type, Mini.Strength>;
 using Unity.VisualScripting;
 
 public class CartPopup : MonoBehaviour
-{
+{ 
     public enum MiniType
     {
         empty,
@@ -31,13 +31,14 @@ public class CartPopup : MonoBehaviour
         seaSheep,
         shrimp,
         nautilus,
-        family
-    }
+        family,
+        orca
+    } // TODO: IF YOU ARE ADDING A MINI TYPE, UPDATE RANDOM NUM UPPER BOUND IN GenerateNewSeats INNER LOOP
     private Mini currMini;
     private Cart.Type type;
     private int currID;
 
-    private Dictionary<int, Mini[,]> seatDictionary = new Dictionary<int, Mini[,]>(); // <rail number, array of seats>
+    private Dictionary<int, (Mini, int)[,]> seatDictionary = new Dictionary<int, (Mini, int)[,]>(); // <rail number, array of seats>
 
     private CartSeat[,] seatObjects = new CartSeat[3, 4];   // the actual grid I use for the seats
     [SerializeField] private List<CartSeat> seatsAll;       // so I can drag all the seats into the inspector
@@ -76,13 +77,17 @@ public class CartPopup : MonoBehaviour
         { 3, 2 }
     };
 
+    private List<Mini> miniAssets;
+
     private void Start()
     {
+        if (initialized) return;
         InitPopup();
     }
 
     private void InitPopup()
     {
+        miniAssets = PopupManager.instance.GetMinis();
         // convert long seatsAll list to neat little grid for seatObjects
         for (int i = 0; i < seatsAll.Count; i++)
         {
@@ -96,57 +101,69 @@ public class CartPopup : MonoBehaviour
 
         for (int i = 0; i < rails; i++)
         {
-            seatDictionary[i] = new Mini[3, 4];
+            seatDictionary[i] = new (Mini, int)[3, 4];
+            (Mini, int)[,] minis = seatDictionary[i];
 
             // INIT SEATS
             for (int row = 0; row < 3; row++)
             {
                 for (int col = 0; col < 4; col++)
                 {
-                    seatDictionary[i][row, col] = defaultEmpty;
+                    seatDictionary[i][row, col] = (defaultEmpty, 0);
                     seatObjects[row, col].InitSeat(this, row, col);
                 }
             }
+
+            //GenerateNewSeats(i);
         }
 
+        for (int i = 0; i < rails; i++)
+        {
+            GenerateNewSeats(i);
+        }
+        
         initialized = true;
     }
 
     public void Show(int railNumber)
     {
-        if (!initialized) InitPopup();
+        if (!initialized)
+        {
+            InitPopup();
+        }
 
         // get crabinfo from kiosk
         CrabInfo info = Kiosk.instance.GetCrabInfo();
         currMini = info.mini;
         currID = railNumber;
 
-        Mini[,] minis = seatDictionary[railNumber];
+        (Mini, int)[,] minis = seatDictionary[railNumber];
 
         for (int row = 0; row < 3; row++)
         {
             for (int col = 0; col < 4; col++)
             {
-                if (minis[row, col].isMultiple)
+                
+                if (minis[row, col].Item1.isMultiple)
                 {
-                    seatObjects[row, col].Populate(minis[row, col]);
+                    seatObjects[row, col].Populate(minis[row, col].Item1);
                     seatObjects[row, col].SetCharacter(currMini);
                     seatObjects[row, col].HasSelected(false);
 
                     if (col == 0 || col == 2)
                     {
-                        seatObjects[row, col + 1].PopulateForMultiple(minis[row, col].multSprite);
+                        seatObjects[row, col + 1].PopulateForMultiple(minis[row, col].Item1.multSprite);
                         col++; // skip next one
                     }
                     else
                     {
-                        seatObjects[row, col - 1].PopulateForMultiple(minis[row, col].multSprite);
+                        seatObjects[row, col - 1].PopulateForMultiple(minis[row, col].Item1.multSprite);
                     }
-                    
+
                 }
                 else
                 {
-                    seatObjects[row, col].Populate(minis[row, col]);
+                    seatObjects[row, col].Populate(minis[row, col].Item1);
                     seatObjects[row, col].SetCharacter(currMini);
                     seatObjects[row, col].HasSelected(false);
                 }
@@ -157,7 +174,8 @@ public class CartPopup : MonoBehaviour
 
     public void SeatCharacter(int row, int column)
     {
-        seatDictionary[currID][row, column] = currMini;
+        seatDictionary[currID][row, column].Item1 = currMini;
+        seatDictionary[currID][row, column].Item2 = 3;
         for (int rowIdx = 0; rowIdx < 3; rowIdx++)
         {
             for (int colIdx = 0; colIdx < 4; colIdx++)
@@ -201,24 +219,47 @@ public class CartPopup : MonoBehaviour
         // if so, award them
 
         // clear the dictionary idx for this train
-        Mini[,] minis = seatDictionary[railNumber];
+        (Mini, int)[,] minis = seatDictionary[railNumber];
 
         for (int row = 0; row < 3; row++)
         {
             for (int col = 0; col < 4; col++)
             {
-                if (minis[row, col] != defaultEmpty)
+                if (minis[row, col].Item1 != defaultEmpty)
                 {
                     // TODO: here's where we add the emotion-specific bonuses/debuffs
-                    coins += 2;
-                    minis[row, col] = defaultEmpty;
+                    coins += minis[row, col].Item2;
+                    minis[row, col].Item1 = defaultEmpty;
+                    minis[row, col].Item2 = 0;
                 }
             }
         }
 
         coins -= badness;
 
+        GenerateNewSeats(railNumber);
+
         return coins;
+    }
+
+    private void GenerateNewSeats(int railNumber)
+    {
+        (Mini, int)[,] minis = seatDictionary[railNumber];
+
+        for (int row = 0; row < 3; row++)
+        {
+            for (int col = 0; col < 4; col++)
+            {
+                // random chance to place char
+                if (Random.Range(0.0f, 1.0f) <= 0.35f)
+                {
+                    int chance = Random.Range(1, 23);
+                    minis[row, col].Item1 = miniAssets[chance];
+                    minis[row, col].Item2 = 0;
+                }
+
+            }
+        }
     }
 
     private IEnumerator WaitThenClose()
@@ -230,7 +271,7 @@ public class CartPopup : MonoBehaviour
 
     public void CheckRelationship(int row, int col)
     {
-        Mini otherMini = seatDictionary[currID][row, seatPairs[col]];
+        Mini otherMini = seatDictionary[currID][row, seatPairs[col]].Item1;
         CartSeat currSeat = seatObjects[row, col];
         CartSeat otherSeat = seatObjects[row, seatPairs[col]];
 
@@ -443,7 +484,7 @@ public class CartPopup : MonoBehaviour
     public void SeatMultiple(Sprite mult, int row, int col)
     {
         seatObjects[row, seatPairs[col]].SetSpriteForMultiple(mult);
-        seatDictionary[currID][row, col] = currMini;
+        seatDictionary[currID][row, col].Item1 = currMini;
         for (int rowIdx = 0; rowIdx < 3; rowIdx++)
         {
             for (int colIdx = 0; colIdx < 4; colIdx++)

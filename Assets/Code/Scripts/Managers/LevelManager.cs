@@ -16,17 +16,18 @@ public class LevelManager : MonoBehaviour
     [Header("Trains")]
     [SerializeField] private List<Rail> rails = new List<Rail>();  // all rails
     [SerializeField] private GameObject cartPopupStandard;
-    [SerializeField] private GameObject cartPopupEconomy; 
+    [SerializeField] private GameObject cartPopupEconomy;
+    [SerializeField] private GameObject trainsOverlay;
 
 
     [Header("Goals & Summary")]
     [SerializeField] private GameObject pauseMenu;
-    [SerializeField] private GameObject goalRating;
-    [SerializeField] private RatingGoal ratingGoalScript;
+    //[SerializeField] private GameObject goalRating;
+    //[SerializeField] private RatingGoal ratingGoalScript;
     [SerializeField] private GameObject goalCrabCount;
     [SerializeField] private CrabCountGoal crabCountGoalScript;
     [SerializeField] private GameObject summaryMenu;
-    private bool isRating = false;
+    //private bool isRating = false;
     private bool dayStarted = false;
 
 
@@ -60,14 +61,14 @@ public class LevelManager : MonoBehaviour
             instance = this;
         }
 
-        goalRating.SetActive(false);
+        //goalRating.SetActive(false);
         goalCrabCount.SetActive(false);
         summaryMenu.SetActive(false);
     }
 
     private void Start()
     {
-        SetState(LMState.Setup);   
+        SetState(LMState.Setup);
     }
 
     // State machine go brrrrr
@@ -137,10 +138,15 @@ public class LevelManager : MonoBehaviour
                 {
                     Kiosk.instance.SetState(Kiosk.KioskState.EndOfDay);
 
+                    foreach (Rail rail in rails)
+                    {
+                        rail.DepartTrain();
+                    }
+
                     // show prefab
                     transparentOverlay.SetActive(true);
                     summaryMenu.SetActive(true);
-                    summaryMenu.GetComponent<Summary>().SetRating(ratingGoalScript.GetRating());
+                    //summaryMenu.GetComponent<Summary>().SetRating(ratingGoalScript.GetRating());
                     summaryMenu.GetComponent<Summary>().SetCrabsProcessed(Kiosk.instance.GetTotalCrabs());
 
                     dayStarted = false;
@@ -170,29 +176,32 @@ public class LevelManager : MonoBehaviour
         transparentOverlay.SetActive(true);
 
         // show prefab
-        if (Random.Range(0, 10) > 4)
+        /*if (Random.Range(0, 10) > 4)
         {
-            isRating = true;
-            goalRating.SetActive(true);
-            ratingGoalScript.SetGoalActive();
+            //isRating = true;
+            //goalRating.SetActive(true);
+            //ratingGoalScript.SetGoalActive();
         }
         else
         {
             goalCrabCount.SetActive(true);
             crabCountGoalScript.SetGoalActive();
-        }
+        }*/
+        goalCrabCount.SetActive(true);
+        crabCountGoalScript.SetGoalActive();
 
         yield return new WaitForSeconds(3.5f);
 
         // hide prefab
-        if (isRating)
+        /*if (isRating)
         {
             goalRating.SetActive(false);
         }
         else
         {
             goalCrabCount.SetActive(false);
-        }
+        }*/
+        goalCrabCount.SetActive(false);
 
         transparentOverlay.SetActive(false);
 
@@ -279,10 +288,27 @@ public class LevelManager : MonoBehaviour
 
     public void SetTrainsClickable(bool allowClick)
     {
+        if (allowClick)
+        {
+            trainsOverlay.SetActive(false);
+        }
+        else
+        {
+            StartCoroutine(WaitThenTurnOnOverlay());
+        }
+
         foreach (Rail rail in rails)
         {
             rail.SetTrainClickable(allowClick);
         }
     }
+
+    private IEnumerator WaitThenTurnOnOverlay()
+    {
+        yield return new WaitForSeconds(1); // TODO: have it fade in instead of just turning on
+        trainsOverlay.SetActive(true);
+    }
+    
+
 
 }

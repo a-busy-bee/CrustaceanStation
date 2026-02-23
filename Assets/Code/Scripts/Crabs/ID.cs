@@ -14,6 +14,8 @@ public class ID : MonoBehaviour
     [SerializeField] private RectTransform rectTransform;
     private Ticket ticket;
 
+    [SerializeField] private CanvasGroup canvasGroup;
+
     public void SetName(string newName)
     {
         crabName = newName;
@@ -40,6 +42,10 @@ public class ID : MonoBehaviour
 
         // remove blur
         blur.SetActive(true);
+
+        canvasGroup.interactable = true;
+        canvasGroup.blocksRaycasts = true;
+
     }
 
     public void BringForward()
@@ -53,7 +59,8 @@ public class ID : MonoBehaviour
         // remove blur
         blur.SetActive(false);
         rectTransform.SetAsLastSibling();
-
+        canvasGroup.interactable = false;
+        canvasGroup.blocksRaycasts = false;
 
         ticket.PushBack();
     }

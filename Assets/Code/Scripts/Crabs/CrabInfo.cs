@@ -33,7 +33,8 @@ public class CrabInfo : ScriptableObject
 		Tall,
 		Bird,
 		SeaLion,
-		SeaLemon
+		SeaLemon,
+		Orca
 	}
 
 	public CrabType type;

@@ -20,6 +20,8 @@ public class Ticket : MonoBehaviour
     [SerializeField] private Image ticketImg;
     [SerializeField] private Image blurImg;
 
+    [SerializeField] private CanvasGroup canvasGroup;
+
     private void Awake()
     {
         zRotations = new float[] { 0, 180, 270, 90 };
@@ -63,6 +65,8 @@ public class Ticket : MonoBehaviour
 
         // remove blur
         blur.SetActive(true);
+        canvasGroup.interactable = true;
+        canvasGroup.blocksRaycasts = true;
     }
 
     public void BringForward()
@@ -75,6 +79,8 @@ public class Ticket : MonoBehaviour
 
         // remove blur
         blur.SetActive(false);
+        canvasGroup.interactable = false;
+        canvasGroup.blocksRaycasts = false;
         rectTransform.SetAsLastSibling();
 
         id.PushBack();
