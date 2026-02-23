@@ -15,10 +15,10 @@ public class MenuButtons : MonoBehaviour
         if (PlayerPrefs.GetInt("newGame") != -1)
         {
             PlayerPrefs.SetInt("newGame", 1);
-            PlayerPrefs.SetInt("kioskStyle", 1);
+            PlayerPrefs.SetInt("kioskStyle", 0);
         }
 
-        SceneManager.LoadScene("Home");
+        SceneManager.LoadScene("BaseArea");
     }
 
     public void Settings()
@@ -31,15 +31,5 @@ public class MenuButtons : MonoBehaviour
     public void Credits()
     {
         SceneManager.LoadScene("Credits");
-    }
-
-    public void Shop()
-    {
-        SceneManager.LoadScene("Shop");
-    }
-
-    public void startDay()
-    {
-        SceneManager.LoadScene("Temp");
     }
 }
