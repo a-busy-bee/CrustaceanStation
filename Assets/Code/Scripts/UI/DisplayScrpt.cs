@@ -106,7 +106,7 @@ public class DisplayScrpt : MonoBehaviour
     public void Back2menu()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("TitleScreen");
+        SceneManager.LoadScene("Home");
     }
 
     public void OnSettings()
