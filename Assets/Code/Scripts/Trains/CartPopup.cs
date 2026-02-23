@@ -81,6 +81,7 @@ public class CartPopup : MonoBehaviour
 
     private void Start()
     {
+        if (initialized) return;
         InitPopup();
     }
 
@@ -110,17 +111,17 @@ public class CartPopup : MonoBehaviour
                 {
                     seatDictionary[i][row, col] = (defaultEmpty, 0);
                     seatObjects[row, col].InitSeat(this, row, col);
-
-                    if (Random.Range(0.0f, 1.0f) <= 0.35f)
-                    {
-                        int chance = Random.Range(1, 23);
-                        minis[row, col].Item1 = miniAssets[chance];
-                        minis[row, col].Item2 = 0;
-                    }
                 }
             }
+
+            //GenerateNewSeats(i);
         }
 
+        for (int i = 0; i < rails; i++)
+        {
+            GenerateNewSeats(i);
+        }
+        
         initialized = true;
     }
 

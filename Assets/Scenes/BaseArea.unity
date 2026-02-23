@@ -1936,7 +1936,6 @@ MonoBehaviour:
   - {fileID: 884700881}
   - {fileID: 1979564572}
   defaultEmpty: {fileID: 11400000, guid: e1300a792471245d184b48b93aa88892, type: 2}
-  miniAssets: []
 --- !u!114 &154638096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10876,8 +10875,8 @@ MonoBehaviour:
   topSlot: {fileID: 1629576520}
   debugMode: 1
   charactersToForce:
-  - {fileID: 1918681812830035428, guid: 27732f7af80a7453f97f9cbf1c204009, type: 3}
-  - {fileID: 1918681812830035428, guid: da5ef5e57ceba428497614c5a3fa97db, type: 3}
+  - {fileID: 1918681812830035428, guid: 2f8bbcbecf52a425290b61095c58f5d6, type: 3}
+  - {fileID: 1918681812830035428, guid: b0339718099884becbfe40ce68a2ad19, type: 3}
 --- !u!1 &732722036
 GameObject:
   m_ObjectHideFlags: 0
@@ -12526,7 +12525,6 @@ MonoBehaviour:
   - {fileID: 1407751690}
   - {fileID: 1753687326}
   defaultEmpty: {fileID: 11400000, guid: e1300a792471245d184b48b93aa88892, type: 2}
-  miniAssets: []
 --- !u!1 &876826357
 GameObject:
   m_ObjectHideFlags: 0
@@ -17339,9 +17337,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.04992771
+    y: 0.05006489
     width: 1
-    height: 0.9001446
+    height: 0.8998702
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -29362,6 +29360,7 @@ MonoBehaviour:
   blurParent: {fileID: 1255920717}
   blurLeft: {fileID: 449460865}
   blurRight: {fileID: 2023465775}
+  miniAssets: []
 --- !u!1 &2075816223
 GameObject:
   m_ObjectHideFlags: 0

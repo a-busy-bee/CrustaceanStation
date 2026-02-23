@@ -39,7 +39,6 @@ public class TrainController : MonoBehaviour
         Departed        // train is offscreen
     }
     public TrainState trainState { get; private set; }
-    private bool boardAfterArrival = false;
 
     [SerializeField] private List<TrainPosition> trainPositionsBasedOnDirection;
 
