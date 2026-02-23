@@ -64,7 +64,7 @@ public class LoadingScreen : MonoBehaviour
 
         slider.value = 0.67f;
 
-        AsyncOperation loadingOperation = SceneManager.LoadSceneAsync("BaseArea");
+        AsyncOperation loadingOperation = SceneManager.LoadSceneAsync("Home");
 
         while (!loadingOperation.isDone)
         {
