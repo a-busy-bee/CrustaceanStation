@@ -8,7 +8,7 @@ using miniPair = System.Tuple<Mini.Type, Mini.Strength>;
 using Unity.VisualScripting;
 
 public class CartPopup : MonoBehaviour
-{ 
+{
     public enum MiniType
     {
         empty,
@@ -32,7 +32,8 @@ public class CartPopup : MonoBehaviour
         shrimp,
         nautilus,
         family,
-        orca
+        orca,
+        whale
     } // TODO: IF YOU ARE ADDING A MINI TYPE, UPDATE RANDOM NUM UPPER BOUND IN GenerateNewSeats INNER LOOP
     private Mini currMini;
     private Cart.Type type;
