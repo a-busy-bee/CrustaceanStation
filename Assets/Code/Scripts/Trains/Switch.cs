@@ -10,6 +10,7 @@ public class Switch : MonoBehaviour, IPointerClickHandler
 
     private Rail rail;
     private Animator animator;
+    [SerializeField] private GameObject x;
 
     private void Awake()
     {
