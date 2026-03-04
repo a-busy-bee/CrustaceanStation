@@ -37,15 +37,15 @@ public class LoadingScreen : MonoBehaviour
 
         animator.enabled = false;
     }
-    public void PlayLoad()
+    public void PlayLoad(string sceneName)
     {
         imagenewGame.SetActive(true);
         animator.enabled = true;
-        StartCoroutine(WaitForEndOfAnim());
+        StartCoroutine(WaitForEndOfAnim(sceneName));
 
         
     }
-    private IEnumerator LoadSceneCoroutine()
+    private IEnumerator LoadSceneCoroutine(string sceneName)
     {
         sliderParent.SetActive(true);
         slider.value = 0;
@@ -64,7 +64,7 @@ public class LoadingScreen : MonoBehaviour
 
         slider.value = 0.67f;
 
-        AsyncOperation loadingOperation = SceneManager.LoadSceneAsync("Home");
+        AsyncOperation loadingOperation = SceneManager.LoadSceneAsync(sceneName);
 
         while (!loadingOperation.isDone)
         {
@@ -81,9 +81,10 @@ public class LoadingScreen : MonoBehaviour
         }
         group.alpha = 0;
         group.blocksRaycasts = false;
+        gameObject.SetActive(false);
     }
 
-    private IEnumerator WaitForEndOfAnim()
+    private IEnumerator WaitForEndOfAnim(string sceneName)
     {
 
         group.blocksRaycasts = true;
@@ -100,6 +101,6 @@ public class LoadingScreen : MonoBehaviour
 
         yield return new WaitForSeconds(4.2f);
 
-        StartCoroutine(LoadSceneCoroutine());
+        StartCoroutine(LoadSceneCoroutine(sceneName));
     }
 }

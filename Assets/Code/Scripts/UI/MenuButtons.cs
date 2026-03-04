@@ -21,7 +21,7 @@ public class MenuButtons : MonoBehaviour
         }
 
         loadingScreenPanel.SetActive(true);
-        loadingScreenPanel.GetComponent<LoadingScreen>().PlayLoad();
+        loadingScreenPanel.GetComponent<LoadingScreen>().PlayLoad("Home");
     }
 
     public void Settings()
@@ -41,8 +41,14 @@ public class MenuButtons : MonoBehaviour
         SceneManager.LoadScene("Shop");
     }
 
-    public void startDay()
+    public void startDay(string sceneName)
     {
-        SceneManager.LoadScene("BaseArea");
+        loadingScreenPanel.SetActive(true);
+        loadingScreenPanel.GetComponent<LoadingScreen>().PlayLoad(sceneName);
+    }
+
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene("TitleScreen");
     }
 }

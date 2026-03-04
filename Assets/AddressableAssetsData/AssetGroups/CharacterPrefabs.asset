@@ -621,6 +621,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - CharacterPrefabs
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c77a9caa810ac43b9b4856be3bd884a0
+    m_Address: Assets/Code/ScriptableObjects/Minis/Whale.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Minis
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c8a2fc357076545a5b66f7782c8a458c
     m_Address: Assets/Code/Prefabs/Crabs/lobster_hat.prefab
     m_ReadOnly: 0
@@ -800,6 +806,12 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Minis
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f4c8edfc3b5574233843bce465da23c6
+    m_Address: Assets/Code/ScriptableObjects/CrabdexEntries/Whale.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CrabdexEntries
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f50522c7b487d4802960b3908c74faf3
     m_Address: Assets/Code/Prefabs/Crabs/sealion_coffee.prefab

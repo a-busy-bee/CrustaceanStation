@@ -8,6 +8,8 @@ public class ID : MonoBehaviour
     private string crabName;
 
     [SerializeField] private Image image;
+    [SerializeField] private Image magnifyImage;
+    [SerializeField] private CanvasGroup hover;
     private Sprite sprite;
 
     [SerializeField] private GameObject blur;
@@ -26,6 +28,7 @@ public class ID : MonoBehaviour
     {
         sprite = newSprite;
         image.sprite = sprite;
+        magnifyImage.sprite = sprite;
     }
 
     public void SetTicket(Ticket newTicket)
@@ -46,6 +49,8 @@ public class ID : MonoBehaviour
         canvasGroup.interactable = true;
         canvasGroup.blocksRaycasts = true;
 
+        hover.interactable = false;
+        hover.blocksRaycasts = false;
     }
 
     public void BringForward()
@@ -61,6 +66,9 @@ public class ID : MonoBehaviour
         rectTransform.SetAsLastSibling();
         canvasGroup.interactable = false;
         canvasGroup.blocksRaycasts = false;
+
+        hover.interactable = true;
+        hover.blocksRaycasts = true;
 
         ticket.PushBack();
     }
