@@ -19,4 +19,8 @@ MonoBehaviour:
   isCrustacean: 0
   typicalSprite: {fileID: 21300000, guid: 7b91affdaac2242349b69d402fd140b4, type: 3}
   generalVariantDiscovered: 0
-  variants: []
+  variants:
+  - variantName: Creepy
+    formalVariantName: Creepy
+    sprite: {fileID: 21300000, guid: 320c662b7c4ba4a5bb90f6540d7579f3, type: 3}
+    hasBeenDiscovered: 0

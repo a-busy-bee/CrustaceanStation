@@ -7,7 +7,8 @@ public class Cart : ScriptableObject
 	{
 		Economy,
 		Standard,
-		Deluxe
+		Deluxe,
+		Null
 	}
 
 	public Type cartType;

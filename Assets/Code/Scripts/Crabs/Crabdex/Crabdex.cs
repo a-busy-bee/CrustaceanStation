@@ -60,7 +60,6 @@ public class Crabdex : MonoBehaviour
                 }
             }
         }
-
     }
 
     public void OnCrabEntryPress(int id)

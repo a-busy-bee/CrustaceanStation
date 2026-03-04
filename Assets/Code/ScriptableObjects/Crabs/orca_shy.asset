@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78e9b5b3f91a34cb3b12441421826e1c, type: 3}
+  m_Name: orca_shy
+  m_EditorClassIdentifier: Assembly-CSharp::CrabInfo
+  sprite: {fileID: 21300000, guid: a173f3b2989524d62a408e05ba0406b0, type: 3}
+  kioskHeight: 14
+  isLarge: 1
+  crabName: 
+  type: 24
+  favoriteWeatherTypes: 01000000020000000000000003000000
+  crabdexName: orca
+  isVariant: 1
+  variantName: Shy
+  mini: {fileID: 11400000, guid: 6c70eb9e2637044f296de8e6c8dbb756, type: 2}
+  isMultiple: 0

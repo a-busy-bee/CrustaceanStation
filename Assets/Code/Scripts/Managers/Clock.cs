@@ -21,6 +21,11 @@ public class Clock : MonoBehaviour
     // CRABS
     [SerializeField] private Kiosk kiosk;
 
+    // FILL COLOR
+    [SerializeField] private Color red;
+    [SerializeField] private Color grey;
+
+
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -46,10 +51,9 @@ public class Clock : MonoBehaviour
     {
         while (currentTime < endTime)
         {
-
             if (currentTime == startTime)
             {
-                LevelManager.instance.CheckTrains(startTime);
+                //LevelManager.instance.CheckTrains(startTime);
                 yield return WaitThenSummonCrabs();
             }
 
@@ -59,11 +63,16 @@ public class Clock : MonoBehaviour
             yield return RotateHand();
             currentTime++;
 
-            LevelManager.instance.CheckTrains(currentTime);
+            //LevelManager.instance.CheckTrains(currentTime);
 
             if (currentTime % 2 == 0) // chance to change weather every 2 hours
             {
                 WeatherManager.instance.ChangeWeather();
+            }
+
+            if (currentTime == endTime - 2)
+            {
+                StartCoroutine(FlashEOD());
             }
 
             if (currentTime == endTime)
@@ -104,5 +113,20 @@ public class Clock : MonoBehaviour
     public int GetCurrentTime()
     {
         return currentTime;
+    }
+
+    private IEnumerator FlashEOD()
+    {
+        for (int i = 0; i < (int)Constants.CLOCK_SPEED * 3; i++)
+        {
+            yield return new WaitForSeconds(0.5f);
+
+            fill.color = red;
+
+            yield return new WaitForSeconds(0.5f);
+
+            fill.color = grey;
+        }
+        
     }
 }

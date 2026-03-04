@@ -45,8 +45,10 @@ public class Decor : MonoBehaviour
     private int kioskPg = 1; 
     private int deskPg = 2;
     //private int currDecoSlot;
+
+    private GameObject currSelector;
     private enum ItemType
-    { 
+    {
         Kiosk,
         DeskItems
     }
@@ -119,6 +121,15 @@ public class Decor : MonoBehaviour
         startingText.SetActive(true);
 	}
 
+	private void OnDisable()
+	{
+		if (currSelector != null)
+        {
+            currSelector.SetActive(false);
+            currSelector = null;
+        }
+	}
+
 	public void UpgradeKiosk()
     {
         startingText.SetActive(false);
@@ -128,8 +139,10 @@ public class Decor : MonoBehaviour
         type = ItemType.Kiosk;
         pg = 1;
         DisplayPage(pg);
-        
+
         currentSlot = SlotType.kiosk;
+        currSelector.SetActive(false);
+
     }
 
     public void SelectKioskStyle(int idx)
@@ -138,8 +151,11 @@ public class Decor : MonoBehaviour
     }
 
     // keep track of which slot we are on
-    public void selectDecor_Left()
+    public void selectDecor_Left(GameObject selector)
     {
+        if (currSelector != null) currSelector.SetActive(false);
+        currSelector = selector;
+        currSelector.SetActive(true);
         startingText.SetActive(false);
         isTopDecorOpen = false;
 
@@ -147,8 +163,11 @@ public class Decor : MonoBehaviour
         DeskDeco();
     }
 
-    public void selectDecor_Right()
+    public void selectDecor_Right(GameObject selector)
     {
+        if (currSelector != null) currSelector.SetActive(false);
+        currSelector = selector;
+        currSelector.SetActive(true);
         startingText.SetActive(false);
         isTopDecorOpen = false;
 
@@ -156,8 +175,11 @@ public class Decor : MonoBehaviour
         DeskDeco();
     }
 
-    public void selectDecor_Top()
+    public void selectDecor_Top(GameObject selector)
     {
+        if (currSelector != null) currSelector.SetActive(false);
+        currSelector = selector;
+        currSelector.SetActive(true);
         startingText.SetActive(false);
         isTopDecorOpen = true;
 
@@ -240,6 +262,11 @@ public class Decor : MonoBehaviour
 
     public void setKioskStyle(int index) // to be implemented
     {
+        if (currSelector != null)
+        {
+            currSelector.SetActive(false);
+            currSelector = null;
+        }
         PlayerPrefs.SetInt("kioskStyle", index);
         displayKiosk.DisplayKioskStyle(index);
     }

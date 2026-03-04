@@ -1,14 +1,12 @@
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
+using System.Text;
 
 public class CrabNameGenerator : MonoBehaviour
 {
     public static CrabNameGenerator instance { get; private set; }
-
-    private Dictionary<CrabInfo.CrabType, List<string>> nameDictionary; // species-speicifc names (ie Crabstopher)
-    private List<string> general = new List<string>();  // general names (ie Max)
-
+    private Dictionary<CrabInfo.CrabType, List<string>> nameDictionary; // species-specific names (ie Crabstopher)
+    private List<string> general = new List<string>(); // general names (ie Max)
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -16,10 +14,8 @@ public class CrabNameGenerator : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-        else
-        {
-            instance = this;
-        }
+
+        instance = this;
 
         nameDictionary = new Dictionary<CrabInfo.CrabType, List<string>>();
 
@@ -28,10 +24,12 @@ public class CrabNameGenerator : MonoBehaviour
 
     public string GetNameByType(CrabInfo.CrabType type)
     {
-        if (Random.Range(0, 3) <= 2)
+        // 2/3 chance to use species name if available
+        if (nameDictionary.ContainsKey(type) && Random.Range(0, 3) <= 1)
         {
-            int idx = Random.Range(0, nameDictionary[type].Count);
-            return nameDictionary[type][idx];
+            var list = nameDictionary[type];
+            int idx = Random.Range(0, list.Count);
+            return list[idx];
         }
 
         // fallback
@@ -42,7 +40,6 @@ public class CrabNameGenerator : MonoBehaviour
     {
         return general[Random.Range(0, general.Count)];
     }
-
 
     private void LoadNameFile()
     {
@@ -55,34 +52,34 @@ public class CrabNameGenerator : MonoBehaviour
 
         string[] lines = csvFile.text.Split('\n');
 
+        // skip header
         for (int i = 1; i < lines.Length; i++)
         {
-            if (string.IsNullOrWhiteSpace(lines[i])) { continue; }
+            if (string.IsNullOrWhiteSpace(lines[i])) continue;
 
             string line = lines[i].Trim();
 
-            // Split only on first comma (name can be quoted)
-            int firstComma = line.IndexOf(',');
-            if (firstComma < 0) continue;
+            // Parse CSV row
+            List<string> fields = ParseCsvLine(line);
 
-            string name = line.Substring(0, firstComma).Trim().Trim('"');
-            string speciesField = line.Substring(firstComma + 1).Trim().Trim('"');
+            if (fields.Count < 2) continue;
 
-            string[] speciesList = speciesField.Split(',');
+            string name = fields[0];
+            List<string> speciesList = ParseCsvLine(fields[1]);
 
             foreach (string rawSpecies in speciesList)
             {
                 string species = rawSpecies.Trim();
 
-                // Generic → fallback list
+                // fallback list
                 if (species.Equals("Generic", System.StringComparison.OrdinalIgnoreCase))
                 {
                     general.Add(name);
                     continue;
                 }
 
-                // Try parsing enum
-                if (System.Enum.TryParse(species, true, out CrabInfo.CrabType crabType))
+                if (System.Enum.TryParse(species, true,
+                    out CrabInfo.CrabType crabType))
                 {
                     if (!nameDictionary.ContainsKey(crabType))
                     {
@@ -93,11 +90,49 @@ public class CrabNameGenerator : MonoBehaviour
                 }
                 else
                 {
-                    Debug.LogWarning($"Unknown CrabType '{species}' for name '{name}'");
+                    Debug.LogWarning(
+                        $"Unknown CrabType '{species}' for name '{name}'");
                 }
             }
         }
-
     }
+    private List<string> ParseCsvLine(string line)
+    {
+        List<string> fields = new List<string>();
+        StringBuilder current = new StringBuilder();
 
+        bool inQuotes = false;
+
+        for (int i = 0; i < line.Length; i++)
+        {
+            char c = line[i];
+
+            if (c == '"')
+            {
+                // Handle escaped quotes ("")
+                if (inQuotes && i + 1 < line.Length && line[i + 1] == '"')
+                {
+                    current.Append('"');
+                    i++;
+                }
+                else
+                {
+                    inQuotes = !inQuotes;
+                }
+            }
+            else if (c == ',' && !inQuotes)
+            {
+                fields.Add(current.ToString().Trim());
+                current.Clear();
+            }
+            else
+            {
+                current.Append(c);
+            }
+        }
+
+        fields.Add(current.ToString().Trim());
+
+        return fields;
+    }
 }
