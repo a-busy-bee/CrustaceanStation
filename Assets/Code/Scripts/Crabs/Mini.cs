@@ -18,7 +18,7 @@ public class Mini : ScriptableObject
 	}
 
 	[Header("Cart Popup")]
-	public CartPopup.MiniType miniType;
+	public PopupManager.MiniType miniType;
 	public Sprite miniSprite;
 
 	public bool isMultiple;

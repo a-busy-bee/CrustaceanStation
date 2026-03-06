@@ -288,6 +288,7 @@ public class LevelManager : MonoBehaviour
 
     public void SetTrainsClickable(bool allowClick)
     {
+        //TODO: account for shuttles and vans
         if (allowClick)
         {
             trainsOverlay.SetActive(false);
