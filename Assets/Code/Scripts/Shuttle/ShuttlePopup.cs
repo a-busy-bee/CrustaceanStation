@@ -6,15 +6,11 @@ using UnityEngine.AddressableAssets;
 
 using miniPair = System.Tuple<Mini.Type, Mini.Strength>;
 using Unity.VisualScripting;
-
-public class CartPopup : MonoBehaviour
+public class ShuttlePopup : MonoBehaviour
 {
     // TODO: IF YOU ARE ADDING A MINI TYPE, UPDATE RANDOM NUM UPPER BOUND IN GenerateNewSeats INNER LOOP
-     
-     //TODO: use inheritance for van, shuttle, and cart
     private Mini currMini;
-    private Cart.Type type;
-    private int currID;
+    private Cart.Type type = Cart.Type.Shuttle;
 
     private Dictionary<int, (Mini, int)[,]> seatDictionary = new Dictionary<int, (Mini, int)[,]>(); // <rail number, array of seats>
 
@@ -74,9 +70,9 @@ public class CartPopup : MonoBehaviour
             seatObjects[row, col] = seatsAll[i];
         }
 
-        // INIT SEAT DICTIONARY
+
         seatDictionary[0] = new (Mini, int)[3, 4];
-        //(Mini, int)[,] minis = seatDictionary[i];
+        //(Mini, int)[,] minis = seatDictionary[0];
 
         // INIT SEATS
         for (int row = 0; row < 3; row++)
@@ -84,7 +80,7 @@ public class CartPopup : MonoBehaviour
             for (int col = 0; col < 4; col++)
             {
                 seatDictionary[0][row, col] = (defaultEmpty, 0);
-                seatObjects[row, col].InitSeat(this, row, col);
+                //seatObjects[row, col].InitSeat(this, row, col);
             }
         }
 
@@ -141,8 +137,8 @@ public class CartPopup : MonoBehaviour
 
     public void SeatCharacter(int row, int column)
     {
-        seatDictionary[currID][row, column].Item1 = currMini;
-        seatDictionary[currID][row, column].Item2 = 3;
+        seatDictionary[0][row, column].Item1 = currMini;
+        seatDictionary[0][row, column].Item2 = 3;
         for (int rowIdx = 0; rowIdx < 3; rowIdx++)
         {
             for (int colIdx = 0; colIdx < 4; colIdx++)
@@ -156,17 +152,9 @@ public class CartPopup : MonoBehaviour
 
         // if ticket info was wrong
         Cart.Type ticketCartType = Kiosk.instance.GetCurrentCrabTicket();
-        if (ticketCartType != type && Kiosk.instance.IsCrabValid()) // if the crab is otherwise valid, but chose the wrong cart
+        if (ticketCartType != type) // if the crab is otherwise valid, but chose the wrong cart
         {
-            if (ticketCartType == Cart.Type.Economy)
-            {
-                // chosen cart was an upgrade, no rating complaints
-                Kiosk.instance.UpgradedCart();
-            }
-            else
-            {
-                Kiosk.instance.DowngradedCart(); // chosen cart was a downgrade, rating goes down
-            }
+            Kiosk.instance.WrongTransport();
         }
 
         // tell kiosk to wait then summon new crab
@@ -175,7 +163,7 @@ public class CartPopup : MonoBehaviour
 
         StartCoroutine(WaitThenClose());
     }
-    public int DepartTrain()
+    public int DepartShuttle()
     {
         if (!initialized) InitPopup();
 
@@ -238,7 +226,7 @@ public class CartPopup : MonoBehaviour
 
     public void CheckRelationship(int row, int col)
     {
-        Mini otherMini = seatDictionary[currID][row, seatPairs[col]].Item1;
+        Mini otherMini = seatDictionary[0][row, seatPairs[col]].Item1;
         CartSeat currSeat = seatObjects[row, col];
         CartSeat otherSeat = seatObjects[row, seatPairs[col]];
 
@@ -451,7 +439,7 @@ public class CartPopup : MonoBehaviour
     public void SeatMultiple(Sprite mult, int row, int col)
     {
         seatObjects[row, seatPairs[col]].SetSpriteForMultiple(mult);
-        seatDictionary[currID][row, col].Item1 = currMini;
+        seatDictionary[0][row, col].Item1 = currMini;
         for (int rowIdx = 0; rowIdx < 3; rowIdx++)
         {
             for (int colIdx = 0; colIdx < 4; colIdx++)

@@ -8,7 +8,9 @@ public class Cart : ScriptableObject
 		Economy,
 		Standard,
 		Deluxe,
-		Null
+		Null,
+		Shuttle,
+		Van
 	}
 
 	public Type cartType;

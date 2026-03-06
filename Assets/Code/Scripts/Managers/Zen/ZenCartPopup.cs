@@ -7,11 +7,34 @@ using UnityEngine.AddressableAssets;
 using miniPair = System.Tuple<Mini.Type, Mini.Strength>;
 using Unity.VisualScripting;
 
-public class CartPopup : MonoBehaviour
+public class ZenCartPopup : MonoBehaviour
 {
-    // TODO: IF YOU ARE ADDING A MINI TYPE, UPDATE RANDOM NUM UPPER BOUND IN GenerateNewSeats INNER LOOP
-     
-     //TODO: use inheritance for van, shuttle, and cart
+    public enum MiniType
+    {
+        empty,
+        axolotl,
+        conch,
+        crab,
+        fishLarge,
+        fishSmall,
+        hermit,
+        horseshoe,
+        isopod,
+        lobster,
+        pillbugGang,
+        pillbug,
+        scopeCreep,
+        seaGull,
+        seaLemon,
+        SeaLion,
+        seaMonkies,
+        seaSheep,
+        shrimp,
+        nautilus,
+        family,
+        orca,
+        whale
+    } // TODO: IF YOU ARE ADDING A MINI TYPE, UPDATE RANDOM NUM UPPER BOUND IN GenerateNewSeats INNER LOOP
     private Mini currMini;
     private Cart.Type type;
     private int currID;
@@ -75,25 +98,35 @@ public class CartPopup : MonoBehaviour
         }
 
         // INIT SEAT DICTIONARY
-        seatDictionary[0] = new (Mini, int)[3, 4];
-        //(Mini, int)[,] minis = seatDictionary[i];
+        int rails = LevelManager.instance.GetNumberOfRails();
 
-        // INIT SEATS
-        for (int row = 0; row < 3; row++)
+        for (int i = 0; i < rails; i++)
         {
-            for (int col = 0; col < 4; col++)
+            seatDictionary[i] = new (Mini, int)[3, 4];
+            (Mini, int)[,] minis = seatDictionary[i];
+
+            // INIT SEATS
+            for (int row = 0; row < 3; row++)
             {
-                seatDictionary[0][row, col] = (defaultEmpty, 0);
-                seatObjects[row, col].InitSeat(this, row, col);
+                for (int col = 0; col < 4; col++)
+                {
+                    seatDictionary[i][row, col] = (defaultEmpty, 0);
+                    //TODO: fix seatObjects[row, col].InitSeat(this, row, col);
+                }
             }
+
+            //GenerateNewSeats(i);
         }
 
-        GenerateNewSeats();
+        for (int i = 0; i < rails; i++)
+        {
+            GenerateNewSeats(i);
+        }
         
         initialized = true;
     }
 
-    public void Show()
+    public void Show(int railNumber)
     {
         if (!initialized)
         {
@@ -103,8 +136,9 @@ public class CartPopup : MonoBehaviour
         // get crabinfo from kiosk
         CrabInfo info = Kiosk.instance.GetCrabInfo();
         currMini = info.mini;
+        currID = railNumber;
 
-        (Mini, int)[,] minis = seatDictionary[0];
+        (Mini, int)[,] minis = seatDictionary[railNumber];
 
         for (int row = 0; row < 3; row++)
         {
@@ -175,7 +209,7 @@ public class CartPopup : MonoBehaviour
 
         StartCoroutine(WaitThenClose());
     }
-    public int DepartTrain()
+    public int DepartTrain(int railNumber)
     {
         if (!initialized) InitPopup();
 
@@ -186,7 +220,7 @@ public class CartPopup : MonoBehaviour
         // if so, award them
 
         // clear the dictionary idx for this train
-        (Mini, int)[,] minis = seatDictionary[0];
+        (Mini, int)[,] minis = seatDictionary[railNumber];
 
         for (int row = 0; row < 3; row++)
         {
@@ -204,14 +238,14 @@ public class CartPopup : MonoBehaviour
 
         coins -= badness;
 
-        GenerateNewSeats();
+        GenerateNewSeats(railNumber);
 
         return coins;
     }
 
-    private void GenerateNewSeats()
+    private void GenerateNewSeats(int railNumber)
     {
-        (Mini, int)[,] minis = seatDictionary[0];
+        (Mini, int)[,] minis = seatDictionary[railNumber];
 
         for (int row = 0; row < 3; row++)
         {
@@ -244,7 +278,7 @@ public class CartPopup : MonoBehaviour
 
         int howBad = 0;
 
-        if (otherMini.miniType == PopupManager.MiniType.empty)
+        if (howBad == 1)//TODO: fix otherMini.miniType == MiniType.empty)
         {
             return;
         }

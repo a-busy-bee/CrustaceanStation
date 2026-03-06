@@ -9,19 +9,51 @@ public class PopupManager : MonoBehaviour
 
     [SerializeField] private GameObject standardPopup;
     [SerializeField] private GameObject economyPopup;
+    [SerializeField] private GameObject shuttlePopup;
+    [SerializeField] private GameObject vanPopup;
     [SerializeField] private GameObject background;
 
-    [Header("Blur")]
-    [SerializeField] private GameObject blurParent;
-    [SerializeField] private GameObject blurLeft;
-    [SerializeField] private GameObject blurRight;
-
     // CURR
-    private int currRailNumber = -1;
     private bool currActive = false;
     private (int, Cart.Type) hoveredTrain = (-1, Cart.Type.Null);
 
     public List<Mini> miniAssets;
+
+    public enum MiniType
+    {
+        empty,
+        axolotl,
+        conch,
+        crab,
+        fishLarge,
+        fishSmall,
+        hermit,
+        horseshoe,
+        isopod,
+        lobster,
+        pillbugGang,
+        pillbug,
+        scopeCreep,
+        seaGull,
+        seaLemon,
+        SeaLion,
+        seaMonkies,
+        seaSheep,
+        shrimp,
+        nautilus,
+        family,
+        orca,
+        whale
+    }// TODO: IF YOU ARE ADDING A MINI TYPE, UPDATE RANDOM NUM UPPER BOUND IN GenerateNewSeats INNER LOOP
+
+    public enum Type
+    {
+        none,
+        train,
+        shuttle,
+        van
+    }
+    private Type currRailNumber = Type.none;
 
     private void Awake()
     {
@@ -36,8 +68,9 @@ public class PopupManager : MonoBehaviour
 
         economyPopup.SetActive(false);
         standardPopup.SetActive(false);
+        shuttlePopup.SetActive(false);
+        vanPopup.SetActive(false);
         background.SetActive(false);
-        blurParent.SetActive(false);
     }
 
     IEnumerator Start()
@@ -56,78 +89,95 @@ public class PopupManager : MonoBehaviour
         return miniAssets;
     }
 
-    public int DepartTrain(int railNumber, Cart.Type cartType)
+    public int DepartTrain(Cart.Type cartType)
     {
         if (cartType == Cart.Type.Economy)
         {
-            return economyPopup.GetComponent<CartPopup>().DepartTrain(railNumber);
+            return economyPopup.GetComponent<CartPopup>().DepartTrain();
         }
         else if (cartType == Cart.Type.Standard)
         {
-            return standardPopup.GetComponent<CartPopup>().DepartTrain(railNumber);
+            return standardPopup.GetComponent<CartPopup>().DepartTrain();
         }
         return 0;
     }
 
-    public void ShowPopup(int railNumber, Cart.Type cartType)
+    public int DepartShuttle()
+    {
+        return shuttlePopup.GetComponent<ShuttlePopup>().DepartShuttle();
+    }
+
+    public int DepartVan()
+    {
+        return vanPopup.GetComponent<VanPopup>().DepartVan();
+    }
+
+    public void ShowPopup(Type popupType, Cart.Type cartType)
     {
         if (currActive)
         {
             currActive = false;
             economyPopup.SetActive(false);
             standardPopup.SetActive(false);
+            shuttlePopup.SetActive(false);
+            vanPopup.SetActive(false);
         }
 
-        currRailNumber = railNumber;
+        currRailNumber = popupType;
 
-        if (cartType == Cart.Type.Economy)
+        if (popupType == Type.train)
         {
-            economyPopup.SetActive(true);
-            economyPopup.GetComponent<CartPopup>().Show(currRailNumber);
+                if (cartType == Cart.Type.Economy)
+                {
+                    economyPopup.SetActive(true);
+                    economyPopup.GetComponent<CartPopup>().Show();
 
-            if (railNumber == 0)
-            {
-                // show arrow to the left
-                economyPopup.GetComponent<RectTransform>().GetChild(0).GetComponent<RectTransform>().anchoredPosition = new Vector2(-300.4f, -290.4f);
-                economyPopup.GetComponent<RectTransform>().GetChild(0).GetComponent<RectTransform>().eulerAngles = new Vector3(0, 0, 0);
+                    // show arrow to the left
+                    economyPopup.GetComponent<RectTransform>().GetChild(0).GetComponent<RectTransform>().anchoredPosition = new Vector2(-300.4f, -290.4f);
+                    economyPopup.GetComponent<RectTransform>().GetChild(0).GetComponent<RectTransform>().eulerAngles = new Vector3(0, 0, 0);
 
-                // move cart to the right
-                economyPopup.GetComponent<RectTransform>().anchoredPosition = new Vector2(618, -87.56f);
-            }
-            else if (railNumber == 1)
-            {
-                // show arrow to the right
-                economyPopup.GetComponent<RectTransform>().GetChild(0).GetComponent<RectTransform>().anchoredPosition = new Vector2(302, 298.1f);
-                economyPopup.GetComponent<RectTransform>().GetChild(0).GetComponent<RectTransform>().eulerAngles = new Vector3(0, 0, 180);
+                    // move cart to the right
+                    economyPopup.GetComponent<RectTransform>().anchoredPosition = new Vector2(618, -87.56f);
+                }
+                else
+                {
+                    standardPopup.SetActive(true);
+                    standardPopup.GetComponent<CartPopup>().Show();
 
-                // move cart to the left
-                economyPopup.GetComponent<RectTransform>().anchoredPosition = new Vector2(373, -87.56f);
-            }
+                    // show arrow to the left
+                    standardPopup.GetComponent<RectTransform>().GetChild(0).GetComponent<RectTransform>().anchoredPosition = new Vector2(-300.4f, -147.9f);
+                    standardPopup.GetComponent<RectTransform>().GetChild(0).GetComponent<RectTransform>().eulerAngles = new Vector3(0, 0, 0);
+
+                    // move cart to the right
+                    standardPopup.GetComponent<RectTransform>().anchoredPosition = new Vector2(618, -87.56f);
+                        
+                }
         }
-        else if (cartType == Cart.Type.Standard)
+        else if (popupType == Type.shuttle)
         {
-            standardPopup.SetActive(true);
-            standardPopup.GetComponent<CartPopup>().Show(currRailNumber);
+            shuttlePopup.SetActive(true);
+            shuttlePopup.GetComponent<ShuttlePopup>().Show();
 
-            if (railNumber == 0)
-            {
-                // show arrow to the left
-                standardPopup.GetComponent<RectTransform>().GetChild(0).GetComponent<RectTransform>().anchoredPosition = new Vector2(-300.4f, -147.9f);
-                standardPopup.GetComponent<RectTransform>().GetChild(0).GetComponent<RectTransform>().eulerAngles = new Vector3(0, 0, 0);
+            // show arrow to the right
+            shuttlePopup.GetComponent<RectTransform>().GetChild(0).GetComponent<RectTransform>().anchoredPosition = new Vector2(302, 155.9f);
+            shuttlePopup.GetComponent<RectTransform>().GetChild(0).GetComponent<RectTransform>().eulerAngles = new Vector3(0, 0, 180);
 
-                // move cart to the right
-                standardPopup.GetComponent<RectTransform>().anchoredPosition = new Vector2(618, -87.56f);
-            }
-            else if (railNumber == 1)
-            {
-                // show arrow to the right
-                standardPopup.GetComponent<RectTransform>().GetChild(0).GetComponent<RectTransform>().anchoredPosition = new Vector2(302, 155.9f);
-                standardPopup.GetComponent<RectTransform>().GetChild(0).GetComponent<RectTransform>().eulerAngles = new Vector3(0, 0, 180);
-
-                // move cart to the left
-                standardPopup.GetComponent<RectTransform>().anchoredPosition = new Vector2(373, -87.56f);
-            }
+            // move cart to the left
+            shuttlePopup.GetComponent<RectTransform>().anchoredPosition = new Vector2(373, -87.56f);
         }
+        else if (popupType == Type.van)
+        {
+            vanPopup.SetActive(true);
+            vanPopup.GetComponent<VanPopup>().Show();
+
+            // show arrow to the right
+            vanPopup.GetComponent<RectTransform>().GetChild(0).GetComponent<RectTransform>().anchoredPosition = new Vector2(302, 155.9f);
+            vanPopup.GetComponent<RectTransform>().GetChild(0).GetComponent<RectTransform>().eulerAngles = new Vector3(0, 0, 180);
+
+            // move cart to the left
+            vanPopup.GetComponent<RectTransform>().anchoredPosition = new Vector2(373, -87.56f);
+        }
+        
 
         currActive = true;
         background.SetActive(true);
@@ -135,14 +185,7 @@ public class PopupManager : MonoBehaviour
 
     public void OnClickOff()
     {
-        if (hoveredTrain.Item1 == -1)
-        {
-            Close();
-        }
-        else
-        {
-            ShowPopup(hoveredTrain.Item1, hoveredTrain.Item2);
-        }
+        Close();
     }
 
     public void Close()
@@ -152,15 +195,14 @@ public class PopupManager : MonoBehaviour
 
         economyPopup.SetActive(false);
         standardPopup.SetActive(false);
+        shuttlePopup.SetActive(false);
+        vanPopup.SetActive(false);
         background.SetActive(false);
-        blurParent.SetActive(false);
     }
 
     public void SetHoveredTrain(int railNumber, Cart.Type cartType)
     {
-
         hoveredTrain = (railNumber, cartType);
-
     }
 
     public void ResetHoveredTrain()

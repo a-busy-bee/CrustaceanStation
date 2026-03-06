@@ -1,0 +1,39 @@
+{
+	"nodesGeneric":[
+		{"character":"IttyBitty", "text":[
+			"I found my lollipop!",
+			"Have you seen this lollipop?",
+			"I love it when it's sunny",
+			"I'm in 3rd grade",
+			"Have you seen my mom?"
+		]}
+	],
+
+	"nodesPlot":[
+		{"plotID":1, "character":"IttyBitty", "text":[
+			"My mom is working in research!",
+			"I want to be a scientist someday!"
+		]},
+		{"plotID":1, "character":"Goopy", "text":[
+			"I'm worried about this research.",
+			"I'm calling it right now. There's something dubious happening at the research lab."
+		]}
+	],
+
+	"nodeGenericAnyChars":[
+		"Hiya!",
+		"Hope you're having a nice day",
+		"You look exhausted",
+		"How are the kids?",
+		"When are you going to retire?",
+		"Lovely weather we're having!"
+	],
+
+	"nodePlotAnyChars":[
+		{"plotID": 1, "text": [
+			"There's something off with those researchers.",
+			"The people who come back from that lab smell funny.",
+			"I hear screams at night sometimes."
+		]}
+	]
+}

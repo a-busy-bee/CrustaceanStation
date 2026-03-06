@@ -6,19 +6,15 @@ using UnityEngine.AddressableAssets;
 
 using miniPair = System.Tuple<Mini.Type, Mini.Strength>;
 using Unity.VisualScripting;
-
-public class CartPopup : MonoBehaviour
+public class VanPopup : MonoBehaviour
 {
     // TODO: IF YOU ARE ADDING A MINI TYPE, UPDATE RANDOM NUM UPPER BOUND IN GenerateNewSeats INNER LOOP
-     
-     //TODO: use inheritance for van, shuttle, and cart
     private Mini currMini;
     private Cart.Type type;
-    private int currID;
 
     private Dictionary<int, (Mini, int)[,]> seatDictionary = new Dictionary<int, (Mini, int)[,]>(); // <rail number, array of seats>
 
-    private CartSeat[,] seatObjects = new CartSeat[3, 4];   // the actual grid I use for the seats
+    private CartSeat[,] seatObjects = new CartSeat[2, 4];   // the actual grid I use for the seats
     [SerializeField] private List<CartSeat> seatsAll;       // so I can drag all the seats into the inspector
 
     [SerializeField] private Mini defaultEmpty;
@@ -74,17 +70,16 @@ public class CartPopup : MonoBehaviour
             seatObjects[row, col] = seatsAll[i];
         }
 
-        // INIT SEAT DICTIONARY
-        seatDictionary[0] = new (Mini, int)[3, 4];
-        //(Mini, int)[,] minis = seatDictionary[i];
+
+        seatDictionary[0] = new (Mini, int)[2, 4];
 
         // INIT SEATS
-        for (int row = 0; row < 3; row++)
+        for (int row = 0; row < 2; row++)
         {
             for (int col = 0; col < 4; col++)
             {
                 seatDictionary[0][row, col] = (defaultEmpty, 0);
-                seatObjects[row, col].InitSeat(this, row, col);
+                //seatObjects[row, col].InitSeat(this, row, col);
             }
         }
 
@@ -106,7 +101,7 @@ public class CartPopup : MonoBehaviour
 
         (Mini, int)[,] minis = seatDictionary[0];
 
-        for (int row = 0; row < 3; row++)
+        for (int row = 0; row < 2; row++)
         {
             for (int col = 0; col < 4; col++)
             {
@@ -141,9 +136,9 @@ public class CartPopup : MonoBehaviour
 
     public void SeatCharacter(int row, int column)
     {
-        seatDictionary[currID][row, column].Item1 = currMini;
-        seatDictionary[currID][row, column].Item2 = 3;
-        for (int rowIdx = 0; rowIdx < 3; rowIdx++)
+        seatDictionary[0][row, column].Item1 = currMini;
+        seatDictionary[0][row, column].Item2 = 3;
+        for (int rowIdx = 0; rowIdx < 2; rowIdx++)
         {
             for (int colIdx = 0; colIdx < 4; colIdx++)
             {
@@ -156,17 +151,9 @@ public class CartPopup : MonoBehaviour
 
         // if ticket info was wrong
         Cart.Type ticketCartType = Kiosk.instance.GetCurrentCrabTicket();
-        if (ticketCartType != type && Kiosk.instance.IsCrabValid()) // if the crab is otherwise valid, but chose the wrong cart
+        if (ticketCartType != type) // if the crab is otherwise valid, but chose the wrong cart
         {
-            if (ticketCartType == Cart.Type.Economy)
-            {
-                // chosen cart was an upgrade, no rating complaints
-                Kiosk.instance.UpgradedCart();
-            }
-            else
-            {
-                Kiosk.instance.DowngradedCart(); // chosen cart was a downgrade, rating goes down
-            }
+            Kiosk.instance.WrongTransport();
         }
 
         // tell kiosk to wait then summon new crab
@@ -175,7 +162,7 @@ public class CartPopup : MonoBehaviour
 
         StartCoroutine(WaitThenClose());
     }
-    public int DepartTrain()
+    public int DepartVan()
     {
         if (!initialized) InitPopup();
 
@@ -188,7 +175,7 @@ public class CartPopup : MonoBehaviour
         // clear the dictionary idx for this train
         (Mini, int)[,] minis = seatDictionary[0];
 
-        for (int row = 0; row < 3; row++)
+        for (int row = 0; row < 2; row++)
         {
             for (int col = 0; col < 4; col++)
             {
@@ -213,7 +200,7 @@ public class CartPopup : MonoBehaviour
     {
         (Mini, int)[,] minis = seatDictionary[0];
 
-        for (int row = 0; row < 3; row++)
+        for (int row = 0; row < 2; row++)
         {
             for (int col = 0; col < 4; col++)
             {
@@ -238,7 +225,7 @@ public class CartPopup : MonoBehaviour
 
     public void CheckRelationship(int row, int col)
     {
-        Mini otherMini = seatDictionary[currID][row, seatPairs[col]].Item1;
+        Mini otherMini = seatDictionary[0][row, seatPairs[col]].Item1;
         CartSeat currSeat = seatObjects[row, col];
         CartSeat otherSeat = seatObjects[row, seatPairs[col]];
 
@@ -451,7 +438,7 @@ public class CartPopup : MonoBehaviour
     public void SeatMultiple(Sprite mult, int row, int col)
     {
         seatObjects[row, seatPairs[col]].SetSpriteForMultiple(mult);
-        seatDictionary[currID][row, col].Item1 = currMini;
+        seatDictionary[0][row, col].Item1 = currMini;
         for (int rowIdx = 0; rowIdx < 3; rowIdx++)
         {
             for (int colIdx = 0; colIdx < 4; colIdx++)

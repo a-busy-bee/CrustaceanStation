@@ -353,4 +353,8 @@ public class Kiosk : MonoBehaviour
         crabPositionInKiosk = kioskStyle.crabposition;
     }
 
+    public void WrongTransport()
+    {
+        
+    }
 }
