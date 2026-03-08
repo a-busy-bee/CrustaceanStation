@@ -14,11 +14,10 @@ public class CrabController : MonoBehaviour
     [SerializeField] private GameObject idPrefab;
     private GameObject id;
     private CrabSelector crabSelector;
-    private Rail.RailDirection trainID = Rail.RailDirection.North;
     private Cart.Type cartType;
     private bool presented = false;
 
-
+ 
     // VALIDITY
     private bool isValid = true;
 
@@ -99,6 +98,7 @@ public class CrabController : MonoBehaviour
             case CrabState.Leaving:
                 {
                     RemoveTicketAndID();
+                    DialogueManager.instance.ClearDialogue();
                     //kiosk.SetState(Kiosk.KioskState.CrabLeaving);
 
                     // rest of the logic is in the update loop
@@ -127,6 +127,7 @@ public class CrabController : MonoBehaviour
                     {
                         presented = true;
                         PresentTicketAndID();
+                        Dialogue();
 
                         kiosk.SetState(Kiosk.KioskState.CrabPresent);
                     }
@@ -212,21 +213,43 @@ public class CrabController : MonoBehaviour
 
         id.GetComponent<ID>().SetIDPhoto(crabPhoto);
 
-        // TRAIN ID FORGERY (OR NOT)
-        if (Random.Range(0, 10) > 8)                                            // MORE FORGERY! - TRAIN ID
-        {
-            trainID = LevelManager.instance.GetRandomTrainDirection();
-        }
-        else
-        {
-            trainID = LevelManager.instance.GetRandomCurrentTrainDirection();
-        }
-        ticket.GetComponent<Ticket>().SetTrainDirection(trainID);
-
         // TRAIN CART TYPE FORGERY (OR NOT)
         cartType = LevelManager.instance.GetRandomCurrentCartType();
         ticket.GetComponent<Ticket>().SetSprite(cartType);
     }
+
+    private void Dialogue()
+    {
+        // high chance to not have dialogue
+        //if (Random.Range(0, 10) < 8) return;
+
+        // roll to see if this is a plot dialogue or generic dialogue 
+        if (Random.Range(0, 10) < 4)
+        {
+            // roll to see if this is character-specific dialouge or not
+            if (crabInfo.isImportantCharacter && Random.Range(0, 5) < 2)
+            {
+                DialogueManager.instance.GetDialoguePlot(crabInfo.characterNameID, PlotManager.instance.GetCurrStageInt());
+            }
+            else
+            {
+                DialogueManager.instance.GetDialoguePlot(PlotManager.instance.GetCurrStageInt());
+            }
+        }
+        else
+        {
+            // roll to see if this is character-specific dialouge or not
+            if (crabInfo.isImportantCharacter && Random.Range(0, 5) < 2)
+            {
+                DialogueManager.instance.GetDialogueGeneric(crabInfo.characterNameID);
+            }
+            else
+            {
+                DialogueManager.instance.GetDialogueGeneric();
+            }
+        }    
+    }
+
     private void RemoveTicketAndID()
     {
         Destroy(ticket);
@@ -235,7 +258,7 @@ public class CrabController : MonoBehaviour
     public void SetCrabSelector(CrabSelector newSelector)
     {
         crabSelector = newSelector;
-    }
+    } 
     public void SetClockAndKiosk(Clock newClock, Kiosk newKiosk)
     {
         //clock = newClock;
@@ -253,10 +276,7 @@ public class CrabController : MonoBehaviour
     {
         return crabInfo.favoriteWeatherTypes;
     }
-    public Rail.RailDirection GetTrainID()
-    {
-        return trainID;
-    }
+    
     public Cart.Type GetTicketType()
     {
         return cartType;

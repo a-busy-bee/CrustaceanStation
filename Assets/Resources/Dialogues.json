@@ -1,0 +1,50 @@
+{
+	"nodesGeneric":[
+		{"character":"IttyBitty", "text":[
+			"I found my lollipop!",
+			"Have you seen this lollipop?",
+			"I love it when it's sunny",
+			"I'm in 3rd grade",
+			"Have you seen my mom?"
+		]}
+	],
+
+	"nodesPlot":[
+		{"plotID":1, "character":"IttyBitty", "text":[
+			"My mom is working in research!",
+			"I want to be a scientist someday!"
+		]},
+		{"plotID":1, "character":"Goopy", "text":[
+			"I'm worried about this research.",
+			"I'm calling it right now. There's something dubious happening at the research lab."
+		]}
+	],
+
+	"nodeGenericAnyChars":[
+		"Hiya!",
+		"Hope you're having a nice day.",
+		"You look exhausted.",
+		"How are the kids?",
+		"When are you going to retire?",
+		"Lovely weather we're having!",
+		"Ew was there a fish here recently? It stinks!",
+		"Hoping for some rain this weekend.",
+		"Did you hear they're raising our taxes?",
+		"I'm going to see my long-distance friend! We haven't seen each other in years.",
+		"I'm going on my first vacation in a decade!",
+		"I'm running from my past.",
+		"Did you know that train reaches speeds of up to 57 leagues per hour?! It's so fast!"
+	],
+
+	"nodePlotAnyChars":[
+		{"plotID": 1, "text": [
+			"There's something off with those researchers.",
+			"The people who come back from that lab smell funny.",
+			"I hear screams at night sometimes.",
+			"I heard Crustacean Corporation is experimenting on those poor people!",
+			"You should vote for fish rights even if you're not a fish.",
+			"Hey at least all of the predators are doing this voluntarily. And they're getting paid for it!",
+			"Do you think any research positions are still open?"
+		]}
+	]
+}

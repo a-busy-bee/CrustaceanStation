@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlotManager : MonoBehaviour
 {
+    public static PlotManager instance { get; private set; }
     public enum Stage
     {
         day1,           // crusty corp letter on desk, tutorial
@@ -24,5 +25,25 @@ public class PlotManager : MonoBehaviour
     private float crust = 1.0f;
     private float bio = 1.0f;
 
-    
+    private void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+        }
+    }
+
+    public int GetCurrStageInt()
+    {
+        return (int)currStage;
+    }
+
+    public Stage GetCurrStage()
+    {
+        return currStage;
+    }
 }

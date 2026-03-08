@@ -13,7 +13,7 @@ public class Ticket : MonoBehaviour
     // RAIL DIRECTION
     [SerializeField] private GameObject direction;
     private float[] zRotations;
-    private Rail.RailDirection railDirection;
+    //private Rail.RailDirection railDirection;
 
     // SPRITES
     [SerializeField] private Sprite[] ticketSprites;
@@ -33,7 +33,7 @@ public class Ticket : MonoBehaviour
         nameText.text = crabName;
     }
 
-    public void SetTrainDirection(Rail.RailDirection newDirection)
+    /*public void SetTrainDirection(Rail.RailDirection newDirection)
     {
         railDirection = newDirection;
 
@@ -42,17 +42,17 @@ public class Ticket : MonoBehaviour
     public Rail.RailDirection GetRailDirection()
     {
         return railDirection;
-    }
+    }*/
 
     public void SetID(ID newID)
     {
         id = newID;
     }
 
-    public Rail.RailDirection GetRandomTrainID()
+    /*public Rail.RailDirection GetRandomTrainID()
     {
         return (Rail.RailDirection)Random.Range(0, 4);
-    }
+    }*/
 
 
 

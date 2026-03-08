@@ -17,6 +17,9 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private List<Rail> rails = new List<Rail>();  // all rails
     [SerializeField] private GameObject cartPopupStandard;
     [SerializeField] private GameObject cartPopupEconomy;
+    [SerializeField] private GameObject cartPopupShuttle;
+    [SerializeField] private GameObject cartPopupVan;
+
     [SerializeField] private GameObject trainsOverlay;
 
 
@@ -88,7 +91,7 @@ public class LevelManager : MonoBehaviour
                         tutorial.Play(true);
                     }
 
-                    Kiosk.instance.ShowDecor();
+                    //Kiosk.instance.ShowDecor();
                     InitTrains();
 
                     SetState(LMState.Goal);
@@ -140,7 +143,7 @@ public class LevelManager : MonoBehaviour
 
                     foreach (Rail rail in rails)
                     {
-                        rail.DepartTrain();
+                        rail.Depart();
                     }
 
                     // show prefab
@@ -219,8 +222,7 @@ public class LevelManager : MonoBehaviour
         // goes through all of the trainIDs (lines) and generate first train
         foreach (Rail rail in rails)
         {
-            rail.SetRailNumber(id);
-            rail.SummonTrain();
+            rail.Summon();
 
             id++;
         }
@@ -231,22 +233,6 @@ public class LevelManager : MonoBehaviour
         return rails.Count;
     }
 
-    public Rail.RailDirection GetRandomCurrentTrainDirection()
-    {
-        if (rails.Count == 0)
-        {
-            return Rail.RailDirection.North;
-
-        }
-
-        return rails[Random.Range(0, rails.Count)].GetRailDirection();
-    }
-
-    public Rail.RailDirection GetRandomTrainDirection()
-    {
-        return (Rail.RailDirection)Random.Range(0, 4);
-    }
-
     public GameObject GetStandardCartPopup()
     {
         return cartPopupStandard;
@@ -255,6 +241,16 @@ public class LevelManager : MonoBehaviour
     public GameObject GetEconomyCartPopup()
     {
         return cartPopupEconomy;
+    }
+
+    public GameObject GetShuttlePopup()
+    {
+        return cartPopupShuttle;
+    }
+
+    public GameObject GetVanPopup()
+    {
+        return cartPopupVan;
     }
 
     public int GetCartQuality()
@@ -274,15 +270,10 @@ public class LevelManager : MonoBehaviour
         {
             return Cart.Type.Economy;
         }
-    }
+    }  
 
-    public bool CheckTrainIDValidity(Rail.RailDirection id)
+    public bool CheckTrainIDValidity()
     {
-        foreach (Rail rail in rails)
-        {
-            if (rail.CheckTrainValidity(id)) return true;
-        }
-
         return false;
     }
 
@@ -300,7 +291,7 @@ public class LevelManager : MonoBehaviour
 
         foreach (Rail rail in rails)
         {
-            rail.SetTrainClickable(allowClick);
+            rail.SetClickable(allowClick);
         }
     }
 
