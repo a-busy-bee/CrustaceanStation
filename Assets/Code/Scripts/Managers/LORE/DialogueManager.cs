@@ -36,7 +36,22 @@ public class DialogueNodePlotAnyChar
 
 public class DialogueManager : MonoBehaviour
 {
+    public static DialogueManager instance { get; private set; }
+
     private DialogueData dialogueData;
+    [SerializeField] private DialogueObject dialogueObject;
+
+    private void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+        }
+    }
     private void Start()
     {
         LoadJson();
@@ -58,36 +73,52 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    public string GetDialogueGeneric(string character)
+    public void GetDialogueGeneric(string character)
     {
+        string text;
         for (int i = 0; i < dialogueData.nodesGeneric.Length; i++)
         {
             if (dialogueData.nodesGeneric[i].character == character)
             {
-                return dialogueData.nodesGeneric[i].text[UnityEngine.Random.Range(0, dialogueData.nodesGeneric[i].text.Length)];
+                text = dialogueData.nodesGeneric[i].text[UnityEngine.Random.Range(0, dialogueData.nodesGeneric[i].text.Length)];
+                dialogueObject.ShowDialogue(text);
+                return;
             }
         }
-        return GetDialogueGeneric();
+        GetDialogueGeneric();
     }
-    public string GetDialogueGeneric()
+    public void GetDialogueGeneric()
     {
-        return dialogueData.nodeGenericAnyChars[UnityEngine.Random.Range(0, dialogueData.nodeGenericAnyChars.Length)];
+        string text = dialogueData.nodeGenericAnyChars[UnityEngine.Random.Range(0, dialogueData.nodeGenericAnyChars.Length)];
+        dialogueObject.ShowDialogue(text);
     }
 
-    public string GetDialoguePlot(string character, int stage)
+    public void GetDialoguePlot(string character, int stage)
     {
+        string text;
         for (int i = 0; i < dialogueData.nodesPlot.Length; i++)
         {
             if (dialogueData.nodesPlot[i].character == character && dialogueData.nodesPlot[i].plotID == stage)
             {
-                return dialogueData.nodesPlot[i].text[UnityEngine.Random.Range(0, dialogueData.nodesPlot[i].text.Length)];
+
+                text = dialogueData.nodesPlot[i].text[UnityEngine.Random.Range(0, dialogueData.nodesPlot[i].text.Length)];
+                dialogueObject.ShowDialogue(text);
+                return;
             }
         }
-        return GetDialogueGeneric();
+        GetDialogueGeneric();
     }
 
-    public string GetDialoguePlot(int stage)
+    public void GetDialoguePlot(int stage)
     {
-        return dialogueData.nodePlotAnyChars[stage].text[UnityEngine.Random.Range(0, dialogueData.nodePlotAnyChars[stage].text.Length)];
+        string text = dialogueData.nodePlotAnyChars[stage].text[UnityEngine.Random.Range(0, dialogueData.nodePlotAnyChars[stage].text.Length)];
+        dialogueObject.ShowDialogue(text);
     }
+
+    public void ClearDialogue()
+    {
+        dialogueObject.ClearDialogue();
+    }
+
+    
 }

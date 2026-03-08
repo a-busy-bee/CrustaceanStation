@@ -62,4 +62,17 @@ public class CrabInfo : ScriptableObject
 	[Header("Cart Popup")]
 	public Mini mini;
 	public bool isMultiple;
+
+
+	public enum PlotLevel
+	{
+		predator,
+		strongPrey,
+		nonCrustacean,
+		normal
+	}
+	[Header("Plot")]
+	public PlotLevel plotLevel;
+	public bool isImportantCharacter;
+	public string characterNameID; // Only fill out if important character
 }

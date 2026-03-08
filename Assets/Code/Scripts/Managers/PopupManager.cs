@@ -15,7 +15,6 @@ public class PopupManager : MonoBehaviour
 
     // CURR
     private bool currActive = false;
-    private (int, Cart.Type) hoveredTrain = (-1, Cart.Type.Null);
 
     public List<Mini> miniAssets;
 
@@ -53,7 +52,6 @@ public class PopupManager : MonoBehaviour
         shuttle,
         van
     }
-    private Type currRailNumber = Type.none;
 
     private void Awake()
     {
@@ -104,15 +102,15 @@ public class PopupManager : MonoBehaviour
 
     public int DepartShuttle()
     {
-        return shuttlePopup.GetComponent<ShuttlePopup>().DepartShuttle();
+        return shuttlePopup.GetComponent<ShuttlePopup>().DepartTrain();
     }
 
     public int DepartVan()
     {
-        return vanPopup.GetComponent<VanPopup>().DepartVan();
+        return vanPopup.GetComponent<VanPopup>().DepartTrain();
     }
 
-    public void ShowPopup(Type popupType, Cart.Type cartType)
+    public void ShowPopup(Type popupType, Cart.Type cartType = Cart.Type.Economy)
     {
         if (currActive)
         {
@@ -121,9 +119,8 @@ public class PopupManager : MonoBehaviour
             standardPopup.SetActive(false);
             shuttlePopup.SetActive(false);
             vanPopup.SetActive(false);
+            return;
         }
-
-        currRailNumber = popupType;
 
         if (popupType == Type.train)
         {
@@ -131,25 +128,11 @@ public class PopupManager : MonoBehaviour
                 {
                     economyPopup.SetActive(true);
                     economyPopup.GetComponent<CartPopup>().Show();
-
-                    // show arrow to the left
-                    economyPopup.GetComponent<RectTransform>().GetChild(0).GetComponent<RectTransform>().anchoredPosition = new Vector2(-300.4f, -290.4f);
-                    economyPopup.GetComponent<RectTransform>().GetChild(0).GetComponent<RectTransform>().eulerAngles = new Vector3(0, 0, 0);
-
-                    // move cart to the right
-                    economyPopup.GetComponent<RectTransform>().anchoredPosition = new Vector2(618, -87.56f);
                 }
                 else
                 {
                     standardPopup.SetActive(true);
                     standardPopup.GetComponent<CartPopup>().Show();
-
-                    // show arrow to the left
-                    standardPopup.GetComponent<RectTransform>().GetChild(0).GetComponent<RectTransform>().anchoredPosition = new Vector2(-300.4f, -147.9f);
-                    standardPopup.GetComponent<RectTransform>().GetChild(0).GetComponent<RectTransform>().eulerAngles = new Vector3(0, 0, 0);
-
-                    // move cart to the right
-                    standardPopup.GetComponent<RectTransform>().anchoredPosition = new Vector2(618, -87.56f);
                         
                 }
         }
@@ -157,25 +140,11 @@ public class PopupManager : MonoBehaviour
         {
             shuttlePopup.SetActive(true);
             shuttlePopup.GetComponent<ShuttlePopup>().Show();
-
-            // show arrow to the right
-            shuttlePopup.GetComponent<RectTransform>().GetChild(0).GetComponent<RectTransform>().anchoredPosition = new Vector2(302, 155.9f);
-            shuttlePopup.GetComponent<RectTransform>().GetChild(0).GetComponent<RectTransform>().eulerAngles = new Vector3(0, 0, 180);
-
-            // move cart to the left
-            shuttlePopup.GetComponent<RectTransform>().anchoredPosition = new Vector2(373, -87.56f);
         }
         else if (popupType == Type.van)
         {
             vanPopup.SetActive(true);
             vanPopup.GetComponent<VanPopup>().Show();
-
-            // show arrow to the right
-            vanPopup.GetComponent<RectTransform>().GetChild(0).GetComponent<RectTransform>().anchoredPosition = new Vector2(302, 155.9f);
-            vanPopup.GetComponent<RectTransform>().GetChild(0).GetComponent<RectTransform>().eulerAngles = new Vector3(0, 0, 180);
-
-            // move cart to the left
-            vanPopup.GetComponent<RectTransform>().anchoredPosition = new Vector2(373, -87.56f);
         }
         
 
@@ -190,7 +159,6 @@ public class PopupManager : MonoBehaviour
 
     public void Close()
     {
-        hoveredTrain = (-1, Cart.Type.Null);
         currActive = false;
 
         economyPopup.SetActive(false);
@@ -198,16 +166,6 @@ public class PopupManager : MonoBehaviour
         shuttlePopup.SetActive(false);
         vanPopup.SetActive(false);
         background.SetActive(false);
-    }
-
-    public void SetHoveredTrain(int railNumber, Cart.Type cartType)
-    {
-        hoveredTrain = (railNumber, cartType);
-    }
-
-    public void ResetHoveredTrain()
-    {
-        hoveredTrain = (-1, Cart.Type.Null);
     }
 
 }

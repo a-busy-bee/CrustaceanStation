@@ -37,7 +37,7 @@ public class Kiosk : MonoBehaviour
     //[SerializeField] private Button waitButton;
 
 
-    [Header("Decor")]
+    /*[Header("Decor")]
     [SerializeField] private GameObject kioskChildren;
     [SerializeField] private GameObject kioskImage;
     [SerializeField] private KioskStyle[] kioskStyles;
@@ -45,7 +45,7 @@ public class Kiosk : MonoBehaviour
     [SerializeField] private DecorItems[] topDecor;
     [SerializeField] private GameObject leftSlot;
     [SerializeField] private GameObject rightSlot;
-    [SerializeField] private GameObject topSlot;
+    [SerializeField] private GameObject topSlot;*/
 
     [Header("Debug")]
     [SerializeField] private bool debugMode;
@@ -118,11 +118,11 @@ public class Kiosk : MonoBehaviour
             case KioskState.CrabApproved:
                 {
                     DisableButtons();
-                    bool trainExists = false;
-                    if (LevelManager.instance.CheckTrainIDValidity(currentCrab.GetComponent<CrabController>().GetTrainID()))
+                    bool trainExists = true;
+                    /*if (LevelManager.instance.CheckTrainIDValidity(currentCrab.GetComponent<CrabController>().GetTrainID()))
                     {
                         trainExists = true;
-                    }
+                    }*/
 
                     LevelManager.instance.SetTrainsClickable(true);
 
@@ -130,18 +130,20 @@ public class Kiosk : MonoBehaviour
                     {
                         wrong++;
                     }
+
+                    DialogueManager.instance.ClearDialogue();
                 }
                 break;
-
+ 
             case KioskState.CrabRejected:
                 {
                     DisableButtons();
 
-                    bool trainExists = false;
-                    if (LevelManager.instance.CheckTrainIDValidity(currentCrab.GetComponent<CrabController>().GetTrainID()))
+                    bool trainExists = true;
+                    /*if (LevelManager.instance.CheckTrainIDValidity(currentCrab.GetComponent<CrabController>().GetTrainID()))
                     {
                         trainExists = true;
-                    }
+                    }*/
 
                     if (currentCrab.GetComponent<CrabController>().IsValid() && trainExists && isCurrentCrabCrustacean)
                     {
@@ -318,7 +320,7 @@ public class Kiosk : MonoBehaviour
     }
 
     // DECOR
-    public void ShowDecor()
+    /*public void ShowDecor()
     {
         KioskStyle kioskStyle = kioskStyles[PlayerPrefs.GetInt("kioskStyle")];
         int top = PlayerPrefs.GetInt("decor_top");
@@ -351,7 +353,7 @@ public class Kiosk : MonoBehaviour
         kioskImage.GetComponent<RectTransform>().anchoredPosition = new Vector3(kioskStyle.position.x, kioskStyle.position.y, 0);
         kioskChildren.GetComponent<RectTransform>().anchoredPosition = new Vector3(kioskStyle.positionChildren.x, kioskStyle.positionChildren.y, 0);
         crabPositionInKiosk = kioskStyle.crabposition;
-    }
+    }*/
 
     public void WrongTransport()
     {
