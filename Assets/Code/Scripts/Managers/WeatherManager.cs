@@ -60,7 +60,7 @@ public class WeatherManager : MonoBehaviour
         groundClouds.SetActive(false);
 
         // choose random state
-        int startingWeather = Random.Range(0, 4);
+        int startingWeather = 1;//Random.Range(0, 4);
         WeatherType startingType = types[startingWeather];
         currentType = startingType;
 
