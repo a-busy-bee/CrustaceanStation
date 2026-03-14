@@ -91,9 +91,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrabController
   crabInfo: {fileID: 11400000, guid: 1e715cf82098b4fb19b3e82a8ae80558, type: 2}
-  canvas: {fileID: 0}
   ticketPrefab: {fileID: 1088732259898174776, guid: 8e354d16cd784472f9702c019590d42f, type: 3}
   idPrefab: {fileID: 5256601893285506828, guid: a38a60880f48f4610b91ac0addda84c3, type: 3}
+  shuttleTicketPrefab: {fileID: 1088732259898174776, guid: a33a4fdb4c9ae4d86ab77532032414ca, type: 3}
 --- !u!1001 &681776568872390134
 PrefabInstance:
   m_ObjectHideFlags: 0

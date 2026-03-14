@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class DialogueSizing : MonoBehaviour
 {
-    private float minWidth = 118.36f;
+    //private float minWidth = 118.36f;
     private float maxWidth = 653.07f;
 
     [ContextMenu("SizeChange")]

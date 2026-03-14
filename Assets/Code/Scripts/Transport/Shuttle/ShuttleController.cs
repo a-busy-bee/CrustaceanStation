@@ -2,9 +2,12 @@ using UnityEngine;
 
 public class ShuttleController : TransportController
 {
-    protected new Vector3 startingPosArrive = new Vector3(0, 882, 0); // where the train is before it moves into the station
-    protected new Vector3 startingPosDepart = new Vector3(0, 175, 0); // also endPosArrive
-    protected new Vector3 endPosDepart = new Vector3(0, -1084, 0); // where the train goes to be completely offscreen
+    private void Awake()
+    {
+        startingPosArrive = new Vector3(0, 882, 0); // where the train is before it moves into the station
+        startingPosDepart = new Vector3(0, 175, 0); // also endPosArrive
+        endPosDepart = new Vector3(0, -1084, 0); // where the train goes to be completely offscreen
+    }
     override public void SetState(TransportState newState)
     {
         TransportState prevState = transportState;

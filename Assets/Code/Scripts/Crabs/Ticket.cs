@@ -3,28 +3,28 @@ using TMPro;
 using UnityEngine.UI;
 public class Ticket : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI nameText;
-    private string crabName;
+    [SerializeField] protected TextMeshProUGUI nameText;
+    protected string crabName;
 
-    [SerializeField] private GameObject blur;
-    [SerializeField] private RectTransform rectTransform;
-    private ID id;
+    [SerializeField] protected GameObject blur;
+    [SerializeField] protected RectTransform rectTransform;
+    protected ID id;
 
     // RAIL DIRECTION
-    [SerializeField] private GameObject direction;
-    private float[] zRotations;
+    //[SerializeField] private GameObject direction;
+    //private float[] zRotations;
     //private Rail.RailDirection railDirection;
 
     // SPRITES
-    [SerializeField] private Sprite[] ticketSprites;
-    [SerializeField] private Image ticketImg;
-    [SerializeField] private Image blurImg;
+    [SerializeField] protected Sprite[] ticketSprites;
+    [SerializeField] protected Image ticketImg;
+    [SerializeField] protected Image blurImg;
 
-    [SerializeField] private CanvasGroup canvasGroup;
+    [SerializeField] protected CanvasGroup canvasGroup;
 
     private void Awake()
     {
-        zRotations = new float[] { 0, 180, 270, 90 };
+        //zRotations = new float[] { 0, 180, 270, 90 };
     }
 
     public void SetName(string newName)
@@ -69,8 +69,9 @@ public class Ticket : MonoBehaviour
         canvasGroup.blocksRaycasts = true;
     }
 
-    public void BringForward()
+    virtual public void BringForward()
     {
+        Debug.Log("clicked shuttle ticket");
         // rotate
         rectTransform.rotation = Quaternion.Euler(0, 0, 0);
 

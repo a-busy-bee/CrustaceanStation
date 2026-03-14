@@ -9,9 +9,11 @@ using Unity.VisualScripting;
 public class VanPopup : TransportPopup
 {
     // TODO: IF YOU ARE ADDING A MINI TYPE, UPDATE RANDOM NUM UPPER BOUND IN GenerateNewSeats INNER LOOP
-    private new Cart.Type type = Cart.Type.Van;
-    private new int numRows = 2;
-
+    private void Awake()
+    {
+        type = Cart.Type.Van;
+        numRows = 2;
+    }
     override public void SeatCharacter(int row, int column)
     {
         seatDictionary[0][row, column].Item1 = currMini;

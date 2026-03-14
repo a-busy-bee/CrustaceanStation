@@ -75,4 +75,5 @@ public class CrabInfo : ScriptableObject
 	public PlotLevel plotLevel;
 	public bool isImportantCharacter;
 	public string characterNameID; // Only fill out if important character
+	public bool hasResearchCoat;
 }
