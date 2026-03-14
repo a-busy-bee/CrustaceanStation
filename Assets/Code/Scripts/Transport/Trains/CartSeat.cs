@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class CartSeat : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     private TransportPopup cartPopup;
-    private PopupManager.Type type;
+    //private PopupManager.Type type;
     private int row = -1;
     private int column = -1;
 
@@ -72,7 +72,7 @@ public class CartSeat : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         cartPopup = newPopup;
         row = newRow;
         column = newColumn;
-        type = PopupManager.Type.train;
+        //type = PopupManager.Type.train;
     }
 
     public void HasSelected(bool newHasSelected)

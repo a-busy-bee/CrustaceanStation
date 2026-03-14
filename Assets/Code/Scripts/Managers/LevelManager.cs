@@ -27,8 +27,8 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private GameObject pauseMenu;
     //[SerializeField] private GameObject goalRating;
     //[SerializeField] private RatingGoal ratingGoalScript;
-    [SerializeField] private GameObject goalCrabCount;
-    [SerializeField] private CrabCountGoal crabCountGoalScript;
+    //[SerializeField] private GameObject goalCrabCount;
+    //[SerializeField] private CrabCountGoal crabCountGoalScript;
     [SerializeField] private GameObject summaryMenu;
     //private bool isRating = false;
     private bool dayStarted = false;
@@ -65,7 +65,7 @@ public class LevelManager : MonoBehaviour
         }
 
         //goalRating.SetActive(false);
-        goalCrabCount.SetActive(false);
+        //goalCrabCount.SetActive(false);
         summaryMenu.SetActive(false);
     }
 
@@ -100,7 +100,9 @@ public class LevelManager : MonoBehaviour
 
             case LMState.Goal:
                 {
-                    StartCoroutine(ShowGoalForTheDay());
+                    //StartCoroutine(ShowGoalForTheDay());
+                    //TODO: do level popup animation
+                    SetState(LMState.Game);
                 }
                 break;
 
@@ -174,7 +176,7 @@ public class LevelManager : MonoBehaviour
     }
 
 
-    private IEnumerator ShowGoalForTheDay()
+    /*private IEnumerator ShowGoalForTheDay()
     {
         transparentOverlay.SetActive(true);
 
@@ -189,7 +191,7 @@ public class LevelManager : MonoBehaviour
         {
             goalCrabCount.SetActive(true);
             crabCountGoalScript.SetGoalActive();
-        }*/
+        }
         goalCrabCount.SetActive(true);
         crabCountGoalScript.SetGoalActive();
 
@@ -203,13 +205,13 @@ public class LevelManager : MonoBehaviour
         else
         {
             goalCrabCount.SetActive(false);
-        }*/
+        }
         goalCrabCount.SetActive(false);
 
         transparentOverlay.SetActive(false);
 
         SetState(LMState.Game);
-    }
+    }*/
 
     public bool HasStarted()    // only used to prevent pause screen from activating during goals, TODO: consider removing
     {

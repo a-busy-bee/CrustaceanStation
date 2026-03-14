@@ -9,9 +9,11 @@ using miniPair = System.Tuple<Mini.Type, Mini.Strength>;
 public class ShuttlePopup : TransportPopup
 {
     // TODO: IF YOU ARE ADDING A MINI TYPE, UPDATE RANDOM NUM UPPER BOUND IN GenerateNewSeats INNER LOOP
-    private new Cart.Type type = Cart.Type.Shuttle;
-
-    override public void SeatCharacter(int row, int column)
+	private void Awake()
+	{
+		type = Cart.Type.Shuttle;
+	}
+	override public void SeatCharacter(int row, int column)
     {
         seatDictionary[0][row, column].Item1 = currMini;
         seatDictionary[0][row, column].Item2 = 3;
@@ -23,8 +25,8 @@ public class ShuttlePopup : TransportPopup
             }
         }
 
-        // check pred/prey relationships
-        badness += currHowBad;
+        // check pred/prey relationships 
+        badness += currHowBad; 
 
         // if ticket info was wrong
         Cart.Type ticketCartType = Kiosk.instance.GetCurrentCrabTicket();

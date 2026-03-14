@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class CrabController : MonoBehaviour
 {
@@ -13,10 +14,17 @@ public class CrabController : MonoBehaviour
     private GameObject ticket;
     [SerializeField] private GameObject idPrefab;
     private GameObject id;
+    [SerializeField] private GameObject shuttleTicketPrefab;
+    private GameObject shuttleTicket;
+    [SerializeField] private Sprite[] labCoats;
+    [SerializeField] private Image labCoatBase;
+    [SerializeField] private Badges badge;
+    private bool isShuttle = false;
+
+
     private CrabSelector crabSelector;
     private Cart.Type cartType;
     private bool presented = false;
-
  
     // VALIDITY
     private bool isValid = true;
@@ -51,12 +59,18 @@ public class CrabController : MonoBehaviour
 
         crabInfo.crabName = CrabNameGenerator.instance.GetNameByType(crabInfo.type);
         emotion = GetComponent<RectTransform>().Find("Emotions").GetComponent<Emotion>();
+
+        
     }
 
     private void Start()
     {
+        if (labCoatBase != null) labCoatBase.gameObject.SetActive(false);
+        if (badge != null) badge.gameObject.SetActive(false);
+
         float xPos = kiosk.GetCrabPositionInKiosk();
-        if (crabInfo.isLarge) {
+        if (crabInfo.isLarge)
+        {
             xPos = -492;
         }
 
@@ -64,6 +78,23 @@ public class CrabController : MonoBehaviour
         kioskEndPos = new Vector3(xPos, crabInfo.kioskHeight, 0);
 
         rectTransform.anchoredPosition = kioskStartPos;
+
+        if (crabInfo.hasResearchCoat && Random.Range(0, 10) < 3)
+        {
+            labCoatBase.gameObject.SetActive(true);
+            labCoatBase.sprite = labCoats[Random.Range(0, labCoats.Length)];
+
+            if (badge != null && Random.Range(0, 5) < 2)
+            {
+                badge.gameObject.SetActive(true);
+                badge.Show();
+            }
+            isShuttle = true;
+        }
+        else if ((int)crabInfo.plotLevel <= 2 && Random.Range(0, 10) < 6)
+        {
+            isShuttle = true;
+        }
     }
 
     // State machine go brrrrr
@@ -160,9 +191,18 @@ public class CrabController : MonoBehaviour
 
     }
 
+    private void PresentShuttleAndID()
+    {
+        
+    }
     private void PresentTicketAndID()
     {
-        ticket = Instantiate(ticketPrefab, ticketAndIDParentObject.transform);
+        //TODO: if has coat or is target species, have higher chance to show shuttle ticket instead of train ticket
+
+        if (isShuttle) ticket = Instantiate(shuttleTicketPrefab, ticketAndIDParentObject.transform);
+        else ticket = Instantiate(ticketPrefab, ticketAndIDParentObject.transform);
+
+        //ticket = Instantiate(ticketPrefab, ticketAndIDParentObject.transform);
         id = Instantiate(idPrefab, ticketAndIDParentObject.transform);
 
         ticket.GetComponent<Ticket>().SetID(id.GetComponent<ID>());
@@ -215,7 +255,8 @@ public class CrabController : MonoBehaviour
 
         // TRAIN CART TYPE FORGERY (OR NOT)
         cartType = LevelManager.instance.GetRandomCurrentCartType();
-        ticket.GetComponent<Ticket>().SetSprite(cartType);
+
+        if (!isShuttle) ticket.GetComponent<Ticket>().SetSprite(cartType);
     }
 
     private void Dialogue()

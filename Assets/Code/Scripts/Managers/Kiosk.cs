@@ -20,12 +20,12 @@ public class Kiosk : MonoBehaviour
     [Header("Kiosk Objects")]
     [SerializeField] private GameObject crabParentObject; // in scene hierarchy: canvas > crabs
     [SerializeField] private GameObject ticketParentObject;
-    [SerializeField] private TextMeshProUGUI coinCountText;
+    //[SerializeField] private TextMeshProUGUI coinCountText;
 
 
-    [Header("Goals")]
+    //[Header("Goals")]
     //[SerializeField] private RatingGoal ratingGoal;
-    [SerializeField] private CrabCountGoal crabCountGoal;
+    //[SerializeField] private CrabCountGoal crabCountGoal;
     private int crabsToday = 0;
     private float wrong = 0f;
     private int total = 0;
@@ -91,7 +91,7 @@ public class Kiosk : MonoBehaviour
                     DisableButtons();
 
                     crabSelector = GetComponent<CrabSelector>();
-                    coinCountText.text = PlayerPrefs.GetInt("coins").ToString();
+                    //coinCountText.text = PlayerPrefs.GetInt("coins").ToString();
                     SetCrabSpeedUpgrade();
                 }
                 break;
@@ -167,7 +167,7 @@ public class Kiosk : MonoBehaviour
 
                     UpdateRating();
 
-                    crabCountGoal.IncrementGoal(crabsToday);
+                    //crabCountGoal.IncrementGoal(crabsToday);
 
                     currentCrab.GetComponent<CrabController>().SetState(CrabController.CrabState.Leaving);
 
@@ -213,9 +213,8 @@ public class Kiosk : MonoBehaviour
         controller.SetTicketAndIDParentObject(ticketParentObject);
         controller.SetState(CrabController.CrabState.Summoned);
 
-        Crabdex.instance.HasBeenDiscovered(controller.GetCrabInfo()); // crabdex!!!
-
-        isCurrentCrabCrustacean = Crabdex.instance.IsCrustacean(controller.GetCrabdexName());
+        //Crabdex.instance.HasBeenDiscovered(controller.GetCrabInfo()); // crabdex!!!
+        //isCurrentCrabCrustacean = Crabdex.instance.IsCrustacean(controller.GetCrabdexName());
     }
 
     private bool CheckWeather(GameObject crab, WeatherType currWeather)
@@ -282,7 +281,7 @@ public class Kiosk : MonoBehaviour
     public void GivePlayerCoins(int newCoins)
     {
         PlayerPrefs.SetInt("coins", PlayerPrefs.GetInt("coins") + newCoins);
-        coinCountText.text = PlayerPrefs.GetInt("coins").ToString();
+        //coinCountText.text = PlayerPrefs.GetInt("coins").ToString();
     }
 
     private void UpdateRating()
