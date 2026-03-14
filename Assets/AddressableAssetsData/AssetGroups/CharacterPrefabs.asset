@@ -183,6 +183,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - CrabdexEntries
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 376529bdea4995b469b49818025d815a
+    m_Address: Assets/Code/Prefabs/Crabs/whale_blue 1.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CrabdexEntries
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 3cf03bf32c4af44ea823eee8cad509e5
     m_Address: Assets/Code/ScriptableObjects/Minis/Horseshoe.asset
     m_ReadOnly: 0
@@ -428,6 +434,12 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - CharacterPrefabs
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 96bf32ac147f2ef4e8576fb488d0137a
+    m_Address: Assets/Code/ScriptableObjects/CrabdexEntries/CrabdexEntry.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CrabdexEntries
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 981d8847a2dca4de886e3d8eab4e78b8
     m_Address: Assets/Code/ScriptableObjects/Minis/PillbugGang.asset
