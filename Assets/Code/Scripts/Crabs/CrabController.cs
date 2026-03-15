@@ -262,7 +262,7 @@ public class CrabController : MonoBehaviour
     private void Dialogue()
     {
         // high chance to not have dialogue
-        //if (Random.Range(0, 10) < 8) return;
+        if (Random.Range(0, 10) < 7) return;
 
         // roll to see if this is a plot dialogue or generic dialogue 
         if (Random.Range(0, 10) < 4)
