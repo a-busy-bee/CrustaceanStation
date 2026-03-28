@@ -21,10 +21,7 @@ public class LoadingScreen : MonoBehaviour
         "Fighting off seagulls...",
         "Distracting whales...",
         "Finding Itty Bitty's lollipop",
-        "Tip: whales take up two seats",
-        "Tip: Don't forget to check the name on the ticket",
-        "Tip: Try tapping the shopkeeper",
-        "Tapping shopkeepers...",
+        "Tip: families take up two seats",
         "Decorating the kiosk...",
         "Watching sunsets..."
     };

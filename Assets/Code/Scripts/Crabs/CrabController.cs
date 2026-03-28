@@ -25,7 +25,7 @@ public class CrabController : MonoBehaviour
     private CrabSelector crabSelector;
     private Cart.Type cartType;
     private bool presented = false;
- 
+
     // VALIDITY
     private bool isValid = true;
 
@@ -60,7 +60,7 @@ public class CrabController : MonoBehaviour
         crabInfo.crabName = CrabNameGenerator.instance.GetNameByType(crabInfo.type);
         emotion = GetComponent<RectTransform>().Find("Emotions").GetComponent<Emotion>();
 
-        
+
     }
 
     private void Start()
@@ -182,7 +182,7 @@ public class CrabController : MonoBehaviour
                         {
                             kiosk.SetState(Kiosk.KioskState.Empty);
                         }
-                        
+
                         // TODO: if waiting, do waiting logic
                     }
                 }
@@ -193,7 +193,7 @@ public class CrabController : MonoBehaviour
 
     private void PresentShuttleAndID()
     {
-        
+
     }
     private void PresentTicketAndID()
     {
@@ -262,7 +262,7 @@ public class CrabController : MonoBehaviour
     private void Dialogue()
     {
         // high chance to not have dialogue
-        //if (Random.Range(0, 10) < 8) return;
+        if (Random.Range(0, 10) < 7) return;
 
         // roll to see if this is a plot dialogue or generic dialogue 
         if (Random.Range(0, 10) < 4)
@@ -288,7 +288,7 @@ public class CrabController : MonoBehaviour
             {
                 DialogueManager.instance.GetDialogueGeneric();
             }
-        }    
+        }
     }
 
     private void RemoveTicketAndID()
@@ -299,7 +299,7 @@ public class CrabController : MonoBehaviour
     public void SetCrabSelector(CrabSelector newSelector)
     {
         crabSelector = newSelector;
-    } 
+    }
     public void SetClockAndKiosk(Clock newClock, Kiosk newKiosk)
     {
         //clock = newClock;
@@ -317,7 +317,7 @@ public class CrabController : MonoBehaviour
     {
         return crabInfo.favoriteWeatherTypes;
     }
-    
+
     public Cart.Type GetTicketType()
     {
         return cartType;
@@ -330,4 +330,5 @@ public class CrabController : MonoBehaviour
     {
         return isValid;
     }
+
 }

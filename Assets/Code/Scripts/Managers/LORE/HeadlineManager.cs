@@ -19,8 +19,22 @@ public class HeadlineNodePlot
 
 public class HeadlineManager : MonoBehaviour
 {
+    public static HeadlineManager instance { get; private set; }
     private HeadlineData headlineData;
-    private void Start()
+    [SerializeField] private HeadlineObject headlineObject;
+
+	private void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+        }
+    }
+	private void Start()
     {
         LoadJson();
     }
@@ -41,13 +55,13 @@ public class HeadlineManager : MonoBehaviour
         }
     }
 
-    public string GetGenericHeadline()
+    public void GetGenericHeadline()
     {
-        return headlineData.nodesGeneric[UnityEngine.Random.Range(0, headlineData.nodesGeneric.Length)];
+        headlineObject.SetText(60, headlineData.nodesGeneric[UnityEngine.Random.Range(0, headlineData.nodesGeneric.Length)]);
     }
 
-    public string GetPlotHeadline(PlotManager.Stage stage)
+    public void GetPlotHeadline(PlotManager.Stage stage)
     {
-        return headlineData.nodesPlot[(int)stage].text[UnityEngine.Random.Range(0, headlineData.nodesPlot[(int)stage].text.Length)];
+        headlineObject.SetText(60, headlineData.nodesPlot[(int)stage].text[UnityEngine.Random.Range(0, headlineData.nodesPlot[(int)stage].text.Length)]);
     }
 }

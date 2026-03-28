@@ -9,6 +9,10 @@ public class DialogueData
 
     public string[] nodeGenericAnyChars; // casual dialogue, any character
     public DialogueNodePlotAnyChar[] nodePlotAnyChars;    // plot dialogue, any character
+
+    //TODO: load these
+    public string[] nodesNonCrustacean;
+    public string[] nodesCrustacean;
 }
 
 [Serializable]
