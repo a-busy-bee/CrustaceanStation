@@ -99,6 +99,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - CrabdexEntries
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 21777ada949e15349a5cbd48c67e01ef
+    m_Address: Assets/Code/Prefabs/Crabs/triangle_purple 1.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CrabdexEntries
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 222ebda12f34f452687ee2eed9fe008c
     m_Address: Assets/Code/ScriptableObjects/Minis/SeaLemon.asset
     m_ReadOnly: 0
@@ -147,6 +153,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - CharacterPrefabs
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 29fc419fbb4435747a99e7148d105550
+    m_Address: Assets/Code/Prefabs/Crabs/lobster_tail.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CrabdexEntries
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 2d07fd228832947c4a6ef1549f83a53a
     m_Address: Assets/Code/ScriptableObjects/CrabdexEntries/Lobber.asset
     m_ReadOnly: 0
@@ -165,6 +177,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Minis
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 301f9013e19b58848a2ddfd9e4bf8d07
+    m_Address: Assets/Code/Prefabs/Crabs/bubblycrab.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CrabdexEntries
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 30506ef5b98b04818a31cb7cd7271034
     m_Address: Assets/Code/Prefabs/Crabs/crab_frog.prefab
     m_ReadOnly: 0
@@ -179,6 +197,12 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 31b3b5a63a05441ec8a261c2275a36d1
     m_Address: Assets/Code/ScriptableObjects/CrabdexEntries/Ittybitty.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CrabdexEntries
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 31c745698428da94b9ecca2e03d0f8e7
+    m_Address: Assets/Code/Prefabs/Crabs/fish_tiny.prefab
     m_ReadOnly: 0
     m_SerializedLabels:
     - CrabdexEntries
@@ -266,6 +290,18 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - CharacterPrefabs
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5a626ebdefd851b4b87c546fcfa3b898
+    m_Address: Assets/Code/ScriptableObjects/CrabdexEntries/CrabdexEntry.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CrabdexEntries
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5fdca5b86b0187946b92a73968121d20
+    m_Address: Assets/Code/Prefabs/Crabs/puffin_stoop.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CrabdexEntries
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 629504086857e4272a3c662301b3996b
     m_Address: Assets/Code/Prefabs/Crabs/axolotl_dark.prefab
@@ -375,6 +411,18 @@ MonoBehaviour:
     m_SerializedLabels:
     - CharacterPrefabs
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7684437382797ca4082dc20f00ff8fec
+    m_Address: Assets/Code/Prefabs/Crabs/weirdcrab.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CrabdexEntries
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7962b81f7d6fdcb4daa0401c4e457d52
+    m_Address: Assets/Code/Prefabs/Crabs/clawscrab.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CrabdexEntries
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7c1e73f643c974ac784e68a53077d23f
     m_Address: Assets/Code/ScriptableObjects/Minis/SeaSheep.asset
     m_ReadOnly: 0
@@ -387,6 +435,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - CharacterPrefabs
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7eb4eb715fe3daf498d560f05d646678
+    m_Address: Assets/Code/Prefabs/Crabs/fish_tiny_yellow.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CrabdexEntries
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 864942151aacc4157b3d741b12e6c6ef
     m_Address: Assets/Code/ScriptableObjects/Minis/Shrimp.asset
     m_ReadOnly: 0
@@ -398,6 +452,12 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - CharacterPrefabs
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 89d50d57865eb834eb0acab301e3f11d
+    m_Address: Assets/Code/Prefabs/Crabs/seabunny_magenta.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CrabdexEntries
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8aefe06092e804991ba9842adb491e7a
     m_Address: Assets/Code/Prefabs/Crabs/armatus_strawberry.prefab
@@ -453,6 +513,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - CharacterPrefabs
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9bb104d0034a682478bb4b9cdeea3690
+    m_Address: Assets/Code/Prefabs/Crabs/seabunny_white.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CrabdexEntries
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9c857d6b14a744b18bba1a826bfc2723
     m_Address: Assets/Code/ScriptableObjects/Minis/SeaMonkies_few.asset
     m_ReadOnly: 0
@@ -501,6 +567,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - CharacterPrefabs
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a301ba912dee53f419e6b9b8945130d2
+    m_Address: Assets/Code/Prefabs/Crabs/triangle_purple 1.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CrabdexEntries
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a56348eeec240457480bca73e1151c32
     m_Address: Assets/Code/Prefabs/Crabs/sealion_purple.prefab
     m_ReadOnly: 0
@@ -518,6 +590,12 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Minis
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a9417c7357ac34e49b0186237c1d47a2
+    m_Address: Assets/Code/Prefabs/Crabs/seabunny_blue.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CrabdexEntries
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ab425e14e7685481fb7219605cae11ed
     m_Address: Assets/Code/Prefabs/Crabs/axolotl.prefab
@@ -687,6 +765,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - CrabdexEntries
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d27c1b8332303104d872dafdf83c70c1
+    m_Address: Assets/Code/Prefabs/Crabs/hermitcrab_tiny.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CrabdexEntries
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d29ef7b816d41421a9206035dc901278
     m_Address: Assets/Code/ScriptableObjects/CrabdexEntries/Blueberry.asset
     m_ReadOnly: 0
@@ -734,6 +818,12 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - CharacterPrefabs
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: da77f9fc952464240a0edd82d707b87e
+    m_Address: Assets/Code/ScriptableObjects/CrabdexEntries/Potamon.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CrabdexEntries
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: dc8a97388ff0d4cefbdb942ffe949259
     m_Address: Assets/Code/Prefabs/Crabs/conch_yellow.prefab
@@ -795,6 +885,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - CrabdexEntries
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: eb652e552718a2d46925b49c140fd84a
+    m_Address: Assets/Code/Prefabs/Crabs/seastar.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CrabdexEntries
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ef9993eb75f844f27bb48e56b69cf511
     m_Address: Assets/Code/Prefabs/Crabs/axolotl_black.prefab
     m_ReadOnly: 0
@@ -842,6 +938,12 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Minis
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fbdc23d711309ee4198f472c40dce512
+    m_Address: Assets/Code/Prefabs/Crabs/triangle_purple 1.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CrabdexEntries
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fe37a0cfebc5f4d32b80e59c84277961
     m_Address: Assets/Code/Prefabs/Crabs/crab_cottoncandy.prefab

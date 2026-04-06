@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78e9b5b3f91a34cb3b12441421826e1c, type: 3}
+  m_Name: seabunny_magenta
+  m_EditorClassIdentifier: Assembly-CSharp::CrabInfo
+  sprite: {fileID: 21300000, guid: b68a133dccdee214b8710eb275f7fac9, type: 3}
+  kioskHeight: 89
+  isLarge: 0
+  crabName: 
+  type: 2
+  favoriteWeatherTypes: 010000000300000002000000
+  crabdexName: seabunny
+  isVariant: 1
+  variantName: magenta
+  mini: {fileID: 11400000, guid: 7c1e73f643c974ac784e68a53077d23f, type: 2}
+  isMultiple: 0
+  plotLevel: 2
+  isImportantCharacter: 0
+  characterNameID: 
+  hasResearchCoat: 0

@@ -9768,7 +9768,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 187746500}
+      - m_Target: {fileID: 1001191220}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
         m_Mode: 1
@@ -12473,8 +12473,7 @@ MonoBehaviour:
   approveButton: {fileID: 534969239}
   rejectButton: {fileID: 1416969083}
   debugMode: 1
-  charactersToForce:
-  - {fileID: 1918681812830035428, guid: f064e0f2f8c994d8189be683460960df, type: 3}
+  charactersToForce: []
 --- !u!1 &728832702
 GameObject:
   m_ObjectHideFlags: 0
@@ -21302,10 +21301,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
-    y: 0.04983601
-    width: 1
-    height: 0.900328
+    x: 0.14662084
+    y: 0
+    width: 0.7067583
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -24212,7 +24211,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 187746500}
+      - m_Target: {fileID: 1001191220}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
         m_Mode: 1
@@ -37805,7 +37804,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6182215521950669315, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -18.83374
+      value: -18.833862
       objectReference: {fileID: 0}
     - target: {fileID: 6182215521950669315, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
