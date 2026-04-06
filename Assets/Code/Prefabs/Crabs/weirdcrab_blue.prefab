@@ -109,7 +109,6 @@ GameObject:
   - component: {fileID: 619585873619301083}
   - component: {fileID: 4531061473998198104}
   - component: {fileID: 3203835409291303787}
-  - component: {fileID: 3706604951626000051}
   m_Layer: 5
   m_Name: weirdcrab_blue
   m_TagString: Untagged
@@ -174,25 +173,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &3706604951626000051
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6229886660660205213}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d970217ae29845a98d51a74efcb624b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CrabController
-  crabInfo: {fileID: 11400000, guid: d5a9e9f6fe5b0974081b951eda175781, type: 2}
-  ticketPrefab: {fileID: 1088732259898174776, guid: 8e354d16cd784472f9702c019590d42f, type: 3}
-  idPrefab: {fileID: 5256601893285506828, guid: a38a60880f48f4610b91ac0addda84c3, type: 3}
-  shuttleTicketPrefab: {fileID: 1088732259898174776, guid: a33a4fdb4c9ae4d86ab77532032414ca, type: 3}
-  labCoats: []
-  labCoatBase: {fileID: 0}
-  badge: {fileID: 0}
 --- !u!1001 &6436173452381849879
 PrefabInstance:
   m_ObjectHideFlags: 0

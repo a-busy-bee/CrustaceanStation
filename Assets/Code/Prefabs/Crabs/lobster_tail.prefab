@@ -109,7 +109,6 @@ GameObject:
   - component: {fileID: 3615274991902904558}
   - component: {fileID: 3173568597468896898}
   - component: {fileID: 7512619007316049000}
-  - component: {fileID: 370922556194194929}
   m_Layer: 5
   m_Name: lobster_tail
   m_TagString: Untagged
@@ -174,25 +173,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &370922556194194929
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6022678638901747511}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d970217ae29845a98d51a74efcb624b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CrabController
-  crabInfo: {fileID: 11400000, guid: ff218ecec79f08b48b5892ba040b9cff, type: 2}
-  ticketPrefab: {fileID: 1088732259898174776, guid: 8e354d16cd784472f9702c019590d42f, type: 3}
-  idPrefab: {fileID: 5256601893285506828, guid: a38a60880f48f4610b91ac0addda84c3, type: 3}
-  shuttleTicketPrefab: {fileID: 1088732259898174776, guid: a33a4fdb4c9ae4d86ab77532032414ca, type: 3}
-  labCoats: []
-  labCoatBase: {fileID: 0}
-  badge: {fileID: 0}
 --- !u!1001 &6436173452381849879
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -425,11 +405,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8883956773641853205, guid: 46cc4cc526edb4accb7cd93003026fc3, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 77
+      value: 80.1
       objectReference: {fileID: 0}
     - target: {fileID: 8883956773641853205, guid: 46cc4cc526edb4accb7cd93003026fc3, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 45
+      value: 37.7
       objectReference: {fileID: 0}
     - target: {fileID: 8883956773641853205, guid: 46cc4cc526edb4accb7cd93003026fc3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

@@ -12473,7 +12473,9 @@ MonoBehaviour:
   approveButton: {fileID: 534969239}
   rejectButton: {fileID: 1416969083}
   debugMode: 1
-  charactersToForce: []
+  charactersToForce:
+  - {fileID: 1918681812830035428, guid: fbdc23d711309ee4198f472c40dce512, type: 3}
+  - {fileID: 1918681812830035428, guid: 301f9013e19b58848a2ddfd9e4bf8d07, type: 3}
 --- !u!1 &728832702
 GameObject:
   m_ObjectHideFlags: 0

@@ -109,7 +109,6 @@ GameObject:
   - component: {fileID: 5586730823296302021}
   - component: {fileID: 5513536498250253134}
   - component: {fileID: 4588829054304935061}
-  - component: {fileID: 4080032464501770822}
   m_Layer: 5
   m_Name: fiddler
   m_TagString: Untagged
@@ -174,25 +173,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &4080032464501770822
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8360739329489760218}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d970217ae29845a98d51a74efcb624b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CrabController
-  crabInfo: {fileID: 11400000, guid: 2a698f5089a3b244c90264ea14251f53, type: 2}
-  ticketPrefab: {fileID: 1088732259898174776, guid: 8e354d16cd784472f9702c019590d42f, type: 3}
-  idPrefab: {fileID: 5256601893285506828, guid: a38a60880f48f4610b91ac0addda84c3, type: 3}
-  shuttleTicketPrefab: {fileID: 1088732259898174776, guid: a33a4fdb4c9ae4d86ab77532032414ca, type: 3}
-  labCoats: []
-  labCoatBase: {fileID: 0}
-  badge: {fileID: 0}
 --- !u!1001 &6436173452381849879
 PrefabInstance:
   m_ObjectHideFlags: 0
