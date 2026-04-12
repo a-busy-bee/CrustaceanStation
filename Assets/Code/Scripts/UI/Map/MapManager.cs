@@ -125,7 +125,7 @@ public class MapManager : MonoBehaviour
 
     public void StartDay()
     {
-        menuButtons.startDay(curr.GetNameString());
+        //menuButtons.startDay(curr.GetNameString());
     }
 
 }

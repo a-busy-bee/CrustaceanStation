@@ -64,11 +64,11 @@ public class Clock : MonoBehaviour
             currentTime++;
 
             //LevelManager.instance.CheckTrains(currentTime);
-
-            if (currentTime % 2 == 0) // chance to change weather every 2 hours
+            WeatherManager.instance.ChangeWeather();
+            /*if (currentTime % 2 == 0) // chance to change weather every 2 hours
             {
                 WeatherManager.instance.ChangeWeather();
-            }
+            }*/
 
             if (currentTime == endTime - 2)
             {

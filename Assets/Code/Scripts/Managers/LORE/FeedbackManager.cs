@@ -47,19 +47,19 @@ public class FeedbackManager : MonoBehaviour
         }
     }
 
-    public (string, string) GetGenericFeedback()
+    public string GetGenericFeedback()
     {
         int rand = UnityEngine.Random.Range(0, feedbackData.nodesGeneric.Length);
-        return ("", feedbackData.nodesGeneric[rand].text);
+        return feedbackData.nodesGeneric[rand].text;
     }
 
-    public (string, string) GetPlotFeedback(int stage)
+    public string GetPlotFeedback(int stage)
     {
         int rand = UnityEngine.Random.Range(0, feedbackData.nodesPlot[stage].text.Length);
 
         //string name = "";
         //if (rand < feedbackData.nodesPlot[stage].name.Length) name = feedbackData.nodesPlot[stage].name[rand];
 
-        return ("", feedbackData.nodesPlot[stage].text[rand]);
+        return feedbackData.nodesPlot[stage].text[rand];
     }
 }

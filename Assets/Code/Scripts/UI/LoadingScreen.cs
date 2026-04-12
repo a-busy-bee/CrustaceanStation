@@ -34,13 +34,13 @@ public class LoadingScreen : MonoBehaviour
 
         animator.enabled = false;
     }
+
     public void PlayLoad(string sceneName)
     {
         imagenewGame.SetActive(true);
+        // TODO: convert animation to smooth damp 
         animator.enabled = true;
         StartCoroutine(WaitForEndOfAnim(sceneName));
-
-        
     }
     private IEnumerator LoadSceneCoroutine(string sceneName)
     {
@@ -83,21 +83,18 @@ public class LoadingScreen : MonoBehaviour
 
     private IEnumerator WaitForEndOfAnim(string sceneName)
     {
-
+        sliderParent.SetActive(false);
         group.blocksRaycasts = true;
-
+        
         while (group.alpha < 1)
         {
             group.alpha += fadeSpeed * Time.deltaTime;
             yield return null;
         }
         group.alpha = 1;
-
         animator.Play("NewGameLoad");
-        sliderParent.SetActive(false);
 
         yield return new WaitForSeconds(4.2f);
-
         StartCoroutine(LoadSceneCoroutine(sceneName));
     }
 }
