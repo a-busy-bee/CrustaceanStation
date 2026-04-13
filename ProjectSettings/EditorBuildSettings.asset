@@ -17,7 +17,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/_old/Temp.unity
     guid: 87712502d46904e24a130ba9c2af8ccb
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Shop.unity
     guid: d642f9fc1a870ea4d8d06a56bc2f4ff2
   - enabled: 1
@@ -53,6 +53,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BaseArea.unity
     guid: 3092cc14e65c6451c9557bafec9dba04
+  - enabled: 1
+    path: Assets/Scenes/Mailroom.unity
+    guid: a2401a11adcb44808b4841247f066b75
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 747af379f21ac43d2aeba8808563d654, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}

@@ -63,6 +63,6 @@ public class Summary : MonoBehaviour
 
     public void Continue()
     {
-        SceneManager.LoadScene("BaseArea");
+        SceneManager.LoadScene("Home");
     }
 }

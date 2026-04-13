@@ -113,7 +113,6 @@ public class TransportPopup : MonoBehaviour
         {
             for (int col = 0; col < 4; col++)
             {
-                
                 if (minis[row, col].Item1.isMultiple)
                 {
                     seatObjects[row, col].Populate(minis[row, col].Item1);

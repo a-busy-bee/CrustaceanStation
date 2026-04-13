@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
-
 public class Settings : MonoBehaviour
 {
     [SerializeField] private GameObject backgroundDisplay;
@@ -52,6 +51,7 @@ public class Settings : MonoBehaviour
         PlayerPrefs.SetInt("ResetDecor", 1);
         PlayerPrefs.SetInt("kioskStyle", 0);
         PlayerPrefs.SetInt("newGame", 1);
+        PlayerPrefs.SetInt("IntroMailSeen", -1);
         
         PlayerPrefs.SetInt("cartQuality", 0);
         PlayerPrefs.SetInt("numTracks", 0);
@@ -64,6 +64,7 @@ public class Settings : MonoBehaviour
 
         areYouSurePanel.SetActive(false);
     }
+
 
     public void OnResetNo()
     {
