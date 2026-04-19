@@ -3043,8 +3043,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1931240439}
   - {fileID: 412124394}
+  - {fileID: 1931240439}
   - {fileID: 632948969}
   - {fileID: 948339230}
   - {fileID: 988069016}
@@ -15043,10 +15043,12 @@ MonoBehaviour:
   ticketParentObject: {fileID: 1931240438}
   approveButton: {fileID: 534969239}
   rejectButton: {fileID: 1416969083}
-  debugMode: 1
+  debugMode: 0
   charactersToForce:
-  - {fileID: 1918681812830035428, guid: fbdc23d711309ee4198f472c40dce512, type: 3}
-  - {fileID: 1918681812830035428, guid: 301f9013e19b58848a2ddfd9e4bf8d07, type: 3}
+  - {fileID: 1918681812830035428, guid: 9ca52940cd7d64776b87cdedbd7c98f5, type: 3}
+  - {fileID: 1918681812830035428, guid: d27c1b8332303104d872dafdf83c70c1, type: 3}
+  - {fileID: 1918681812830035428, guid: e9da9c16aaa564d34b9239ccaea95600, type: 3}
+  - {fileID: 1918681812830035428, guid: a0018f8f42cdd46d5b4fcb9c2bf21d12, type: 3}
 --- !u!1 &730704855
 GameObject:
   m_ObjectHideFlags: 0
@@ -16082,7 +16084,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 6322bc9e4a93a074895850f1a528c453, type: 2}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 13f090fafac0140868ae44f38d7024aa, type: 3}
+  m_Resource: {fileID: 8300000, guid: 7c681c700179c4c3db2046cbe2542e09, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -31252,16 +31254,11 @@ MonoBehaviour:
   rails:
   - {fileID: 1251006543}
   - {fileID: 128747560}
-  cartPopupStandard: {fileID: 0}
-  cartPopupEconomy: {fileID: 0}
-  cartPopupShuttle: {fileID: 0}
-  cartPopupVan: {fileID: 0}
   trainsOverlay: {fileID: 163693168}
   pauseMenu: {fileID: 5841282443364214792, guid: 619a19cf8b084b14badb6a03bd352f25, type: 3}
   summaryMenu: {fileID: 3231377911505704347}
   transparentOverlay: {fileID: 1650822137}
   audioManager: {fileID: 485157329}
-  tutorial: {fileID: 1959492845234858785}
 --- !u!114 &1567585160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43890,17 +43887,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a5805489d054475f965cc7dc3138d52, type: 3}
---- !u!114 &1959492845234858785 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5264055640674105400, guid: 0a5805489d054475f965cc7dc3138d52, type: 3}
-  m_PrefabInstance: {fileID: 1959492845234858784}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 215463317}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26f05b60f42354aca91ae7cac543801c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Tutorial
 --- !u!224 &2074754442309132543 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6182215521950669315, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}

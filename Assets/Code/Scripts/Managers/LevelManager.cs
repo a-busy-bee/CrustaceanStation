@@ -5,77 +5,15 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class LevelManager : MonoBehaviour
+public class LevelManager : LevelManagerBase
 {
-    public static LevelManager instance { get; private set; }
-
-    [Header("Main")]
-    [SerializeField] private Clock clock;
-
-
-    [Header("Trains")]
-    [SerializeField] private List<Rail> rails = new List<Rail>();  // all rails
-    [SerializeField] private GameObject cartPopupStandard;
-    [SerializeField] private GameObject cartPopupEconomy;
-    [SerializeField] private GameObject cartPopupShuttle;
-    [SerializeField] private GameObject cartPopupVan;
-
-    [SerializeField] private GameObject trainsOverlay;
-
-
-    [Header("Goals & Summary")]
-    [SerializeField] private GameObject pauseMenu;
-    //[SerializeField] private GameObject goalRating;
-    //[SerializeField] private RatingGoal ratingGoalScript;
-    //[SerializeField] private GameObject goalCrabCount;
-    //[SerializeField] private CrabCountGoal crabCountGoalScript;
-    [SerializeField] private GameObject summaryMenu;
-    //private bool isRating = false;
-    private bool dayStarted = false;
-
-
-    // UI background 
-    [Header("Other")]
-    [SerializeField] private GameObject transparentOverlay;
-    [SerializeField] private AudioManager audioManager;
-    [SerializeField] private Tutorial tutorial;
-
-
-    // STATE MACHINE
-    public enum LMState
-    {
-        Setup,              // init trains
-        Goal,               // show goal
-        Game,               // game loop 
-        Paused,             // tell animations & weather & sound to keep playing
-        Summary             // end of the day, show option to go to the shop or start a new day
-    }
-    public LMState lmState { get; private set; }
-
-
-    private void Awake()
-    {
-        if (instance != null && instance != this)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            instance = this;
-        }
-
-        //goalRating.SetActive(false);
-        //goalCrabCount.SetActive(false);
-        summaryMenu.SetActive(false);
-    }
-
-    private void Start()
+    override protected void Start()
     {
         SetState(LMState.Setup);
     }
 
     // State machine go brrrrr
-    public void SetState(LMState newState)
+    override public void SetState(LMState newState)
     {
         LMState prevState = lmState;
         lmState = newState;
@@ -84,14 +22,6 @@ public class LevelManager : MonoBehaviour
         {
             case LMState.Setup:
                 {
-                    if (PlayerPrefs.GetInt("newGame") == 1)
-                    {
-                        PlayerPrefs.SetInt("newGame", -1); // set so that it's not replayed unless progress is reset
-                        tutorial.gameObject.SetActive(true);
-                        tutorial.Play(true);
-                    }
-
-                    //Kiosk.instance.ShowDecor();
                     InitTrains();
 
                     SetState(LMState.Goal);
@@ -100,8 +30,6 @@ public class LevelManager : MonoBehaviour
 
             case LMState.Goal:
                 {
-                    //StartCoroutine(ShowGoalForTheDay());
-                    //TODO: do level popup animation
                     SetState(LMState.Game);
                 }
                 break;
@@ -159,150 +87,5 @@ public class LevelManager : MonoBehaviour
                 break;
         }
     }
-
-    public void OnShop()
-    {
-        SceneManager.LoadScene("Shop");
-    }
-
-    public void OnMenu()
-    {
-        SceneManager.LoadScene("TitleScreen");
-    }
-
-    public void OnNewDay()
-    {
-        SceneManager.LoadScene("BaseArea");
-    }
-
-
-    /*private IEnumerator ShowGoalForTheDay()
-    {
-        transparentOverlay.SetActive(true);
-
-        // show prefab
-        /*if (Random.Range(0, 10) > 4)
-        {
-            //isRating = true;
-            //goalRating.SetActive(true);
-            //ratingGoalScript.SetGoalActive();
-        }
-        else
-        {
-            goalCrabCount.SetActive(true);
-            crabCountGoalScript.SetGoalActive();
-        }
-        goalCrabCount.SetActive(true);
-        crabCountGoalScript.SetGoalActive();
-
-        yield return new WaitForSeconds(3.5f);
-
-        // hide prefab
-        /*if (isRating)
-        {
-            goalRating.SetActive(false);
-        }
-        else
-        {
-            goalCrabCount.SetActive(false);
-        }
-        goalCrabCount.SetActive(false);
-
-        transparentOverlay.SetActive(false);
-
-        SetState(LMState.Game);
-    }*/
-
-    public bool HasStarted()    // only used to prevent pause screen from activating during goals, TODO: consider removing
-    {
-        return dayStarted;
-    }
-
-    private void InitTrains()
-    {
-        int id = 0;
-        // goes through all of the trainIDs (lines) and generate first train
-        foreach (Rail rail in rails)
-        {
-            rail.Summon();
-
-            id++;
-        }
-    }
-
-    public int GetNumberOfRails()
-    {
-        return rails.Count;
-    }
-
-    public GameObject GetStandardCartPopup()
-    {
-        return cartPopupStandard;
-    }
-
-    public GameObject GetEconomyCartPopup()
-    {
-        return cartPopupEconomy;
-    }
-
-    public GameObject GetShuttlePopup()
-    {
-        return cartPopupShuttle;
-    }
-
-    public GameObject GetVanPopup()
-    {
-        return cartPopupVan;
-    }
-
-    public int GetCartQuality()
-    {
-        return PlayerPrefs.GetInt("cartQuality");
-    }
-    public Cart.Type GetRandomCurrentCartType()
-    {
-        int totalWeight = 30; // economy = 20, standard = 10
-        int rand = Random.Range(0, totalWeight);
-
-        if (rand < 10)
-        {
-            return Cart.Type.Standard;
-        }
-        else
-        {
-            return Cart.Type.Economy;
-        }
-    }  
-
-    public bool CheckTrainIDValidity()
-    {
-        return false;
-    }
-
-    public void SetTrainsClickable(bool allowClick)
-    {
-        //TODO: account for shuttles and vans
-        if (allowClick)
-        {
-            trainsOverlay.SetActive(false);
-        }
-        else
-        {
-            StartCoroutine(WaitThenTurnOnOverlay());
-        }
-
-        foreach (Rail rail in rails)
-        {
-            rail.SetClickable(allowClick);
-        }
-    }
-
-    private IEnumerator WaitThenTurnOnOverlay()
-    {
-        yield return new WaitForSeconds(1); // TODO: have it fade in instead of just turning on
-        trainsOverlay.SetActive(true);
-    }
-    
-
 
 }

@@ -34,9 +34,9 @@ public class Settings : MonoBehaviour
 
     public void OnTutorial()
     {
-        tutorial.SetActive(true);
-        tutorial.GetComponent<Tutorial>().Play(false);
-        tutorial.GetComponent<Tutorial>().SetSettingsBlur();
+        //tutorial.SetActive(true);
+        //tutorial.GetComponent<Tutorial>().Play(false);
+        //tutorial.GetComponent<Tutorial>().SetSettingsBlur();
     }
 
     public void Reset()

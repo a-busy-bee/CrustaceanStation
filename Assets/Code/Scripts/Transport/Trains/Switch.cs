@@ -29,6 +29,8 @@ public class Switch : MonoBehaviour, IPointerClickHandler
         animator.enabled = true;
         animator.Play("SwitchOn");
 
+        if (TutorialManager.instance != null) TutorialManager.instance.ProgressTutorial();
+
         //play switch animation
         // depart train
         StartCoroutine(WaitThenReset());

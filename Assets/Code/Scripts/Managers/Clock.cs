@@ -19,7 +19,7 @@ public class Clock : MonoBehaviour
     [SerializeField] private GameObject clockHand;
 
     // CRABS
-    [SerializeField] private Kiosk kiosk;
+    [SerializeField] private KioskBase kiosk;
 
     // FILL COLOR
     [SerializeField] private Color red;

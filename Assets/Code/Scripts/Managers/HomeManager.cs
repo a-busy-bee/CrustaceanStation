@@ -46,6 +46,13 @@ public class HomeManager : MonoBehaviour
 
     public void startDay(string sceneName)
     {
+        if (PlayerPrefs.GetInt("newGame") == 1)
+        {
+            loadingScreenPanel.SetActive(true);
+            loadingScreenPanel.GetComponent<LoadingScreen>().PlayLoad("Tutorial");
+            return;
+        }
+
         loadingScreenPanel.SetActive(true);
         loadingScreenPanel.GetComponent<LoadingScreen>().PlayLoad(sceneName);
     }

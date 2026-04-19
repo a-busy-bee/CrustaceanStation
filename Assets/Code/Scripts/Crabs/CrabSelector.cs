@@ -47,7 +47,7 @@ public class CrabSelector : MonoBehaviour
         {
             idxsChosenRecently.RemoveAt(0);
         }
-
+        
         return (prefabs[chosenCrabIdx], chosenCrabIdx);
     }
 

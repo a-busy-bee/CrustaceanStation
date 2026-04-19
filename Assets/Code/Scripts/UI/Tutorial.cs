@@ -1,98 +1,184 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Tutorial : MonoBehaviour
 {
-    [SerializeField] private GameObject[] pages;
-    private int currentPage = 0;
-    [SerializeField] private GameObject pauseBlur;
-    [SerializeField] private GameObject settingsBlur;
-    [SerializeField] private GameObject finalPageNotNewGame; // final page is different if played through the settings/pause menu
+    [SerializeField] private GameObject pointer;
+    [SerializeField] private RectTransform pointerTransform;
+    [SerializeField] private RectTransform[] waypoints; // indices should correspond to states
+    [SerializeField] private GameObject[] texts;  // indices should correspond to states
+    [SerializeField] private GameObject clickAnyWhereToContinue;
 
-    private bool isNewGame = false;
+    [Header("Misc")]
+    [SerializeField] private Button approveButton;
+    [SerializeField] private Button rejectButton;
 
-    public void Play(bool isFromNewGame)
+
+    private bool isMoving = false;
+    private Vector2 currentVelocity;
+    private bool isFirstCrab;
+
+    public enum TutorialState
     {
-        isNewGame = isFromNewGame;
-        if (!isFromNewGame)
-        {
-            pauseBlur.SetActive(false);
-            settingsBlur.SetActive(false);
+        setup,
+        photos,
+        names,
+        names2,
+        names3,
+        approve,
+        ticketType,
+        preferences,
+        trainSwitch,
+        endDay1,
+        clock,
+        reject,
+        multiples,
+        oversize
+    }
+    private TutorialState tutorialState;
 
-            // blur settings page?
-            if (SceneManager.GetActiveScene().name == "BaseArea")
+    public TutorialState GetTutorialState()
+    {
+        return tutorialState;
+    }
+
+    private void Awake()
+    {
+        tutorialState = TutorialState.setup;
+    }
+
+	private void Start()
+	{
+		if (PlayerPrefs.GetInt("tutorialState") != 0) return;
+        isFirstCrab = true;
+	}
+
+	public void SetState(TutorialState tutorialStateNew)
+    {
+        TutorialState prev = tutorialState;
+        tutorialState = tutorialStateNew;
+        switch (tutorialState)
+        {
+            case TutorialState.setup:
+                // wait for level to popup
+                //ShowPointer();
+                if (prev != TutorialState.setup) return;
+                isFirstCrab = true;
+                pointer.SetActive(false);
+                ShowText();
+
+                break;
+
+            case TutorialState.photos:
+                ShowPointer();
+                break;
+
+            case TutorialState.names:
+                Kiosk.instance.GetCurrCrab().GetComponent<CrabController>().GetID().transform.GetChild(1).GetComponent<IDHover>().ForceMagnifyOff();
+                ShowPointer();
+                break;
+            case TutorialState.names2:
+                ShowPointer();
+                break;
+            case TutorialState.names3:
+                ShowPointer();
+                break;
+            case TutorialState.approve:
+                ShowPointer();
+                break;
+            case TutorialState.ticketType:
+                ShowPointer();
+                break;
+            case TutorialState.preferences:
+                ShowPointer();
+                break;
+            case TutorialState.trainSwitch:
+                ShowPointer();
+                break;
+            case TutorialState.endDay1:
+                if (prev == TutorialState.endDay1) return;
+                isFirstCrab = false;
+                HideText();
+                HidePointer();
+                ShowText();
+                break;
+        }
+        PlayerPrefs.SetInt("tutorialState", (int)tutorialState);
+    }
+
+    public void ShowPointer()
+    {
+        pointer.SetActive(true);
+        isMoving = true;
+        //pointer.GetComponent<RectTransform>().anchoredPosition = waypoints[(int) tutorialState].anchoredPosition;
+    }
+    public void HidePointer()
+    {
+        pointer.SetActive(false);
+    }
+
+    public void ShowText()
+    {
+        texts[(int)tutorialState].SetActive(true);
+
+        if (tutorialState == TutorialState.approve || tutorialState == TutorialState.ticketType || tutorialState == TutorialState.preferences || tutorialState == TutorialState.trainSwitch) return;
+        clickAnyWhereToContinue.SetActive(true);
+    }
+
+    public void HideText()
+    {
+        texts[(int)tutorialState].SetActive(false);
+    }
+
+    public void Continue()
+    {
+        clickAnyWhereToContinue.SetActive(false);
+        HideText();
+
+        if (tutorialState == TutorialState.endDay1)
+        {
+            // ignore for now
+            return;
+        }
+        else
+        {
+            SetState((TutorialState)((int)tutorialState + 1));
+        }
+    }
+
+    public void ProgressTutorial(TutorialState tutorialState)
+    {
+        SetState(tutorialState);
+    }
+
+    private void Update()
+    {
+        if (isMoving)
+        {
+            pointerTransform.anchoredPosition = Vector2.SmoothDamp(pointerTransform.anchoredPosition, waypoints[(int)tutorialState].anchoredPosition, ref currentVelocity, 0.25f);
+
+            if (Vector2.Distance(pointerTransform.anchoredPosition, waypoints[(int)tutorialState].anchoredPosition) < 1f)
             {
-                pauseBlur.SetActive(true);
+                isMoving = false;
+                ShowText();
+
+                if (tutorialState == TutorialState.photos)
+                {
+                    Kiosk.instance.GetCurrCrab().GetComponent<CrabController>().GetID().transform.GetChild(1).GetComponent<IDHover>().ForceMagnifyOn();
+                }
+                else if (tutorialState == TutorialState.names2)
+                {
+                    Kiosk.instance.GetCurrCrab().GetComponent<CrabController>().GetTicket().GetComponent<Ticket>().BringForward();
+                    SetState(TutorialState.names3);
+                }
             }
-            else
-            {
-                settingsBlur.SetActive(true);
-            }
-
-            currentPage = 1;
-            pages[currentPage].SetActive(true);
-        }
-        else
-        {
-            Time.timeScale = 0;
-            currentPage = 0;
-            pages[currentPage].SetActive(true);
         }
     }
 
-    public void OnNextPage()
+    public bool GetIsFirstCrab()
     {
-        if (!isNewGame && currentPage == 5)  // last page in new game is different than the last page in settings/pause
-        {
-            pages[currentPage].SetActive(false);
-            finalPageNotNewGame.SetActive(true);
-            finalPageNotNewGame.transform.Find("Image").GetComponent<Animator>().Play("page");
-        }
-        else
-        {
-            pages[currentPage].SetActive(false);
-            currentPage++;
-            pages[currentPage].SetActive(true);
-            pages[currentPage].transform.Find("Image").GetComponent<Animator>().Play("page");
-        }
-
+        return isFirstCrab;
     }
 
-    public void OnFinish()
-    {
-        if (SceneManager.GetActiveScene().name == "BaseArea")
-        {
-            pauseBlur.SetActive(false);
-        }
-        else
-        {
-            settingsBlur.SetActive(false);
-        }
-
-        if (!isNewGame)
-        {
-            finalPageNotNewGame.SetActive(false);
-            currentPage = 1;
-            pages[currentPage].SetActive(true);
-        }
-        else
-        {
-            pages[currentPage].SetActive(false);
-            currentPage = 1; // if played from settings or pause, start from page 1, not 0
-            pages[currentPage].SetActive(true);
-            Time.timeScale = 1;
-        }
-
-        gameObject.SetActive(false);
-
-        if (SceneManager.GetActiveScene().name == "BaseArea" && LevelManager.instance.lmState == LevelManager.LMState.Setup)
-        {
-            LevelManager.instance.SetState(LevelManager.LMState.Game);
-        }
-    }
-
-    public void SetSettingsBlur()
-    {
-        settingsBlur.SetActive(true);
-    }
 }
