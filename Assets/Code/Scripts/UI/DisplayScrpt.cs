@@ -15,8 +15,6 @@ public class DisplayScrpt : MonoBehaviour
 
     [SerializeField] private RectTransform rectTransform;
     [SerializeField] private GameObject settings;
-    [SerializeField] private GameObject tutorial;
-
     void Start()
     {
         displayed = false;
@@ -27,7 +25,7 @@ public class DisplayScrpt : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && LevelManager.instance.HasStarted() && !settings.activeSelf && !tutorial.activeSelf)
+        if (Input.GetKeyDown(KeyCode.Escape) && LevelManager.instance.HasStarted() && !settings.activeSelf)
         {
             // pause
             if (!displayed)

@@ -3,6 +3,7 @@ using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
 public class Settings : MonoBehaviour
 {
+    [SerializeField] private GameObject loadingScreenPanel;
     [SerializeField] private GameObject backgroundDisplay;
     [SerializeField] private GameObject tutorial;
     [SerializeField] private GameObject areYouSurePanel;
@@ -37,6 +38,8 @@ public class Settings : MonoBehaviour
         //tutorial.SetActive(true);
         //tutorial.GetComponent<Tutorial>().Play(false);
         //tutorial.GetComponent<Tutorial>().SetSettingsBlur();
+        loadingScreenPanel.SetActive(true);
+        loadingScreenPanel.GetComponent<LoadingScreen>().PlayLoad("Tutorial");
     }
 
     public void Reset()
