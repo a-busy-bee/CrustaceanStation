@@ -1,5 +1,37 @@
 {
 	"inbox":[
+		{
+			"type": "letter",
+			"subType": "crustyCo",
+			"id":0,
+			"timestamp":0,
+			"templateID":"",
+			"isRead":false
+		},
+		{
+			"type": "feedbackForm",
+			"subType": "generic",
+			"id":2,
+			"timestamp":1,
+			"templateID":"",
+			"isRead":false
+		},
+		{
+			"type": "feedbackForm",
+			"subType": "plot",
+			"id":1,
+			"timestamp":2,
+			"templateID":"",
+			"isRead":false
+		},
+		{
+			"type": "letter",
+			"subType": "crustyCo",
+			"id":1,
+			"timestamp":3,
+			"templateID":"",
+			"isRead":false
+		}
 
 		],
 	"nextTimeStamp":4
