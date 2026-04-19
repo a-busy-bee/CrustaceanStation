@@ -95,6 +95,9 @@ MonoBehaviour:
   ticketPrefab: {fileID: 1088732259898174776, guid: 8e354d16cd784472f9702c019590d42f, type: 3}
   idPrefab: {fileID: 5256601893285506828, guid: a38a60880f48f4610b91ac0addda84c3, type: 3}
   shuttleTicketPrefab: {fileID: 1088732259898174776, guid: a33a4fdb4c9ae4d86ab77532032414ca, type: 3}
+  labCoats: []
+  labCoatBase: {fileID: 0}
+  badge: {fileID: 0}
 --- !u!1 &8917294898746499995
 GameObject:
   m_ObjectHideFlags: 0

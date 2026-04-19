@@ -98,8 +98,7 @@ MonoBehaviour:
   labCoats:
   - {fileID: 21300000, guid: 114defc6357fd4e1a8bd1d4af0cb54c6, type: 3}
   labCoatBase: {fileID: 1851118623598678127}
-  labCoatBadges: []
-  labCoatBadgeBase: {fileID: 0}
+  badge: {fileID: 0}
 --- !u!1 &4062463580740033666
 GameObject:
   m_ObjectHideFlags: 0

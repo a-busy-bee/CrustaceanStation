@@ -83,6 +83,10 @@ public class LevelManager : LevelManagerBase
                     summaryMenu.GetComponent<Summary>().SetCrabsProcessed(Kiosk.instance.GetTotalCrabs());
 
                     dayStarted = false;
+
+                    string type = "generic";
+                    if (Random.Range(1, 4) == 2) type = "plot";
+                    PlotManager.instance.AddMail("feedbackForm", type, 1);
                 }
                 break;
         }

@@ -96,8 +96,7 @@ MonoBehaviour:
   shuttleTicketPrefab: {fileID: 1088732259898174776, guid: a33a4fdb4c9ae4d86ab77532032414ca, type: 3}
   labCoats: []
   labCoatBase: {fileID: 0}
-  labCoatBadges: []
-  labCoatBadgeBase: {fileID: 0}
+  badge: {fileID: 0}
 --- !u!1001 &926609939554087031
 PrefabInstance:
   m_ObjectHideFlags: 0
