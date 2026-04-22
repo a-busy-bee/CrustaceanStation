@@ -17669,9 +17669,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0
+    y: 0.05036214
     width: 1
-    height: 1
+    height: 0.8992757
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -21950,7 +21950,7 @@ MonoBehaviour:
   transparentOverlay: {fileID: 1650822137}
   audioManager: {fileID: 485157329}
   tutorial: {fileID: 1567585163}
-  debug: 0
+  debug: 1
 --- !u!114 &1567585163
 MonoBehaviour:
   m_ObjectHideFlags: 0
