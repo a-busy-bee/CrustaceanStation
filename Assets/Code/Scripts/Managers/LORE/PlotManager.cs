@@ -68,7 +68,7 @@ public class PlotManager : MonoBehaviour
         LoadJSON();
     }
 
-    private void LoadJSON()
+    /*private void LoadJSON()
     {
         defaultPath = Application.dataPath + "/Data/Inbox.json";
         savePath = Application.persistentDataPath + "/Inbox.json";
@@ -85,7 +85,7 @@ public class PlotManager : MonoBehaviour
 
             File.WriteAllText(savePath, JsonUtility.ToJson(plotData, true));
         }
-    }
+    }*/
 
     public int GetCurrStageInt()
     {
@@ -101,7 +101,7 @@ public class PlotManager : MonoBehaviour
     //PlayerPrefs.GetInt("crustCo")
     //PlayerPrefs.GetInt("bioCo)
 
-    public void AddMail(string newType, string newSubtype = "", int newId = 0)
+    /*public void AddMail(string newType, string newSubtype = "", int newId = 0)
     {
         InboxItem newItem = new InboxItem
         {
@@ -116,6 +116,49 @@ public class PlotManager : MonoBehaviour
         plotData.nextTimeStamp = plotData.nextTimeStamp + 1;
         plotData.inbox.Append(newItem);
 
+        SaveData();
+    }
+
+    private void SaveData()
+    {
+        File.WriteAllText(savePath, JsonUtility.ToJson(plotData, true));
+    }*/
+
+    private void LoadJSON()
+    {
+        defaultPath = Application.dataPath + "/Data/Inbox.json";
+        savePath = Application.persistentDataPath + "/Inbox.json";
+
+        if (File.Exists(savePath))
+        {
+            plotData = JsonUtility.FromJson<PlotData>(File.ReadAllText(savePath));
+        }
+        else
+        {
+            string jsonText = File.ReadAllText(defaultPath);
+            plotData = JsonUtility.FromJson<PlotData>(jsonText);
+            File.WriteAllText(savePath, JsonUtility.ToJson(plotData, true));
+        }
+
+        // Ensure inbox list is never null after loading
+        if (plotData.inbox == null)
+            plotData.inbox = new List<InboxItem>();
+    }
+
+    public void AddMail(string newType, string newSubtype = "", int newId = 0)
+    {
+        InboxItem newItem = new InboxItem
+        {
+            type = newType,
+            subType = newSubtype,
+            id = newId,
+            timestamp = plotData.nextTimeStamp,
+            templateID = newType,
+            isRead = false
+        };
+
+        plotData.nextTimeStamp++;
+        plotData.inbox.Add(newItem);
         SaveData();
     }
 

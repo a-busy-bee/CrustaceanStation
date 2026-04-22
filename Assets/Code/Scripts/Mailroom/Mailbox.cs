@@ -36,8 +36,9 @@ public class Mailbox : MonoBehaviour
         {
             notif.SetActive(true);
 
-            if (remainingLetters < 2) trayImage.sprite = trayFullness[1];  // sorta full
-            else trayImage.sprite = trayFullness[2];                    // really full
+            if (remainingLetters < 2) trayImage.sprite = trayFullness[1];       // sorta full
+            else if (remainingLetters < 5) trayImage.sprite = trayFullness[2];  // full
+            else trayImage.sprite = trayFullness[3];                            // overflowing please check your inbox
 
             SetInteractable(true);
         }

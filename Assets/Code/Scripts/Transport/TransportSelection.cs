@@ -11,6 +11,10 @@ public class TransportSelection : MonoBehaviour, IPointerClickHandler
     public void SetThisClickable(bool newIsClickable)
     {
         isClickable = newIsClickable;
+
+        if (TutorialManager.instance != null
+            && TutorialManager.instance.GetCurrTutorialState() == Tutorial.TutorialState.preferences
+            && !newIsClickable) TutorialManager.instance.ProgressTutorial();
     }
 
     public Cart.Type GetCartType()
@@ -26,6 +30,8 @@ public class TransportSelection : MonoBehaviour, IPointerClickHandler
             //PopupManager.instance.ShowPopup(railNumber, cartInfo.cartType);
             //popup.SetActive(true);
             //popup.GetComponent<CartPopup>().Populate(railNumber);
+            if (TutorialManager.instance != null) TutorialManager.instance.ProgressTutorial();
+
         }
     }
 

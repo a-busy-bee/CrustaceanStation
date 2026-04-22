@@ -25,35 +25,48 @@ public class MenuButtons : MonoBehaviour
             PlayerPrefs.SetInt("newGame", 1);
             PlayerPrefs.SetInt("kioskStyle", 0);
 
-            if (PlayerPrefs.GetInt("IntroMailSeen") == -1)
+            if (PlayerPrefs.GetInt("IntroMailSeen") == -1)  // reset
             {
                 LoadFile();
             }
         }
 
         SceneManager.LoadScene("Home");
-        //loadingScreenPanel.SetActive(true);
-        //loadingScreenPanel.GetComponent<LoadingScreen>().PlayLoad("Home");
     }
 
     public void LoadFile()
     {
-        defaultPath = Application.dataPath + "/Data/Inbox.json";
+        savePath = Application.persistentDataPath + "/Inbox.json";
+
+        // Always reset to default — wipes any existing save
+        TextAsset defaultFile = Resources.Load<TextAsset>("Inbox");
+        plotData = JsonUtility.FromJson<PlotData>(defaultFile.text);
+
+        SaveFile();
+        PlayerPrefs.SetInt("IntroMailSeen", 1);
+    }
+
+    public void SaveFile()
+    {
+        File.WriteAllText(savePath, JsonUtility.ToJson(plotData, true));
+    }
+
+    public void ReadFile()
+    {
         savePath = Application.persistentDataPath + "/Inbox.json";
 
         if (File.Exists(savePath))
         {
-            File.Delete(savePath);
+            string savedJson = File.ReadAllText(savePath);
+            plotData = JsonUtility.FromJson<PlotData>(savedJson);
         }
-
-        // load default file from resources
-        string jsonText = File.ReadAllText(defaultPath);
-        plotData = JsonUtility.FromJson<PlotData>(jsonText);
-
-        File.WriteAllText(savePath, JsonUtility.ToJson(plotData, true));
-
-        PlayerPrefs.SetInt("IntroMailSeen", 1);
+        else
+        {
+            LoadFile();
+        }
     }
+
+
 
     public void Settings()
     {

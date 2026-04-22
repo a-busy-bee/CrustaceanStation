@@ -256,11 +256,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 161090818}
   m_CullTransparentMesh: 1
---- !u!1 &183357887 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4902857390697872063, guid: 17811d78b63274e19a921629e598e3ae, type: 3}
-  m_PrefabInstance: {fileID: 8988610124556836680}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &183357888 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1690354940442173349, guid: 17811d78b63274e19a921629e598e3ae, type: 3}
@@ -1057,7 +1052,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   settingsPanel: {fileID: 278748201}
   backgroundPanel: {fileID: 688102997}
-  loadingScreenPanel: {fileID: 183357887}
 --- !u!1 &562141084
 GameObject:
   m_ObjectHideFlags: 0
@@ -1759,7 +1753,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 6322bc9e4a93a074895850f1a528c453, type: 2}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 13f090fafac0140868ae44f38d7024aa, type: 3}
+  m_Resource: {fileID: 8300000, guid: 7c681c700179c4c3db2046cbe2542e09, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -3827,22 +3821,6 @@ PrefabInstance:
     - target: {fileID: 4902857390697872063, guid: 17811d78b63274e19a921629e598e3ae, type: 3}
       propertyPath: m_IsActive
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7636212615115692953, guid: 17811d78b63274e19a921629e598e3ae, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 1997.6003
-      objectReference: {fileID: 0}
-    - target: {fileID: 7636212615115692953, guid: 17811d78b63274e19a921629e598e3ae, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 2653.102
-      objectReference: {fileID: 0}
-    - target: {fileID: 7636212615115692953, guid: 17811d78b63274e19a921629e598e3ae, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0.6276
-      objectReference: {fileID: 0}
-    - target: {fileID: 7636212615115692953, guid: 17811d78b63274e19a921629e598e3ae, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -662.8335
       objectReference: {fileID: 0}
     - target: {fileID: 7863499537934825852, guid: 17811d78b63274e19a921629e598e3ae, type: 3}
       propertyPath: m_AnchorMax.x
