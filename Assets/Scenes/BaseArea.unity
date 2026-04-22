@@ -14101,7 +14101,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d21906fb5a8e48cab6d82b72f7871a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HeadlineManager
-  headlineObject: {fileID: 3748053639804197564}
 --- !u!114 &859851644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20718,7 +20717,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1145052007, guid: 724d1190249a4415b899f4f17b29f3ce, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 724d1190249a4415b899f4f17b29f3ce, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -20793,10 +20792,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
-    y: 0.050289214
-    width: 1
-    height: 0.8994216
+    x: 0.14662084
+    y: 0
+    width: 0.7067583
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -37078,17 +37077,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
---- !u!114 &3748053639804197564 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2470364962073211549, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
-  m_PrefabInstance: {fileID: 3748053639804197563}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ec23233f9894401ca5de36b3f0703c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::HeadlineObject
 --- !u!1001 &3883590854518376516
 PrefabInstance:
   m_ObjectHideFlags: 0
