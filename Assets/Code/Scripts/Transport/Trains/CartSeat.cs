@@ -29,7 +29,8 @@ public class CartSeat : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         neutral,    // :/ anim
         swords,     // crossed swords anim
         yummy,      // devour anim
-        fear        // sweat anim
+        fear,        // sweat anim
+        none
     }
     private Dictionary<ReactionType, string> reactions = new Dictionary<ReactionType, string>()
     {
@@ -163,6 +164,7 @@ public class CartSeat : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     public void StopAnim()
     {
+        currReaction = ReactionType.none;
         reactionObject.SetActive(false);
     }
 
