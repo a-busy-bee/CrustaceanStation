@@ -90,7 +90,6 @@ public class TutorialManager : LevelManagerBase
 
                     // stop clock & crabs & trains
                     Time.timeScale = 0f;
-                    audioManager.Play();
                 }
                 break;
 

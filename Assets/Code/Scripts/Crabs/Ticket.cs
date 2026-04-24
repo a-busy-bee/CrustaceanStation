@@ -55,6 +55,15 @@ public class Ticket : MonoBehaviour
     }*/
 
 
+    private void PlayAudio()
+    {
+        if (GetComponent<AudioSource>() == null)
+        {
+            print("no audio manager");
+            return;
+        }
+        GetComponent<AudioManager>().Play("click", true);
+    }
 
     public void PushBack()
     {
@@ -62,6 +71,7 @@ public class Ticket : MonoBehaviour
 
         // move position
         rectTransform.anchoredPosition = new Vector3(-445, -419.2f, 0);
+        PlayAudio();
 
         // remove blur
         blur.SetActive(true);

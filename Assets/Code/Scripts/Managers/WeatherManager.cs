@@ -41,6 +41,9 @@ public class WeatherManager : MonoBehaviour
     private float startFogAlpha;
     private float startGroundAlpha;
 
+    // audio
+    private AudioManager audioManager;
+
 
     private void Awake()
     {
@@ -68,6 +71,9 @@ public class WeatherManager : MonoBehaviour
         backgroundTop.color = startingType.backgroundTop;
         cloudsBottom.color = startingType.cloudsBottom;
         backgroundBottom.color = startingType.backgroundBottom;
+
+        audioManager = GetComponent<AudioManager>();
+        StartMusic();
 
         if (startingType.isFoggy)
         {
@@ -115,6 +121,8 @@ public class WeatherManager : MonoBehaviour
     {
         isTransitioning = true;
 
+        audioManager.Crossfade("waves", 2f);
+
         int newWeather = 0; // change weather to light rain if it's currently dark rain
 
         if (currentType.rainType == WeatherType.RainType.light)
@@ -142,6 +150,8 @@ public class WeatherManager : MonoBehaviour
     private void MakeRainy()
     {
         isTransitioning = true;
+
+        audioManager.Crossfade("rain", 2f);
 
         int typeOfRain = Random.Range(0, 2);
 
@@ -206,6 +216,16 @@ public class WeatherManager : MonoBehaviour
     public WeatherType GetCurrentWeather()
     {
         return currentType;
+    }
+
+    private void StartMusic()
+    {
+        string aud = "waves";
+        if (currentType.isRainy)
+        {
+            aud = "rain";
+        }
+        audioManager.Play(aud);
     }
 
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -62,7 +63,10 @@ public class LevelManager : LevelManagerBase
 
                     // stop clock & crabs & trains
                     Time.timeScale = 0f;
-                    audioManager.Play();
+
+
+                    // there was something about playing an audio that was here -lucy
+
                 }
                 break;
 

@@ -10,16 +10,26 @@ public class Switch : MonoBehaviour, IPointerClickHandler
 
     private TransportPath path;
     private Animator animator;
+    private AudioManager audioManager;
 
     private void Awake()
     {
         animator = GetComponent<Animator>();
         animator.enabled = false;
+        audioManager = GetComponent<AudioManager>();
     }
 
     public void SetPath(TransportPath newPath)
     {
         path = newPath;
+    }
+
+    private void PlayAudio()
+    {
+        if (audioManager != null)
+        {
+            audioManager.Play("switch");
+        }
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -28,6 +38,7 @@ public class Switch : MonoBehaviour, IPointerClickHandler
         Debug.Log("click");
         animator.enabled = true;
         animator.Play("SwitchOn");
+        PlayAudio();
 
         if (TutorialManager.instance.GetIsTutorial()) TutorialManager.instance.ProgressTutorial();
 

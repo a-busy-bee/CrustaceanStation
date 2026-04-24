@@ -493,7 +493,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -122.0544, y: -1.8296}
+  m_AnchoredPosition: {x: -122.0544, y: -1.8296013}
   m_SizeDelta: {x: 148.2786, y: 140.2774}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7063264421233553289
@@ -691,6 +691,7 @@ GameObject:
   - component: {fileID: 9019425930988651157}
   - component: {fileID: 3979020930645888592}
   - component: {fileID: 6889979033266849278}
+  - component: {fileID: 4363303365048245943}
   m_Layer: 5
   m_Name: ID
   m_TagString: Untagged
@@ -746,6 +747,25 @@ MonoBehaviour:
   blur: {fileID: 6845583141951043755}
   rectTransform: {fileID: 9019425930988651157}
   canvasGroup: {fileID: 2715613188335403955}
+--- !u!114 &4363303365048245943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5256601893285506828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c79886b9a5734e6893fea679edccee1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
+  sounds:
+  - name: click
+    clip: {fileID: 8300000, guid: c880153d67ae0234b89bc1134df03db4, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
 --- !u!1 &6622665752137169674
 GameObject:
   m_ObjectHideFlags: 0

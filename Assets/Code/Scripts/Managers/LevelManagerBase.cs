@@ -118,7 +118,6 @@ public class LevelManagerBase : MonoBehaviour
 
                     // stop clock & crabs & trains
                     Time.timeScale = 0f;
-                    audioManager.Play();
                 }
                 break;
 

@@ -18,6 +18,8 @@ public class CartSeat : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     [SerializeField] private Color ghostAlpha;
     [SerializeField] private Color baseColor;
 
+    [SerializeField] private AudioManager audioManager;
+
 
     // ANIMATED REACTION
     public enum ReactionType
@@ -196,6 +198,7 @@ public class CartSeat : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         isTaken = true;
 
         cartPopup.SeatCharacter(row, column);
+        audioManager.Play("seat");
 
     }
 
