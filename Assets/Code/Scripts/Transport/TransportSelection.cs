@@ -12,7 +12,7 @@ public class TransportSelection : MonoBehaviour, IPointerClickHandler
     {
         isClickable = newIsClickable;
 
-        if (TutorialManager.instance != null
+        if (TutorialManager.instance.GetIsTutorial()
             && TutorialManager.instance.GetCurrTutorialState() == Tutorial.TutorialState.preferences
             && !newIsClickable) TutorialManager.instance.ProgressTutorial();
     }
@@ -30,8 +30,7 @@ public class TransportSelection : MonoBehaviour, IPointerClickHandler
             //PopupManager.instance.ShowPopup(railNumber, cartInfo.cartType);
             //popup.SetActive(true);
             //popup.GetComponent<CartPopup>().Populate(railNumber);
-            if (TutorialManager.instance != null) TutorialManager.instance.ProgressTutorial();
-
+            if (TutorialManager.instance.GetIsTutorial() && TutorialManager.instance.GetCurrTutorialState() == Tutorial.TutorialState.ticketType) TutorialManager.instance.ProgressTutorial();
         }
     }
 
