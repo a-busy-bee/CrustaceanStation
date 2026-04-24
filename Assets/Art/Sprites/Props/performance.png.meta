@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 724d1190249a4415b899f4f17b29f3ce
+guid: 8f8528c3e7e53c14eaea5ff5ab2d8a5f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -110,23 +110,67 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: kiosk_0
+      name: performance_0
       rect:
         serializedVersion: 2
-        x: 96
-        y: 0
-        width: 1910
-        height: 2200
+        x: 13
+        y: 398
+        width: 804
+        height: 310
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 161be8fe955f94c83aa06953cb574844
-      internalID: 1145052007
+      spriteID: a2fbb168bc74f804f9457f592638e519
+      internalID: -1710064096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: performance_1
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 220
+        width: 625
+        height: 117
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 743ba0fdc938bb4488a14c1b74c72db4
+      internalID: 617935984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: performance_2
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 30
+        width: 633
+        height: 130
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 32, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6668a58f8f541e46a61f35bec2cde9a
+      internalID: -330062948
       vertices: []
       indices: 
       edges: []
@@ -143,9 +187,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      kiosk_0: 1145052007
+      performance_0: -1710064096
+      performance_1: 617935984
+      performance_2: -330062948
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
