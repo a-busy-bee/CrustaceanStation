@@ -37,8 +37,10 @@ public class KioskTutorial : KioskBase
 
             case KioskState.CrabPresent:
                 {
-                    EnableButtons();
                     tutorialManager.SetTutorialState();
+                    if (TutorialManager.instance.IsFirstCrabTutorial()) return;
+                    EnableButtons();
+                    
                 }
                 break;
 

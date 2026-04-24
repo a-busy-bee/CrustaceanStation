@@ -50,6 +50,7 @@ public class Tutorial : MonoBehaviour
 
 	private void Start()
 	{
+        Kiosk.instance.DisableButtons();
 		if (PlayerPrefs.GetInt("tutorialState") != 0) return;
         isFirstCrab = true;
 	}
@@ -172,8 +173,13 @@ public class Tutorial : MonoBehaviour
                     Kiosk.instance.GetCurrCrab().GetComponent<CrabController>().GetTicket().GetComponent<Ticket>().BringForward();
                     SetState(TutorialState.names3);
                 }
+                else if (tutorialState == TutorialState.approve)
+                {
+                    Kiosk.instance.EnableButtons();
+                }
             }
         }
+
     }
 
     public bool GetIsFirstCrab()

@@ -29,7 +29,7 @@ public class LevelManagerBase : MonoBehaviour
     [Header("Other")]
     [SerializeField] protected GameObject transparentOverlay;
     [SerializeField] protected AudioManager audioManager;
-    protected bool isTutorial;
+    protected bool isTutorial = false;
 
     // STATE MACHINE
     public enum LMState
