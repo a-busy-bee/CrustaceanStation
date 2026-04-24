@@ -31,6 +31,11 @@ public class AudioManager : MonoBehaviour
             print("sound not found:" + name);
             return;
         }
+        if (s.source == null)
+        {
+            print("no audio source found for " + name);
+            return;
+        }
         if (randomize)
         {
             s.source.pitch = UnityEngine.Random.Range(0.75f, 1.25f);

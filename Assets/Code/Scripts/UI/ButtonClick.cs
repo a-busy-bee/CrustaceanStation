@@ -6,11 +6,15 @@ using UnityEngine.UI;
 
 public class ButtonClick : MonoBehaviour
 {
-    [SerializeField] AudioManager audioManager;
     [SerializeField] private string audioName;
     void PlayAudio()
     {
-        audioManager.Play(audioName);
+        if (GetComponent<AudioManager>() == null)
+        {
+            print("needs audio manager");
+            return;
+        }
+        GetComponent<AudioManager>().Play(audioName);
     }
 
     private void Awake()
