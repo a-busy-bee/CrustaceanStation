@@ -37,7 +37,8 @@ public class LevelManager : MonoBehaviour
     // UI background 
     [Header("Other")]
     [SerializeField] private GameObject transparentOverlay;
-    [SerializeField] private AudioManager audioManager;
+    [SerializeField] private AudioManager musicManager;
+    [SerializeField] private AudioManager sfxManager;
     [SerializeField] private Tutorial tutorial;
 
 
@@ -72,6 +73,7 @@ public class LevelManager : MonoBehaviour
     private void Start()
     {
         SetState(LMState.Setup);
+        PlayBGM(); // idk if this is clean to go here sry
     }
 
     // State machine go brrrrr
@@ -134,7 +136,10 @@ public class LevelManager : MonoBehaviour
 
                     // stop clock & crabs & trains
                     Time.timeScale = 0f;
-                    audioManager.Play();
+
+
+                    // there was something about playing an audio that was here -lucy
+
                 }
                 break;
 
@@ -212,6 +217,12 @@ public class LevelManager : MonoBehaviour
 
         SetState(LMState.Game);
     }*/
+
+    private void PlayBGM()
+    {
+        musicManager.Play("main");
+        sfxManager.Play("waves");
+    }
 
     public bool HasStarted()    // only used to prevent pause screen from activating during goals, TODO: consider removing
     {
