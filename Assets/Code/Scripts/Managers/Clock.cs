@@ -19,7 +19,7 @@ public class Clock : MonoBehaviour
     [SerializeField] private GameObject clockHand;
 
     // CRABS
-    [SerializeField] private Kiosk kiosk;
+    [SerializeField] private KioskBase kiosk;
 
     // FILL COLOR
     [SerializeField] private Color red;
@@ -64,11 +64,11 @@ public class Clock : MonoBehaviour
             currentTime++;
 
             //LevelManager.instance.CheckTrains(currentTime);
-
-            if (currentTime % 2 == 0) // chance to change weather every 2 hours
+            WeatherManager.instance.ChangeWeather();
+            /*if (currentTime % 2 == 0) // chance to change weather every 2 hours
             {
                 WeatherManager.instance.ChangeWeather();
-            }
+            }*/
 
             if (currentTime == endTime - 2)
             {

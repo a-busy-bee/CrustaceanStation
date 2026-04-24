@@ -29,7 +29,8 @@ public class CartSeat : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         neutral,    // :/ anim
         swords,     // crossed swords anim
         yummy,      // devour anim
-        fear        // sweat anim
+        fear,        // sweat anim
+        none
     }
     private Dictionary<ReactionType, string> reactions = new Dictionary<ReactionType, string>()
     {
@@ -43,23 +44,15 @@ public class CartSeat : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         { ReactionType.fear,        "fear" },
     };
     private GameObject reactionObject;
+    private GameObject imageObject;
+    private GameObject splatterObject;
+    private ReactionType currReaction;
 
 
     // STATE
     private Mini currMini;
     private bool isTaken;
     private bool hasSelected;
-
-    private void Awake()
-    {
-        image = GetComponent<Image>();
-    }
-
-    private void Start()
-    {
-        reactionObject = GetComponent<RectTransform>().GetChild(0).gameObject;
-        reactionObject.SetActive(false);
-    }
 
     private void OnEnable()
     {
@@ -73,6 +66,15 @@ public class CartSeat : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         row = newRow;
         column = newColumn;
         //type = PopupManager.Type.train;
+
+        reactionObject = GetComponent<RectTransform>().GetChild(2).gameObject;
+        reactionObject.SetActive(false);
+
+        imageObject = GetComponent<RectTransform>().GetChild(1).gameObject;
+        image = imageObject.GetComponent<Image>();
+        
+        splatterObject = GetComponent<RectTransform>().GetChild(0).gameObject;
+        splatterObject.SetActive(false);
     }
 
     public void HasSelected(bool newHasSelected)
@@ -111,6 +113,15 @@ public class CartSeat : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
             image.color = baseColor;
             isTaken = true;
         }
+
+        if (currReaction == ReactionType.fear)
+        {
+            image.sprite = null;
+            image.color = emptyAlpha;
+            isTaken = false;
+
+            splatterObject.SetActive(true);
+        }
     }
 
     public void ShowGhostSpriteForMultiple(Sprite alt)
@@ -147,10 +158,13 @@ public class CartSeat : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         //Debug.Log("play anim for " + row + " and " + column);
         reactionObject.SetActive(true);
         reactionObject.GetComponent<Animator>().Play(reactions[reactionType]);
+
+        currReaction = reactionType;
     }
 
     public void StopAnim()
     {
+        currReaction = ReactionType.none;
         reactionObject.SetActive(false);
     }
 

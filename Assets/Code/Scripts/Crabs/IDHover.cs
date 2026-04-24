@@ -18,4 +18,14 @@ public class IDHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         magnifiedID.SetActive(false);
     }
+
+    public void ForceMagnifyOn()
+    {
+        magnifiedID.SetActive(true);
+    }
+
+    public void ForceMagnifyOff()
+    {
+        magnifiedID.SetActive(false);
+    }
 }

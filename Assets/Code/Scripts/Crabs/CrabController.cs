@@ -25,7 +25,7 @@ public class CrabController : MonoBehaviour
     private CrabSelector crabSelector;
     private Cart.Type cartType;
     private bool presented = false;
- 
+
     // VALIDITY
     private bool isValid = true;
 
@@ -37,7 +37,7 @@ public class CrabController : MonoBehaviour
 
 
     //MISC
-    private Kiosk kiosk;
+    private KioskBase kiosk;
     private Emotion emotion;
 
     // STATE MACHINE
@@ -60,7 +60,7 @@ public class CrabController : MonoBehaviour
         crabInfo.crabName = CrabNameGenerator.instance.GetNameByType(crabInfo.type);
         emotion = GetComponent<RectTransform>().Find("Emotions").GetComponent<Emotion>();
 
-        
+
     }
 
     private void Start()
@@ -129,7 +129,8 @@ public class CrabController : MonoBehaviour
             case CrabState.Leaving:
                 {
                     RemoveTicketAndID();
-                    DialogueManager.instance.ClearDialogue();
+
+                    if (DialogueManager.instance != null) DialogueManager.instance.ClearDialogue();
                     //kiosk.SetState(Kiosk.KioskState.CrabLeaving);
 
                     // rest of the logic is in the update loop
@@ -157,10 +158,12 @@ public class CrabController : MonoBehaviour
                     if (Vector2.Distance(rectTransform.anchoredPosition, kioskEndPos) < 5f && !presented)
                     {
                         presented = true;
-                        PresentTicketAndID();
+
+                        if (LevelManagerBase.instance.GetIsTutorial()) PresentTicketAndIDNoForgery();   // TODO: make this cleaner later
+                        else PresentTicketAndID();
                         Dialogue();
 
-                        kiosk.SetState(Kiosk.KioskState.CrabPresent);
+                        kiosk.SetState(KioskBase.KioskState.CrabPresent);
                     }
                     else if (Vector2.Distance(rectTransform.anchoredPosition, kioskEndPos) < 0.1f)
                     {
@@ -180,9 +183,9 @@ public class CrabController : MonoBehaviour
                         }
                         else // TEMP
                         {
-                            kiosk.SetState(Kiosk.KioskState.Empty);
+                            kiosk.SetState(KioskBase.KioskState.Empty);
                         }
-                        
+
                         // TODO: if waiting, do waiting logic
                     }
                 }
@@ -193,7 +196,7 @@ public class CrabController : MonoBehaviour
 
     private void PresentShuttleAndID()
     {
-        
+
     }
     private void PresentTicketAndID()
     {
@@ -254,15 +257,44 @@ public class CrabController : MonoBehaviour
         id.GetComponent<ID>().SetIDPhoto(crabPhoto);
 
         // TRAIN CART TYPE FORGERY (OR NOT)
-        cartType = LevelManager.instance.GetRandomCurrentCartType();
+        cartType = LevelManagerBase.instance.GetRandomCurrentCartType();
 
         if (!isShuttle) ticket.GetComponent<Ticket>().SetSprite(cartType);
     }
 
+    public void PresentTicketAndIDNoForgery()   // for tutorial purposes
+    {
+        ticket = Instantiate(ticketPrefab, ticketAndIDParentObject.transform);
+
+        //ticket = Instantiate(ticketPrefab, ticketAndIDParentObject.transform);
+        id = Instantiate(idPrefab, ticketAndIDParentObject.transform);
+
+        ticket.GetComponent<Ticket>().SetID(id.GetComponent<ID>());
+        id.GetComponent<ID>().SetTicket(ticket.GetComponent<Ticket>());
+
+        ticket.GetComponent<Ticket>().PushBack();
+        id.GetComponent<ID>().BringForward();
+
+        // SOMETIMES GENERATE MISMATCHING INFO
+        string crabName = crabInfo.crabName;
+        Sprite crabPhoto = crabInfo.sprite;
+
+        ticket.GetComponent<Ticket>().SetName(crabName);
+        id.GetComponent<ID>().SetName(crabName);
+
+        id.GetComponent<ID>().SetIDPhoto(crabPhoto);
+
+        // TRAIN CART TYPE FORGERY (OR NOT)
+        if (LevelManagerBase.instance.IsFirstCrabTutorial()) cartType = Cart.Type.Economy;
+        else cartType = LevelManagerBase.instance.GetRandomCurrentCartType();
+        ticket.GetComponent<Ticket>().SetSprite(cartType);
+    }
+
     private void Dialogue()
     {
+        if (DialogueManager.instance == null) return;
         // high chance to not have dialogue
-        //if (Random.Range(0, 10) < 8) return;
+        if (Random.Range(0, 10) < 7) return;
 
         // roll to see if this is a plot dialogue or generic dialogue 
         if (Random.Range(0, 10) < 4)
@@ -288,7 +320,7 @@ public class CrabController : MonoBehaviour
             {
                 DialogueManager.instance.GetDialogueGeneric();
             }
-        }    
+        }
     }
 
     private void RemoveTicketAndID()
@@ -299,8 +331,8 @@ public class CrabController : MonoBehaviour
     public void SetCrabSelector(CrabSelector newSelector)
     {
         crabSelector = newSelector;
-    } 
-    public void SetClockAndKiosk(Clock newClock, Kiosk newKiosk)
+    }
+    public void SetClockAndKiosk(Clock newClock, KioskBase newKiosk)
     {
         //clock = newClock;
         kiosk = newKiosk;
@@ -317,10 +349,20 @@ public class CrabController : MonoBehaviour
     {
         return crabInfo.favoriteWeatherTypes;
     }
-    
+
     public Cart.Type GetTicketType()
     {
         return cartType;
+    }
+
+    public GameObject GetID()
+    {
+        return id;
+    }
+
+    public GameObject GetTicket()
+    {
+        return ticket;
     }
     public CrabInfo GetCrabInfo()
     {
@@ -330,4 +372,5 @@ public class CrabController : MonoBehaviour
     {
         return isValid;
     }
+
 }

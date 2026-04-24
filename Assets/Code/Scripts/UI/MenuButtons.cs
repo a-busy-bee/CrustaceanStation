@@ -1,10 +1,16 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.IO;
+
 public class MenuButtons : MonoBehaviour
 {
     [SerializeField] private GameObject settingsPanel;
     [SerializeField] private GameObject backgroundPanel;
-    [SerializeField] private GameObject loadingScreenPanel;
+
+    private string defaultPath;
+    private string savePath;
+    private PlotData plotData;
+    
     public void quitGame()
     {
         Debug.Log("Quit!");
@@ -18,11 +24,49 @@ public class MenuButtons : MonoBehaviour
             Debug.Log("newGame");
             PlayerPrefs.SetInt("newGame", 1);
             PlayerPrefs.SetInt("kioskStyle", 0);
+
+            if (PlayerPrefs.GetInt("IntroMailSeen") == -1)  // reset
+            {
+                LoadFile();
+            }
         }
 
-        loadingScreenPanel.SetActive(true);
-        loadingScreenPanel.GetComponent<LoadingScreen>().PlayLoad("Home");
+        SceneManager.LoadScene("Home");
     }
+
+    public void LoadFile()
+    {
+        savePath = Application.persistentDataPath + "/Inbox.json";
+
+        // Always reset to default — wipes any existing save
+        TextAsset defaultFile = Resources.Load<TextAsset>("Inbox");
+        plotData = JsonUtility.FromJson<PlotData>(defaultFile.text);
+
+        SaveFile();
+        PlayerPrefs.SetInt("IntroMailSeen", 1);
+    }
+
+    public void SaveFile()
+    {
+        File.WriteAllText(savePath, JsonUtility.ToJson(plotData, true));
+    }
+
+    public void ReadFile()
+    {
+        savePath = Application.persistentDataPath + "/Inbox.json";
+
+        if (File.Exists(savePath))
+        {
+            string savedJson = File.ReadAllText(savePath);
+            plotData = JsonUtility.FromJson<PlotData>(savedJson);
+        }
+        else
+        {
+            LoadFile();
+        }
+    }
+
+
 
     public void Settings()
     {
@@ -34,17 +78,6 @@ public class MenuButtons : MonoBehaviour
     public void Credits()
     {
         SceneManager.LoadScene("Credits");
-    }
-
-    public void Shop()
-    {
-        SceneManager.LoadScene("Shop");
-    }
-
-    public void startDay(string sceneName)
-    {
-        loadingScreenPanel.SetActive(true);
-        loadingScreenPanel.GetComponent<LoadingScreen>().PlayLoad(sceneName);
     }
 
     public void BackToMenu()

@@ -1,11 +1,54 @@
 {
 	"nodesGeneric":[
-		{"name":"ittyBitty", "text":"I found my lollipop!"}
+		{"text":"I found my lollipop!"},
+		{"text":"yew suk"},
+		{"text":"0 stars sent me to wrong train"},
+		{"text":"You should shave"},
+		{"text":"You looked cute today... call me if you want a break from trains (800) 8135"},
+		{"text":"xoxo"},
+		{"text":"I found my lollipop!"},
+		{"text":"Do you wear the same thing everyday?"},
+		{"text":"0 stars, made me pay individually for my 20 krillion children"},
+		{"text":"Wish you’d do a little more than stamp my ticket"},
+		{"text":"Checked my photo for wayyyy too long"},
+		{"text":"Do you have children... will you adopt mine...?"},
+		{"text":"False advertisement, you aren’t as rugged as they say"}, 
+		{"text":"I like my men older ;)"}
 	],
 
 	"nodesPlot":[
-		{"plotID": 1, 
-		 "name":["Itty", "Bitty"],
-		 "text":["Terrible service.", "Love it here", "Didn't send me on a shuttle"]}
+		{
+			"plotID": 1, 
+		 	"text":[
+				"Terrible service.", 
+				"Love it here", 
+				"Didn't send me on a shuttle",
+				"There should be a crustacean-only train",
+				"Get out while you can!"
+			]
+		},
+		{
+			"plotID": 2,
+			"text":[
+				"Stay away from crustacean corp",
+				"Put me on a train... be discreet",
+				"We’re always watching",
+				"Put a stop to crustacean-ification, stop shuttling, if you see something say something",
+				"Too many non-crustaceans on my train",
+				"Don’t trust anyone. Except for me!",
+				"Get out while you can!"
+			]
+		},
+		{
+			"plotID": 3,
+			"text":[
+				"You look sad",
+				"I’ll get you",
+				"Your family isn't safe",
+				"Don't look behind you",
+				"Don’t leave town",
+				"You should leave town"
+			]
+		}
 	]
 }

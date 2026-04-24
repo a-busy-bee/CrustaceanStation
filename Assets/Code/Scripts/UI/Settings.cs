@@ -1,9 +1,9 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
-
 public class Settings : MonoBehaviour
 {
+    [SerializeField] private GameObject loadingScreenPanel;
     [SerializeField] private GameObject backgroundDisplay;
     [SerializeField] private GameObject tutorial;
     [SerializeField] private GameObject areYouSurePanel;
@@ -35,9 +35,11 @@ public class Settings : MonoBehaviour
 
     public void OnTutorial()
     {
-        tutorial.SetActive(true);
-        tutorial.GetComponent<Tutorial>().Play(false);
-        tutorial.GetComponent<Tutorial>().SetSettingsBlur();
+        //tutorial.SetActive(true);
+        //tutorial.GetComponent<Tutorial>().Play(false);
+        //tutorial.GetComponent<Tutorial>().SetSettingsBlur();
+        loadingScreenPanel.SetActive(true);
+        loadingScreenPanel.GetComponent<LoadingScreen>().PlayLoad("Tutorial");
     }
 
     public void Reset()
@@ -52,6 +54,7 @@ public class Settings : MonoBehaviour
         PlayerPrefs.SetInt("ResetDecor", 1);
         PlayerPrefs.SetInt("kioskStyle", 0);
         PlayerPrefs.SetInt("newGame", 1);
+        PlayerPrefs.SetInt("IntroMailSeen", -1);
         
         PlayerPrefs.SetInt("cartQuality", 0);
         PlayerPrefs.SetInt("numTracks", 0);
@@ -64,6 +67,7 @@ public class Settings : MonoBehaviour
 
         areYouSurePanel.SetActive(false);
     }
+
 
     public void OnResetNo()
     {

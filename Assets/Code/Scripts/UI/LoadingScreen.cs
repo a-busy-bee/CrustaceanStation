@@ -8,7 +8,7 @@ public class LoadingScreen : MonoBehaviour
 {
 
     [SerializeField] private GameObject imagenewGame;
-    [SerializeField] private Animator animator;
+    //[SerializeField] private Animator animator;
     [SerializeField] Slider slider;
     [SerializeField] private float fadeSpeed;
     [SerializeField] private CanvasGroup group;
@@ -21,10 +21,7 @@ public class LoadingScreen : MonoBehaviour
         "Fighting off seagulls...",
         "Distracting whales...",
         "Finding Itty Bitty's lollipop",
-        "Tip: whales take up two seats",
-        "Tip: Don't forget to check the name on the ticket",
-        "Tip: Try tapping the shopkeeper",
-        "Tapping shopkeepers...",
+        "Tip: families take up two seats",
         "Decorating the kiosk...",
         "Watching sunsets..."
     };
@@ -35,15 +32,15 @@ public class LoadingScreen : MonoBehaviour
         group.alpha = 0;
         group.blocksRaycasts = false;
 
-        animator.enabled = false;
+        //animator.enabled = false;
     }
+
     public void PlayLoad(string sceneName)
     {
         imagenewGame.SetActive(true);
-        animator.enabled = true;
+        // TODO: convert animation to smooth damp 
+       //animator.enabled = true;
         StartCoroutine(WaitForEndOfAnim(sceneName));
-
-        
     }
     private IEnumerator LoadSceneCoroutine(string sceneName)
     {
@@ -74,7 +71,7 @@ public class LoadingScreen : MonoBehaviour
 
         slider.value = 1f;
 
-        while (group.alpha > 1)
+        while (group.alpha > 0)
         {
             group.alpha -= fadeSpeed * Time.deltaTime;
             yield return null;
@@ -86,21 +83,18 @@ public class LoadingScreen : MonoBehaviour
 
     private IEnumerator WaitForEndOfAnim(string sceneName)
     {
-
+        sliderParent.SetActive(false);
         group.blocksRaycasts = true;
-
+        
         while (group.alpha < 1)
         {
             group.alpha += fadeSpeed * Time.deltaTime;
             yield return null;
         }
         group.alpha = 1;
+        //animator.Play("NewGameLoad");
 
-        animator.Play("NewGameLoad");
-        sliderParent.SetActive(false);
-
-        yield return new WaitForSeconds(4.2f);
-
+        yield return new WaitForSeconds(1f);
         StartCoroutine(LoadSceneCoroutine(sceneName));
     }
 }

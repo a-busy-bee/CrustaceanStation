@@ -61,7 +61,7 @@ public class WeatherManager : MonoBehaviour
 
         // choose random state
         int startingWeather = Random.Range(0, 4);
-        WeatherType startingType = types[startingWeather];
+        WeatherType startingType = types[startingWeather];//types[3];//types[0];//types[startingWeather];
         currentType = startingType;
 
         cloudsTop.color = startingType.cloudsTop;

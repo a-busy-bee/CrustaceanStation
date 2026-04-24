@@ -5,7 +5,7 @@ using System.Collections;
 public class Coin : MonoBehaviour
 {
     private Rigidbody2D rb;
-    [SerializeField] private TextMeshProUGUI coinText;
+    //[SerializeField] private TextMeshProUGUI coinText;
 
     private void Awake()
     {
@@ -24,8 +24,8 @@ public class Coin : MonoBehaviour
     private IEnumerator Falling()
     {
         yield return new WaitForSeconds(1.5f);
-        PlayerPrefs.SetInt("coins", PlayerPrefs.GetInt("coins") + 1);
-        coinText.text = PlayerPrefs.GetInt("coins").ToString();
+        //PlayerPrefs.SetInt("coins", PlayerPrefs.GetInt("coins") + 1);
+        //coinText.text = PlayerPrefs.GetInt("coins").ToString();
 
         gameObject.SetActive(false);
     }

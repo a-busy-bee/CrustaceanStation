@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CrabInfo
   sprite: {fileID: 21300000, guid: f43b2346c76f1456bb000c49dfdccd2d, type: 3}
   kioskHeight: 45.8
+  isLarge: 0
   crabName: 
   type: 10
   favoriteWeatherTypes: 0100000002000000
@@ -22,3 +23,7 @@ MonoBehaviour:
   variantName: 
   mini: {fileID: 11400000, guid: 0b7286a73ef8a49a7bf53e5947697869, type: 2}
   isMultiple: 0
+  plotLevel: 1
+  isImportantCharacter: 0
+  characterNameID: 
+  hasResearchCoat: 0

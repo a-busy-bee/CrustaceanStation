@@ -5,7 +5,11 @@
 			"Have you seen this lollipop?",
 			"I love it when it's sunny",
 			"I'm in 3rd grade",
-			"Have you seen my mom?"
+			"Have you seen my mom?",
+			"I’ll give you my lollipop if you upgrade my ticket"
+		]},
+		{"character":"Shrimp", "text":[
+			"Stand up straight! Your posture is just awful"
 		]}
 	],
 
@@ -33,7 +37,19 @@
 		"I'm going to see my long-distance friend! We haven't seen each other in years.",
 		"I'm going on my first vacation in a decade!",
 		"I'm running from my past.",
-		"Did you know that train reaches speeds of up to 57 leagues per hour?! It's so fast!"
+		"Did you know that train reaches speeds of up to 57 leagues per hour?! It's so fast!",
+		"Hurry and punch my ticket, are you seriously checking my ID??!",
+		"Have you seen my propeller hat? I must’ve left it on a train",
+		"Have you seen my top hat? I must’ve left it on a train",
+		"Have you seen my green hat? I must’ve left it on a train",
+		"What’re you looking for on my ID? You like my photo, handsome?",
+		"That’s me in the picture, let me through already",
+		"It’s so hard keeping track of these tickets, back in my day we just kissed the conductor",
+		"It’s so hard keeping track of these tickets, back in my day we just paid at the door",
+		"It’s so hard keeping track of these tickets, back in my day we just asked for forgiveness, not permission",
+		"I’ve been waiting in line forever",
+		"Do you call it a train or a trolley?",
+		"My neighbor told me those shuttles take you away for good, is that true?"
 	],
 
 	"nodePlotAnyChars":[
@@ -44,7 +60,20 @@
 			"I heard Crustacean Corporation is experimenting on those poor people!",
 			"You should vote for fish rights even if you're not a fish.",
 			"Hey at least all of the predators are doing this voluntarily. And they're getting paid for it!",
-			"Do you think any research positions are still open?"
+			"Do you think any research positions are still open?",
+			"Crustacean corp offered me a job, but there’s something not right about those guys",
+			"I’m volunteering for the new research project!"
 		]}
+	],
+
+	"nodeNonCrustacean":[
+		"Did you see my son come through here yesterday? He didn’t come home!"
+	],
+
+	"nodeCrustacean":[
+		"I’m relieved to see a fellow crustacean in the train business",
+		"They’re just letting anyone onto these trains nowadays",
+		"Do you think I'm too short?",
+		"Do you think my claws are shiny enough?"
 	]
 }

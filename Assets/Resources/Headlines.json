@@ -3,17 +3,28 @@
 		"Itty Bitty loses lollipop! Chaos Ensues.",
 		"Crustacean Corporation Starts New Carcinization Initiative",
 		"Artist learns Unity. Chaos Ensues.",
-		"Programmer has cs homework. Dies",
 		"Lollipop stolen, will Itty Bitty Survive?",
-		"Development Leaks: Itty Bitty Now Ethical Test Subject?"
+		"Development Leaks: Itty Bitty Now Ethical Test Subject?",
+		"Predators pose a danger to us all. Report anything suspicious"
 	],
 
 	"nodesPlot":[
 		{
 			"id":1, 
-		 	"text":["Crustacean Corporation begins new predator study. Data follows."]},
+		 	"text":[
+				"Crustacean Corporation begins new predator study. Data follows.",
+				"Is crustacean-ification the next big trend? How to look more like a crab",
+				"Crustacean mistakenly put on shuttle for “research”, crab sues corp for billions",
+				"Researcher accepted bribes to skew data reports—sources say"	
+				]},
 			{
 			"id":2, 
-		 	"text":["Crustacean Corporation testing on live subjects, first mutations arise!"]}
+		 	"text":["Crustacean Corporation testing on live subjects, first mutations arise!",
+					"Crustacean Corp denies any responsibility for recent mutations in research subjects"]},
+			{
+			"id":3, 
+		 	"text":["COMPLY COMPLY COMPLY",
+					"Predators pose a danger to us all, don’t hesitate to report suspicious characters"
+			]}
 	]
 }

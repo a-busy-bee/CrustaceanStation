@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78e9b5b3f91a34cb3b12441421826e1c, type: 3}
+  m_Name: fiddler_family
+  m_EditorClassIdentifier: Assembly-CSharp::CrabInfo
+  sprite: {fileID: 21300000, guid: 7b73b016cdaf7af4081b19cd385e44a0, type: 3}
+  kioskHeight: 89
+  isLarge: 0
+  crabName: 
+  type: 19
+  favoriteWeatherTypes: 00000000
+  crabdexName: fiddler
+  isVariant: 1
+  variantName: family
+  mini: {fileID: 11400000, guid: 6f6fabac4014b46eca85b3eff13b139b, type: 2}
+  isMultiple: 0
+  plotLevel: 3
+  isImportantCharacter: 0
+  characterNameID: 
+  hasResearchCoat: 1

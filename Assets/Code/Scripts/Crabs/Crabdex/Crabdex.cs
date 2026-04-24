@@ -8,10 +8,6 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class Crabdex : MonoBehaviour
 {
-    // TODO
-    // increase how often crabs show up as the crabdex is filled out 
-    // ie at first you only get 1-2 types of crabs, then more
-
     public static Crabdex instance { get; private set; }
 
     private List<CrabdexEntry> crabdexEntries;     // classification of crab
