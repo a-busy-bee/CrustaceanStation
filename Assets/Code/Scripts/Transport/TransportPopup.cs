@@ -12,7 +12,7 @@ public class TransportPopup : MonoBehaviour
      
      //TODO: use inheritance for van, shuttle, and cart
     protected Mini currMini;
-    protected Cart.Type type;
+    [SerializeField] protected Cart.Type type;
     protected int currID;
     protected int numRows = 3;
 
@@ -158,17 +158,9 @@ public class TransportPopup : MonoBehaviour
 
         // if ticket info was wrong
         Cart.Type ticketCartType = Kiosk.instance.GetCurrentCrabTicket();
-        if (ticketCartType != type && Kiosk.instance.IsCrabValid()) // if the crab is otherwise valid, but chose the wrong cart
+        if (ticketCartType != type) // if the crab chose the wrong cart
         {
-            if (ticketCartType == Cart.Type.Economy)
-            {
-                // chosen cart was an upgrade, no rating complaints
-                Kiosk.instance.UpgradedCart();
-            }
-            else
-            {
-                Kiosk.instance.DowngradedCart(); // chosen cart was a downgrade, rating goes down
-            }
+            Kiosk.instance.DowngradedCart();
         }
 
         // tell kiosk to wait then summon new crab

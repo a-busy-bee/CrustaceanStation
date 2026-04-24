@@ -25,9 +25,9 @@ public class KioskBase : MonoBehaviour
     //[Header("Goals")]
     //[SerializeField] private RatingGoal ratingGoal;
     //[SerializeField] private CrabCountGoal crabCountGoal;
-    protected int crabsToday = 0;
-    protected float wrong = 0f;
-    protected int total = 0;
+    //protected int crabsToday = 0;
+    //protected float wrong = 0f;
+    //protected int total = 0;
 
 
     [Header("Buttons")]
@@ -125,7 +125,14 @@ public class KioskBase : MonoBehaviour
 
                     if (!currentCrab.GetComponent<CrabController>().IsValid() || !trainExists || !isCurrentCrabCrustacean)
                     {
-                        wrong++;
+                        //wrong++;
+                        Debug.Log("approved, incorrect");
+                        PerformanceManager.instance.Incorrect();
+                    }
+                    else
+                    {
+                        Debug.Log("approved, correct");
+                        PerformanceManager.instance.Correct();
                     }
 
                     DialogueManager.instance.ClearDialogue();
@@ -144,12 +151,16 @@ public class KioskBase : MonoBehaviour
 
                     if (currentCrab.GetComponent<CrabController>().IsValid() && trainExists && isCurrentCrabCrustacean)
                     {
-                        wrong++;
+                        //wrong++;
+                        Debug.Log("rejected, incorrect");
+                        PerformanceManager.instance.Incorrect();
 
                         currentCrab.GetComponent<CrabController>().SetState(CrabController.CrabState.Emoting, "any and confused");
                     }
                     else
                     {
+                        Debug.Log("rejected, correct");
+                        PerformanceManager.instance.Correct();
                         currentCrab.GetComponent<CrabController>().SetState(CrabController.CrabState.Emoting, "any");
                     }
 
@@ -159,8 +170,8 @@ public class KioskBase : MonoBehaviour
 
             case KioskState.CrabLeaving:
                 {
-                    crabsToday++;
-                    total++;
+                    //crabsToday++;
+                    //total++;
 
                     //crabCountGoal.IncrementGoal(crabsToday);
 
@@ -252,7 +263,7 @@ public class KioskBase : MonoBehaviour
 
     public int GetTotalCrabs()
     {
-        return crabsToday;
+        return -1;
     }
 
     public float GetCrabPositionInKiosk()
@@ -315,11 +326,13 @@ public class KioskBase : MonoBehaviour
     }
     public void DowngradedCart()
     {
-        wrong += 0.5f;
+        //wrong += 0.5f;
+        PerformanceManager.instance.Incorrect();
     }
 
     public void UpgradedCart()
     {
-        total++;
+        //total++;
+        PerformanceManager.instance.Incorrect();
     }
 }

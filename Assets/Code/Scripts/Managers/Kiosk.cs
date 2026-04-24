@@ -43,17 +43,20 @@ public class Kiosk : KioskBase
             case KioskState.CrabApproved:
                 {
                     DisableButtons();
-                    bool trainExists = true;
-                    /*if (LevelManager.instance.CheckTrainIDValidity(currentCrab.GetComponent<CrabController>().GetTrainID()))
-                    {
-                        trainExists = true;
-                    }*/
+                    
 
                     LevelManager.instance.SetTrainsClickable(true);
 
-                    if (!currentCrab.GetComponent<CrabController>().IsValid() || !trainExists || !isCurrentCrabCrustacean)
+                    if (!currentCrab.GetComponent<CrabController>().IsValid())
                     {
-                        wrong++;
+                        //wrong++;
+                        Debug.Log("approved, incorrect");
+                        PerformanceManager.instance.Incorrect();
+                    }
+                    else
+                    {
+                        Debug.Log("approved, correct");
+                        PerformanceManager.instance.Correct();
                     }
 
                     DialogueManager.instance.ClearDialogue();
@@ -64,20 +67,16 @@ public class Kiosk : KioskBase
                 {
                     DisableButtons();
 
-                    bool trainExists = true;
-                    /*if (LevelManager.instance.CheckTrainIDValidity(currentCrab.GetComponent<CrabController>().GetTrainID()))
+                    if (currentCrab.GetComponent<CrabController>().IsValid())
                     {
-                        trainExists = true;
-                    }*/
-
-                    if (currentCrab.GetComponent<CrabController>().IsValid() && trainExists && isCurrentCrabCrustacean)
-                    {
-                        wrong++;
-
+                        Debug.Log("rejected, incorrect");
+                        PerformanceManager.instance.Incorrect();
                         currentCrab.GetComponent<CrabController>().SetState(CrabController.CrabState.Emoting, "any and confused");
                     }
                     else
                     {
+                        Debug.Log("rejected, correct");
+                        PerformanceManager.instance.Correct();
                         currentCrab.GetComponent<CrabController>().SetState(CrabController.CrabState.Emoting, "any");
                     }
 
@@ -87,9 +86,6 @@ public class Kiosk : KioskBase
 
             case KioskState.CrabLeaving:
                 {
-                    crabsToday++;
-                    total++;
-
                     //crabCountGoal.IncrementGoal(crabsToday);
 
                     currentCrab.GetComponent<CrabController>().SetState(CrabController.CrabState.Leaving);
