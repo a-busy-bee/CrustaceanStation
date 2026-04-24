@@ -57,7 +57,7 @@ public class KioskTutorial : KioskBase
 
                     if (!currentCrab.GetComponent<CrabController>().IsValid() || !trainExists || !isCurrentCrabCrustacean)
                     {
-                        wrong++;
+                        //wrong++;
                     }
 
                 }
@@ -75,7 +75,7 @@ public class KioskTutorial : KioskBase
 
                     if (currentCrab.GetComponent<CrabController>().IsValid() && trainExists && isCurrentCrabCrustacean)
                     {
-                        wrong++;
+                        //wrong++;
 
                         currentCrab.GetComponent<CrabController>().SetState(CrabController.CrabState.Emoting, "any and confused");
                     }
@@ -90,8 +90,8 @@ public class KioskTutorial : KioskBase
 
             case KioskState.CrabLeaving:
                 {
-                    crabsToday++;
-                    total++;
+                    //crabsToday++;
+                    //total++;
 
                     //crabCountGoal.IncrementGoal(crabsToday);
 

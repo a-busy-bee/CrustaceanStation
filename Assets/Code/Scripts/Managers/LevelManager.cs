@@ -79,6 +79,7 @@ public class LevelManager : LevelManagerBase
                     // show prefab
                     transparentOverlay.SetActive(true);
                     summaryMenu.SetActive(true);
+                    PerformanceManager.instance.InitSummary();
                     //summaryMenu.GetComponent<Summary>().SetRating(ratingGoalScript.GetRating());
                     summaryMenu.GetComponent<Summary>().SetCrabsProcessed(Kiosk.instance.GetTotalCrabs());
 
