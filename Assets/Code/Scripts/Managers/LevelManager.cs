@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -10,7 +11,6 @@ public class LevelManager : LevelManagerBase
     override protected void Start()
     {
         SetState(LMState.Setup);
-        PlayBGM(); // idk if this is clean to go here sry
     }
 
     // State machine go brrrrr

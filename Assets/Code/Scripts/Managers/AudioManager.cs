@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -6,6 +7,7 @@ public class AudioManager : MonoBehaviour
 {
     //[SerializeField] private AudioSource audioSource;
     public Sound[] sounds;
+    private Sound _currentTrack;
 
     private void Awake()
     {
@@ -41,5 +43,49 @@ public class AudioManager : MonoBehaviour
             s.source.pitch = UnityEngine.Random.Range(0.75f, 1.25f);
         }
         s.source.Play();
+        _currentTrack = s;
+    }
+
+    public void Crossfade(string nextTrackName, float duration)
+    {
+        Sound nextTrack = Array.Find(sounds, sound => sound.name == nextTrackName);
+
+        if (nextTrack == null)
+        {
+            Debug.LogWarning("Track not found: " + nextTrackName);
+            return;
+        }
+        print("starting fade routine");
+        StartCoroutine(FadeRoutine(_currentTrack, nextTrack, duration));
+    }
+
+    private IEnumerator FadeRoutine(Sound oldTrack, Sound newTrack, float duration)
+    {
+        print("running fade routine for" + newTrack.name + " from " + oldTrack.name);
+        float currentTime = 0;
+
+        newTrack.source.volume = 0;
+        newTrack.source.Play();
+
+        while (currentTime < duration)
+        {
+            currentTime += Time.deltaTime;
+            float t = currentTime / duration;
+
+            if (oldTrack != null)
+                oldTrack.source.volume = Mathf.Lerp(1f, 0f, t);
+
+            newTrack.source.volume = Mathf.Lerp(0f, 1f, t);
+
+            yield return null;
+        }
+
+        if (oldTrack != null)
+        {
+            oldTrack.source.Stop();
+        }
+
+        newTrack.source.volume = 1f;
+        _currentTrack = newTrack;
     }
 }
