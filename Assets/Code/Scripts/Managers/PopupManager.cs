@@ -87,6 +87,16 @@ public class PopupManager : MonoBehaviour
         return miniAssets;
     }
 
+    private void PlayAudio(string aud)
+    {
+        if (GetComponent<AudioSource>() == null)
+        {
+            print("no audio manager");
+            return;
+        }
+        GetComponent<AudioManager>().Play(aud, true);
+    }
+
     public int DepartTrain(Cart.Type cartType)
     {
         if (cartType == Cart.Type.Economy)
@@ -150,6 +160,7 @@ public class PopupManager : MonoBehaviour
 
         currActive = true;
         background.SetActive(true);
+        PlayAudio("open");
     }
 
     public void OnClickOff()
@@ -166,6 +177,7 @@ public class PopupManager : MonoBehaviour
         shuttlePopup.SetActive(false);
         vanPopup.SetActive(false);
         background.SetActive(false);
+        PlayAudio("close");
     }
 
 }

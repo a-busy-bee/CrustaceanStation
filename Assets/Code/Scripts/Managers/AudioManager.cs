@@ -25,7 +25,7 @@ public class AudioManager : MonoBehaviour
     {
         //audioSource.UnPause();
 
-        print("playing: " + name);
+        Debug.Log("playing: " + name);
 
         Sound s = Array.Find(sounds, sound => sound.name == name);
         if (s == null)
@@ -40,7 +40,7 @@ public class AudioManager : MonoBehaviour
         }
         if (randomize)
         {
-            s.source.pitch = UnityEngine.Random.Range(0.75f, 1.25f);
+            s.source.pitch = UnityEngine.Random.Range(0.85f, 1.25f);
         }
         s.source.Play();
         _currentTrack = s;
@@ -48,6 +48,7 @@ public class AudioManager : MonoBehaviour
 
     public void Crossfade(string nextTrackName, float duration)
     {
+
         Sound nextTrack = Array.Find(sounds, sound => sound.name == nextTrackName);
 
         if (nextTrack == null)
@@ -55,7 +56,13 @@ public class AudioManager : MonoBehaviour
             Debug.LogWarning("Track not found: " + nextTrackName);
             return;
         }
-        print("starting fade routine");
+
+        // check if alr playing
+        if (_currentTrack != null && _currentTrack.name == nextTrackName)
+        {
+            if (!_currentTrack.source.isPlaying) _currentTrack.source.Play();
+            return;
+        }
         StartCoroutine(FadeRoutine(_currentTrack, nextTrack, duration));
     }
 
