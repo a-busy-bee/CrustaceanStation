@@ -97,22 +97,29 @@ public class TutorialManager : LevelManagerBase
 
             case LMState.Summary: // TODO: have summary show after all characters are seen
                 {
-                    KioskBase.instance.SetState(KioskBase.KioskState.EndOfDay);
-
-                    foreach (Rail rail in rails)
-                    {
-                        rail.Depart();
-                    }
-
-                    // show prefab
-                    transparentOverlay.SetActive(true);
-                    summaryMenu.SetActive(true);
-
-                    dayStarted = false;
-                    PlayerPrefs.SetInt("newGame", -1);
+                    StartCoroutine(WaitForSummary());
                 }
                 break;
         }
+    }
+
+    private IEnumerator WaitForSummary()
+    {
+        yield return new WaitForSeconds(0.5f);
+
+        KioskBase.instance.SetState(KioskBase.KioskState.EndOfDay);
+
+        foreach (Rail rail in rails)
+        {
+            rail.Depart();
+        }
+
+        // show prefab
+        transparentOverlay.SetActive(true);
+        summaryMenu.SetActive(true);
+
+        dayStarted = false;
+        PlayerPrefs.SetInt("newGame", -1);
     }
 
     private IEnumerator WaitThenSummonCrabs()
