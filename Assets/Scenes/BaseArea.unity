@@ -313,6 +313,63 @@ MonoBehaviour:
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
   audioManager: {fileID: 2022026942}
+--- !u!1 &16485893
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 16485894}
+  - component: {fileID: 16485895}
+  m_Layer: 0
+  m_Name: MusicOverlay
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &16485894
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 16485893}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.57544, y: 5.41404, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 636831357}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &16485895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 16485893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c79886b9a5734e6893fea679edccee1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
+  sounds:
+  - name: waves
+    clip: {fileID: 8300000, guid: 070cb9c5915961c4e93aea0f3b08107b, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: rain
+    clip: {fileID: 8300000, guid: e77e24fe4a33ec14298626096d87f423, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
 --- !u!1 &25677532
 GameObject:
   m_ObjectHideFlags: 0
@@ -10100,7 +10157,6 @@ GameObject:
   - component: {fileID: 534969239}
   - component: {fileID: 534969242}
   - component: {fileID: 534969238}
-  - component: {fileID: 534969243}
   m_Layer: 5
   m_Name: Approve
   m_TagString: Untagged
@@ -10255,26 +10311,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffa8b3412c3b4c6438f420715311003a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonClick
-  audioName: click
---- !u!114 &534969243
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 534969236}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c79886b9a5734e6893fea679edccee1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
-  sounds:
-  - name: click
-    clip: {fileID: 8300000, guid: 30bfffeb38d7d9d419e6e4bde8871bf1, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
+  audioManager: {fileID: 2022026942}
 --- !u!1 &538092401
 GameObject:
   m_ObjectHideFlags: 0
@@ -12399,6 +12436,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 389501543}
+  - {fileID: 16485894}
   - {fileID: 2022026941}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -13426,7 +13464,6 @@ GameObject:
   - component: {fileID: 687436955}
   - component: {fileID: 687436958}
   - component: {fileID: 687436959}
-  - component: {fileID: 687436960}
   m_Layer: 5
   m_Name: SwitchRoad
   m_TagString: Untagged
@@ -13465,6 +13502,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12b88e6a7528a4c39a334b7afdc82e64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Switch
+  audioManager: {fileID: 2022026942}
+  audioName: switch2
 --- !u!114 &687436956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13571,25 +13610,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &687436960
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 687436953}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c79886b9a5734e6893fea679edccee1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
-  sounds:
-  - name: switch
-    clip: {fileID: 8300000, guid: 695f32bf94e37e44cb4ee336d8b8db5e, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
 --- !u!1 &687831681
 GameObject:
   m_ObjectHideFlags: 0
@@ -20410,6 +20430,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1931240439}
     m_Modifications:
+    - target: {fileID: 1376357483471322900, guid: a38a60880f48f4610b91ac0addda84c3, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 2022026942}
     - target: {fileID: 5256601893285506828, guid: a38a60880f48f4610b91ac0addda84c3, type: 3}
       propertyPath: m_Name
       value: ID
@@ -20418,6 +20442,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6889979033266849278, guid: a38a60880f48f4610b91ac0addda84c3, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 2022026942}
     - target: {fileID: 7504227204343013136, guid: a38a60880f48f4610b91ac0addda84c3, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 29.400002
@@ -20502,7 +20530,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1376357483471322900, guid: a38a60880f48f4610b91ac0addda84c3, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -24867,9 +24896,9 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.14294952
+    x: 0.1388171
     y: 0
-    width: 0.71410096
+    width: 0.7223658
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
@@ -27027,6 +27056,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -28.8
       objectReference: {fileID: 0}
+    - target: {fileID: 7380525496240907209, guid: 8e354d16cd784472f9702c019590d42f, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 2022026942}
+    - target: {fileID: 9159087145189798066, guid: 8e354d16cd784472f9702c019590d42f, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 2022026942}
     m_RemovedComponents:
     - {fileID: 6770147498241812845, guid: 8e354d16cd784472f9702c019590d42f, type: 3}
     m_RemovedGameObjects: []
@@ -27778,7 +27815,6 @@ GameObject:
   - component: {fileID: 1416969083}
   - component: {fileID: 1416969086}
   - component: {fileID: 1416969082}
-  - component: {fileID: 1416969087}
   m_Layer: 5
   m_Name: Reject
   m_TagString: Untagged
@@ -27933,26 +27969,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffa8b3412c3b4c6438f420715311003a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonClick
-  audioName: click
---- !u!114 &1416969087
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1416969079}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c79886b9a5734e6893fea679edccee1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
-  sounds:
-  - name: click
-    clip: {fileID: 8300000, guid: 30bfffeb38d7d9d419e6e4bde8871bf1, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
+  audioManager: {fileID: 2022026942}
 --- !u!1 &1424528776
 GameObject:
   m_ObjectHideFlags: 0
@@ -36085,7 +36102,6 @@ GameObject:
   - component: {fileID: 1809487995}
   - component: {fileID: 1809487994}
   - component: {fileID: 1809487998}
-  - component: {fileID: 1809487999}
   m_Layer: 5
   m_Name: Weather
   m_TagString: Untagged
@@ -36196,6 +36212,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 37906594b59de4141a84f748235d2f7d, type: 2}
   - {fileID: 11400000, guid: 9e0a52dccfd5a4de7a26682fafd97e79, type: 2}
   - {fileID: 11400000, guid: 94bac813cf95548f0baf345a707cb783, type: 2}
+  audioManager: {fileID: 16485895}
   cloudsTop: {fileID: 552710303}
   backgroundTop: {fileID: 978470619}
   cloudsBottom: {fileID: 191157562}
@@ -36206,31 +36223,6 @@ MonoBehaviour:
   lightRainParticlesBkg: {fileID: 2050556217}
   fogOverlay: {fileID: 1956673967}
   groundClouds: {fileID: 1062734553}
---- !u!114 &1809487999
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1809487993}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c79886b9a5734e6893fea679edccee1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
-  sounds:
-  - name: waves
-    clip: {fileID: 8300000, guid: 070cb9c5915961c4e93aea0f3b08107b, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 1
-    source: {fileID: 0}
-  - name: rain
-    clip: {fileID: 8300000, guid: e77e24fe4a33ec14298626096d87f423, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 1
-    source: {fileID: 0}
 --- !u!1 &1832071771
 GameObject:
   m_ObjectHideFlags: 0
@@ -40650,6 +40642,42 @@ MonoBehaviour:
     pitch: 1.7
     loop: 0
     source: {fileID: 0}
+  - name: paper
+    clip: {fileID: 8300000, guid: c880153d67ae0234b89bc1134df03db4, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: door_close
+    clip: {fileID: 8300000, guid: 4014b8607b0546f41a18ad5d7b96c80b, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: door_open
+    clip: {fileID: 8300000, guid: 97c958a321bfc454097a13f11c2a98ae, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: switch
+    clip: {fileID: 8300000, guid: 695f32bf94e37e44cb4ee336d8b8db5e, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: button
+    clip: {fileID: 8300000, guid: 30bfffeb38d7d9d419e6e4bde8871bf1, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: switch2
+    clip: {fileID: 8300000, guid: 695f32bf94e37e44cb4ee336d8b8db5e, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
 --- !u!1 &2022294320
 GameObject:
   m_ObjectHideFlags: 0
@@ -43057,7 +43085,6 @@ GameObject:
   - component: {fileID: 2130218173}
   - component: {fileID: 2130218176}
   - component: {fileID: 2130218177}
-  - component: {fileID: 2130218178}
   m_Layer: 5
   m_Name: SwitchNorth
   m_TagString: Untagged
@@ -43096,6 +43123,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12b88e6a7528a4c39a334b7afdc82e64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Switch
+  audioManager: {fileID: 2022026942}
+  audioName: switch
 --- !u!114 &2130218174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43202,25 +43231,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &2130218178
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2130218171}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c79886b9a5734e6893fea679edccee1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
-  sounds:
-  - name: switch
-    clip: {fileID: 8300000, guid: 695f32bf94e37e44cb4ee336d8b8db5e, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
 --- !u!1 &2134877011
 GameObject:
   m_ObjectHideFlags: 0

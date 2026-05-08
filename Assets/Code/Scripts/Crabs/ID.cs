@@ -17,6 +17,13 @@ public class ID : MonoBehaviour
     private Ticket ticket;
 
     [SerializeField] private CanvasGroup canvasGroup;
+    
+    private AudioManager audioManager;
+
+    private void Start()
+    {
+        audioManager = GetComponent<AudioManager>();
+    }
 
     public void SetName(string newName)
     {
@@ -42,8 +49,7 @@ public class ID : MonoBehaviour
 
         // move position
         rectTransform.anchoredPosition = new Vector3(-363, -335, 64);
-        PlayAudio();
-        print("played audio");
+        audioManager.Play("ticket");
 
         // remove blur
         blur.SetActive(true);
@@ -53,16 +59,6 @@ public class ID : MonoBehaviour
 
         hover.interactable = false;
         hover.blocksRaycasts = false;
-    }
-
-    private void PlayAudio()
-    {
-        if (GetComponent<AudioSource>() == null)
-        {
-            print("no audio manager");
-            return;
-        }
-        GetComponent<AudioManager>().Play("click", true);
     }
 
     public void BringForward()
