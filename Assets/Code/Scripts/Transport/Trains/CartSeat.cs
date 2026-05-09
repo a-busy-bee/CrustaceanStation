@@ -82,12 +82,10 @@ public class CartSeat : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
         if (GetComponent<RectTransform>().childCount == 4)
         {
-            Debug.Log("init seat");
             imageObjectLarge = GetComponent<RectTransform>().GetChild(3).gameObject;
             imageLarge = imageObjectLarge.GetComponent<Image>();
 
-            imageLarge.sprite = null;
-            imageLarge.color = emptyAlpha;
+            imageObjectLarge.GetComponent<CartSeatLarge>().InitSeat(this);
         }
     }
 
@@ -99,6 +97,11 @@ public class CartSeat : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public (int, int) GetID()
     {
         return (row, column);
+    }
+
+    public Mini GetCurrMini()
+    {
+        return currMini;
     }
 
     public bool IsTaken()
@@ -124,19 +127,34 @@ public class CartSeat : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
                 imageLarge.sprite = null;
                 imageLarge.color = emptyAlpha;
             }
-            
+
             isTaken = false;
         }
         // if filled, show sprite
         else
         {
-            image.sprite = mini.miniSprite;
-            image.color = baseColor;
-
-            if (imageLarge != null)
+            if (mini.isLarge)
             {
-                imageLarge.sprite = null;
-                imageLarge.color = emptyAlpha;
+                if (imageLarge != null)
+                {
+                    imageLarge.sprite = mini.miniSprite;
+                    imageLarge.color = baseColor;
+                }
+                image.sprite = null;
+                image.color = emptyAlpha;
+
+            }
+            else
+            {
+                image.sprite = mini.miniSprite;
+                image.color = baseColor;
+
+
+                if (imageLarge != null)
+                {
+                    imageLarge.sprite = null;
+                    imageLarge.color = emptyAlpha;
+                }
             }
 
             isTaken = true;
@@ -187,24 +205,53 @@ public class CartSeat : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         image.color = baseColor;
     }
 
-    public void ShowGhostSpriteForLarge()
+    public void ShowGhostSpriteForLarge(Sprite sprite)
     {
-        
+        if (imageLarge != null)
+        {
+            image.sprite = null;
+            image.color = emptyAlpha;
+
+            imageLarge.sprite = sprite;
+            imageLarge.color = ghostAlpha;
+        }
     }
 
     public void HideGhostSpriteForLarge()
     {
-        
+        if (imageLarge != null)
+        {
+            imageLarge.sprite = null;
+            imageLarge.color = emptyAlpha;
+        }
     }
 
-    public void SetSpriteForLarge()
+    public void SetSpriteForLarge(Sprite sprite)
     {
-        
+        if (imageLarge != null)
+        {
+            image.sprite = null;
+            image.color = emptyAlpha;
+
+            imageLarge.sprite = sprite;
+            imageLarge.color = baseColor;
+        }
+
+        isTaken = true;
     }
 
-    public void PopulateForLarge()
+    public void PopulateForLarge(Sprite sprite)
     {
-        
+        if (imageLarge != null)
+        {
+            image.sprite = null;
+            image.color = emptyAlpha;
+
+            imageLarge.sprite = sprite;
+            imageLarge.color = baseColor;
+        }
+
+        isTaken = true;
     }
 
     public void PlayAnim(ReactionType reactionType)
@@ -223,31 +270,77 @@ public class CartSeat : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         reactionObject.SetActive(false);
     }
 
+    public void PointerExitLarge()
+    {
+        if (isTaken || hasSelected) return;
+        if (currMini.isLarge && (isTaken || !cartPopup.CheckIfBothSeatsAreOpen(row, column))) return;
+
+        imageLarge.sprite = null;
+        imageLarge.color = emptyAlpha;
+
+        currReaction = ReactionType.none;
+
+        reactionObject.SetActive(false);
+        cartPopup.TurnOffAnims(row, column);
+    }
+    public void PointerEnterLarge()
+    {
+        if (!currMini.isLarge || isTaken || hasSelected) return;
+        if (!cartPopup.CheckIfBothSeatsAreOpen(row, column)) return;
+
+        imageLarge.sprite = currMini.miniSprite;
+        imageLarge.color = ghostAlpha;
+        PlayAnim(ReactionType.happy);
+    }
+
     public void OnPointerExit(PointerEventData eventData)
     {
         if (isTaken || hasSelected) return;
-        if (currMini.isMultiple && (isTaken || !cartPopup.CheckIfBothSeatsAreOpen(row, column))) return;
+        if ((currMini.isMultiple || currMini.isLarge) && (isTaken || !cartPopup.CheckIfBothSeatsAreOpen(row, column))) return;
 
         if (currMini.isMultiple) cartPopup.HideGhostMultiple(row, column);
 
         // hide ghost sprite
         image.sprite = null;
         image.color = emptyAlpha;
-        reactionObject.SetActive(false);
+
         currReaction = ReactionType.none;
 
-        cartPopup.TurnOffAnims(row, column);
+        if (!currMini.isLarge)
+        {
+            reactionObject.SetActive(false);
+            cartPopup.TurnOffAnims(row, column);
+        }
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (isTaken || hasSelected) return;
-        if (currMini.isMultiple && (isTaken || !cartPopup.CheckIfBothSeatsAreOpen(row, column))) return;
+        if (isTaken || hasSelected) return; // TODO: implement wiggle to give player feedback
+        if ((currMini.isMultiple || currMini.isLarge) && (isTaken || !cartPopup.CheckIfBothSeatsAreOpen(row, column))) return; // TODO: implemenet smtg to give player feedback
 
         if (currMini.isMultiple) cartPopup.SeatMultiple(currMini.multSprite, row, column);
+        else if (currMini.isLarge)
+        {
+            if (imageLarge != null)
+            {
+                imageLarge.sprite = currMini.miniSprite;
+                imageLarge.color = baseColor;
 
-        image.sprite = currMini.miniSprite;
-        image.color = baseColor;
+                image.sprite = null;
+                image.color = emptyAlpha;
+                cartPopup.SeatLargeSecondSeat(row, column);
+            }
+            else
+            {
+                cartPopup.SeatLarge(currMini.miniSprite, row, column - 1);
+            }
+        }
+        else
+        {
+            image.sprite = currMini.miniSprite;
+            image.color = baseColor;
+        }
+
 
         isTaken = true;
 
@@ -259,7 +352,7 @@ public class CartSeat : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public void OnPointerEnter(PointerEventData eventData)
     {
         if (isTaken || hasSelected) return;
-        if (currMini.isMultiple && !cartPopup.CheckIfBothSeatsAreOpen(row, column)) return;
+        if ((currMini.isMultiple || currMini.isLarge) && !cartPopup.CheckIfBothSeatsAreOpen(row, column)) return;
 
         if (currMini.isMultiple)
         {
@@ -269,6 +362,11 @@ public class CartSeat : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
             cartPopup.ShowGhostMultiple(currMini.multSprite, row, column);
             PlayAnim(ReactionType.happy);
             cartPopup.PlayGhostAnim(row, column);
+        }
+        else if (currMini.isLarge)
+        {
+            image.sprite = null;
+            image.color = emptyAlpha;
         }
         else
         {
@@ -281,5 +379,24 @@ public class CartSeat : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     }
 
+    public void DisableRayCast()
+    {
+        image.raycastTarget = false;
+    }
+
+    public void EnableRayCast()
+    {
+        image.raycastTarget = true;
+    }
+
+    public void DisableRayCastLarge()
+    {
+        imageLarge.raycastTarget = false;
+    }
+
+    public void EnableRayCastLarge()
+    {
+        imageLarge.raycastTarget = true;
+    }
 }
  
