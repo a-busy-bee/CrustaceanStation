@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Whale
   m_EditorClassIdentifier: Assembly-CSharp::Mini
   miniType: 22
-  miniSprite: {fileID: 21300000, guid: afe36f2b3131847eb827f4552422a5ec, type: 3}
+  miniSprite: {fileID: 21300000, guid: e773eba58bc8b46178b53a3f685b4502, type: 3}
+  isLarge: 1
   isMultiple: 0
   multSprite: {fileID: 0}
-  isWipeOut: 0
   type: 1
   strength: 1

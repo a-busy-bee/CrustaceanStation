@@ -14,6 +14,7 @@ public class CartSeat : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     // SPRITE
     private Image image;
+    private Image imageLarge;
     [SerializeField] private Color emptyAlpha;
     [SerializeField] private Color ghostAlpha;
     [SerializeField] private Color baseColor;
@@ -47,6 +48,7 @@ public class CartSeat : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     };
     private GameObject reactionObject;
     private GameObject imageObject;
+    private GameObject imageObjectLarge;
     private GameObject splatterObject;
     private ReactionType currReaction;
 
@@ -74,9 +76,19 @@ public class CartSeat : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
         imageObject = GetComponent<RectTransform>().GetChild(1).gameObject;
         image = imageObject.GetComponent<Image>();
-        
+
         splatterObject = GetComponent<RectTransform>().GetChild(0).gameObject;
         splatterObject.SetActive(false);
+
+        if (GetComponent<RectTransform>().childCount == 4)
+        {
+            Debug.Log("init seat");
+            imageObjectLarge = GetComponent<RectTransform>().GetChild(3).gameObject;
+            imageLarge = imageObjectLarge.GetComponent<Image>();
+
+            imageLarge.sprite = null;
+            imageLarge.color = emptyAlpha;
+        }
     }
 
     public void HasSelected(bool newHasSelected)
@@ -106,6 +118,13 @@ public class CartSeat : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         {
             image.sprite = null;
             image.color = emptyAlpha;
+
+            if (imageLarge != null)
+            {
+                imageLarge.sprite = null;
+                imageLarge.color = emptyAlpha;
+            }
+            
             isTaken = false;
         }
         // if filled, show sprite
@@ -113,6 +132,13 @@ public class CartSeat : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         {
             image.sprite = mini.miniSprite;
             image.color = baseColor;
+
+            if (imageLarge != null)
+            {
+                imageLarge.sprite = null;
+                imageLarge.color = emptyAlpha;
+            }
+
             isTaken = true;
         }
 
@@ -120,6 +146,13 @@ public class CartSeat : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         {
             image.sprite = null;
             image.color = emptyAlpha;
+
+            if (imageLarge != null)
+            {
+                imageLarge.sprite = null;
+                imageLarge.color = emptyAlpha;
+            }
+
             isTaken = false;
 
             splatterObject.SetActive(true);
@@ -154,6 +187,26 @@ public class CartSeat : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         image.color = baseColor;
     }
 
+    public void ShowGhostSpriteForLarge()
+    {
+        
+    }
+
+    public void HideGhostSpriteForLarge()
+    {
+        
+    }
+
+    public void SetSpriteForLarge()
+    {
+        
+    }
+
+    public void PopulateForLarge()
+    {
+        
+    }
+
     public void PlayAnim(ReactionType reactionType)
     {
         // play anim of the mini beside the placed one, if possible
@@ -181,6 +234,7 @@ public class CartSeat : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         image.sprite = null;
         image.color = emptyAlpha;
         reactionObject.SetActive(false);
+        currReaction = ReactionType.none;
 
         cartPopup.TurnOffAnims(row, column);
     }

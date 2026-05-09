@@ -76,4 +76,5 @@ public class CrabInfo : ScriptableObject
 	public bool isImportantCharacter;
 	public string characterNameID; // Only fill out if important character
 	public bool hasResearchCoat;
+	public Sprite[] mutatedSprite;
 }
