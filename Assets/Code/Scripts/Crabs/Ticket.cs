@@ -64,7 +64,7 @@ public class Ticket : MonoBehaviour
 
         // move position
         rectTransform.anchoredPosition = new Vector3(-445, -419.2f, 0);
-        audioManager.Play("ticket");
+        audioManager.Play("paper");
 
         // remove blur
         blur.SetActive(true);

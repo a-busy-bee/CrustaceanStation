@@ -49,7 +49,7 @@ public class ID : MonoBehaviour
 
         // move position
         rectTransform.anchoredPosition = new Vector3(-363, -335, 64);
-        audioManager.Play("ticket");
+        audioManager.Play("paper");
 
         // remove blur
         blur.SetActive(true);

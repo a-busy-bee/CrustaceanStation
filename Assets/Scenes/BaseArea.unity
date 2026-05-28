@@ -360,13 +360,13 @@ MonoBehaviour:
   sounds:
   - name: waves
     clip: {fileID: 8300000, guid: 070cb9c5915961c4e93aea0f3b08107b, type: 3}
-    volume: 1
+    volume: 0.68
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: rain
     clip: {fileID: 8300000, guid: e77e24fe4a33ec14298626096d87f423, type: 3}
-    volume: 1
+    volume: 0.78
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -20434,6 +20434,10 @@ PrefabInstance:
       propertyPath: audioManager
       value: 
       objectReference: {fileID: 2022026942}
+    - target: {fileID: 2130623887440705696, guid: a38a60880f48f4610b91ac0addda84c3, type: 3}
+      propertyPath: sounds.Array.data[0].name
+      value: paper
+      objectReference: {fileID: 0}
     - target: {fileID: 5256601893285506828, guid: a38a60880f48f4610b91ac0addda84c3, type: 3}
       propertyPath: m_Name
       value: ID
@@ -27060,6 +27064,10 @@ PrefabInstance:
       propertyPath: audioManager
       value: 
       objectReference: {fileID: 2022026942}
+    - target: {fileID: 7392381017082789976, guid: 8e354d16cd784472f9702c019590d42f, type: 3}
+      propertyPath: sounds.Array.data[0].name
+      value: paper
+      objectReference: {fileID: 0}
     - target: {fileID: 9159087145189798066, guid: 8e354d16cd784472f9702c019590d42f, type: 3}
       propertyPath: audioManager
       value: 
@@ -27313,16 +27321,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1399518704}
-  m_LocalRotation: {x: 1, y: -0, z: -0, w: 0}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 223079967}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 180}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 498.71, y: 605}
+  m_AnchoredPosition: {x: 475, y: 469}
   m_SizeDelta: {x: 897.43, y: 525.83}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1399518706

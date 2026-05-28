@@ -209,7 +209,6 @@ MonoBehaviour:
   ticketImg: {fileID: 6244236569825186139}
   blurImg: {fileID: 4120710630050837951}
   canvasGroup: {fileID: 8158084900486435732}
-  audioManager: {fileID: 0}
 --- !u!225 &8158084900486435732
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -235,7 +234,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
   sounds:
-  - name: ticket
+  - name: paper
     clip: {fileID: 8300000, guid: c880153d67ae0234b89bc1134df03db4, type: 3}
     volume: 1
     pitch: 1

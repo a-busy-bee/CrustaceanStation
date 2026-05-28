@@ -6,7 +6,7 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     //[SerializeField] private AudioSource audioSource;
-    public Sound[] sounds;
+    public Sound[] sounds = new Sound[0];
     private Sound _currentTrack;
 
     private void Awake()
@@ -72,7 +72,7 @@ public class AudioManager : MonoBehaviour
 
     private IEnumerator FadeRoutine(Sound oldTrack, Sound newTrack, float duration)
     {
-        print("running fade routine from " + oldTrack.name + " to " + newTrack.name);
+        //print("running fade routine from " + oldTrack.name + " to " + newTrack.name);
         float currentTime = 0;
 
         newTrack.source.volume = 0;
