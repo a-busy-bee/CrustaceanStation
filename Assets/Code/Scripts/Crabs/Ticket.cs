@@ -22,9 +22,12 @@ public class Ticket : MonoBehaviour
 
     [SerializeField] protected CanvasGroup canvasGroup;
 
+    private AudioManager audioManager;
+
     private void Awake()
     {
         //zRotations = new float[] { 0, 180, 270, 90 };
+        audioManager = GetComponent<AudioManager>();
     }
 
     public void SetName(string newName)
@@ -55,23 +58,13 @@ public class Ticket : MonoBehaviour
     }*/
 
 
-    private void PlayAudio()
-    {
-        if (GetComponent<AudioSource>() == null)
-        {
-            print("no audio manager");
-            return;
-        }
-        GetComponent<AudioManager>().Play("click", true);
-    }
-
     public void PushBack()
     {
         rectTransform.rotation = Quaternion.Euler(0, 0, -28.8f);
 
         // move position
         rectTransform.anchoredPosition = new Vector3(-445, -419.2f, 0);
-        PlayAudio();
+        audioManager.Play("paper");
 
         // remove blur
         blur.SetActive(true);
@@ -81,7 +74,7 @@ public class Ticket : MonoBehaviour
 
     virtual public void BringForward()
     {
-        Debug.Log("clicked shuttle ticket");
+        //Debug.Log("clicked shuttle ticket");
         // rotate
         rectTransform.rotation = Quaternion.Euler(0, 0, 0);
 

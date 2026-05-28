@@ -691,7 +691,7 @@ GameObject:
   - component: {fileID: 9019425930988651157}
   - component: {fileID: 3979020930645888592}
   - component: {fileID: 6889979033266849278}
-  - component: {fileID: 4363303365048245943}
+  - component: {fileID: 2130623887440705696}
   m_Layer: 5
   m_Name: ID
   m_TagString: Untagged
@@ -747,7 +747,7 @@ MonoBehaviour:
   blur: {fileID: 6845583141951043755}
   rectTransform: {fileID: 9019425930988651157}
   canvasGroup: {fileID: 2715613188335403955}
---- !u!114 &4363303365048245943
+--- !u!114 &2130623887440705696
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -760,7 +760,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
   sounds:
-  - name: click
+  - name: paper
     clip: {fileID: 8300000, guid: c880153d67ae0234b89bc1134df03db4, type: 3}
     volume: 1
     pitch: 1
