@@ -21,9 +21,11 @@ public class Mini : ScriptableObject
 	public PopupManager.MiniType miniType;
 	public Sprite miniSprite;
 
+	public bool isLarge;
+
 	public bool isMultiple;
 	public Sprite multSprite;
-	public bool isWipeOut; // for seagulls
+	//public bool isWipeOut; // for seagulls
 
 	[Header("Pred-Prey Relationships")]
 	public Type type;

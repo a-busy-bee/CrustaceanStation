@@ -42,7 +42,7 @@ public class MailroomManager : MonoBehaviour
 
     // POSITION
     private Vector2 letterYPos = new Vector2(-1218, -23);           // starting pos, ending pos
-    private Vector2 feedbackFormYPos = new Vector2(-1007, -269);
+    private Vector2 feedbackFormYPos = new Vector2(219.49f, -195);
     private Vector2 largeNoteYPos = new Vector2(-1171, 23);
     private Vector2 smallNoteYPos = new Vector2(-1463, -269);
     private Vector2[] yPos;

@@ -9,8 +9,8 @@ using Unity.VisualScripting;
 public class TransportPopup : MonoBehaviour
 {
     // TODO: IF YOU ARE ADDING A MINI TYPE, UPDATE RANDOM NUM UPPER BOUND IN GenerateNewSeats INNER LOOP
-     
-     //TODO: use inheritance for van, shuttle, and cart
+
+    //TODO: use inheritance for van, shuttle, and cart
     protected Mini currMini;
     [SerializeField] protected Cart.Type type;
     protected int currID;
@@ -92,7 +92,7 @@ public class TransportPopup : MonoBehaviour
         }
 
         GenerateNewSeats();
-        
+
         initialized = true;
     }
 
@@ -130,15 +130,49 @@ public class TransportPopup : MonoBehaviour
                     }
 
                 }
+                else if (minis[row, col].Item1.isLarge)
+                {
+                    seatObjects[row, col].Populate(minis[row, col].Item1);
+                    seatObjects[row, col].SetCharacter(currMini);
+                    seatObjects[row, col].HasSelected(false);
+
+                    if (col == 0 || col == 2)
+                    {
+                        seatObjects[row, col + 1].PopulateForLarge(minis[row, col].Item1.miniSprite);
+                    }
+                    else
+                    {
+                        seatObjects[row, col - 1].PopulateForLarge(minis[row, col].Item1.miniSprite);
+                    }
+                }
                 else
                 {
                     seatObjects[row, col].Populate(minis[row, col].Item1);
                     seatObjects[row, col].SetCharacter(currMini);
                     seatObjects[row, col].HasSelected(false);
                 }
-                
+
             }
         }
+
+        if (currMini.isLarge)
+        {
+            for (int row = 0; row < numRows; row++)
+            {
+                for (int col = 0; col < 4; col++)
+                {
+                    if (col == 1 || col == 3)
+                    {
+                        seatObjects[row, col].DisableRayCast();
+                    }
+                    else
+                    {
+                        seatObjects[row, col].EnableRayCastLarge();
+                    }
+                }
+            }
+        }
+
     }
 
     public virtual void SeatCharacter(int row, int column)
@@ -214,8 +248,31 @@ public class TransportPopup : MonoBehaviour
                 if (Random.Range(0.0f, 1.0f) <= 0.35f)
                 {
                     int chance = Random.Range(1, 23);
-                    minis[row, col].Item1 = miniAssets[chance];
-                    minis[row, col].Item2 = 0;
+                    Mini mini = miniAssets[chance];
+
+                    if (mini.isLarge && (col == 0 || col == 2))
+                    {
+                        // set large sprite
+
+                        // skip next col
+
+                        minis[row, col].Item1 = mini;
+                        minis[row, col].Item2 = 0;
+
+                        col++;
+                    }
+                    else if (mini.isLarge && (col == 1 || col == 3) && minis[row, col - 1].Item1 == null)
+                    {
+                        // check if prev is empty (if yes, place large sprite on prev, otherwise ignore)
+                        minis[row, col - 1].Item1 = mini;
+                        minis[row, col - 1].Item2 = 0;
+                    }
+                    else
+                    {
+                        minis[row, col].Item1 = mini;
+                        minis[row, col].Item2 = 0;
+                    }
+
                 }
 
             }
@@ -431,6 +488,11 @@ public class TransportPopup : MonoBehaviour
         seatObjects[row, seatPairs[col]].ShowGhostSpriteForMultiple(mult);
     }
 
+    public void ShowGhostLarge(Sprite sprite, int row, int col)
+    {
+        seatObjects[row, seatPairs[col]].ShowGhostSpriteForLarge(sprite);
+    }
+
     public void HideGhostMultiple(int row, int col)
     {
         seatObjects[row, seatPairs[col]].HideGhostSpriteForMultiple();
@@ -438,7 +500,7 @@ public class TransportPopup : MonoBehaviour
 
     public void PlayGhostAnim(int row, int col)
     {
-        seatObjects[row, seatPairs[col]].PlayAnim(CartSeat.ReactionType.happy);
+        seatObjects[row, col].PlayAnim(CartSeat.ReactionType.happy);
     }
 
     public void SeatMultiple(Sprite mult, int row, int col)
@@ -450,6 +512,82 @@ public class TransportPopup : MonoBehaviour
             for (int colIdx = 0; colIdx < 4; colIdx++)
             {
                 seatObjects[rowIdx, colIdx].HasSelected(true);
+            }
+        }
+    }
+
+    public void SeatLarge(Sprite sprite, int row, int col)
+    {
+        // og click was on the second seat, place large sprite on prev seat
+        seatObjects[row, col].SetSpriteForLarge(sprite);
+        seatDictionary[currID][row, col + 1].Item1 = currMini;
+        for (int rowIdx = 0; rowIdx < numRows; rowIdx++)
+        {
+            for (int colIdx = 0; colIdx < 4; colIdx++)
+            {
+                seatObjects[rowIdx, colIdx].HasSelected(true);
+            }
+        }
+
+        if (currMini.isLarge)
+        {
+            for (int rowIDX = 0; rowIDX < numRows; rowIDX++)
+            {
+                for (int colIDX = 0; colIDX < 4; colIDX++)
+                {
+                    if (colIDX == 1 || colIDX == 3)
+                    {
+                        seatObjects[rowIDX, colIDX].EnableRayCast();
+                    }
+                    else
+                    {
+                        seatObjects[rowIDX, colIDX].DisableRayCastLarge();
+                    }
+                }
+            }
+        }
+    }
+
+    public void SeatLargeSecondSeat(int row, int col)
+    {
+        seatDictionary[currID][row, col + 1].Item1 = currMini;
+
+        if (currMini.isLarge)
+        {
+            for (int rowIDX = 0; rowIDX < numRows; rowIDX++)
+            {
+                for (int colIDX = 0; colIDX < 4; colIDX++)
+                {
+                    if (colIDX == 1 || colIDX == 3)
+                    {
+                        seatObjects[rowIDX, colIDX].EnableRayCast();
+                    }
+                    else
+                    {
+                        seatObjects[rowIDX, colIDX].DisableRayCastLarge();
+                    }
+                }
+            }
+        }
+    }
+
+    private void OnDisable()
+    {
+        if (currMini.isLarge)
+        {
+            for (int rowIDX = 0; rowIDX < numRows; rowIDX++)
+            {
+                for (int colIDX = 0; colIDX < 4; colIDX++)
+                {
+                    if (colIDX == 1 || colIDX == 3)
+                    {
+                        seatObjects[rowIDX, colIDX].EnableRayCast();
+                    }
+                    else
+                    {
+                        seatObjects[rowIDX, colIDX].DisableRayCastLarge();
+                    }
+                }
             }
         }
     }
