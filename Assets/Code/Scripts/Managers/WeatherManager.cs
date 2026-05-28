@@ -7,6 +7,9 @@ public class WeatherManager : MonoBehaviour
     [SerializeField] private WeatherType[] types; // sunny > lightRain > darkRain > fog
     private WeatherType currentType;
 
+    [Header("Audio")]
+    [SerializeField] private AudioManager audioManager;
+
     [Header("Foreground")]
     [SerializeField] private Image cloudsTop;
     [SerializeField] private Image backgroundTop;
@@ -41,9 +44,6 @@ public class WeatherManager : MonoBehaviour
     private float startFogAlpha;
     private float startGroundAlpha;
 
-    // audio
-    private AudioManager audioManager;
-
 
     private void Awake()
     {
@@ -72,7 +72,6 @@ public class WeatherManager : MonoBehaviour
         cloudsBottom.color = startingType.cloudsBottom;
         backgroundBottom.color = startingType.backgroundBottom;
 
-        audioManager = GetComponent<AudioManager>();
         StartMusic();
 
         if (startingType.isFoggy)

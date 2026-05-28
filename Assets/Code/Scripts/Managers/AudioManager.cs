@@ -6,13 +6,17 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     //[SerializeField] private AudioSource audioSource;
-    public Sound[] sounds;
+    public Sound[] sounds = new Sound[0];
     private Sound _currentTrack;
 
     private void Awake()
     {
         foreach (Sound s in sounds)
         {
+            if (s == null)
+            {
+                continue;
+            }
             s.source = gameObject.AddComponent<AudioSource>();
             s.source.clip = s.clip;
             s.source.volume = 1; //PlayerPrefs.GetFloat("Volume"); REENABLE THIS LATER
@@ -25,7 +29,7 @@ public class AudioManager : MonoBehaviour
     {
         //audioSource.UnPause();
 
-        Debug.Log("playing: " + name);
+        //Debug.Log("playing: " + name);
 
         Sound s = Array.Find(sounds, sound => sound.name == name);
         if (s == null)
@@ -68,7 +72,7 @@ public class AudioManager : MonoBehaviour
 
     private IEnumerator FadeRoutine(Sound oldTrack, Sound newTrack, float duration)
     {
-        print("running fade routine for" + newTrack.name + " from " + oldTrack.name);
+        //print("running fade routine from " + oldTrack.name + " to " + newTrack.name);
         float currentTime = 0;
 
         newTrack.source.volume = 0;
