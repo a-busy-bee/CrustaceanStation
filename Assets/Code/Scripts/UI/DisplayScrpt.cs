@@ -6,7 +6,7 @@ public class DisplayScrpt : MonoBehaviour
 {
     [SerializeField] private float speed = 16.0f;
     private Vector3 offPos = new Vector3(0, -1208.0f, -2);
-    private Vector3 onPos = new Vector3(0, -0.91f, -2);
+    private Vector3 onPos = new Vector3(0, 18, -2);
     private bool moving = false;
     // displayed is for animation purposes
     [SerializeField] private bool displayed;
