@@ -5623,6 +5623,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -743
       objectReference: {fileID: 0}
+    - target: {fileID: 8683991072750345862, guid: 619a19cf8b084b14badb6a03bd352f25, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15674,7 +15678,7 @@ MonoBehaviour:
   ticketParentObject: {fileID: 1931240438}
   approveButton: {fileID: 534969239}
   rejectButton: {fileID: 1416969083}
-  debugMode: 1
+  debugMode: 0
   charactersToForce:
   - {fileID: 1918681812830035428, guid: 4a2b52b4d2ff64f64a8decf1d3b10082, type: 3}
   - {fileID: 1918681812830035428, guid: c3c9bd610b6b14c02b6c43235f4db9d8, type: 3}
@@ -26275,9 +26279,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.049639434
+    y: 0.04984176
     width: 1
-    height: 0.90072113
+    height: 0.9003165
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
