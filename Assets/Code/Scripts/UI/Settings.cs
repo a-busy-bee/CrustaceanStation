@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
+using NUnit.Framework;
 public class Settings : MonoBehaviour
 {
     [SerializeField] private GameObject loadingScreenPanel;
@@ -23,14 +24,12 @@ public class Settings : MonoBehaviour
     }
     public void OnReturn()
     {
+        //Assert.IsTrue(displayed);
         //gameObject.SetActive(false);
 
-        if (SceneManager.GetActiveScene().name != "BaseArea")
-        {
-            backgroundDisplay.SetActive(false);
-        }
+        if (SceneManager.GetActiveScene().name != "BaseArea") backgroundDisplay.SetActive(false);
 
-        areYouSurePanel.SetActive(false);
+        if (areYouSurePanel != null) areYouSurePanel.SetActive(false);
 
         moving = true;
     }
@@ -41,25 +40,20 @@ public class Settings : MonoBehaviour
         displayed = false;
     }
 
+    public bool IsDisplayed()
+    {
+        return displayed;
+    }
+
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            //gameObject.SetActive(false);
-
-            if (SceneManager.GetActiveScene().name != "BaseArea")
-            {
-                backgroundDisplay.SetActive(false);
-            }
-
-            moving = true;
-        }
+        if (Input.GetKeyDown(KeyCode.Escape) && displayed) OnReturn();
 
         if (moving)
         {
             if (displayed)
             {
-                rectTransform.anchoredPosition = Vector2.SmoothDamp(rectTransform.anchoredPosition, offPos, ref currVelocity, 0.25f);
+                rectTransform.anchoredPosition = Vector2.SmoothDamp(rectTransform.anchoredPosition, offPos, ref currVelocity, 0.25f, Mathf.Infinity, Time.unscaledDeltaTime);
                 if (Vector2.Distance(rectTransform.anchoredPosition, offPos) < 10f)
                 {
                     moving = false;
@@ -70,7 +64,7 @@ public class Settings : MonoBehaviour
             // bring the screen up
             else
             {
-                rectTransform.anchoredPosition = Vector2.SmoothDamp(rectTransform.anchoredPosition, onPos, ref currVelocity, 0.25f);
+                rectTransform.anchoredPosition = Vector2.SmoothDamp(rectTransform.anchoredPosition, onPos, ref currVelocity, 0.25f, Mathf.Infinity, Time.unscaledDeltaTime);
                 if (Vector2.Distance(rectTransform.anchoredPosition, onPos) < 10f)
                 {
                     moving = false;
