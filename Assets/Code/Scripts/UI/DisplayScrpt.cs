@@ -145,5 +145,6 @@ public class DisplayScrpt : MonoBehaviour
     public void OnSettings()
     {
         settings.SetActive(true);
+        settings.GetComponent<Settings>().Show();
     }
 }

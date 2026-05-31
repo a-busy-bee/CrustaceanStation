@@ -72,6 +72,7 @@ public class MenuButtons : MonoBehaviour
     {
         //SceneManager.LoadScene("Settings");
         settingsPanel.SetActive(true);
+        settingsPanel.GetComponent<Settings>().Show();
         backgroundPanel.SetActive(true);
     }
 
