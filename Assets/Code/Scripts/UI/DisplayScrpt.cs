@@ -5,47 +5,54 @@ using UnityEngine.SceneManagement;
 public class DisplayScrpt : MonoBehaviour
 {
     [SerializeField] private float speed = 16.0f;
-    private Vector3 offPos = new Vector3(0, -1208.0f, -2);
-    private Vector3 onPos = new Vector3(0, -0.91f, -2);
-    private bool moving = false;
-    // displayed is for animation purposes
-    [SerializeField] private bool displayed;
-    // pause the game when paused == true
-    [SerializeField] private bool paused;
 
-    [SerializeField] private RectTransform rectTransform;
+    private Vector2 offPosBoard = new Vector3(0, 1110);
+    private Vector2 onPosBoard = new Vector3(0, 27.7f);
+    private Vector2 offPosCrab = new Vector3(-217, -776f);
+    private Vector2 onPosCrab = new Vector3(-217, -434);
+    [SerializeField] private RectTransform rectTransformBoard;
+    [SerializeField] private RectTransform rectTransformCrab;
+    private Vector2 currVelocityBoard;
+    private Vector2 currVelocityCrab;
+
+    private bool moving = false;
+    private bool displayed; // displayed is for animation purposes
+    private bool paused; // pause the game when paused == true
+    private bool crabMoving;
+    private bool crabDisplayed;
+
+    
     [SerializeField] private GameObject settings;
     void Start()
     {
         displayed = false;
         paused = false;
-        rectTransform.anchoredPosition = offPos;
+        rectTransformBoard.anchoredPosition = offPosBoard;
+        rectTransformCrab.anchoredPosition = offPosCrab;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && LevelManager.instance.HasStarted() && !settings.activeSelf)
+        Debug.Log("paused: " + paused +
+                "\ncrabMoving: " + crabMoving +
+                "\ncrabDisplayed: " + crabDisplayed +
+                "\nmoving: " + moving +
+                "\ndisplayed: " + displayed);
+
+        if (Input.GetKeyDown(KeyCode.Escape) && !settings.activeSelf)
         {
             // pause
-            if (!displayed)
+            if (!displayed && !paused)
             {
                 paused = true;
                 moving = true;
             }
 
             // unpause
-            if (displayed)
+            else
             {
-                paused = false;
-                moving = true;
-
-                if (LevelManager.instance != null)
-                {
-                    LevelManager.instance.SetState(LevelManager.LMState.Game);
-                }
+                DisplayOff();
             }
-            Debug.Log(paused);
         }
 
         if (moving)
@@ -53,9 +60,8 @@ public class DisplayScrpt : MonoBehaviour
             // bring the screen down
             if (displayed)
             {
-                var step = speed * Time.deltaTime;
-                rectTransform.anchoredPosition = Vector3.MoveTowards(rectTransform.anchoredPosition, offPos, step);
-                if (rectTransform.anchoredPosition.y <= offPos.y || Mathf.Abs(rectTransform.anchoredPosition.y - offPos.y) < 0.0001f)
+                rectTransformBoard.anchoredPosition = Vector2.SmoothDamp(rectTransformBoard.anchoredPosition, offPosBoard, ref currVelocityBoard, 0.25f);
+                if (Vector2.Distance(rectTransformBoard.anchoredPosition, offPosBoard) < 100f)
                 {
                     moving = false;
                     displayed = false;
@@ -63,14 +69,42 @@ public class DisplayScrpt : MonoBehaviour
                     // resume the clock/everything else when it's done moving
                 }
             }
-
             // bring the screen up
-            else if (!displayed)
+            else
             {
-                var step = speed * Time.deltaTime;
-                rectTransform.anchoredPosition = Vector3.MoveTowards(rectTransform.anchoredPosition, onPos, step);
-                if (rectTransform.anchoredPosition.y >= onPos.y || Mathf.Abs(rectTransform.anchoredPosition.y - onPos.y) < 0.0001f)
+                rectTransformBoard.anchoredPosition = Vector2.SmoothDamp(rectTransformBoard.anchoredPosition, onPosBoard, ref currVelocityBoard, 0.25f);
+                if (Vector2.Distance(rectTransformBoard.anchoredPosition, onPosBoard) < 100f)
                 {
+                    crabMoving = true;
+                }
+
+            }
+        }
+
+        if (crabMoving)
+        {
+            if (crabDisplayed)
+            {
+                rectTransformCrab.anchoredPosition = Vector2.SmoothDamp(rectTransformCrab.anchoredPosition, offPosCrab, ref currVelocityCrab, 0.2f);
+                if (Vector2.Distance(rectTransformCrab.anchoredPosition, offPosCrab) < 50f)
+                {
+                    moving = true;
+                }
+
+                if (Vector2.Distance(rectTransformCrab.anchoredPosition, offPosCrab) < 1f)
+                {
+                    crabMoving = false;
+                    crabDisplayed = false;
+                }
+            }
+            else
+            {
+                rectTransformCrab.anchoredPosition = Vector2.SmoothDamp(rectTransformCrab.anchoredPosition, onPosCrab, ref currVelocityCrab, 0.2f);
+                if (Vector2.Distance(rectTransformCrab.anchoredPosition, onPosCrab) < 1f)
+                {
+                    crabMoving = false;
+                    crabDisplayed = true;
+
                     moving = false;
                     displayed = true;
 
@@ -89,7 +123,9 @@ public class DisplayScrpt : MonoBehaviour
     {
         if (displayed)
         {
-            moving = true;
+            //moving = true;
+            crabMoving = true;
+
             paused = false;
 
             if (LevelManager.instance != null)
@@ -97,7 +133,6 @@ public class DisplayScrpt : MonoBehaviour
                 LevelManager.instance.SetState(LevelManager.LMState.Game);
             }
         }
-        Debug.Log(paused);
     }
 
 
@@ -110,11 +145,6 @@ public class DisplayScrpt : MonoBehaviour
     public void OnSettings()
     {
         settings.SetActive(true);
-    }
-
-    public void OnTutorial()
-    {
-        //tutorial.SetActive(true);
-        //tutorial.GetComponent<Tutorial>().Play(false);
+        settings.GetComponent<Settings>().Show();
     }
 }

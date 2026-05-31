@@ -7,9 +7,23 @@ public class Settings : MonoBehaviour
     [SerializeField] private GameObject backgroundDisplay;
     [SerializeField] private GameObject tutorial;
     [SerializeField] private GameObject areYouSurePanel;
+
+    [SerializeField] private RectTransform rectTransform;
+    private Vector2 onPos = new Vector2(16, -81);
+    private Vector2 offPos = new Vector2(16, 1198);
+    private Vector2 currVelocity;
+    private bool moving;
+    private bool displayed;
+
+    private void Start()
+    {
+        displayed = false;
+        moving = false;
+        rectTransform.anchoredPosition = offPos;
+    }
     public void OnReturn()
     {
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
 
         if (SceneManager.GetActiveScene().name != "BaseArea")
         {
@@ -18,17 +32,51 @@ public class Settings : MonoBehaviour
 
         areYouSurePanel.SetActive(false);
 
+        moving = true;
+    }
+
+    public void Show()
+    {
+        moving = true;
+        displayed = false;
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            gameObject.SetActive(false);
+            //gameObject.SetActive(false);
 
             if (SceneManager.GetActiveScene().name != "BaseArea")
             {
                 backgroundDisplay.SetActive(false);
+            }
+
+            moving = true;
+        }
+
+        if (moving)
+        {
+            if (displayed)
+            {
+                rectTransform.anchoredPosition = Vector2.SmoothDamp(rectTransform.anchoredPosition, offPos, ref currVelocity, 0.25f);
+                if (Vector2.Distance(rectTransform.anchoredPosition, offPos) < 10f)
+                {
+                    moving = false;
+                    displayed = false;
+
+                }
+            }
+            // bring the screen up
+            else
+            {
+                rectTransform.anchoredPosition = Vector2.SmoothDamp(rectTransform.anchoredPosition, onPos, ref currVelocity, 0.25f);
+                if (Vector2.Distance(rectTransform.anchoredPosition, onPos) < 10f)
+                {
+                    moving = false;
+                    displayed = true;
+                }
+
             }
         }
     }

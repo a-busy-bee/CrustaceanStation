@@ -158,11 +158,6 @@ public class LevelManagerBase : MonoBehaviour
         SceneManager.LoadScene("BaseArea");
     }
 
-    public bool HasStarted()    // only used to prevent pause screen from activating during goals, TODO: consider removing
-    {
-        return dayStarted;
-    }
-
     protected void InitTrains()
     {
         int id = 0;
