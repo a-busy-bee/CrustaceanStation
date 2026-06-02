@@ -103,6 +103,7 @@ public class Tutorial : MonoBehaviour
                 HideText();
                 HidePointer();
                 ShowText();
+                Kiosk.instance.EnableButtons();
                 break;
         }
         PlayerPrefs.SetInt("tutorialState", (int)tutorialState);
@@ -140,6 +141,7 @@ public class Tutorial : MonoBehaviour
         if (tutorialState == TutorialState.endDay1)
         {
             // ignore for now
+            
             return;
         }
         else

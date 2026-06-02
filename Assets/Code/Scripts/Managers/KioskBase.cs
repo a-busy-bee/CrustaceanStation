@@ -327,12 +327,16 @@ public class KioskBase : MonoBehaviour
     public void DowngradedCart()
     {
         //wrong += 0.5f;
+        if (PerformanceManager.instance == null) return;
+
         PerformanceManager.instance.Incorrect();
     }
 
     public void UpgradedCart()
     {
         //total++;
+        if (PerformanceManager.instance == null) return;
+        
         PerformanceManager.instance.Incorrect();
     }
 }
