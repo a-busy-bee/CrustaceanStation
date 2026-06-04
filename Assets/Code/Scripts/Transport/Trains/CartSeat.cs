@@ -318,7 +318,12 @@ public class CartSeat : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         if (isTaken || hasSelected) return; // TODO: implement wiggle to give player feedback
         if ((currMini.isMultiple || currMini.isLarge) && (isTaken || !cartPopup.CheckIfBothSeatsAreOpen(row, column))) return; // TODO: implemenet smtg to give player feedback
 
-        if (currMini.isMultiple) cartPopup.SeatMultiple(currMini.multSprite, row, column);
+        if (currMini.isMultiple)
+        {
+            cartPopup.SeatMultiple(currMini.multSprite, row, column);
+            image.sprite = currMini.miniSprite;
+            image.color = baseColor;
+        }
         else if (currMini.isLarge)
         {
             if (imageLarge != null)

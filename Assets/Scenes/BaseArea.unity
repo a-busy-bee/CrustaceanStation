@@ -15329,7 +15329,7 @@ MonoBehaviour:
   debugMode: 1
   charactersToForce:
   - {fileID: 1918681812830035428, guid: 4a2b52b4d2ff64f64a8decf1d3b10082, type: 3}
-  - {fileID: 1918681812830035428, guid: c3c9bd610b6b14c02b6c43235f4db9d8, type: 3}
+  - {fileID: 1918681812830035428, guid: 7684437382797ca4082dc20f00ff8fec, type: 3}
 --- !u!1 &730704855
 GameObject:
   m_ObjectHideFlags: 0
@@ -25938,9 +25938,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.0500831
+    y: 0.049815893
     width: 1
-    height: 0.8998338
+    height: 0.9003682
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -46769,7 +46769,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6182215521950669315, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -18.833984
+      value: -18.834045
       objectReference: {fileID: 0}
     - target: {fileID: 6182215521950669315, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

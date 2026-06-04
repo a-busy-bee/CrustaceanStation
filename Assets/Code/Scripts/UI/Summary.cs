@@ -23,7 +23,7 @@ public class Summary : MonoBehaviour
 
     private void Start()
     {
-        if (Random.Range(0, 10) < 7) return;
+        if (Random.Range(0, 10) < 5) return;
 
         if (Random.Range(0, 10) < 4)
         {
