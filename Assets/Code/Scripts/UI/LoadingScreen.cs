@@ -52,7 +52,7 @@ public class LoadingScreen : MonoBehaviour
         slider.value = 0;
         tooltipText.text = tooltips[Random.Range(0, tooltips.Length)];
 
-        while (slider.value < 0.67f) // fake some loading because we're evil and want people to look at the fire splash art
+        while (slider.value < 1f) // fake some loading because we're evil and want people to look at the fire splash art
         {
             sinFreq = Random.Range(20, 50);
             float sinVal = Mathf.Sin(Time.time * sinFreq);
@@ -62,9 +62,6 @@ public class LoadingScreen : MonoBehaviour
             yield return null;
         }
 
-
-        slider.value = 0.67f;
-
         AsyncOperation loadingOperation = SceneManager.LoadSceneAsync(sceneName);
 
         while (!loadingOperation.isDone)
@@ -73,7 +70,10 @@ public class LoadingScreen : MonoBehaviour
             yield return null;
         }
 
+        
+
         slider.value = 1f;
+
 
         /*while (group.alpha > 0)
         {
