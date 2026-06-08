@@ -22,7 +22,8 @@ public class ID : MonoBehaviour
 
     private void Start()
     {
-        audioManager = GetComponent<AudioManager>();
+        audioManager = KioskBase.instance.GetSFXManager();
+
     }
 
     public void SetName(string newName)
@@ -45,11 +46,11 @@ public class ID : MonoBehaviour
 
     public void PushBack()
     {
-        rectTransform.rotation = Quaternion.Euler(0, 0, -28.8f);
-
-        // move position
-        rectTransform.anchoredPosition = new Vector3(-363, -335, 64);
+        if (audioManager == null) audioManager = KioskBase.instance.GetSFXManager();
         audioManager.Play("paper");
+
+        rectTransform.rotation = Quaternion.Euler(0, 0, -28.8f);
+        rectTransform.anchoredPosition = new Vector3(161, 203, 0);
 
         // remove blur
         blur.SetActive(true);
@@ -67,7 +68,7 @@ public class ID : MonoBehaviour
         rectTransform.rotation = Quaternion.Euler(0, 0, 0);
 
         // move position
-        rectTransform.anchoredPosition = new Vector3(-412.23f, -361.2999f, 44.85482f);
+        rectTransform.anchoredPosition = new Vector3(130.77f, 193.7f, 44.85f);
 
         // remove blur
         blur.SetActive(false);
