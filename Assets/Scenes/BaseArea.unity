@@ -1855,7 +1855,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &119828699
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11232,7 +11232,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 856538094}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8c79886b9a5734e6893fea679edccee1, type: 3}
   m_Name: 
@@ -16420,9 +16420,9 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
+    x: 0.084840626
     y: 0
-    width: 1
+    width: 0.83031875
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
@@ -23802,7 +23802,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1809487993}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8c79886b9a5734e6893fea679edccee1, type: 3}
   m_Name: 
@@ -29610,6 +29610,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 371900989}
     m_Modifications:
+    - target: {fileID: 715301910946744419, guid: 4de3e27ee11244dfc8f80c9f950e5da8, type: 3}
+      propertyPath: isMasterVolumeControl
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 715301910946744419, guid: 4de3e27ee11244dfc8f80c9f950e5da8, type: 3}
+      propertyPath: audioManagers.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 715301910946744419, guid: 4de3e27ee11244dfc8f80c9f950e5da8, type: 3}
+      propertyPath: 'audioManagers.Array.data[0]'
+      value: 
+      objectReference: {fileID: 389501545}
+    - target: {fileID: 715301910946744419, guid: 4de3e27ee11244dfc8f80c9f950e5da8, type: 3}
+      propertyPath: 'audioManagers.Array.data[1]'
+      value: 
+      objectReference: {fileID: 16485895}
+    - target: {fileID: 715301910946744419, guid: 4de3e27ee11244dfc8f80c9f950e5da8, type: 3}
+      propertyPath: 'audioManagers.Array.data[2]'
+      value: 
+      objectReference: {fileID: 2022026942}
     - target: {fileID: 1038922133549985922, guid: 4de3e27ee11244dfc8f80c9f950e5da8, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -29637,6 +29657,10 @@ PrefabInstance:
     - target: {fileID: 2912201030181562150, guid: 4de3e27ee11244dfc8f80c9f950e5da8, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3123354936056787416, guid: 4de3e27ee11244dfc8f80c9f950e5da8, type: 3}
+      propertyPath: m_Value
+      value: 0.803
       objectReference: {fileID: 0}
     - target: {fileID: 3179002064093147093, guid: 4de3e27ee11244dfc8f80c9f950e5da8, type: 3}
       propertyPath: m_Name
@@ -29766,6 +29790,30 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6619536536866290702, guid: 4de3e27ee11244dfc8f80c9f950e5da8, type: 3}
+      propertyPath: audioManagers.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6619536536866290702, guid: 4de3e27ee11244dfc8f80c9f950e5da8, type: 3}
+      propertyPath: 'audioManagers.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2022026942}
+    - target: {fileID: 6619536536866290702, guid: 4de3e27ee11244dfc8f80c9f950e5da8, type: 3}
+      propertyPath: 'audioManagers.Array.data[1]'
+      value: 
+      objectReference: {fileID: 16485895}
+    - target: {fileID: 8387107444854170357, guid: 4de3e27ee11244dfc8f80c9f950e5da8, type: 3}
+      propertyPath: m_FillAmount
+      value: 0.80298024
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909500096686755647, guid: 4de3e27ee11244dfc8f80c9f950e5da8, type: 3}
+      propertyPath: audioManagers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909500096686755647, guid: 4de3e27ee11244dfc8f80c9f950e5da8, type: 3}
+      propertyPath: 'audioManagers.Array.data[0]'
+      value: 
+      objectReference: {fileID: 389501545}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

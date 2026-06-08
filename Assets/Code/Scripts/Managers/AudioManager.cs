@@ -2,12 +2,14 @@ using System;
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {
     //[SerializeField] private AudioSource audioSource;
     public Sound[] sounds = new Sound[0];
     private Sound _currentTrack;
+    private float localVol = 1f;
 
     private void Awake()
     {
@@ -19,7 +21,7 @@ public class AudioManager : MonoBehaviour
             }
             s.source = gameObject.AddComponent<AudioSource>();
             s.source.clip = s.clip;
-            s.source.volume = 1; //PlayerPrefs.GetFloat("Volume"); REENABLE THIS LATER
+            s.source.volume = s.volume;
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
             s.source.name = s.name;
@@ -48,6 +50,31 @@ public class AudioManager : MonoBehaviour
         }
         s.source.Play();
         _currentTrack = s;
+    }
+
+    public void UpdateVolume(float vol)
+    {
+        localVol = vol;
+        foreach (Sound s in sounds)
+        {
+            if (s == null)
+            {
+                continue;
+            }
+            s.source.volume = vol * s.volume;
+        }
+    }
+
+    public void UpdateMasterVolume(float masterVol)
+    {
+        foreach (Sound s in sounds)
+        {
+            if (s == null)
+            {
+                continue;
+            }
+            s.source.volume = masterVol * localVol * s.volume;
+        }
     }
 
     public void Crossfade(string nextTrackName, float duration)
@@ -84,9 +111,9 @@ public class AudioManager : MonoBehaviour
             float t = currentTime / duration;
 
             if (oldTrack != null)
-                oldTrack.source.volume = Mathf.Lerp(1f, 0f, t);
+                oldTrack.source.volume = Mathf.Lerp(sounds[0].source.volume, 0f, t);
 
-            newTrack.source.volume = Mathf.Lerp(0f, 1f, t);
+            newTrack.source.volume = Mathf.Lerp(0f, sounds[0].source.volume, t);
 
             yield return null;
         }
@@ -96,7 +123,7 @@ public class AudioManager : MonoBehaviour
             oldTrack.source.Stop();
         }
 
-        newTrack.source.volume = 1f;
+        newTrack.source.volume = sounds[0].source.volume;
         _currentTrack = newTrack;
     }
 }

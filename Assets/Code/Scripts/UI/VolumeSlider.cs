@@ -7,15 +7,18 @@ public class AudioSlider : MonoBehaviour
     [SerializeField]
     private AudioMixer Mixer;
     [SerializeField]
-    private AudioSource AudioSource;
+    private AudioManager[] audioManagers = new AudioManager[0];
     [SerializeField]
     private AudioMixMode MixMode;
 
     [SerializeField] private Slider slider;
+    [SerializeField] private bool isMasterVolumeControl;
 
     private void Awake()
     {
-        slider.value = PlayerPrefs.GetFloat("Volume");
+        print(slider.value);
+        print(PlayerPrefs.GetFloat("Volume"));
+        //slider.value = 1f;//PlayerPrefs.GetFloat("Volume");
     }
     private void Start()
     {
@@ -27,7 +30,20 @@ public class AudioSlider : MonoBehaviour
         switch (MixMode)
         {
             case AudioMixMode.LinearAudioSourceVolume:
-                AudioSource.volume = Value;
+                if (isMasterVolumeControl)
+                {
+                    foreach (AudioManager audioManager in audioManagers)
+                    {
+                        audioManager.UpdateMasterVolume(Value);
+                    }
+                }
+                else
+                {
+                    foreach (AudioManager audioManager in audioManagers)
+                    {
+                        audioManager.UpdateVolume(Value);
+                    }
+                }
                 break;
             case AudioMixMode.LinearMixerVolume:
                 Mixer.SetFloat("Volume", (-80 + Value * 80));
