@@ -41,8 +41,8 @@ public class MailroomManager : MonoBehaviour
     private GameObject currentLetter;
 
     // POSITION
-    private Vector2 letterYPos = new Vector2(-1218, -23);           // starting pos, ending pos
-    private Vector2 feedbackFormYPos = new Vector2(-958, -195);
+    private Vector2 letterYPos = new Vector2(-1423, 0);           // starting pos, ending pos
+    private Vector2 feedbackFormYPos = new Vector2(-1259, -171);
     private Vector2 largeNoteYPos = new Vector2(-1171, 23);
     private Vector2 smallNoteYPos = new Vector2(-1463, -269);
     private Vector2[] yPos;
