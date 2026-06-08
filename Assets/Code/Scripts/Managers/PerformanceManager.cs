@@ -74,7 +74,7 @@ public class PerformanceManager : MonoBehaviour
     {
         Debug.Log("incorrect");
         numWrong++;
-        barPercent -= stepSize;
+        barPercent -= stepSize * 3.5f;
         if (barPercent <= 0) barPercent = 0;
 
         Save();

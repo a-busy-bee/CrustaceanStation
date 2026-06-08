@@ -51,6 +51,32 @@ public class CrabSelector : MonoBehaviour
         return (prefabs[chosenCrabIdx], chosenCrabIdx);
     }
 
+    public (GameObject, int) ChooseCrabTutorial()
+    {
+        if (idxsChosenRecently.Count >= prefabs.Count)
+        {
+            idxsChosenRecently.Clear();
+        }
+
+        int chosenCrabIdx;
+
+        do
+        {
+            chosenCrabIdx = Random.Range(0, prefabs.Count);
+        }
+        while (idxsChosenRecently.Contains(chosenCrabIdx)
+                || prefabs[chosenCrabIdx].GetComponent<CrabController>().GetCrabInfo().isLarge);
+
+        idxsChosenRecently.Add(chosenCrabIdx);
+
+        if (idxsChosenRecently.Count > 15)
+        {
+            idxsChosenRecently.RemoveAt(0);
+        }
+        
+        return (prefabs[chosenCrabIdx], chosenCrabIdx);
+    }
+
     public void AddToQueue(int idx)
     {
         idxsChosenRecently.Add(idx);

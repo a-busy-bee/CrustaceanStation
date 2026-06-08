@@ -42,7 +42,7 @@ public class MailroomManager : MonoBehaviour
 
     // POSITION
     private Vector2 letterYPos = new Vector2(-1218, -23);           // starting pos, ending pos
-    private Vector2 feedbackFormYPos = new Vector2(219.49f, -195);
+    private Vector2 feedbackFormYPos = new Vector2(-958, -195);
     private Vector2 largeNoteYPos = new Vector2(-1171, 23);
     private Vector2 smallNoteYPos = new Vector2(-1463, -269);
     private Vector2[] yPos;
@@ -271,14 +271,15 @@ public class MailroomManager : MonoBehaviour
 
     private void ShowCrabdexNotif()
     {
-        crabdexNotif.SetActive(true);
-        crabdexNotif.GetComponent<Animator>().Play("Appear", -1, 0);
+        //TODO: add crabdex notif back in (once crabdex is set up)
+        //crabdexNotif.SetActive(true);
+        //crabdexNotif.GetComponent<Animator>().Play("Appear", -1, 0);
         StartCoroutine(WaitForCrabdexNotifAnimEnd());
     }
 
     private void HideCrabdexNotif()
     {
-        crabdexNotif.SetActive(false);
+        //crabdexNotif.SetActive(false);
     }
 
     private IEnumerator WaitForCrabdexNotifAnimEnd()

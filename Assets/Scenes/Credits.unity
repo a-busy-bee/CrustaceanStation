@@ -1980,7 +1980,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c79886b9a5734e6893fea679edccee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
-  audioSource: {fileID: 988659296}
+  sounds: []
 --- !u!4 &1175915719
 Transform:
   m_ObjectHideFlags: 0
@@ -3499,8 +3499,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Back
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 67fd805638b8c4cefa911b503032756a, type: 2}
-  m_sharedMaterial: {fileID: -7050974471561147593, guid: 67fd805638b8c4cefa911b503032756a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ecd6bbbe8eeec4e2585ba8bf726a0752, type: 2}
+  m_sharedMaterial: {fileID: -1044476724647722075, guid: ecd6bbbe8eeec4e2585ba8bf726a0752, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

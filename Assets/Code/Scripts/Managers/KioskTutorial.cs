@@ -4,7 +4,7 @@ public class KioskTutorial : KioskBase
 {
     private int numCrabs = 0;
     [SerializeField] private TutorialManager tutorialManager;
-   override public void SetState(KioskState newState)
+    override public void SetState(KioskState newState)
     {
         KioskState prevState = kioskState;
         kioskState = newState;
@@ -40,7 +40,7 @@ public class KioskTutorial : KioskBase
                     tutorialManager.SetTutorialState();
                     if (TutorialManager.instance.IsFirstCrabTutorial()) return;
                     EnableButtons();
-                    
+
                 }
                 break;
 
@@ -107,6 +107,31 @@ public class KioskTutorial : KioskBase
                 }
                 break;
         }
+    }
+    
+    override protected void SummonCrab()
+    {
+        var (chosen, chosenIdx) = crabSelector.ChooseCrabTutorial();
+
+        if (debugMode && charactersToForce.Count != 0)
+        {
+            chosen = charactersToForce[0];
+            charactersToForce.RemoveAt(0);
+        }
+
+        crabSelector.AddToQueue(chosenIdx);
+        currentCrab = Instantiate(chosen, crabParentObject.transform);
+        //currentCrabIdx = chosenIdx;
+
+        CrabController controller = currentCrab.GetComponent<CrabController>();
+        //controller.SetCanvas(canvas.GetComponent<Canvas>());
+        controller.SetCrabSelector(crabSelector);
+        controller.SetClockAndKiosk(clock, this);
+        controller.SetTicketAndIDParentObject(ticketParentObject);
+        controller.SetState(CrabController.CrabState.Summoned);
+
+        //Crabdex.instance.HasBeenDiscovered(controller.GetCrabInfo()); // crabdex!!!
+        //isCurrentCrabCrustacean = Crabdex.instance.IsCrustacean(controller.GetCrabdexName());
     }
 
 }

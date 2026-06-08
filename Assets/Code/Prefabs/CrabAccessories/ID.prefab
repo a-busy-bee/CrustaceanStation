@@ -352,8 +352,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 102.6, y: 7.4621}
-  m_SizeDelta: {x: 221.9198, y: 142.55}
+  m_AnchoredPosition: {x: 81.75204, y: 7.4621}
+  m_SizeDelta: {x: 239.0886, y: 142.55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7099280562835783862
 CanvasRenderer:
@@ -385,8 +385,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Lord Clawington III
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 67fd805638b8c4cefa911b503032756a, type: 2}
-  m_sharedMaterial: {fileID: -7050974471561147593, guid: 67fd805638b8c4cefa911b503032756a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ecd6bbbe8eeec4e2585ba8bf726a0752, type: 2}
+  m_sharedMaterial: {fileID: -1044476724647722075, guid: ecd6bbbe8eeec4e2585ba8bf726a0752, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -429,7 +429,7 @@ MonoBehaviour:
   m_charWidthMaxAdj: 0
   m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
+  m_overflowMode: 1
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 0
@@ -449,7 +449,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -35.602287, y: 0, z: -1.0465088, w: -0.86296844}
+  m_margin: {x: 1.1882706, y: 0, z: -1.0465088, w: -0.86296844}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -691,7 +691,6 @@ GameObject:
   - component: {fileID: 9019425930988651157}
   - component: {fileID: 3979020930645888592}
   - component: {fileID: 6889979033266849278}
-  - component: {fileID: 2130623887440705696}
   m_Layer: 5
   m_Name: ID
   m_TagString: Untagged
@@ -747,25 +746,6 @@ MonoBehaviour:
   blur: {fileID: 6845583141951043755}
   rectTransform: {fileID: 9019425930988651157}
   canvasGroup: {fileID: 2715613188335403955}
---- !u!114 &2130623887440705696
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5256601893285506828}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c79886b9a5734e6893fea679edccee1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
-  sounds:
-  - name: paper
-    clip: {fileID: 8300000, guid: c880153d67ae0234b89bc1134df03db4, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
 --- !u!1 &6622665752137169674
 GameObject:
   m_ObjectHideFlags: 0

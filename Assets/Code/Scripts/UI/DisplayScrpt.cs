@@ -6,10 +6,10 @@ public class DisplayScrpt : MonoBehaviour
 {
     [SerializeField] private float speed = 16.0f;
 
-    private Vector2 offPosBoard = new Vector3(0, 1110);
-    private Vector2 onPosBoard = new Vector3(0, 27.7f);
-    private Vector2 offPosCrab = new Vector3(-217, -776f);
-    private Vector2 onPosCrab = new Vector3(-217, -434);
+    private Vector2 offPosBoard = new Vector2(0, 1110);
+    private Vector2 onPosBoard = new Vector2(0, 27.7f);
+    private Vector2 offPosCrab = new Vector2(-217, -776f);
+    private Vector2 onPosCrab = new Vector2(-217, -434);
     [SerializeField] private RectTransform rectTransformBoard;
     [SerializeField] private RectTransform rectTransformCrab;
     private Vector2 currVelocityBoard;
@@ -39,7 +39,7 @@ public class DisplayScrpt : MonoBehaviour
                 "\nmoving: " + moving +
                 "\ndisplayed: " + displayed);
 
-        if (Input.GetKeyDown(KeyCode.Escape) && !settings.activeSelf)
+        if (Input.GetKeyDown(KeyCode.Escape) && !settings.GetComponent<Settings>().IsDisplayed())
         {
             // pause
             if (!displayed && !paused)
@@ -144,7 +144,10 @@ public class DisplayScrpt : MonoBehaviour
 
     public void OnSettings()
     {
+        Debug.Log(1);
         settings.SetActive(true);
+        Debug.Log(2);
         settings.GetComponent<Settings>().Show();
+        Debug.Log(3);
     }
 }

@@ -245,10 +245,11 @@ public class TransportPopup : MonoBehaviour
             for (int col = 0; col < 4; col++)
             {
                 // random chance to place char
-                if (Random.Range(0.0f, 1.0f) <= 0.35f)
+                if (Random.Range(0.0f, 1.0f) <= 0.55f)
                 {
                     int chance = Random.Range(1, 23);
                     Mini mini = miniAssets[chance];
+                    if (mini.isMultiple) continue;
 
                     if (mini.isLarge && (col == 0 || col == 2))
                     {
@@ -269,8 +270,20 @@ public class TransportPopup : MonoBehaviour
                     }
                     else
                     {
-                        minis[row, col].Item1 = mini;
-                        minis[row, col].Item2 = 0;
+                        // prevent two chars to be generated beside each other
+                        if (col == 0 || col == 2)
+                        {
+                            minis[row, col].Item1 = mini;
+                            minis[row, col].Item2 = 0;
+                            col++;  // skip next col
+                        }
+                        else if (col == 1 || col == 3) // check if prev col is filled, if yes then skip
+                        {
+                            minis[row, col].Item1 = mini;
+                            minis[row, col].Item2 = 0;
+                            
+                        }
+                        
                     }
 
                 }
@@ -500,7 +513,7 @@ public class TransportPopup : MonoBehaviour
 
     public void PlayGhostAnim(int row, int col)
     {
-        seatObjects[row, col].PlayAnim(CartSeat.ReactionType.happy);
+        seatObjects[row, seatPairs[col]].PlayAnim(CartSeat.ReactionType.happy);
     }
 
     public void SeatMultiple(Sprite mult, int row, int col)
