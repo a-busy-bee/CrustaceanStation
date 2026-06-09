@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: whale_blue
   m_EditorClassIdentifier: Assembly-CSharp::CrabInfo
   sprite: {fileID: 21300000, guid: 2ba598a0ef77c4392a045ef174a6ab0e, type: 3}
-  kioskHeight: 14
+  kioskHeight: 609
   isLarge: 1
   crabName: 
   type: 25
@@ -23,3 +23,8 @@ MonoBehaviour:
   variantName: blue
   mini: {fileID: 11400000, guid: c77a9caa810ac43b9b4856be3bd884a0, type: 2}
   isMultiple: 0
+  plotLevel: 0
+  isImportantCharacter: 0
+  characterNameID: 
+  hasResearchCoat: 0
+  mutatedSprite: []

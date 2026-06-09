@@ -56,28 +56,26 @@ public class CrabController : MonoBehaviour
     void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
-
-        crabInfo.crabName = CrabNameGenerator.instance.GetNameByType(crabInfo.type);
-        emotion = GetComponent<RectTransform>().Find("Emotions").GetComponent<Emotion>();
-
-
-    }
-
-    private void Start()
-    {
-        if (labCoatBase != null) labCoatBase.gameObject.SetActive(false);
-        if (badge != null) badge.gameObject.SetActive(false);
-
-        float xPos = kiosk.GetCrabPositionInKiosk();
+        float xPos = 418;
         if (crabInfo.isLarge)
         {
-            xPos = -492;
+            xPos = 442.52f;
         }
 
         kioskStartPos = new Vector3(xPos, -700, 0);
         kioskEndPos = new Vector3(xPos, crabInfo.kioskHeight, 0);
 
         rectTransform.anchoredPosition = kioskStartPos;
+
+
+        crabInfo.crabName = CrabNameGenerator.instance.GetNameByType(crabInfo.type);
+        emotion = GetComponent<RectTransform>().Find("Emotions").GetComponent<Emotion>();
+    }
+
+    private void Start()
+    {
+        if (labCoatBase != null) labCoatBase.gameObject.SetActive(false);
+        if (badge != null) badge.gameObject.SetActive(false);
 
         if (crabInfo.hasResearchCoat && Random.Range(0, 10) < 3)
         {
@@ -129,7 +127,6 @@ public class CrabController : MonoBehaviour
             case CrabState.Leaving:
                 {
                     RemoveTicketAndID();
-
                     if (DialogueManager.instance != null) DialogueManager.instance.ClearDialogue();
                     //kiosk.SetState(Kiosk.KioskState.CrabLeaving);
 
@@ -158,7 +155,6 @@ public class CrabController : MonoBehaviour
                     if (Vector2.Distance(rectTransform.anchoredPosition, kioskEndPos) < 5f && !presented)
                     {
                         presented = true;
-
                         if (LevelManagerBase.instance.GetIsTutorial()) PresentTicketAndIDNoForgery();   // TODO: make this cleaner later
                         else PresentTicketAndID();
                         Dialogue();
@@ -264,6 +260,7 @@ public class CrabController : MonoBehaviour
 
     public void PresentTicketAndIDNoForgery()   // for tutorial purposes
     {
+        Debug.Log(1);
         ticket = Instantiate(ticketPrefab, ticketAndIDParentObject.transform);
 
         //ticket = Instantiate(ticketPrefab, ticketAndIDParentObject.transform);

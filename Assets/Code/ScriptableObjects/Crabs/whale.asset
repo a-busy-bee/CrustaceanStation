@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: whale
   m_EditorClassIdentifier: Assembly-CSharp::CrabInfo
   sprite: {fileID: 21300000, guid: 77f3a6b6e602c4953b74a005ff9d33ab, type: 3}
-  kioskHeight: 14
+  kioskHeight: 609
   isLarge: 1
-  crabName: 
+  crabName: Calli
   type: 25
   favoriteWeatherTypes: 01000000020000000000000003000000
   crabdexName: whale
@@ -23,3 +23,8 @@ MonoBehaviour:
   variantName: 
   mini: {fileID: 11400000, guid: c77a9caa810ac43b9b4856be3bd884a0, type: 2}
   isMultiple: 0
+  plotLevel: 0
+  isImportantCharacter: 0
+  characterNameID: 
+  hasResearchCoat: 0
+  mutatedSprite: []

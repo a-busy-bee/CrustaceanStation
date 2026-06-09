@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: puffin_stoop
   m_EditorClassIdentifier: Assembly-CSharp::CrabInfo
   sprite: {fileID: 21300000, guid: 1da8d207ca1a0a0489dfecc36dd22ca1, type: 3}
-  kioskHeight: 89
+  kioskHeight: 609
   isLarge: 0
   crabName: 
   type: 21
@@ -27,3 +27,4 @@ MonoBehaviour:
   isImportantCharacter: 0
   characterNameID: 
   hasResearchCoat: 0
+  mutatedSprite: []

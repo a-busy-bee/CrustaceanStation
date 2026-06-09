@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class Tutorial : MonoBehaviour
 {
     [SerializeField] private GameObject pointer;
-    [SerializeField] private RectTransform pointerTransform;
+    [SerializeField] private Transform pointerTransform;
     [SerializeField] private RectTransform[] waypoints; // indices should correspond to states
     [SerializeField] private GameObject[] texts;  // indices should correspond to states
     [SerializeField] private GameObject clickAnyWhereToContinue;
@@ -16,7 +16,7 @@ public class Tutorial : MonoBehaviour
 
 
     private bool isMoving = false;
-    private Vector2 currentVelocity;
+    private Vector3 currentVelocity;
     private bool isFirstCrab;
 
     public enum TutorialState
@@ -159,9 +159,9 @@ public class Tutorial : MonoBehaviour
     {
         if (isMoving)
         {
-            pointerTransform.anchoredPosition = Vector2.SmoothDamp(pointerTransform.anchoredPosition, waypoints[(int)tutorialState].anchoredPosition, ref currentVelocity, 0.25f);
+            pointerTransform.position = Vector3.SmoothDamp(pointerTransform.position, waypoints[(int)tutorialState].position, ref currentVelocity, 0.25f);
 
-            if (Vector2.Distance(pointerTransform.anchoredPosition, waypoints[(int)tutorialState].anchoredPosition) < 1f)
+            if (Vector2.Distance(pointerTransform.position, waypoints[(int)tutorialState].position) < 1f)
             {
                 isMoving = false;
                 ShowText();

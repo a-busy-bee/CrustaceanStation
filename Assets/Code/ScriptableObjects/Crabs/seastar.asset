@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: seastar
   m_EditorClassIdentifier: Assembly-CSharp::CrabInfo
   sprite: {fileID: 21300000, guid: fbfa693c36e5f4e4fa82cf1bcf39791b, type: 3}
-  kioskHeight: 89
+  kioskHeight: 609
   isLarge: 0
   crabName: 
   type: 7
@@ -27,3 +27,4 @@ MonoBehaviour:
   isImportantCharacter: 0
   characterNameID: 
   hasResearchCoat: 0
+  mutatedSprite: []

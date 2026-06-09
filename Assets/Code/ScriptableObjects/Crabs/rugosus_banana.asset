@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: rugosus_banana
   m_EditorClassIdentifier: Assembly-CSharp::CrabInfo
   sprite: {fileID: 21300000, guid: 5604c0486cf5546fdba4452639de8f81, type: 3}
-  kioskHeight: 102
+  kioskHeight: 609
   isLarge: 0
   crabName: 
   type: 16
@@ -27,3 +27,4 @@ MonoBehaviour:
   isImportantCharacter: 0
   characterNameID: 
   hasResearchCoat: 0
+  mutatedSprite: []
