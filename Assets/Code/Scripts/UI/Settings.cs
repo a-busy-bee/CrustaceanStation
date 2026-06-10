@@ -105,6 +105,8 @@ public class Settings : MonoBehaviour
         PlayerPrefs.SetInt("decor_left", 0);
         PlayerPrefs.SetInt("decor_right", 0);
 
+        PlayerPrefs.SetInt("first day", 0);
+
         PlayerPrefs.SetInt("coins", 0);
 
         areYouSurePanel.SetActive(false);

@@ -18068,9 +18068,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0
+    y: 0.050107747
     width: 1
-    height: 1
+    height: 0.8997845
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -29967,6 +29967,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 371900989}
     m_Modifications:
+    - target: {fileID: 98602002799064366, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 98602002799064366, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 102680144930762329, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
       propertyPath: m_SizeDelta.x
       value: 488.04
@@ -30021,6 +30029,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3277262418903289014, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6007987761869305481, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6182215521950669315, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
@@ -30164,7 +30176,8 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1366673017418619995, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 6182215521950669315, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
       insertIndex: 0

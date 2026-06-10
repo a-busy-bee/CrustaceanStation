@@ -23,7 +23,7 @@ public class HeadlineManager : MonoBehaviour
     private HeadlineData headlineData;
     [SerializeField] private HeadlineObject headlineObject;
 
-	private void Awake()
+    private void Awake()
     {
         if (instance != null && instance != this)
         {
@@ -34,7 +34,7 @@ public class HeadlineManager : MonoBehaviour
             instance = this;
         }
     }
-	private void Start()
+    private void Start()
     {
         LoadJson();
     }
@@ -63,5 +63,10 @@ public class HeadlineManager : MonoBehaviour
     public void GetPlotHeadline(PlotManager.Stage stage)
     {
         headlineObject.SetText(60, headlineData.nodesPlot[(int)stage].text[UnityEngine.Random.Range(0, headlineData.nodesPlot[(int)stage].text.Length)]);
+    }
+
+    public void SetSpecificText(int fontSize, string text)
+    {
+        headlineObject.SetText(fontSize, text);
     }
 }
