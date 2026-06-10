@@ -460,13 +460,13 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 070cb9c5915961c4e93aea0f3b08107b, type: 3}
     volume: 0.68
     pitch: 1
-    loop: 0
+    loop: 1
     source: {fileID: 0}
   - name: rain
     clip: {fileID: 8300000, guid: e77e24fe4a33ec14298626096d87f423, type: 3}
     volume: 0.78
     pitch: 1
-    loop: 0
+    loop: 1
     source: {fileID: 0}
 --- !u!1 &34430412
 GameObject:
@@ -5234,6 +5234,7 @@ GameObject:
   m_Component:
   - component: {fileID: 389501543}
   - component: {fileID: 389501545}
+  - component: {fileID: 389501546}
   m_Layer: 0
   m_Name: Music
   m_TagString: Untagged
@@ -5275,6 +5276,18 @@ MonoBehaviour:
     pitch: 1
     loop: 1
     source: {fileID: 0}
+--- !u!114 &389501546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 389501542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c41e81b65a29dc479c67ab1a2e56709, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BgmManager
 --- !u!1 &412124393
 GameObject:
   m_ObjectHideFlags: 0
@@ -8162,7 +8175,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 636831357}
-  - component: {fileID: 636831358}
   m_Layer: 0
   m_Name: Audio
   m_TagString: Untagged
@@ -8188,18 +8200,6 @@ Transform:
   - {fileID: 2022026941}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &636831358
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 636831356}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c41e81b65a29dc479c67ab1a2e56709, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BgmManager
 --- !u!1 &643610805
 GameObject:
   m_ObjectHideFlags: 0
@@ -9820,9 +9820,7 @@ MonoBehaviour:
   approveButton: {fileID: 534969239}
   rejectButton: {fileID: 1416969083}
   debugMode: 1
-  charactersToForce:
-  - {fileID: 1918681812830035428, guid: 4a2b52b4d2ff64f64a8decf1d3b10082, type: 3}
-  - {fileID: 1918681812830035428, guid: 7684437382797ca4082dc20f00ff8fec, type: 3}
+  charactersToForce: []
 --- !u!1 &730704855
 GameObject:
   m_ObjectHideFlags: 0
@@ -16420,10 +16418,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.084840626
-    y: 0
-    width: 0.83031875
-    height: 1
+    x: 0
+    y: 0.016435742
+    width: 1
+    height: 0.9671285
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -18134,7 +18132,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -48, y: 12.792053}
+  m_AnchoredPosition: {x: -48, y: 12.791992}
   m_SizeDelta: {x: 897.42993, y: 186.41748}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1399518706
@@ -21884,6 +21882,7 @@ GameObject:
   - component: {fileID: 1650822138}
   - component: {fileID: 1650822140}
   - component: {fileID: 1650822139}
+  - component: {fileID: 1650822141}
   m_Layer: 0
   m_Name: BackgroundOverlay
   m_TagString: Untagged
@@ -21923,7 +21922,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6226415, g: 0.6226415, b: 0.6226415, a: 0.972549}
+  m_Color: {r: 0.6226415, g: 0.6226415, b: 0.6226415, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -21948,6 +21947,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1650822137}
   m_CullTransparentMesh: 1
+--- !u!95 &1650822141
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1650822137}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4e9e6bc23fba03140b9d8372dcac5b45, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1654342817
 GameObject:
   m_ObjectHideFlags: 0
@@ -29420,7 +29441,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6182215521950669315, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -18.834045
+      value: -18.833984
       objectReference: {fileID: 0}
     - target: {fileID: 6182215521950669315, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

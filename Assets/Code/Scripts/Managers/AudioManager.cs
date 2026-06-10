@@ -27,12 +27,9 @@ public class AudioManager : MonoBehaviour
             s.source.name = s.name;
         }
     }
-    public void Play(string name, bool randomize = false)
+
+    public void Stop(string name)
     {
-        //audioSource.UnPause();
-
-        //Debug.Log("playing: " + name);
-
         Sound s = Array.Find(sounds, sound => sound.name == name);
         if (s == null)
         {
@@ -42,6 +39,24 @@ public class AudioManager : MonoBehaviour
         if (s.source == null)
         {
             print("no audio source found for " + name);
+            return;
+        }
+        s.source.Stop();
+
+    }
+    public void Play(string name, bool randomize = false)
+    {
+        Debug.Log("playing: " + name);
+
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (s == null)
+        {
+            Debug.Log("sound not found:" + name);
+            return;
+        }
+        if (s.source == null)
+        {
+            Debug.Log("no audio source found for " + name);
             return;
         }
         if (randomize)
@@ -99,31 +114,33 @@ public class AudioManager : MonoBehaviour
 
     private IEnumerator FadeRoutine(Sound oldTrack, Sound newTrack, float duration)
     {
-        //print("running fade routine from " + oldTrack.name + " to " + newTrack.name);
+        print("running fade routine from " + oldTrack.name + " to " + newTrack.name);
         float currentTime = 0;
 
-        newTrack.source.volume = 0;
-        newTrack.source.Play();
+        newTrack.volume = 0;
+        Play(newTrack.name);
 
         while (currentTime < duration)
         {
+            Debug.Log("fading");
             currentTime += Time.deltaTime;
             float t = currentTime / duration;
 
             if (oldTrack != null)
-                oldTrack.source.volume = Mathf.Lerp(sounds[0].source.volume, 0f, t);
+                oldTrack.volume = Mathf.Lerp(1f, 0f, t);
 
-            newTrack.source.volume = Mathf.Lerp(0f, sounds[0].source.volume, t);
+            newTrack.volume = Mathf.Lerp(0f, 1f, t);
 
             yield return null;
         }
 
         if (oldTrack != null)
         {
-            oldTrack.source.Stop();
+            Stop(oldTrack.name);
         }
 
-        newTrack.source.volume = sounds[0].source.volume;
+        Debug.Log("fade complete");
+        newTrack.volume = 1f;
         _currentTrack = newTrack;
     }
 }
