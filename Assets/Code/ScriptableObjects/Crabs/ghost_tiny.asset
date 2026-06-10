@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ghost_tiny
   m_EditorClassIdentifier: Assembly-CSharp::CrabInfo
   sprite: {fileID: 21300000, guid: 9d5fb5df5624a471c8f014167d67b88d, type: 3}
-  kioskHeight: 89
+  kioskHeight: 609
   isLarge: 0
   crabName: 
   type: 17
@@ -27,3 +27,4 @@ MonoBehaviour:
   isImportantCharacter: 0
   characterNameID: 
   hasResearchCoat: 0
+  mutatedSprite: []

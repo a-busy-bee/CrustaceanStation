@@ -172,6 +172,7 @@ public class CartSeat : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
             }
 
             isTaken = false;
+            cartPopup.RemoveCharacter(row, column);
 
             splatterObject.SetActive(true);
         }
@@ -352,12 +353,19 @@ public class CartSeat : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         cartPopup.SeatCharacter(row, column);
         audioManager.Play("seat");
 
+        if (currReaction == ReactionType.fear || currReaction == ReactionType.yummy)
+        {
+            if (PerformanceManager.instance != null) PerformanceManager.instance.Incorrect();
+        }
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
+        
         if (isTaken || hasSelected) return;
         if ((currMini.isMultiple || currMini.isLarge) && !cartPopup.CheckIfBothSeatsAreOpen(row, column)) return;
+        // if col is 1 or 3 and the prev seat has a large
+        if ((column == 1 || column == 3) && cartPopup.IsPrevSeatWithLarge(row, column)) return;
 
         if (currMini.isMultiple)
         {

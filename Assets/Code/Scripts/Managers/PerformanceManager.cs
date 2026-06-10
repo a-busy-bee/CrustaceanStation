@@ -61,8 +61,19 @@ public class PerformanceManager : MonoBehaviour
     [ContextMenu("Correct")]
     public void Correct()
     {
-        Debug.Log("correct");
+        //Debug.Log("correct");
         barPercent += stepSize;
+        if (barPercent >= 1) barPercent = 1;
+
+        Save();
+        UpdateSlider();
+    }
+
+    [ContextMenu("Correct Half")]
+    public void CorrectHalf() // for smaller increases
+    {
+        //Debug.Log("correct");
+        barPercent += stepSize / 2;
         if (barPercent >= 1) barPercent = 1;
 
         Save();
@@ -72,9 +83,21 @@ public class PerformanceManager : MonoBehaviour
     [ContextMenu("Incorrect")]
     public void Incorrect()
     {
-        Debug.Log("incorrect");
+        //Debug.Log("incorrect");
         numWrong++;
         barPercent -= stepSize * 3.5f;
+        if (barPercent <= 0) barPercent = 0;
+
+        Save();
+        UpdateSlider();
+    }
+
+    [ContextMenu("Incorrect Half")]
+    public void IncorrectHalf()
+    {
+        //Debug.Log("incorrect");
+        numWrong++;
+        barPercent -= stepSize;
         if (barPercent <= 0) barPercent = 0;
 
         Save();

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: seabunny_magenta
   m_EditorClassIdentifier: Assembly-CSharp::CrabInfo
   sprite: {fileID: 21300000, guid: b68a133dccdee214b8710eb275f7fac9, type: 3}
-  kioskHeight: 89
+  kioskHeight: 609
   isLarge: 0
   crabName: 
   type: 2
@@ -27,3 +27,4 @@ MonoBehaviour:
   isImportantCharacter: 0
   characterNameID: 
   hasResearchCoat: 0
+  mutatedSprite: []

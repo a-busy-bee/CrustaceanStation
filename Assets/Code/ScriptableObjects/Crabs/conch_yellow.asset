@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: conch_yellow
   m_EditorClassIdentifier: Assembly-CSharp::CrabInfo
   sprite: {fileID: 21300000, guid: 0f41273b5eee4438fb1f73ae4d94c351, type: 3}
-  kioskHeight: 89
+  kioskHeight: 609
   isLarge: 0
   crabName: 
   type: 7
@@ -27,3 +27,4 @@ MonoBehaviour:
   isImportantCharacter: 0
   characterNameID: 
   hasResearchCoat: 0
+  mutatedSprite: []
