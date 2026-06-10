@@ -5,14 +5,14 @@ public class BgmManager : MonoBehaviour
 {
     void Start()
     {
-        // play first element in bgm audiomanagers (they will only have one)
-        foreach (AudioManager audioManager in GetComponentsInChildren<AudioManager>())
-        {
-            if (audioManager.sounds[0].name == "seat")
-            {
-                continue;
-            }
-            audioManager.Play(audioManager.sounds[0].name);
-        }
+        StartMusic();
+    }
+
+    private void StartMusic()
+    {
+        AudioManager thisAudManager = GetComponent<AudioManager>();
+
+        // play first element for now bc we dont have multiple musics lol
+        thisAudManager.Play(thisAudManager.sounds[0].name);
     }
 }
