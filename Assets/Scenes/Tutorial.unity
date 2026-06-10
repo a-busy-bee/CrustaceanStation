@@ -11566,7 +11566,6 @@ GameObject:
   - component: {fileID: 777154369}
   - component: {fileID: 777154368}
   - component: {fileID: 777154367}
-  - component: {fileID: 777154372}
   m_Layer: 5
   m_Name: Approve
   m_TagString: Untagged
@@ -11627,7 +11626,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffa8b3412c3b4c6438f420715311003a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonClick
-  audioManager: {fileID: 0}
+  audioManager: {fileID: 1737589883}
 --- !u!114 &777154369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11675,18 +11674,6 @@ MonoBehaviour:
       - m_Target: {fileID: 728166980}
         m_TargetAssemblyTypeName: KioskTutorial, Assembly-CSharp
         m_MethodName: OnApprove
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11746,25 +11733,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 777154365}
   m_CullTransparentMesh: 1
---- !u!114 &777154372
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 777154365}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c79886b9a5734e6893fea679edccee1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
-  sounds:
-  - name: click
-    clip: {fileID: 8300000, guid: 30bfffeb38d7d9d419e6e4bde8871bf1, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
 --- !u!1 &821642189
 GameObject:
   m_ObjectHideFlags: 0
@@ -14420,7 +14388,6 @@ GameObject:
   - component: {fileID: 1012089316}
   - component: {fileID: 1012089315}
   - component: {fileID: 1012089314}
-  - component: {fileID: 1012089319}
   m_Layer: 5
   m_Name: Reject
   m_TagString: Untagged
@@ -14481,7 +14448,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffa8b3412c3b4c6438f420715311003a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonClick
-  audioManager: {fileID: 0}
+  audioManager: {fileID: 1737589883}
 --- !u!114 &1012089316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14538,18 +14505,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1012089317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14588,25 +14543,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1012089312}
   m_CullTransparentMesh: 1
---- !u!114 &1012089319
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1012089312}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c79886b9a5734e6893fea679edccee1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
-  sounds:
-  - name: click
-    clip: {fileID: 8300000, guid: 30bfffeb38d7d9d419e6e4bde8871bf1, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
 --- !u!1 &1016089575
 GameObject:
   m_ObjectHideFlags: 0
@@ -18068,9 +18004,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.050107747
+    y: 0
     width: 1
-    height: 0.8997845
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -26600,9 +26536,9 @@ RectTransform:
   m_LocalScale: {x: 43.785053, y: 43.785053, z: 43.785053}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 57606789}
   - {fileID: 777154366}
   - {fileID: 1012089313}
+  - {fileID: 57606789}
   m_Father: {fileID: 308652382}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
