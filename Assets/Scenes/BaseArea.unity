@@ -16420,9 +16420,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0
+    y: 0.049895942
     width: 1
-    height: 1
+    height: 0.9002081
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -20973,7 +20973,7 @@ RectTransform:
   m_Father: {fileID: 1194432439}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: -2.4900208, y: 0}
   m_SizeDelta: {x: 4.98, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -29334,8 +29334,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1336270102091104323, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1051.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 1336270102091104323, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -19
+      value: 27.955
       objectReference: {fileID: 0}
     - target: {fileID: 1336270102091104323, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -29347,7 +29351,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1639378932290881002, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2426111981360602274, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -29419,7 +29423,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6182215521950669315, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -18.834045
+      value: -18.833984
       objectReference: {fileID: 0}
     - target: {fileID: 6182215521950669315, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -29435,11 +29439,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7324326255910826115, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
       propertyPath: m_text
-      value: Predators pose danger to all, report anything suspicious
+      value: "What\u2019s the Secret Behind Staying So Young and Healthy? Krusty
+        Kaleb Reveals All\u2026"
       objectReference: {fileID: 0}
     - target: {fileID: 7324326255910826115, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
       propertyPath: m_fontSize
-      value: 100
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7324326255910826115, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
+      propertyPath: m_margin.x
+      value: -133.50363
       objectReference: {fileID: 0}
     - target: {fileID: 7324326255910826115, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
       propertyPath: m_fontStyle
@@ -29451,7 +29460,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7324326255910826115, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
       propertyPath: m_fontSizeBase
-      value: 100
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 7324326255910826115, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
       propertyPath: m_VerticalAlignment
@@ -29459,11 +29468,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7324326255910826115, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
       propertyPath: m_HorizontalAlignment
-      value: 1
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8347519176766074972, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1370.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 8347519176766074972, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 794.342
+      objectReference: {fileID: 0}
+    - target: {fileID: 8347519176766074972, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8347519176766074972, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -112.47
       objectReference: {fileID: 0}
     - target: {fileID: 8347519176766074972, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 65.186
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
