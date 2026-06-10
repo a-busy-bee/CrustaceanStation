@@ -256,6 +256,7 @@ public class CrabController : MonoBehaviour
         cartType = LevelManagerBase.instance.GetRandomCurrentCartType();
 
         if (!isShuttle) ticket.GetComponent<Ticket>().SetSprite(cartType);
+        else cartType = Cart.Type.Shuttle;
     }
 
     public void PresentTicketAndIDNoForgery()   // for tutorial purposes
