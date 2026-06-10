@@ -353,6 +353,10 @@ public class CartSeat : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         cartPopup.SeatCharacter(row, column);
         audioManager.Play("seat");
 
+        if (currReaction == ReactionType.fear || currReaction == ReactionType.yummy)
+        {
+            if (PerformanceManager.instance != null) PerformanceManager.instance.Incorrect();
+        }
     }
 
     public void OnPointerEnter(PointerEventData eventData)

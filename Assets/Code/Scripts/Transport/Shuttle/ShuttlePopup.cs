@@ -34,6 +34,10 @@ public class ShuttlePopup : TransportPopup
         {
             Kiosk.instance.WrongTransport();
         }
+        else
+        {
+            Kiosk.instance.CorrectTransport();
+        }
 
         // tell kiosk to wait then summon new crab
         Kiosk.instance.SetState(Kiosk.KioskState.CrabLeaving);

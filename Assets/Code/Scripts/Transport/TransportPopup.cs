@@ -194,7 +194,11 @@ public class TransportPopup : MonoBehaviour
         Cart.Type ticketCartType = Kiosk.instance.GetCurrentCrabTicket();
         if (ticketCartType != type) // if the crab chose the wrong cart
         {
-            Kiosk.instance.DowngradedCart();
+            Kiosk.instance.WrongTransport();
+        }
+        else
+        {
+            Kiosk.instance.CorrectTransport();
         }
 
         // tell kiosk to wait then summon new crab
