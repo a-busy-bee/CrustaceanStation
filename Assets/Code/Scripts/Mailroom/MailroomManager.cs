@@ -29,6 +29,9 @@ public class MailroomManager : MonoBehaviour
     [SerializeField] private GameObject hideLetterButton;
     [SerializeField] private GameObject backgroundOverlay;
 
+    // AUDIO
+    [SerializeField] private AudioManager audioManager;
+
     // MOVEMENT
     public enum LetterState
     {
@@ -229,6 +232,9 @@ public class MailroomManager : MonoBehaviour
 
     private void BringUpLetter(GameObject chosen)
     {
+        //play audio
+        audioManager.Play("paper", true);
+
         if (chosen == null) return;
 
         if (chosen == letter) objectIdxMoving = 0;
@@ -243,8 +249,10 @@ public class MailroomManager : MonoBehaviour
 
     public void BringDownLetter()
     {
-        audioManager.Play("paper");
-        SetState(LetterState.letterMovingDown); 
+        //play audio
+        audioManager.Play("paper", true);
+
+        SetState(LetterState.letterMovingDown);
     }
 
     private void Update()

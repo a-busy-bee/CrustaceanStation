@@ -549,9 +549,9 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 6322bc9e4a93a074895850f1a528c453, type: 2}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 7c681c700179c4c3db2046cbe2542e09, type: 3}
+  m_Resource: {fileID: 8300000, guid: a3de5708c7027402485c746f1dfab272, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.837
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1300,6 +1300,7 @@ MonoBehaviour:
   crabdexNotif: {fileID: 348852639}
   hideLetterButton: {fileID: 1777812758}
   backgroundOverlay: {fileID: 1889033795}
+  audioManager: {fileID: 1622936249}
 --- !u!114 &414618969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2905,6 +2906,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1622936250}
   - {fileID: 307685961}
   - {fileID: 853173736}
   m_Father: {fileID: 0}
@@ -3059,6 +3061,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1618672297}
   m_CullTransparentMesh: 1
+--- !u!1 &1622936248
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1622936250}
+  - component: {fileID: 1622936249}
+  m_Layer: 0
+  m_Name: SFX
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1622936249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1622936248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c79886b9a5734e6893fea679edccee1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
+  sounds:
+  - name: paper
+    clip: {fileID: 8300000, guid: c880153d67ae0234b89bc1134df03db4, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: tap
+    clip: {fileID: 8300000, guid: d1d27cdf8a5548c4b9591fd66042619e, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+--- !u!4 &1622936250
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1622936248}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 789.1165, y: 331.5391, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1407381865}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1687433431
 GameObject:
   m_ObjectHideFlags: 0
@@ -3829,6 +3888,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9941fa9810d874a069d727ba428ef766, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MailKeeper
+  audioManager: {fileID: 1622936249}
   rectTransform: {fileID: 5737339429610539296}
   coin: {fileID: 1184568855}
 --- !u!1660057539 &9223372036854775807
