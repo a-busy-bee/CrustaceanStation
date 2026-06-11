@@ -6,10 +6,10 @@ public class DisplayScrpt : MonoBehaviour
 {
     [SerializeField] private float speed = 16.0f;
 
-    private Vector2 offPosBoard = new Vector2(0, 1110);
-    private Vector2 onPosBoard = new Vector2(0, 27.7f);
-    private Vector2 offPosCrab = new Vector2(-217, -776f);
-    private Vector2 onPosCrab = new Vector2(-217, -434);
+    private Vector2 offPosBoard = new Vector2(0, 1929);
+    private Vector2 onPosBoard = new Vector2(0, 0);
+    private Vector2 offPosCrab = new Vector2(-292, -460);
+    private Vector2 onPosCrab = new Vector2(-292, 0);
     [SerializeField] private RectTransform rectTransformBoard;
     [SerializeField] private RectTransform rectTransformCrab;
     private Vector2 currVelocityBoard;

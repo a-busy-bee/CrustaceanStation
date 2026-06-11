@@ -13,6 +13,7 @@ public class MailroomManager : MonoBehaviour
     public static MailroomManager instance { get; private set; }
 
     [SerializeField] private Mailbox mailbox;
+    [SerializeField] private AudioManager audioManager;
 
     [Header("Letter Types")]
     [SerializeField] private GameObject letter;
@@ -23,7 +24,7 @@ public class MailroomManager : MonoBehaviour
     [SerializeField] private Image letterImage;
     [SerializeField] private Sprite[] letterSprites;
 
-    //UI
+    [Header("UI")]
     [SerializeField] private GameObject crabdexNotif;
     [SerializeField] private GameObject hideLetterButton;
     [SerializeField] private GameObject backgroundOverlay;
@@ -44,8 +45,8 @@ public class MailroomManager : MonoBehaviour
     private GameObject currentLetter;
 
     // POSITION
-    private Vector2 letterYPos = new Vector2(-1218, -23);           // starting pos, ending pos
-    private Vector2 feedbackFormYPos = new Vector2(-958, -195);
+    private Vector2 letterYPos = new Vector2(-1423, 0);           // starting pos, ending pos
+    private Vector2 feedbackFormYPos = new Vector2(-1259, -171);
     private Vector2 largeNoteYPos = new Vector2(-1171, 23);
     private Vector2 smallNoteYPos = new Vector2(-1463, -269);
     private Vector2[] yPos;
@@ -242,6 +243,7 @@ public class MailroomManager : MonoBehaviour
         else if (chosen == smallNote) objectIdxMoving = 3;
 
         currentLetter = chosen;
+        audioManager.Play("paper");
         SetState(LetterState.letterMovingUp);
     }
 

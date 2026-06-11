@@ -29,10 +29,14 @@ public class ShuttlePopup : TransportPopup
         badness += currHowBad; 
 
         // if ticket info was wrong
-        Cart.Type ticketCartType = Kiosk.instance.GetCurrentCrabTicket();
+        Cart.Type ticketCartType = KioskBase.instance.GetCurrentCrabTicket();
         if (ticketCartType != type) // if the crab is otherwise valid, but chose the wrong cart
         {
             Kiosk.instance.WrongTransport();
+        }
+        else
+        {
+            Kiosk.instance.CorrectTransport();
         }
 
         // tell kiosk to wait then summon new crab

@@ -325,22 +325,13 @@ public class KioskBase : MonoBehaviour
     {
         if (PerformanceManager.instance == null) return;
 
-        PerformanceManager.instance.Incorrect();
+        PerformanceManager.instance.IncorrectHalf();
     }
-    public void DowngradedCart()
+    public void CorrectTransport()
     {
-        //wrong += 0.5f;
         if (PerformanceManager.instance == null) return;
 
-        PerformanceManager.instance.Incorrect();
-    }
-
-    public void UpgradedCart()
-    {
-        //total++;
-        if (PerformanceManager.instance == null) return;
-
-        PerformanceManager.instance.Incorrect();
+        PerformanceManager.instance.CorrectHalf();
     }
 
     public AudioManager GetSFXManager()

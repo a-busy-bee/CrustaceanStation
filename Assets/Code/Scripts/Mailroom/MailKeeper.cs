@@ -7,7 +7,7 @@ public class MailKeeper : MonoBehaviour, IPointerClickHandler
     [SerializeField] private AudioManager audioManager;
     [SerializeField] private RectTransform rectTransform;
     private bool isMoving = false;
-    private Vector3 endPos = new Vector3(537, 452.56f, 0);
+    private Vector3 endPos = new Vector3(-534, 693, 0);
     private Vector3 currentVelocity;
     private Animator animator;
 

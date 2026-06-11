@@ -174,7 +174,7 @@ public class TransportPopup : MonoBehaviour
         }
 
     }
-
+  
     public virtual void SeatCharacter(int row, int column)
     {
         seatDictionary[currID][row, column].Item1 = currMini;
@@ -194,7 +194,11 @@ public class TransportPopup : MonoBehaviour
         Cart.Type ticketCartType = Kiosk.instance.GetCurrentCrabTicket();
         if (ticketCartType != type) // if the crab chose the wrong cart
         {
-            Kiosk.instance.DowngradedCart();
+            Kiosk.instance.WrongTransport();
+        }
+        else
+        {
+            Kiosk.instance.CorrectTransport();
         }
 
         // tell kiosk to wait then summon new crab
@@ -232,6 +236,14 @@ public class TransportPopup : MonoBehaviour
         coins -= badness;
 
         GenerateNewSeats();
+
+        for (int row = 0; row < numRows; row++)
+        {
+            for (int col = 0; col < 4; col++)
+            {
+                seatObjects[row, col].Reset();
+            }
+        }
 
         return coins;
     }
@@ -281,13 +293,12 @@ public class TransportPopup : MonoBehaviour
                         {
                             minis[row, col].Item1 = mini;
                             minis[row, col].Item2 = 0;
-                            
+
                         }
-                        
+
                     }
 
                 }
-
             }
         }
     }
@@ -496,6 +507,11 @@ public class TransportPopup : MonoBehaviour
         return !seatObjects[row, seatPairs[col]].IsTaken();
     }
 
+    public bool IsPrevSeatWithLarge(int row, int col)
+    {
+        return seatObjects[row, seatPairs[col]].IsTaken() && seatDictionary[currID][row, seatPairs[col]].Item1.isLarge;
+    }
+
     public void ShowGhostMultiple(Sprite mult, int row, int col)
     {
         seatObjects[row, seatPairs[col]].ShowGhostSpriteForMultiple(mult);
@@ -514,6 +530,11 @@ public class TransportPopup : MonoBehaviour
     public void PlayGhostAnim(int row, int col)
     {
         seatObjects[row, seatPairs[col]].PlayAnim(CartSeat.ReactionType.happy);
+    }
+
+    public void RemoveCharacter(int row, int col)
+    {
+        seatDictionary[currID][row, col].Item1 = defaultEmpty;
     }
 
     public void SeatMultiple(Sprite mult, int row, int col)

@@ -149,6 +149,7 @@ GameObject:
   - component: {fileID: 1375898490629199829}
   - component: {fileID: 8158084900486435732}
   - component: {fileID: 7444202301562106437}
+  - component: {fileID: 7056545875616714827}
   m_Layer: 5
   m_Name: ShuttleTicket
   m_TagString: Untagged
@@ -206,11 +207,30 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1088732259898174776}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09b5d640d90f342869ec24934fd8a233, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Ticket
+  nameText: {fileID: 2563560616474404583}
+  blur: {fileID: 1221432070851049970}
+  rectTransform: {fileID: 6530686145522743809}
+  ticketSprites: []
+  ticketImg: {fileID: 6244236569825186139}
+  blurImg: {fileID: 4120710630050837951}
+  canvasGroup: {fileID: 8158084900486435732}
+--- !u!114 &7056545875616714827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088732259898174776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8fff703772bc4e68a89d3f0092e37cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ShuttleTicket
   nameText: {fileID: 2563560616474404583}
   blur: {fileID: 1221432070851049970}
   rectTransform: {fileID: 6530686145522743809}
