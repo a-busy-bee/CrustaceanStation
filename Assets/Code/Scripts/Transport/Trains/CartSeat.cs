@@ -89,6 +89,12 @@ public class CartSeat : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         }
     }
 
+    public void Reset()
+    {
+        currReaction = ReactionType.none;
+        splatterObject.SetActive(false);
+    }
+
     public void HasSelected(bool newHasSelected)
     {
         hasSelected = newHasSelected;
