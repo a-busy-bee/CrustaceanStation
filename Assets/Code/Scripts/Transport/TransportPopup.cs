@@ -237,6 +237,14 @@ public class TransportPopup : MonoBehaviour
 
         GenerateNewSeats();
 
+        for (int row = 0; row < numRows; row++)
+        {
+            for (int col = 0; col < 4; col++)
+            {
+                seatObjects[row, col].Reset();
+            }
+        }
+
         return coins;
     }
 
@@ -285,13 +293,12 @@ public class TransportPopup : MonoBehaviour
                         {
                             minis[row, col].Item1 = mini;
                             minis[row, col].Item2 = 0;
-                            
+
                         }
-                        
+
                     }
 
                 }
-
             }
         }
     }
