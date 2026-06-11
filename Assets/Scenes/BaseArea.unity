@@ -4791,6 +4791,7 @@ GameObject:
   m_Component:
   - component: {fileID: 389501543}
   - component: {fileID: 389501545}
+  - component: {fileID: 389501546}
   m_Layer: 0
   m_Name: Music
   m_TagString: Untagged
@@ -4832,6 +4833,18 @@ MonoBehaviour:
     pitch: 1
     loop: 1
     source: {fileID: 0}
+--- !u!114 &389501546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 389501542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c41e81b65a29dc479c67ab1a2e56709, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BgmManager
 --- !u!1 &412124393
 GameObject:
   m_ObjectHideFlags: 0
@@ -7752,7 +7765,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 636831356}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6c41e81b65a29dc479c67ab1a2e56709, type: 3}
   m_Name: 
@@ -28653,6 +28666,22 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 715301910946744419, guid: 4de3e27ee11244dfc8f80c9f950e5da8, type: 3}
+      propertyPath: audioManagers.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 715301910946744419, guid: 4de3e27ee11244dfc8f80c9f950e5da8, type: 3}
+      propertyPath: 'audioManagers.Array.data[0]'
+      value: 
+      objectReference: {fileID: 389501545}
+    - target: {fileID: 715301910946744419, guid: 4de3e27ee11244dfc8f80c9f950e5da8, type: 3}
+      propertyPath: 'audioManagers.Array.data[1]'
+      value: 
+      objectReference: {fileID: 16485895}
+    - target: {fileID: 715301910946744419, guid: 4de3e27ee11244dfc8f80c9f950e5da8, type: 3}
+      propertyPath: 'audioManagers.Array.data[2]'
+      value: 
+      objectReference: {fileID: 2022026942}
     - target: {fileID: 1038922133549985922, guid: 4de3e27ee11244dfc8f80c9f950e5da8, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -28809,6 +28838,26 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6619536536866290702, guid: 4de3e27ee11244dfc8f80c9f950e5da8, type: 3}
+      propertyPath: audioManagers.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6619536536866290702, guid: 4de3e27ee11244dfc8f80c9f950e5da8, type: 3}
+      propertyPath: 'audioManagers.Array.data[0]'
+      value: 
+      objectReference: {fileID: 16485895}
+    - target: {fileID: 6619536536866290702, guid: 4de3e27ee11244dfc8f80c9f950e5da8, type: 3}
+      propertyPath: 'audioManagers.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2022026942}
+    - target: {fileID: 8909500096686755647, guid: 4de3e27ee11244dfc8f80c9f950e5da8, type: 3}
+      propertyPath: audioManagers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909500096686755647, guid: 4de3e27ee11244dfc8f80c9f950e5da8, type: 3}
+      propertyPath: 'audioManagers.Array.data[0]'
+      value: 
+      objectReference: {fileID: 389501545}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
