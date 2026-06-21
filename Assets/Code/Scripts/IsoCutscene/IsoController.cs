@@ -13,31 +13,33 @@ public class IsoController : MonoBehaviour
     private IsoState currState = IsoState.walking;
     private IsoState prevState;
 
-    // physics
-    private Rigidbody2D rb;
+    // movement
     private RectTransform rectTransform;
-    private Vector2 targetPos;
-    private float walkSpeed;
-    private Vector2 walkSpeedRange = new Vector2(100f, 500f);
-    private float walkProgress;
+    private Vector2 speedRange = new Vector2(100f, 500f);   // min/max speeds
+    private const float rollingSpeedRangeOffset = 250.0f;
+    private const float circumference = 2f * Mathf.PI * 85;     // circumference of rolled up sprite
+    private const float degPerSecAnim = 60f;                    // used to calculate rolling anim speed
+
+    // set at runtime
+    private Vector2 targetPos;  
     private Vector2 currPos;
+    private float currSpeed;
+    private float currProgress;
 
     // sprites
     private Color color;
     [SerializeField] private GameObject rollingSprite;
     [SerializeField] private GameObject walkingSprite;
 
+    // misc
+    [SerializeField] private Emotion emotionRolling;
+    [SerializeField] private Emotion emotionWalking;
+
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
         rectTransform = GetComponent<RectTransform>();
-        rectTransform.anchoredPosition = new Vector2(0, 0);
-
-        currState = IsoState.walking;
-
-        // walk forward a bit, then let loose
-        Walk(true);
+        StartCoroutine(WaitThenSwitchStates());
     }
 
     public void SetState(IsoState newState)
@@ -48,19 +50,19 @@ public class IsoController : MonoBehaviour
         {
             case IsoState.rolling:
                 {
-                    Debug.Log("rolling");
+                    //Debug.Log("rolling");
                     Roll();
                 }
                 break;
             case IsoState.walking:
                 {
-                    Debug.Log("walking");
+                    //Debug.Log("walking");
                     Walk();
                 }
                 break;
             case IsoState.still:
                 {
-                    Debug.Log("still");
+                    //Debug.Log("still");
                     Still();
                 }
                 break;
@@ -69,44 +71,33 @@ public class IsoController : MonoBehaviour
 
     public void Roll()
     {
-        // configure rolling rigidbody
-        rb.freezeRotation = false;
-        rb.angularDamping = 0.5f;
-
         rollingSprite.SetActive(true);
         walkingSprite.SetActive(false); //TODO: add transition anim
 
-        //float currAngle = (walkingSprite.GetComponent<RectTransform>().eulerAngles.y > 90f) ? Mathf.PI : 0f;
-        //float randAngle = currAngle + Random.Range(-0.75f, 0.75f);
-        float randAngle = Random.Range(0.0f, 2.0f * Mathf.PI);
-        float magnitude = Random.Range(500, 1000);
-        Vector2 direction = new Vector2(Mathf.Cos(randAngle), Mathf.Sin(randAngle)) * magnitude;
+        float targetX = Move();
 
-        rb.AddForce(direction);
-
-        float rollDirection = Mathf.Sign(direction.x);
-        rb.AddTorque(-rollDirection * magnitude * 0.5f);
+        rollingSprite.GetComponent<Animator>().enabled = true;
+        if (targetX > rectTransform.anchoredPosition.x)
+        {
+            //play anim in reverse
+            rollingSprite.GetComponent<Animator>().Play("RollReverse");
+        }
+        else
+        {
+            rollingSprite.GetComponent<Animator>().Play("Roll");
+        }
     }
 
-    public void Walk(bool xAxisOnly = false)
+    public void Walk()
     {
-        rb.freezeRotation = true;
-        rectTransform.eulerAngles = new Vector3(0, 0, 0);
-
         rollingSprite.SetActive(false);
         walkingSprite.SetActive(true); //TODO: add transition anim
 
-        // walk using transform (choose rand coord in square, walk to it)
-        float targetX = Random.Range(-1394, 160);
-        float targetY = Random.Range(-49, 704);
-        if (xAxisOnly) targetY = rectTransform.anchoredPosition.y;
-        targetPos = new Vector2(targetX, targetY);
-        currPos = rectTransform.anchoredPosition;
-        walkProgress = 0f;
+        float targetX = Move();
 
         if (targetX > rectTransform.anchoredPosition.x)
         {
-            walkingSprite.GetComponent<RectTransform>().eulerAngles = new Vector3(0, 180, 0);
+            walkingSprite.GetComponent<RectTransform>().eulerAngles = new Vector3(0, 180, 0); // flip sprite
         }
         else
         {
@@ -117,37 +108,41 @@ public class IsoController : MonoBehaviour
     public void Still()
     {
         // TODO: maybe do a lil idle anim
-        rb.angularDamping = 0.5f;
+        if (prevState == IsoState.rolling)
+        {
+            rollingSprite.GetComponent<Animator>().enabled = false;
+        }
+
         StartCoroutine(WaitThenSwitchStates());
     }
 
     private void FixedUpdate()
     {
-        // tell ball to stop rolling
-        if (currState == IsoState.rolling && rb.linearVelocity.magnitude < 0.5f)
+        if (currState == IsoState.walking)
         {
-            SetState(IsoState.still);
+            currSpeed = Random.Range(speedRange.x, speedRange.y); // vary speed
         }
-        // stuff while it's rolling
-        else if (currState == IsoState.rolling)
-        {
-            float radius = 85.7f;
-            float rollDirection = Mathf.Sign(rb.linearVelocity.x);
-            float targetAngular = -rollDirection * (rb.linearVelocity.magnitude / radius) * Mathf.Rad2Deg * 10f;
-            rb.angularVelocity = Mathf.Lerp(rb.angularVelocity, targetAngular, 0.2f);
-        }
-        // stuff while it's walking
-        else if (currState == IsoState.walking)
-        {
-            walkSpeed = Random.Range(walkSpeedRange.x, walkSpeedRange.y);
-            float dist = Vector2.Distance(currPos, targetPos);
-            float duration = Mathf.Max(dist / walkSpeed, 0.01f);
-            walkProgress += Time.fixedDeltaTime / duration;
 
-            float t = Mathf.SmoothStep(0f, 1f, Mathf.Clamp01(walkProgress));
-            rectTransform.anchoredPosition = Vector2.Lerp(currPos, targetPos, t);
+        if (currState == IsoState.rolling || currState == IsoState.walking)
+        {
+            Vector2 prevPos = rectTransform.anchoredPosition;
 
-            if (walkProgress >= 1f)
+            float distToTarget = Vector2.Distance(currPos, targetPos);
+            float durationLeft = Mathf.Max(distToTarget / currSpeed, 0.01f);
+            currProgress += Time.fixedDeltaTime / durationLeft;
+
+            float step = Mathf.SmoothStep(0f, 1f, Mathf.Clamp01(currProgress));
+            rectTransform.anchoredPosition = Vector2.Lerp(currPos, targetPos, step);
+
+            if (currState == IsoState.rolling)
+            {
+                float speed = Vector2.Distance(prevPos, rectTransform.anchoredPosition) / Time.fixedDeltaTime;
+                float instRollSpeed = speed / circumference * 360f / degPerSecAnim; // girl dont even ask how i got these numbers ;-;
+
+                rollingSprite.GetComponent<Animator>().speed = instRollSpeed;
+            }
+
+            if (currProgress >= 1f)
             {
                 SetState(IsoState.still);
             }
@@ -158,19 +153,47 @@ public class IsoController : MonoBehaviour
     {
         yield return new WaitForSeconds(Random.Range(0.1f, 5f));
 
-        float rollChance = (prevState == IsoState.rolling) ? 0.5f : 0.25f;
-        IsoState newState = (Random.Range(0.0f, 1.0f) < rollChance) ? IsoState.rolling : IsoState.walking;
+        float rollChance = 0.25f;
+        if (prevState == IsoState.rolling) rollChance = 0.5f;
+
+        IsoState newState = IsoState.walking;
+        if (Random.Range(0.0f, 1.0f) < rollChance) newState = IsoState.rolling;
+
         SetState(newState);
     }
-
-    void OnCollisionEnter2D(Collision2D collision)
+    
+    private void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("ouchie");
+
+        if (Random.Range(0.0f, 1.0f) < 0.7f) return;
+
+        if (currState == IsoState.rolling)
+        {
+            emotionRolling.PlayEmotion("any");
+        }
+        else if (currState == IsoState.walking)
+        {
+            emotionWalking.PlayEmotion("any");
+        }
     }
 
-    public void SetColor(Color color)
+	public void SetColor(Color newColor)
     {
-        rollingSprite.GetComponent<Image>().color = color;
-        walkingSprite.GetComponent<Image>().color = color;
+        rollingSprite.GetComponent<Image>().color = newColor;
+        walkingSprite.GetComponent<Image>().color = newColor;
+        color = newColor;
+    }
+
+    private float Move() // helper func for Roll and Walk
+    {
+        float targetX = Random.Range(-773, 810);
+        float targetY = Random.Range(-378, 388);
+
+        targetPos = new Vector2(targetX, targetY);
+        currPos = rectTransform.anchoredPosition;
+        currProgress = 0f;
+
+        return targetX;
     }
 }
