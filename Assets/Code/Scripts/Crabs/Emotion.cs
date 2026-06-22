@@ -8,6 +8,7 @@ public class Emotion : MonoBehaviour
     [SerializeField] private GameObject angry;
     [SerializeField] private GameObject confused;
     [SerializeField] private GameObject sad;
+    [SerializeField] private GameObject happy; // only for isopod minigame
 
     private Action[] playEmotions;
     private bool emoting;
@@ -18,6 +19,8 @@ public class Emotion : MonoBehaviour
         angry.SetActive(false);
         confused.SetActive(false);
         sad.SetActive(false);
+
+        if (happy != null) happy.SetActive(false);
 
         playEmotions = new Action[] {
             PlayDepressed,
@@ -63,6 +66,14 @@ public class Emotion : MonoBehaviour
         StartCoroutine(WaitBeforeEmotingAgain());
     }
 
+    [ContextMenu("happy")] // only for isopod minigame
+    public void PlayHappy()
+    {
+        happy.SetActive(true);
+        happy.GetComponent<Animator>().Play("happy");
+        StartCoroutine(WaitBeforeEmotingAgain());
+    }
+
     public void PlayEmotion(string emotion)
     {
         if (emoting) return;
@@ -85,6 +96,7 @@ public class Emotion : MonoBehaviour
         angry.SetActive(false);
         confused.SetActive(false);
         sad.SetActive(false);
+        if (happy != null) happy.SetActive(false);
 
         emoting = false;
     }

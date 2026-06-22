@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class CutsceneManager : MonoBehaviour
 {
+    public static CutsceneManager instance { get; private set; }
+
     public enum CutsceneState
     {
         sceneImage,
@@ -29,6 +31,15 @@ public class CutsceneManager : MonoBehaviour
 
     private void Awake()
     {
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+        }
+        
         if (debug) sceneLength = 0.01f;
         else
         {

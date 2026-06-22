@@ -178,6 +178,10 @@ public class IsoController : MonoBehaviour
         }
     }
 
+    public void SelectIso()
+    {
+        IsoMinigameManager.instance.IsopodSelected(color);
+    }
 	public void SetColor(Color newColor)
     {
         rollingSprite.GetComponent<Image>().color = newColor;
