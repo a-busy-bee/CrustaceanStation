@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Unity.VisualScripting;
 
 public class IsoMinigameManager : MonoBehaviour
 {
@@ -26,6 +27,12 @@ public class IsoMinigameManager : MonoBehaviour
     [SerializeField] private SmoothLerp adoptForegroundMovement;
     [SerializeField] private Image adoptIsoSprite;
     [SerializeField] private TextMeshProUGUI birthday;
+    [SerializeField] private TMP_InputField nameField;
+    [SerializeField] private Button adoptButton;
+    private string isoName;
+    private string isoBirthMonth;
+    private int isoBirthDay;
+    private string isoColor;
 
 
     private void Awake()
@@ -60,7 +67,15 @@ public class IsoMinigameManager : MonoBehaviour
         caughtBkgMovement.Move(new Vector2(0, 0), 0.25f);
         caughtForegroundMovement.Move(new Vector2(0, 0), 0.5f);
 
-        StartCoroutine(WaitBeforeHidingScreen(minigameScreen));
+        isoColor = color.ToHexString();
+
+        //StartCoroutine(WaitBeforeHidingMinigameScreen());
+    }
+    private IEnumerator WaitBeforeHidingMinigameScreen()
+    {
+        yield return new WaitForSeconds(0.5f);
+
+        minigameScreen.SetActive(false);
     }
 
     public void ReleaseIso()
@@ -68,48 +83,44 @@ public class IsoMinigameManager : MonoBehaviour
         caughtIsoSprite.gameObject.GetComponent<IsoCaught>().GetReleased();
         minigameScreen.SetActive(true);
 
-        StartCoroutine(WaitBeforeMoving());
+        StartCoroutine(WaitBeforeHidingCaughtScreen());
     }
-
-    public void AdoptIso()
-    {
-        caughtIsoSprite.gameObject.GetComponent<IsoCaught>().GetAdopted();
-        StartCoroutine(WaitBeforeContinuing(true));
-    }
-
-    private IEnumerator WaitBeforeMoving()
+    private IEnumerator WaitBeforeHidingCaughtScreen()
     {
         yield return new WaitForSeconds(0.5f);
 
         caughtBkgMovement.Move(new Vector2(0, 1234), 0.25f);
         caughtForegroundMovement.Move(new Vector2(0, -767), 0.25f);
 
-        StartCoroutine(WaitBeforeContinuing());
+        //yield return new WaitForSeconds(1f);
+
+        //caughtScreen.SetActive(false);
+    }
+
+    public void AdoptIso()
+    {
+        caughtIsoSprite.gameObject.GetComponent<IsoCaught>().GetAdopted();
+        minigameScreen.SetActive(false);
+
+        StartCoroutine(WaitBeforeContinuing(true));
     }
 
     private IEnumerator WaitBeforeContinuing(bool isAdopted = false)
     {
         yield return new WaitForSeconds(1f);
 
+        adoptButton.interactable = false;
+        adoptionScreen.SetActive(true);
+
+        adoptIsoSprite.color = caughtIsoSprite.color;
+        GenerateIsoBirthdayText();
+
+        adoptBkgMovement.Move(new Vector2(0, 0), 0.25f);
+        adoptForegroundMovement.Move(new Vector2(0, 0), 0.5f);
+
+        yield return new WaitForSeconds(1f);
+        
         caughtScreen.SetActive(false);
-        if (isAdopted)
-        {
-            adoptionScreen.SetActive(true);
-
-            adoptIsoSprite.color = caughtIsoSprite.color;
-            GenerateIsoBirthdayText();
-
-            adoptBkgMovement.Move(new Vector2(0, 0), 0.25f);
-            adoptForegroundMovement.Move(new Vector2(0, 0), 0.5f);
-        }
-
-    }
-
-    private IEnumerator WaitBeforeHidingScreen(GameObject screen)
-    {
-        yield return new WaitForSeconds(0.5f);
-
-        screen.SetActive(false);
     }
 
     private void GenerateIsoBirthdayText()
@@ -130,11 +141,32 @@ public class IsoMinigameManager : MonoBehaviour
         };
 
         (string month, int days) date = year[Random.Range(0, 12)];
-        birthday.text = date.month + " " + Random.Range(1, date.days + 1).ToString();
+        int day = Random.Range(1, date.days + 1);
+        birthday.text = date.month + " " + day.ToString();
+
+        isoBirthMonth = date.month;
+        isoBirthDay = day;
+    }
+
+    public void OnValueChanged()
+    {
+        if (nameField.text != "") adoptButton.interactable = true;
+        else adoptButton.interactable = false;
     }
 
     public void SaveInfo()
     {
+        isoName = nameField.text;
         // save iso name and birthday and color
+        PlayerPrefs.SetString("IsoName", isoName);
+        PlayerPrefs.SetString("IsoBirthdayMonth", isoBirthMonth);
+        PlayerPrefs.SetInt("IsoBirthdayDay", isoBirthDay);
+        PlayerPrefs.SetString("IsoColor", isoColor);
+
+        Debug.Log(PlayerPrefs.GetString("IsoName"));
+        Debug.Log(PlayerPrefs.GetString("IsoColor"));
+
+        CutsceneManager.instance.SetCertificateShown();
+        CutsceneManager.instance.ProgressScene();
     }
 }

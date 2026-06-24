@@ -1,5 +1,7 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class CutsceneManager : MonoBehaviour
 {
@@ -17,16 +19,18 @@ public class CutsceneManager : MonoBehaviour
 
     // scenes
     [SerializeField] private GameObject[] scenes;
-    private int currSceneIdx;
+    private int currSceneIdx = 0;
 
     // minigame
     private bool certificateShown;
     [SerializeField] private GameObject minigameParent;
     [SerializeField] private GameObject certificateParent;
+    [SerializeField] private Image[] lastCutsceneIsoSprites;
 
     [Header("Debug")]
     [SerializeField] private bool debug;
     [SerializeField] private GameObject[] debugObjects;
+
 
 
     private void Awake()
@@ -39,7 +43,7 @@ public class CutsceneManager : MonoBehaviour
         {
             instance = this;
         }
-        
+
         if (debug) sceneLength = 0.01f;
         else
         {
@@ -57,7 +61,6 @@ public class CutsceneManager : MonoBehaviour
         certificateParent.SetActive(false);
 
         currState = CutsceneState.sceneImage;
-        currSceneIdx = 0;
 
         scenes[currSceneIdx].SetActive(true);
         StartCoroutine(WaitThenContinueNextScene());
@@ -75,10 +78,12 @@ public class CutsceneManager : MonoBehaviour
                     currSceneIdx++;
                     scenes[currSceneIdx].SetActive(true);
 
-                    if (prevState == CutsceneState.certificate)
+                    if (prevState == CutsceneState.minigame)
                     {
                         minigameParent.SetActive(false);
                         certificateParent.SetActive(false);
+
+                        SetColorForLateCutsceneIsos();
                     }
 
                     StartCoroutine(WaitThenContinueNextScene());
@@ -88,11 +93,6 @@ public class CutsceneManager : MonoBehaviour
                 {
                     scenes[currSceneIdx].SetActive(false);
                     minigameParent.SetActive(true);
-                }
-                break;
-            case CutsceneState.certificate:
-                {
-                    certificateParent.SetActive(true);
                 }
                 break;
         }
@@ -112,6 +112,10 @@ public class CutsceneManager : MonoBehaviour
         {
             SetState(CutsceneState.minigame);
         }
+        else if (currSceneIdx == 5)
+        {
+            SceneManager.LoadScene("Home");
+        }
     }
 
     public void DebugNext()
@@ -130,5 +134,28 @@ public class CutsceneManager : MonoBehaviour
     {
         yield return new WaitForSeconds(sceneLength);
         ProgressScene();
+    }
+
+    public void SetCertificateShown()
+    {
+        certificateShown = true;
+    }
+
+    private void SetColorForLateCutsceneIsos()
+    {
+        Debug.Log("what");
+        Color isoColor = Color.white;
+        
+        string hex = "#" + PlayerPrefs.GetString("IsoColor");
+        if (ColorUtility.TryParseHtmlString(hex, out Color color))
+        {
+            isoColor = color;
+        }
+
+
+        foreach (Image iso in lastCutsceneIsoSprites)
+        {
+            iso.color = isoColor;
+        }
     }
 }
