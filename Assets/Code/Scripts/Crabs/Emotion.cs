@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class Emotion : MonoBehaviour
@@ -7,8 +8,10 @@ public class Emotion : MonoBehaviour
     [SerializeField] private GameObject angry;
     [SerializeField] private GameObject confused;
     [SerializeField] private GameObject sad;
+    [SerializeField] private GameObject happy; // only for isopod minigame
 
     private Action[] playEmotions;
+    private bool emoting;
 
     private void Start()
     {
@@ -16,6 +19,8 @@ public class Emotion : MonoBehaviour
         angry.SetActive(false);
         confused.SetActive(false);
         sad.SetActive(false);
+
+        if (happy != null) happy.SetActive(false);
 
         playEmotions = new Action[] {
             PlayDepressed,
@@ -25,36 +30,54 @@ public class Emotion : MonoBehaviour
         };
     }
 
-	[ContextMenu("depressed")]
+    [ContextMenu("depressed")]
     public void PlayDepressed()
     {
+        emoting = true;
         depressed.SetActive(true);
         depressed.GetComponent<Animator>().Play("depressed");
+        StartCoroutine(WaitBeforeEmotingAgain());
     }
 
     [ContextMenu("angry")]
     public void PlayAngry()
     {
+        emoting = true;
         angry.SetActive(true);
         angry.GetComponent<Animator>().Play("angry");
+        StartCoroutine(WaitBeforeEmotingAgain());
     }
 
     [ContextMenu("sad")]
     public void PlaySad()
     {
+        emoting = true;
         sad.SetActive(true);
         sad.GetComponent<Animator>().Play("sad");
+        StartCoroutine(WaitBeforeEmotingAgain());
     }
-    
+
     [ContextMenu("confused")]
     public void PlayConfused()
     {
+        emoting = true;
         confused.SetActive(true);
         confused.GetComponent<Animator>().Play("confused");
+        StartCoroutine(WaitBeforeEmotingAgain());
+    }
+
+    [ContextMenu("happy")] // only for isopod minigame
+    public void PlayHappy()
+    {
+        happy.SetActive(true);
+        happy.GetComponent<Animator>().Play("happy");
+        StartCoroutine(WaitBeforeEmotingAgain());
     }
 
     public void PlayEmotion(string emotion)
     {
+        if (emoting) return;
+
         if (emotion == "any")
         {
             playEmotions[UnityEngine.Random.Range(0, 3)]();
@@ -63,6 +86,19 @@ public class Emotion : MonoBehaviour
         {
             playEmotions[UnityEngine.Random.Range(0, 4)]();
         }
+    }
+
+    private IEnumerator WaitBeforeEmotingAgain()
+    {
+        yield return new WaitForSeconds(1);
+
+        depressed.SetActive(false);
+        angry.SetActive(false);
+        confused.SetActive(false);
+        sad.SetActive(false);
+        if (happy != null) happy.SetActive(false);
+
+        emoting = false;
     }
 
 }
