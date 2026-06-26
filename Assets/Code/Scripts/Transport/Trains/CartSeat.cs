@@ -50,7 +50,7 @@ public class CartSeat : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     private GameObject imageObject;
     private GameObject imageObjectLarge;
     private GameObject splatterObject;
-    private ReactionType currReaction;
+    private ReactionType[] currReaction;
 
 
     // STATE
@@ -87,11 +87,20 @@ public class CartSeat : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
             imageObjectLarge.GetComponent<CartSeatLarge>().InitSeat(this);
         }
+
+        currReaction = new ReactionType[cartPopup.GetMaxID()];
+        for (int i = 0; i < currReaction.Length; i++)
+        {
+            currReaction[i] = ReactionType.none;
+        }
     }
 
     public void Reset()
     {
-        currReaction = ReactionType.none;
+        for (int i = 0; i < currReaction.Length; i++)
+        {
+            currReaction[i] = ReactionType.none;
+        }
         splatterObject.SetActive(false);
     }
 
@@ -166,7 +175,7 @@ public class CartSeat : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
             isTaken = true;
         }
 
-        if (currReaction == ReactionType.fear)
+        if (currReaction[cartPopup.GetCurrIDOpen()] == ReactionType.fear)
         {
             image.sprite = null;
             image.color = emptyAlpha;
@@ -178,9 +187,13 @@ public class CartSeat : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
             }
 
             isTaken = false;
-            cartPopup.RemoveCharacter(row, column);
+            cartPopup.RemoveCharacter(row, column, cartPopup.GetCurrIDOpen());
 
             splatterObject.SetActive(true);
+        }
+        else
+        {
+            splatterObject.SetActive(false);
         }
     }
 
@@ -268,12 +281,12 @@ public class CartSeat : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         reactionObject.SetActive(true);
         reactionObject.GetComponent<Animator>().Play(reactions[reactionType]);
 
-        currReaction = reactionType;
+        currReaction[cartPopup.GetCurrIDOpen()] = reactionType;
     }
 
     public void StopAnim()
     {
-        currReaction = ReactionType.none;
+        currReaction[cartPopup.GetCurrIDOpen()] = ReactionType.none;
         reactionObject.SetActive(false);
     }
 
@@ -285,7 +298,7 @@ public class CartSeat : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         imageLarge.sprite = null;
         imageLarge.color = emptyAlpha;
 
-        currReaction = ReactionType.none;
+        currReaction[cartPopup.GetCurrIDOpen()] = ReactionType.none;
 
         reactionObject.SetActive(false);
         cartPopup.TurnOffAnims(row, column);
@@ -311,7 +324,7 @@ public class CartSeat : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         image.sprite = null;
         image.color = emptyAlpha;
 
-        currReaction = ReactionType.none;
+        currReaction[cartPopup.GetCurrIDOpen()] = ReactionType.none;
 
         if (!currMini.isLarge)
         {
@@ -322,12 +335,14 @@ public class CartSeat : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        int currPopupID = cartPopup.GetCurrIDOpen();
+
         if (isTaken || hasSelected) return; // TODO: implement wiggle to give player feedback
         if ((currMini.isMultiple || currMini.isLarge) && (isTaken || !cartPopup.CheckIfBothSeatsAreOpen(row, column))) return; // TODO: implemenet smtg to give player feedback
 
         if (currMini.isMultiple)
         {
-            cartPopup.SeatMultiple(currMini.multSprite, row, column);
+            cartPopup.SeatMultiple(currMini.multSprite, row, column, currPopupID);
             image.sprite = currMini.miniSprite;
             image.color = baseColor;
         }
@@ -340,11 +355,12 @@ public class CartSeat : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
                 image.sprite = null;
                 image.color = emptyAlpha;
-                cartPopup.SeatLargeSecondSeat(row, column);
+                
+                cartPopup.SeatLargeSecondSeat(row, column, currPopupID);
             }
             else
             {
-                cartPopup.SeatLarge(currMini.miniSprite, row, column - 1);
+                cartPopup.SeatLarge(currMini.miniSprite, row, column - 1, currPopupID);
             }
         }
         else
@@ -356,10 +372,10 @@ public class CartSeat : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
         isTaken = true;
 
-        cartPopup.SeatCharacter(row, column);
+        cartPopup.SeatCharacter(row, column, currPopupID);
         audioManager.Play("seat");
 
-        if (currReaction == ReactionType.fear || currReaction == ReactionType.yummy)
+        if (currReaction[cartPopup.GetCurrIDOpen()] == ReactionType.fear || currReaction[cartPopup.GetCurrIDOpen()] == ReactionType.yummy)
         {
             if (PerformanceManager.instance != null) PerformanceManager.instance.Incorrect();
         }
@@ -393,7 +409,7 @@ public class CartSeat : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
             image.sprite = currMini.miniSprite;
             image.color = ghostAlpha;
 
-            cartPopup.CheckRelationship(row, column);
+            cartPopup.CheckRelationship(row, column, cartPopup.GetCurrIDOpen());
         }
 
     }

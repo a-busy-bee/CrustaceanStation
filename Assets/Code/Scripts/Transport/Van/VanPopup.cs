@@ -14,7 +14,7 @@ public class VanPopup : TransportPopup
         type = Cart.Type.Van;
         numRows = 2;
     }
-    override public void SeatCharacter(int row, int column)
+    override public void SeatCharacter(int row, int column, int cartID = 0)
     {
         seatDictionary[0][row, column].Item1 = currMini;
         seatDictionary[0][row, column].Item2 = 3;

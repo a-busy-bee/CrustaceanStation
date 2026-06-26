@@ -13,7 +13,8 @@ public class TransportPopup : MonoBehaviour
     //TODO: use inheritance for van, shuttle, and cart
     protected Mini currMini;
     [SerializeField] protected Cart.Type type;
-    protected int currID;
+    [SerializeField] protected int maxID = 1;
+    protected int currIDOpen = 0;
     protected int numRows = 3;
 
     protected Dictionary<int, (Mini, int)[,]> seatDictionary = new Dictionary<int, (Mini, int)[,]>(); // <rail number, array of seats>
@@ -78,36 +79,42 @@ public class TransportPopup : MonoBehaviour
         }
 
         // INIT SEAT DICTIONARY
-        seatDictionary[0] = new (Mini, int)[numRows, 4];
-        //(Mini, int)[,] minis = seatDictionary[i];
-
-        // INIT SEATS
-        for (int row = 0; row < numRows; row++)
+        for (int i = 0; i < maxID; i++)
         {
-            for (int col = 0; col < 4; col++)
+            seatDictionary[i] = new (Mini, int)[numRows, 4];
+            //(Mini, int)[,] minis = seatDictionary[i];
+
+            // INIT SEATS
+            for (int row = 0; row < numRows; row++)
             {
-                seatDictionary[0][row, col] = (defaultEmpty, 0);
-                seatObjects[row, col].InitSeat(this, row, col);
+                for (int col = 0; col < 4; col++)
+                {
+                    seatDictionary[i][row, col] = (defaultEmpty, 0);
+                    seatObjects[row, col].InitSeat(this, row, col);
+                }
             }
+
+            GenerateNewSeats(i);
         }
 
-        GenerateNewSeats();
 
         initialized = true;
     }
 
-    public virtual void Show()
+    public virtual void Show(int cartID = 0)
     {
         if (!initialized)
         {
             InitPopup();
         }
 
+        currIDOpen = cartID;
+
         // get crabinfo from kiosk
         CrabInfo info = Kiosk.instance.GetCrabInfo();
         currMini = info.mini;
 
-        (Mini, int)[,] minis = seatDictionary[0];
+        (Mini, int)[,] minis = seatDictionary[cartID];
 
         for (int row = 0; row < numRows; row++)
         {
@@ -172,13 +179,12 @@ public class TransportPopup : MonoBehaviour
                 }
             }
         }
-
     }
-  
-    public virtual void SeatCharacter(int row, int column)
+
+    public virtual void SeatCharacter(int row, int column, int cartID = 0)
     {
-        seatDictionary[currID][row, column].Item1 = currMini;
-        seatDictionary[currID][row, column].Item2 = 3;
+        seatDictionary[cartID][row, column].Item1 = currMini;
+        seatDictionary[cartID][row, column].Item2 = 3;
         for (int rowIdx = 0; rowIdx < numRows; rowIdx++)
         {
             for (int colIdx = 0; colIdx < 4; colIdx++)
@@ -218,39 +224,43 @@ public class TransportPopup : MonoBehaviour
         // if so, award them
 
         // clear the dictionary idx for this train
-        (Mini, int)[,] minis = seatDictionary[0];
-
-        for (int row = 0; row < numRows; row++)
+        for (int i = 0; i < maxID; i++)
         {
-            for (int col = 0; col < 4; col++)
+            (Mini, int)[,] minis = seatDictionary[i];
+
+            for (int row = 0; row < numRows; row++)
             {
-                if (minis[row, col].Item1 != defaultEmpty)
+                for (int col = 0; col < 4; col++)
                 {
-                    coins += minis[row, col].Item2;
-                    minis[row, col].Item1 = defaultEmpty;
-                    minis[row, col].Item2 = 0;
+                    if (minis[row, col].Item1 != defaultEmpty)
+                    {
+                        coins += minis[row, col].Item2;
+                        minis[row, col].Item1 = defaultEmpty;
+                        minis[row, col].Item2 = 0;
+                    }
                 }
             }
-        }
 
-        coins -= badness;
+            coins -= badness;
 
-        GenerateNewSeats();
+            GenerateNewSeats(i);
 
-        for (int row = 0; row < numRows; row++)
-        {
-            for (int col = 0; col < 4; col++)
+            for (int row = 0; row < numRows; row++)
             {
-                seatObjects[row, col].Reset();
+                for (int col = 0; col < 4; col++)
+                {
+                    seatObjects[row, col].Reset();
+                }
             }
+
         }
 
         return coins;
     }
 
-    protected void GenerateNewSeats()
+    protected void GenerateNewSeats(int cartID = 0)
     {
-        (Mini, int)[,] minis = seatDictionary[0];
+        (Mini, int)[,] minis = seatDictionary[cartID];
 
         for (int row = 0; row < numRows; row++)
         {
@@ -310,9 +320,9 @@ public class TransportPopup : MonoBehaviour
         PopupManager.instance.Close();
     }
 
-    public void CheckRelationship(int row, int col)
+    public void CheckRelationship(int row, int col, int cartID = 0)
     {
-        Mini otherMini = seatDictionary[currID][row, seatPairs[col]].Item1;
+        Mini otherMini = seatDictionary[cartID][row, seatPairs[col]].Item1;
         CartSeat currSeat = seatObjects[row, col];
         CartSeat otherSeat = seatObjects[row, seatPairs[col]];
 
@@ -507,9 +517,9 @@ public class TransportPopup : MonoBehaviour
         return !seatObjects[row, seatPairs[col]].IsTaken();
     }
 
-    public bool IsPrevSeatWithLarge(int row, int col)
+    public bool IsPrevSeatWithLarge(int row, int col, int cartID = 0)
     {
-        return seatObjects[row, seatPairs[col]].IsTaken() && seatDictionary[currID][row, seatPairs[col]].Item1.isLarge;
+        return seatObjects[row, seatPairs[col]].IsTaken() && seatDictionary[cartID][row, seatPairs[col]].Item1.isLarge;
     }
 
     public void ShowGhostMultiple(Sprite mult, int row, int col)
@@ -532,15 +542,15 @@ public class TransportPopup : MonoBehaviour
         seatObjects[row, seatPairs[col]].PlayAnim(CartSeat.ReactionType.happy);
     }
 
-    public void RemoveCharacter(int row, int col)
+    public void RemoveCharacter(int row, int col, int cartID = 0)
     {
-        seatDictionary[currID][row, col].Item1 = defaultEmpty;
+        seatDictionary[cartID][row, col].Item1 = defaultEmpty;
     }
 
-    public void SeatMultiple(Sprite mult, int row, int col)
+    public void SeatMultiple(Sprite mult, int row, int col, int cartID = 0)
     {
         seatObjects[row, seatPairs[col]].SetSpriteForMultiple(mult);
-        seatDictionary[currID][row, col].Item1 = currMini;
+        seatDictionary[cartID][row, col].Item1 = currMini;
         for (int rowIdx = 0; rowIdx < numRows; rowIdx++)
         {
             for (int colIdx = 0; colIdx < 4; colIdx++)
@@ -550,11 +560,11 @@ public class TransportPopup : MonoBehaviour
         }
     }
 
-    public void SeatLarge(Sprite sprite, int row, int col)
+    public void SeatLarge(Sprite sprite, int row, int col, int cartID = 0)
     {
         // og click was on the second seat, place large sprite on prev seat
         seatObjects[row, col].SetSpriteForLarge(sprite);
-        seatDictionary[currID][row, col + 1].Item1 = currMini;
+        seatDictionary[cartID][row, col + 1].Item1 = currMini;
         for (int rowIdx = 0; rowIdx < numRows; rowIdx++)
         {
             for (int colIdx = 0; colIdx < 4; colIdx++)
@@ -582,9 +592,9 @@ public class TransportPopup : MonoBehaviour
         }
     }
 
-    public void SeatLargeSecondSeat(int row, int col)
+    public void SeatLargeSecondSeat(int row, int col, int cartID = 0)
     {
-        seatDictionary[currID][row, col + 1].Item1 = currMini;
+        seatDictionary[cartID][row, col + 1].Item1 = currMini;
 
         if (currMini.isLarge)
         {
@@ -624,5 +634,15 @@ public class TransportPopup : MonoBehaviour
                 }
             }
         }
+    }
+
+    public int GetCurrIDOpen()
+    {
+        return currIDOpen;
+    }
+
+    public int GetMaxID()
+    {
+        return maxID;
     }
 }
