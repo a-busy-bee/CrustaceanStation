@@ -18,6 +18,7 @@ public class MailroomManager : MonoBehaviour
     [Header("Letter Types")]
     [SerializeField] private GameObject letter;
     [SerializeField] private GameObject feedbackForm;
+    [SerializeField] private TextMeshProUGUI feedbackFormName;
     [SerializeField] private GameObject largeNote;
     [SerializeField] private GameObject smallNote;
     private GameObject[] notes;
@@ -204,6 +205,7 @@ public class MailroomManager : MonoBehaviour
                 text = GetComponent<FeedbackManager>().GetPlotFeedback(inboxItem.id);
             }
             feedbackForm.GetComponent<RectTransform>().GetChild(0).GetComponent<TextMeshProUGUI>().text = text;
+            feedbackFormName.text = CrabNameGenerator.instance.GetAnyName();
 
             chosen = feedbackForm;
         }
