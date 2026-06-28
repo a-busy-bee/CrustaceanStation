@@ -77,7 +77,7 @@ public class CrabController : MonoBehaviour
         if (labCoatBase != null) labCoatBase.gameObject.SetActive(false);
         if (badge != null) badge.gameObject.SetActive(false);
 
-        if (crabInfo.hasResearchCoat && Random.Range(0, 10) < 3)
+        if (crabInfo.hasResearchCoat && Random.Range(0, 10) < 3 && labCoatBase != null)
         {
             labCoatBase.gameObject.SetActive(true);
             labCoatBase.sprite = labCoats[Random.Range(0, labCoats.Length)];

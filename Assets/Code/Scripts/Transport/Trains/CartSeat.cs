@@ -283,7 +283,7 @@ public class CartSeat : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
         currReaction[cartPopup.GetCurrIDOpen()] = reactionType;
     }
-
+ 
     public void StopAnim()
     {
         currReaction[cartPopup.GetCurrIDOpen()] = ReactionType.none;
@@ -355,7 +355,7 @@ public class CartSeat : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
                 image.sprite = null;
                 image.color = emptyAlpha;
-                
+
                 cartPopup.SeatLargeSecondSeat(row, column, currPopupID);
             }
             else
@@ -377,7 +377,15 @@ public class CartSeat : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
         if (currReaction[cartPopup.GetCurrIDOpen()] == ReactionType.fear || currReaction[cartPopup.GetCurrIDOpen()] == ReactionType.yummy)
         {
-            if (PerformanceManager.instance != null) PerformanceManager.instance.Incorrect();
+            if (PerformanceManager.instance != null) PerformanceManager.instance.Incorrect(PerformanceManager.MistakeType.seating);
+        }
+        else if (currReaction[cartPopup.GetCurrIDOpen()] == ReactionType.toxicOther || currReaction[cartPopup.GetCurrIDOpen()] == ReactionType.toxicSelf)
+        {
+            if (PerformanceManager.instance != null) PerformanceManager.instance.Incorrect(PerformanceManager.MistakeType.seating);
+        }
+        else
+        {
+            if (PerformanceManager.instance != null) PerformanceManager.instance.CorrectHalf();
         }
     }
 

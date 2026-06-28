@@ -26,7 +26,7 @@ public class Kiosk : KioskBase
                     if (prevState != KioskState.NotOpenYet)
                     {
                         StartCoroutine(WaitBeforeSummon());
-                    }
+                    } 
                     else
                     {
                         SummonCrab();
@@ -50,12 +50,12 @@ public class Kiosk : KioskBase
                     if (!currentCrab.GetComponent<CrabController>().IsValid())
                     {
                         //wrong++;
-                        Debug.Log("approved, incorrect");
-                        PerformanceManager.instance.Incorrect();
+                        //Debug.Log("approved, incorrect");
+                        PerformanceManager.instance.Incorrect(PerformanceManager.MistakeType.idTicket);
                     }
                     else
                     {
-                        Debug.Log("approved, correct");
+                        //Debug.Log("approved, correct");
                         PerformanceManager.instance.Correct();
                     }
 
@@ -69,13 +69,13 @@ public class Kiosk : KioskBase
 
                     if (currentCrab.GetComponent<CrabController>().IsValid())
                     {
-                        Debug.Log("rejected, incorrect");
-                        PerformanceManager.instance.Incorrect();
+                        //Debug.Log("rejected, incorrect");
+                        PerformanceManager.instance.Incorrect(PerformanceManager.MistakeType.idTicket);
                         currentCrab.GetComponent<CrabController>().SetState(CrabController.CrabState.Emoting, "any and confused");
                     }
                     else
                     {
-                        Debug.Log("rejected, correct");
+                        //Debug.Log("rejected, correct");
                         PerformanceManager.instance.Correct();
                         currentCrab.GetComponent<CrabController>().SetState(CrabController.CrabState.Emoting, "any");
                     }

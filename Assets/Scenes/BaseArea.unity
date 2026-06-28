@@ -1886,6 +1886,10 @@ MonoBehaviour:
   - {r: 0.95686275, g: 0.84705883, b: 0.1254902, a: 1}
   - {r: 0.25490198, g: 0.9490196, b: 0.13333334, a: 1}
   numWrongText: {fileID: 3977943}
+  numIDTicketText: {fileID: 3748053639804197567}
+  numTransportText: {fileID: 3748053639804197566}
+  numSeatingText: {fileID: 3748053639804197565}
+  numHappyText: {fileID: 3748053639804197564}
 --- !u!1 &126742462
 GameObject:
   m_ObjectHideFlags: 0
@@ -16077,9 +16081,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.049924284
+    y: 0.050000012
     width: 1
-    height: 0.90015143
+    height: 0.9
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -28859,11 +28863,91 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7324326255910826115, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
+      propertyPath: m_fontSize
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 7324326255910826115, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
+      propertyPath: m_margin.x
+      value: -50.836395
+      objectReference: {fileID: 0}
+    - target: {fileID: 7324326255910826115, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
+      propertyPath: m_margin.z
+      value: 59.89438
+      objectReference: {fileID: 0}
+    - target: {fileID: 7324326255910826115, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7324326255910826115, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 8347519176766074972, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1169.1406
+      objectReference: {fileID: 0}
+    - target: {fileID: 8347519176766074972, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 677.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 8347519176766074972, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -11.770325
+      objectReference: {fileID: 0}
+    - target: {fileID: 8347519176766074972, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 6.822113
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
+--- !u!114 &3748053639804197564 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8565382682013001238, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
+  m_PrefabInstance: {fileID: 3748053639804197563}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!114 &3748053639804197565 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7005892573650239583, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
+  m_PrefabInstance: {fileID: 3748053639804197563}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!114 &3748053639804197566 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8215513655116084698, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
+  m_PrefabInstance: {fileID: 3748053639804197563}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!114 &3748053639804197567 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3365645250982630410, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
+  m_PrefabInstance: {fileID: 3748053639804197563}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1001 &3883590854518376516
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -75,7 +75,6 @@ public class KioskBase : MonoBehaviour
         }
 
         SetState(KioskState.NotOpenYet);
-        PlayerPrefs.SetInt("kioskStyle", 0);
     }
 
     // state machine go brrrrr
@@ -127,12 +126,10 @@ public class KioskBase : MonoBehaviour
                     if (!currentCrab.GetComponent<CrabController>().IsValid() || !trainExists || !isCurrentCrabCrustacean)
                     {
                         //wrong++;
-                        Debug.Log("approved, incorrect");
-                        PerformanceManager.instance.Incorrect();
+                        PerformanceManager.instance.Incorrect(PerformanceManager.MistakeType.idTicket);
                     }
                     else
                     {
-                        Debug.Log("approved, correct");
                         PerformanceManager.instance.Correct();
                     }
 
@@ -153,14 +150,12 @@ public class KioskBase : MonoBehaviour
                     if (currentCrab.GetComponent<CrabController>().IsValid() && trainExists && isCurrentCrabCrustacean)
                     {
                         //wrong++;
-                        Debug.Log("rejected, incorrect");
-                        PerformanceManager.instance.Incorrect();
+                        PerformanceManager.instance.Incorrect(PerformanceManager.MistakeType.idTicket);
 
                         currentCrab.GetComponent<CrabController>().SetState(CrabController.CrabState.Emoting, "any and confused");
                     }
                     else
                     {
-                        Debug.Log("rejected, correct");
                         PerformanceManager.instance.Correct();
                         currentCrab.GetComponent<CrabController>().SetState(CrabController.CrabState.Emoting, "any");
                     }
@@ -286,7 +281,7 @@ public class KioskBase : MonoBehaviour
     }
 
     // DECOR
-    /*public void ShowDecor()
+    /*public void ShowDecor() 
     {
         KioskStyle kioskStyle = kioskStyles[PlayerPrefs.GetInt("kioskStyle")];
         int top = PlayerPrefs.GetInt("decor_top");
@@ -325,7 +320,7 @@ public class KioskBase : MonoBehaviour
     {
         if (PerformanceManager.instance == null) return;
 
-        PerformanceManager.instance.IncorrectHalf();
+        PerformanceManager.instance.IncorrectHalf(PerformanceManager.MistakeType.transport);
     }
     public void CorrectTransport()
     {

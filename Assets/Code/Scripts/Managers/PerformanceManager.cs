@@ -1,4 +1,5 @@
 using System.Numerics;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,6 +9,14 @@ public class PerformanceManager : MonoBehaviour
     public static PerformanceManager instance { get; protected set; }
     private float barPercent;
     private int numWrong;
+    private Dictionary<MistakeType, int> mistakes = new Dictionary<MistakeType, int>
+    {
+        {MistakeType.idTicket, 0},
+        {MistakeType.transport, 0},
+        {MistakeType.seating, 0}
+    };
+    private int numHappy;
+    private int correctCounter; // must get all three stages to be correct (idTicket, transport, and seating)
     private bool isChanging;
     private float currentVelocity;
     private float stepSize = 0.1f;
@@ -17,9 +26,20 @@ public class PerformanceManager : MonoBehaviour
     [SerializeField] private Image sliderKioskColor;
     [SerializeField] private Image sliderSummaryColor;
     [SerializeField] private Color[] sliderColors;
-    [SerializeField] private TextMeshProUGUI numWrongText;
 
-    // (numSeen - numCorrect)/numCorrect
+    [Header("Summary Numbers")]
+    [SerializeField] private TextMeshProUGUI numWrongText;
+    [SerializeField] private TextMeshProUGUI numIDTicketText;
+    [SerializeField] private TextMeshProUGUI numTransportText;
+    [SerializeField] private TextMeshProUGUI numSeatingText;
+    [SerializeField] private TextMeshProUGUI numHappyText;
+
+    public enum MistakeType
+    {
+        idTicket,
+        transport,
+        seating
+    }
 
     private void Awake()
     {
@@ -65,6 +85,8 @@ public class PerformanceManager : MonoBehaviour
         barPercent += stepSize;
         if (barPercent >= 1) barPercent = 1;
 
+        correctCounter++;
+
         Save();
         UpdateSlider();
     }
@@ -76,32 +98,48 @@ public class PerformanceManager : MonoBehaviour
         barPercent += stepSize / 2;
         if (barPercent >= 1) barPercent = 1;
 
+        correctCounter++;
+        if (correctCounter == 3)
+        {
+            numHappy++;
+            correctCounter = 0;
+        }
+
         Save();
         UpdateSlider();
     }
 
     [ContextMenu("Incorrect")]
-    public void Incorrect()
+    public void Incorrect(MistakeType mistake)
     {
-        //Debug.Log("incorrect");
         numWrong++;
         barPercent -= stepSize * 3.5f;
         if (barPercent <= 0) barPercent = 0;
 
+        mistakes[mistake]++;
+        ResetCorrect();
+        
         Save();
         UpdateSlider();
     }
 
     [ContextMenu("Incorrect Half")]
-    public void IncorrectHalf()
+    public void IncorrectHalf(MistakeType mistake)
     {
-        //Debug.Log("incorrect");
         numWrong++;
         barPercent -= stepSize;
         if (barPercent <= 0) barPercent = 0;
 
+        mistakes[mistake]++;
+        ResetCorrect();
+
         Save();
         UpdateSlider();
+    }
+
+    public void ResetCorrect()
+    {
+        correctCounter = 0;
     }
 
     private void Save()
@@ -122,24 +160,25 @@ public class PerformanceManager : MonoBehaviour
     {
         if (isChanging)
         {
+            // todo: if moving down, do some kind of particle system or effect
             sliderKiosk.value = Mathf.SmoothDamp(sliderKiosk.value, barPercent, ref currentVelocity, 0.75f);
+
+            if (barPercent >= 0.7f)
+            {
+                sliderKioskColor.color = sliderColors[2];
+            }
+            else if (barPercent >= 0.2)
+            {
+                sliderKioskColor.color = sliderColors[1];
+            }
+            else
+            {
+                sliderKioskColor.color = sliderColors[0];
+            }
 
             if (Mathf.Abs(barPercent - sliderKiosk.value) < 0.01f)
             {
                 isChanging = false;
-
-                if (barPercent >= 0.7f)
-                {
-                    sliderKioskColor.color = sliderColors[2];
-                }
-                else if (barPercent >= 0.2)
-                {
-                    sliderKioskColor.color = sliderColors[1];
-                }
-                else
-                {
-                    sliderKioskColor.color = sliderColors[0];
-                }
             }
 
         }
@@ -158,6 +197,11 @@ public class PerformanceManager : MonoBehaviour
     public void InitSummary()
     {
         numWrongText.text = numWrong.ToString();
+        numIDTicketText.text = mistakes[MistakeType.idTicket].ToString();
+        numTransportText.text = mistakes[MistakeType.transport].ToString();
+        numSeatingText.text = mistakes[MistakeType.seating].ToString();
+        numHappyText.text = numHappy.ToString();
+
         sliderSummary.value = barPercent;
         if (barPercent >= 0.7f)
         {
