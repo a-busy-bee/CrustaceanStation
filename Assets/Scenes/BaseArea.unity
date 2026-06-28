@@ -9515,8 +9515,7 @@ MonoBehaviour:
   approveButton: {fileID: 534969239}
   rejectButton: {fileID: 1416969083}
   debugMode: 1
-  charactersToForce:
-  - {fileID: 1918681812830035428, guid: 4a2b52b4d2ff64f64a8decf1d3b10082, type: 3}
+  charactersToForce: []
 --- !u!1 &730704855
 GameObject:
   m_ObjectHideFlags: 0
@@ -16081,9 +16080,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.050051987
+    y: 0
     width: 1
-    height: 0.899896
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
