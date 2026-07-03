@@ -71,7 +71,7 @@ public class CrabInfo : ScriptableObject
 		nonCrustacean,
 		normal
 	}
-	
+
 	[Header("Plot")]
 	public PlotLevel plotLevel;
 	public bool hasResearchCoat;
@@ -80,5 +80,6 @@ public class CrabInfo : ScriptableObject
 
 	[Header("Specific Character")]
 	public bool isImportantCharacter;
-	public string characterNameID; 
+	public string characterNameID; // internal, for dialogues and such
+	public string characterName; // what shows up on their ID
 }

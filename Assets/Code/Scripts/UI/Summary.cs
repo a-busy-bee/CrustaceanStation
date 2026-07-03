@@ -23,12 +23,15 @@ public class Summary : MonoBehaviour
 
     private void Start()
     {
+        PlayerPrefs.SetInt("CurrDay", PlayerPrefs.GetInt("CurrDay") + 1);
+
         if (HeadlineManager.instance != null && PlayerPrefs.GetInt("first day") != 1)
         {
             PlayerPrefs.SetInt("first day", 1);
             HeadlineManager.instance.SetSpecificText(100, "Crustacean Station Grand Opening!");
             return;
         }
+        
         if (Random.Range(0, 10) < 3) return;
 
         if (Random.Range(0, 10) < 4)
@@ -39,6 +42,8 @@ public class Summary : MonoBehaviour
         {
             HeadlineManager.instance.GetGenericHeadline();
         }
+
+        
     }
 
     public void Continue()

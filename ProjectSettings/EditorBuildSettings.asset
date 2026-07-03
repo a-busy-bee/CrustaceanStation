@@ -59,6 +59,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Tutorial.unity
     guid: 7e57ee9b057774d58bcd875f5940e0b1
+  - enabled: 1
+    path: Assets/Scenes/Cutscene.unity
+    guid: 8552c018eecd34e859f0ed45d6a5463d
+  - enabled: 1
+    path: Assets/Scenes/IsoRoom.unity
+    guid: f707cba8f6417497fb3d726c0307f8f6
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 747af379f21ac43d2aeba8808563d654, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
