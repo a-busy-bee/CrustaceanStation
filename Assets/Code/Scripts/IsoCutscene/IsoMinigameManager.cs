@@ -35,6 +35,7 @@ public class IsoMinigameManager : MonoBehaviour
     private string isoBirthMonth;
     private int isoBirthDay;
     private string isoColor;
+    private Color isoColorColor;
 
 
     private void Awake()
@@ -46,7 +47,7 @@ public class IsoMinigameManager : MonoBehaviour
         else
         {
             instance = this;
-        }   
+        }
 
         //init dictionary to convert color to sprite
         for (int i = 0; i < isoColors.Length; i++)
@@ -77,6 +78,7 @@ public class IsoMinigameManager : MonoBehaviour
         caughtForegroundMovement.Move(new Vector2(0, 0), 0.5f);
 
         isoColor = color.ToHexString();
+        isoColorColor = color;
 
         //StartCoroutine(WaitBeforeHidingMinigameScreen());
     }
@@ -121,7 +123,7 @@ public class IsoMinigameManager : MonoBehaviour
         adoptButton.interactable = false;
         adoptionScreen.SetActive(true);
 
-        adoptIsoSprite.color = caughtIsoSprite.color;
+        adoptIsoSprite.color = isoColorColor;
         GenerateIsoBirthdayText();
 
         adoptBkgMovement.Move(new Vector2(0, 0), 0.25f);

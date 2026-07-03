@@ -14,7 +14,7 @@ public class IsoController : MonoBehaviour
     private IsoState prevState;
 
     // movement
-    private RectTransform rectTransform;
+    protected RectTransform rectTransform;
     private Vector2 speedRange = new Vector2(100f, 500f);   // min/max speeds
     private const float rollingSpeedRangeOffset = 250.0f;
     private const float circumference = 2f * Mathf.PI * 85;     // circumference of rolled up sprite
@@ -28,15 +28,15 @@ public class IsoController : MonoBehaviour
 
     // sprites
     private Color color;
-    [SerializeField] private GameObject rollingSprite;
-    [SerializeField] private GameObject walkingSprite;
+    [SerializeField] protected GameObject rollingSprite;
+    [SerializeField] protected GameObject walkingSprite;
 
     // misc
     [SerializeField] private Emotion emotionRolling;
     [SerializeField] private Emotion emotionWalking;
 
 
-    private void Awake()
+    virtual protected void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
         StartCoroutine(WaitThenSwitchStates());
@@ -149,7 +149,7 @@ public class IsoController : MonoBehaviour
         }
     }
 
-    private IEnumerator WaitThenSwitchStates()
+    protected IEnumerator WaitThenSwitchStates()
     {
         yield return new WaitForSeconds(Random.Range(0.1f, 5f));
 
@@ -198,6 +198,6 @@ public class IsoController : MonoBehaviour
         currPos = rectTransform.anchoredPosition;
         currProgress = 0f;
 
-        return targetX;
+        return targetX; // return targetX to determine which direction to flip/roll
     }
 }

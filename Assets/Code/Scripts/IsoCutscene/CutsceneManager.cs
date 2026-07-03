@@ -143,7 +143,6 @@ public class CutsceneManager : MonoBehaviour
 
     private void SetColorForLateCutsceneIsos()
     {
-        Debug.Log("what");
         Color isoColor = Color.white;
         
         string hex = "#" + PlayerPrefs.GetString("IsoColor");
