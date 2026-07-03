@@ -12,8 +12,10 @@ public class IsoMinigameManager : MonoBehaviour
     [Header("Minigame")]
     [SerializeField] private GameObject minigameScreen;
     [SerializeField] private Color[] isoColors;
+    [SerializeField] private Sprite[] largeIsoSprites; // supposed to be in the same order as the colors
     [SerializeField] private GameObject[] isos;
     [SerializeField] private GameObject isoParent;
+    private Dictionary<Color, Sprite> colorToSprite = new Dictionary<Color, Sprite>();
 
     [Header("Iso Caught")]
     [SerializeField] private GameObject caughtScreen;
@@ -44,8 +46,13 @@ public class IsoMinigameManager : MonoBehaviour
         else
         {
             instance = this;
-        }
+        }   
 
+        //init dictionary to convert color to sprite
+        for (int i = 0; i < isoColors.Length; i++)
+        {
+            colorToSprite[isoColors[i]] = largeIsoSprites[i];
+        }
     }
 
     private void Start()
@@ -62,7 +69,9 @@ public class IsoMinigameManager : MonoBehaviour
     public void IsopodSelected(Color color)
     {
         caughtScreen.SetActive(true);
-        caughtIsoSprite.color = color;
+
+        Sprite largeSpriteColor = colorToSprite[color];
+        caughtIsoSprite.sprite = largeSpriteColor;
 
         caughtBkgMovement.Move(new Vector2(0, 0), 0.25f);
         caughtForegroundMovement.Move(new Vector2(0, 0), 0.5f);
@@ -162,9 +171,6 @@ public class IsoMinigameManager : MonoBehaviour
         PlayerPrefs.SetString("IsoBirthdayMonth", isoBirthMonth);
         PlayerPrefs.SetInt("IsoBirthdayDay", isoBirthDay);
         PlayerPrefs.SetString("IsoColor", isoColor);
-
-        Debug.Log(PlayerPrefs.GetString("IsoName"));
-        Debug.Log(PlayerPrefs.GetString("IsoColor"));
 
         CutsceneManager.instance.SetCertificateShown();
         CutsceneManager.instance.ProgressScene();
