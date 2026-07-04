@@ -7,26 +7,23 @@ using UnityEngine.SceneManagement;
 public class VetManager : MonoBehaviour
 {
     [SerializeField] private GameObject returnHomeButton;
-    [SerializeField] private Image isoImage;
-    [SerializeField] private Emotion isoEmotion;
     [SerializeField] private GameObject vetBill;
     [SerializeField] private GameObject vet;
 
-    [Header("Iso Colors")]
-    [SerializeField] private Color[] isoColors;
+    [Header("Iso")]
+    [SerializeField] private Sprite[] rollingSprites;
+    [SerializeField] private Sprite[] walkingSprites;
+    [SerializeField] private Image isoWalkSprite;
+    [SerializeField] private Image isoRollSprite;
+    [SerializeField] private Emotion isoEmotion;
 
     private void Start()
     {
         returnHomeButton.SetActive(false);
 
-        Color isoColor = Color.white;
-
-        string hex = "#" + PlayerPrefs.GetString("IsoColor");
-        if (ColorUtility.TryParseHtmlString(hex, out Color color))
-        {
-            isoColor = color;
-        }
-        isoImage.color = isoColor;
+        int colorIdx = PlayerPrefs.GetInt("IsoColor");
+        isoWalkSprite.GetComponent<Image>().sprite = walkingSprites[colorIdx];
+        isoRollSprite.GetComponent<Image>().sprite = rollingSprites[colorIdx];
 
         vet.GetComponent<SmoothLerp>().Move(new Vector2(-421, 370), 0.25f);
         StartCoroutine(WaitThenContinue());

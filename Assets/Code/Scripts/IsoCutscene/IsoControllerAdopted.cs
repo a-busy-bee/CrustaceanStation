@@ -1,9 +1,12 @@
 using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using System.Collections.Generic;
 
 public class IsoControllerAdopted : IsoController, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
+    [SerializeField] private Sprite[] rolledIsoSprites;
+    [SerializeField] private Sprite[] walkIsoSprites;
     public void OnPointerEnter(PointerEventData eventData)
     {
 
@@ -21,23 +24,11 @@ public class IsoControllerAdopted : IsoController, IPointerEnterHandler, IPointe
 
     protected override void Awake()
     {
-        SetColor();
+        int colorIdx = PlayerPrefs.GetInt("IsoColor");
+        walkingSprite.GetComponent<Image>().sprite = walkIsoSprites[colorIdx];
+        rollingSprite.GetComponent<Image>().sprite = rolledIsoSprites[colorIdx];
 
         rectTransform = GetComponent<RectTransform>();
         StartCoroutine(WaitThenSwitchStates());
-    }
-
-    private void SetColor()
-    {
-        Color isoColor = Color.white;
-
-        string hex = "#" + PlayerPrefs.GetString("IsoColor");
-        if (ColorUtility.TryParseHtmlString(hex, out Color color))
-        {
-            isoColor = color;
-        }
-
-        rollingSprite.GetComponent<Image>().color = isoColor;
-        walkingSprite.GetComponent<Image>().color = isoColor;
     }
 }
