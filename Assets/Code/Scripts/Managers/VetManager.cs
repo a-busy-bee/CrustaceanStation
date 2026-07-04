@@ -14,17 +14,6 @@ public class VetManager : MonoBehaviour
 
     [Header("Iso Colors")]
     [SerializeField] private Color[] isoColors;
-    [SerializeField] private Sprite[] largeIsoSprites; // supposed to be in the same order as the colors
-    private Dictionary<Color, Sprite> colorToSprite = new Dictionary<Color, Sprite>();
-
-    private void Awake()
-    {
-        //init dictionary to convert color to sprite
-        for (int i = 0; i < isoColors.Length; i++)
-        {
-            colorToSprite[isoColors[i]] = largeIsoSprites[i];
-        }
-    }
 
     private void Start()
     {
@@ -49,10 +38,14 @@ public class VetManager : MonoBehaviour
 
         // show dialogue
         DialogueManager.instance.GetDialogueVet();
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(1.5f);
 
-        // iso emotion
-        isoEmotion.PlaySad();
+        if (PlayerPrefs.GetInt("CurrDay") / 5 != 3) // no emotion to play IF HE'S DEAD ;-;
+        {
+            // iso emotion
+            isoEmotion.PlaySad();
+        }
+        
 
         // show vet bill
         //vetBill.GetComponent<SmoothLerp>().Move(new Vector2(), 0.25f);

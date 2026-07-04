@@ -97,14 +97,8 @@ public class Settings : MonoBehaviour
         PlayerPrefs.SetInt("kioskStyle", 0);
         PlayerPrefs.SetInt("newGame", 1);
         PlayerPrefs.SetInt("IntroMailSeen", -1);
-        
-        PlayerPrefs.SetInt("cartQuality", 0);
-        PlayerPrefs.SetInt("numTracks", 0);
-        PlayerPrefs.SetInt("crabDropRate", 0);
-        PlayerPrefs.SetInt("decor_top", 0);
-        PlayerPrefs.SetInt("decor_left", 0);
-        PlayerPrefs.SetInt("decor_right", 0);
 
+        PlayerPrefs.SetInt("CurrDay", 0);
         PlayerPrefs.SetInt("first day", 0);
 
         PlayerPrefs.SetInt("coins", 0);

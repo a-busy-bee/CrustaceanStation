@@ -143,18 +143,12 @@ public class CutsceneManager : MonoBehaviour
 
     private void SetColorForLateCutsceneIsos()
     {
-        Color isoColor = Color.white;
-        
-        string hex = "#" + PlayerPrefs.GetString("IsoColor");
-        if (ColorUtility.TryParseHtmlString(hex, out Color color))
-        {
-            isoColor = color;
-        }
-
+        IsoMinigameManager.IsoColors isoColor = (IsoMinigameManager.IsoColors)PlayerPrefs.GetInt("IsoColor");
+        Sprite walkSprite = IsoMinigameManager.instance.ConvertColorToWalkSprite(isoColor);
 
         foreach (Image iso in lastCutsceneIsoSprites)
         {
-            iso.color = isoColor;
+            iso.sprite = walkSprite;
         }
     }
 }

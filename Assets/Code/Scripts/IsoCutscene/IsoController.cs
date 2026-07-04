@@ -27,13 +27,14 @@ public class IsoController : MonoBehaviour
     private float currProgress;
 
     // sprites
-    private Color color;
+    //private Color color;
     [SerializeField] protected GameObject rollingSprite;
     [SerializeField] protected GameObject walkingSprite;
 
     // misc
     [SerializeField] private Emotion emotionRolling;
     [SerializeField] private Emotion emotionWalking;
+    [SerializeField] private IsoMinigameManager.IsoColors color;
 
 
     virtual protected void Awake()
@@ -181,12 +182,6 @@ public class IsoController : MonoBehaviour
     public void SelectIso()
     {
         IsoMinigameManager.instance.IsopodSelected(color);
-    }
-	public void SetColor(Color newColor)
-    {
-        rollingSprite.GetComponent<Image>().color = newColor;
-        walkingSprite.GetComponent<Image>().color = newColor;
-        color = newColor;
     }
 
     private float Move() // helper func for Roll and Walk
