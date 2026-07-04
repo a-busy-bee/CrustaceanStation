@@ -66,14 +66,21 @@
 		]}
 	],
 
-	"nodeNonCrustacean":[
+	"nodesNonCrustacean":[
 		"Did you see my son come through here yesterday? He didn’t come home!"
 	],
 
-	"nodeCrustacean":[
+	"nodesCrustacean":[
 		"I’m relieved to see a fellow crustacean in the train business",
 		"They’re just letting anyone onto these trains nowadays",
 		"Do you think I'm too short?",
 		"Do you think my claws are shiny enough?"
+	],
+
+	"nodesVet":[
+		"Hasn't gotten better? We'll run some tests and get back to you.",
+		"He's a little sick. Give him this medication every day.",
+		"Tests came back positive, I recommend immediate treatment.",
+		"I'm so sorry but he didn't pull through."
 	]
 }

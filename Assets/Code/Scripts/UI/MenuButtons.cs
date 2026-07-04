@@ -66,7 +66,10 @@ public class MenuButtons : MonoBehaviour
         }
     }
 
-
+    public void VisitVet()
+    {
+        SceneManager.LoadScene("Vet");
+    }
 
     public void Settings()
     {

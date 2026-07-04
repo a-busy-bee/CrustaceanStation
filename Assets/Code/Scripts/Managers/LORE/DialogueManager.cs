@@ -13,6 +13,7 @@ public class DialogueData
     //TODO: load these
     public string[] nodesNonCrustacean;
     public string[] nodesCrustacean;
+    public string[] nodesVet;
 }
 
 [Serializable]
@@ -119,10 +120,18 @@ public class DialogueManager : MonoBehaviour
         dialogueObject.ShowDialogue(text);
     }
 
+    public void GetDialogueVet()
+    {
+        int stage = PlayerPrefs.GetInt("CurrDay") / 5;
+        string text = dialogueData.nodesVet[stage];
+        dialogueObject.ShowDialogue(text);
+    }
+
+
     public void ClearDialogue()
     {
         dialogueObject.ClearDialogue();
     }
 
-    
+
 }
