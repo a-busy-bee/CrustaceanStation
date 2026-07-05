@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: CharacterPrefabsSpecial
+  m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
+  m_GroupName: SpecialCharacters
+  m_GUID: f26f4e67e81d14cb8888dadf3bc3265f
+  m_SerializeEntries:
+  - m_GUID: 4a1d6a7989fe041db9b2e4ad96670d93
+    m_Address: Assets/Code/Prefabs/Crabs/shrimp_granny.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterPrefabsSpecial
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 747c83d2286a84f86a418f4762e47085
+    m_Address: Assets/Code/Prefabs/Crabs/shrimp_gramps.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterPrefabsSpecial
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8cb538142c00c4950aff110ac31539a8
+    m_Address: Assets/Code/Prefabs/Crabs/horseshoe.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterPrefabsSpecial
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d0d01ea170495413a9882eb4f8367cc2
+    m_Address: Assets/Code/Prefabs/Crabs/isopod_beautiful.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterPrefabsSpecial
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d34c46f22bcbd4530b7a0018142a8796
+    m_Address: Assets/Code/Prefabs/Crabs/catfish.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterPrefabsSpecial
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: eb652e552718a2d46925b49c140fd84a
+    m_Address: Assets/Code/Prefabs/Crabs/seastar.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterPrefabsSpecial
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f5bab76335ad0455cb17b24676ef1913
+    m_Address: Assets/Code/Prefabs/Crabs/itty_bitty.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterPrefabsSpecial
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 68f053f7e443b4f2383ac9aa604bb6bd, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 5bd4a8a66c0fc4b5ea01cc3de9b65541, type: 2}
+    - {fileID: 11400000, guid: b6c781dcee1474579af1c50e0e866a52, type: 2}

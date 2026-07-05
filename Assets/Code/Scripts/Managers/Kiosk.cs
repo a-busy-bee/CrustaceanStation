@@ -107,7 +107,7 @@ public class Kiosk : KioskBase
         WeatherType currWeather = WeatherManager.instance.GetCurrentWeather();
         var (chosen, chosenIdx) = crabSelector.ChooseCrab();
 
-        bool validWeather = CheckWeather(chosen, currWeather);
+        bool validWeather = true; //CheckWeather(chosen, currWeather);
 
         while (!validWeather)   // check if the chosen crab is cool with the current weather
         {

@@ -89,7 +89,7 @@ public class CrabController : MonoBehaviour
             }
             isShuttle = true;
         }
-        else if ((int)crabInfo.plotLevel <= 2 && Random.Range(0, 10) < 6)
+        else if (!crabInfo.isImportantCharacter && (int)crabInfo.plotLevel <= 2 && Random.Range(0, 10) < 6)
         {
             isShuttle = true;
         }
@@ -231,7 +231,7 @@ public class CrabController : MonoBehaviour
         }
 
         // FIGURE OUT WHICH DOCUMENT IS FORGED
-        if (!isValid)
+        if (isValid || crabInfo.isImportantCharacter)
         {
             if (Random.Range(0, 10) > 8)                                       // FORGED ID
             {
@@ -250,7 +250,18 @@ public class CrabController : MonoBehaviour
             id.GetComponent<ID>().SetName(crabName);
         }
 
-        id.GetComponent<ID>().SetIDPhoto(crabPhoto);
+        if (crabInfo.isImportantCharacter) // no forgery if they're special
+        {
+            ticket.GetComponent<Ticket>().SetName(crabInfo.characterName);
+            id.GetComponent<ID>().SetName(crabInfo.characterName);
+            id.GetComponent<ID>().SetIDPhoto(crabInfo.sprite);
+        }
+        else
+        {
+            id.GetComponent<ID>().SetIDPhoto(crabPhoto);
+        }
+
+        
 
         // TRAIN CART TYPE FORGERY (OR NOT)
         cartType = LevelManagerBase.instance.GetRandomCurrentCartType();
@@ -291,6 +302,14 @@ public class CrabController : MonoBehaviour
     private void Dialogue()
     {
         if (DialogueManager.instance == null) return;
+
+        if (crabInfo.isImportantCharacter)
+        {
+            DialogueManager.instance.GetSpecialCharacterDialogue(crabInfo.specialCharacterType);
+            return;
+        }
+
+
         // high chance to not have dialogue
         if (Random.Range(0, 10) < 7) return;
 
@@ -371,4 +390,8 @@ public class CrabController : MonoBehaviour
         return isValid;
     }
 
+    public bool IsSpecial()
+    {
+        return crabInfo.isImportantCharacter;
+    }
 }

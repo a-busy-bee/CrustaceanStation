@@ -10,22 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 78e9b5b3f91a34cb3b12441421826e1c, type: 3}
-  m_Name: catfish
+  m_Name: shrimp_granny
   m_EditorClassIdentifier: Assembly-CSharp::CrabInfo
-  sprite: {fileID: 21300000, guid: f43b2346c76f1456bb000c49dfdccd2d, type: 3}
-  kioskHeight: 550
+  sprite: {fileID: 21300000, guid: 7d27975897fb2444199cc2432224f37e, type: 3}
+  kioskHeight: 609
   isLarge: 0
-  crabName: 
-  type: 10
-  favoriteWeatherTypes: 0100000002000000
-  crabdexName: catfish
-  isVariant: 0
-  variantName: 
-  mini: {fileID: 11400000, guid: 0b7286a73ef8a49a7bf53e5947697869, type: 2}
+  crabName: Kreymer
+  type: 18
+  favoriteWeatherTypes: 00000000010000000200000003000000
+  crabdexName: shrimp
+  isVariant: 1
+  variantName: granny
+  mini: {fileID: 11400000, guid: 864942151aacc4157b3d741b12e6c6ef, type: 2}
   isMultiple: 0
-  plotLevel: 1
+  plotLevel: 3
   hasResearchCoat: 0
   mutatedSprite: []
   isImportantCharacter: 1
-  characterNameID: protestCatfish
-  characterName: Protest
+  characterNameID: granny
+  characterName: Granny
+  specialCharacterType: 5

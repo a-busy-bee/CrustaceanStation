@@ -20,6 +20,7 @@ public class Clock : MonoBehaviour
 
     // CRABS
     [SerializeField] private KioskBase kiosk;
+    private int numSpecialCharacters = 2;
 
     // FILL COLOR
     [SerializeField] private Color red;
@@ -64,15 +65,22 @@ public class Clock : MonoBehaviour
             currentTime++;
 
             //LevelManager.instance.CheckTrains(currentTime);
-            WeatherManager.instance.ChangeWeather();
-            /*if (currentTime % 2 == 0) // chance to change weather every 2 hours
+            //WeatherManager.instance.ChangeWeather();
+            if (currentTime % 4 == 0) // chance to change weather every 4 hours
             {
                 WeatherManager.instance.ChangeWeather();
-            }*/
+            }
 
             if (currentTime == endTime - 2)
             {
                 StartCoroutine(FlashEOD());
+            }
+
+            if (currentTime == endTime / (numSpecialCharacters + 1) ||
+                currentTime == 2 * endTime / (numSpecialCharacters + 1) ||
+                currentTime == 3 * endTime / (numSpecialCharacters + 1))
+            {
+                CrabSelector.instance.PushNextSpecial();
             }
 
             if (currentTime == endTime)
@@ -107,6 +115,8 @@ public class Clock : MonoBehaviour
     private IEnumerator WaitThenSummonCrabs()
     {
         yield return new WaitForSeconds(0.5f);
+        numSpecialCharacters = CrabSelector.instance.GetNumSpecialCharacters();
+        Debug.Log("numSpecial " + numSpecialCharacters);
         kiosk.SetState(Kiosk.KioskState.Empty);
     }
 

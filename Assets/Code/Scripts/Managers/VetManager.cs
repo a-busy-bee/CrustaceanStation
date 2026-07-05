@@ -25,7 +25,7 @@ public class VetManager : MonoBehaviour
         isoWalkSprite.GetComponent<Image>().sprite = walkingSprites[colorIdx];
         isoRollSprite.GetComponent<Image>().sprite = rollingSprites[colorIdx];
 
-        vet.GetComponent<SmoothLerp>().Move(new Vector2(-421, 370), 0.25f);
+        vet.GetComponent<SmoothLerp>().Move(new Vector2(-421, 127), 0.25f);
         StartCoroutine(WaitThenContinue());
     }
 
