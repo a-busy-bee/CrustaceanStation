@@ -31,4 +31,16 @@ public class IsoControllerAdopted : IsoController, IPointerEnterHandler, IPointe
         rectTransform = GetComponent<RectTransform>();
         StartCoroutine(WaitThenSwitchStates());
     }
+
+    protected override float Move() // helper func for Roll and Walk
+    {
+        float targetX = Random.Range(-429, 612);
+        float targetY = Random.Range(-297, -281);
+
+        targetPos = new Vector2(targetX, targetY);
+        currPos = rectTransform.anchoredPosition;
+        currProgress = 0f;
+
+        return targetX; // return targetX to determine which direction to flip/roll
+    }
 }

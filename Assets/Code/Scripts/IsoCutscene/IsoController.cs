@@ -21,10 +21,10 @@ public class IsoController : MonoBehaviour
     private const float degPerSecAnim = 60f;                    // used to calculate rolling anim speed
 
     // set at runtime
-    private Vector2 targetPos;  
-    private Vector2 currPos;
-    private float currSpeed;
-    private float currProgress;
+    protected Vector2 targetPos;  
+    protected Vector2 currPos;
+    protected float currSpeed;
+    protected float currProgress;
 
     // sprites
     //private Color color;
@@ -184,7 +184,7 @@ public class IsoController : MonoBehaviour
         IsoMinigameManager.instance.IsopodSelected(color);
     }
 
-    private float Move() // helper func for Roll and Walk
+    protected virtual float Move() // helper func for Roll and Walk
     {
         float targetX = Random.Range(-773, 810);
         float targetY = Random.Range(-378, 388);
