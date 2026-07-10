@@ -11,9 +11,23 @@ public class IsoMinigameManager : MonoBehaviour
 
     [Header("Minigame")]
     [SerializeField] private GameObject minigameScreen;
-    [SerializeField] private Color[] isoColors;
+    [SerializeField] private Sprite[] largeIsoSprites;
+    [SerializeField] private Sprite[] rolledIsoSprites;
+    [SerializeField] private Sprite[] walkIsoSprites;
     [SerializeField] private GameObject[] isos;
     [SerializeField] private GameObject isoParent;
+
+    public enum IsoColors
+    {
+        red,
+        yellow,
+        green,
+        blue,
+        purple
+    }
+    private Dictionary<IsoColors, Sprite> colorToLargeSprite = new Dictionary<IsoColors, Sprite>();
+    private Dictionary<IsoColors, Sprite> colorToRolledSprite = new Dictionary<IsoColors, Sprite>();    // for adopted screen
+    private Dictionary<IsoColors, Sprite> colorToWalkSprite = new Dictionary<IsoColors, Sprite>();    // for cutscenes after minigame
 
     [Header("Iso Caught")]
     [SerializeField] private GameObject caughtScreen;
@@ -32,7 +46,9 @@ public class IsoMinigameManager : MonoBehaviour
     private string isoName;
     private string isoBirthMonth;
     private int isoBirthDay;
-    private string isoColor;
+    private IsoColors isoColor;
+    //private string isoColor;
+    //private Color isoColorColor;
 
 
     private void Awake()
@@ -46,28 +62,31 @@ public class IsoMinigameManager : MonoBehaviour
             instance = this;
         }
 
+        //init dictionary to convert color to sprite
+        for (int i = 0; i < largeIsoSprites.Length; i++)
+        {
+            colorToLargeSprite[(IsoColors)i] = largeIsoSprites[i];
+            colorToRolledSprite[(IsoColors)i] = rolledIsoSprites[i];
+            colorToWalkSprite[(IsoColors)i] = walkIsoSprites[i];
+        }
     }
 
     private void Start()
     {
         caughtScreen.SetActive(false);
         adoptionScreen.SetActive(false);
-
-        for (int i = 0; i < isos.Length; i++)
-        {
-            isos[i].GetComponent<IsoController>().SetColor(isoColors[i]);
-        }
     }
 
-    public void IsopodSelected(Color color)
+    public void IsopodSelected(IsoColors color)
     {
         caughtScreen.SetActive(true);
-        caughtIsoSprite.color = color;
+
+        Sprite largeSpriteColor = colorToLargeSprite[color];
+        caughtIsoSprite.sprite = largeSpriteColor;
+        isoColor = color;
 
         caughtBkgMovement.Move(new Vector2(0, 0), 0.25f);
         caughtForegroundMovement.Move(new Vector2(0, 0), 0.5f);
-
-        isoColor = color.ToHexString();
 
         //StartCoroutine(WaitBeforeHidingMinigameScreen());
     }
@@ -102,24 +121,24 @@ public class IsoMinigameManager : MonoBehaviour
         caughtIsoSprite.gameObject.GetComponent<IsoCaught>().GetAdopted();
         minigameScreen.SetActive(false);
 
-        StartCoroutine(WaitBeforeContinuing(true));
+        StartCoroutine(WaitBeforeContinuing());
     }
 
-    private IEnumerator WaitBeforeContinuing(bool isAdopted = false)
+    private IEnumerator WaitBeforeContinuing()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.75f);
 
         adoptButton.interactable = false;
         adoptionScreen.SetActive(true);
 
-        adoptIsoSprite.color = caughtIsoSprite.color;
+        adoptIsoSprite.sprite = colorToRolledSprite[isoColor];
         GenerateIsoBirthdayText();
 
         adoptBkgMovement.Move(new Vector2(0, 0), 0.25f);
         adoptForegroundMovement.Move(new Vector2(0, 0), 0.5f);
 
         yield return new WaitForSeconds(1f);
-        
+
         caughtScreen.SetActive(false);
     }
 
@@ -161,12 +180,24 @@ public class IsoMinigameManager : MonoBehaviour
         PlayerPrefs.SetString("IsoName", isoName);
         PlayerPrefs.SetString("IsoBirthdayMonth", isoBirthMonth);
         PlayerPrefs.SetInt("IsoBirthdayDay", isoBirthDay);
-        PlayerPrefs.SetString("IsoColor", isoColor);
-
-        Debug.Log(PlayerPrefs.GetString("IsoName"));
-        Debug.Log(PlayerPrefs.GetString("IsoColor"));
+        PlayerPrefs.SetInt("IsoColor", (int)isoColor);
 
         CutsceneManager.instance.SetCertificateShown();
         CutsceneManager.instance.ProgressScene();
+    }
+
+    public Sprite ConvertColorToRolledSprite(IsoColors color)
+    {
+        return colorToRolledSprite[color];
+    }
+
+    public Sprite ConvertColorToWalkSprite(IsoColors color)
+    {
+        return colorToWalkSprite[color];
+    }
+
+    public Sprite ConvertColorToLargeSprite(IsoColors color)
+    {
+        return colorToLargeSprite[color];
     }
 }

@@ -135,7 +135,7 @@ public class LevelManagerBase : MonoBehaviour
                     transparentOverlay.SetActive(true);
                     summaryMenu.SetActive(true);
                     //summaryMenu.GetComponent<Summary>().SetRating(ratingGoalScript.GetRating());
-                    summaryMenu.GetComponent<Summary>().SetCrabsProcessed(Kiosk.instance.GetTotalCrabs());
+                    //summaryMenu.GetComponent<Summary>().SetCrabsProcessed(Kiosk.instance.GetTotalCrabs());
 
                     dayStarted = false;
                 }

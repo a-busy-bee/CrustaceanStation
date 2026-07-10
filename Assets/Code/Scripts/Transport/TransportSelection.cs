@@ -7,6 +7,7 @@ public class TransportSelection : MonoBehaviour, IPointerClickHandler
     protected bool isClickable = false;
     // CART TYPE
     [SerializeField] protected Cart cartInfo;
+    [SerializeField] private int cartID = 0;
 
     public void SetThisClickable(bool newIsClickable)
     {
@@ -26,7 +27,7 @@ public class TransportSelection : MonoBehaviour, IPointerClickHandler
     {
         if (isClickable)
         {
-            PopupManager.instance.ShowPopup(PopupManager.Type.train, cartInfo.cartType);
+            PopupManager.instance.ShowPopup(PopupManager.Type.train, cartInfo.cartType, cartID);
             //PopupManager.instance.ShowPopup(railNumber, cartInfo.cartType);
             //popup.SetActive(true);
             //popup.GetComponent<CartPopup>().Populate(railNumber);

@@ -120,7 +120,7 @@ public class PopupManager : MonoBehaviour
         return vanPopup.GetComponent<VanPopup>().DepartTrain();
     }
 
-    public void ShowPopup(Type popupType, Cart.Type cartType = Cart.Type.Economy)
+    public void ShowPopup(Type popupType, Cart.Type cartType = Cart.Type.Economy, int cartID = 0)
     {
         if (currActive)
         {
@@ -137,12 +137,12 @@ public class PopupManager : MonoBehaviour
                 if (cartType == Cart.Type.Economy)
                 {
                     economyPopup.SetActive(true);
-                    economyPopup.GetComponent<CartPopup>().Show();
+                    economyPopup.GetComponent<CartPopup>().Show(cartID);
                 }
                 else
                 {
                     standardPopup.SetActive(true);
-                    standardPopup.GetComponent<CartPopup>().Show();
+                    standardPopup.GetComponent<CartPopup>().Show(cartID);
                         
                 }
         }

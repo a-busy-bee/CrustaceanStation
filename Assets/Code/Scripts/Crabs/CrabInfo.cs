@@ -71,10 +71,16 @@ public class CrabInfo : ScriptableObject
 		nonCrustacean,
 		normal
 	}
+
 	[Header("Plot")]
 	public PlotLevel plotLevel;
-	public bool isImportantCharacter;
-	public string characterNameID; // Only fill out if important character
 	public bool hasResearchCoat;
 	public Sprite[] mutatedSprite;
+
+
+	[Header("Specific Character")]
+	public bool isImportantCharacter;
+	public string characterNameID; // internal, for dialogues and such
+	public string characterName; // what shows up on their ID
+	public DialogueManager.SpecialCharacter specialCharacterType;
 }

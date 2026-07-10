@@ -1,16 +1,32 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.IO;
+using UnityEngine.UI;
 public class HomeManager : MonoBehaviour
 {
+    public static HomeManager instance { get; protected set; }
     [SerializeField] private GameObject loadingScreenPanel;
     [SerializeField] private GameObject crabdexNotif;
     [SerializeField] private GameObject mailroomNotif;
-    
+    [SerializeField] private GameObject isoRoomButton;
+    [SerializeField] private GameObject goToWorkButton;
+
     private PlotData plotData;
     private string defaultPath;
     private string savePath;
 
+	private void Awake()
+	{
+		if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+        }
+
+	}
 
     private void Start()
     {
@@ -65,8 +81,24 @@ public class HomeManager : MonoBehaviour
     {
         SceneManager.LoadScene("Mailroom");
     }
+
+    public void GoToIsoRoom()
+    {
+        SceneManager.LoadScene("IsoRoom");
+    }
+
     public void BackToMenu()
     {
         SceneManager.LoadScene("TitleScreen");
+    }
+
+    public void SetIsoRoomButtonActive(bool isActive)
+    {
+        isoRoomButton.SetActive(isActive);
+    }
+
+    public void SetGoToWorkButtonActive(bool isActive)
+    {
+        goToWorkButton.SetActive(isActive);
     }
 }

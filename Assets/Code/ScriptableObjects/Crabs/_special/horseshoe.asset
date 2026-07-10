@@ -10,21 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 78e9b5b3f91a34cb3b12441421826e1c, type: 3}
-  m_Name: shrimp_granny
+  m_Name: horseshoe
   m_EditorClassIdentifier: Assembly-CSharp::CrabInfo
-  sprite: {fileID: 21300000, guid: 7d27975897fb2444199cc2432224f37e, type: 3}
+  sprite: {fileID: 21300000, guid: bedc34cef839042a4bf5d4101ee200a3, type: 3}
   kioskHeight: 609
   isLarge: 0
   crabName: 
-  type: 18
+  type: 8
   favoriteWeatherTypes: 00000000010000000200000003000000
-  crabdexName: shrimp
-  isVariant: 1
-  variantName: granny
-  mini: {fileID: 11400000, guid: 864942151aacc4157b3d741b12e6c6ef, type: 2}
+  crabdexName: horseshoe
+  isVariant: 0
+  variantName: 
+  mini: {fileID: 11400000, guid: 3cf03bf32c4af44ea823eee8cad509e5, type: 2}
   isMultiple: 0
-  plotLevel: 3
-  isImportantCharacter: 0
-  characterNameID: 
+  plotLevel: 2
   hasResearchCoat: 0
-  mutatedSprite: []
+  mutatedSprite:
+  - {fileID: 21300000, guid: 0e7f60884b50d4a7ba97cb9c028c2972, type: 3}
+  isImportantCharacter: 1
+  characterNameID: horseshoe
+  characterName: Horseshoe
+  specialCharacterType: 2

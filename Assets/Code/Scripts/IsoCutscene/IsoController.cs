@@ -14,29 +14,30 @@ public class IsoController : MonoBehaviour
     private IsoState prevState;
 
     // movement
-    private RectTransform rectTransform;
+    protected RectTransform rectTransform;
     private Vector2 speedRange = new Vector2(100f, 500f);   // min/max speeds
     private const float rollingSpeedRangeOffset = 250.0f;
     private const float circumference = 2f * Mathf.PI * 85;     // circumference of rolled up sprite
     private const float degPerSecAnim = 60f;                    // used to calculate rolling anim speed
 
     // set at runtime
-    private Vector2 targetPos;  
-    private Vector2 currPos;
-    private float currSpeed;
-    private float currProgress;
+    protected Vector2 targetPos;  
+    protected Vector2 currPos;
+    protected float currSpeed;
+    protected float currProgress;
 
     // sprites
-    private Color color;
-    [SerializeField] private GameObject rollingSprite;
-    [SerializeField] private GameObject walkingSprite;
+    //private Color color;
+    [SerializeField] protected GameObject rollingSprite;
+    [SerializeField] protected GameObject walkingSprite;
 
     // misc
     [SerializeField] private Emotion emotionRolling;
     [SerializeField] private Emotion emotionWalking;
+    [SerializeField] private IsoMinigameManager.IsoColors color;
 
 
-    private void Awake()
+    virtual protected void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
         StartCoroutine(WaitThenSwitchStates());
@@ -149,7 +150,7 @@ public class IsoController : MonoBehaviour
         }
     }
 
-    private IEnumerator WaitThenSwitchStates()
+    protected IEnumerator WaitThenSwitchStates()
     {
         yield return new WaitForSeconds(Random.Range(0.1f, 5f));
 
@@ -182,14 +183,8 @@ public class IsoController : MonoBehaviour
     {
         IsoMinigameManager.instance.IsopodSelected(color);
     }
-	public void SetColor(Color newColor)
-    {
-        rollingSprite.GetComponent<Image>().color = newColor;
-        walkingSprite.GetComponent<Image>().color = newColor;
-        color = newColor;
-    }
 
-    private float Move() // helper func for Roll and Walk
+    protected virtual float Move() // helper func for Roll and Walk
     {
         float targetX = Random.Range(-773, 810);
         float targetY = Random.Range(-378, 388);
@@ -198,6 +193,6 @@ public class IsoController : MonoBehaviour
         currPos = rectTransform.anchoredPosition;
         currProgress = 0f;
 
-        return targetX;
+        return targetX; // return targetX to determine which direction to flip/roll
     }
 }

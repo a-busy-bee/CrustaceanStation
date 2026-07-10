@@ -1178,6 +1178,7 @@ GameObject:
   - component: {fileID: 414618968}
   - component: {fileID: 414618970}
   - component: {fileID: 414618969}
+  - component: {fileID: 414618971}
   m_Layer: 5
   m_Name: Mailroom
   m_TagString: Untagged
@@ -1291,6 +1292,7 @@ MonoBehaviour:
   audioManager: {fileID: 853173737}
   letter: {fileID: 329343765}
   feedbackForm: {fileID: 2141682737}
+  feedbackFormName: {fileID: 338292841}
   largeNote: {fileID: 1312461002}
   smallNote: {fileID: 263411413}
   letterImage: {fileID: 329343767}
@@ -1300,7 +1302,6 @@ MonoBehaviour:
   crabdexNotif: {fileID: 348852639}
   hideLetterButton: {fileID: 1777812758}
   backgroundOverlay: {fileID: 1889033795}
-  audioManager: {fileID: 1622936249}
 --- !u!114 &414618969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1325,6 +1326,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b3e2c6f3b10441e48a0d1d05f23bcc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LettersManager
+--- !u!114 &414618971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 414618963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af4ac8db947754cf59a885636599800e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CrabNameGenerator
 --- !u!1 &537867925
 GameObject:
   m_ObjectHideFlags: 0

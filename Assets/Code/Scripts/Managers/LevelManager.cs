@@ -81,7 +81,7 @@ public class LevelManager : LevelManagerBase
                     summaryMenu.SetActive(true);
                     PerformanceManager.instance.InitSummary();
                     //summaryMenu.GetComponent<Summary>().SetRating(ratingGoalScript.GetRating());
-                    summaryMenu.GetComponent<Summary>().SetCrabsProcessed(Kiosk.instance.GetTotalCrabs());
+                    //summaryMenu.GetComponent<Summary>().SetCrabsProcessed(Kiosk.instance.GetTotalCrabs());
 
                     dayStarted = false;
 

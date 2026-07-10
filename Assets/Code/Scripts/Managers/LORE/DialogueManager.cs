@@ -1,6 +1,8 @@
 using UnityEngine;
 using System;
-
+using System.Collections.Generic;
+using System.Linq;
+using Unity.Burst.Intrinsics;
 [Serializable]
 public class DialogueData
 {
@@ -13,6 +15,15 @@ public class DialogueData
     //TODO: load these
     public string[] nodesNonCrustacean;
     public string[] nodesCrustacean;
+    public string[] nodesVet;
+
+    public string[] ittyBitty;
+    public string[] protestorCatfish;
+    public string[] horseshoeCrab;
+    public string[] isobelle;
+    public string[] seaStarDad;
+    public string[] granny;
+    public string[] gramps;
 }
 
 [Serializable]
@@ -45,6 +56,18 @@ public class DialogueManager : MonoBehaviour
     private DialogueData dialogueData;
     [SerializeField] private DialogueObject dialogueObject;
 
+    public enum SpecialCharacter
+    {
+        itty,
+        protestorCatfish,
+        horseshoe,
+        isobelle,
+        seaStarDad,
+        granny,
+        gramps
+    }
+    private Dictionary<SpecialCharacter, string[]> characterToDialgoue;
+
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -59,6 +82,17 @@ public class DialogueManager : MonoBehaviour
     private void Start()
     {
         LoadJson();
+
+        characterToDialgoue = new Dictionary<SpecialCharacter, string[]>
+        {
+            {SpecialCharacter.itty,             dialogueData.ittyBitty},
+            {SpecialCharacter.protestorCatfish, dialogueData.protestorCatfish},
+            {SpecialCharacter.horseshoe,        dialogueData.horseshoeCrab},
+            {SpecialCharacter.isobelle,         dialogueData.isobelle},
+            {SpecialCharacter.seaStarDad,       dialogueData.seaStarDad},
+            {SpecialCharacter.granny,           dialogueData.granny},
+            {SpecialCharacter.gramps,           dialogueData.gramps},
+        };
     }
 
     private void LoadJson()
@@ -119,10 +153,32 @@ public class DialogueManager : MonoBehaviour
         dialogueObject.ShowDialogue(text);
     }
 
+    public void GetDialogueVet()
+    {
+        int stage = PlayerPrefs.GetInt("CurrDay") / 5;
+        string text = dialogueData.nodesVet[stage];
+        dialogueObject.ShowDialogue(text);
+    }
+
+    public void GetSpecialCharacterDialogue(SpecialCharacter characterName)
+    {
+        int dialgoueIdx = PlayerPrefs.GetInt(characterName.ToString());
+
+        // safety check to make sure we're not asking for more dialogue than we have
+        if (dialgoueIdx >= characterToDialgoue[characterName].Length)
+        {
+            PlayerPrefs.SetInt(characterName.ToString() + "_DONE", 1);
+            return;
+        }
+
+        string text = characterToDialgoue[characterName][dialgoueIdx];
+        dialogueObject.ShowDialogue(text);
+
+        PlayerPrefs.SetInt(characterName.ToString(), dialgoueIdx + 1); // progress dialogue
+    }
+
     public void ClearDialogue()
     {
         dialogueObject.ClearDialogue();
     }
-
-    
 }
