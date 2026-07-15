@@ -18,11 +18,5 @@ public class WeatherType : ScriptableObject
 	[Header("Fog/Rain")]
 	public bool isFoggy;	
 	public bool isRainy;
-	public enum RainType
-	{
-		none,
-		light,
-		dark
-	}
-	public RainType rainType;
+
 }

@@ -21,6 +21,7 @@ public class IsoController : MonoBehaviour
     private const float degPerSecAnim = 60f;                    // used to calculate rolling anim speed
 
     // set at runtime
+    protected Vector2 startingPos;
     protected Vector2 targetPos;  
     protected Vector2 currPos;
     protected float currSpeed;
@@ -40,6 +41,8 @@ public class IsoController : MonoBehaviour
     virtual protected void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
+        rectTransform.anchoredPosition = startingPos;
+
         StartCoroutine(WaitThenSwitchStates());
     }
 
