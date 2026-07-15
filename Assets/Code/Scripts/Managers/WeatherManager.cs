@@ -107,7 +107,7 @@ public class WeatherManager : MonoBehaviour
         startBkgTop = backgroundTop.color;
         startCloudBottom = cloudsBottom.color;
         startBkgBottom = backgroundBottom.color;
-        backgroundTop.material = multiply;
+        //backgroundTop.material = multiply;
 
         int changeIdx = Random.Range(0, 4);
 
