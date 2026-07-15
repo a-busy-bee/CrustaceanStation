@@ -46,6 +46,7 @@ public class WeatherManager : MonoBehaviour
     private Color startBkgBottom;
     private float startFogAlpha;
     private float startGroundAlpha;
+    private const float maxRainAlpha = 0.04f;
 
 
     private void Awake()
@@ -77,12 +78,13 @@ public class WeatherManager : MonoBehaviour
 
         StartMusic();
 
+        backgroundTop.material = null;
+
         if (startingType.isFoggy)
         {
             // turn on fog
             fogOverlay.SetActive(true);
             groundClouds.SetActive(true);
-            backgroundTop.material = null;
             wasFoggy = true;
         }
         else if (startingType.isRainy)
@@ -94,7 +96,7 @@ public class WeatherManager : MonoBehaviour
             backgroundTop.material = multiply;
 
             Color color = backgroundMultiplyLayer.color;
-            color.a = 67;
+            color.a = 0.67f;
             backgroundMultiplyLayer.color = color;
         }
     }
@@ -194,7 +196,7 @@ public class WeatherManager : MonoBehaviour
             if (isRainy)
             {
                 Color rainAlpha = rainImage.GetComponent<Image>().color;
-                rainAlpha.a = Mathf.Lerp(0, 0.23f, t);
+                rainAlpha.a = Mathf.Lerp(0, maxRainAlpha, t);
                 rainImage.GetComponent<Image>().color = rainAlpha;
                 rainImageBkg.GetComponent<Image>().color = rainAlpha;
 
@@ -202,10 +204,10 @@ public class WeatherManager : MonoBehaviour
                 rainMultiplyAlpha.a = Mathf.Lerp(0, 0.67f, t);
                 backgroundMultiplyLayer.color = rainMultiplyAlpha;
             }
-            if (wasRainy)
+            else if (wasRainy)
             {
                 Color rainAlpha = rainImage.GetComponent<Image>().color;
-                rainAlpha.a = Mathf.Lerp(0.23f, 0, t);
+                rainAlpha.a = Mathf.Lerp(maxRainAlpha, 0, t);
                 rainImage.GetComponent<Image>().color = rainAlpha;
                 rainImageBkg.GetComponent<Image>().color = rainAlpha;
 
@@ -218,14 +220,12 @@ public class WeatherManager : MonoBehaviour
             {
                 isTransitioning = false;
                 transitionTime = 0;
-                fogOverlay.SetActive(false);
-                groundClouds.SetActive(false);
-
-                
 
                 if (wasFoggy)
                 {
                     wasFoggy = false;
+                    fogOverlay.SetActive(false);
+                    groundClouds.SetActive(false);
                 }
                 if (wasRainy)
                 {
