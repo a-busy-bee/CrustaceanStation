@@ -34,7 +34,6 @@ public class WeatherManager : MonoBehaviour
     private float duration = 2f;
     private bool isTransitioning;
     private bool wasFoggy;
-    private bool showFoggy;
     private bool isRainy;
     private bool wasRainy;
     private Color goalCloudTop;
@@ -105,7 +104,8 @@ public class WeatherManager : MonoBehaviour
         startCloudTop = cloudsTop.color;
         startBkgTop = backgroundTop.color;
         startCloudBottom = cloudsBottom.color;
-        startBkgBottom = backgroundBottom.color;backgroundTop.material = multiply;
+        startBkgBottom = backgroundBottom.color;
+        backgroundTop.material = multiply;
 
         int changeIdx = Random.Range(0, 4);
 
@@ -131,13 +131,6 @@ public class WeatherManager : MonoBehaviour
             isRainy = false;
             wasRainy = true;
         }
-        
-        if (showFoggy)
-        {
-            wasFoggy = true;
-            showFoggy = false;
-        }
-
 
         int newWeather = 0;
 
@@ -196,12 +189,6 @@ public class WeatherManager : MonoBehaviour
                 Color groundCloudColor = groundClouds.GetComponent<Image>().color;
                 groundCloudColor.a = Mathf.Lerp(startGroundAlpha, 0, t);
                 groundClouds.GetComponent<Image>().color = groundCloudColor;
-            }
-            if (showFoggy)
-            {
-                Color fog = fogOverlay.GetComponent<Image>().color;
-                fog.a = Mathf.Lerp(0, startFogAlpha, t);
-                fogOverlay.GetComponent<Image>().color = fog;
             }
 
             if (isRainy)
