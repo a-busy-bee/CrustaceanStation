@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: itty_bitty
   m_EditorClassIdentifier: Assembly-CSharp::CrabInfo
   sprite: {fileID: 21300000, guid: c5d83dd39705c4911bfdcb127b4aea4f, type: 3}
-  kioskHeight: 609
+  kioskHeight: 595
   isLarge: 0
   crabName: 
   type: 1
@@ -29,3 +29,4 @@ MonoBehaviour:
   isImportantCharacter: 1
   characterNameID: ittybitty
   characterName: Itty Bitty
+  specialCharacterType: 0

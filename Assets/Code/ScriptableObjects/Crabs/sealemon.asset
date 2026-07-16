@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: sealemon
   m_EditorClassIdentifier: Assembly-CSharp::CrabInfo
   sprite: {fileID: 21300000, guid: 620d08e24184548878ff0cd75a22b63a, type: 3}
-  kioskHeight: 609
+  kioskHeight: 595
   isLarge: 0
   crabName: Simon
   type: 23
@@ -24,8 +24,10 @@ MonoBehaviour:
   mini: {fileID: 11400000, guid: 222ebda12f34f452687ee2eed9fe008c, type: 2}
   isMultiple: 0
   plotLevel: 2
-  isImportantCharacter: 0
-  characterNameID: 
   hasResearchCoat: 0
   mutatedSprite:
   - {fileID: 21300000, guid: 70e3a34f608b24191a12aa332cddf504, type: 3}
+  isImportantCharacter: 0
+  characterNameID: 
+  characterName: 
+  specialCharacterType: 0

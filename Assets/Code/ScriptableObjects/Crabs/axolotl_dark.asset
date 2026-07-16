@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: axolotl_dark
   m_EditorClassIdentifier: Assembly-CSharp::CrabInfo
   sprite: {fileID: 21300000, guid: fc59dbbdf67c342c1a9cf636a2838462, type: 3}
-  kioskHeight: 609
+  kioskHeight: 595
   isLarge: 0
   crabName: 
   type: 6
@@ -29,3 +29,5 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 725f2179bebe648ae82cbf0541ff9360, type: 3}
   isImportantCharacter: 0
   characterNameID: 
+  characterName: 
+  specialCharacterType: 0

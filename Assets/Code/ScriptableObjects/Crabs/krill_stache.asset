@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: krill_stache
   m_EditorClassIdentifier: Assembly-CSharp::CrabInfo
   sprite: {fileID: 21300000, guid: 656b927ebb3674c24a4f3fc92bf2d384, type: 3}
-  kioskHeight: 609
+  kioskHeight: 595
   isLarge: 0
-  crabName: 
+  crabName: Chill Krill
   type: 18
   favoriteWeatherTypes: 010000000000000003000000
   crabdexName: Krill
@@ -24,7 +24,9 @@ MonoBehaviour:
   mini: {fileID: 11400000, guid: 864942151aacc4157b3d741b12e6c6ef, type: 2}
   isMultiple: 0
   plotLevel: 3
-  isImportantCharacter: 0
-  characterNameID: 
   hasResearchCoat: 0
   mutatedSprite: []
+  isImportantCharacter: 0
+  characterNameID: 
+  characterName: 
+  specialCharacterType: 0

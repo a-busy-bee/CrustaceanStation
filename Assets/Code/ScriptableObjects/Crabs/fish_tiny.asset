@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: fish_tiny
   m_EditorClassIdentifier: Assembly-CSharp::CrabInfo
   sprite: {fileID: 21300000, guid: b30ef90fd6cb54f2899ec3be953eb1f8, type: 3}
-  kioskHeight: 609
+  kioskHeight: 595
   isLarge: 0
-  crabName: 
+  crabName: Podrick
   type: 11
   favoriteWeatherTypes: 000000000200000001000000
   crabdexName: tinyfish
@@ -24,8 +24,10 @@ MonoBehaviour:
   mini: {fileID: 11400000, guid: f9b51f11251ea4d7b9fc9a52d18f8971, type: 2}
   isMultiple: 0
   plotLevel: 2
-  isImportantCharacter: 0
-  characterNameID: 
   hasResearchCoat: 0
   mutatedSprite:
   - {fileID: 21300000, guid: 77419b326fa06403c9383711a1439bae, type: 3}
+  isImportantCharacter: 0
+  characterNameID: 
+  characterName: 
+  specialCharacterType: 0

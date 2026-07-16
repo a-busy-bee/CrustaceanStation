@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: amphipod_coral
   m_EditorClassIdentifier: Assembly-CSharp::CrabInfo
   sprite: {fileID: 21300000, guid: 92e2721e764c0462fbbb959bbabc0291, type: 3}
-  kioskHeight: 609
+  kioskHeight: 595
   isLarge: 0
-  crabName: 
+  crabName: Boba Walker
   type: 14
   favoriteWeatherTypes: 00000000010000000200000003000000
   crabdexName: amphipod
@@ -28,3 +28,5 @@ MonoBehaviour:
   mutatedSprite: []
   isImportantCharacter: 0
   characterNameID: 
+  characterName: 
+  specialCharacterType: 0
