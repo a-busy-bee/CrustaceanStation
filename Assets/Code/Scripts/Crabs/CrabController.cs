@@ -261,7 +261,16 @@ public class CrabController : MonoBehaviour
             id.GetComponent<ID>().SetIDPhoto(crabPhoto);
         }
 
-        
+        // seat number tag
+        if (crabInfo.isMultiple || crabInfo.isLarge)
+        {
+            id.GetComponent<ID>().SetSeatType(ID.SeatType.doubleSeat);
+        }
+        else
+        {
+            id.GetComponent<ID>().SetSeatType(ID.SeatType.singleSeat);
+        }
+
 
         // TRAIN CART TYPE FORGERY (OR NOT)
         cartType = LevelManagerBase.instance.GetRandomCurrentCartType();
