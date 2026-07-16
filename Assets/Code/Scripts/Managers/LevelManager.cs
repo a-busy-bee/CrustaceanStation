@@ -4,6 +4,8 @@ using UnityEngine.UI;
 
 public class LevelManager : LevelManagerBase
 {
+    [SerializeField] private LevelPopup levelPopup;
+
     override protected void Start()
     {
         SetState(LMState.Setup);
@@ -19,9 +21,7 @@ public class LevelManager : LevelManagerBase
         {
             case LMState.Setup:
                 {
-                    InitTrains();
-
-                    SetState(LMState.Goal);
+                    levelPopup.BeginPopup();
                 }
                 break;
 
