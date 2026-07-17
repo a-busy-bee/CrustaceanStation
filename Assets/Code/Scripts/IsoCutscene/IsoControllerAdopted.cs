@@ -7,6 +7,10 @@ public class IsoControllerAdopted : IsoController, IPointerEnterHandler, IPointe
 {
     [SerializeField] private Sprite[] rolledIsoSprites;
     [SerializeField] private Sprite[] walkIsoSprites;
+
+    protected new Vector2 startingPos = new Vector2(70, -281);
+
+
     public void OnPointerEnter(PointerEventData eventData)
     {
 

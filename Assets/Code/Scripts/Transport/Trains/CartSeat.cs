@@ -395,7 +395,7 @@ public class CartSeat : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         if (isTaken || hasSelected) return;
         if ((currMini.isMultiple || currMini.isLarge) && !cartPopup.CheckIfBothSeatsAreOpen(row, column)) return;
         // if col is 1 or 3 and the prev seat has a large
-        if ((column == 1 || column == 3) && cartPopup.IsPrevSeatWithLarge(row, column)) return;
+        if ((column == 1 || column == 3) && cartPopup.IsPrevSeatWithLarge(row, column, cartPopup.GetCurrIDOpen())) return;
 
         if (currMini.isMultiple)
         {

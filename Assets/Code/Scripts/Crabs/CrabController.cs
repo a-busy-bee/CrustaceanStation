@@ -255,13 +255,23 @@ public class CrabController : MonoBehaviour
             ticket.GetComponent<Ticket>().SetName(crabInfo.characterName);
             id.GetComponent<ID>().SetName(crabInfo.characterName);
             id.GetComponent<ID>().SetIDPhoto(crabInfo.sprite);
+            isValid = true;
         }
         else
         {
             id.GetComponent<ID>().SetIDPhoto(crabPhoto);
         }
 
-        
+        // seat number tag
+        if (crabInfo.isMultiple || crabInfo.isLarge)
+        {
+            id.GetComponent<ID>().SetSeatType(ID.SeatType.doubleSeat);
+        }
+        else
+        {
+            id.GetComponent<ID>().SetSeatType(ID.SeatType.singleSeat);
+        }
+
 
         // TRAIN CART TYPE FORGERY (OR NOT)
         cartType = LevelManagerBase.instance.GetRandomCurrentCartType();

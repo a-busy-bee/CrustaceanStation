@@ -1,10 +1,11 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 public class WeatherManager : MonoBehaviour
 {
     public static WeatherManager instance { get; private set; }
 
-    [SerializeField] private WeatherType[] types; // sunny > lightRain > darkRain > fog
+    [SerializeField] private WeatherType[] types; // sunny > rain > fog
     private WeatherType currentType;
 
     [Header("Audio")]
@@ -13,16 +14,16 @@ public class WeatherManager : MonoBehaviour
     [Header("Foreground")]
     [SerializeField] private Image cloudsTop;
     [SerializeField] private Image backgroundTop;
+    [SerializeField] private Material multiply;
 
     [Header("Background")]
     [SerializeField] private Image cloudsBottom;
     [SerializeField] private Image backgroundBottom;
+    [SerializeField] private Image backgroundMultiplyLayer;
 
-    [Header("Rain Particle Systems")]
-    [SerializeField] private ParticleSystem darkRainParticles;
-    [SerializeField] private ParticleSystem lightRainParticles;
-    [SerializeField] private ParticleSystem darkRainParticlesBkg;
-    [SerializeField] private ParticleSystem lightRainParticlesBkg;
+    [Header("Rain Images")]
+    [SerializeField] private GameObject rainImage;
+    [SerializeField] private GameObject rainImageBkg;
 
     [Header("Fog")]
     [SerializeField] private GameObject fogOverlay;
@@ -33,6 +34,8 @@ public class WeatherManager : MonoBehaviour
     private float duration = 2f;
     private bool isTransitioning;
     private bool wasFoggy;
+    private bool isRainy;
+    private bool wasRainy;
     private Color goalCloudTop;
     private Color goalBkgTop;
     private Color goalCloudBottom;
@@ -43,6 +46,7 @@ public class WeatherManager : MonoBehaviour
     private Color startBkgBottom;
     private float startFogAlpha;
     private float startGroundAlpha;
+    private const float maxRainAlpha = 0.04f;
 
 
     private void Awake()
@@ -63,8 +67,8 @@ public class WeatherManager : MonoBehaviour
         groundClouds.SetActive(false);
 
         // choose random state
-        int startingWeather = Random.Range(0, 4);
-        WeatherType startingType = types[startingWeather];//types[3];//types[0];//types[startingWeather];
+        int startingWeather = Random.Range(0, 3);
+        WeatherType startingType = types[startingWeather];
         currentType = startingType;
 
         cloudsTop.color = startingType.cloudsTop;
@@ -73,6 +77,8 @@ public class WeatherManager : MonoBehaviour
         backgroundBottom.color = startingType.backgroundBottom;
 
         StartMusic();
+
+        backgroundTop.material = null;
 
         if (startingType.isFoggy)
         {
@@ -83,17 +89,15 @@ public class WeatherManager : MonoBehaviour
         }
         else if (startingType.isRainy)
         {
-            if (startingType.rainType == WeatherType.RainType.light)
-            {
-                lightRainParticles.Play();
-                lightRainParticlesBkg.Play();
-            }
-            else if (startingType.rainType == WeatherType.RainType.dark)
-            {
-                darkRainParticles.Play();
-                darkRainParticlesBkg.Play();
-                
-            }
+            rainImageBkg.SetActive(true);
+            rainImage.SetActive(true);
+            isRainy = true;
+
+            backgroundTop.material = multiply;
+
+            Color color = backgroundMultiplyLayer.color;
+            color.a = 0.67f;
+            backgroundMultiplyLayer.color = color;
         }
     }
 
@@ -103,6 +107,7 @@ public class WeatherManager : MonoBehaviour
         startBkgTop = backgroundTop.color;
         startCloudBottom = cloudsBottom.color;
         startBkgBottom = backgroundBottom.color;
+        //backgroundTop.material = multiply;
 
         int changeIdx = Random.Range(0, 4);
 
@@ -116,27 +121,20 @@ public class WeatherManager : MonoBehaviour
         }
     }
 
+    [ContextMenu("Make sunny")]
     private void MakeSunny()
     {
         isTransitioning = true;
 
         audioManager.Crossfade("waves", 2f);
 
-        int newWeather = 0; // change weather to light rain if it's currently dark rain
+        if (isRainy)
+        {
+            isRainy = false;
+            wasRainy = true;
+        }
 
-        if (currentType.rainType == WeatherType.RainType.light)
-        {
-            lightRainParticles.Stop(true, ParticleSystemStopBehavior.StopEmitting);
-            lightRainParticlesBkg.Stop(true, ParticleSystemStopBehavior.StopEmitting);
-        }
-        else
-        {
-            darkRainParticles.Stop(true, ParticleSystemStopBehavior.StopEmitting);
-            darkRainParticlesBkg.Stop(true, ParticleSystemStopBehavior.StopEmitting);
-            lightRainParticles.Play();
-            lightRainParticlesBkg.Play();
-            newWeather = 1;
-        }
+        int newWeather = 0;
 
         currentType = types[newWeather];
 
@@ -146,32 +144,30 @@ public class WeatherManager : MonoBehaviour
         goalBkgBottom = types[newWeather].backgroundBottom;
     }
 
+    [ContextMenu("Make rainy")]
     private void MakeRainy()
     {
+        backgroundTop.material = multiply;
         isTransitioning = true;
 
         audioManager.Crossfade("rain", 2f);
 
-        int typeOfRain = Random.Range(0, 2);
+        rainImage.SetActive(true);
+        rainImageBkg.SetActive(true);
 
-        if (typeOfRain == 0)
+        if (!isRainy)
         {
-            lightRainParticles.Play();
-            lightRainParticlesBkg.Play();
-            typeOfRain = 1;
+            isRainy = true;
+            wasRainy = false;
         }
-        else
-        {
-            darkRainParticles.Play();
-            darkRainParticlesBkg.Play();
-            typeOfRain = 2;
-        }
-        currentType = types[typeOfRain];
 
-        goalCloudTop = types[typeOfRain].cloudsTop;
-        goalBkgTop = types[typeOfRain].backgroundTop;
-        goalCloudBottom = types[typeOfRain].cloudsBottom;
-        goalBkgBottom = types[typeOfRain].backgroundBottom;
+        int newWeather = 1;
+        currentType = types[newWeather];
+
+        goalCloudTop = types[newWeather].cloudsTop;
+        goalBkgTop = types[newWeather].backgroundTop;
+        goalCloudBottom = types[newWeather].cloudsBottom;
+        goalBkgBottom = types[newWeather].backgroundBottom;
     }
 
     private void Update()
@@ -197,16 +193,47 @@ public class WeatherManager : MonoBehaviour
                 groundClouds.GetComponent<Image>().color = groundCloudColor;
             }
 
+            if (isRainy)
+            {
+                Color rainAlpha = rainImage.GetComponent<Image>().color;
+                rainAlpha.a = Mathf.Lerp(0, maxRainAlpha, t);
+                rainImage.GetComponent<Image>().color = rainAlpha;
+                rainImageBkg.GetComponent<Image>().color = rainAlpha;
+
+                Color rainMultiplyAlpha = backgroundMultiplyLayer.color;
+                rainMultiplyAlpha.a = Mathf.Lerp(0, 0.67f, t);
+                backgroundMultiplyLayer.color = rainMultiplyAlpha;
+            }
+            else if (wasRainy)
+            {
+                Color rainAlpha = rainImage.GetComponent<Image>().color;
+                rainAlpha.a = Mathf.Lerp(maxRainAlpha, 0, t);
+                rainImage.GetComponent<Image>().color = rainAlpha;
+                rainImageBkg.GetComponent<Image>().color = rainAlpha;
+
+                Color rainMultiplyAlpha = backgroundMultiplyLayer.color;
+                rainMultiplyAlpha.a = Mathf.Lerp(0.67f, 0, t);
+                backgroundMultiplyLayer.color = rainMultiplyAlpha;
+            }
+
             if (t >= 1f)
             {
                 isTransitioning = false;
                 transitionTime = 0;
-                fogOverlay.SetActive(false);
-                groundClouds.SetActive(false);
 
                 if (wasFoggy)
                 {
                     wasFoggy = false;
+                    fogOverlay.SetActive(false);
+                    groundClouds.SetActive(false);
+                }
+                if (wasRainy)
+                {
+                    wasRainy = false;
+                    isRainy = false;
+
+                    rainImage.SetActive(false);
+                    rainImageBkg.SetActive(false);
                 }
             }
         }

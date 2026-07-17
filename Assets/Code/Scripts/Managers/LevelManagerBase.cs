@@ -230,4 +230,10 @@ public class LevelManagerBase : MonoBehaviour
         return Tutorial.TutorialState.setup;
     }
 
+    public void Begin()
+    {
+        InitTrains();
+        SetState(LMState.Goal);
+    }
+
 }

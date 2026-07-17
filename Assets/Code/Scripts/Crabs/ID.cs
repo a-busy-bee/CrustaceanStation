@@ -17,13 +17,31 @@ public class ID : MonoBehaviour
     private Ticket ticket;
 
     [SerializeField] private CanvasGroup canvasGroup;
+
+    [SerializeField] private Image seatTypeImage; // x1 vs x2
+    [SerializeField] private Image seatTypeImageMagnify;
+    [SerializeField] private Sprite[] seatTypeSprites;
+    public enum SeatType
+    {
+        singleSeat,
+        doubleSeat
+    }
+    private SeatType seatType;
     
     private AudioManager audioManager;
 
     private void Start()
     {
         audioManager = KioskBase.instance.GetSFXManager();
+    }
 
+    public void SetSeatType(SeatType newSeatType)
+    {
+        seatType = newSeatType;
+
+        Sprite sprite = seatTypeSprites[(int)seatType];
+        seatTypeImage.sprite = sprite;
+        seatTypeImageMagnify.sprite = sprite;
     }
 
     public void SetName(string newName)
