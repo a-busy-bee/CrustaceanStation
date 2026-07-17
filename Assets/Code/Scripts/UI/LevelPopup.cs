@@ -90,17 +90,16 @@ public class LevelPopup : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         kioskPanelShadowCluster.SetActive(true);
         kioskPanelShadowCluster.GetComponent<SmoothLerp>().Move(kioskPanelShadowTargetPos, kioskPanelShadowSpeed);
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.5f);
 
         // performance bar
         performanceBarCluster.SetActive(true);
         performanceBarCluster.GetComponent<SmoothLerp>().Move(performanceBarTargetPos, performanceBarSpeed);
-        yield return new WaitForSeconds(1);
 
         // sand
         sandCluster.GetComponent<SmoothLerp>().Move(sandTargetPos, sandSpeed);
         trainCluster.GetComponent<SmoothLerp>().Move(trainTargetPos, trainSpeed);
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.75f);
 
         // train board
         trainBoardCluster.GetComponent<SmoothLerp>().Move(trainBoardTargetPos, trainBoardSpeed);
