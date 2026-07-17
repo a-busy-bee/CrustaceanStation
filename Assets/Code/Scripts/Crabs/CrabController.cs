@@ -255,6 +255,7 @@ public class CrabController : MonoBehaviour
             ticket.GetComponent<Ticket>().SetName(crabInfo.characterName);
             id.GetComponent<ID>().SetName(crabInfo.characterName);
             id.GetComponent<ID>().SetIDPhoto(crabInfo.sprite);
+            isValid = true;
         }
         else
         {
