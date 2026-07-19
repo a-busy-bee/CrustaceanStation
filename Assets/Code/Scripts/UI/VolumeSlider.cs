@@ -4,19 +4,23 @@ using UnityEngine.UI;
 
 public class AudioSlider : MonoBehaviour
 {
-    [SerializeField]
-    private AudioMixer Mixer;
-    [SerializeField]
-    private AudioManager[] audioManagers = new AudioManager[0];
-    [SerializeField]
-    private AudioMixMode MixMode;
+    [SerializeField] private AudioMixer Mixer;
+    [SerializeField] private AudioManager[] audioManagers = new AudioManager[0];
+    [SerializeField] private AudioMixMode MixMode;
 
     [SerializeField] private Slider slider;
     [SerializeField] private bool isMasterVolumeControl;
+    
+    public enum AudioMixMode
+    {
+        LinearAudioSourceVolume,
+        LinearMixerVolume,
+        LogrithmicMixerVolume
+    }
 
     private void Start()
     {
-        float volume = SaveManager.instance.GetSettings_Volume(); 
+        float volume = SaveManager.instance.GetSettings_Volume();
         Mixer.SetFloat("Volume", Mathf.Log10(volume * 20));
     }
 
@@ -50,13 +54,5 @@ public class AudioSlider : MonoBehaviour
 
         float a = Mathf.Log10(Value) * 20;
         SaveManager.instance.SaveSettings(SaveManager.SettingsType.volume, Value.ToString());
-    }
-
-
-    public enum AudioMixMode
-    {
-        LinearAudioSourceVolume,
-        LinearMixerVolume,
-        LogrithmicMixerVolume
     }
 }

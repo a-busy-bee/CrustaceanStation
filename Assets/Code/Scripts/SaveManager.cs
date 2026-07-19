@@ -103,6 +103,7 @@ public class SaveManager : MonoBehaviour
         if (instance != null && instance != this)
         {
             Destroy(gameObject);
+            return;
         }
         else
         {
@@ -137,11 +138,11 @@ public class SaveManager : MonoBehaviour
                 break;
 
             case SettingsType.volume:
-                data.settings.volume = float.Parse(value);
+                data.settings.volume = float.Parse(value, System.Globalization.CultureInfo.InvariantCulture);
                 break;
 
             case SettingsType.brightness:
-                data.settings.brightness = float.Parse(value);
+                data.settings.brightness = float.Parse(value, System.Globalization.CultureInfo.InvariantCulture);
                 break;
 
             case SettingsType.reduceMotion:
@@ -233,7 +234,7 @@ public class SaveManager : MonoBehaviour
                 break;
 
             case ProgressionType.performanceBarPercent:
-                data.progressionData.performanceBarPercent = float.Parse(value);
+                data.progressionData.performanceBarPercent = float.Parse(value, System.Globalization.CultureInfo.InvariantCulture);
                 break;
 
             case ProgressionType.performanceBarSaved:
@@ -293,7 +294,7 @@ public class SaveManager : MonoBehaviour
         // save settings
         string language = data.settings.language;
         float volume = data.settings.volume;
-        float brightness = data.settings.volume;
+        float brightness = data.settings.brightness;
         bool reduceMotion = data.settings.reduceMotion;
 
         // reset file
