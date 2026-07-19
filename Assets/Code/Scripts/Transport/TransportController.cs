@@ -84,7 +84,6 @@ public class TransportController : MonoBehaviour
                         ts.SetThisClickable(false);
                         coins += ts.Depart();
                     }
-                    Kiosk.instance.GivePlayerCoins(coins);
                 }
                 break;
 

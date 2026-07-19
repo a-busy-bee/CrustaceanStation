@@ -62,7 +62,8 @@ public class HomeManager : MonoBehaviour
 
     public void startDay(string sceneName)
     {
-        if (PlayerPrefs.GetInt("newGame") == 1)
+        bool isNewGame = SaveManager.instance.GetProgression_NewGame();
+        if (isNewGame)
         {
             loadingScreenPanel.SetActive(true);
             loadingScreenPanel.GetComponent<LoadingScreen>().PlayLoad("Tutorial");

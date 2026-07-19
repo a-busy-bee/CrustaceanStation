@@ -27,7 +27,6 @@ public class Switch : MonoBehaviour, IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData)
     {
         if (TutorialManager.instance.GetIsTutorial() && TutorialManager.instance.GetCurrTutorialState() < Tutorial.TutorialState.trainSwitch) return;
-        Debug.Log("click");
         animator.enabled = true;
         animator.Play("SwitchOn");
         audioManager.Play(audioName);

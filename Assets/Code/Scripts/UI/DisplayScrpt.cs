@@ -33,12 +33,6 @@ public class DisplayScrpt : MonoBehaviour
 
     void Update()
     {
-        Debug.Log("paused: " + paused +
-                "\ncrabMoving: " + crabMoving +
-                "\ncrabDisplayed: " + crabDisplayed +
-                "\nmoving: " + moving +
-                "\ndisplayed: " + displayed);
-
         if (Input.GetKeyDown(KeyCode.Escape) && !settings.GetComponent<Settings>().IsDisplayed())
         {
             // pause
@@ -144,10 +138,7 @@ public class DisplayScrpt : MonoBehaviour
 
     public void OnSettings()
     {
-        Debug.Log(1);
         settings.SetActive(true);
-        Debug.Log(2);
         settings.GetComponent<Settings>().Show();
-        Debug.Log(3);
     }
 }

@@ -116,7 +116,6 @@ public class Clock : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         numSpecialCharacters = CrabSelector.instance.GetNumSpecialCharacters();
-        Debug.Log("numSpecial " + numSpecialCharacters);
         kiosk.SetState(Kiosk.KioskState.Empty);
     }
 

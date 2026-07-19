@@ -177,10 +177,7 @@ public class IsoMinigameManager : MonoBehaviour
     {
         isoName = nameField.text;
         // save iso name and birthday and color
-        PlayerPrefs.SetString("IsoName", isoName);
-        PlayerPrefs.SetString("IsoBirthdayMonth", isoBirthMonth);
-        PlayerPrefs.SetInt("IsoBirthdayDay", isoBirthDay);
-        PlayerPrefs.SetInt("IsoColor", (int)isoColor);
+        SaveManager.instance.SaveIsoData(isoName, isoBirthMonth, isoBirthDay, (int)isoColor);
 
         CutsceneManager.instance.SetCertificateShown();
         CutsceneManager.instance.ProgressScene();

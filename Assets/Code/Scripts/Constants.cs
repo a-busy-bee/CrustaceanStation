@@ -6,10 +6,4 @@ public class Constants : MonoBehaviour
     public static int CLOCK_END_TIME = 24;
     public static float CLOCK_SPEED = 10f; //0.01f;//1f; //5f; //0.0001f;//1f;//10f; 
 
-
-
-    // TODO: add all playerprefs variable names
-
-
-
 }

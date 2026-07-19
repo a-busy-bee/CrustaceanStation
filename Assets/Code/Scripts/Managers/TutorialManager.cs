@@ -8,6 +8,7 @@ public class TutorialManager : LevelManagerBase
     [SerializeField] private Tutorial tutorial;
     [SerializeField] private bool debug;
     private int tutorialState;
+    private SaveManager saveManager;
 
     override protected void Awake()
     {
@@ -25,7 +26,7 @@ public class TutorialManager : LevelManagerBase
         summaryMenu.SetActive(false);
         isTutorial = true;
 
-        if (debug) PlayerPrefs.SetInt("tutorialState", 0);
+        if (debug) saveManager.SaveProgressionData(SaveManager.ProgressionType.tutorialState, 0.ToString());
     }
     override public void SetState(LMState newState)
     {
@@ -39,7 +40,7 @@ public class TutorialManager : LevelManagerBase
                     //Kiosk.instance.ShowDecor();
                     InitTrains();
 
-                    tutorialState = PlayerPrefs.GetInt("tutorialState");
+                    tutorialState = saveManager.GetProgression_TutorialState();
                     SetState(LMState.Goal);
                 }
                 break;
@@ -118,7 +119,7 @@ public class TutorialManager : LevelManagerBase
         summaryMenu.SetActive(true);
 
         dayStarted = false;
-        PlayerPrefs.SetInt("newGame", -1);
+        saveManager.SaveProgressionData(SaveManager.ProgressionType.newGame, false.ToString());
     }
 
     private IEnumerator WaitThenSummonCrabs()
@@ -135,18 +136,17 @@ public class TutorialManager : LevelManagerBase
 
     public void SetTutorialState()
     {
-        tutorial.SetState((Tutorial.TutorialState)PlayerPrefs.GetInt("tutorialState"));
+        tutorial.SetState((Tutorial.TutorialState)saveManager.GetProgression_TutorialState());
     }
 
     public void OnSkip()
     {
-        PlayerPrefs.SetInt("newGame", -1);
+        saveManager.SaveProgressionData(SaveManager.ProgressionType.newGame, false.ToString());
         SceneManager.LoadScene("Home");
     }
 
     override public bool IsFirstCrabTutorial()
     {
-        Debug.Log("is first crab " + tutorial.GetIsFirstCrab());
         return tutorial.GetIsFirstCrab();
     }
 

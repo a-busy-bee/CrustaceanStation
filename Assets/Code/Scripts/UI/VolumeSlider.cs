@@ -14,15 +14,10 @@ public class AudioSlider : MonoBehaviour
     [SerializeField] private Slider slider;
     [SerializeField] private bool isMasterVolumeControl;
 
-    private void Awake()
-    {
-        print(slider.value);
-        print(PlayerPrefs.GetFloat("Volume"));
-        //slider.value = 1f;//PlayerPrefs.GetFloat("Volume");
-    }
     private void Start()
     {
-        Mixer.SetFloat("Volume", Mathf.Log10(PlayerPrefs.GetFloat("Volume", 1) * 20));
+        float volume = SaveManager.instance.GetSettings_Volume();
+        Mixer.SetFloat("Volume", Mathf.Log10(volume * 20));
     }
 
     public void OnChangeSlider(float Value)
@@ -54,9 +49,7 @@ public class AudioSlider : MonoBehaviour
         }
 
         float a = Mathf.Log10(Value) * 20;
-
-        PlayerPrefs.SetFloat("Volume", Value);
-        PlayerPrefs.Save();
+        SaveManager.instance.SaveSettings(SaveManager.SettingsType.volume, Value.ToString());
     }
 
 

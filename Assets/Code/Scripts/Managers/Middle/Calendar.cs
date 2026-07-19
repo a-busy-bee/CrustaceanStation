@@ -11,7 +11,7 @@ public class Calendar : MonoBehaviour
 
     private void Start()
     {
-        currDay = PlayerPrefs.GetInt("CurrDay");
+        currDay = SaveManager.instance.GetProgression_CurrDay();
 
         for (int i = 0; i < currDay; i++)
         {

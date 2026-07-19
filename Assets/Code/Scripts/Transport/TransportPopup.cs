@@ -10,7 +10,6 @@ public class TransportPopup : MonoBehaviour
 {
     // TODO: IF YOU ARE ADDING A MINI TYPE, UPDATE RANDOM NUM UPPER BOUND IN GenerateNewSeats INNER LOOP
 
-    //TODO: use inheritance for van, shuttle, and cart
     protected Mini currMini;
     [SerializeField] protected Cart.Type type;
     [SerializeField] protected int maxID = 1;

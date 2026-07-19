@@ -28,7 +28,7 @@ public class IsoControllerAdopted : IsoController, IPointerEnterHandler, IPointe
 
     protected override void Awake()
     {
-        int colorIdx = PlayerPrefs.GetInt("IsoColor");
+        int colorIdx = SaveManager.instance.GetIso_Color();
         walkingSprite.GetComponent<Image>().sprite = walkIsoSprites[colorIdx];
         rollingSprite.GetComponent<Image>().sprite = rolledIsoSprites[colorIdx];
 

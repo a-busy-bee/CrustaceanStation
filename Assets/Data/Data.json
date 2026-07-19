@@ -1,0 +1,65 @@
+{
+	"settings": {
+		"language": "English",
+		"volume": 1.0,
+		"brightness": 1.0,
+		"reduceMotion": false
+	}, 
+
+	"isoData": {
+		"isoName": "",
+		"isoBirthdayMonth": "",
+		"isoBirthdayDay": 0,
+		"isoColor": 0
+	},
+
+	"charactersData": {
+		"characters": [
+			{
+				"characterName": "protestCatfish",
+				"dialogueIdx": 0,
+				"isDone": false
+			},
+			{
+				"characterName": "horseshoe",
+				"dialogueIdx": 0,
+				"isDone": false
+			},
+			{
+				"characterName": "isoBeautiful",
+				"dialogueIdx": 0,
+				"isDone": false
+			},
+			{
+				"characterName": "ittybitty",
+				"dialogueIdx": 0,
+				"isDone": false
+			},
+			{
+				"characterName": "seastardad",
+				"dialogueIdx": 0,
+				"isDone": false
+			},
+			{
+				"characterName": "gramps",
+				"dialogueIdx": 0,
+				"isDone": false
+			},
+			{
+				"characterName": "granny",
+				"dialogueIdx": 0,
+				"isDone": false
+			}
+		]
+	},
+
+	"progressionData": {
+		"currDay": 0,
+		"performanceBarSavedData": 0,
+		"tutorialState": 0,
+		"performanceBarPercent": 0.5,
+		"introMailSeen": false,
+		"firstDay": true,
+		"newGame": true
+	}
+}

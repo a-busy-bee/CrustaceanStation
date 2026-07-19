@@ -41,7 +41,6 @@ public class PlotManager : MonoBehaviour
     }
 
     private Stage currStage;
-    private int crabsSinceLastLevelUp = 0;
     private Dictionary<Stage, int> crabsNeededToAdvance;
     private float crust = 1.0f;
     private float bio = 1.0f;
@@ -67,25 +66,6 @@ public class PlotManager : MonoBehaviour
     {
         LoadJSON();
     }
-
-    /*private void LoadJSON()
-    {
-        defaultPath = Application.dataPath + "/Data/Inbox.json";
-        savePath = Application.persistentDataPath + "/Inbox.json";
-
-        if (File.Exists(savePath))
-        {
-            plotData = JsonUtility.FromJson<PlotData>(File.ReadAllText(savePath));
-        }
-        else
-        {
-            // load default file from resources
-            string jsonText = File.ReadAllText(defaultPath);
-            plotData = JsonUtility.FromJson<PlotData>(jsonText);
-
-            File.WriteAllText(savePath, JsonUtility.ToJson(plotData, true));
-        }
-    }*/
 
     public int GetCurrStageInt()
     {

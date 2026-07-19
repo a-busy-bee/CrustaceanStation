@@ -22,15 +22,6 @@ public class KioskBase : MonoBehaviour
     [SerializeField] protected GameObject ticketParentObject;
     //[SerializeField] private TextMeshProUGUI coinCountText;
 
-
-    //[Header("Goals")]
-    //[SerializeField] private RatingGoal ratingGoal;
-    //[SerializeField] private CrabCountGoal crabCountGoal;
-    //protected int crabsToday = 0;
-    //protected float wrong = 0f;
-    //protected int total = 0;
-
-
     [Header("Buttons")]
     [SerializeField] protected Button approveButton;
     [SerializeField] protected Button rejectButton;
@@ -249,12 +240,6 @@ public class KioskBase : MonoBehaviour
     public CrabController GetCurrCrab()
     {
         return currentCrab.GetComponent<CrabController>();
-    }
-
-    public void GivePlayerCoins(int newCoins)
-    {
-        PlayerPrefs.SetInt("coins", PlayerPrefs.GetInt("coins") + newCoins);
-        //coinCountText.text = PlayerPrefs.GetInt("coins").ToString();
     }
 
     public int GetTotalCrabs()

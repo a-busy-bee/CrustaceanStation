@@ -11,7 +11,7 @@ public class AudioPlayer : MonoBehaviour
     {
         if (audioManager == null)
         {
-            print("No AudioManager provided");
+            Debug.Log("No AudioManager provided");
             return;
         }
 

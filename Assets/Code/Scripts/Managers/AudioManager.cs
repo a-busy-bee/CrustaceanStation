@@ -33,12 +33,12 @@ public class AudioManager : MonoBehaviour
         Sound s = Array.Find(sounds, sound => sound.name == name);
         if (s == null)
         {
-            print("sound not found:" + name);
+            Debug.Log("sound not found:" + name);
             return;
         }
         if (s.source == null)
         {
-            print("no audio source found for " + name);
+            Debug.Log("no audio source found for " + name);
             return;
         }
         s.source.Stop();
@@ -114,7 +114,7 @@ public class AudioManager : MonoBehaviour
 
     private IEnumerator FadeRoutine(Sound oldTrack, Sound newTrack, float duration)
     {
-        print("running fade routine from " + oldTrack.name + " to " + newTrack.name);
+        Debug.Log("running fade routine from " + oldTrack.name + " to " + newTrack.name);
         float currentTime = 0;
 
         newTrack.volume = 0;

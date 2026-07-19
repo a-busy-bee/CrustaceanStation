@@ -28,18 +28,13 @@ public class TransportSelection : MonoBehaviour, IPointerClickHandler
         if (isClickable)
         {
             PopupManager.instance.ShowPopup(PopupManager.Type.train, cartInfo.cartType, cartID);
-            //PopupManager.instance.ShowPopup(railNumber, cartInfo.cartType);
-            //popup.SetActive(true);
-            //popup.GetComponent<CartPopup>().Populate(railNumber);
             if (TutorialManager.instance.GetIsTutorial() && TutorialManager.instance.GetCurrTutorialState() == Tutorial.TutorialState.ticketType) TutorialManager.instance.ProgressTutorial();
         }
     }
 
     virtual public int Depart()
     {
-        //return popup.GetComponent<CartPopup>().DepartTrain(railNumber);
         return PopupManager.instance.DepartTrain(cartInfo.cartType);
-        //return PopupManager.instance.DepartTrain(railNumber, cartInfo.cartType);
     }
 
 

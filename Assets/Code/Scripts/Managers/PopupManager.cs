@@ -91,7 +91,7 @@ public class PopupManager : MonoBehaviour
     {
         if (GetComponent<AudioSource>() == null)
         {
-            print("no audio manager");
+            Debug.Log("no audio manager");
             return;
         }
         GetComponent<AudioManager>().Play(aud, true);
