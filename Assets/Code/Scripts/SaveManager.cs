@@ -93,7 +93,7 @@ public class SaveManager : MonoBehaviour
 
     };
 
-    //JSON STUFF
+    //JSON STUFF 
     private Data data;
     private string defaultPath;
     private string savePath;
@@ -108,13 +108,9 @@ public class SaveManager : MonoBehaviour
         {
             instance = this;
         }
-    }
 
-    private void Start()
-    {
         LoadJSON();
     }
-
     private void LoadJSON()
     {
         defaultPath = Application.dataPath + "/Data/Data.json";

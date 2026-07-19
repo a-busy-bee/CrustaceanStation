@@ -6,9 +6,7 @@ using UnityEngine.SceneManagement;
 public class TutorialManager : LevelManagerBase
 {
     [SerializeField] private Tutorial tutorial;
-    [SerializeField] private bool debug;
     private int tutorialState;
-    private SaveManager saveManager;
 
     override protected void Awake()
     {
@@ -25,8 +23,6 @@ public class TutorialManager : LevelManagerBase
         //goalCrabCount.SetActive(false);
         summaryMenu.SetActive(false);
         isTutorial = true;
-
-        if (debug) saveManager.SaveProgressionData(SaveManager.ProgressionType.tutorialState, 0.ToString());
     }
     override public void SetState(LMState newState)
     {
@@ -40,7 +36,7 @@ public class TutorialManager : LevelManagerBase
                     //Kiosk.instance.ShowDecor();
                     InitTrains();
 
-                    tutorialState = saveManager.GetProgression_TutorialState();
+                    tutorialState = SaveManager.instance.GetProgression_TutorialState();
                     SetState(LMState.Goal);
                 }
                 break;
@@ -119,7 +115,7 @@ public class TutorialManager : LevelManagerBase
         summaryMenu.SetActive(true);
 
         dayStarted = false;
-        saveManager.SaveProgressionData(SaveManager.ProgressionType.newGame, false.ToString());
+        SaveManager.instance.SaveProgressionData(SaveManager.ProgressionType.newGame, false.ToString());
     }
 
     private IEnumerator WaitThenSummonCrabs()
@@ -136,12 +132,12 @@ public class TutorialManager : LevelManagerBase
 
     public void SetTutorialState()
     {
-        tutorial.SetState((Tutorial.TutorialState)saveManager.GetProgression_TutorialState());
+        tutorial.SetState((Tutorial.TutorialState)SaveManager.instance.GetProgression_TutorialState());
     }
 
     public void OnSkip()
     {
-        saveManager.SaveProgressionData(SaveManager.ProgressionType.newGame, false.ToString());
+        SaveManager.instance.SaveProgressionData(SaveManager.ProgressionType.newGame, false.ToString());
         SceneManager.LoadScene("Home");
     }
 

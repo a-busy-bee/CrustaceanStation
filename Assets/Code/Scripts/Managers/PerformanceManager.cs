@@ -51,7 +51,10 @@ public class PerformanceManager : MonoBehaviour
         {
             instance = this;
         }
+    }
 
+    private void Start()
+    {
         SaveManager saveManager = SaveManager.instance;
         bool isPerformanceBarSaved = saveManager.GetProgression_PerfBarSaved();
         if (!isPerformanceBarSaved)
@@ -61,10 +64,8 @@ public class PerformanceManager : MonoBehaviour
         }
 
         barPercent = saveManager.GetProgression_PerfBarPercent();
-    }
 
-    private void Start()
-    {
+        
         sliderKiosk.value = barPercent;
         if (barPercent >= 0.7f)
         {

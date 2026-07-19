@@ -26,7 +26,7 @@ public class IsoControllerAdopted : IsoController, IPointerEnterHandler, IPointe
 
     }
 
-    protected override void Awake()
+    private void Start()
     {
         int colorIdx = SaveManager.instance.GetIso_Color();
         walkingSprite.GetComponent<Image>().sprite = walkIsoSprites[colorIdx];
