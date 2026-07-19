@@ -21278,6 +21278,7 @@ GameObject:
   - component: {fileID: 1567585159}
   - component: {fileID: 1567585160}
   - component: {fileID: 1567585161}
+  - component: {fileID: 1567585162}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -21358,6 +21359,18 @@ MonoBehaviour:
   trainCluster: {fileID: 26169162}
   sandCluster: {fileID: 2083716125}
   trainBoardCluster: {fileID: 1399518704}
+--- !u!114 &1567585162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1567585157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3a407dffe14d4142b05c54bca46a9a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SaveManager
 --- !u!1 &1573272407
 GameObject:
   m_ObjectHideFlags: 0

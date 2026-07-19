@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 35626476}
   - component: {fileID: 35626475}
   - component: {fileID: 35626479}
+  - component: {fileID: 35626480}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -249,6 +250,18 @@ MonoBehaviour:
   - {fileID: 1116060726}
   debug: 0
   debugObjects: []
+--- !u!114 &35626480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 35626474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3a407dffe14d4142b05c54bca46a9a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SaveManager
 --- !u!114 &69057992 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4555281487341078687, guid: 8929477a668fb47e6a7daadd7716fdd5, type: 3}

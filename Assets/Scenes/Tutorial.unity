@@ -2002,6 +2002,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CartPopup
   type: 0
+  maxID: 1
   seatsAll:
   - {fileID: 1290996669}
   - {fileID: 1031490243}
@@ -10437,6 +10438,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrabSelector
   prefabs: []
+  prefabsSpecial: []
   sprites: []
 --- !u!114 &728166980
 MonoBehaviour:
@@ -10805,6 +10807,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShuttlePopup
   type: 0
+  maxID: 1
   seatsAll:
   - {fileID: 945980716}
   - {fileID: 1185316459}
@@ -15111,6 +15114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CartPopup
   type: 0
+  maxID: 1
   seatsAll:
   - {fileID: 1376660656}
   - {fileID: 1625344302}
@@ -18016,9 +18020,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.050000012
+    y: 0
     width: 1
-    height: 0.9
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -18577,6 +18581,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VanPopup
   type: 0
+  maxID: 1
   seatsAll:
   - {fileID: 1494149564}
   - {fileID: 558911527}
@@ -22272,6 +22277,7 @@ GameObject:
   - component: {fileID: 1567585160}
   - component: {fileID: 1567585162}
   - component: {fileID: 1567585163}
+  - component: {fileID: 1567585164}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -22368,6 +22374,18 @@ MonoBehaviour:
   clickAnyWhereToContinue: {fileID: 499062934}
   approveButton: {fileID: 534969239}
   rejectButton: {fileID: 1416969083}
+--- !u!114 &1567585164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1567585157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3a407dffe14d4142b05c54bca46a9a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SaveManager
 --- !u!1 &1573272407
 GameObject:
   m_ObjectHideFlags: 0

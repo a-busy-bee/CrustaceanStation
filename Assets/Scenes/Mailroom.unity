@@ -1179,6 +1179,7 @@ GameObject:
   - component: {fileID: 414618970}
   - component: {fileID: 414618969}
   - component: {fileID: 414618971}
+  - component: {fileID: 414618972}
   m_Layer: 5
   m_Name: Mailroom
   m_TagString: Untagged
@@ -1338,6 +1339,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af4ac8db947754cf59a885636599800e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrabNameGenerator
+--- !u!114 &414618972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 414618963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3a407dffe14d4142b05c54bca46a9a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SaveManager
 --- !u!1 &537867925
 GameObject:
   m_ObjectHideFlags: 0
