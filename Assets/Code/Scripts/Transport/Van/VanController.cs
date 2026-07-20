@@ -57,7 +57,6 @@ public class VanController : TransportController
                         ts.SetThisClickable(false);
                         coins += ts.Depart();
                     }
-                    Kiosk.instance.GivePlayerCoins(coins);
                 }
                 break;
 

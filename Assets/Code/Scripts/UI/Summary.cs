@@ -23,11 +23,16 @@ public class Summary : MonoBehaviour
 
     private void Start()
     {
-        PlayerPrefs.SetInt("CurrDay", PlayerPrefs.GetInt("CurrDay") + 1);
+        SaveManager saveManager = SaveManager.instance;
 
-        if (HeadlineManager.instance != null && PlayerPrefs.GetInt("first day") != 1)
+
+        saveManager.SetProgression_IncrementCurrDay();
+
+        bool isFirstDayHeadline = saveManager.GetProgression_FirstDayHeadlineSeen();
+        if (HeadlineManager.instance != null && !isFirstDayHeadline)
         {
-            PlayerPrefs.SetInt("first day", 1);
+            saveManager.SaveProgressionData(SaveManager.ProgressionType.firstDayHeadlineSeen, true.ToString());
+            
             HeadlineManager.instance.SetSpecificText(100, "Crustacean Station Grand Opening!");
             return;
         }

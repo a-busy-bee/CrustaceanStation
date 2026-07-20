@@ -1,0 +1,345 @@
+using System.Collections.Generic;
+using UnityEngine;
+using System;
+using System.IO;
+using UnityEngine.Rendering;
+
+[Serializable]
+public class SettingsData
+{
+    public string language;     // TODO: to be implemented
+    public float volume_Master;
+    public float volume_SFX;
+    public float volume_Music;
+    public float brightness;    // TODO: to be implemented
+    public bool reduceMotion;   // TODO: to be implemented
+    //TODO: add more settings as needed
+}
+
+[Serializable]
+public class IsoData
+{
+    public string isoName;
+    public string isoBirthdayMonth;
+    public int isoBirthdayDay;
+    public int isoColor;
+}
+
+[Serializable]
+public class Character
+{
+    public string characterName;
+    public int dialogueIdx;
+    public bool isDone;
+}
+
+[Serializable]
+public class CharactersData
+{
+    public Character[] characters;
+}
+
+[Serializable]
+public class ProgressionData
+{
+    public int currDay;
+    public int tutorialState;
+    public float performanceBarPercent;
+    public bool performanceBarSaved;
+    public bool introMailSeen;
+    public bool firstDayHeadlineSeen;
+    public bool newGame;
+}
+
+[Serializable]
+public class Data
+{
+    public SettingsData settings;
+    public IsoData isoData;
+    public CharactersData charactersData;
+    public ProgressionData progressionData;
+}
+
+public class SaveManager : MonoBehaviour
+{
+    public static SaveManager instance { get; private set; }
+
+    public enum SettingsType
+    {
+        language,
+        volumeMaster,
+        volumeSFX,
+        volumeMusic,
+        brightness,
+        reduceMotion
+    }
+
+    public enum ProgressionType
+    {
+        currDay,
+        performanceBarSaved,
+        tutorialState,
+        performanceBarPercent,
+        introMailSeen,
+        firstDayHeadlineSeen,
+        newGame
+    }
+
+    private Dictionary<string, int> characterNameToIndex = new Dictionary<string, int>
+    {
+        { "protestCatfish", 0 },
+        { "horseshoe", 1 },
+        { "isoBeautiful", 2 },
+        { "ittybitty", 3 },
+        { "seastardad", 4 },
+        { "gramps", 5 },
+        { "granny", 6 }
+
+    };
+
+    //JSON STUFF 
+    private Data data;
+    private string defaultPath;
+    private string savePath;
+
+    private void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        else
+        {
+            instance = this;
+        }
+
+        LoadJSON();
+    }
+    private void LoadJSON()
+    {
+        defaultPath = Application.dataPath + "/Data/Data.json";
+        savePath = Application.persistentDataPath + "/Data.json";
+
+        if (File.Exists(savePath))
+        {
+            data = JsonUtility.FromJson<Data>(File.ReadAllText(savePath));
+        }
+        else
+        {
+            string jsonText = File.ReadAllText(defaultPath);
+            data = JsonUtility.FromJson<Data>(jsonText);
+            File.WriteAllText(savePath, JsonUtility.ToJson(data, true));
+        }
+    }
+
+    public void SaveSettings(SettingsType settingsType, string value)
+    {
+        switch (settingsType)
+        {
+            case SettingsType.language:
+                data.settings.language = value;
+                break;
+
+            case SettingsType.volumeMaster:
+                data.settings.volume_Master = float.Parse(value, System.Globalization.CultureInfo.InvariantCulture);
+                break;
+
+            case SettingsType.volumeSFX:
+                data.settings.volume_SFX = float.Parse(value, System.Globalization.CultureInfo.InvariantCulture);
+                break;
+
+            case SettingsType.volumeMusic:
+                data.settings.volume_Music = float.Parse(value, System.Globalization.CultureInfo.InvariantCulture);
+                break;
+
+            case SettingsType.brightness:
+                data.settings.brightness = float.Parse(value, System.Globalization.CultureInfo.InvariantCulture);
+                break;
+
+            case SettingsType.reduceMotion:
+                data.settings.reduceMotion = bool.Parse(value);
+                break;
+        }
+
+        SaveData();
+    }
+    public string GetSettings_Language()
+    {
+        return data.settings.language;
+    }
+    public float GetSettings_VolumeMaster()
+    {
+        return data.settings.volume_Master;
+    }
+    public float GetSettings_VolumeSFX()
+    {
+        return data.settings.volume_SFX;
+    }
+    public float GetSettings_VolumeMusic()
+    {
+        return data.settings.volume_Music;
+    }
+    public float GetSettings_Brightness()
+    {
+        return data.settings.brightness;
+    }
+    public bool GetSettings_ReduceMotion()
+    {
+        return data.settings.reduceMotion;
+    }
+
+
+    public void SaveIsoData(string name, string month, int day, int color)
+    {
+        data.isoData.isoName = name;
+        data.isoData.isoBirthdayMonth = month;
+        data.isoData.isoBirthdayDay = day;
+        data.isoData.isoColor = color;
+
+        SaveData();
+    }
+    public string GetIso_Name()
+    {
+        return data.isoData.isoName;
+    }
+    public string GetIso_BirthdayMonth()
+    {
+        return data.isoData.isoBirthdayMonth;
+    }
+    public int GetIso_Birthday()
+    {
+        return data.isoData.isoBirthdayDay;
+    }
+    public int GetIso_Color()
+    {
+        return data.isoData.isoColor;
+    }
+
+
+    public void SaveCharacterData(string name, int dialogue, bool isDone = false)
+    {
+        int idx = characterNameToIndex[name];
+
+        data.charactersData.characters[idx].dialogueIdx = dialogue;
+        data.charactersData.characters[idx].isDone = isDone;
+
+        SaveData();
+    }
+    public int GetCharacter_DialogueIdx(string name)
+    {
+        int idx = characterNameToIndex[name];
+
+        return data.charactersData.characters[idx].dialogueIdx;
+    }
+    public bool GetCharacter_Done(string name)
+    {
+        int idx = characterNameToIndex[name];
+
+        return data.charactersData.characters[idx].isDone;
+    }
+
+
+    public void SaveProgressionData(ProgressionType progressionType, string value)
+    {
+        switch (progressionType)
+        {
+            case ProgressionType.currDay:
+                data.progressionData.currDay = int.Parse(value);
+
+                break;
+
+            case ProgressionType.tutorialState:
+                data.progressionData.tutorialState = int.Parse(value);
+                break;
+
+            case ProgressionType.performanceBarPercent:
+                data.progressionData.performanceBarPercent = float.Parse(value, System.Globalization.CultureInfo.InvariantCulture);
+                break;
+
+            case ProgressionType.performanceBarSaved:
+                data.progressionData.performanceBarSaved = bool.Parse(value);
+                break;
+
+            case ProgressionType.introMailSeen:
+                data.progressionData.introMailSeen = bool.Parse(value);
+                break;
+
+            case ProgressionType.firstDayHeadlineSeen:
+                data.progressionData.firstDayHeadlineSeen = bool.Parse(value);
+                break;
+
+            case ProgressionType.newGame:
+                data.progressionData.newGame = bool.Parse(value);
+                break;
+        }
+
+        SaveData();
+    }
+    public int GetProgression_CurrDay()
+    {
+        return data.progressionData.currDay;
+    }
+    public void SetProgression_IncrementCurrDay()
+    {
+        SaveProgressionData(ProgressionType.currDay, (data.progressionData.currDay + 1).ToString());
+    }
+    public int GetProgression_TutorialState()
+    {
+        return data.progressionData.tutorialState;
+    }
+    public float GetProgression_PerfBarPercent()
+    {
+        return data.progressionData.performanceBarPercent;
+    }
+    public bool GetProgression_PerfBarSaved()
+    {
+        return data.progressionData.performanceBarSaved;
+    }
+    public bool GetProgression_IntroMailSeen()
+    {
+        return data.progressionData.introMailSeen;
+    }
+    public bool GetProgression_FirstDayHeadlineSeen()
+    {
+        return data.progressionData.firstDayHeadlineSeen;
+    }
+    public bool GetProgression_NewGame()
+    {
+        return data.progressionData.newGame;
+    }
+    
+    public void ResetData()
+    {
+        // save settings
+        string language = data.settings.language;
+        float volumeMaster = data.settings.volume_Master;
+        float volumeSFX = data.settings.volume_SFX;
+        float volumeMusic = data.settings.volume_Music;
+        float brightness = data.settings.brightness;
+        bool reduceMotion = data.settings.reduceMotion;
+
+        // reset file
+        defaultPath = Application.dataPath + "/Data/Data.json";
+        savePath = Application.persistentDataPath + "/Data.json";
+
+        string jsonText = File.ReadAllText(defaultPath);
+        data = JsonUtility.FromJson<Data>(jsonText);
+        File.WriteAllText(savePath, JsonUtility.ToJson(data, true));
+
+        // restore settings
+        data.settings.language = language;
+        data.settings.volume_Master = volumeMaster;
+        data.settings.volume_SFX = volumeSFX;
+        data.settings.volume_Music = volumeMusic;
+        
+        data.settings.brightness = brightness;
+        data.settings.reduceMotion = reduceMotion;
+
+        SaveData();
+    }
+    private void SaveData()
+    {
+        File.WriteAllText(savePath, JsonUtility.ToJson(data, true));
+    }
+}

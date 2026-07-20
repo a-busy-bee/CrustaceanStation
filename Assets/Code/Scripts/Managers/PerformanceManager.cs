@@ -51,18 +51,21 @@ public class PerformanceManager : MonoBehaviour
         {
             instance = this;
         }
-
-
-        if (PlayerPrefs.GetInt("PerformanceBarSavedData") == 1)
-        {
-            PlayerPrefs.SetFloat("PerformanceBarPercent", 0.67f);
-        }
-
-        barPercent = PlayerPrefs.GetFloat("PerformanceBarPercent");
     }
 
     private void Start()
     {
+        SaveManager saveManager = SaveManager.instance;
+        bool isPerformanceBarSaved = saveManager.GetProgression_PerfBarSaved();
+        if (!isPerformanceBarSaved)
+        {
+            saveManager.SaveProgressionData(SaveManager.ProgressionType.performanceBarPercent, 0.67f.ToString());
+            saveManager.SaveProgressionData(SaveManager.ProgressionType.performanceBarSaved, true.ToString());
+        }
+
+        barPercent = saveManager.GetProgression_PerfBarPercent();
+
+        
         sliderKiosk.value = barPercent;
         if (barPercent >= 0.7f)
         {
@@ -144,7 +147,7 @@ public class PerformanceManager : MonoBehaviour
 
     private void Save()
     {
-        PlayerPrefs.SetFloat("PerformanceBarPercent", barPercent);
+        SaveManager.instance.SaveProgressionData(SaveManager.ProgressionType.performanceBarPercent, barPercent.ToString());
     }
 
     private void UpdateSlider()

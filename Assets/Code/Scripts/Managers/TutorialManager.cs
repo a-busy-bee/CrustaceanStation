@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class TutorialManager : LevelManagerBase
 {
     [SerializeField] private Tutorial tutorial;
-    [SerializeField] private bool debug;
     private int tutorialState;
 
     override protected void Awake()
@@ -24,8 +23,6 @@ public class TutorialManager : LevelManagerBase
         //goalCrabCount.SetActive(false);
         summaryMenu.SetActive(false);
         isTutorial = true;
-
-        if (debug) PlayerPrefs.SetInt("tutorialState", 0);
     }
     override public void SetState(LMState newState)
     {
@@ -39,7 +36,7 @@ public class TutorialManager : LevelManagerBase
                     //Kiosk.instance.ShowDecor();
                     InitTrains();
 
-                    tutorialState = PlayerPrefs.GetInt("tutorialState");
+                    tutorialState = SaveManager.instance.GetProgression_TutorialState();
                     SetState(LMState.Goal);
                 }
                 break;
@@ -118,7 +115,7 @@ public class TutorialManager : LevelManagerBase
         summaryMenu.SetActive(true);
 
         dayStarted = false;
-        PlayerPrefs.SetInt("newGame", -1);
+        SaveManager.instance.SaveProgressionData(SaveManager.ProgressionType.newGame, false.ToString());
     }
 
     private IEnumerator WaitThenSummonCrabs()
@@ -135,18 +132,17 @@ public class TutorialManager : LevelManagerBase
 
     public void SetTutorialState()
     {
-        tutorial.SetState((Tutorial.TutorialState)PlayerPrefs.GetInt("tutorialState"));
+        tutorial.SetState((Tutorial.TutorialState)SaveManager.instance.GetProgression_TutorialState());
     }
 
     public void OnSkip()
     {
-        PlayerPrefs.SetInt("newGame", -1);
+        SaveManager.instance.SaveProgressionData(SaveManager.ProgressionType.newGame, false.ToString());
         SceneManager.LoadScene("Home");
     }
 
     override public bool IsFirstCrabTutorial()
     {
-        Debug.Log("is first crab " + tutorial.GetIsFirstCrab());
         return tutorial.GetIsFirstCrab();
     }
 

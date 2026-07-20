@@ -51,11 +51,13 @@ public class Tutorial : MonoBehaviour
 	private void Start()
 	{
         Kiosk.instance.DisableButtons();
-		if (PlayerPrefs.GetInt("tutorialState") != 0) return;
+
+        int inProgress = SaveManager.instance.GetProgression_TutorialState();
+		if (inProgress != 0) return;
         isFirstCrab = true;
 	}
 
-	public void SetState(TutorialState tutorialStateNew)
+    public void SetState(TutorialState tutorialStateNew)
     {
         TutorialState prev = tutorialState;
         tutorialState = tutorialStateNew;
@@ -106,7 +108,8 @@ public class Tutorial : MonoBehaviour
                 Kiosk.instance.EnableButtons();
                 break;
         }
-        PlayerPrefs.SetInt("tutorialState", (int)tutorialState);
+        
+        SaveManager.instance.SaveProgressionData(SaveManager.ProgressionType.tutorialState, ((int)tutorialState).ToString());
     }
 
     public void ShowPointer()

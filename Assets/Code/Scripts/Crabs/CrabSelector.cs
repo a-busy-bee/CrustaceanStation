@@ -167,7 +167,8 @@ public class CrabSelector : MonoBehaviour
             chosenCrabIdx = Random.Range(0, prefabs.Count);
         }
         while (idxsChosenRecently.Contains(chosenCrabIdx)
-                || prefabs[chosenCrabIdx].GetComponent<CrabController>().GetCrabInfo().isLarge);
+                || prefabs[chosenCrabIdx].GetComponent<CrabController>().GetCrabInfo().isLarge
+                || prefabs[chosenCrabIdx].GetComponent<CrabController>().GetCrabInfo().isMultiple);
 
         idxsChosenRecently.Add(chosenCrabIdx);
 

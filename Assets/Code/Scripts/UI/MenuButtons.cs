@@ -13,19 +13,20 @@ public class MenuButtons : MonoBehaviour
     
     public void quitGame()
     {
-        Debug.Log("Quit!");
         Application.Quit();
     }
 
     public void startGame()
     {
-        if (PlayerPrefs.GetInt("newGame") != -1)
-        {
-            Debug.Log("newGame");
-            PlayerPrefs.SetInt("newGame", 1);
-            PlayerPrefs.SetInt("kioskStyle", 0);
+        SaveManager saveManager = SaveManager.instance;
 
-            if (PlayerPrefs.GetInt("IntroMailSeen") == -1)  // reset
+        bool isNewGame = saveManager.GetProgression_NewGame();
+        if (!isNewGame)
+        {
+            saveManager.SaveProgressionData(SaveManager.ProgressionType.newGame, true.ToString());
+
+            bool isIntroMailSeen = saveManager.GetProgression_IntroMailSeen();
+            if (!isIntroMailSeen)  // reset
             {
                 LoadFile();
             }
@@ -43,7 +44,7 @@ public class MenuButtons : MonoBehaviour
         plotData = JsonUtility.FromJson<PlotData>(defaultFile.text);
 
         SaveFile();
-        PlayerPrefs.SetInt("IntroMailSeen", 1);
+        SaveManager.instance.SaveProgressionData(SaveManager.ProgressionType.introMailSeen, true.ToString());
     }
 
     public void SaveFile()

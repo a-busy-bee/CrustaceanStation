@@ -77,9 +77,6 @@ public class Settings : MonoBehaviour
 
     public void OnTutorial()
     {
-        //tutorial.SetActive(true);
-        //tutorial.GetComponent<Tutorial>().Play(false);
-        //tutorial.GetComponent<Tutorial>().SetSettingsBlur();
         loadingScreenPanel.SetActive(true);
         loadingScreenPanel.GetComponent<LoadingScreen>().PlayLoad("Tutorial");
     }
@@ -91,21 +88,10 @@ public class Settings : MonoBehaviour
 
     public void OnResetYes()
     {
-        //PlayerPrefs.DeleteAll();
-        PlayerPrefs.SetInt("ResetCrabdex", 1);
-        PlayerPrefs.SetInt("ResetDecor", 1);
-        PlayerPrefs.SetInt("kioskStyle", 0);
-        PlayerPrefs.SetInt("newGame", 1);
-        PlayerPrefs.SetInt("IntroMailSeen", -1);
-
-        PlayerPrefs.SetInt("CurrDay", 0);
-        PlayerPrefs.SetInt("first day", 0);
-
-        PlayerPrefs.SetInt("coins", 0);
+        SaveManager.instance.ResetData();
 
         areYouSurePanel.SetActive(false);
     }
-
 
     public void OnResetNo()
     {

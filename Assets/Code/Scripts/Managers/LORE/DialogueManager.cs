@@ -155,26 +155,29 @@ public class DialogueManager : MonoBehaviour
 
     public void GetDialogueVet()
     {
-        int stage = PlayerPrefs.GetInt("CurrDay") / 5;
+        int currDay = SaveManager.instance.GetProgression_CurrDay();
+        int stage = currDay / 5;
         string text = dialogueData.nodesVet[stage];
         dialogueObject.ShowDialogue(text);
     }
 
     public void GetSpecialCharacterDialogue(SpecialCharacter characterName)
     {
-        int dialgoueIdx = PlayerPrefs.GetInt(characterName.ToString());
+        SaveManager saveManager = SaveManager.instance;
+        string characterNameString = characterName.ToString();
+        int dialgoueIdx = saveManager.GetCharacter_DialogueIdx(characterNameString);
 
         // safety check to make sure we're not asking for more dialogue than we have
         if (dialgoueIdx >= characterToDialgoue[characterName].Length)
         {
-            PlayerPrefs.SetInt(characterName.ToString() + "_DONE", 1);
+            saveManager.SaveCharacterData(characterNameString, dialgoueIdx, true);
             return;
         }
 
         string text = characterToDialgoue[characterName][dialgoueIdx];
         dialogueObject.ShowDialogue(text);
 
-        PlayerPrefs.SetInt(characterName.ToString(), dialgoueIdx + 1); // progress dialogue
+        saveManager.SaveCharacterData(characterNameString, dialgoueIdx + 1); // progress dialogue
     }
 
     public void ClearDialogue()

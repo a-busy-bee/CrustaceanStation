@@ -282,7 +282,6 @@ public class CrabController : MonoBehaviour
 
     public void PresentTicketAndIDNoForgery()   // for tutorial purposes
     {
-        Debug.Log(1);
         ticket = Instantiate(ticketPrefab, ticketAndIDParentObject.transform);
 
         //ticket = Instantiate(ticketPrefab, ticketAndIDParentObject.transform);
