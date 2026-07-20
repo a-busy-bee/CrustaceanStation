@@ -87,14 +87,13 @@ public class SaveManager : MonoBehaviour
 
     private Dictionary<string, int> characterNameToIndex = new Dictionary<string, int>
     {
-        { "protestCatfish", 0 },
+        { "protestorCatfish", 0 },
         { "horseshoe", 1 },
-        { "isoBeautiful", 2 },
-        { "ittybitty", 3 },
-        { "seastardad", 4 },
+        { "isobelle", 2 },
+        { "itty", 3 },
+        { "seaStarDad", 4 },
         { "gramps", 5 },
         { "granny", 6 }
-
     };
 
     //JSON STUFF 

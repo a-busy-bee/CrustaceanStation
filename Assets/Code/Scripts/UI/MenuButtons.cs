@@ -21,7 +21,7 @@ public class MenuButtons : MonoBehaviour
         SaveManager saveManager = SaveManager.instance;
 
         bool isNewGame = saveManager.GetProgression_NewGame();
-        if (!isNewGame)
+        if (isNewGame)
         {
             saveManager.SaveProgressionData(SaveManager.ProgressionType.newGame, true.ToString());
 
@@ -65,11 +65,6 @@ public class MenuButtons : MonoBehaviour
         {
             LoadFile();
         }
-    }
-
-    public void VisitVet()
-    {
-        SceneManager.LoadScene("Vet");
     }
 
     public void Settings()

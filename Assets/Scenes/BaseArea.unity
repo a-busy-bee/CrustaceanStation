@@ -1940,6 +1940,8 @@ MonoBehaviour:
   - {fileID: 1926902354}
   - {fileID: 1107428969}
   defaultEmpty: {fileID: 11400000, guid: e1300a792471245d184b48b93aa88892, type: 2}
+  arrowTransform: {fileID: 0}
+  doubleCarts: 0
 --- !u!114 &119828701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10313,6 +10315,8 @@ MonoBehaviour:
   - {fileID: 558312744}
   - {fileID: 857394270}
   defaultEmpty: {fileID: 11400000, guid: e1300a792471245d184b48b93aa88892, type: 2}
+  arrowTransform: {fileID: 0}
+  doubleCarts: 0
 --- !u!114 &741270675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13654,6 +13658,8 @@ MonoBehaviour:
   - {fileID: 1942713184}
   - {fileID: 866341305}
   defaultEmpty: {fileID: 11400000, guid: e1300a792471245d184b48b93aa88892, type: 2}
+  arrowTransform: {fileID: 56590792}
+  doubleCarts: 1
 --- !u!114 &1029995115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17146,6 +17152,8 @@ MonoBehaviour:
   - {fileID: 958231657}
   - {fileID: 752757191}
   defaultEmpty: {fileID: 11400000, guid: e1300a792471245d184b48b93aa88892, type: 2}
+  arrowTransform: {fileID: 0}
+  doubleCarts: 0
 --- !u!114 &1297252289
 MonoBehaviour:
   m_ObjectHideFlags: 0
