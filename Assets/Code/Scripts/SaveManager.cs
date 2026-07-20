@@ -8,7 +8,9 @@ using UnityEngine.Rendering;
 public class SettingsData
 {
     public string language;     // TODO: to be implemented
-    public float volume;
+    public float volume_Master;
+    public float volume_SFX;
+    public float volume_Music;
     public float brightness;    // TODO: to be implemented
     public bool reduceMotion;   // TODO: to be implemented
     //TODO: add more settings as needed
@@ -65,7 +67,9 @@ public class SaveManager : MonoBehaviour
     public enum SettingsType
     {
         language,
-        volume,
+        volumeMaster,
+        volumeSFX,
+        volumeMusic,
         brightness,
         reduceMotion
     }
@@ -137,8 +141,16 @@ public class SaveManager : MonoBehaviour
                 data.settings.language = value;
                 break;
 
-            case SettingsType.volume:
-                data.settings.volume = float.Parse(value, System.Globalization.CultureInfo.InvariantCulture);
+            case SettingsType.volumeMaster:
+                data.settings.volume_Master = float.Parse(value, System.Globalization.CultureInfo.InvariantCulture);
+                break;
+
+            case SettingsType.volumeSFX:
+                data.settings.volume_SFX = float.Parse(value, System.Globalization.CultureInfo.InvariantCulture);
+                break;
+
+            case SettingsType.volumeMusic:
+                data.settings.volume_Music = float.Parse(value, System.Globalization.CultureInfo.InvariantCulture);
                 break;
 
             case SettingsType.brightness:
@@ -156,9 +168,17 @@ public class SaveManager : MonoBehaviour
     {
         return data.settings.language;
     }
-    public float GetSettings_Volume()
+    public float GetSettings_VolumeMaster()
     {
-        return data.settings.volume;
+        return data.settings.volume_Master;
+    }
+    public float GetSettings_VolumeSFX()
+    {
+        return data.settings.volume_SFX;
+    }
+    public float GetSettings_VolumeMusic()
+    {
+        return data.settings.volume_Music;
     }
     public float GetSettings_Brightness()
     {
@@ -293,7 +313,9 @@ public class SaveManager : MonoBehaviour
     {
         // save settings
         string language = data.settings.language;
-        float volume = data.settings.volume;
+        float volumeMaster = data.settings.volume_Master;
+        float volumeSFX = data.settings.volume_SFX;
+        float volumeMusic = data.settings.volume_Music;
         float brightness = data.settings.brightness;
         bool reduceMotion = data.settings.reduceMotion;
 
@@ -307,7 +329,10 @@ public class SaveManager : MonoBehaviour
 
         // restore settings
         data.settings.language = language;
-        data.settings.volume = volume;
+        data.settings.volume_Master = volumeMaster;
+        data.settings.volume_SFX = volumeSFX;
+        data.settings.volume_Music = volumeMusic;
+        
         data.settings.brightness = brightness;
         data.settings.reduceMotion = reduceMotion;
 

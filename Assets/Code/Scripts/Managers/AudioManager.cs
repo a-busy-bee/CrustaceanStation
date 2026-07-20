@@ -7,12 +7,24 @@ using UnityEngine.UI;
 public class AudioManager : MonoBehaviour
 {
     //[SerializeField] private AudioSource audioSource;
+    public static AudioManager instance { get; private set; }
+
     public Sound[] sounds = new Sound[0];
     private Sound _currentTrack;
     private float localVol = 1f;
 
     private void Awake()
     {
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        else
+        {
+            instance = this;
+        }
+
         foreach (Sound s in sounds)
         {
             if (s == null)

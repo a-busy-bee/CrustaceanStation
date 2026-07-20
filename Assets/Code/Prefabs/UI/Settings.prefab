@@ -714,6 +714,7 @@ MonoBehaviour:
   MixMode: 0
   slider: {fileID: 1882369766130832759}
   isMasterVolumeControl: 0
+  sliderType: 1
 --- !u!1 &2355361276411623994
 GameObject:
   m_ObjectHideFlags: 0
@@ -1152,6 +1153,7 @@ MonoBehaviour:
   MixMode: 0
   slider: {fileID: 3537417814483798486}
   isMasterVolumeControl: 0
+  sliderType: 2
 --- !u!1 &3379622466538001568
 GameObject:
   m_ObjectHideFlags: 0
@@ -1610,6 +1612,7 @@ MonoBehaviour:
   MixMode: 0
   slider: {fileID: 3123354936056787416}
   isMasterVolumeControl: 1
+  sliderType: 0
 --- !u!1 &4711819897191210191
 GameObject:
   m_ObjectHideFlags: 0
