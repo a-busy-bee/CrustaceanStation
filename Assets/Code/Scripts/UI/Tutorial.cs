@@ -52,8 +52,8 @@ public class Tutorial : MonoBehaviour
 	{
         Kiosk.instance.DisableButtons();
 
-        //int inProgress = SaveManager.instance.GetProgression_TutorialState();
-		//if (inProgress != 0) return;
+        int inProgress = SaveManager.instance.GetProgression_TutorialState();
+		if (inProgress != 0) return;
         isFirstCrab = true;
 	}
 
@@ -109,7 +109,7 @@ public class Tutorial : MonoBehaviour
                 break;
         }
         
-        //SaveManager.instance.SaveProgressionData(SaveManager.ProgressionType.tutorialState, ((int)tutorialState).ToString());
+        SaveManager.instance.SaveProgressionData(SaveManager.ProgressionType.tutorialState, ((int)tutorialState).ToString());
     }
 
     public void ShowPointer()

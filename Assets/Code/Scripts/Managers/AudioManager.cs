@@ -7,24 +7,12 @@ using UnityEngine.UI;
 public class AudioManager : MonoBehaviour
 {
     //[SerializeField] private AudioSource audioSource;
-    public static AudioManager instance { get; private set; }
-
     public Sound[] sounds = new Sound[0];
     private Sound _currentTrack;
     private float localVol = 1f;
 
     private void Awake()
     {
-        if (instance != null && instance != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
-        else
-        {
-            instance = this;
-        }
-
         foreach (Sound s in sounds)
         {
             if (s == null)
@@ -45,12 +33,12 @@ public class AudioManager : MonoBehaviour
         Sound s = Array.Find(sounds, sound => sound.name == name);
         if (s == null)
         {
-            Debug.Log("sound not found:" + name);
+            print("sound not found:" + name);
             return;
         }
         if (s.source == null)
         {
-            Debug.Log("no audio source found for " + name);
+            print("no audio source found for " + name);
             return;
         }
         s.source.Stop();
@@ -126,7 +114,7 @@ public class AudioManager : MonoBehaviour
 
     private IEnumerator FadeRoutine(Sound oldTrack, Sound newTrack, float duration)
     {
-        Debug.Log("running fade routine from " + oldTrack.name + " to " + newTrack.name);
+        print("running fade routine from " + oldTrack.name + " to " + newTrack.name);
         float currentTime = 0;
 
         newTrack.volume = 0;
