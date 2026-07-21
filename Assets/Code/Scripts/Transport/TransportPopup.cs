@@ -57,6 +57,11 @@ public class TransportPopup : MonoBehaviour
 
     protected List<Mini> miniAssets;
 
+    // ARROW
+    [SerializeField] private RectTransform arrowTransform;
+    [SerializeField] private bool doubleCarts;
+
+
     protected virtual void Start()
     {
         if (initialized) return;
@@ -102,6 +107,15 @@ public class TransportPopup : MonoBehaviour
 
     public virtual void Show(int cartID = 0)
     {
+        if (doubleCarts && cartID == 0)
+        {
+            arrowTransform.anchoredPosition = new Vector2(314, -144.6f);
+        }
+        else if (doubleCarts && cartID == 1)
+        {
+            arrowTransform.anchoredPosition = new Vector2(314, -283);
+        }
+
         if (!initialized)
         {
             InitPopup();
