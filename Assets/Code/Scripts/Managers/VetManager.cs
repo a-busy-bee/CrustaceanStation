@@ -19,6 +19,7 @@ public class VetManager : MonoBehaviour
 
     private void Start()
     {
+        medicationBottle.SetActive(false);
         returnHomeButton.SetActive(false);
 
         int colorIdx = SaveManager.instance.GetIso_Color();
@@ -35,20 +36,28 @@ public class VetManager : MonoBehaviour
 
         // show dialogue
         DialogueManager.instance.GetDialogueVet();
-        yield return new WaitForSeconds(1.5f);
+
+        yield return new WaitForSeconds(1f);
 
         int currDay = SaveManager.instance.GetProgression_CurrDay();
+        if (currDay / 5 == 1)
+        {
+            medicationBottle.SetActive(true);
+        }
+
+        yield return new WaitForSeconds(0.5f);
+
+        
         if (currDay / 5 != 3) // no emotion to play IF HE'S DEAD ;-;
         {
             // iso emotion
             isoEmotion.PlaySad();
         }
-        
 
         // show vet bill
         //vetBill.GetComponent<SmoothLerp>().Move(new Vector2(), 0.25f);
         yield return new WaitForSeconds(0.5f);
-        
+
         // show return button
         returnHomeButton.SetActive(true);
     }
@@ -57,5 +66,12 @@ public class VetManager : MonoBehaviour
     {
         SaveManager.instance.SetProgression_IncrementCurrDay();
         SceneManager.LoadScene("Home");
+    }
+
+    public void ClickMedBottle()
+    {
+        //todo: shake the bottle
+        //todo: play a rattle noise
+        Debug.Log("drugs go rattle rattle");
     }
 }
