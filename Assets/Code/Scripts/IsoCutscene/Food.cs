@@ -1,16 +1,34 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class Food : MonoBehaviour
+public class Food : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler, IPointerExitHandler
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private Animator hoverAnimator;
+    [SerializeField] private GameObject particlesObject;
+    [SerializeField] private Animator particlesObjectAnimator;
+
+    private void Start()
     {
-        
+        hoverAnimator.enabled = false;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnPointerEnter(PointerEventData data)
     {
-        
+        hoverAnimator.enabled = true;
+        hoverAnimator.Play("OnHover");
+    }
+
+    public void OnPointerClick(PointerEventData data)
+    {
+        hoverAnimator.enabled = true;
+        hoverAnimator.Play("StopHover");
+        particlesObject.SetActive(true);
+        particlesObjectAnimator.Play("Particles");
+    }
+
+    public void OnPointerExit(PointerEventData data)
+    {
+        hoverAnimator.enabled = true;
+        hoverAnimator.Play("StopHover");
     }
 }

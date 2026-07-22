@@ -1,16 +1,6 @@
 using UnityEngine;
 
-public class Medication : MonoBehaviour
+public class Medication : Food
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    // empty for now, but leaving it here just in case there's some other mechanic we need
 }
