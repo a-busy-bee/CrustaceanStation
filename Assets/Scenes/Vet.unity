@@ -1393,8 +1393,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VetManager
   returnHomeButton: {fileID: 1107966373}
-  vetBill: {fileID: 0}
   vet: {fileID: 1452894981716828262}
+  medicationBottle: {fileID: 0}
   rollingSprites:
   - {fileID: -995461649, guid: d3bb8bddd3767425e9027a0b80c22234, type: 3}
   - {fileID: -924605002, guid: d3bb8bddd3767425e9027a0b80c22234, type: 3}

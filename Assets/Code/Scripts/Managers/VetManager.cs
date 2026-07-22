@@ -7,8 +7,8 @@ using UnityEngine.SceneManagement;
 public class VetManager : MonoBehaviour
 {
     [SerializeField] private GameObject returnHomeButton;
-    [SerializeField] private GameObject vetBill;
     [SerializeField] private GameObject vet;
+    [SerializeField] private GameObject medicationBottle;
 
     [Header("Iso")]
     [SerializeField] private Sprite[] rollingSprites;
