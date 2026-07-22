@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -36,6 +37,7 @@ public class IsoController : MonoBehaviour
     [SerializeField] private Emotion emotionRolling;
     [SerializeField] private Emotion emotionWalking;
     [SerializeField] private IsoMinigameManager.IsoColors color;
+    private bool isSquishing = false;
 
 
     virtual protected void Awake()
@@ -50,6 +52,14 @@ public class IsoController : MonoBehaviour
     {
         prevState = currState;
         currState = newState;
+
+        if (!isSquishing)
+        {
+            if (!(newState == IsoState.still))
+            {
+                StartCoroutine(Squish());
+            }
+        }
         switch (currState)
         {
             case IsoState.rolling:
@@ -71,6 +81,53 @@ public class IsoController : MonoBehaviour
                 }
                 break;
         }
+    }
+
+    //make isopod squish on x axis
+    private IEnumerator Squish()
+    {
+        isSquishing = true;
+        float squishStrength = 0.2f;
+        float endScale = 1.0f;
+        float time = 0.0f;
+        float animDuration = 0.5f;
+        float halfAnimDuration = animDuration / 2;
+
+        // change the y to make it look a little nicer
+        float startY = rectTransform.localPosition.y;
+        float targetY = startY - squishStrength * 100;
+
+        while (time < halfAnimDuration)
+        {
+            time += Time.deltaTime;
+            float x = Mathf.Lerp(endScale, 1f + squishStrength, time / halfAnimDuration);
+            float y = Mathf.Lerp(endScale, 1f - squishStrength, time / halfAnimDuration);
+            rectTransform.localScale = new Vector3(x, y, 1f);
+
+            //rectTransform.localPosition = new Vector3(rectTransform.localPosition.x,
+            //                                        Mathf.Lerp(startY, targetY, time / halfAnimDuration),
+            //                                        rectTransform.localPosition.z);
+
+            yield return null;
+        }
+            time = 0.0f;
+
+        while (time < halfAnimDuration)
+        {
+            time += Time.deltaTime;
+            float x = Mathf.Lerp(1f + squishStrength, endScale, time / halfAnimDuration);
+            float y = Mathf.Lerp(1f - squishStrength, endScale, time / halfAnimDuration);
+            rectTransform.localScale = new Vector3(x, y, 1f);
+
+            //rectTransform.localPosition = new Vector3(rectTransform.localPosition.x,
+            //                                        Mathf.Lerp(targetY, startY, time / halfAnimDuration),
+            //                                        rectTransform.localPosition.z);
+
+            yield return null;
+        }
+
+        isSquishing = false;
+        rectTransform.localScale = new Vector3(endScale, endScale, 1f);
     }
 
     public void Roll()
