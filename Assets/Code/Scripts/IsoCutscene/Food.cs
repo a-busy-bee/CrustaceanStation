@@ -9,11 +9,14 @@ public class Food : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler, I
     [SerializeField] private Animator particlesObjectAnimator;
     private Animator animator;
     private bool active = false;
+    private bool used = false;
 
     private void Start()
     {
         hoverAnimator.enabled = false;
         animator = GetComponent<Animator>();
+
+        particlesObject.SetActive(false);
     }
 
     public void OnPointerEnter(PointerEventData data)
@@ -25,8 +28,9 @@ public class Food : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler, I
 
     public void OnPointerClick(PointerEventData data)
     {
-        if (active) { return; }
+        if (active || used) { return; }
         hoverAnimator.enabled = true;
+        used = true;
         //hoverAnimator.Play("StopHover");
         StartCoroutine(LiftBottleAndParticles());
     }
