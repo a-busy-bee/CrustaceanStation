@@ -39,7 +39,7 @@ public class Food : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler, I
     {
         active = true;
         animator.Play("Lift");
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.75f);
 
         particlesObject.SetActive(true);
         particlesObjectAnimator.Play("Particles");
