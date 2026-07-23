@@ -24,7 +24,7 @@ public class Food : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler, I
         hoverAnimator.Play("StopHover");
         particlesObject.SetActive(true);
         particlesObjectAnimator.Play("Particles");
-        Debug.Log("clicked");
+        //Debug.Log("clicked");
     }
 
     public void OnPointerExit(PointerEventData data)
