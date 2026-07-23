@@ -66,6 +66,7 @@ MonoBehaviour:
   walkingSprite: {fileID: 4705228925261986671}
   emotionRolling: {fileID: 2077936657777627464}
   emotionWalking: {fileID: 433492857940094692}
+  color: 0
 --- !u!58 &8573701062816853892
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -142,6 +143,7 @@ GameObject:
   - component: {fileID: 5224791659637353116}
   - component: {fileID: 7148041741968850378}
   - component: {fileID: 1599329176617989982}
+  - component: {fileID: 567532008319037166}
   m_Layer: 9
   m_Name: Walk
   m_TagString: Untagged
@@ -309,6 +311,28 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!95 &567532008319037166
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4705228925261986671}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 11454b450ca35104d8445d79e9471f1d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6223563629039871871
 GameObject:
   m_ObjectHideFlags: 0
