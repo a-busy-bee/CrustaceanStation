@@ -76,34 +76,6 @@ public class PlotManager : MonoBehaviour
         return currStage;
     }
 
-    //PlayerPrefs.GetInt("currStage")
-    //PlayerPrefs.GetInt("crabsSinceLevelUp")
-    //PlayerPrefs.GetInt("crustCo")
-    //PlayerPrefs.GetInt("bioCo)
-
-    /*public void AddMail(string newType, string newSubtype = "", int newId = 0)
-    {
-        InboxItem newItem = new InboxItem
-        {
-            type = newType,
-            subType = newSubtype,
-            id = newId,
-            timestamp = plotData.nextTimeStamp,
-            templateID = newType,
-            isRead = false
-        };
-
-        plotData.nextTimeStamp = plotData.nextTimeStamp + 1;
-        plotData.inbox.Append(newItem);
-
-        SaveData();
-    }
-
-    private void SaveData()
-    {
-        File.WriteAllText(savePath, JsonUtility.ToJson(plotData, true));
-    }*/
-
     private void LoadJSON()
     {
         defaultPath = Application.dataPath + "/Data/Inbox.json";

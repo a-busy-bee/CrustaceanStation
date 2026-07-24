@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4f7c2593a02c14180a22a6f0a0f65809
+guid: 4f11896a61cf946ea8e02f7c6002a0d8
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -121,29 +121,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Dirty tank overlay_0
-      rect:
-        serializedVersion: 2
-        x: 222
-        y: 246
-        width: 1753
-        height: 1204
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4b1a97e29255c4595afd30e4829f9a83
-      internalID: -1863985612
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     customData: 
     physicsShape: []
@@ -157,8 +135,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Dirty tank overlay_0: -1863985612
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
