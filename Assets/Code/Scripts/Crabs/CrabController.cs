@@ -403,4 +403,9 @@ public class CrabController : MonoBehaviour
     {
         return crabInfo.isImportantCharacter;
     }
+
+    public DialogueManager.SpecialCharacter GetSpecialType()
+    {
+        return crabInfo.specialCharacterType;
+    }
 }

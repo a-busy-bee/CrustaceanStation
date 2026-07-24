@@ -76,9 +76,11 @@ public class Clock : MonoBehaviour
                 StartCoroutine(FlashEOD());
             }
 
-            if (currentTime == endTime / (numSpecialCharacters + 1) ||
-                currentTime == 2 * endTime / (numSpecialCharacters + 1) ||
-                currentTime == 3 * endTime / (numSpecialCharacters + 1))
+            if (currentTime == 4 ||
+                currentTime == 8 ||
+                currentTime == 12 ||
+                currentTime == 16 ||
+                currentTime == 20) // bad bad bad but im too tired to find a better way
             {
                 CrabSelector.instance.PushNextSpecial();
             }
