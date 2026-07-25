@@ -11,22 +11,16 @@ public class FeedbackNodeGeneric
 }
 
 [Serializable]
-public class CharacterFeedback
-{
-    public string[] text;
-}
-
-[Serializable]
 public class FeedbackData
 {
     public FeedbackNodeGeneric[] nodesGeneric;
-    public CharacterFeedback ittyBitty;
-    public CharacterFeedback protestorCatfish;
-    public CharacterFeedback horseshoe;
-    public CharacterFeedback isobelle;
-    public CharacterFeedback seaStarDad;
-    public CharacterFeedback granny;
-    public CharacterFeedback gramps;
+    public string[] ittyBitty;
+    public string[] protestorCatfish;
+    public string[] horseshoe;
+    public string[] isobelle;
+    public string[] seaStarDad;
+    public string[] granny;
+    public string[] gramps;
 }
 
 public class FeedbackManager : MonoBehaviour
@@ -63,32 +57,31 @@ public class FeedbackManager : MonoBehaviour
     public string GetCharacterFeedback(Special special, int day)
     {
         Constants constants = Constants.instance;
-        if (constants.FEEDBACK_characterToDayToIdx[special].ContainsKey(day))
+        switch (special)
         {
-            switch (special)
-            {
-                case Special.itty:
-                    return feedbackData.ittyBitty.text[constants.FEEDBACK_characterToDayToIdx[special][day]];
+            case Special.itty:
+                return feedbackData.ittyBitty[constants.FEEDBACK_characterToDayToIdx[special][day]];
 
-                case Special.protestorCatfish:
-                    return feedbackData.protestorCatfish.text[constants.FEEDBACK_characterToDayToIdx[special][day]];
+            case Special.protestorCatfish:
+                return feedbackData.protestorCatfish[constants.FEEDBACK_characterToDayToIdx[special][day]];
 
-                case Special.horseshoe:
-                    return feedbackData.horseshoe.text[constants.FEEDBACK_characterToDayToIdx[special][day]];
+            case Special.horseshoe:
+                return feedbackData.horseshoe[constants.FEEDBACK_characterToDayToIdx[special][day]];
 
-                case Special.isobelle:
-                    return feedbackData.isobelle.text[constants.FEEDBACK_characterToDayToIdx[special][day]];
+            case Special.isobelle:
+                return feedbackData.isobelle[constants.FEEDBACK_characterToDayToIdx[special][day]];
 
-                case Special.seaStarDad:
-                    return feedbackData.seaStarDad.text[constants.FEEDBACK_characterToDayToIdx[special][day]];
+            case Special.seaStarDad:
+                return feedbackData.seaStarDad[constants.FEEDBACK_characterToDayToIdx[special][day]];
 
-                case Special.granny:
-                    return feedbackData.granny.text[constants.FEEDBACK_characterToDayToIdx[special][day]];
+            case Special.granny:
+                return feedbackData.granny[constants.FEEDBACK_characterToDayToIdx[special][day]];
 
-                case Special.gramps:
-                    return feedbackData.gramps.text[constants.FEEDBACK_characterToDayToIdx[special][day]];
-            }
+            case Special.gramps:
+                return feedbackData.gramps[constants.FEEDBACK_characterToDayToIdx[special][day]];
         }
-        return "";
+
+        return "Get Character Feedback";
     }
+        
 }

@@ -49,9 +49,7 @@ public class LettersManager : MonoBehaviour
  
     public string GetCrustyCoLetterByDay(int day)
     {
-        if (Constants.instance.LETTER_dayToIdxCrustyCo.ContainsKey(day))
-            return letterData.letterNodesCrustyCo[Constants.instance.LETTER_dayToIdxCrustyCo[day]];
-        return "";
+        return letterData.letterNodesCrustyCo[Constants.instance.LETTER_dayToIdxCrustyCo[day]];
     }
 
     public string GetCrustyCoLetterByIdx(int idx)
@@ -61,15 +59,11 @@ public class LettersManager : MonoBehaviour
 
     public FullStackLetter GetFamilyLetter(int day)
     {
-        if (Constants.instance.LETTER_dayToIdxFamily.ContainsKey(day))
-            return letterData.letterNodesFamily[Constants.instance.LETTER_dayToIdxFamily[day]];
-        return null;
+        return letterData.letterNodesFamily[Constants.instance.LETTER_dayToIdxFamily[day]];
     }
 
     public FullStackLetter GetMailkeeperLetter(int day)
     {
-        if (Constants.instance.LETTER_dayToIdxMailkeeper.ContainsKey(day))
-            return letterData.letterNodesMailkeeper[Constants.instance.LETTER_dayToIdxMailkeeper[day]];
-        return null;
+        return letterData.letterNodesMailkeeper[Constants.instance.LETTER_dayToIdxMailkeeper[day]];
     }
 }

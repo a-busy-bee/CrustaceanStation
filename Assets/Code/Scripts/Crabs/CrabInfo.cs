@@ -81,7 +81,6 @@ public class CrabInfo : ScriptableObject
 	[Header("Specific Character")]
 	public bool isImportantCharacter;
 	public string characterNameID; // internal, for dialogues and such
-	public string characterName; // what shows up on their ID
 
 	public enum SpecialCharacter
     {

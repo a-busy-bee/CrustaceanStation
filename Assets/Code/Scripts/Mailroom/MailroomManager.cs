@@ -196,16 +196,16 @@ public class MailroomManager : MonoBehaviour
                     body = lettersManager.GetCrustyCoLetterByDay(currDay);
                     top = "To whom it may concern,";
                     bottom = "Sincerely,\nCrustacean Corporation";
-                    letterImage.sprite = letterSprites[0];
 
+                    letterImage.sprite = letterSprites[0];
                     break;
 
                 case "crustyCoIdx":
                     body = lettersManager.GetCrustyCoLetterByIdx(inboxItem.id);
                     top = "To whom it may concern,";
                     bottom = "Sincerely,\nCrustacean Corporation";
-                    letterImage.sprite = letterSprites[0];
 
+                    letterImage.sprite = letterSprites[0];
                     break;
 
                 case "family":
@@ -246,6 +246,7 @@ public class MailroomManager : MonoBehaviour
             if (inboxItem.subType == "generic")
             {
                 text = GetComponent<FeedbackManager>().GetGenericFeedback();
+                feedbackFormName.text = CrabNameGenerator.instance.GetAnyName();
             }
             else
             {
@@ -276,9 +277,10 @@ public class MailroomManager : MonoBehaviour
                 }
 
                 text = GetComponent<FeedbackManager>().GetCharacterFeedback(special, currDay);
+                feedbackFormName.text = Constants.instance.specialEnumToStringName[special];
             }
             feedbackForm.GetComponent<RectTransform>().GetChild(0).GetComponent<TextMeshProUGUI>().text = text;
-            feedbackFormName.text = CrabNameGenerator.instance.GetAnyName();
+            
 
             chosen = feedbackForm;
         }

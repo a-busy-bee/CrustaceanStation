@@ -5,6 +5,7 @@ using UnityEngine.AddressableAssets;
 using System.Linq;
 
 using Special = CrabInfo.SpecialCharacter;
+using Unity.Burst.CompilerServices;
 public class CrabSelector : MonoBehaviour
 {
     public static CrabSelector instance { get; protected set; }
@@ -28,28 +29,6 @@ public class CrabSelector : MonoBehaviour
     private Dictionary<int, bool> seenCharacters = new Dictionary<int, bool>(); // <idx of character, whether it was seen or not> (using dictionary for better performance)
     private int currIdx;
     private int maxQueueLength = 45;
-
-    private Dictionary<int, Special[]> dayToCharacter = new Dictionary<int, Special[]> {
-        { 1, new Special[]  {Special.itty, Special.seaStarDad, Special.granny, Special.gramps}},
-        { 2, new Special[]  {Special.itty, Special.isobelle, Special.granny, Special.gramps, Special.horseshoe}},
-        { 3, new Special[]  {Special.itty, Special.seaStarDad, Special.isobelle, Special.protestorCatfish}},
-        { 4, new Special[]  {Special.granny, Special.gramps, Special.horseshoe, Special.protestorCatfish}},
-
-        { 6, new Special[]  {Special.itty, Special.seaStarDad, Special.isobelle, Special.granny, Special.horseshoe}},
-        { 7, new Special[]  {Special.itty, Special.isobelle, Special.granny, Special.gramps}},
-        { 8, new Special[]  {Special.itty, Special.granny, Special.gramps, Special.protestorCatfish}},
-        { 9, new Special[]  {Special.seaStarDad, Special.isobelle, Special.horseshoe, Special.protestorCatfish}},
-
-        { 11, new Special[] {Special.itty, Special.seaStarDad, Special.granny, Special.gramps}},
-        { 12, new Special[] {Special.itty, Special.seaStarDad, Special.isobelle, Special.horseshoe, Special.protestorCatfish}},
-        { 13, new Special[] {Special.itty, Special.granny, Special.horseshoe, Special.protestorCatfish}},
-        { 14, new Special[] {Special.seaStarDad, Special.isobelle, Special.horseshoe, Special.protestorCatfish}},
-
-        { 16, new Special[] {Special.itty, Special.seaStarDad, Special.horseshoe, Special.protestorCatfish}},
-        { 17, new Special[] {Special.isobelle, Special.granny, Special.gramps, Special.horseshoe, Special.protestorCatfish}},
-        { 18, new Special[] {Special.itty, Special.granny, Special.gramps, Special.horseshoe}},
-        { 19, new Special[] {Special.seaStarDad, Special.gramps, Special.horseshoe, Special.protestorCatfish}}
-    };
 
     private void Awake()
     {
@@ -83,7 +62,7 @@ public class CrabSelector : MonoBehaviour
 
         // ADD TODAY'S SPECIALS
         int currDay = SaveManager.instance.GetProgression_CurrDay();
-        foreach (Special special in dayToCharacter[currDay + 1])
+        foreach (Special special in Constants.instance.SELECTOR_dayToCharacter[currDay + 1])
         {
             // find idx in special prefabs
             int specialObj = prefabsSpecial.FindIndex(s => s.GetComponent<CrabController>().GetSpecialType() == special);
@@ -166,7 +145,7 @@ public class CrabSelector : MonoBehaviour
     public int GetNumSpecialCharacters()
     {
         int currDay = SaveManager.instance.GetProgression_CurrDay();
-        return dayToCharacter[currDay + 1].Length;
+        return Constants.instance.SELECTOR_dayToCharacter[currDay + 1].Length;
     }
 
     public Sprite ChooseSprite()
