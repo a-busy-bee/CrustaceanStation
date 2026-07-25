@@ -3,6 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.Burst.Intrinsics;
+
+using Special = CrabInfo.SpecialCharacter;
+
+
 [Serializable]
 public class DialogueData
 {
@@ -11,8 +15,8 @@ public class DialogueData
 
     public string[] nodeGenericAnyChars; // casual dialogue, any character
     public DialogueNodePlotAnyChar[] nodePlotAnyChars;    // plot dialogue, any character
-
-    //TODO: load these
+ 
+    //TODO: load these 
     public string[] nodesNonCrustacean;
     public string[] nodesCrustacean;
     public string[] nodesVet;
@@ -56,17 +60,7 @@ public class DialogueManager : MonoBehaviour
     private DialogueData dialogueData;
     [SerializeField] private DialogueObject dialogueObject;
 
-    public enum SpecialCharacter
-    {
-        itty,
-        protestorCatfish,
-        horseshoe,
-        isobelle,
-        seaStarDad,
-        granny,
-        gramps
-    }
-    private Dictionary<SpecialCharacter, string[]> characterToDialgoue;
+    private Dictionary<Special, string[]> characterToDialgoue;
 
     private void Awake()
     {
@@ -83,15 +77,15 @@ public class DialogueManager : MonoBehaviour
     {
         LoadJson();
 
-        characterToDialgoue = new Dictionary<SpecialCharacter, string[]>
+        characterToDialgoue = new Dictionary<Special, string[]>
         {
-            {SpecialCharacter.itty,             dialogueData.ittyBitty},
-            {SpecialCharacter.protestorCatfish, dialogueData.protestorCatfish},
-            {SpecialCharacter.horseshoe,        dialogueData.horseshoeCrab},
-            {SpecialCharacter.isobelle,         dialogueData.isobelle},
-            {SpecialCharacter.seaStarDad,       dialogueData.seaStarDad},
-            {SpecialCharacter.granny,           dialogueData.granny},
-            {SpecialCharacter.gramps,           dialogueData.gramps},
+            {Special.itty,             dialogueData.ittyBitty},
+            {Special.protestorCatfish, dialogueData.protestorCatfish},
+            {Special.horseshoe,        dialogueData.horseshoeCrab},
+            {Special.isobelle,         dialogueData.isobelle},
+            {Special.seaStarDad,       dialogueData.seaStarDad},
+            {Special.granny,           dialogueData.granny},
+            {Special.gramps,           dialogueData.gramps},
         };
     }
 
@@ -161,7 +155,7 @@ public class DialogueManager : MonoBehaviour
         dialogueObject.ShowDialogue(text);
     }
 
-    public void GetSpecialCharacterDialogue(SpecialCharacter characterName)
+    public void GetSpecialCharacterDialogue(Special characterName)
     {
         SaveManager saveManager = SaveManager.instance;
         string characterNameString = characterName.ToString();

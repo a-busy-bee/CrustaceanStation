@@ -8,12 +8,15 @@ using UnityEngine.UI;
 using Unity.VisualScripting;
 using System.Collections;
 using UnityEngine.SceneManagement;
+
+using Special = CrabInfo.SpecialCharacter;
 public class MailroomManager : MonoBehaviour
 {
     public static MailroomManager instance { get; private set; }
 
     [SerializeField] private Mailbox mailbox;
     [SerializeField] private AudioManager audioManager;
+    private LettersManager lettersManager;
 
     [Header("Letter Types")]
     [SerializeField] private GameObject letter;
@@ -22,6 +25,7 @@ public class MailroomManager : MonoBehaviour
     [SerializeField] private GameObject largeNote;
     [SerializeField] private GameObject smallNote;
     private GameObject[] notes;
+
     [SerializeField] private Image letterImage;
     [SerializeField] private Sprite[] letterSprites;
 
@@ -84,6 +88,8 @@ public class MailroomManager : MonoBehaviour
 
     private void Start()
     {
+        lettersManager = GetComponent<LettersManager>();
+
         HideCrabdexNotif();
         hideLetterButton.SetActive(false);
         backgroundOverlay.SetActive(false);
@@ -174,42 +180,109 @@ public class MailroomManager : MonoBehaviour
         // show button to close letter
         GameObject chosen = null;
 
+        int currDay = SaveManager.instance.GetProgression_CurrDay();
+
         if (inboxItem.type == "letter")
         {
             letter.SetActive(true);
-            string text = "";
-            if (inboxItem.subType == "crustyCo")
+            string body = "";
+            string top = "";
+            string bottom = "";
+            letterImage.sprite = letterSprites[0];
+
+            switch (inboxItem.subType)
             {
-                letterImage.sprite = letterSprites[0];
-                text = GetComponent<LettersManager>().GetCrustyCoLetter(inboxItem.id);
+                case "crustyCoDay":
+                    body = lettersManager.GetCrustyCoLetterByDay(currDay);
+                    top = "To whom it may concern,";
+                    bottom = "Sincerely,\nCrustacean Corporation";
+                    letterImage.sprite = letterSprites[0];
+
+                    break;
+
+                case "crustyCoIdx":
+                    body = lettersManager.GetCrustyCoLetterByIdx(inboxItem.id);
+                    top = "To whom it may concern,";
+                    bottom = "Sincerely,\nCrustacean Corporation";
+                    letterImage.sprite = letterSprites[0];
+
+                    break;
+
+                case "family":
+                    FullStackLetter fullStackLetter = lettersManager.GetFamilyLetter(currDay);
+
+                    body = fullStackLetter.body;
+                    top = fullStackLetter.top;
+                    bottom = fullStackLetter.bottom;
+
+                    letterImage.sprite = letterSprites[1];
+                    break;
+
+                case "mailkeeper":
+                    fullStackLetter = lettersManager.GetMailkeeperLetter(currDay);
+
+                    body = fullStackLetter.body;
+                    top = fullStackLetter.top;
+                    bottom = fullStackLetter.bottom;
+
+                    letterImage.sprite = letterSprites[1];
+                    break;
             }
-            else if (inboxItem.subType == "biodivCo")
-            {
-                letterImage.sprite = letterSprites[1];
-                text = GetComponent<LettersManager>().GetBioCoLetter(inboxItem.id);
-            }
-            letter.GetComponent<RectTransform>().GetChild(0).GetComponent<TextMeshProUGUI>().text = text;
+
+            letter.GetComponent<RectTransform>().GetChild(0).GetComponent<TextMeshProUGUI>().text = body;
+            letter.GetComponent<RectTransform>().GetChild(1).GetComponent<TextMeshProUGUI>().text = top;
+            letter.GetComponent<RectTransform>().GetChild(2).GetComponent<TextMeshProUGUI>().text = bottom;
 
             chosen = letter;
         }
+
+
+
         else if (inboxItem.type == "feedbackForm")
         {
             feedbackForm.SetActive(true);
-            string text = "";
+            string text;
+
             if (inboxItem.subType == "generic")
             {
                 text = GetComponent<FeedbackManager>().GetGenericFeedback();
             }
-            else if (inboxItem.subType == "plot")
+            else
             {
-                text = GetComponent<FeedbackManager>().GetPlotFeedback(inboxItem.id);
+                Special special = Special.itty;
+                switch (inboxItem.subType)
+                {
+                    case "itty":
+                        special = Special.itty;
+                        break;
+                    case "protestorCatfish":
+                        special = Special.protestorCatfish;
+                        break;
+                    case "horseshoe":
+                        special = Special.horseshoe;
+                        break;
+                    case "isobelle":
+                        special = Special.isobelle;
+                        break;
+                    case "seaStarDad":
+                        special = Special.seaStarDad;
+                        break;
+                    case "granny":
+                        special = Special.granny;
+                        break;
+                    case "gramps":
+                        special = Special.gramps;
+                        break;
+                }
+
+                text = GetComponent<FeedbackManager>().GetCharacterFeedback(special, currDay);
             }
             feedbackForm.GetComponent<RectTransform>().GetChild(0).GetComponent<TextMeshProUGUI>().text = text;
             feedbackFormName.text = CrabNameGenerator.instance.GetAnyName();
 
             chosen = feedbackForm;
         }
-        else if (inboxItem.type == "noteBig")
+        /*else if (inboxItem.type == "noteBig")
         {
             largeNote.SetActive(true);
             // replace sprite
@@ -222,7 +295,7 @@ public class MailroomManager : MonoBehaviour
             // replace sprite
 
             chosen = smallNote;
-        }
+        }*/
 
         BringUpLetter(chosen);
 

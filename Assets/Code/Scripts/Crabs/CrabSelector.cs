@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 using System.Linq;
 
-using Special = DialogueManager.SpecialCharacter;
+using Special = CrabInfo.SpecialCharacter;
 public class CrabSelector : MonoBehaviour
 {
     public static CrabSelector instance { get; protected set; }

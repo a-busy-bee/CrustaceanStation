@@ -1,36 +1,43 @@
 using UnityEngine;
 using System;
+using System.Collections.Generic;
+
+using Special = CrabInfo.SpecialCharacter;
+
+[Serializable]
+public class FeedbackNodeGeneric
+{
+    public string text;
+}
+
+[Serializable]
+public class CharacterFeedback
+{
+    public string[] text;
+}
 
 [Serializable]
 public class FeedbackData
 {
     public FeedbackNodeGeneric[] nodesGeneric;
-    public FeedbackNodePlot[] nodesPlot;
-}
-
-[Serializable]
-public class FeedbackNodeGeneric
-{
-    //public float rating;
-    public string text;
-}
-
-
-[Serializable]
-public class FeedbackNodePlot
-{
-    public int plotID;
-    public string[] text;
+    public CharacterFeedback ittyBitty;
+    public CharacterFeedback protestorCatfish;
+    public CharacterFeedback horseshoe;
+    public CharacterFeedback isobelle;
+    public CharacterFeedback seaStarDad;
+    public CharacterFeedback granny;
+    public CharacterFeedback gramps;
 }
 
 public class FeedbackManager : MonoBehaviour
 {
     private FeedbackData feedbackData;
+
     private void Start()
     {
         LoadJson();
     }
-
+ 
     private void LoadJson()
     {
         TextAsset jsonFile = Resources.Load<TextAsset>("Feedback");
@@ -53,13 +60,35 @@ public class FeedbackManager : MonoBehaviour
         return feedbackData.nodesGeneric[rand].text;
     }
 
-    public string GetPlotFeedback(int stage)
+    public string GetCharacterFeedback(Special special, int day)
     {
-        int rand = UnityEngine.Random.Range(0, feedbackData.nodesPlot[stage].text.Length);
+        Constants constants = Constants.instance;
+        if (constants.FEEDBACK_characterToDayToIdx[special].ContainsKey(day))
+        {
+            switch (special)
+            {
+                case Special.itty:
+                    return feedbackData.ittyBitty.text[constants.FEEDBACK_characterToDayToIdx[special][day]];
 
-        //string name = "";
-        //if (rand < feedbackData.nodesPlot[stage].name.Length) name = feedbackData.nodesPlot[stage].name[rand];
+                case Special.protestorCatfish:
+                    return feedbackData.protestorCatfish.text[constants.FEEDBACK_characterToDayToIdx[special][day]];
 
-        return feedbackData.nodesPlot[stage].text[rand];
+                case Special.horseshoe:
+                    return feedbackData.horseshoe.text[constants.FEEDBACK_characterToDayToIdx[special][day]];
+
+                case Special.isobelle:
+                    return feedbackData.isobelle.text[constants.FEEDBACK_characterToDayToIdx[special][day]];
+
+                case Special.seaStarDad:
+                    return feedbackData.seaStarDad.text[constants.FEEDBACK_characterToDayToIdx[special][day]];
+
+                case Special.granny:
+                    return feedbackData.granny.text[constants.FEEDBACK_characterToDayToIdx[special][day]];
+
+                case Special.gramps:
+                    return feedbackData.gramps.text[constants.FEEDBACK_characterToDayToIdx[special][day]];
+            }
+        }
+        return "";
     }
 }
