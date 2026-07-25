@@ -252,8 +252,9 @@ public class CrabController : MonoBehaviour
 
         if (crabInfo.isImportantCharacter) // no forgery if they're special
         {
-            ticket.GetComponent<Ticket>().SetName(crabInfo.characterName);
-            id.GetComponent<ID>().SetName(crabInfo.characterName);
+            string name = Constants.instance.specialEnumToStringName[crabInfo.specialCharacterType];
+            ticket.GetComponent<Ticket>().SetName(name);
+            id.GetComponent<ID>().SetName(name);
             id.GetComponent<ID>().SetIDPhoto(crabInfo.sprite);
             isValid = true;
         }
@@ -404,7 +405,7 @@ public class CrabController : MonoBehaviour
         return crabInfo.isImportantCharacter;
     }
 
-    public DialogueManager.SpecialCharacter GetSpecialType()
+    public CrabInfo.SpecialCharacter GetSpecialType()
     {
         return crabInfo.specialCharacterType;
     }
