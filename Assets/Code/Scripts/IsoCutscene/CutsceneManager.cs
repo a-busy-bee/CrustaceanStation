@@ -15,6 +15,8 @@ public class CutsceneManager : MonoBehaviour
     }
     private CutsceneState currState;
     private CutsceneState prevState;
+    private const int normalSceneLength = 2;
+    private const int animatedSceneLength = 2;
     private float sceneLength = 2;
 
     // scenes
@@ -93,12 +95,21 @@ public class CutsceneManager : MonoBehaviour
                         SetColorForLateCutsceneIsos();
                     }
 
+                    if (currSceneIdx == 4)
+                    {
+                        scenes[currSceneIdx - 1].SetActive(true);
+                        sceneLength = animatedSceneLength;
+                    }
+                    else sceneLength = normalSceneLength;
+                    
                     StartCoroutine(WaitThenContinueNextScene());
+
                 }
                 break;
             case CutsceneState.minigame:
                 {
                     scenes[currSceneIdx].SetActive(false);
+                    scenes[currSceneIdx - 1].SetActive(false);
                     minigameParent.SetActive(true);
                 }
                 break;
