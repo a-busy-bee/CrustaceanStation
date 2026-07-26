@@ -121,12 +121,9 @@ public class PerformanceManager : MonoBehaviour
     public void Incorrect(MistakeType mistake)
     {
         UnityEngine.Debug.Log("incorrect");
-        if (!animating)
-        {
-            UnityEngine.Debug.Log("animating");
-            animator.enabled = true;
-            animator.Play("Rumble", 0, 0f);
-        }
+        UnityEngine.Debug.Log("animating");
+        animator.enabled = true;
+        animator.Play("Rumble", 0, 0f);
         
         numWrong++;
         barPercent -= stepSize * 3.5f;
@@ -147,19 +144,14 @@ public class PerformanceManager : MonoBehaviour
     public void IncorrectHalf(MistakeType mistake)
     {
         UnityEngine.Debug.Log("incorrect half");
-        if (!animating)
-        {
-            UnityEngine.Debug.Log("aniamting");
-            animator.enabled = true;
-            animator.Play("Rumble", 0, 0f);
-            
-        }
+        UnityEngine.Debug.Log("aniamting");
+        animator.enabled = true;
+        animator.Play("Rumble", 0, 0f);
         numWrong++;
         barPercent -= stepSize;
         if (barPercent <= 0)
         {
             barPercent = 0;
-            animating = false;
             animator.enabled = false;
         }
 
