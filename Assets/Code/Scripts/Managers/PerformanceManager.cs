@@ -1,5 +1,6 @@
-using System.Numerics;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Numerics;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -20,6 +21,8 @@ public class PerformanceManager : MonoBehaviour
     private bool isChanging;
     private float currentVelocity;
     private float stepSize = 0.1f;
+
+    private Animator animator;
 
     [SerializeField] private Slider sliderKiosk;
     [SerializeField] private Slider sliderSummary;
@@ -56,6 +59,8 @@ public class PerformanceManager : MonoBehaviour
     private void Start()
     {
         SaveManager saveManager = SaveManager.instance;
+        animator = GetComponent<Animator>();
+
         bool isPerformanceBarSaved = saveManager.GetProgression_PerfBarSaved();
         if (!isPerformanceBarSaved)
         {
@@ -115,9 +120,18 @@ public class PerformanceManager : MonoBehaviour
     [ContextMenu("Incorrect")]
     public void Incorrect(MistakeType mistake)
     {
+        UnityEngine.Debug.Log("incorrect");
+        UnityEngine.Debug.Log("animating");
+        animator.enabled = true;
+        animator.Play("Rumble", 0, 0f);
+        
         numWrong++;
         barPercent -= stepSize * 3.5f;
-        if (barPercent <= 0) barPercent = 0;
+        if (barPercent <= 0)
+        {
+            barPercent = 0;
+            animator.enabled = false;
+        }
 
         mistakes[mistake]++;
         ResetCorrect();
@@ -129,9 +143,17 @@ public class PerformanceManager : MonoBehaviour
     [ContextMenu("Incorrect Half")]
     public void IncorrectHalf(MistakeType mistake)
     {
+        UnityEngine.Debug.Log("incorrect half");
+        UnityEngine.Debug.Log("aniamting");
+        animator.enabled = true;
+        animator.Play("Rumble", 0, 0f);
         numWrong++;
         barPercent -= stepSize;
-        if (barPercent <= 0) barPercent = 0;
+        if (barPercent <= 0)
+        {
+            barPercent = 0;
+            animator.enabled = false;
+        }
 
         mistakes[mistake]++;
         ResetCorrect();
@@ -164,6 +186,7 @@ public class PerformanceManager : MonoBehaviour
         if (isChanging)
         {
             // todo: if moving down, do some kind of particle system or effect
+
             sliderKiosk.value = Mathf.SmoothDamp(sliderKiosk.value, barPercent, ref currentVelocity, 0.75f);
 
             if (barPercent >= 0.7f)
