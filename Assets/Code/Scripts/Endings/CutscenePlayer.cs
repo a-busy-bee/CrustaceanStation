@@ -46,7 +46,7 @@ public class CutscenePlayer : MonoBehaviour
 
     public void ProgressScene()
     {
-        if (currSceneIdx < 4) // scenes before minigame
+        if (currSceneIdx < 4) 
         {
             scenes[currSceneIdx].SetActive(false);
             currSceneIdx++;
