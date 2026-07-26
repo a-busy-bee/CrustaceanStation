@@ -43,6 +43,7 @@ public class PerformanceManager : MonoBehaviour
         transport,
         seating
     }
+    private bool animating;
 
     private void Awake()
     {
@@ -133,7 +134,8 @@ public class PerformanceManager : MonoBehaviour
         if (barPercent <= 0)
         {
             barPercent = 0;
-            animator.enabled = false;
+            animating = false;
+            //animator.enabled = false;
         }
 
         mistakes[mistake]++;
@@ -160,7 +162,7 @@ public class PerformanceManager : MonoBehaviour
         {
             barPercent = 0;
             animating = false;
-            animator.enabled = false;
+            //animator.enabled = false;
         }
 
         mistakes[mistake]++;
