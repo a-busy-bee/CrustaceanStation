@@ -15,7 +15,7 @@ public class DialogueData
 
     public string[] nodeGenericAnyChars; // casual dialogue, any character
     public DialogueNodePlotAnyChar[] nodePlotAnyChars;    // plot dialogue, any character
- 
+
     //TODO: load these 
     public string[] nodesNonCrustacean;
     public string[] nodesCrustacean;
@@ -28,6 +28,7 @@ public class DialogueData
     public string[] seaStarDad;
     public string[] granny;
     public string[] gramps;
+    public string[] gramps_ending;
 }
 
 [Serializable]
@@ -177,5 +178,11 @@ public class DialogueManager : MonoBehaviour
     public void ClearDialogue()
     {
         dialogueObject.ClearDialogue();
+    }
+
+    public void ShowGrampsGoodEndingDialogue(int idx)
+    {
+        string text = dialogueData.gramps_ending[idx];
+        dialogueObject.ShowDialogue(text);
     }
 }
