@@ -28,7 +28,6 @@ public class LevelManagerBase : MonoBehaviour
     // UI background 
     [Header("Other")]
     [SerializeField] protected GameObject transparentOverlay;
-    [SerializeField] protected AudioManager audioManager;
     protected bool isTutorial = false;
 
     // STATE MACHINE

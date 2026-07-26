@@ -22,14 +22,6 @@ public class Ticket : MonoBehaviour
 
     [SerializeField] protected CanvasGroup canvasGroup;
 
-    private AudioManager audioManager;
-
-    private void Start()
-    {
-        //zRotations = new float[] { 0, 180, 270, 90 };
-        audioManager = KioskBase.instance.GetSFXManager();
-    }
-
     public void SetName(string newName)
     {
         crabName = newName;
@@ -60,9 +52,6 @@ public class Ticket : MonoBehaviour
 
     public void PushBack()
     {
-        if (audioManager == null) audioManager = KioskBase.instance.GetSFXManager();
-        audioManager.Play("paper");
-
         rectTransform.rotation = Quaternion.Euler(0, 0, -28.8f);
         rectTransform.anchoredPosition = new Vector3(76, 85.798f, 64);
 

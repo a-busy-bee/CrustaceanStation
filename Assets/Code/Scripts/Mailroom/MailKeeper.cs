@@ -3,8 +3,6 @@ using UnityEngine.EventSystems;
 
 public class MailKeeper : MonoBehaviour, IPointerClickHandler
 {
-
-    [SerializeField] private AudioManager audioManager;
     [SerializeField] private RectTransform rectTransform;
     private bool isMoving = false;
     private Vector3 endPos = new Vector3(-534, 693, 0);
@@ -43,8 +41,6 @@ public class MailKeeper : MonoBehaviour, IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData)
     {
         if (isTapped) return;
-
-        audioManager.Play("tap");
 
         isTapped = true;
 

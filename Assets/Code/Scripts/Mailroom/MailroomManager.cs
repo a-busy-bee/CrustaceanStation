@@ -13,7 +13,6 @@ public class MailroomManager : MonoBehaviour
     public static MailroomManager instance { get; private set; }
 
     [SerializeField] private Mailbox mailbox;
-    [SerializeField] private AudioManager audioManager;
 
     [Header("Letter Types")]
     [SerializeField] private GameObject letter;
@@ -30,8 +29,6 @@ public class MailroomManager : MonoBehaviour
     [SerializeField] private GameObject hideLetterButton;
     [SerializeField] private GameObject backgroundOverlay;
 
-    // AUDIO
-    //[SerializeField] private AudioManager audioManager;
 
     // MOVEMENT
     public enum LetterState
@@ -234,8 +231,6 @@ public class MailroomManager : MonoBehaviour
 
     private void BringUpLetter(GameObject chosen)
     {
-        //play audio
-        audioManager.Play("paper", true);
 
         if (chosen == null) return;
 
@@ -245,14 +240,11 @@ public class MailroomManager : MonoBehaviour
         else if (chosen == smallNote) objectIdxMoving = 3;
 
         currentLetter = chosen;
-        audioManager.Play("paper");
         SetState(LetterState.letterMovingUp);
     }
 
     public void BringDownLetter()
     {
-        //play audio
-        audioManager.Play("paper", true);
 
         SetState(LetterState.letterMovingDown);
     }

@@ -271,7 +271,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 1737589883}
 --- !u!1 &10554871
 GameObject:
   m_ObjectHideFlags: 0
@@ -858,7 +857,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 0}
 --- !u!114 &53463595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1159,7 +1157,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 1737589883}
 --- !u!1 &68923381
 GameObject:
   m_ObjectHideFlags: 0
@@ -1260,7 +1257,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 0}
 --- !u!114 &68923385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1399,7 +1395,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 0}
 --- !u!114 &76986780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1590,58 +1585,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 1737589883}
---- !u!1 &83171633
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 83171634}
-  - component: {fileID: 83171635}
-  m_Layer: 0
-  m_Name: Waves
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &83171634
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 83171633}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.54584, y: 0.15449, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 930940755}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &83171635
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 83171633}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c79886b9a5734e6893fea679edccee1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
-  sounds:
-  - name: waves
-    clip: {fileID: 8300000, guid: 070cb9c5915961c4e93aea0f3b08107b, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 1
-    source: {fileID: 0}
 --- !u!1 &96107498
 GameObject:
   m_ObjectHideFlags: 0
@@ -2019,6 +1962,8 @@ MonoBehaviour:
   - {fileID: 1926902354}
   - {fileID: 1107428969}
   defaultEmpty: {fileID: 11400000, guid: e1300a792471245d184b48b93aa88892, type: 2}
+  arrowTransform: {fileID: 0}
+  doubleCarts: 0
 --- !u!114 &119828701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2353,7 +2298,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 0}
 --- !u!114 &142211312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2846,7 +2790,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 1737589883}
 --- !u!1 &209581246
 GameObject:
   m_ObjectHideFlags: 0
@@ -3069,7 +3012,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 0}
 --- !u!114 &212293391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3459,7 +3401,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 1737589883}
 --- !u!1 &249745147
 GameObject:
   m_ObjectHideFlags: 0
@@ -3928,7 +3869,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 1737589883}
 --- !u!1 &277998396
 GameObject:
   m_ObjectHideFlags: 0
@@ -4355,7 +4295,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 0}
 --- !u!114 &290885473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4802,7 +4741,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 0}
 --- !u!114 &359665388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5455,7 +5393,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 0}
 --- !u!114 &374207018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5824,7 +5761,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 0}
 --- !u!114 &426993593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7003,7 +6939,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 1737589883}
 --- !u!114 &503071979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7330,8 +7265,6 @@ GameObject:
   - component: {fileID: 534969240}
   - component: {fileID: 534969239}
   - component: {fileID: 534969238}
-  - component: {fileID: 534969242}
-  - component: {fileID: 534969243}
   m_Layer: 5
   m_Name: Approve
   m_TagString: Untagged
@@ -7436,18 +7369,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1567585163}
         m_TargetAssemblyTypeName: Tutorial, Assembly-CSharp
         m_MethodName: Continue
@@ -7498,38 +7419,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534969236}
   m_CullTransparentMesh: 1
---- !u!114 &534969242
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 534969236}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c79886b9a5734e6893fea679edccee1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
-  sounds:
-  - name: click
-    clip: {fileID: 8300000, guid: 30bfffeb38d7d9d419e6e4bde8871bf1, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
---- !u!114 &534969243
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 534969236}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffa8b3412c3b4c6438f420715311003a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ButtonClick
-  audioManager: {fileID: 0}
 --- !u!1 &540616974
 GameObject:
   m_ObjectHideFlags: 0
@@ -7630,7 +7519,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 0}
 --- !u!114 &540616978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7943,7 +7831,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 1737589883}
 --- !u!1 &558911524
 GameObject:
   m_ObjectHideFlags: 0
@@ -8045,7 +7932,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 1737589883}
 --- !u!114 &558911528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8507,7 +8393,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 0}
 --- !u!114 &582578668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9040,7 +8925,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 1737589883}
 --- !u!1 &656962815
 GameObject:
   m_ObjectHideFlags: 0
@@ -9239,7 +9123,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 0}
 --- !u!114 &657601248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9941,7 +9824,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 0}
 --- !u!114 &703879634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10455,7 +10337,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::KioskTutorial
   clock: {fileID: 49544119}
-  SFXManager: {fileID: 1737589883}
   crabParentObject: {fileID: 460184287}
   ticketParentObject: {fileID: 265147269}
   approveButton: {fileID: 777154369}
@@ -10567,7 +10448,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 0}
 --- !u!114 &730704859
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10706,7 +10586,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 0}
 --- !u!114 &733569363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10824,6 +10703,8 @@ MonoBehaviour:
   - {fileID: 558312744}
   - {fileID: 857394270}
   defaultEmpty: {fileID: 11400000, guid: e1300a792471245d184b48b93aa88892, type: 2}
+  arrowTransform: {fileID: 0}
+  doubleCarts: 0
 --- !u!114 &741270675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11038,7 +10919,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 1737589883}
 --- !u!114 &752757192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11518,7 +11398,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 0}
 --- !u!114 &775785415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11570,7 +11449,6 @@ GameObject:
   - component: {fileID: 777154370}
   - component: {fileID: 777154369}
   - component: {fileID: 777154367}
-  - component: {fileID: 777154368}
   m_Layer: 5
   m_Name: Approve
   m_TagString: Untagged
@@ -11619,19 +11497,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &777154368
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 777154365}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffa8b3412c3b4c6438f420715311003a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ButtonClick
-  audioManager: {fileID: 1737589883}
 --- !u!114 &777154369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11683,18 +11548,6 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Tutorial, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -11983,7 +11836,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 1737589883}
 --- !u!1 &832733128
 GameObject:
   m_ObjectHideFlags: 0
@@ -12504,7 +12356,6 @@ GameObject:
   m_Component:
   - component: {fileID: 856538095}
   - component: {fileID: 856538096}
-  - component: {fileID: 856538097}
   m_Layer: 5
   m_Name: Seating
   m_TagString: Untagged
@@ -12554,31 +12405,6 @@ MonoBehaviour:
   vanPopup: {fileID: 1297252286}
   background: {fileID: 1735903848}
   miniAssets: []
---- !u!114 &856538097
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 856538094}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c79886b9a5734e6893fea679edccee1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
-  sounds:
-  - name: open
-    clip: {fileID: 8300000, guid: 97c958a321bfc454097a13f11c2a98ae, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: close
-    clip: {fileID: 8300000, guid: 4014b8607b0546f41a18ad5d7b96c80b, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
 --- !u!1 &857394268
 GameObject:
   m_ObjectHideFlags: 0
@@ -12633,7 +12459,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 1737589883}
 --- !u!1 &859859710
 GameObject:
   m_ObjectHideFlags: 0
@@ -12908,7 +12733,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 1737589883}
 --- !u!1 &872731373
 GameObject:
   m_ObjectHideFlags: 0
@@ -13221,7 +13045,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 0}
 --- !u!114 &876685991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13314,7 +13137,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 1737589883}
 --- !u!1 &882882224
 GameObject:
   m_ObjectHideFlags: 0
@@ -13445,7 +13267,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 1737589883}
 --- !u!1 &914900343
 GameObject:
   m_ObjectHideFlags: 0
@@ -13500,7 +13321,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 1737589883}
 --- !u!1 &920522846
 GameObject:
   m_ObjectHideFlags: 0
@@ -13576,53 +13396,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 920522846}
   m_CullTransparentMesh: 1
---- !u!1 &930940753
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 930940755}
-  - component: {fileID: 930940754}
-  m_Layer: 0
-  m_Name: Audio
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &930940754
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 930940753}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c41e81b65a29dc479c67ab1a2e56709, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BgmManager
---- !u!4 &930940755
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 930940753}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.54584, y: -0.15449, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 959224717}
-  - {fileID: 83171634}
-  - {fileID: 1737589882}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &933576068
 GameObject:
   m_ObjectHideFlags: 0
@@ -13830,7 +13603,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 1737589883}
 --- !u!1 &958231654
 GameObject:
   m_ObjectHideFlags: 0
@@ -13932,7 +13704,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 1737589883}
 --- !u!114 &958231658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13971,57 +13742,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 958231654}
   m_CullTransparentMesh: 1
---- !u!1 &959224716
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 959224717}
-  - component: {fileID: 959224718}
-  m_Layer: 0
-  m_Name: Music
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &959224717
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 959224716}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.54584, y: 0.15449, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 930940755}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &959224718
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 959224716}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c79886b9a5734e6893fea679edccee1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
-  sounds:
-  - name: main
-    clip: {fileID: 8300000, guid: 7c681c700179c4c3db2046cbe2542e09, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 1
-    source: {fileID: 0}
 --- !u!1 &962795621
 GameObject:
   m_ObjectHideFlags: 0
@@ -14076,7 +13796,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 1737589883}
 --- !u!1 &964127253
 GameObject:
   m_ObjectHideFlags: 0
@@ -14460,7 +14179,6 @@ GameObject:
   - component: {fileID: 1012089318}
   - component: {fileID: 1012089317}
   - component: {fileID: 1012089316}
-  - component: {fileID: 1012089315}
   - component: {fileID: 1012089314}
   m_Layer: 5
   m_Name: Reject
@@ -14510,19 +14228,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1012089315
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1012089312}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffa8b3412c3b4c6438f420715311003a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ButtonClick
-  audioManager: {fileID: 1737589883}
 --- !u!114 &1012089316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14671,7 +14376,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 1737589883}
 --- !u!1 &1019750298
 GameObject:
   m_ObjectHideFlags: 0
@@ -15188,6 +14892,8 @@ MonoBehaviour:
   - {fileID: 1942713184}
   - {fileID: 866341305}
   defaultEmpty: {fileID: 11400000, guid: e1300a792471245d184b48b93aa88892, type: 2}
+  arrowTransform: {fileID: 0}
+  doubleCarts: 0
 --- !u!114 &1029995115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15280,7 +14986,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 1737589883}
 --- !u!1 &1031547286
 GameObject:
   m_ObjectHideFlags: 0
@@ -15335,7 +15040,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 1737589883}
 --- !u!1 &1038176834
 GameObject:
   m_ObjectHideFlags: 0
@@ -16152,7 +15856,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 1737589883}
 --- !u!1 &1107428967
 GameObject:
   m_ObjectHideFlags: 0
@@ -16207,7 +15910,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 1737589883}
 --- !u!1 &1110075713 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3179002064093147093, guid: 4de3e27ee11244dfc8f80c9f950e5da8, type: 3}
@@ -16704,7 +16406,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 0}
 --- !u!114 &1146778081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17095,7 +16796,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 0}
 --- !u!114 &1171047228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17188,7 +16888,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 1737589883}
 --- !u!1 &1186613106
 GameObject:
   m_ObjectHideFlags: 0
@@ -17441,7 +17140,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 1737589883}
 --- !u!1 &1209324613
 GameObject:
   m_ObjectHideFlags: 0
@@ -17542,7 +17240,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 0}
 --- !u!114 &1209324617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17635,7 +17332,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 1737589883}
 --- !u!1 &1223423410
 GameObject:
   m_ObjectHideFlags: 0
@@ -17973,9 +17669,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0
+    y: 0.00017857552
     width: 1
-    height: 1
+    height: 0.99964285
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -18473,7 +18169,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 1737589883}
 --- !u!1 &1297252286
 GameObject:
   m_ObjectHideFlags: 0
@@ -18545,6 +18240,8 @@ MonoBehaviour:
   - {fileID: 958231657}
   - {fileID: 752757191}
   defaultEmpty: {fileID: 11400000, guid: e1300a792471245d184b48b93aa88892, type: 2}
+  arrowTransform: {fileID: 0}
+  doubleCarts: 0
 --- !u!114 &1297252289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18781,7 +18478,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 0}
 --- !u!114 &1304625105
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19027,7 +18723,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 1737589883}
 --- !u!114 &1317461611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19626,7 +19321,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 1737589883}
 --- !u!1001 &1380835537
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19992,7 +19686,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 0}
 --- !u!114 &1411949542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20044,8 +19737,6 @@ GameObject:
   - component: {fileID: 1416969084}
   - component: {fileID: 1416969083}
   - component: {fileID: 1416969082}
-  - component: {fileID: 1416969086}
-  - component: {fileID: 1416969087}
   m_Layer: 5
   m_Name: Reject
   m_TagString: Untagged
@@ -20150,18 +19841,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1416969084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20200,38 +19879,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1416969079}
   m_CullTransparentMesh: 1
---- !u!114 &1416969086
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1416969079}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c79886b9a5734e6893fea679edccee1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
-  sounds:
-  - name: click
-    clip: {fileID: 8300000, guid: 30bfffeb38d7d9d419e6e4bde8871bf1, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
---- !u!114 &1416969087
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1416969079}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffa8b3412c3b4c6438f420715311003a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ButtonClick
-  audioManager: {fileID: 0}
 --- !u!1 &1424528776
 GameObject:
   m_ObjectHideFlags: 0
@@ -20643,7 +20290,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 1737589883}
 --- !u!1 &1445203567
 GameObject:
   m_ObjectHideFlags: 0
@@ -20744,7 +20390,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 0}
 --- !u!114 &1445203571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21179,7 +20824,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 1737589883}
 --- !u!1 &1494149561
 GameObject:
   m_ObjectHideFlags: 0
@@ -21281,7 +20925,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 1737589883}
 --- !u!114 &1494149565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21655,7 +21298,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 0}
 --- !u!114 &1514975053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21916,7 +21558,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 0}
 --- !u!114 &1533930485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22153,7 +21794,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 0}
 --- !u!114 &1554747556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22390,7 +22030,6 @@ MonoBehaviour:
   pauseMenu: {fileID: 372638180}
   summaryMenu: {fileID: 3231377911505704347}
   transparentOverlay: {fileID: 1650822137}
-  audioManager: {fileID: 0}
   tutorial: {fileID: 1567585163}
 --- !u!114 &1567585163
 MonoBehaviour:
@@ -22629,7 +22268,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 0}
 --- !u!114 &1602406479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22722,7 +22360,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 1737589883}
 --- !u!1 &1625344300
 GameObject:
   m_ObjectHideFlags: 0
@@ -22777,7 +22414,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 1737589883}
 --- !u!1 &1629576520
 GameObject:
   m_ObjectHideFlags: 0
@@ -22953,7 +22589,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 0}
 --- !u!114 &1637347328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23092,7 +22727,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 0}
 --- !u!114 &1648426099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23260,7 +22894,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 1737589883}
 --- !u!1 &1669059619
 GameObject:
   m_ObjectHideFlags: 0
@@ -23390,7 +23023,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 1737589883}
 --- !u!1 &1675786808
 GameObject:
   m_ObjectHideFlags: 0
@@ -24279,93 +23911,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1735903848}
   m_CullTransparentMesh: 1
---- !u!1 &1737589881
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1737589882}
-  - component: {fileID: 1737589883}
-  m_Layer: 0
-  m_Name: SFX
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1737589882
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1737589881}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 930940755}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1737589883
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1737589881}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c79886b9a5734e6893fea679edccee1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
-  sounds:
-  - name: seat
-    clip: {fileID: 8300000, guid: 2f48e2aa46a688441a546cb26ba99db7, type: 3}
-    volume: 1
-    pitch: 1.7
-    loop: 0
-    source: {fileID: 0}
-  - name: paper
-    clip: {fileID: 8300000, guid: c880153d67ae0234b89bc1134df03db4, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: door_close
-    clip: {fileID: 8300000, guid: 4014b8607b0546f41a18ad5d7b96c80b, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: door_open
-    clip: {fileID: 8300000, guid: 97c958a321bfc454097a13f11c2a98ae, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: switch
-    clip: {fileID: 8300000, guid: 695f32bf94e37e44cb4ee336d8b8db5e, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: button
-    clip: {fileID: 8300000, guid: 30bfffeb38d7d9d419e6e4bde8871bf1, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: switch2
-    clip: {fileID: 8300000, guid: 695f32bf94e37e44cb4ee336d8b8db5e, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
 --- !u!1 &1748473925
 GameObject:
   m_ObjectHideFlags: 0
@@ -24619,7 +24164,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 0}
 --- !u!114 &1760698977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24769,7 +24313,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 0}
 --- !u!114 &1773912798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25137,7 +24680,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 1737589883}
 --- !u!1 &1815538974
 GameObject:
   m_ObjectHideFlags: 0
@@ -25376,7 +24918,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 0}
 --- !u!114 &1832071775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25515,7 +25056,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 0}
 --- !u!114 &1835786692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26411,7 +25951,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 1737589883}
 --- !u!1 &1931240438
 GameObject:
   m_ObjectHideFlags: 0
@@ -26578,7 +26117,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 1737589883}
 --- !u!1 &1943346521
 GameObject:
   m_ObjectHideFlags: 0
@@ -27002,7 +26540,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 0}
 --- !u!114 &1968548950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27300,7 +26837,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 0}
 --- !u!114 &1974931062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27946,7 +27482,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 1737589883}
 --- !u!1 &2012373177
 GameObject:
   m_ObjectHideFlags: 0
@@ -28732,7 +28267,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 0}
 --- !u!114 &2058189011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28872,7 +28406,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 1737589883}
 --- !u!114 &2074321953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29427,7 +28960,6 @@ GameObject:
   - component: {fileID: 2130218173}
   - component: {fileID: 2130218176}
   - component: {fileID: 2130218177}
-  - component: {fileID: 2130218178}
   m_Layer: 5
   m_Name: SwitchNorth
   m_TagString: Untagged
@@ -29466,8 +28998,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12b88e6a7528a4c39a334b7afdc82e64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Switch
-  audioManager: {fileID: 1737589883}
-  audioName: switch
 --- !u!114 &2130218174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29574,25 +29104,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &2130218178
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2130218171}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c79886b9a5734e6893fea679edccee1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
-  sounds:
-  - name: switch
-    clip: {fileID: 8300000, guid: 695f32bf94e37e44cb4ee336d8b8db5e, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
 --- !u!1 &2138018876
 GameObject:
   m_ObjectHideFlags: 0
@@ -29769,7 +29280,6 @@ MonoBehaviour:
   emptyAlpha: {r: 1, g: 1, b: 1, a: 0}
   ghostAlpha: {r: 1, g: 1, b: 1, a: 0.5019608}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  audioManager: {fileID: 1737589883}
 --- !u!114 &2138361155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30364,7 +29874,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 1246718745}
   - {fileID: 1276464537}
-  - {fileID: 930940755}
   - {fileID: 1567585158}
   - {fileID: 1019750302}
   - {fileID: 1321362189}

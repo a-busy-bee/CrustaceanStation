@@ -8,9 +8,6 @@ public class WeatherManager : MonoBehaviour
     [SerializeField] private WeatherType[] types; // sunny > rain > fog
     private WeatherType currentType;
 
-    [Header("Audio")]
-    [SerializeField] private AudioManager audioManager;
-
     [Header("Foreground")]
     [SerializeField] private Image cloudsTop;
     [SerializeField] private Image backgroundTop;
@@ -76,8 +73,6 @@ public class WeatherManager : MonoBehaviour
         cloudsBottom.color = startingType.cloudsBottom;
         backgroundBottom.color = startingType.backgroundBottom;
 
-        StartMusic();
-
         backgroundTop.material = null;
 
         if (startingType.isFoggy)
@@ -126,7 +121,6 @@ public class WeatherManager : MonoBehaviour
     {
         isTransitioning = true;
 
-        audioManager.Crossfade("waves", 2f);
 
         if (isRainy)
         {
@@ -150,7 +144,6 @@ public class WeatherManager : MonoBehaviour
         backgroundTop.material = multiply;
         isTransitioning = true;
 
-        audioManager.Crossfade("rain", 2f);
 
         rainImage.SetActive(true);
         rainImageBkg.SetActive(true);
@@ -242,16 +235,6 @@ public class WeatherManager : MonoBehaviour
     public WeatherType GetCurrentWeather()
     {
         return currentType;
-    }
-
-    private void StartMusic()
-    {
-        string aud = "waves";
-        if (currentType.isRainy)
-        {
-            aud = "rain";
-        }
-        audioManager.Play(aud);
     }
 
 }
