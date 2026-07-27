@@ -2,9 +2,10 @@ using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
-using UnityEngine.ResourceManagement.AsyncOperations;
 using System.Linq;
 
+using Special = CrabInfo.SpecialCharacter;
+using Unity.Burst.CompilerServices;
 public class CrabSelector : MonoBehaviour
 {
     public static CrabSelector instance { get; protected set; }
@@ -17,11 +18,15 @@ public class CrabSelector : MonoBehaviour
     private List<int> idxsChosenRecently = new List<int>();
 
     // for main game (not zen mode)
-    private List<int> idxQueue = new List<int>();   // list of characters to be seen
+    private Queue<int> idxQueue = new Queue<int>();   // list of characters to be seen
+    private Queue<int> specialQueue = new Queue<int>();   // list of specials to be seen
+                                                        // if not empty, next character is the first index of specialQueue
+                                                        // if empty, ignore
+                                                        // when adding special to queue (based on clock), push to back of specialQueue
+                                                        // ex. [itty, horseshoe, granny] [everyone else], so next character would be itty, 
+                                                        // and if another special gets added then they would appear after granny
+    private Queue<int> specialsForToday = new Queue<int>(); // list of specials based on dayToCharacter, but remove specials as they're added to queue
     private Dictionary<int, bool> seenCharacters = new Dictionary<int, bool>(); // <idx of character, whether it was seen or not> (using dictionary for better performance)
-    private List<int> seenSpecialCharacters = new List<int>(); // same as dictionary above
-
-    private List<(int, int)> specialCharacterIdxs = new List<(int, int)>(); // (index in prefabsSpecial, index in idxQueue)
     private int currIdx;
     private int maxQueueLength = 45;
 
@@ -39,6 +44,7 @@ public class CrabSelector : MonoBehaviour
 
     IEnumerator Start()
     {
+        // LOAD ALL ASSETS
         prefabs.Clear();
         var prefabHandle = Addressables.LoadAssetsAsync<GameObject>("CharacterPrefabs", null);
         yield return prefabHandle;
@@ -54,8 +60,16 @@ public class CrabSelector : MonoBehaviour
         yield return spriteHandle;
         sprites = new List<Sprite>(spriteHandle.Result);
 
+        // ADD TODAY'S SPECIALS
+        int currDay = SaveManager.instance.GetProgression_CurrDay();
+        foreach (Special special in Constants.instance.SELECTOR_dayToCharacter[currDay + 1])
+        {
+            // find idx in special prefabs
+            int specialObj = prefabsSpecial.FindIndex(s => s.GetComponent<CrabController>().GetSpecialType() == special);
+            specialsForToday.Enqueue(specialObj);
+        }
 
-        // generate list of characters
+        // GENERATE GENERIC CHARACTERS
         int chosenCrabIdx;
         for (int i = 0; i < maxQueueLength; i++)
         {
@@ -66,91 +80,34 @@ public class CrabSelector : MonoBehaviour
             while (seenCharacters.ContainsKey(chosenCrabIdx) || prefabs[chosenCrabIdx].GetComponent<CrabController>().IsSpecial()); // no important characters just yet
 
             seenCharacters[chosenCrabIdx] = true;
-            idxQueue.Add(chosenCrabIdx);
+            idxQueue.Enqueue(chosenCrabIdx);
         }
-
-        // add special characters
-        int numSpecialCharacters = Random.Range(2, 4);
-
-        for (int i = 0; i < numSpecialCharacters; i++)
-        {
-            do
-            {
-                chosenCrabIdx = Random.Range(0, prefabsSpecial.Count);
-            }
-            while (seenSpecialCharacters.Contains(chosenCrabIdx));
-
-            seenSpecialCharacters.Add(chosenCrabIdx);
-
-
-            // indices given queue of 50:
-            // 2 specials: 16, 33
-            // 3 specials: 12, 25, 37
-            int idxInQueue = (i + 1) * idxQueue.Count() / (numSpecialCharacters + 1); 
-            idxQueue[idxInQueue] = chosenCrabIdx; // add to queue
-            specialCharacterIdxs.Add((chosenCrabIdx, idxInQueue)); // add to list of locations of all special characters in queue
-        }
+        
     }
 
     public (GameObject, int) ChooseCrab()
     {
-        for (int i = 0; i < specialCharacterIdxs.Count(); i++)
+        // if special queue is not empty, summon special character next
+        if (specialQueue.Count != 0)
         {
-            if (currIdx == specialCharacterIdxs[i].Item2)
-            {
-                (GameObject, int) special = (prefabsSpecial[specialCharacterIdxs[i].Item1], currIdx);
-                currIdx++;
-
-                return special;
-            }
+            int specialIdx = specialQueue.Dequeue();
+            GameObject specialObj = prefabsSpecial[specialIdx];
+            return (specialObj, specialIdx);
         }
-
-        (GameObject, int) pair = (prefabs[idxQueue[currIdx]], currIdx);
-        currIdx++;
-
-        return pair;
+        
+        // otherwise choose generic character
+        int idx = idxQueue.Dequeue();
+        GameObject obj = prefabs[idx];
+        return (obj, idx);
     }
 
     public void PushNextSpecial()
     {
-        for (int i = 0; i < specialCharacterIdxs.Count(); i++)
+        if (specialsForToday.Count != 0)
         {
-            if (currIdx < specialCharacterIdxs[i].Item2) // ignore all idxs we've already seen
-            {
-
-                // special character has already been pushed
-                if (specialCharacterIdxs[i].Item2 == currIdx) return;
-
-                /* move next special to immediate front of the queue (swap with what's currently there) */
-                int genericIdx = idxQueue[currIdx];
-                int currSpecialIdx = specialCharacterIdxs[i].Item2;
-
-                // set special to immediate next
-                idxQueue[currIdx] = specialCharacterIdxs[i].Item1;
-
-                // update list of where special characters are located
-                specialCharacterIdxs[i] = (specialCharacterIdxs[i].Item1, currIdx);
-
-                // shift over everything else by one
-                int nextSpecialIdx = currSpecialIdx;
-                for (int j = i + 1; j < specialCharacterIdxs.Count(); j++)
-                {
-                    currSpecialIdx = nextSpecialIdx;
-                    idxQueue[currSpecialIdx] = specialCharacterIdxs[j].Item1;
-                    nextSpecialIdx = specialCharacterIdxs[j].Item2;
-
-                    specialCharacterIdxs[j] = (specialCharacterIdxs[j].Item1, currSpecialIdx);
-
-                }
-
-                // swap with what's current in immediate next with former index of last special
-                idxQueue[nextSpecialIdx] = genericIdx;
-
-                //return;
-                break;
-            }
+            int specialIdx = specialsForToday.Dequeue();
+            specialQueue.Enqueue(specialIdx);
         }
-
     }
 
     public (GameObject, int) ChooseCrabTutorial()
@@ -187,7 +144,8 @@ public class CrabSelector : MonoBehaviour
 
     public int GetNumSpecialCharacters()
     {
-        return specialCharacterIdxs.Count();
+        int currDay = SaveManager.instance.GetProgression_CurrDay();
+        return Constants.instance.SELECTOR_dayToCharacter[currDay + 1].Length;
     }
 
     public Sprite ChooseSprite()

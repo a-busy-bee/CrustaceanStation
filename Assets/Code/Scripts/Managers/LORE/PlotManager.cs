@@ -28,20 +28,13 @@ public class PlotManager : MonoBehaviour
     public static PlotManager instance { get; private set; }
     public enum Stage
     {
-        day1,           // crusty corp letter on desk, tutorial
-        headlines,      // introduce headlines & performance monitor
-        mailroom,       // introduce feedback box & mailroom, add causal dialogue
-        onlySPrey,      // crusty corp letter -> send all S prey
-        allNonCrust,    // crusty corp letter -> send all non-crustaceans, see first mutation same day (first customer?)
-        involuntary,    // after mutation, letter from crusty co -> involuntary shuttle
-        shuttleActive,  // letter from biodiv co -> freedom van
-        alarmActive,    // next day, letter from crusty co -> freedom van alarm, start tracking crusty vs bio floating pt variables
-        bigEventCrust,  // send crustaceans that don't look crab-enough
-        bigEventBio     // quit job to work for biodiv corporation
+        week1,
+        week2,
+        week3,
+        week4
     }
 
     private Stage currStage;
-    private Dictionary<Stage, int> crabsNeededToAdvance;
     private float crust = 1.0f;
     private float bio = 1.0f;
 
@@ -75,34 +68,6 @@ public class PlotManager : MonoBehaviour
     {
         return currStage;
     }
-
-    //PlayerPrefs.GetInt("currStage")
-    //PlayerPrefs.GetInt("crabsSinceLevelUp")
-    //PlayerPrefs.GetInt("crustCo")
-    //PlayerPrefs.GetInt("bioCo)
-
-    /*public void AddMail(string newType, string newSubtype = "", int newId = 0)
-    {
-        InboxItem newItem = new InboxItem
-        {
-            type = newType,
-            subType = newSubtype,
-            id = newId,
-            timestamp = plotData.nextTimeStamp,
-            templateID = newType,
-            isRead = false
-        };
-
-        plotData.nextTimeStamp = plotData.nextTimeStamp + 1;
-        plotData.inbox.Append(newItem);
-
-        SaveData();
-    }
-
-    private void SaveData()
-    {
-        File.WriteAllText(savePath, JsonUtility.ToJson(plotData, true));
-    }*/
 
     private void LoadJSON()
     {

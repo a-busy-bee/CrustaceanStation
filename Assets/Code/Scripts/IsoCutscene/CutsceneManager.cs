@@ -15,10 +15,14 @@ public class CutsceneManager : MonoBehaviour
     }
     private CutsceneState currState;
     private CutsceneState prevState;
+    private const int normalSceneLength = 2;
+    private const int animatedSceneLength = 2;
     private float sceneLength = 2;
 
     // scenes
     [SerializeField] private GameObject[] scenes;
+    [SerializeField] private GameObject firstBlackBkg;
+    [SerializeField] private GameObject secondBlackBkg;
     private int currSceneIdx = 0;
 
     // minigame
@@ -26,6 +30,7 @@ public class CutsceneManager : MonoBehaviour
     [SerializeField] private GameObject minigameParent;
     [SerializeField] private GameObject certificateParent;
     [SerializeField] private Image[] lastCutsceneIsoSprites;
+    [SerializeField] private Image lastCutsceneIsoSpriteRolled;
 
     [Header("Debug")]
     [SerializeField] private bool debug;
@@ -59,9 +64,12 @@ public class CutsceneManager : MonoBehaviour
         }
         minigameParent.SetActive(false);
         certificateParent.SetActive(false);
+        firstBlackBkg.SetActive(false);
+        secondBlackBkg.SetActive(false);
 
         currState = CutsceneState.sceneImage;
 
+        firstBlackBkg.SetActive(true);
         scenes[currSceneIdx].SetActive(true);
         StartCoroutine(WaitThenContinueNextScene());
     }
@@ -82,16 +90,26 @@ public class CutsceneManager : MonoBehaviour
                     {
                         minigameParent.SetActive(false);
                         certificateParent.SetActive(false);
+                        secondBlackBkg.SetActive(true);
 
                         SetColorForLateCutsceneIsos();
                     }
 
+                    if (currSceneIdx == 4)
+                    {
+                        scenes[currSceneIdx - 1].SetActive(true);
+                        sceneLength = animatedSceneLength;
+                    }
+                    else sceneLength = normalSceneLength;
+                    
                     StartCoroutine(WaitThenContinueNextScene());
+
                 }
                 break;
             case CutsceneState.minigame:
                 {
                     scenes[currSceneIdx].SetActive(false);
+                    scenes[currSceneIdx - 1].SetActive(false);
                     minigameParent.SetActive(true);
                 }
                 break;
@@ -100,19 +118,19 @@ public class CutsceneManager : MonoBehaviour
 
     public void ProgressScene()
     {
-        if (currSceneIdx < 2) // scenes before minigame
+        if (currSceneIdx < 4) // scenes before minigame
         {
             SetState(CutsceneState.sceneImage);
         }
-        else if (currSceneIdx < 5 && certificateShown)  // scenes after minigame
+        else if (currSceneIdx < 7 && certificateShown)  // scenes after minigame
         {
             SetState(CutsceneState.sceneImage);
         }
-        else if (currSceneIdx == 2) // scene exactly before minigame
+        else if (currSceneIdx == 4) // scene exactly before minigame
         {
             SetState(CutsceneState.minigame);
         }
-        else if (currSceneIdx == 5)
+        else if (currSceneIdx == 7)
         {
             SceneManager.LoadScene("Home");
         }
@@ -146,10 +164,13 @@ public class CutsceneManager : MonoBehaviour
         int color = SaveManager.instance.GetIso_Color();
         IsoMinigameManager.IsoColors isoColor = (IsoMinigameManager.IsoColors)color;
         Sprite walkSprite = IsoMinigameManager.instance.ConvertColorToWalkSprite(isoColor);
+        Sprite rollSprite = IsoMinigameManager.instance.ConvertColorToRolledSprite(isoColor);
 
         foreach (Image iso in lastCutsceneIsoSprites)
         {
             iso.sprite = walkSprite;
         }
+
+        lastCutsceneIsoSpriteRolled.sprite = rollSprite;
     }
 }

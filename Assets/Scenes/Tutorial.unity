@@ -21976,6 +21976,7 @@ GameObject:
   - component: {fileID: 1567585160}
   - component: {fileID: 1567585162}
   - component: {fileID: 1567585163}
+  - component: {fileID: 1567585164}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -22070,6 +22071,18 @@ MonoBehaviour:
   clickAnyWhereToContinue: {fileID: 499062934}
   approveButton: {fileID: 534969239}
   rejectButton: {fileID: 1416969083}
+--- !u!114 &1567585164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1567585157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d387b9a868604a668f94cadc850c5fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlotManager
 --- !u!1 &1573272407
 GameObject:
   m_ObjectHideFlags: 0

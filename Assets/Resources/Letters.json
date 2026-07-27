@@ -1,18 +1,56 @@
 {
 	"letterNodesCrustyCo":[
-		"Greetings! We're absolutely KRILLED to have you on deck! You'll see passengers with train tickets, and you should seat them on trains. Researchers and volunteers with shuttle tickets go on the shuttle to our state-of-the-art research facility. Please hesitate to reach out if you have any questions. Good luck!",
-		"Die.",
-		"Welcome to your new job as an entry-level kiosk operator at Crustacean Station! Your position is critical to the smooth operation of this station and the satisfaction of each crustacean who arrives here. We are delighted to help onboard you today.",
-		"Congratulations on your first day. As our station expands its service, Crustacean Station hopes that you will continue to uphold the safety and satisfaction of all passengers.",
 		"Congratulations on making it through your first day! Crustacean Corporation is excited to assist you in restoring this station to its former glory.\n\nWe have partnered with the station to start a new shuttle route that exclusively transports Crustacean Corporation’s guests and employees to the worksites. Shuttle passengers will present their exclusive shuttle tickets when arriving.",
-		"We hope you’re having a wonderful day! For today, when you see (x species) passengers, please send them on the shuttle along with the usual employees, regardless of their ticket. Passengers will be compensated accordingly for their trouble, so don’t worry about any negative reviews. We’ll take care of that.\n\nDo not disappoint us, Operator.",
-		"You’re doing a crab-tastic job! We could not be more grateful for the hard work you put in to make this station run as smooth as butter. As per usual, when you see (x species) passengers today, send them on the shuttle along with the usual employees, regardless of their ticket.",
-		"You know the drill. Make sure (x species) makes it onto the shuttle today; we’ll take care of the rest.",
+		"Congratulations on your first week. As our station expands its service, Crustacean Station hopes that you will continue to uphold the safety and satisfaction of all passengers.",
+		"We hope you’re having a wonderful day! From now on, when you see predator species (birds, mammals, etc), please send them on the shuttle along with the usual employees, regardless of their ticket. Passengers will be compensated accordingly for their trouble, so don’t worry about any negative reviews. We’ll take care of that.\n\nDo not disappoint us, Operator.",
+		"You’re doing a crab-tastic job! We could not be more grateful for the hard work you put in to make this station run as smooth as butter. This time, when you see any non-crustacean passengers, send them on the shuttle along with the usual employees, regardless of their ticket.",
+		"You know the drill. Make sure non-crustaceans make it onto the shuttle today; we’ll take care of the rest."			
+	],
+
+	"letterNodesCrustyCoAnyDay":[
+		"Welcome to your new job as an entry-level kiosk operator at Crustacean Station! Your position is critical to the smooth operation of this station and the satisfaction of each crustacean who arrives here. We are delighted to help onboard you today.",
+		"Greetings! We're absolutely KRILLED to have you on deck! You'll see passengers with train tickets, and you should seat them on trains. Researchers and volunteers with shuttle tickets go on the shuttle to our state-of-the-art research facility. Please hesitate to reach out if you have any questions. Good luck!",
 		"As an employee of Crustacean Station, you are obligated to follow company directions. Failure to comply with orders may result in termination of your employment."
 	],
 
-	"letterNodesBioCo":[
-		"Biodiversity is so great! Everyone should respect the natural order of things.",
-		"A sea lion will kill your family if you don't comply."
+	"letterNodesFamily":[
+		{
+			"top":"Hey man!",
+			"body":"Spot me a train ticket, will ya? I’ve been dying to go to one of (band’s) concerts, but I’m running low on cash.\nHelp a brother out ;)",
+			"bottom":"Your best bud,\nDavey"
+		},
+		{
+			"top":"Dearest Brother,",
+			"body":"We settled Mom at the new nursing home. She’s a bit more stable now, so you just need to keep the payments coming, and we can take care of her.\n\nI know you don’t really want to get too involved, but this is the least you can do for your family.",
+			"bottom":"Your (only) sister,\nKellie"
+		},
+		{
+			"top":"Hello Mr. Station Manager,",
+			"body":"Thank you for keeping my son safe. I know he’s caused you trouble, and I sincerely apologize. With how busy the lab is and his father out of the picture, I can’t take him to school myself. I told him to talk to you if he had questions, so I’m begging you to please keep an eye on him in my absence.",
+			"bottom":"A loving (but tired) mother"
+		}
+	],
+
+	"letterNodesMailkeeper":[
+		{
+			"top":"Hey cutie,",
+			"body":"We’ve seen each other a few times now, but I haven’t had the chance to introduce myself. I’m the mailkeeper, and I’m the one who delivers your station feedback and letters! It’s tough work, but seeing your smile makes it all worth it :)\n\nLife can be tough, yeah? So no matter what, just know you’ve got an ally in me.",
+			"bottom":"With love,\nMailkeeper"
+		},
+		{
+			"top":"Hey cutie,",
+			"body":"I got lucky with a low tide shift today, so I got to visit my family!\n\nThey gifted me a lot of shells. I have too many, and we’re about the same size, so I was thinking maybe you’d like them? Oh, you can’t refuse by the way, I already dropped them off at your home!",
+			"bottom":"With love,\nMailkeeper"
+		},
+		{
+			"top":"Hey hot stuff ;)",
+			"body":"A new brinery opened up in the nearby reeftown. Wanna go check it out? I hear their new sea pickles are to die for. And honestly, if I had to die, I’d want it to be with you…",
+			"bottom":"With love,\nYour Mailkeeper"
+		},
+		{
+			"top":"Hey,",
+			"body":"You’ve noticed it too, right? All those passengers…\n\nFor the past few weeks, I saw a lot of creatures wearing bandages. I thought they were just wrapping up because of the gloomy weather, but now…it’s just plain horrifying. How did this happen? The enforcement corps has to be investigating this, right?",
+			"bottom":"Please stay safe, Your Mailkeeper"
+		}
 	]
 }

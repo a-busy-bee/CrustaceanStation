@@ -67,6 +67,7 @@ public class LevelManager : LevelManagerBase
             case LMState.Summary: // TODO: have summary show after all characters are seen
                 {
                     Kiosk.instance.SetState(Kiosk.KioskState.EndOfDay);
+                    SaveManager.instance.SetProgression_IncrementCurrDay();
 
                     foreach (Rail rail in rails)
                     {
@@ -82,11 +83,47 @@ public class LevelManager : LevelManagerBase
 
                     dayStarted = false;
 
-                    string type = "generic";
-                    if (Random.Range(1, 4) == 2) type = "plot";
-                    PlotManager.instance.AddMail("feedbackForm", type, 1);
+                    AddMail();
                 }
                 break;
+        }
+    }
+
+    public void AddMail()
+    {
+        //     string type = "generic";
+        //     if (Random.Range(1, 4) == 2) type = "plot";
+        //     PlotManager.instance.AddMail("feedbackForm", type, 1);
+
+        Constants constants = Constants.instance;
+        int currDay = SaveManager.instance.GetProgression_CurrDay();
+
+
+        // LETTERS
+        if (constants.LETTER_dayToIdxCrustyCo.ContainsKey(currDay))
+        {
+            PlotManager.instance.AddMail("letter", "crustyCoDay", currDay);
+        }
+
+        if (constants.LETTER_dayToIdxFamily.ContainsKey(currDay))
+        {
+            PlotManager.instance.AddMail("letter", "family", currDay);
+        }
+
+        if (constants.LETTER_dayToIdxMailkeeper.ContainsKey(currDay))
+        {
+            PlotManager.instance.AddMail("letter", "mailkeeper", currDay);
+        }
+
+
+        //FEEDBACK
+        PlotManager.instance.AddMail("feedbackForm", "generic", 1);
+        
+        CrabInfo.SpecialCharacter[] specialsToday = constants.SELECTOR_dayToCharacter[currDay];
+        for (int i = 0; i < specialsToday.Length; i++)
+        {
+            Debug.Log("specials today: " + specialsToday[i].ToString());
+            PlotManager.instance.AddMail("feedbackForm", specialsToday[i].ToString(), currDay);
         }
     }
 

@@ -1,16 +1,31 @@
 using UnityEngine;
 using System;
+using System.Collections.Generic;
+
+[Serializable]
+public class FullStackLetter
+{
+    public string top;
+    public string body;
+    public string bottom;
+}
 
 [Serializable]
 public class LetterData
 {
     public string[] letterNodesCrustyCo;
-    public string[] letterNodesBioCo;
+    public string[] letterNodesCrustyCoAnyDay;
+
+    public FullStackLetter[] letterNodesFamily;
+    public FullStackLetter[] letterNodesMailkeeper;
+
 }
 
 public class LettersManager : MonoBehaviour
 {
     private LetterData letterData;
+
+
     private void Start()
     {
         LoadJson();
@@ -31,14 +46,24 @@ public class LettersManager : MonoBehaviour
             Debug.Log("file not found");
         }
     }
-
-    public string GetCrustyCoLetter(int id)
+ 
+    public string GetCrustyCoLetterByDay(int day)
     {
-        return letterData.letterNodesCrustyCo[id];
+        return letterData.letterNodesCrustyCo[Constants.instance.LETTER_dayToIdxCrustyCo[day]];
     }
 
-    public string GetBioCoLetter(int id)
+    public string GetCrustyCoLetterByIdx(int idx)
     {
-        return letterData.letterNodesBioCo[id];
+        return letterData.letterNodesCrustyCoAnyDay[idx];
+    }
+
+    public FullStackLetter GetFamilyLetter(int day)
+    {
+        return letterData.letterNodesFamily[Constants.instance.LETTER_dayToIdxFamily[day]];
+    }
+
+    public FullStackLetter GetMailkeeperLetter(int day)
+    {
+        return letterData.letterNodesMailkeeper[Constants.instance.LETTER_dayToIdxMailkeeper[day]];
     }
 }

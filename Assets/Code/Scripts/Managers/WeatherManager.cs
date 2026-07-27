@@ -14,7 +14,8 @@ public class WeatherManager : MonoBehaviour
     [SerializeField] private Material multiply;
 
     [Header("Background")]
-    [SerializeField] private Image cloudsBottom;
+    [SerializeField] private Image cloudsBottomLeft;
+    [SerializeField] private Image cloudsBottomRight;
     [SerializeField] private Image backgroundBottom;
     [SerializeField] private Image backgroundMultiplyLayer;
 
@@ -70,7 +71,8 @@ public class WeatherManager : MonoBehaviour
 
         cloudsTop.color = startingType.cloudsTop;
         backgroundTop.color = startingType.backgroundTop;
-        cloudsBottom.color = startingType.cloudsBottom;
+        cloudsBottomLeft.color = startingType.cloudsBottom;
+        cloudsBottomRight.color = startingType.cloudsBottom;
         backgroundBottom.color = startingType.backgroundBottom;
 
         backgroundTop.material = null;
@@ -100,7 +102,7 @@ public class WeatherManager : MonoBehaviour
     {
         startCloudTop = cloudsTop.color;
         startBkgTop = backgroundTop.color;
-        startCloudBottom = cloudsBottom.color;
+        startCloudBottom = cloudsBottomLeft.color;
         startBkgBottom = backgroundBottom.color;
         //backgroundTop.material = multiply;
 
@@ -172,7 +174,10 @@ public class WeatherManager : MonoBehaviour
 
             cloudsTop.color = Color.Lerp(startCloudTop, goalCloudTop, t);
             backgroundTop.color = Color.Lerp(startBkgTop, goalBkgTop, t);
-            cloudsBottom.color = Color.Lerp(startCloudBottom, goalCloudBottom, t);
+
+            Color cloudBottomColor = Color.Lerp(startCloudBottom, goalCloudBottom, t);
+            cloudsBottomLeft.color = cloudBottomColor;
+            cloudsBottomRight.color = cloudBottomColor;
             backgroundBottom.color = Color.Lerp(startBkgBottom, goalBkgBottom, t);
 
             if (wasFoggy)
