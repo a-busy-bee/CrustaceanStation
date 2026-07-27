@@ -60,9 +60,6 @@ public class LevelManager : LevelManagerBase
                     // stop clock & crabs & trains
                     Time.timeScale = 0f;
 
-
-                    // there was something about playing an audio that was here -lucy
-
                 }
                 break;
 

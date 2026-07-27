@@ -9,7 +9,6 @@ public class ShuttleTicket : Ticket
 
         // move position
         rectTransform.anchoredPosition = new Vector3(100, 80, 0);
-        PlayAudio();
 
         // remove blur
         blur.SetActive(false);
@@ -18,16 +17,6 @@ public class ShuttleTicket : Ticket
         rectTransform.SetAsLastSibling();
 
         id.PushBack();
-    }
-
-    private void PlayAudio()
-    {
-        if (GetComponent<AudioSource>() == null)
-        {
-            Debug.Log("no audio manager");
-            return;
-        }
-        GetComponent<AudioManager>().Play("click", true);
     }
 
 

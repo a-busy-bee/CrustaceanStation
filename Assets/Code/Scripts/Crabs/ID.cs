@@ -27,12 +27,9 @@ public class ID : MonoBehaviour
         doubleSeat
     }
     private SeatType seatType;
-    
-    private AudioManager audioManager;
 
     private void Start()
     {
-        audioManager = KioskBase.instance.GetSFXManager();
     }
 
     public void SetSeatType(SeatType newSeatType)
@@ -64,8 +61,6 @@ public class ID : MonoBehaviour
 
     public void PushBack()
     {
-        if (audioManager == null) audioManager = KioskBase.instance.GetSFXManager();
-        audioManager.Play("paper");
 
         rectTransform.rotation = Quaternion.Euler(0, 0, -28.8f);
         rectTransform.anchoredPosition = new Vector3(161, 203, 0);

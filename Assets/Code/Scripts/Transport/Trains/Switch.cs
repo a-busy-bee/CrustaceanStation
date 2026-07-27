@@ -10,8 +10,6 @@ public class Switch : MonoBehaviour, IPointerClickHandler
 
     private TransportPath path;
     private Animator animator;
-    [SerializeField] private AudioManager audioManager;
-    [SerializeField] private string audioName;
 
     private void Awake()
     {
@@ -29,7 +27,6 @@ public class Switch : MonoBehaviour, IPointerClickHandler
         if (TutorialManager.instance.GetIsTutorial() && TutorialManager.instance.GetCurrTutorialState() < Tutorial.TutorialState.trainSwitch) return;
         animator.enabled = true;
         animator.Play("SwitchOn");
-        audioManager.Play(audioName);
 
         if (TutorialManager.instance.GetIsTutorial()) TutorialManager.instance.ProgressTutorial();
 

@@ -2,22 +2,24 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 
+
+
+
+/*
+i went into this iwth the audiomanager stuff so it probably doesnt work however it originally
+did but this is some of the stuff that was there in case u want it
+*/
+
 public class AudioSlider : MonoBehaviour
 {
     [SerializeField]
     private AudioMixer Mixer;
     [SerializeField]
-    private AudioManager[] audioManagers = new AudioManager[0];
-    [SerializeField]
     private AudioMixMode MixMode;
 
     [SerializeField] private Slider slider;
-    [SerializeField] private bool isMasterVolumeControl;
-
     private void Awake()
     {
-        print(slider.value);
-        print(PlayerPrefs.GetFloat("Volume"));
         //slider.value = 1f;//PlayerPrefs.GetFloat("Volume");
     }
     private void Start()
@@ -30,20 +32,6 @@ public class AudioSlider : MonoBehaviour
         switch (MixMode)
         {
             case AudioMixMode.LinearAudioSourceVolume:
-                if (isMasterVolumeControl)
-                {
-                    foreach (AudioManager audioManager in audioManagers)
-                    {
-                        audioManager.UpdateMasterVolume(Value);
-                    }
-                }
-                else
-                {
-                    foreach (AudioManager audioManager in audioManagers)
-                    {
-                        audioManager.UpdateVolume(Value);
-                    }
-                }
                 break;
             case AudioMixMode.LinearMixerVolume:
                 Mixer.SetFloat("Volume", (-80 + Value * 80));

@@ -7,7 +7,6 @@ public class KioskBase : MonoBehaviour
 {
     public static KioskBase instance { get; protected set; }
     [SerializeField] protected Clock clock;
-    [SerializeField] private AudioManager SFXManager;
 
 
     // CURRENT CRAB
@@ -312,10 +311,5 @@ public class KioskBase : MonoBehaviour
         if (PerformanceManager.instance == null) return;
 
         PerformanceManager.instance.CorrectHalf();
-    }
-
-    public AudioManager GetSFXManager()
-    {
-        return SFXManager;
     }
 }
