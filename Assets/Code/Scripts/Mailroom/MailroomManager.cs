@@ -15,7 +15,6 @@ public class MailroomManager : MonoBehaviour
     public static MailroomManager instance { get; private set; }
 
     [SerializeField] private Mailbox mailbox;
-    [SerializeField] private AudioManager audioManager;
     private LettersManager lettersManager;
 
     [Header("Letter Types")]
