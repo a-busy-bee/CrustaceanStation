@@ -155,6 +155,7 @@ public class Shop : MonoBehaviour
     {
         if (menu == shopMenu.shopMain)
         {
+            AudioManager.instance.SwitchTheme(AudioManager.ThemeNames.CheckingIntoStation);
             SceneManager.LoadScene("Home");
         }
         else if (menu == shopMenu.Decor)

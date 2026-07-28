@@ -80,16 +80,19 @@ public class HomeManager : MonoBehaviour
 
     public void GoToMailRoom()
     {
+        AudioManager.instance.SwitchTheme(AudioManager.ThemeNames.Mailroom);
         SceneManager.LoadScene("Mailroom");
     }
 
     public void GoToIsoRoom()
     {
+        AudioManager.instance.SwitchTheme(AudioManager.ThemeNames.Iso);
         SceneManager.LoadScene("IsoRoom");
     }
 
     public void BackToMenu()
     {
+        AudioManager.instance.SwitchTheme(AudioManager.ThemeNames.CheckingIntoStation);
         SceneManager.LoadScene("TitleScreen");
     }
 

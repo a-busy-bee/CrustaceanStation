@@ -140,6 +140,7 @@ public class TutorialManager : LevelManagerBase
     {
         PlotManager.instance.AddMail("letter", "crustyCoIdx", 1);
         SaveManager.instance.SaveProgressionData(SaveManager.ProgressionType.newGame, false.ToString());
+        AudioManager.instance.SwitchTheme(AudioManager.ThemeNames.CheckingIntoStation);
         SceneManager.LoadScene("Home");
     }
 

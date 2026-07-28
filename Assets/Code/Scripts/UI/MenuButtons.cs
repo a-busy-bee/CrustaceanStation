@@ -32,6 +32,7 @@ public class MenuButtons : MonoBehaviour
             }
         }
 
+        AudioManager.instance.SwitchTheme(AudioManager.ThemeNames.CheckingIntoStation);
         SceneManager.LoadScene("Home");
     }
 
@@ -69,6 +70,7 @@ public class MenuButtons : MonoBehaviour
 
     public void VisitVet()
     {
+        AudioManager.instance.SwitchTheme(AudioManager.ThemeNames.CheckingIntoStation);
         SceneManager.LoadScene("Vet");
     }
 
@@ -82,11 +84,13 @@ public class MenuButtons : MonoBehaviour
 
     public void Credits()
     {
+        AudioManager.instance.SwitchTheme(AudioManager.ThemeNames.CheckingIntoStation);
         SceneManager.LoadScene("Credits");
     }
 
     public void BackToMenu()
     {
+        AudioManager.instance.SwitchTheme(AudioManager.ThemeNames.CheckingIntoStation);
         SceneManager.LoadScene("TitleScreen");
     }
 }

@@ -29,6 +29,12 @@ public class AudioManager : MonoBehaviour
         Mailroom,
         RidingInStyle
     }
+    private ThemeNames[] gameplayThemes = new ThemeNames[] {
+        ThemeNames.CheckingIntoStation,
+        ThemeNames.CrustyCorp,
+        ThemeNames.HermitWaltz,
+        ThemeNames.RidingInStyle,
+    };
 
 
     [SerializeField] private Sound[] sounds;
@@ -160,25 +166,31 @@ public class AudioManager : MonoBehaviour
         themeSource.Play();
     }
 
-    public void SwitchTheme(ThemeNames name)
+    public void SwitchTheme(ThemeNames name, bool isRandom = false)
     {
-        BkgTheme theme = Array.Find(themes, theme => theme.name == name);
+        ThemeNames nextName = name;
+        if (isRandom)
+        {
+            int nameIdx = UnityEngine.Random.Range(0, gameplayThemes.Length);
+            nextName = gameplayThemes[nameIdx];
 
+        }
+        BkgTheme theme = Array.Find(themes, theme => theme.name == nextName);
+
+        CrossfadeMusic(theme, 0.5f);
     }
 
-    public void CrossfadeMusic(ThemeNames nextTrackName, float duration)
+    public void CrossfadeMusic(BkgTheme nextTrack, float duration)
     {
-        // check if alr playing
-        if (themeSource.clip == nextThemeSource.clip)
+        if (!themeSource.isPlaying)
         {
-            if (!themeSource.isPlaying) themeSource.Play();
-            return;
+            themeSource.Play();
         }
 
-        BkgTheme theme = Array.Find(themes, theme => theme.name == nextTrackName);
+        if (themeSource.clip == nextTrack.clip) return;
 
-        nextThemeSource.clip = theme.clip;
-        nextThemeSource.loop = theme.loop;
+        nextThemeSource.clip = nextTrack.clip;
+        nextThemeSource.loop = nextTrack.loop;
         nextThemeSource.volume = 0f;
         StartCoroutine(FadeMusicRoutine(themeSource, nextThemeSource, duration));
     }

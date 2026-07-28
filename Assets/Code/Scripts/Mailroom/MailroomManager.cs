@@ -370,6 +370,7 @@ public class MailroomManager : MonoBehaviour
 
     public void Leave()
     {
+        AudioManager.instance.SwitchTheme(AudioManager.ThemeNames.CheckingIntoStation);
         SceneManager.LoadScene("Home");
     }
 }

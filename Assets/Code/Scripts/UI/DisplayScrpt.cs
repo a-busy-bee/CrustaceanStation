@@ -133,6 +133,7 @@ public class DisplayScrpt : MonoBehaviour
     public void Back2menu()
     {
         Time.timeScale = 1f;
+        AudioManager.instance.SwitchTheme(AudioManager.ThemeNames.CheckingIntoStation);
         SceneManager.LoadScene("Home");
     }
 
