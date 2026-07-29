@@ -48,6 +48,8 @@ public class Food : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler, I
         animator.Play("PutDown");
         yield return new WaitForSeconds(0.2f);
         active = false;
+
+        TankSceneManager.instance.FoodConsumed();
     }
 
     public void OnPointerExit(PointerEventData data)
@@ -55,5 +57,10 @@ public class Food : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler, I
         if (active) { return; }
         hoverAnimator.enabled = true;
         hoverAnimator.Play("StopHover");
+    }
+
+    public GameObject GetParticles()
+    {
+        return particlesObject;
     }
 }

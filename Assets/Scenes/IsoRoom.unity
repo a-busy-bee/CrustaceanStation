@@ -207,6 +207,7 @@ GameObject:
   - component: {fileID: 35626476}
   - component: {fileID: 35626475}
   - component: {fileID: 35626479}
+  - component: {fileID: 35626480}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -313,6 +314,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MenuButtons
   settingsPanel: {fileID: 0}
   backgroundPanel: {fileID: 0}
+--- !u!114 &35626480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 35626474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 726e4738a557d495a9492c5c2485e51c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TankSceneManager
+  meds: {fileID: 69531953}
+  medsShadow: {fileID: 1279075504}
+  food: {fileID: 1804065476}
+  vetButton: {fileID: 1155820309}
 --- !u!1 &69531953
 GameObject:
   m_ObjectHideFlags: 0
