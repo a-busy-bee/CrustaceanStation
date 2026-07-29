@@ -6239,6 +6239,7 @@ GameObject:
   - component: {fileID: 534969240}
   - component: {fileID: 534969239}
   - component: {fileID: 534969238}
+  - component: {fileID: 534969242}
   m_Layer: 5
   m_Name: Approve
   m_TagString: Untagged
@@ -6381,6 +6382,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534969236}
   m_CullTransparentMesh: 1
+--- !u!114 &534969242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534969236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52be44c67e433428398a2c0822ba2fcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HoverSFX
 --- !u!1 &540616974
 GameObject:
   m_ObjectHideFlags: 0
@@ -18412,6 +18425,7 @@ GameObject:
   - component: {fileID: 1416969084}
   - component: {fileID: 1416969083}
   - component: {fileID: 1416969082}
+  - component: {fileID: 1416969086}
   m_Layer: 5
   m_Name: Reject
   m_TagString: Untagged
@@ -18554,6 +18568,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1416969079}
   m_CullTransparentMesh: 1
+--- !u!114 &1416969086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416969079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52be44c67e433428398a2c0822ba2fcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HoverSFX
 --- !u!1 &1424528776
 GameObject:
   m_ObjectHideFlags: 0

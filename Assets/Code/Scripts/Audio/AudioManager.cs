@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.Audio;
 using System;
+using System.Collections.Generic;
 
 public class AudioManager : MonoBehaviour
 {
@@ -39,7 +40,7 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField] private Sound[] sounds;
     private SoundBase currentSFX;
-    
+
     [SerializeField] private BkgTheme[] themes;
     [SerializeField] private AudioSource themeSource; // child obj
     [SerializeField] private AudioSource nextThemeSource; // child obj
