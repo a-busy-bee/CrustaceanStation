@@ -83,6 +83,8 @@ public class CutscenePlayer : MonoBehaviour
             if ((1 - fadeToBlack.alpha) < 0.001f)
             {
                 fading = false;
+
+                AudioManager.instance.SwitchTheme(AudioManager.ThemeNames.CheckingIntoStation);
                 SceneManager.LoadScene("TitleScreen");
             }
         }

@@ -15,7 +15,6 @@ public class MailroomManager : MonoBehaviour
     public static MailroomManager instance { get; private set; }
 
     [SerializeField] private Mailbox mailbox;
-    [SerializeField] private AudioManager audioManager;
     private LettersManager lettersManager;
 
     [Header("Letter Types")]
@@ -316,12 +315,13 @@ public class MailroomManager : MonoBehaviour
         else if (chosen == smallNote) objectIdxMoving = 3;
 
         currentLetter = chosen;
+        AudioManager.instance.PlaySound(AudioManager.SoundNames.Ticket, true);
         SetState(LetterState.letterMovingUp);
     }
 
     public void BringDownLetter()
     {
-
+        AudioManager.instance.PlaySound(AudioManager.SoundNames.Ticket, true);
         SetState(LetterState.letterMovingDown);
     }
 
@@ -371,6 +371,7 @@ public class MailroomManager : MonoBehaviour
 
     public void Leave()
     {
+        AudioManager.instance.SwitchTheme(AudioManager.ThemeNames.CheckingIntoStation);
         SceneManager.LoadScene("Home");
     }
 }

@@ -149,11 +149,13 @@ public class LevelManagerBase : MonoBehaviour
 
     public void OnMenu()
     {
+        AudioManager.instance.SwitchTheme(AudioManager.ThemeNames.CheckingIntoStation);
         SceneManager.LoadScene("TitleScreen");
     }
 
     public void OnNewDay()
     {
+        AudioManager.instance.SwitchTheme(AudioManager.ThemeNames.HermitWaltz, true);
         SceneManager.LoadScene("BaseArea");
     }
 

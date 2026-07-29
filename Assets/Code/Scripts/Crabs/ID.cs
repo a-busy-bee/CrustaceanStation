@@ -28,10 +28,6 @@ public class ID : MonoBehaviour
     }
     private SeatType seatType;
 
-    private void Start()
-    {
-    }
-
     public void SetSeatType(SeatType newSeatType)
     {
         seatType = newSeatType;
@@ -93,5 +89,6 @@ public class ID : MonoBehaviour
         hover.blocksRaycasts = true;
 
         ticket.PushBack();
+        AudioManager.instance.PlaySound(AudioManager.SoundNames.Ticket, true);
     }
 }

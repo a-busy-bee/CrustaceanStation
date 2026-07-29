@@ -28,6 +28,8 @@ public class Switch : MonoBehaviour, IPointerClickHandler
         animator.enabled = true;
         animator.Play("SwitchOn");
 
+        AudioManager.instance.PlaySound(AudioManager.SoundNames.Switch, true);
+
         if (TutorialManager.instance.GetIsTutorial()) TutorialManager.instance.ProgressTutorial();
 
         //play switch animation

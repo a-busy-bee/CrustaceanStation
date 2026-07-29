@@ -35,6 +35,7 @@ public class Summary : MonoBehaviour
 
     public void Continue()
     {
+        AudioManager.instance.SwitchTheme(AudioManager.ThemeNames.CheckingIntoStation);
         SceneManager.LoadScene("Home");
     }
 }

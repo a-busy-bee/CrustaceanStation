@@ -132,6 +132,7 @@ public class CutsceneManager : MonoBehaviour
         }
         else if (currSceneIdx == 7)
         {
+            AudioManager.instance.SwitchTheme(AudioManager.ThemeNames.CheckingIntoStation);
             SceneManager.LoadScene("Home");
         }
     }

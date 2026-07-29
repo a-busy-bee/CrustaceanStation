@@ -138,6 +138,8 @@ public class WeatherManager : MonoBehaviour
         goalBkgTop = types[newWeather].backgroundTop;
         goalCloudBottom = types[newWeather].cloudsBottom;
         goalBkgBottom = types[newWeather].backgroundBottom;
+
+        AudioManager.instance.CrossfadeSFX(AudioManager.SoundNames.Waves, 1);
     }
 
     [ContextMenu("Make rainy")]
@@ -163,6 +165,8 @@ public class WeatherManager : MonoBehaviour
         goalBkgTop = types[newWeather].backgroundTop;
         goalCloudBottom = types[newWeather].cloudsBottom;
         goalBkgBottom = types[newWeather].backgroundBottom;
+
+        AudioManager.instance.CrossfadeSFX(AudioManager.SoundNames.Rain, 1);
     }
 
     private void Update()

@@ -203,11 +203,14 @@ public class KioskBase : MonoBehaviour
 
     public void OnApprove()
     {
+
+        AudioManager.instance.PlaySound(AudioManager.SoundNames.KioskButton, true);
         SetState(KioskState.CrabApproved);
     }
 
     public void OnReject()
     {
+        AudioManager.instance.PlaySound(AudioManager.SoundNames.KioskButton, true);
         SetState(KioskState.CrabRejected);
     }
 

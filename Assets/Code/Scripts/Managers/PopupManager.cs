@@ -112,6 +112,9 @@ public class PopupManager : MonoBehaviour
 
     public void ShowPopup(Type popupType, Cart.Type cartType = Cart.Type.Economy, int cartID = 0)
     {
+
+        AudioManager.instance.PlaySound(AudioManager.SoundNames.DoorOpen, true);
+
         if (currActive)
         {
             currActive = false;
@@ -159,6 +162,8 @@ public class PopupManager : MonoBehaviour
 
     public void Close()
     {
+
+        AudioManager.instance.PlaySound(AudioManager.SoundNames.DoorClose, true);
         currActive = false;
 
         economyPopup.SetActive(false);

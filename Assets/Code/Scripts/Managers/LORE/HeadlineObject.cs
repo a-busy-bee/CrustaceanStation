@@ -12,6 +12,7 @@ public class HeadlineObject : MonoBehaviour
 	}
     public void SetText(float fontSize, string text)
     {
+        AudioManager.instance.PlaySound(AudioManager.SoundNames.Ticket, true);
         headlineObject.SetActive(true);
         headlineText.text = text;
         headlineText.fontSize = fontSize;

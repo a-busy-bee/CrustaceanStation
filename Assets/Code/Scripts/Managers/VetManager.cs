@@ -65,6 +65,7 @@ public class VetManager : MonoBehaviour
     public void ReturnHome()
     {
         SaveManager.instance.SetProgression_IncrementCurrDay();
+        AudioManager.instance.SwitchTheme(AudioManager.ThemeNames.CheckingIntoStation);
         SceneManager.LoadScene("Home");
     }
 

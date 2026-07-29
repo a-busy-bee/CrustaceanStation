@@ -6239,6 +6239,7 @@ GameObject:
   - component: {fileID: 534969240}
   - component: {fileID: 534969239}
   - component: {fileID: 534969238}
+  - component: {fileID: 534969242}
   m_Layer: 5
   m_Name: Approve
   m_TagString: Untagged
@@ -6381,6 +6382,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534969236}
   m_CullTransparentMesh: 1
+--- !u!114 &534969242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534969236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52be44c67e433428398a2c0822ba2fcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HoverSFX
 --- !u!1 &540616974
 GameObject:
   m_ObjectHideFlags: 0
@@ -16123,7 +16136,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &1246718743
 AudioListener:
   m_ObjectHideFlags: 0
@@ -16160,9 +16173,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.00017857552
+    y: 0
     width: 1
-    height: 0.99964285
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -18412,6 +18425,7 @@ GameObject:
   - component: {fileID: 1416969084}
   - component: {fileID: 1416969083}
   - component: {fileID: 1416969082}
+  - component: {fileID: 1416969086}
   m_Layer: 5
   m_Name: Reject
   m_TagString: Untagged
@@ -18554,6 +18568,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1416969079}
   m_CullTransparentMesh: 1
+--- !u!114 &1416969086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416969079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52be44c67e433428398a2c0822ba2fcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HoverSFX
 --- !u!1 &1424528776
 GameObject:
   m_ObjectHideFlags: 0
@@ -27006,93 +27032,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2012913513}
   m_CullTransparentMesh: 1
---- !u!1 &2022026940
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2022026941}
-  - component: {fileID: 2022026942}
-  m_Layer: 0
-  m_Name: SFX
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2022026941
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2022026940}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 636831357}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2022026942
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2022026940}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c79886b9a5734e6893fea679edccee1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
-  sounds:
-  - name: seat
-    clip: {fileID: 8300000, guid: 2f48e2aa46a688441a546cb26ba99db7, type: 3}
-    volume: 1
-    pitch: 1.7
-    loop: 0
-    source: {fileID: 0}
-  - name: paper
-    clip: {fileID: 8300000, guid: c880153d67ae0234b89bc1134df03db4, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: door_close
-    clip: {fileID: 8300000, guid: 4014b8607b0546f41a18ad5d7b96c80b, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: door_open
-    clip: {fileID: 8300000, guid: 97c958a321bfc454097a13f11c2a98ae, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: switch
-    clip: {fileID: 8300000, guid: 695f32bf94e37e44cb4ee336d8b8db5e, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: button
-    clip: {fileID: 8300000, guid: 30bfffeb38d7d9d419e6e4bde8871bf1, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: switch2
-    clip: {fileID: 8300000, guid: 695f32bf94e37e44cb4ee336d8b8db5e, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
 --- !u!1 &2022647971
 GameObject:
   m_ObjectHideFlags: 0
