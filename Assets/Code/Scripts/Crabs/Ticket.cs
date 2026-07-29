@@ -77,6 +77,7 @@ public class Ticket : MonoBehaviour
         rectTransform.SetAsLastSibling();
 
         id.PushBack();
+        AudioManager.instance.PlaySound(AudioManager.SoundNames.Ticket, true);
     }
     
     public void SetSprite(Cart.Type cartType)

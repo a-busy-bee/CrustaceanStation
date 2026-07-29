@@ -315,12 +315,13 @@ public class MailroomManager : MonoBehaviour
         else if (chosen == smallNote) objectIdxMoving = 3;
 
         currentLetter = chosen;
+        AudioManager.instance.PlaySound(AudioManager.SoundNames.Ticket, true);
         SetState(LetterState.letterMovingUp);
     }
 
     public void BringDownLetter()
     {
-
+        AudioManager.instance.PlaySound(AudioManager.SoundNames.Ticket, true);
         SetState(LetterState.letterMovingDown);
     }
 

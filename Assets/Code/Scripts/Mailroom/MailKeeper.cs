@@ -46,7 +46,8 @@ public class MailKeeper : MonoBehaviour, IPointerClickHandler
 
         coin.SetActive(true);
         coin.GetComponent<Coin>().Clicked();
-        
+
         animator.SetTrigger("tapped");
+        AudioManager.instance.PlaySound(AudioManager.SoundNames.Punch, true);
     }
 }
