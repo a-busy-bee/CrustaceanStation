@@ -11,6 +11,8 @@ public class TankSceneManager : MonoBehaviour
 
     [SerializeField] private GameObject vetButton;
 
+    [SerializeField] private Image tankOverlay;
+
     private int foodsEaten = 0;
     private int goalFoodsEaten;
 
@@ -46,6 +48,13 @@ public class TankSceneManager : MonoBehaviour
             meds.SetActive(false);
             medsShadow.SetActive(false);
         }
+
+        // tank overlay stuff
+        Color color = tankOverlay.color;
+        int currDay = SaveManager.instance.GetProgression_CurrDay();
+        Debug.Log("day" + currDay);
+        color.a = (currDay / 5.0f - 1.0f) * 0.25f;
+        tankOverlay.color = color;
     }
 
     public void FoodConsumed()
