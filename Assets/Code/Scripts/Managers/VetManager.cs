@@ -43,6 +43,7 @@ public class VetManager : MonoBehaviour
         if (currDay / 5 == 1)
         {
             medicationBottle.SetActive(true);
+            SaveManager.instance.SaveProgressionData(SaveManager.ProgressionType.medsAvailable, "true");
         }
 
         yield return new WaitForSeconds(0.5f);

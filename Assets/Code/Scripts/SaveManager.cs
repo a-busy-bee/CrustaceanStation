@@ -49,6 +49,7 @@ public class ProgressionData
     public bool introMailSeen;
     public bool firstDayHeadlineSeen;
     public bool newGame;
+    public bool medsAvailable;
 }
 
 [Serializable]
@@ -82,7 +83,8 @@ public class SaveManager : MonoBehaviour
         performanceBarPercent,
         introMailSeen,
         firstDayHeadlineSeen,
-        newGame
+        newGame,
+        medsAvailable
     }
 
     private Dictionary<string, int> characterNameToIndex = new Dictionary<string, int>
@@ -271,6 +273,10 @@ public class SaveManager : MonoBehaviour
             case ProgressionType.newGame:
                 data.progressionData.newGame = bool.Parse(value);
                 break;
+
+            case ProgressionType.medsAvailable:
+                data.progressionData.medsAvailable = bool.Parse(value);
+                break;
         }
 
         SaveData();
@@ -307,6 +313,10 @@ public class SaveManager : MonoBehaviour
     {
         return data.progressionData.newGame;
     }
+    public bool GetProgression_MedsAvailable()
+    {
+        return data.progressionData.medsAvailable;
+    }
     
     public void ResetData()
     {
@@ -331,7 +341,7 @@ public class SaveManager : MonoBehaviour
         data.settings.volume_Master = volumeMaster;
         data.settings.volume_SFX = volumeSFX;
         data.settings.volume_Music = volumeMusic;
-        
+
         data.settings.brightness = brightness;
         data.settings.reduceMotion = reduceMotion;
 
