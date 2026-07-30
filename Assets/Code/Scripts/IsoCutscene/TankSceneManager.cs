@@ -52,7 +52,6 @@ public class TankSceneManager : MonoBehaviour
         // tank overlay stuff
         Color color = tankOverlay.color;
         int currDay = SaveManager.instance.GetProgression_CurrDay();
-        Debug.Log("day" + currDay);
         color.a = (currDay / 5.0f - 1.0f) * 0.25f;
         tankOverlay.color = color;
     }
