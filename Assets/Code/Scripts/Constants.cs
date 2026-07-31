@@ -49,11 +49,23 @@ public class Constants : MonoBehaviour
     public Dictionary<int, int> LETTER_dayToIdxCrustyCo = new Dictionary<int, int>() // day -> idx in list
     {
         {1, 0},
-        {6, 1},
-        {7, 2},
-        {11, 3},
-        {16, 4},
+        {2, 1},
+        {5, 2},
+        {6, 3}
     };
+    public Dictionary<int, int> LETTER_dayToIdxCrustyCoEndings = new Dictionary<int, int>() // day -> idx in list
+    {
+        {15, 0},
+        {20, 1}
+    };
+    public Dictionary<string, int> LETTER_IDToIdxCrustyCo = new Dictionary<string, int>() // day -> idx in list
+    {
+        {"firstRed", 0},
+        {"secondRed", 1},
+        {"day3_noEaten", 2},
+        {"day3_Eaten", 3}
+    };
+
     public Dictionary<int, int> LETTER_dayToIdxFamily = new Dictionary<int, int>() // day -> idx in list
     {
         {3, 0},

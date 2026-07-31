@@ -11,10 +11,30 @@ public class FullStackLetter
 }
 
 [Serializable]
+public class FullStackLetterByDay
+{
+    public int day;
+    public string top;
+    public string body;
+    public string bottom;
+}
+
+[Serializable]
+public class FullStackLetterByID
+{
+    public string id;
+    public string top;
+    public string body;
+    public string bottom;
+}
+
+[Serializable]
 public class LetterData
 {
-    public string[] letterNodesCrustyCo;
-    public string[] letterNodesCrustyCoAnyDay;
+    public FullStackLetterByDay[] letterNodesCrustyCoByDay;
+    public FullStackLetterByDay[] letterNodesCrustyCoByDay_GoodEnding;
+    public FullStackLetterByDay[] letterNodesCrustyCoByDay_BadEnding;
+    public FullStackLetterByID[] letterNodesCrustyCoByID;
 
     public FullStackLetter[] letterNodesFamily;
     public FullStackLetter[] letterNodesMailkeeper;

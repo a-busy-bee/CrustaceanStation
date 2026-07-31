@@ -4517,7 +4517,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.000061035156}
+  m_AnchoredPosition: {x: 561, y: -15}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6777064274881245337
@@ -4536,7 +4536,7 @@ MonoBehaviour:
   walkingSprite: {fileID: 2185592312448719649}
   emotionRolling: {fileID: 4886066973679530246}
   emotionWalking: {fileID: 6421164479555735210}
-  color: 0
+  color: 2
   rolledIsoSprites:
   - {fileID: -995461649, guid: d3bb8bddd3767425e9027a0b80c22234, type: 3}
   - {fileID: -924605002, guid: d3bb8bddd3767425e9027a0b80c22234, type: 3}

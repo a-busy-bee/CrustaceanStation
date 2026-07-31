@@ -1,16 +1,86 @@
 {
-	"letterNodesCrustyCo":[
-		"Congratulations on making it through your first day! Crustacean Corporation is excited to assist you in restoring this station to its former glory.\n\nWe have partnered with the station to start a new shuttle route that exclusively transports Crustacean Corporation’s guests and employees to the worksites. Shuttle passengers will present their exclusive shuttle tickets when arriving.",
-		"Congratulations on your first week. As our station expands its service, Crustacean Station hopes that you will continue to uphold the safety and satisfaction of all passengers.",
-		"We hope you’re having a wonderful day! From now on, when you see predator species (birds, mammals, etc), please send them on the shuttle along with the usual employees, regardless of their ticket. Passengers will be compensated accordingly for their trouble, so don’t worry about any negative reviews. We’ll take care of that.\n\nDo not disappoint us, Operator.",
-		"You’re doing a crab-tastic job! We could not be more grateful for the hard work you put in to make this station run as smooth as butter. This time, when you see any non-crustacean passengers, send them on the shuttle along with the usual employees, regardless of their ticket.",
-		"You know the drill. Make sure non-crustaceans make it onto the shuttle today; we’ll take care of the rest."			
+	"letterNodesCrustyCoByDay":[
+		{
+			"day":1,
+			"top":"To whom it may concern,",
+			"body":"Welcome to your new job as an entry-level kiosk operator at Crustacean Station! Your position is critical to the operation of this station and the satisfaction of each crustacean. We are excited to onboard you soon.\nCrustacean Corporation reminds you once more that safety and satisfaction are paramount. As such, please make sure to follow relevant regulations and orders.",
+			"bottom":"We wish you the best of luck,\nCrustacean Corporation"
+		},
+		{
+			"day":2,
+			"top":"To the Operator,",
+			"body":"Crustacean Corporation is excited to announce an additional commuter shuttle route for Crustacean Corporation’s guests and employees! Shuttle passengers will present their exclusive shuttle tickets at the kiosk. Make sure to assign these passengers to the correct seats.",
+			"bottom":"Sincerely,\nCrustacean Corporation"
+		},
+		{
+			"day":5,
+			"top":"To all employees,",
+			"body":"Many of you may have recently heard about the tragic incident that befell the child of one of our employees. In light of the rising cases of such disturbing behavior, the board has decided to revise our policies and goals to bolster public safety. Everyone must eat, but that cannot extend to devouring those who have not even lived yet.\nIn the meantime, stay vigilant against dangerous creatures and protect yourself.",
+			"bottom":"Sincerely,\nCrustacean Corporation"
+		},
+		{
+			"day":6,
+			"top":"To the Operator,",
+			"body":"For today, when you see predator-type passengers, please send them on the shuttle along with the usual employees, regardless of their ticket. Passengers will be compensated accordingly for their trouble, so don’t worry about any negative reviews. We’ll take care of that.\nDo not disappoint us, Operator.",
+			"bottom":"Thank you for your cooperation,\nCrustacean Corporation"
+		}
 	],
 
-	"letterNodesCrustyCoAnyDay":[
-		"Welcome to your new job as an entry-level kiosk operator at Crustacean Station! Your position is critical to the smooth operation of this station and the satisfaction of each crustacean who arrives here. We are delighted to help onboard you today.",
-		"Greetings! We're absolutely KRILLED to have you on deck! You'll see passengers with train tickets, and you should seat them on trains. Researchers and volunteers with shuttle tickets go on the shuttle to our state-of-the-art research facility. Please hesitate to reach out if you have any questions. Good luck!",
-		"As an employee of Crustacean Station, you are obligated to follow company directions. Failure to comply with orders may result in termination of your employment."
+	"letterNodesCrustyCoByDay_GoodEnding":[
+		{
+			"day":15,
+			"top":"To all employees,",
+			"body":"Many of you may have recently heard news about creatures with abnormal appendages accusing the company of illegal experimentation. These claims are not true; they are false accusations made by disgruntled employees who did not meet expectations on our recent projects and were subsequently released. We will be taking action against these false claims and those who are trying to bring our decades of work down.",
+			"bottom":"Sincerely,\nCrustacean Corporation"
+		},
+		{
+			"day":20,
+			"top":"To the Operator,",
+			"body":"Congratulations! For your excellent performance, you are eligible to receive the salary bonus for this month. Crustacean Corporation thanks you for your dedication and loyalty. Please keep up the good work.",
+			"bottom":"Sincerely,\nCrustacean Corporation"
+		}
+	],
+	
+	"letterNodesCrustyCoByDay_BadEnding":[
+		{
+			"day":15,
+			"top":"To all employees,",
+			"body":"The company is proud to finally reveal the success of our newest rehabilitation drug.",
+			"bottom":"Sincerely,\nCrustacean Corporation"
+		},
+		{
+			"day":20,
+			"top":"To the Operator,",
+			"body":"We commend you on finishing your first month on the job. However, we noticed many discrepancies in the number of guests you sent and the number of guests we actually received, on numerous days. Going forward, we will be placing you on a performance improvement plan, to ensure that you consistently follow company policies in your work.",
+			"bottom":"Best,\nCrustacean Corporation"
+		}
+	],
+
+	"letterNodesCrustyCoByID":[
+		{
+			"id":"firstRed",
+			"top":"To the Operator,",
+			"body":"Crustacean Station strives to provide a quality experience to our passengers. However, we have recently received numerous complaints about your conduct and service. To meet the standards expected of you for this position, we ask you to improve by paying closer attention to passenger needs. Failure to improve performance may result in your termination.",
+			"bottom":"Thank you for your cooperation,\nCrustacean Corporation"
+		},
+		{
+			"id":"secondRed",
+			"top":"To the Operator,",
+			"body":"As an employee of Crustacean Corporation, you are obligated to follow company directions. Failure to comply with orders may result in termination of your employment.",
+			"bottom":"Thank you for your cooperation,\nCrustacean Corporation"
+		},
+		{
+			"id":"day3_noEaten",
+			"top":"To the Operator,",
+			"body":"Crustacean Corporation would like to commend you for your excellent performance thus far, and encourage you to keep up the good work.\nAs a reminder, at the end of each month, employees with exemplary performance evaluations are eligible to receive a salary bonus.",
+			"bottom":"Sincerely,\nCrustacean Corporation"
+		},
+		{
+			"id":"day3_Eaten",
+			"top":"To the Operator,",
+			"body":"Crustacean Station would like to remind you of the importance of keeping all passengers safe. We are a transportation service, not a dining establishment.\nWe have offered condolences to the affected family. Although such behavior by the offender is considered “legal” in current times, we ask you to minimize incidents as much as possible.",
+			"bottom":"Sincerely,\nCrustacean Corporation"
+		}
 	],
 
 	"letterNodesFamily":[
