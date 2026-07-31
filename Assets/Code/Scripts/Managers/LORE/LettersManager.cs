@@ -66,15 +66,17 @@ public class LettersManager : MonoBehaviour
             Debug.Log("file not found");
         }
     }
- 
+
     public string GetCrustyCoLetterByDay(int day)
     {
-        return letterData.letterNodesCrustyCo[Constants.instance.LETTER_dayToIdxCrustyCo[day]];
+        return "";
+        //return letterData.letterNodesCrustyCo[Constants.instance.LETTER_dayToIdxCrustyCo[day]];
     }
 
     public string GetCrustyCoLetterByIdx(int idx)
     {
-        return letterData.letterNodesCrustyCoAnyDay[idx];
+        return "";
+        //return letterData.letterNodesCrustyCoAnyDay[idx];
     }
 
     public FullStackLetter GetFamilyLetter(int day)
