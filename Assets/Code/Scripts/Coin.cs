@@ -10,9 +10,12 @@ public class Coin : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        rb.Sleep();
+
     }
     public void Clicked()
     {
+        rb.WakeUp();
         rb = GetComponent<Rigidbody2D>();
         rb.AddForce(new Vector2(200, 400), ForceMode2D.Impulse);
         rb.AddTorque(Random.Range(-150f, 150f));
