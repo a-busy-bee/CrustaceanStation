@@ -203,13 +203,14 @@ public class KioskBase : MonoBehaviour
 
     public void OnApprove()
     {
-
+        AchievementManager.instance.UnlockAchievementProgressive(AchievementManager.AchievementTypeProgressive.ticketmaster, 1);
         AudioManager.instance.PlaySound(AudioManager.SoundNames.KioskButton, true);
         SetState(KioskState.CrabApproved);
     }
 
     public void OnReject()
     {
+        AchievementManager.instance.UnlockAchievementProgressive(AchievementManager.AchievementTypeProgressive.ticketmaster, 1);
         AudioManager.instance.PlaySound(AudioManager.SoundNames.KioskButton, true);
         SetState(KioskState.CrabRejected);
     }

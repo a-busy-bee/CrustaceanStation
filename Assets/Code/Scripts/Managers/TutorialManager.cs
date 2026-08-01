@@ -115,7 +115,7 @@ public class TutorialManager : LevelManagerBase
         summaryMenu.SetActive(true);
 
         dayStarted = false;
-        PlotManager.instance.AddMail("letter", "crustyCoIdx", 1);
+        PlotManager.instance.AddMail("letter", "crustyCoID", 4); 
         SaveManager.instance.SaveProgressionData(SaveManager.ProgressionType.newGame, false.ToString());
     }
 

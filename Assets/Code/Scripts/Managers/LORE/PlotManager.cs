@@ -36,7 +36,7 @@ public class PlotManager : MonoBehaviour
 
     private Stage currStage;
     private float crust = 1.0f;
-    private float bio = 1.0f;
+    private float endingThreshold = 0.75f;
 
     //JSON STUFF
     private PlotData plotData;
@@ -110,5 +110,10 @@ public class PlotManager : MonoBehaviour
     private void SaveData()
     {
         File.WriteAllText(savePath, JsonUtility.ToJson(plotData, true));
+    }
+
+    public bool IsGoodEnding()
+    {
+        return crust > endingThreshold; 
     }
 }

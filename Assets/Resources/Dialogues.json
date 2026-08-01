@@ -1,29 +1,4 @@
 {
-	"nodesGeneric":[
-		{"character":"IttyBitty", "text":[
-			"I found my lollipop!",
-			"Have you seen this lollipop?",
-			"I love it when it's sunny",
-			"I'm in 3rd grade",
-			"Have you seen my mom?",
-			"I’ll give you my lollipop if you upgrade my ticket"
-		]},
-		{"character":"Shrimp", "text":[
-			"Stand up straight! Your posture is just awful"
-		]}
-	],
-
-	"nodesPlot":[
-		{"plotID":1, "character":"IttyBitty", "text":[
-			"My mom is working in research!",
-			"I want to be a scientist someday!"
-		]},
-		{"plotID":1, "character":"Goopy", "text":[
-			"I'm worried about this research.",
-			"I'm calling it right now. There's something dubious happening at the research lab."
-		]}
-	],
-
 	"nodeGenericAnyChars":[
 		"Hiya!",
 		"Hope you're having a nice day.",
@@ -64,17 +39,6 @@
 			"Crustacean corp offered me a job, but there’s something not right about those guys",
 			"I’m volunteering for the new research project!"
 		]}
-	],
-
-	"nodesNonCrustacean":[
-		"Did you see my son come through here yesterday? He didn’t come home!"
-	],
-
-	"nodesCrustacean":[
-		"I’m relieved to see a fellow crustacean in the train business",
-		"They’re just letting anyone onto these trains nowadays",
-		"Do you think I'm too short?",
-		"Do you think my claws are shiny enough?"
 	],
 
 	"nodesVet":[

@@ -2,56 +2,47 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 
-
-
-
-/*
-i went into this iwth the audiomanager stuff so it probably doesnt work however it originally
-did but this is some of the stuff that was there in case u want it
-*/
-
 public class AudioSlider : MonoBehaviour
 {
-    [SerializeField]
-    private AudioMixer Mixer;
-    [SerializeField]
-    private AudioMixMode MixMode;
-
-    [SerializeField] private Slider slider;
-    private void Awake()
+    public enum VolumeType
     {
-        //slider.value = 1f;//PlayerPrefs.GetFloat("Volume");
+        Master,
+        Music,
+        SFX
     }
+    [SerializeField] private VolumeType volumeType;
+    [SerializeField] private AudioMixer audioMixer;
+    [SerializeField] private Slider slider;
+
     private void Start()
     {
-        Mixer.SetFloat("Volume", Mathf.Log10(PlayerPrefs.GetFloat("Volume", 1) * 20));
-    }
-
-    public void OnChangeSlider(float Value)
-    {
-        switch (MixMode)
+        switch (volumeType)
         {
-            case AudioMixMode.LinearAudioSourceVolume:
+            case VolumeType.Master:
+                float masterVol = MixerToSliderVal(SaveManager.instance.GetSettings_VolumeMaster());
+                slider.value = masterVol;
                 break;
-            case AudioMixMode.LinearMixerVolume:
-                Mixer.SetFloat("Volume", (-80 + Value * 80));
+
+            case VolumeType.Music:
+                float musicVol = MixerToSliderVal(SaveManager.instance.GetSettings_VolumeMusic());
+                slider.value = musicVol;
                 break;
-            case AudioMixMode.LogrithmicMixerVolume:
-                Mixer.SetFloat("Volume", Mathf.Log10(Value) * 20);
+
+            case VolumeType.SFX:
+                float sfxVol = MixerToSliderVal(SaveManager.instance.GetSettings_VolumeSFX());
+                slider.value = sfxVol;
                 break;
         }
-
-        float a = Mathf.Log10(Value) * 20;
-
-        PlayerPrefs.SetFloat("Volume", Value);
-        PlayerPrefs.Save();
     }
 
-
-    public enum AudioMixMode
+    public void OnChangeSlider(float value)
     {
-        LinearAudioSourceVolume,
-        LinearMixerVolume,
-        LogrithmicMixerVolume
+        float newVol = Mathf.Log10(Mathf.Max(value, 0.0001f)) * 20f;
+        AudioManager.instance.ChangeVolume(volumeType, newVol);
+    }
+
+    private float MixerToSliderVal(float value)
+    {
+        return Mathf.Pow(10f, value / 20f); 
     }
 }

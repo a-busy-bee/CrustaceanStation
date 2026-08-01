@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Numerics;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PerformanceManager : MonoBehaviour
@@ -229,19 +230,42 @@ public class PerformanceManager : MonoBehaviour
         numHappyText.text = numHappy.ToString();
 
         sliderSummary.value = barPercent;
+
+        bool alreadyRedBefore = SaveManager.instance.GetProgression_RedOne();
         if (barPercent >= 0.7f)
         {
             sliderSummaryColor.color = sliderColors[2];
+
+            if (alreadyRedBefore) SaveManager.instance.SaveProgressionData(SaveManager.ProgressionType.red1, "false");
         }
         else if (barPercent >= 0.2)
         {
             sliderSummaryColor.color = sliderColors[1];
+            if (alreadyRedBefore) SaveManager.instance.SaveProgressionData(SaveManager.ProgressionType.red1, "false");
         }
         else
         {
             sliderSummaryColor.color = sliderColors[0];
 
-            PlotManager.instance.AddMail("letter", "crustyCo", 8);
+            if (alreadyRedBefore)
+            {
+                //second day having a red rating
+                // cue fired cutscene
+                SceneManager.LoadScene("Fired");
+                return;
+            }
+
+            int currDay = SaveManager.instance.GetProgression_CurrDay();
+            if (currDay < 5)
+            {
+                PlotManager.instance.AddMail("letter", "crustyCoID", 0);
+            }
+            else
+            {
+                PlotManager.instance.AddMail("letter", "crustyCoID", 1);
+            }
+
+            SaveManager.instance.SaveProgressionData(SaveManager.ProgressionType.red1, "true");
         }
     }
 

@@ -4100,18 +4100,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SaveManager
       objectReference: {fileID: 0}
-    - target: {fileID: 5028344628206951161, guid: 7b5202ffaae054782b8f3eb9e083d27f, type: 3}
-      propertyPath: orthographic
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5164633222034407899, guid: 7b5202ffaae054782b8f3eb9e083d27f, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5164633222034407899, guid: 7b5202ffaae054782b8f3eb9e083d27f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7883017816401313151, guid: 7b5202ffaae054782b8f3eb9e083d27f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1046.2919

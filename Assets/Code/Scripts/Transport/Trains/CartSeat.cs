@@ -188,6 +188,11 @@ public class CartSeat : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
             cartPopup.RemoveCharacter(row, column, cartPopup.GetCurrIDOpen());
 
             splatterObject.SetActive(true);
+
+            if (SaveManager.instance.GetProgression_CurrDay() <= 3)
+            {
+                SaveManager.instance.SaveProgressionData(SaveManager.ProgressionType.eatenBeforeDay3, "true");
+            }
         }
         else
         {
@@ -374,10 +379,12 @@ public class CartSeat : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
         if (currReaction[cartPopup.GetCurrIDOpen()] == ReactionType.fear || currReaction[cartPopup.GetCurrIDOpen()] == ReactionType.yummy)
         {
+            AchievementManager.instance.UnlockAchievementBool(AchievementManager.AchievementTypeBool.dinnerForOne);
             if (PerformanceManager.instance != null) PerformanceManager.instance.Incorrect(PerformanceManager.MistakeType.seating);
         }
         else if (currReaction[cartPopup.GetCurrIDOpen()] == ReactionType.toxicOther || currReaction[cartPopup.GetCurrIDOpen()] == ReactionType.toxicSelf)
         {
+            AchievementManager.instance.UnlockAchievementBool(AchievementManager.AchievementTypeBool.gettingHeated);
             if (PerformanceManager.instance != null) PerformanceManager.instance.Incorrect(PerformanceManager.MistakeType.seating);
         }
         else

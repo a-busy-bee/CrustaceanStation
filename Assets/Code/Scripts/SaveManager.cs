@@ -50,6 +50,8 @@ public class ProgressionData
     public bool firstDayHeadlineSeen;
     public bool newGame;
     public bool medsAvailable;
+    public bool eatenBeforeDayThree;
+    public bool redOne;
 }
 
 [Serializable]
@@ -84,7 +86,9 @@ public class SaveManager : MonoBehaviour
         introMailSeen,
         firstDayHeadlineSeen,
         newGame,
-        medsAvailable
+        medsAvailable,
+        eatenBeforeDay3,
+        red1
     }
 
     private Dictionary<string, int> characterNameToIndex = new Dictionary<string, int>
@@ -134,6 +138,7 @@ public class SaveManager : MonoBehaviour
         }
     }
 
+    #region Settings
     public void SaveSettings(SettingsType settingsType, string value)
     {
         switch (settingsType)
@@ -189,7 +194,9 @@ public class SaveManager : MonoBehaviour
     {
         return data.settings.reduceMotion;
     }
+    #endregion
 
+    #region Iso
 
     public void SaveIsoData(string name, string month, int day, int color)
     {
@@ -216,8 +223,9 @@ public class SaveManager : MonoBehaviour
     {
         return data.isoData.isoColor;
     }
+    #endregion
 
-
+    #region Characters
     public void SaveCharacterData(string name, int dialogue, bool isDone = false)
     {
         int idx = characterNameToIndex[name];
@@ -225,6 +233,21 @@ public class SaveManager : MonoBehaviour
         data.charactersData.characters[idx].dialogueIdx = dialogue;
         data.charactersData.characters[idx].isDone = isDone;
 
+        if (!AchievementManager.instance.IsBoolAchievementUnlocked(AchievementManager.AchievementTypeBool.networking))
+        {
+            int numSpecials = data.charactersData.characters.Length;
+            bool seenAll = true;
+            for (int i = 0; i < numSpecials; i++)
+            {
+                if (data.charactersData.characters[i].dialogueIdx == 0) seenAll = false;
+            }
+
+            if (seenAll)
+            {
+                AchievementManager.instance.UnlockAchievementBool(AchievementManager.AchievementTypeBool.networking);
+            }
+        }
+ 
         SaveData();
     }
     public int GetCharacter_DialogueIdx(string name)
@@ -239,8 +262,9 @@ public class SaveManager : MonoBehaviour
 
         return data.charactersData.characters[idx].isDone;
     }
+    #endregion
 
-
+    #region Progression
     public void SaveProgressionData(ProgressionType progressionType, string value)
     {
         switch (progressionType)
@@ -276,6 +300,14 @@ public class SaveManager : MonoBehaviour
 
             case ProgressionType.medsAvailable:
                 data.progressionData.medsAvailable = bool.Parse(value);
+                break;
+
+            case ProgressionType.eatenBeforeDay3:
+                data.progressionData.eatenBeforeDayThree = bool.Parse(value);
+                break;
+
+            case ProgressionType.red1:
+                data.progressionData.redOne = bool.Parse(value);
                 break;
         }
 
@@ -317,7 +349,17 @@ public class SaveManager : MonoBehaviour
     {
         return data.progressionData.medsAvailable;
     }
-    
+    public bool GetProgression_EatenBeforeDay3()
+    {
+        return data.progressionData.eatenBeforeDayThree;
+    }
+    public bool GetProgression_RedOne()
+    {
+        return data.progressionData.redOne;
+    }
+
+    #endregion
+
     public void ResetData()
     {
         // save settings

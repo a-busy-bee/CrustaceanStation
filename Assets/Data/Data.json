@@ -1,7 +1,9 @@
 {
 	"settings": {
 		"language": "English",
-		"volume": 1.0,
+		"volume_Master": -3.47879,
+		"volume_Music": -3.47879,
+		"volume_SFX": -3.47879,
 		"brightness": 1.0,
 		"reduceMotion": false
 	}, 
@@ -60,6 +62,9 @@
 		"performanceBarPercent": 0.5,
 		"introMailSeen": false,
 		"firstDay": true,
-		"newGame": true
+		"newGame": true,
+		"medsAvailable": false,
+		"eatenBeforeDayThree": false,
+		"redOne": false
 	}
 }

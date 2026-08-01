@@ -190,17 +190,34 @@ public class MailroomManager : MonoBehaviour
             switch (inboxItem.subType)
             {
                 case "crustyCoDay":
-                    body = lettersManager.GetCrustyCoLetterByDay(currDay);
-                    top = "To whom it may concern,";
-                    bottom = "Sincerely,\nCrustacean Corporation";
+                    FullStackLetterByDay letterByDay = lettersManager.GetCrustyCoLetterByDay(currDay);
+                    body = letterByDay.body;
+                    top = letterByDay.top;
+                    bottom = letterByDay.bottom;
 
                     letterImage.sprite = letterSprites[0];
                     break;
+                case "crustyCoDay_GoodEnding":
+                    letterByDay = lettersManager.GetCrustyCoLetterByDay(currDay, true, true);
+                    body = letterByDay.body;
+                    top = letterByDay.top;
+                    bottom = letterByDay.bottom;
 
-                case "crustyCoIdx":
-                    body = lettersManager.GetCrustyCoLetterByIdx(inboxItem.id);
-                    top = "To whom it may concern,";
-                    bottom = "Sincerely,\nCrustacean Corporation";
+                    letterImage.sprite = letterSprites[0];
+                    break;
+                case "crustyCoDay_BadEnding":
+                    letterByDay = lettersManager.GetCrustyCoLetterByDay(currDay, true, false);
+                    body = letterByDay.body;
+                    top = letterByDay.top;
+                    bottom = letterByDay.bottom;
+
+                    letterImage.sprite = letterSprites[0];
+                    break;
+                case "crustyCoID":
+                    FullStackLetterByID letterByID = lettersManager.GetCrustyCoLetterByID(inboxItem.id);
+                    body = letterByID.body;
+                    top = letterByID.top;
+                    bottom = letterByID.bottom;
 
                     letterImage.sprite = letterSprites[0];
                     break;
@@ -277,7 +294,7 @@ public class MailroomManager : MonoBehaviour
                 feedbackFormName.text = Constants.instance.specialEnumToStringName[special];
             }
             feedbackForm.GetComponent<RectTransform>().GetChild(0).GetComponent<TextMeshProUGUI>().text = text;
-            
+
 
             chosen = feedbackForm;
         }
@@ -373,5 +390,15 @@ public class MailroomManager : MonoBehaviour
     {
         AudioManager.instance.SwitchTheme(AudioManager.ThemeNames.CheckingIntoStation);
         SceneManager.LoadScene("Home");
+    }
+
+    public void ClickTrinketCeramic()
+    {
+        AudioManager.instance.PlaySound(AudioManager.SoundNames.Ceramic, true);
+    }
+
+    public void ClickTrinketSoft()
+    {
+        AudioManager.instance.PlaySound(AudioManager.SoundNames.Ticket, true);
     }
 }
