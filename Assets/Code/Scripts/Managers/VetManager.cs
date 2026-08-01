@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 public class VetManager : MonoBehaviour
 {
     [SerializeField] private GameObject returnHomeButton;
+    [SerializeField] private GameObject goodEndingButton;
+    [SerializeField] private GameObject badEndingButton;
     [SerializeField] private GameObject vet;
     [SerializeField] private GameObject medicationBottle;
 
@@ -21,6 +23,8 @@ public class VetManager : MonoBehaviour
     {
         medicationBottle.SetActive(false);
         returnHomeButton.SetActive(false);
+        goodEndingButton.SetActive(false);
+        badEndingButton.SetActive(false);
 
         int colorIdx = SaveManager.instance.GetIso_Color();
         isoWalkSprite.GetComponent<Image>().sprite = walkingSprites[colorIdx];
@@ -48,7 +52,7 @@ public class VetManager : MonoBehaviour
 
         yield return new WaitForSeconds(0.5f);
 
-        
+
         if (currDay / 5 != 3) // no emotion to play IF HE'S DEAD ;-;
         {
             // iso emotion
@@ -60,7 +64,20 @@ public class VetManager : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
 
         // show return button
-        returnHomeButton.SetActive(true);
+
+        if (currDay < 20)
+        {
+            returnHomeButton.SetActive(true);
+        }
+        else if (PlotManager.instance.IsGoodEnding())
+        {
+            goodEndingButton.SetActive(true);
+        }
+        else
+        {
+            badEndingButton.SetActive(true);
+        }
+        
     }
 
     public void ReturnHome()
@@ -68,6 +85,20 @@ public class VetManager : MonoBehaviour
         SaveManager.instance.SetProgression_IncrementCurrDay();
         AudioManager.instance.SwitchTheme(AudioManager.ThemeNames.CheckingIntoStation);
         SceneManager.LoadScene("Home");
+    }
+
+    public void GoodEnding()
+    {
+        AchievementManager.instance.UnlockAchievementBool(AchievementManager.AchievementTypeBool.soLong);
+        AudioManager.instance.SwitchTheme(AudioManager.ThemeNames.CheckingIntoStation);
+        SceneManager.LoadScene("EndingGood");
+    }
+
+    public void BadEnding()
+    {
+        AchievementManager.instance.UnlockAchievementBool(AchievementManager.AchievementTypeBool.whatHaveIDone);
+        AudioManager.instance.SwitchTheme(AudioManager.ThemeNames.CheckingIntoStation);
+        SceneManager.LoadScene("EndingBad");
     }
 
     public void ClickMedBottle()

@@ -10,9 +10,6 @@ public class AchievementManager : MonoBehaviour
         networking,
         gettingHeated,
         dinnerForOne,
-        risingTensions,
-        amYou,
-        evolution,
         soLong,
         whatHaveIDone
     }
@@ -55,7 +52,7 @@ public class AchievementManager : MonoBehaviour
         if (!SteamManager.Initialized) return;
 
         int currCount;
-        if (SteamUserStats.GetStat(type.ToString(), out currCount))
+        if (SteamUserStats.GetStat(type.ToString() + "_stat", out currCount))
         {
             int newCount = currCount + increase;
 
@@ -82,7 +79,7 @@ public class AchievementManager : MonoBehaviour
         if (!SteamManager.Initialized) return false;
 
         bool isUnlocked;
-        if (SteamUserStats.GetAchievement(type.ToString(), out isUnlocked))
+        if (SteamUserStats.GetAchievement(type.ToString() + "_stat", out isUnlocked))
         {
             if (isUnlocked) return true;
         }

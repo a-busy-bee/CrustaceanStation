@@ -4100,26 +4100,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SaveManager
       objectReference: {fileID: 0}
-    - target: {fileID: 3693358701373952394, guid: 7b5202ffaae054782b8f3eb9e083d27f, type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: -6531393345557664855, guid: 2437c702f2edc4b38ac847e273e405d4, type: 2}
-    - target: {fileID: 5028344628206951161, guid: 7b5202ffaae054782b8f3eb9e083d27f, type: 3}
-      propertyPath: orthographic
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5164633222034407899, guid: 7b5202ffaae054782b8f3eb9e083d27f, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5164633222034407899, guid: 7b5202ffaae054782b8f3eb9e083d27f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6823412769077533628, guid: 7b5202ffaae054782b8f3eb9e083d27f, type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: -6531393345557664855, guid: 2437c702f2edc4b38ac847e273e405d4, type: 2}
     - target: {fileID: 7883017816401313151, guid: 7b5202ffaae054782b8f3eb9e083d27f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1046.2919
@@ -4160,35 +4140,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8246251377001134121, guid: 7b5202ffaae054782b8f3eb9e083d27f, type: 3}
-      propertyPath: audioMixer
-      value: 
-      objectReference: {fileID: 24100000, guid: 2437c702f2edc4b38ac847e273e405d4, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2690092314690391244, guid: 7b5202ffaae054782b8f3eb9e083d27f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 71610477295767008}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b5202ffaae054782b8f3eb9e083d27f, type: 3}
---- !u!1 &71610477295767007 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2690092314690391244, guid: 7b5202ffaae054782b8f3eb9e083d27f, type: 3}
-  m_PrefabInstance: {fileID: 71610477295767006}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &71610477295767008
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 71610477295767007}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef4bffeda13d7a748973ff9204401c07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SteamManager
 --- !u!1001 &8988610124556836680
 PrefabInstance:
   m_ObjectHideFlags: 0
