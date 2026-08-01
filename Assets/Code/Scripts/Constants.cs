@@ -50,7 +50,8 @@ public class Constants : MonoBehaviour
     {
         {1, 0},
         {5, 1},
-        {6, 2}
+        {6, 2},
+        {11, 3}
     };
     public Dictionary<int, int> LETTER_dayToIdxCrustyCoEndings = new Dictionary<int, int>() // day -> idx in list
     {
