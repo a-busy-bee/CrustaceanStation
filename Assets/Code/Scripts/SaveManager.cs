@@ -233,6 +233,21 @@ public class SaveManager : MonoBehaviour
         data.charactersData.characters[idx].dialogueIdx = dialogue;
         data.charactersData.characters[idx].isDone = isDone;
 
+        if (!AchievementManager.instance.IsBoolAchievementUnlocked(AchievementManager.AchievementTypeBool.networking))
+        {
+            int numSpecials = data.charactersData.characters.Length;
+            bool seenAll = true;
+            for (int i = 0; i < numSpecials; i++)
+            {
+                if (data.charactersData.characters[i].dialogueIdx == 0) seenAll = false;
+            }
+
+            if (seenAll)
+            {
+                AchievementManager.instance.UnlockAchievementBool(AchievementManager.AchievementTypeBool.networking);
+            }
+        }
+ 
         SaveData();
     }
     public int GetCharacter_DialogueIdx(string name)

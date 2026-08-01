@@ -7,6 +7,7 @@ public class AchievementManager : MonoBehaviour
 
     public enum AchievementTypeBool
     {
+        networking,
         gettingHeated,
         dinnerForOne,
         risingTensions,
@@ -18,11 +19,9 @@ public class AchievementManager : MonoBehaviour
 
     public enum AchievementTypeProgressive
     {
-        networking,
         ticketmaster,
         likeTrains,
         heLikesIt
-
     }
 
     private void Awake()
@@ -63,6 +62,32 @@ public class AchievementManager : MonoBehaviour
             SteamUserStats.SetStat(type.ToString(), newCount);
             SteamUserStats.StoreStats();
         }
+    }
+
+    public bool IsBoolAchievementUnlocked(AchievementTypeBool type)
+    {
+        if (!SteamManager.Initialized) return false;
+
+        bool isUnlocked;
+        if (SteamUserStats.GetAchievement(type.ToString(), out isUnlocked))
+        {
+            if (isUnlocked) return true;
+        }
+
+        return false;
+    }
+
+    public bool IsProgressiveAchievementUnlocked(AchievementTypeProgressive type)
+    {
+        if (!SteamManager.Initialized) return false;
+
+        bool isUnlocked;
+        if (SteamUserStats.GetAchievement(type.ToString(), out isUnlocked))
+        {
+            if (isUnlocked) return true;
+        }
+
+        return false;
     }
     
 }
