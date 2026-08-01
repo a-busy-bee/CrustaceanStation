@@ -188,6 +188,11 @@ public class CartSeat : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
             cartPopup.RemoveCharacter(row, column, cartPopup.GetCurrIDOpen());
 
             splatterObject.SetActive(true);
+
+            if (SaveManager.instance.GetProgression_CurrDay() <= 3)
+            {
+                SaveManager.instance.SaveProgressionData(SaveManager.ProgressionType.eatenBeforeDay3, "true");
+            }
         }
         else
         {

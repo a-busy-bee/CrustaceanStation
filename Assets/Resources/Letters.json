@@ -2,12 +2,6 @@
 	"letterNodesCrustyCoByDay":[
 		{
 			"day":1,
-			"top":"To whom it may concern,",
-			"body":"Welcome to your new job as an entry-level kiosk operator at Crustacean Station! Your position is critical to the operation of this station and the satisfaction of each crustacean. We are excited to onboard you soon.\nCrustacean Corporation reminds you once more that safety and satisfaction are paramount. As such, please make sure to follow relevant regulations and orders.",
-			"bottom":"We wish you the best of luck,\nCrustacean Corporation"
-		},
-		{
-			"day":2,
 			"top":"To the Operator,",
 			"body":"Crustacean Corporation is excited to announce an additional commuter shuttle route for Crustacean Corporation’s guests and employees! Shuttle passengers will present their exclusive shuttle tickets at the kiosk. Make sure to assign these passengers to the correct seats.",
 			"bottom":"Sincerely,\nCrustacean Corporation"
@@ -39,7 +33,7 @@
 			"body":"Congratulations! For your excellent performance, you are eligible to receive the salary bonus for this month. Crustacean Corporation thanks you for your dedication and loyalty. Please keep up the good work.",
 			"bottom":"Sincerely,\nCrustacean Corporation"
 		}
-	],
+	], 
 	
 	"letterNodesCrustyCoByDay_BadEnding":[
 		{
@@ -80,6 +74,12 @@
 			"top":"To the Operator,",
 			"body":"Crustacean Station would like to remind you of the importance of keeping all passengers safe. We are a transportation service, not a dining establishment.\nWe have offered condolences to the affected family. Although such behavior by the offender is considered “legal” in current times, we ask you to minimize incidents as much as possible.",
 			"bottom":"Sincerely,\nCrustacean Corporation"
+		},
+		{
+			"id":"pre-tutorial",
+			"top":"To whom it may concern,",
+			"body":"Welcome to your new job as an entry-level kiosk operator at Crustacean Station! Your position is critical to the operation of this station and the satisfaction of each crustacean. We are excited to onboard you soon.\nCrustacean Corporation reminds you once more that safety and satisfaction are paramount. As such, please make sure to follow relevant regulations and orders.",
+			"bottom":"We wish you the best of luck,\nCrustacean Corporation"
 		}
 	],
 

@@ -104,6 +104,29 @@ public class LevelManager : LevelManagerBase
         {
             PlotManager.instance.AddMail("letter", "crustyCoDay", currDay);
         }
+        else if (constants.LETTER_dayToIdxCrustyCoEndings.ContainsKey(currDay))
+        {
+            if (PlotManager.instance.IsGoodEnding())
+            {
+                PlotManager.instance.AddMail("letter", "crustyCoDay_GoodEnding", currDay);
+            }
+            else
+            {
+                PlotManager.instance.AddMail("letter", "crustyCoDay_BadEnding", currDay);
+            }
+        }
+
+        if (currDay == 3)
+        {
+            if (SaveManager.instance.GetProgression_EatenBeforeDay3())
+            {
+                PlotManager.instance.AddMail("letter", "crustyCoID", 3);
+            }
+            else
+            {
+                PlotManager.instance.AddMail("letter", "crustyCoID", 2);
+            }
+        }
 
         if (constants.LETTER_dayToIdxFamily.ContainsKey(currDay))
         {
@@ -122,7 +145,6 @@ public class LevelManager : LevelManagerBase
         CrabInfo.SpecialCharacter[] specialsToday = constants.SELECTOR_dayToCharacter[currDay];
         for (int i = 0; i < specialsToday.Length; i++)
         {
-            Debug.Log("specials today: " + specialsToday[i].ToString());
             PlotManager.instance.AddMail("feedbackForm", specialsToday[i].ToString(), currDay);
         }
     }

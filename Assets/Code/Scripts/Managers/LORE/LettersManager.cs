@@ -67,16 +67,29 @@ public class LettersManager : MonoBehaviour
         }
     }
 
-    public string GetCrustyCoLetterByDay(int day)
+    public FullStackLetterByDay GetCrustyCoLetterByDay(int day, bool isEndingDependent = false, bool isGoodEnding = false)
     {
-        return "";
-        //return letterData.letterNodesCrustyCo[Constants.instance.LETTER_dayToIdxCrustyCo[day]];
+        if (isEndingDependent)
+        {
+            int idx = Constants.instance.LETTER_dayToIdxCrustyCoEndings[day];
+
+            if (isGoodEnding)
+            {
+                return letterData.letterNodesCrustyCoByDay_GoodEnding[idx];
+            }
+            else
+            {
+                return letterData.letterNodesCrustyCoByDay_BadEnding[idx];
+            }
+        }
+
+        int regIdx = Constants.instance.LETTER_dayToIdxCrustyCo[day];
+        return letterData.letterNodesCrustyCoByDay[regIdx];
     }
 
-    public string GetCrustyCoLetterByIdx(int idx)
+    public FullStackLetterByID GetCrustyCoLetterByID(int id)
     {
-        return "";
-        //return letterData.letterNodesCrustyCoAnyDay[idx];
+        return letterData.letterNodesCrustyCoByID[id];
     }
 
     public FullStackLetter GetFamilyLetter(int day)
