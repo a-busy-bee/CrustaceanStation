@@ -709,12 +709,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9828f6c6786449f4099c8dfed2feaed2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioSlider
-  Mixer: {fileID: 24100000, guid: 6322bc9e4a93a074895850f1a528c453, type: 2}
-  audioManagers: []
-  MixMode: 0
+  volumeType: 2
+  audioMixer: {fileID: 24100000, guid: 2437c702f2edc4b38ac847e273e405d4, type: 2}
   slider: {fileID: 1882369766130832759}
-  isMasterVolumeControl: 0
-  sliderType: 1
 --- !u!1 &2355361276411623994
 GameObject:
   m_ObjectHideFlags: 0
@@ -1148,12 +1145,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9828f6c6786449f4099c8dfed2feaed2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioSlider
-  Mixer: {fileID: 24100000, guid: 6322bc9e4a93a074895850f1a528c453, type: 2}
-  audioManagers: []
-  MixMode: 0
+  volumeType: 1
+  audioMixer: {fileID: 24100000, guid: 2437c702f2edc4b38ac847e273e405d4, type: 2}
   slider: {fileID: 3537417814483798486}
-  isMasterVolumeControl: 0
-  sliderType: 2
 --- !u!1 &3379622466538001568
 GameObject:
   m_ObjectHideFlags: 0
@@ -1607,12 +1601,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9828f6c6786449f4099c8dfed2feaed2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioSlider
-  Mixer: {fileID: 24100000, guid: 6322bc9e4a93a074895850f1a528c453, type: 2}
-  audioManagers: []
-  MixMode: 0
+  volumeType: 0
+  audioMixer: {fileID: 24100000, guid: 2437c702f2edc4b38ac847e273e405d4, type: 2}
   slider: {fileID: 3123354936056787416}
-  isMasterVolumeControl: 1
-  sliderType: 0
 --- !u!1 &4711819897191210191
 GameObject:
   m_ObjectHideFlags: 0

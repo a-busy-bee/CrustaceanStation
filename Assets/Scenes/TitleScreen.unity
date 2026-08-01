@@ -4100,6 +4100,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SaveManager
       objectReference: {fileID: 0}
+    - target: {fileID: 3693358701373952394, guid: 7b5202ffaae054782b8f3eb9e083d27f, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -6531393345557664855, guid: 2437c702f2edc4b38ac847e273e405d4, type: 2}
     - target: {fileID: 5028344628206951161, guid: 7b5202ffaae054782b8f3eb9e083d27f, type: 3}
       propertyPath: orthographic
       value: 1
@@ -4112,6 +4116,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6823412769077533628, guid: 7b5202ffaae054782b8f3eb9e083d27f, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -6531393345557664855, guid: 2437c702f2edc4b38ac847e273e405d4, type: 2}
     - target: {fileID: 7883017816401313151, guid: 7b5202ffaae054782b8f3eb9e083d27f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1046.2919
@@ -4152,6 +4160,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8246251377001134121, guid: 7b5202ffaae054782b8f3eb9e083d27f, type: 3}
+      propertyPath: audioMixer
+      value: 
+      objectReference: {fileID: 24100000, guid: 2437c702f2edc4b38ac847e273e405d4, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
