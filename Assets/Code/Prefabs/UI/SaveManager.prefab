@@ -266,6 +266,12 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
     name: 8
+  - clip: {fileID: 8300000, guid: 1a16b069ac03db04094fe1a89d89d990, type: 3}
+    loop: 0
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    name: 9
   themes:
   - clip: {fileID: 8300000, guid: 7c681c700179c4c3db2046cbe2542e09, type: 3}
     loop: 0

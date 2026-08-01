@@ -212,7 +212,7 @@ public class MailroomManager : MonoBehaviour
                     bottom = letterByDay.bottom;
 
                     letterImage.sprite = letterSprites[0];
-                    break; 
+                    break;
                 case "crustyCoID":
                     FullStackLetterByID letterByID = lettersManager.GetCrustyCoLetterByID(inboxItem.id);
                     body = letterByID.body;
@@ -294,7 +294,7 @@ public class MailroomManager : MonoBehaviour
                 feedbackFormName.text = Constants.instance.specialEnumToStringName[special];
             }
             feedbackForm.GetComponent<RectTransform>().GetChild(0).GetComponent<TextMeshProUGUI>().text = text;
-            
+
 
             chosen = feedbackForm;
         }
@@ -390,5 +390,15 @@ public class MailroomManager : MonoBehaviour
     {
         AudioManager.instance.SwitchTheme(AudioManager.ThemeNames.CheckingIntoStation);
         SceneManager.LoadScene("Home");
+    }
+
+    public void ClickTrinketCeramic()
+    {
+        AudioManager.instance.PlaySound(AudioManager.SoundNames.Ceramic, true);
+    }
+
+    public void ClickTrinketSoft()
+    {
+        AudioManager.instance.PlaySound(AudioManager.SoundNames.Ticket, true);
     }
 }

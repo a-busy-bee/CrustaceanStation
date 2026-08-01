@@ -18,7 +18,8 @@ public class AudioManager : MonoBehaviour
         DoorOpen,
         KioskButton,
         Switch,
-        Ticket
+        Ticket,
+        Ceramic
     }
 
     public enum ThemeNames
