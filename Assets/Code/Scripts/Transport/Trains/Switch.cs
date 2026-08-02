@@ -29,6 +29,7 @@ public class Switch : MonoBehaviour, IPointerClickHandler
         animator.Play("SwitchOn");
 
         AudioManager.instance.PlaySound(AudioManager.SoundNames.Switch, true);
+        AchievementManager.instance.UnlockAchievementProgressive(AchievementManager.AchievementTypeProgressive.likeTrains, 1);
 
         if (TutorialManager.instance.GetIsTutorial()) TutorialManager.instance.ProgressTutorial();
 

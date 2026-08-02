@@ -18,7 +18,8 @@ public class AudioManager : MonoBehaviour
         DoorOpen,
         KioskButton,
         Switch,
-        Ticket
+        Ticket,
+        Ceramic
     }
 
     public enum ThemeNames
@@ -44,6 +45,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private BkgTheme[] themes;
     [SerializeField] private AudioSource themeSource; // child obj
     [SerializeField] private AudioSource nextThemeSource; // child obj
+    [SerializeField] private AudioMixer audioMixer;
     private float localVol = 1f;
 
     private void Awake()
@@ -68,11 +70,20 @@ public class AudioManager : MonoBehaviour
             s.source.volume = s.volume;
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
+            s.source.outputAudioMixerGroup = audioMixer.FindMatchingGroups("SFX")[0];
         }
+
     }
 
     private void Start()
     {
+        float masterVol = SaveManager.instance.GetSettings_VolumeMaster();
+        float musicVol = SaveManager.instance.GetSettings_VolumeMusic();
+        float sfxVol = SaveManager.instance.GetSettings_VolumeSFX();
+        ChangeVolume(AudioSlider.VolumeType.Master, masterVol);
+        ChangeVolume(AudioSlider.VolumeType.Music, musicVol);
+        ChangeVolume(AudioSlider.VolumeType.SFX, sfxVol);
+
         SetTheme(ThemeNames.CheckingIntoStation);
     }
 
@@ -143,14 +154,14 @@ public class AudioManager : MonoBehaviour
         newTrack.volume = 1f;
     }
 
-    public void ChangeSFXVolume(float newVolume)
+    /*public void ChangeSFXVolume(float newVolume)
     {
         foreach (Sound s in sounds)
         {
             s.volume = newVolume;
             s.source.volume = newVolume;
         }
-    }
+    }*/
 
     #endregion
 
@@ -229,10 +240,44 @@ public class AudioManager : MonoBehaviour
         nextThemeSource = temp;
     }
 
-    public void ChangeMusicVolume(float newVolume)
+    /*public void ChangeMusicVolume(float newVolume)
     {
         themeSource.volume = newVolume;
-    }
+    }*/
 
     #endregion
+
+    public void ChangeVolume(AudioSlider.VolumeType volumeType, float newVol)
+    {
+        switch (volumeType)
+        {
+            case AudioSlider.VolumeType.Master:
+                var masterGroup = audioMixer.FindMatchingGroups("Master")[0];
+                if (masterGroup.audioMixer.GetFloat("VolumeMaster", out float volumeMaster))
+                {
+                    masterGroup.audioMixer.SetFloat("VolumeMaster", newVol);
+                }
+
+                SaveManager.instance.SaveSettings(SaveManager.SettingsType.volumeMaster, newVol.ToString());
+                break;
+
+            case AudioSlider.VolumeType.Music:
+                var musicGroup = audioMixer.FindMatchingGroups("Music")[0];
+                if (musicGroup.audioMixer.GetFloat("VolumeMusic", out float volumeMusic))
+                {
+                    musicGroup.audioMixer.SetFloat("VolumeMusic", newVol);
+                }
+                SaveManager.instance.SaveSettings(SaveManager.SettingsType.volumeMusic, newVol.ToString());
+                break;
+
+            case AudioSlider.VolumeType.SFX:
+                var sfxGroup = audioMixer.FindMatchingGroups("SFX")[0];
+                if (sfxGroup.audioMixer.GetFloat("VolumeSFX", out float volumeSFX))
+                {
+                    sfxGroup.audioMixer.SetFloat("VolumeSFX", newVol);
+                }
+                SaveManager.instance.SaveSettings(SaveManager.SettingsType.volumeSFX, newVol.ToString());
+                break;
+        }
+    }
 }

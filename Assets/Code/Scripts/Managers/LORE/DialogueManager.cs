@@ -10,15 +10,12 @@ using Special = CrabInfo.SpecialCharacter;
 [Serializable]
 public class DialogueData
 {
-    public DialogueNodeGeneric[] nodesGeneric;
-    public DialogueNodePlot[] nodesPlot;
+
 
     public string[] nodeGenericAnyChars; // casual dialogue, any character
     public DialogueNodePlotAnyChar[] nodePlotAnyChars;    // plot dialogue, any character
 
     //TODO: load these 
-    public string[] nodesNonCrustacean;
-    public string[] nodesCrustacean;
     public string[] nodesVet;
 
     public string[] ittyBitty;
@@ -29,21 +26,6 @@ public class DialogueData
     public string[] granny;
     public string[] gramps;
     public string[] gramps_ending;
-}
-
-[Serializable]
-public class DialogueNodeGeneric // casual dialogue, character specific
-{
-    public string character;
-    public string[] text;
-}
-
-[Serializable]
-public class DialogueNodePlot   // plot dialouge, character specific
-{
-    public int plotID;
-    public string character;
-    public string[] text;
 }
 
 [Serializable]
@@ -108,16 +90,6 @@ public class DialogueManager : MonoBehaviour
 
     public void GetDialogueGeneric(string character)
     {
-        string text;
-        for (int i = 0; i < dialogueData.nodesGeneric.Length; i++)
-        {
-            if (dialogueData.nodesGeneric[i].character == character)
-            {
-                text = dialogueData.nodesGeneric[i].text[UnityEngine.Random.Range(0, dialogueData.nodesGeneric[i].text.Length)];
-                dialogueObject.ShowDialogue(text);
-                return;
-            }
-        }
         GetDialogueGeneric();
     }
     public void GetDialogueGeneric()
@@ -128,17 +100,6 @@ public class DialogueManager : MonoBehaviour
 
     public void GetDialoguePlot(string character, int stage)
     {
-        string text;
-        for (int i = 0; i < dialogueData.nodesPlot.Length; i++)
-        {
-            if (dialogueData.nodesPlot[i].character == character && dialogueData.nodesPlot[i].plotID == stage)
-            {
-
-                text = dialogueData.nodesPlot[i].text[UnityEngine.Random.Range(0, dialogueData.nodesPlot[i].text.Length)];
-                dialogueObject.ShowDialogue(text);
-                return;
-            }
-        }
         GetDialogueGeneric();
     }
 

@@ -223,7 +223,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 47675254}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 414618968}
+        m_TargetAssemblyTypeName: MailroomManager, Assembly-CSharp
+        m_MethodName: ClickTrinketCeramic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &47675254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2841,7 +2853,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 752417014}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 414618968}
+        m_TargetAssemblyTypeName: MailroomManager, Assembly-CSharp
+        m_MethodName: ClickTrinketSoft
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &752417014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3544,7 +3568,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1070493135}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 414618968}
+        m_TargetAssemblyTypeName: MailroomManager, Assembly-CSharp
+        m_MethodName: ClickTrinketSoft
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1070493135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3778,7 +3814,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1193024455}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 414618968}
+        m_TargetAssemblyTypeName: MailroomManager, Assembly-CSharp
+        m_MethodName: ClickTrinketCeramic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!95 &1193024458
 Animator:
   serializedVersion: 7
@@ -5546,7 +5594,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2093366933}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 414618968}
+        m_TargetAssemblyTypeName: MailroomManager, Assembly-CSharp
+        m_MethodName: ClickTrinketCeramic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2093366933
 MonoBehaviour:
   m_ObjectHideFlags: 0

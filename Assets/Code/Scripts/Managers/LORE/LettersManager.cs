@@ -11,10 +11,30 @@ public class FullStackLetter
 }
 
 [Serializable]
+public class FullStackLetterByDay
+{
+    public int day;
+    public string top;
+    public string body;
+    public string bottom;
+}
+
+[Serializable]
+public class FullStackLetterByID
+{
+    public string id;
+    public string top;
+    public string body;
+    public string bottom;
+}
+
+[Serializable]
 public class LetterData
 {
-    public string[] letterNodesCrustyCo;
-    public string[] letterNodesCrustyCoAnyDay;
+    public FullStackLetterByDay[] letterNodesCrustyCoByDay;
+    public FullStackLetterByDay[] letterNodesCrustyCoByDay_GoodEnding;
+    public FullStackLetterByDay[] letterNodesCrustyCoByDay_BadEnding;
+    public FullStackLetterByID[] letterNodesCrustyCoByID;
 
     public FullStackLetter[] letterNodesFamily;
     public FullStackLetter[] letterNodesMailkeeper;
@@ -46,15 +66,30 @@ public class LettersManager : MonoBehaviour
             Debug.Log("file not found");
         }
     }
- 
-    public string GetCrustyCoLetterByDay(int day)
+
+    public FullStackLetterByDay GetCrustyCoLetterByDay(int day, bool isEndingDependent = false, bool isGoodEnding = false)
     {
-        return letterData.letterNodesCrustyCo[Constants.instance.LETTER_dayToIdxCrustyCo[day]];
+        if (isEndingDependent)
+        {
+            int idx = Constants.instance.LETTER_dayToIdxCrustyCoEndings[day];
+
+            if (isGoodEnding)
+            {
+                return letterData.letterNodesCrustyCoByDay_GoodEnding[idx];
+            }
+            else
+            {
+                return letterData.letterNodesCrustyCoByDay_BadEnding[idx];
+            }
+        }
+
+        int regIdx = Constants.instance.LETTER_dayToIdxCrustyCo[day];
+        return letterData.letterNodesCrustyCoByDay[regIdx];
     }
 
-    public string GetCrustyCoLetterByIdx(int idx)
+    public FullStackLetterByID GetCrustyCoLetterByID(int id)
     {
-        return letterData.letterNodesCrustyCoAnyDay[idx];
+        return letterData.letterNodesCrustyCoByID[id];
     }
 
     public FullStackLetter GetFamilyLetter(int day)

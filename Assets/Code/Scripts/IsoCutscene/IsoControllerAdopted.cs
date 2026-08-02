@@ -26,20 +26,24 @@ public class IsoControllerAdopted : IsoController, IPointerEnterHandler, IPointe
 
     }
 
+	protected override void Awake()
+	{
+        rectTransform = GetComponent<RectTransform>();
+        rectTransform.anchoredPosition = startingPos;
+        StartCoroutine(WaitThenSwitchStates());
+	}
+
     private void Start()
     {
         int colorIdx = SaveManager.instance.GetIso_Color();
         walkingSprite.GetComponent<Image>().sprite = walkIsoSprites[colorIdx];
         rollingSprite.GetComponent<Image>().sprite = rolledIsoSprites[colorIdx];
-
-        rectTransform = GetComponent<RectTransform>();
-        StartCoroutine(WaitThenSwitchStates());
     }
 
     protected override float Move() // helper func for Roll and Walk
     {
-        float targetX = Random.Range(-429, 612);
-        float targetY = Random.Range(-297, -281);
+        float targetX = Random.Range(-569, 561);
+        float targetY = Random.Range(-14, -22);
 
         targetPos = new Vector2(targetX, targetY);
         currPos = rectTransform.anchoredPosition;

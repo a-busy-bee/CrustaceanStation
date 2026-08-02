@@ -43,7 +43,7 @@ public class IsoController : MonoBehaviour
     virtual protected void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
-        rectTransform.anchoredPosition = startingPos;
+        //rectTransform.anchoredPosition = startingPos;
 
         StartCoroutine(WaitThenSwitchStates());
     }
