@@ -36,7 +36,7 @@ public class AchievementManager : MonoBehaviour
 
     public void UnlockAchievementBool(AchievementTypeBool type)
     {
-        if (!SteamManager.Initialized) return;
+        /*if (!SteamManager.Initialized) return;
 
         bool isUnlocked;
         if (SteamUserStats.GetAchievement(type.ToString(), out isUnlocked))
@@ -44,12 +44,12 @@ public class AchievementManager : MonoBehaviour
             if (isUnlocked) return;
 
             SteamUserStats.SetAchievement(type.ToString());
-        }
+        }*/
     }
 
     public void UnlockAchievementProgressive(AchievementTypeProgressive type, int increase)
     {
-        if (!SteamManager.Initialized) return;
+        /*if (!SteamManager.Initialized) return;
 
         int currCount;
         if (SteamUserStats.GetStat(type.ToString() + "_stat", out currCount))
@@ -58,12 +58,12 @@ public class AchievementManager : MonoBehaviour
 
             SteamUserStats.SetStat(type.ToString(), newCount);
             SteamUserStats.StoreStats();
-        }
+        }*/
     }
 
     public bool IsBoolAchievementUnlocked(AchievementTypeBool type)
     {
-        if (!SteamManager.Initialized) return false;
+        /*if (!SteamManager.Initialized) return false;
 
         bool isUnlocked;
         if (SteamUserStats.GetAchievement(type.ToString(), out isUnlocked))
@@ -71,12 +71,13 @@ public class AchievementManager : MonoBehaviour
             if (isUnlocked) return true;
         }
 
+        return false;*/
         return false;
     }
 
     public bool IsProgressiveAchievementUnlocked(AchievementTypeProgressive type)
     {
-        if (!SteamManager.Initialized) return false;
+        /*if (!SteamManager.Initialized) return false;
 
         bool isUnlocked;
         if (SteamUserStats.GetAchievement(type.ToString() + "_stat", out isUnlocked))
@@ -84,6 +85,7 @@ public class AchievementManager : MonoBehaviour
             if (isUnlocked) return true;
         }
 
+        return false;*/
         return false;
     }
     
