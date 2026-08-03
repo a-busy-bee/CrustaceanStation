@@ -2,12 +2,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
 
-public class CutscenePlayer_Good : MonoBehaviour
+public class CutscenePlayer_Dialogue : MonoBehaviour
 {
-    public static CutscenePlayer_Good instance { get; private set; }
+    public static CutscenePlayer_Dialogue instance { get; private set; }
 
     private const int normalSceneLength = 2;
-    //private const int animatedSceneLength = 2;
     private float sceneLength = 2;
 
     // scenes
@@ -16,16 +15,39 @@ public class CutscenePlayer_Good : MonoBehaviour
     [SerializeField] private CanvasGroup fadeToBlack;
     [SerializeField] private CanvasGroup clickToContinueText;
     [SerializeField] private GameObject clickToContinue;
-    [SerializeField] private GameObject gramps;
+    [SerializeField] private GameObject character;
     private int currSceneIdx = 0;
     private bool fading;
     private float currVelocity;
 
-    // gramps dialogue
-    private int currGrampsDialogue = 0;
+    // dialogue
+    private int currDialogue = 0;
     private IEnumerator WaitClickToContinueTimer;
     private bool fadingClickToContinue;
     private float currVelocityClickToContinue;
+
+    // variables across diff instances
+    public enum NextScene
+    {
+        TitleScreen,
+        Home
+    }
+    public enum DialogueType
+    {
+        grampsEnding,
+        vet1,
+        vet2,
+        vet3good,
+        vet4good,
+        vet3bad,
+        vet4bad
+    }
+    [Header("Instance-Specific")]
+    [SerializeField] private NextScene nextScene;
+    [SerializeField] private DialogueType dialogueType;
+    [SerializeField] private int numScenesBeforeDialogue = 0; // 3
+    [SerializeField] private int animatedScene = -1; // 2
+    private int numDialogues = 0; // 39
 
     private void Awake()
     {
@@ -54,13 +76,13 @@ public class CutscenePlayer_Good : MonoBehaviour
 
     public void ProgressScene()
     {
-        if (currSceneIdx < 3) // scenes before dialogue
+        if (currSceneIdx < numScenesBeforeDialogue) // scenes before dialogue
         {
             scenes[currSceneIdx].SetActive(false);
             currSceneIdx++;
             scenes[currSceneIdx].SetActive(true);
 
-            if (currSceneIdx == 2) // if a scene is animated, but we don't have that rn
+            if (currSceneIdx == animatedScene) // if a scene is animated, but we don't have that rn
             {
                 //scenes[currSceneIdx - 1].SetActive(true);
                 //sceneLength = animatedSceneLength;
@@ -70,28 +92,28 @@ public class CutscenePlayer_Good : MonoBehaviour
 
             StartCoroutine(WaitThenContinueNextScene());
         }
-        else if (currSceneIdx == 3)
+        else if (currSceneIdx == numScenesBeforeDialogue)
         {
-
-            AppearGramps();
+            numDialogues = DialogueManager.instance.GetNumDialoguesForCharacterLongDialogue(dialogueType);
+            AppearCharacter();
         }
 
     }
 
-    private void AppearGramps()
+    private void AppearCharacter()
     {
-        // appear gramps
-        gramps.GetComponent<SmoothLerp>().Move(new Vector2(0, 0), 0.5f);
+        // appear character
+        character.GetComponent<SmoothLerp>().Move(new Vector2(0, 0), 0.5f);
 
-        StartCoroutine(WaitForGrampsToAppear());
+        StartCoroutine(WaitForCharacterToAppear());
     }
 
     private void Dialogue(int idx)
     {
         // show dialogue at idx
-        DialogueManager.instance.ShowGrampsGoodEndingDialogue(idx);
-
-        if (currGrampsDialogue == 39)
+        DialogueManager.instance.ShowCharacterLongDialogue(dialogueType, idx);
+        
+        if (currDialogue == numDialogues)
         {
             StartCoroutine(WaitThenFade());
             return;
@@ -111,12 +133,12 @@ public class CutscenePlayer_Good : MonoBehaviour
         fading = true;
     }
 
-    private IEnumerator WaitForGrampsToAppear()
+    private IEnumerator WaitForCharacterToAppear()
     {
         yield return new WaitForSeconds(0.75f);
 
         // show first dialogue
-        Dialogue(currGrampsDialogue);
+        Dialogue(currDialogue);
     }
 
     private IEnumerator ClickToContinueTimer()
@@ -140,8 +162,8 @@ public class CutscenePlayer_Good : MonoBehaviour
 
         DialogueManager.instance.ClearDialogue();
 
-        currGrampsDialogue++;
-        Dialogue(currGrampsDialogue);
+        currDialogue++;
+        Dialogue(currDialogue);
     }
 
     private IEnumerator WaitThenContinueNextScene()
@@ -160,7 +182,7 @@ public class CutscenePlayer_Good : MonoBehaviour
             {
                 fading = false;
                 AudioManager.instance.SwitchTheme(AudioManager.ThemeNames.CheckingIntoStation);
-                SceneManager.LoadScene("TitleScreen");
+                SceneManager.LoadScene(nextScene.ToString());
             }
         }
 

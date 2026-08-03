@@ -141,9 +141,39 @@ public class DialogueManager : MonoBehaviour
         dialogueObject.ClearDialogue();
     }
 
-    public void ShowGrampsGoodEndingDialogue(int idx)
+    public void ShowCharacterLongDialogue(CutscenePlayer_Dialogue.DialogueType type, int idx)
     {
-        string text = dialogueData.gramps_ending[idx];
+        string text = "";
+        switch (type)
+        {
+            case CutscenePlayer_Dialogue.DialogueType.grampsEnding:
+                text = dialogueData.gramps_ending[idx];
+                break;
+            case CutscenePlayer_Dialogue.DialogueType.vet1:
+                text = dialogueData.gramps_ending[idx];
+                break;
+            case CutscenePlayer_Dialogue.DialogueType.vet2:
+                text = dialogueData.gramps_ending[idx];
+                break;
+            case CutscenePlayer_Dialogue.DialogueType.vet3good:
+                text = dialogueData.gramps_ending[idx];
+                break;
+            case CutscenePlayer_Dialogue.DialogueType.vet4good:
+                text = dialogueData.gramps_ending[idx];
+                break;
+            case CutscenePlayer_Dialogue.DialogueType.vet3bad:
+                text = dialogueData.gramps_ending[idx];
+                break;
+            case CutscenePlayer_Dialogue.DialogueType.vet4bad:
+                text = dialogueData.gramps_ending[idx];
+                break;
+        }
+
         dialogueObject.ShowDialogue(text);
+    }
+
+    public int GetNumDialoguesForCharacterLongDialogue(CutscenePlayer_Dialogue.DialogueType type)
+    {
+        return 0;
     }
 }
