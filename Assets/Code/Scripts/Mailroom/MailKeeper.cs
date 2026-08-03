@@ -16,30 +16,31 @@ public class MailKeeper : MonoBehaviour, IPointerClickHandler
 
     private void Awake()
     {
-        isMoving = true;
+        //isMoving = true;
         animator = GetComponent<Animator>();
     }
 
-    private void Update()
-    {
-        if (isMoving)
-        {
+    //private void Update()
+    //{
+    //    if (isMoving)
+    //    {
 
-            rectTransform.anchoredPosition = Vector3.SmoothDamp(rectTransform.anchoredPosition, endPos, ref currentVelocity, 0.25f);
+    //        rectTransform.anchoredPosition = Vector3.SmoothDamp(rectTransform.anchoredPosition, endPos, ref currentVelocity, 0.25f);
 
-            if (Vector2.Distance(rectTransform.anchoredPosition, endPos) < 0.1f)
-            {
-                isMoving = false;
-                rectTransform.anchoredPosition = endPos;
+    //        if (Vector2.Distance(rectTransform.anchoredPosition, endPos) < 0.1f)
+    //        {
+    //            isMoving = false;
+    //            rectTransform.anchoredPosition = endPos;
 
-            }
+    //        }
 
 
-        }
-    }
+    //    }
+    //}
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        animator.SetTrigger("tapped");
         if (isTapped) return;
 
         isTapped = true;
