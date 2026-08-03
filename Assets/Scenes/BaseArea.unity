@@ -17941,7 +17941,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 515343660, guid: 939670a61c75d4c87b007142833d6494, type: 3}
+  m_Sprite: {fileID: 1701385492, guid: 979eea390c778a845a6b7754d1a4291c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -21001,6 +21001,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7924220835788431779, guid: 7b5202ffaae054782b8f3eb9e083d27f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22719,7 +22723,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 979728749, guid: 939670a61c75d4c87b007142833d6494, type: 3}
+  m_Sprite: {fileID: -330062948, guid: 8f8528c3e7e53c14eaea5ff5ab2d8a5f, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -25237,7 +25241,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1803311819, guid: 939670a61c75d4c87b007142833d6494, type: 3}
+  m_Sprite: {fileID: 617935984, guid: 8f8528c3e7e53c14eaea5ff5ab2d8a5f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
