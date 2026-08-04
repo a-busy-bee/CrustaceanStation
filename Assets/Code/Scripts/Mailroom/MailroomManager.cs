@@ -290,7 +290,7 @@ public class MailroomManager : MonoBehaviour
                         break;
                 }
 
-                text = GetComponent<FeedbackManager>().GetCharacterFeedback(special, currDay);
+                text = GetComponent<FeedbackManager>().GetCharacterFeedback(special, inboxItem.id);
                 feedbackFormName.text = Constants.instance.specialEnumToStringName[special];
             }
             feedbackForm.GetComponent<RectTransform>().GetChild(0).GetComponent<TextMeshProUGUI>().text = text;

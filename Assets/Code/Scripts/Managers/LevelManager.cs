@@ -66,6 +66,7 @@ public class LevelManager : LevelManagerBase
 
             case LMState.Summary: // TODO: have summary show after all characters are seen
                 {
+
                     Kiosk.instance.SetState(Kiosk.KioskState.EndOfDay);
                     SaveManager.instance.SetProgression_IncrementCurrDay();
 
@@ -82,7 +83,6 @@ public class LevelManager : LevelManagerBase
                     //summaryMenu.GetComponent<Summary>().SetCrabsProcessed(Kiosk.instance.GetTotalCrabs());
 
                     dayStarted = false;
-
                     AddMail();
                 }
                 break;
@@ -145,7 +145,8 @@ public class LevelManager : LevelManagerBase
         CrabInfo.SpecialCharacter[] specialsToday = constants.SELECTOR_dayToCharacter[currDay];
         for (int i = 0; i < specialsToday.Length; i++)
         {
-            PlotManager.instance.AddMail("feedbackForm", specialsToday[i].ToString(), currDay);
+            if (Constants.instance.FEEDBACK_characterToDayToIdx[specialsToday[i]].ContainsKey(currDay)) 
+                PlotManager.instance.AddMail("feedbackForm", specialsToday[i].ToString(), currDay);
         }
     }
 

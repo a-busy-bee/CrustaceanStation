@@ -394,6 +394,7 @@ MonoBehaviour:
   hoverAnimator: {fileID: 69531959}
   particlesObject: {fileID: 456276809}
   particlesObjectAnimator: {fileID: 456276810}
+  isMedication: 1
 --- !u!61 &69531958
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3045,6 +3046,7 @@ MonoBehaviour:
   hoverAnimator: {fileID: 1804065482}
   particlesObject: {fileID: 714073658}
   particlesObjectAnimator: {fileID: 714073660}
+  isMedication: 0
 --- !u!61 &1804065481
 BoxCollider2D:
   m_ObjectHideFlags: 0

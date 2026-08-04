@@ -220,6 +220,8 @@ public class IsoController : MonoBehaviour
         IsoState newState = IsoState.walking;
         if (Random.Range(0.0f, 1.0f) < rollChance) newState = IsoState.rolling;
 
+        if (prevState != newState) AudioManager.instance.PlaySound(AudioManager.SoundNames.PopupBubble, true);
+
         SetState(newState);
     }
     

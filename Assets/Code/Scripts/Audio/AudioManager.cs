@@ -19,7 +19,20 @@ public class AudioManager : MonoBehaviour
         KioskButton,
         Switch,
         Ticket,
-        Ceramic
+        Ceramic,
+        TrainExhaust,
+        TrainHorn,
+        PopupSmall,
+        PopupThick,
+        PopupBubble,
+        PopupClose,
+        CharAppear,
+        IdHover,
+        Pills,
+        IsoFood,
+        CharPlace,
+        ShuttleArrive,
+        ShuttleDepart
     }
 
     public enum ThemeNames
@@ -68,7 +81,6 @@ public class AudioManager : MonoBehaviour
             s.source = audioManagerObj.AddComponent<AudioSource>();
             s.source.clip = s.clip;
             s.source.volume = s.volume;
-            s.source.pitch = s.pitch;
             s.source.loop = s.loop;
             s.source.outputAudioMixerGroup = audioMixer.FindMatchingGroups("SFX")[0];
         }

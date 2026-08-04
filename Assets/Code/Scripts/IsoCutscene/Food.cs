@@ -7,6 +7,7 @@ public class Food : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler, I
     [SerializeField] private Animator hoverAnimator;
     [SerializeField] private GameObject particlesObject;
     [SerializeField] private Animator particlesObjectAnimator;
+    [SerializeField] private bool isMedication;
     private Animator animator;
     private bool active = false;
     private bool used = false;
@@ -41,7 +42,9 @@ public class Food : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler, I
         animator.Play("Lift");
         yield return new WaitForSeconds(0.75f);
 
-        particlesObject.SetActive(true);
+        if (isMedication) AudioManager.instance.PlaySound(AudioManager.SoundNames.Pills);
+        else AudioManager.instance.PlaySound(AudioManager.SoundNames.IsoFood);
+            particlesObject.SetActive(true);
         particlesObjectAnimator.Play("Particles");
         yield return new WaitForSeconds(1f);
 
