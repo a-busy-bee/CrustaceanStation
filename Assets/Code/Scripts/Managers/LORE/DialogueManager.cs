@@ -26,6 +26,12 @@ public class DialogueData
     public string[] granny;
     public string[] gramps;
     public string[] gramps_ending;
+    public string[] vet1;
+    public string[] vet2;
+    public string[] vet3Good;
+    public string[] vet4Good;
+    public string[] vet3Bad;
+    public string[] vet4Bad;
 }
 
 [Serializable]
@@ -150,22 +156,22 @@ public class DialogueManager : MonoBehaviour
                 text = dialogueData.gramps_ending[idx];
                 break;
             case CutscenePlayer_Dialogue.DialogueType.vet1:
-                text = dialogueData.gramps_ending[idx];
+                text = dialogueData.vet1[idx];
                 break;
             case CutscenePlayer_Dialogue.DialogueType.vet2:
-                text = dialogueData.gramps_ending[idx];
+                text = dialogueData.vet2[idx];
                 break;
             case CutscenePlayer_Dialogue.DialogueType.vet3good:
-                text = dialogueData.gramps_ending[idx];
+                text = dialogueData.vet3Good[idx];
                 break;
             case CutscenePlayer_Dialogue.DialogueType.vet4good:
-                text = dialogueData.gramps_ending[idx];
+                text = dialogueData.vet4Good[idx];
                 break;
             case CutscenePlayer_Dialogue.DialogueType.vet3bad:
-                text = dialogueData.gramps_ending[idx];
+                text = dialogueData.vet3Bad[idx];
                 break;
             case CutscenePlayer_Dialogue.DialogueType.vet4bad:
-                text = dialogueData.gramps_ending[idx];
+                text = dialogueData.vet4Bad[idx];
                 break;
         }
 
@@ -174,6 +180,32 @@ public class DialogueManager : MonoBehaviour
 
     public int GetNumDialoguesForCharacterLongDialogue(CutscenePlayer_Dialogue.DialogueType type)
     {
-        return 0;
+        int numDialogues = 0;
+        switch (type)
+        {
+            case CutscenePlayer_Dialogue.DialogueType.grampsEnding:
+                numDialogues = dialogueData.gramps_ending.Length;
+                break;
+            case CutscenePlayer_Dialogue.DialogueType.vet1:
+                numDialogues = dialogueData.vet1.Length;
+                break;
+            case CutscenePlayer_Dialogue.DialogueType.vet2:
+                numDialogues = dialogueData.vet2.Length;
+                break;
+            case CutscenePlayer_Dialogue.DialogueType.vet3good:
+                numDialogues = dialogueData.vet3Good.Length;
+                break;
+            case CutscenePlayer_Dialogue.DialogueType.vet4good:
+                numDialogues = dialogueData.vet4Good.Length;
+                break;
+            case CutscenePlayer_Dialogue.DialogueType.vet3bad:
+                numDialogues = dialogueData.vet3Bad.Length;
+                break;
+            case CutscenePlayer_Dialogue.DialogueType.vet4bad:
+                numDialogues = dialogueData.vet4Bad.Length;
+                break;
+        }
+
+        return numDialogues;
     }
 }

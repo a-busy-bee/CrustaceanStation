@@ -6,11 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class VetManager : MonoBehaviour
 {
-    [SerializeField] private GameObject returnHomeButton;
-    [SerializeField] private GameObject goodEndingButton;
-    [SerializeField] private GameObject badEndingButton;
+    //[SerializeField] private GameObject returnHomeButton;
+    //[SerializeField] private GameObject goodEndingButton;
+    //[SerializeField] private GameObject badEndingButton;
     [SerializeField] private GameObject vet;
     [SerializeField] private GameObject medicationBottle;
+    private int currDay;
 
     [Header("Iso")]
     [SerializeField] private Sprite[] rollingSprites;
@@ -21,29 +22,46 @@ public class VetManager : MonoBehaviour
 
     private void Start()
     {
+        currDay = SaveManager.instance.GetProgression_CurrDay();
+        currDay = 5;
+        if (currDay / 5 == 1) CutscenePlayer_Dialogue.instance.SetDialogueType(CutscenePlayer_Dialogue.DialogueType.vet1);
+        else if (currDay / 5 == 2) CutscenePlayer_Dialogue.instance.SetDialogueType(CutscenePlayer_Dialogue.DialogueType.vet2);
+        else if (currDay / 5 == 3)
+        {
+            if (PlotManager.instance.IsGoodEnding()) CutscenePlayer_Dialogue.instance.SetDialogueType(CutscenePlayer_Dialogue.DialogueType.vet3good);
+            else CutscenePlayer_Dialogue.instance.SetDialogueType(CutscenePlayer_Dialogue.DialogueType.vet3bad);
+        }
+        else if (currDay / 5 == 4)
+        {
+            if (PlotManager.instance.IsGoodEnding())
+            {
+                CutscenePlayer_Dialogue.instance.SetNextScene(CutscenePlayer_Dialogue.NextScene.EndingGood);
+                CutscenePlayer_Dialogue.instance.SetDialogueType(CutscenePlayer_Dialogue.DialogueType.vet4good);
+            }
+            else
+            {
+                CutscenePlayer_Dialogue.instance.SetNextScene(CutscenePlayer_Dialogue.NextScene.EndingBad);
+                CutscenePlayer_Dialogue.instance.SetDialogueType(CutscenePlayer_Dialogue.DialogueType.vet4bad);
+            }
+        }
+
         medicationBottle.SetActive(false);
-        returnHomeButton.SetActive(false);
-        goodEndingButton.SetActive(false);
-        badEndingButton.SetActive(false);
 
         int colorIdx = SaveManager.instance.GetIso_Color();
         isoWalkSprite.GetComponent<Image>().sprite = walkingSprites[colorIdx];
         isoRollSprite.GetComponent<Image>().sprite = rollingSprites[colorIdx];
-
-        vet.GetComponent<SmoothLerp>().Move(new Vector2(-421, 127), 0.25f);
-        StartCoroutine(WaitThenContinue());
     }
 
-    private IEnumerator WaitThenContinue()
+    /*private IEnumerator WaitThenContinue()
     {
         yield return new WaitForSeconds(0.5f);
 
         // show dialogue
-        DialogueManager.instance.GetDialogueVet();
+        //DialogueManager.instance.GetDialogueVet();
 
-        yield return new WaitForSeconds(1f);
+        /*yield return new WaitForSeconds(1f);
 
-        int currDay = SaveManager.instance.GetProgression_CurrDay();
+        
         if (currDay / 5 == 1)
         {
             medicationBottle.SetActive(true);
@@ -78,9 +96,9 @@ public class VetManager : MonoBehaviour
             badEndingButton.SetActive(true);
         }
         
-    }
+    }*/
 
-    public void ReturnHome()
+    /*public void ReturnHome()
     {
         SaveManager.instance.SetProgression_IncrementCurrDay();
         AudioManager.instance.SwitchTheme(AudioManager.ThemeNames.CheckingIntoStation);
@@ -99,7 +117,7 @@ public class VetManager : MonoBehaviour
         AchievementManager.instance.UnlockAchievementBool(AchievementManager.AchievementTypeBool.whatHaveIDone);
         AudioManager.instance.SwitchTheme(AudioManager.ThemeNames.CheckingIntoStation);
         SceneManager.LoadScene("EndingBad");
-    }
+    }*/
 
     public void ClickMedBottle()
     {

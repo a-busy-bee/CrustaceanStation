@@ -30,7 +30,9 @@ public class CutscenePlayer_Dialogue : MonoBehaviour
     public enum NextScene
     {
         TitleScreen,
-        Home
+        Home,
+        EndingGood,
+        EndingBad
     }
     public enum DialogueType
     {
@@ -47,6 +49,8 @@ public class CutscenePlayer_Dialogue : MonoBehaviour
     [SerializeField] private DialogueType dialogueType;
     [SerializeField] private int numScenesBeforeDialogue = 0; // 3
     [SerializeField] private int animatedScene = -1; // 2
+    [SerializeField] private float charTargetX;
+    [SerializeField] private float charTargetY;
     private int numDialogues = 0; // 39
 
     private void Awake()
@@ -68,10 +72,24 @@ public class CutscenePlayer_Dialogue : MonoBehaviour
         clickToContinue.SetActive(false);
 
         firstBlackBkg.SetActive(true);
-        scenes[currSceneIdx].SetActive(true);
+        if (scenes.Length != 0) scenes[currSceneIdx].SetActive(true);
         fadeToBlack.alpha = 0;
 
+        if (dialogueType == DialogueType.grampsEnding)
+        {
+            StartCoroutine(WaitThenContinueNextScene());
+        }
+    }
+
+    public void SetDialogueType(DialogueType newType)
+    {
+        dialogueType = newType;
         StartCoroutine(WaitThenContinueNextScene());
+    }
+
+    public void SetNextScene(NextScene newScene)
+    {
+        nextScene = newScene;
     }
 
     public void ProgressScene()
@@ -103,21 +121,22 @@ public class CutscenePlayer_Dialogue : MonoBehaviour
     private void AppearCharacter()
     {
         // appear character
-        character.GetComponent<SmoothLerp>().Move(new Vector2(0, 0), 0.5f);
+        character.GetComponent<SmoothLerp>().Move(new Vector2(charTargetX, charTargetY), 0.5f);
 
         StartCoroutine(WaitForCharacterToAppear());
     }
 
     private void Dialogue(int idx)
     {
-        // show dialogue at idx
-        DialogueManager.instance.ShowCharacterLongDialogue(dialogueType, idx);
-        
         if (currDialogue == numDialogues)
         {
+            Debug.Log("aaaaaaaa");
             StartCoroutine(WaitThenFade());
             return;
         }
+
+        // show dialogue at idx
+        DialogueManager.instance.ShowCharacterLongDialogue(dialogueType, idx);
 
         // enable click to continue
         clickToContinue.SetActive(true);
@@ -168,7 +187,9 @@ public class CutscenePlayer_Dialogue : MonoBehaviour
 
     private IEnumerator WaitThenContinueNextScene()
     {
-        yield return new WaitForSeconds(sceneLength);
+        if (scenes.Length == 0) yield return new WaitForSeconds(0);
+        else yield return new WaitForSeconds(sceneLength);
+        
         ProgressScene();
     }
 

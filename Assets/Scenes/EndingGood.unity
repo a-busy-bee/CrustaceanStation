@@ -333,7 +333,13 @@ MonoBehaviour:
   fadeToBlack: {fileID: 805122}
   clickToContinueText: {fileID: 1286746751}
   clickToContinue: {fileID: 1286746749}
-  gramps: {fileID: 152456075}
+  character: {fileID: 152456075}
+  nextScene: 0
+  dialogueType: 0
+  numScenesBeforeDialogue: 3
+  animatedScene: 2
+  charTargetX: 0
+  charTargetY: 0
 --- !u!114 &35626480
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -602,7 +608,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0976c447496b541f9b424a4869984c2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ClickToContinueEnding
-  cutscenePlayer_Good: {fileID: 35626479}
+  cutscenePlayer_Dialogue: {fileID: 35626479}
 --- !u!1 &463479128
 GameObject:
   m_ObjectHideFlags: 0
