@@ -24,12 +24,14 @@ public class PerformanceManager : MonoBehaviour
     private float stepSize = 0.1f;
 
     private Animator animator;
+    private bool sparkled = false;
 
     [SerializeField] private Slider sliderKiosk;
     [SerializeField] private Slider sliderSummary;
     [SerializeField] private Image sliderKioskColor;
     [SerializeField] private Image sliderSummaryColor;
     [SerializeField] private Color[] sliderColors;
+    [SerializeField] private Animator sparkleAnimator;
 
     [Header("Summary Numbers")]
     [SerializeField] private TextMeshProUGUI numWrongText;
@@ -37,6 +39,7 @@ public class PerformanceManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI numTransportText;
     [SerializeField] private TextMeshProUGUI numSeatingText;
     [SerializeField] private TextMeshProUGUI numHappyText;
+
 
     public enum MistakeType
     {
@@ -121,17 +124,12 @@ public class PerformanceManager : MonoBehaviour
     [ContextMenu("Incorrect")]
     public void Incorrect(MistakeType mistake)
     {
-        UnityEngine.Debug.Log("incorrect");
-        UnityEngine.Debug.Log("animating");
-        animator.enabled = true;
-        animator.Play("Rumble", 0, 0f);
-        
+        animator.SetTrigger("Rumble");
         numWrong++;
         barPercent -= stepSize * 3.5f;
         if (barPercent <= 0)
         {
             barPercent = 0;
-            animator.enabled = false;
         }
 
         mistakes[mistake]++;
@@ -144,16 +142,12 @@ public class PerformanceManager : MonoBehaviour
     [ContextMenu("Incorrect Half")]
     public void IncorrectHalf(MistakeType mistake)
     {
-        UnityEngine.Debug.Log("incorrect half");
-        UnityEngine.Debug.Log("aniamting");
-        animator.enabled = true;
-        animator.Play("Rumble", 0, 0f);
+        animator.SetTrigger("Rumble");
         numWrong++;
         barPercent -= stepSize;
         if (barPercent <= 0)
         {
             barPercent = 0;
-            animator.enabled = false;
         }
 
         mistakes[mistake]++;
@@ -189,6 +183,18 @@ public class PerformanceManager : MonoBehaviour
             // todo: if moving down, do some kind of particle system or effect
 
             sliderKiosk.value = Mathf.SmoothDamp(sliderKiosk.value, barPercent, ref currentVelocity, 0.75f);
+
+            if (barPercent < sliderKiosk.value)
+            {
+                sparkled = false;
+            }
+
+            // upon reaching full bar
+            if (!sparkled && (sliderKiosk.value >= 0.95f) && (barPercent > sliderKiosk.value))
+            {
+                sparkleAnimator.SetTrigger("Sparkle");
+                sparkled = true;
+            }
 
             if (barPercent >= 0.7f)
             {
