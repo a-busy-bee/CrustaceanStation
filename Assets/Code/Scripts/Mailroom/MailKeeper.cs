@@ -41,6 +41,7 @@ public class MailKeeper : MonoBehaviour, IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData)
     {
         animator.SetTrigger("tapped");
+        AudioManager.instance.PlaySound(AudioManager.SoundNames.Punch, true);
         if (isTapped) return;
 
         isTapped = true;
@@ -48,8 +49,6 @@ public class MailKeeper : MonoBehaviour, IPointerClickHandler
         coin.SetActive(true);
         coin.GetComponent<Coin>().Clicked();
 
-        animator.SetTrigger("tapped");
         AchievementManager.instance.UnlockAchievementProgressive(AchievementManager.AchievementTypeProgressive.heLikesIt, 1);
-        AudioManager.instance.PlaySound(AudioManager.SoundNames.Punch, true);
     }
 }
