@@ -150,6 +150,7 @@ GameObject:
   - component: {fileID: 2705263172512733298}
   - component: {fileID: 8246251377001134121}
   - component: {fileID: 1981138206997648567}
+  - component: {fileID: 3801210321971896001}
   m_Layer: 0
   m_Name: SaveManager
   m_TagString: Untagged
@@ -323,6 +324,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f81334b349d664323a7a443acba8489a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AchievementManager
+--- !u!114 &3801210321971896001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2690092314690391244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef4bffeda13d7a748973ff9204401c07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SteamManager
 --- !u!1 &3988160004000971903
 GameObject:
   m_ObjectHideFlags: 0

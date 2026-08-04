@@ -3,9 +3,9 @@ using UnityEngine.EventSystems;
 
 public class ClickToContinueEnding : MonoBehaviour, IPointerClickHandler
 {
-    [SerializeField] private CutscenePlayer_Dialogue cutscenePlayer_Good;
+    [SerializeField] private CutscenePlayer_Dialogue cutscenePlayer_Dialogue;
     public void OnPointerClick(PointerEventData data)
     {
-        cutscenePlayer_Good.ClickToContinue();
+        cutscenePlayer_Dialogue.ClickToContinue();
     }
 }
