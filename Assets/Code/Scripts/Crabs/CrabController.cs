@@ -127,6 +127,7 @@ public class CrabController : MonoBehaviour
             case CrabState.Leaving:
                 {
                     RemoveTicketAndID();
+                    AudioManager.instance.PlaySound(AudioManager.SoundNames.CharAppear, true);
                     if (DialogueManager.instance != null) DialogueManager.instance.ClearDialogue();
                     //kiosk.SetState(Kiosk.KioskState.CrabLeaving);
 
@@ -159,6 +160,7 @@ public class CrabController : MonoBehaviour
                         else PresentTicketAndID();
                         Dialogue();
 
+                        AudioManager.instance.PlaySound(AudioManager.SoundNames.CharAppear, true);
                         kiosk.SetState(KioskBase.KioskState.CrabPresent);
                     }
                     else if (Vector2.Distance(rectTransform.anchoredPosition, kioskEndPos) < 0.1f)

@@ -59,6 +59,7 @@ public class TransportController : MonoBehaviour
             case TransportState.Arriving:
                 {
                     // nothing to do here, all logic in Update()
+                    AudioManager.instance.PlaySound(AudioManager.SoundNames.TrainExhaust);
                 }
                 break;
 
@@ -76,6 +77,8 @@ public class TransportController : MonoBehaviour
 
             case TransportState.Departing:
                 {
+                    AudioManager.instance.PlaySound(AudioManager.SoundNames.TrainHorn);
+
                     // give player coins
                     coins = 0;
 

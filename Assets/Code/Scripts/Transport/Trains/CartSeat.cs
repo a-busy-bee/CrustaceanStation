@@ -338,6 +338,7 @@ public class CartSeat : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
+
         int currPopupID = cartPopup.GetCurrIDOpen();
 
         if (isTaken || hasSelected) return; // TODO: implement wiggle to give player feedback
@@ -375,6 +376,7 @@ public class CartSeat : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
         isTaken = true;
 
+        AudioManager.instance.PlaySound(AudioManager.SoundNames.CharPlace, true);
         cartPopup.SeatCharacter(row, column, currPopupID);
 
         if (currReaction[cartPopup.GetCurrIDOpen()] == ReactionType.fear || currReaction[cartPopup.GetCurrIDOpen()] == ReactionType.yummy)

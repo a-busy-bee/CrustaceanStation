@@ -32,6 +32,7 @@ public class DialogueObject : MonoBehaviour
     IEnumerator WaitAFrame(string text)
     {
         yield return new WaitForEndOfFrame();
+        AudioManager.instance.PlaySound(AudioManager.SoundNames.PopupSmall, true);
         if (shortDialogueText.gameObject.GetComponent<RectTransform>().rect.width > maxWidth)
         {
             longDialogue.SetActive(true);

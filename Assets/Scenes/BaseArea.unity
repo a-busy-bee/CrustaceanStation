@@ -21105,6 +21105,26 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8246251377001134121, guid: 7b5202ffaae054782b8f3eb9e083d27f, type: 3}
+      propertyPath: sounds.Array.size
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 8246251377001134121, guid: 7b5202ffaae054782b8f3eb9e083d27f, type: 3}
+      propertyPath: sounds.Array.data[12].loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8246251377001134121, guid: 7b5202ffaae054782b8f3eb9e083d27f, type: 3}
+      propertyPath: sounds.Array.data[20].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 2f48e2aa46a688441a546cb26ba99db7, type: 3}
+    - target: {fileID: 8246251377001134121, guid: 7b5202ffaae054782b8f3eb9e083d27f, type: 3}
+      propertyPath: sounds.Array.data[20].name
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8246251377001134121, guid: 7b5202ffaae054782b8f3eb9e083d27f, type: 3}
+      propertyPath: sounds.Array.data[20].volume
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
