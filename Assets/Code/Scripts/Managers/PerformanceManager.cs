@@ -107,7 +107,7 @@ public class PerformanceManager : MonoBehaviour
     public void CorrectHalf() // for smaller increases
     {
         //Debug.Log("correct");
-        barPercent += stepSize / 2;
+        barPercent += stepSize / 2.0f;
         if (barPercent >= 1) barPercent = 1;
 
         correctCounter++;
