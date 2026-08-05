@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -14,6 +15,7 @@ public class Tutorial : MonoBehaviour
     [SerializeField] private Button approveButton;
     [SerializeField] private Button rejectButton;
 
+    private int finishedState = 0;
 
     private bool isMoving = false;
     private Vector3 currentVelocity;
@@ -102,7 +104,8 @@ public class Tutorial : MonoBehaviour
             case TutorialState.endDay1:
                 if (prev == TutorialState.endDay1) return;
                 isFirstCrab = false;
-                HideText();
+                //Debug.Log("Hidden called from switch");
+                StartCoroutine(HideText());
                 HidePointer();
                 ShowText();
                 Kiosk.instance.EnableButtons();
@@ -130,16 +133,24 @@ public class Tutorial : MonoBehaviour
         if (tutorialState == TutorialState.approve || tutorialState == TutorialState.ticketType || tutorialState == TutorialState.preferences || tutorialState == TutorialState.trainSwitch) return;
         clickAnyWhereToContinue.SetActive(true);
     }
-
-    public void HideText()
+    IEnumerator HideText()
     {
-        texts[(int)tutorialState].SetActive(false);
+        Debug.Log("hiding text for: " + texts[finishedState].name);
+        Animator animator = texts[finishedState].GetComponent<Animator>();
+        animator.enabled = true;
+        animator.SetTrigger("Hide");
+
+        yield return new WaitForSeconds(animator.GetCurrentAnimatorClipInfo(0).Length);
+
+        texts[finishedState].SetActive(false);
     }
 
     public void Continue()
     {
         clickAnyWhereToContinue.SetActive(false);
-        HideText();
+        Debug.Log("hidden called from continue");
+        finishedState = (int)tutorialState;
+        StartCoroutine(HideText());
 
         if (tutorialState == TutorialState.endDay1)
         {
