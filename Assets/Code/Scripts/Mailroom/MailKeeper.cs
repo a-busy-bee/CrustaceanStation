@@ -4,9 +4,9 @@ using UnityEngine.EventSystems;
 public class MailKeeper : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] private RectTransform rectTransform;
-    private bool isMoving = false;
-    private Vector3 endPos = new Vector3(-534, 693, 0);
-    private Vector3 currentVelocity;
+    //private bool isMoving = false;
+    //private Vector3 endPos = new Vector3(-534, 693, 0);
+    //private Vector3 currentVelocity;
     private Animator animator;
 
 
