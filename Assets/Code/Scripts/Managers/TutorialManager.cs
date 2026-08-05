@@ -10,7 +10,7 @@ public class TutorialManager : LevelManagerBase
 
     override protected void Awake()
     {
-        SaveManager.instance.ResetData();
+        //SaveManager.instance.ResetData();
         if (instance != null && instance != this)
         {
             Destroy(gameObject);
