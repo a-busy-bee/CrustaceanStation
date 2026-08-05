@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -18,25 +19,17 @@ public class MailKeeper : MonoBehaviour, IPointerClickHandler
     {
         //isMoving = true;
         animator = GetComponent<Animator>();
+
+        StartCoroutine(WaitThenSummonDialogue());
     }
 
-    //private void Update()
-    //{
-    //    if (isMoving)
-    //    {
+    private IEnumerator WaitThenSummonDialogue()
+    {
+        yield return new WaitForSeconds(1);
 
-    //        rectTransform.anchoredPosition = Vector3.SmoothDamp(rectTransform.anchoredPosition, endPos, ref currentVelocity, 0.25f);
-
-    //        if (Vector2.Distance(rectTransform.anchoredPosition, endPos) < 0.1f)
-    //        {
-    //            isMoving = false;
-    //            rectTransform.anchoredPosition = endPos;
-
-    //        }
-
-
-    //    }
-    //}
+        int currDay = SaveManager.instance.GetProgression_CurrDay();
+        DialogueManager.instance.ShowMailkeeperDialogue(currDay);
+    }
 
     public void OnPointerClick(PointerEventData eventData)
     {

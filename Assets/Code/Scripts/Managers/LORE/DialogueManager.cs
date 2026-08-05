@@ -5,6 +5,7 @@ using System.Linq;
 using Unity.Burst.Intrinsics;
 
 using Special = CrabInfo.SpecialCharacter;
+using UnityEditor.Localization.Plugins.XLIFF.V20;
 
 
 [Serializable]
@@ -32,6 +33,9 @@ public class DialogueData
     public string[] vet4Good;
     public string[] vet3Bad;
     public string[] vet4Bad;
+    public string[] mailkeeper;
+    public string[] mailkeeperGoodEnding;
+    public string[] mailkeeperBadEnding;
 }
 
 [Serializable]
@@ -207,5 +211,33 @@ public class DialogueManager : MonoBehaviour
         }
 
         return numDialogues;
+    }
+
+    public void ShowMailkeeperDialogue(int currDay)
+    {
+        if (!Constants.instance.DIALOGUE_dayToIdxMailkeeper.ContainsKey(currDay)) return;
+
+        string text = "";
+        int idx = Constants.instance.DIALOGUE_dayToIdxMailkeeper[currDay];
+        if (currDay == 17 || currDay == 19)
+        {
+            if (PlotManager.instance.IsGoodEnding())
+            {
+                // access good dialogues
+                text = dialogueData.mailkeeperGoodEnding[idx];
+            }
+            else
+            {
+                // access bad dialogues
+                text = dialogueData.mailkeeperBadEnding[idx];
+            }
+        }
+        else
+        {
+            // get dialogue from day
+            text = dialogueData.mailkeeper[idx];
+        }
+
+        dialogueObject.ShowDialogue(text);
     }
 }
