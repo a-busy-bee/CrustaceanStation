@@ -15,7 +15,7 @@ MonoBehaviour:
   m_DefaultGroup: 707c9a73fd72548fea7afe8fec8ab63e
   m_currentHash:
     serializedVersion: 2
-    Hash: 3af234db85b43d2d888d844098189369
+    Hash: 81936cccbd8836c07ff9d1181d630136
   m_OptimizeCatalogSize: 0
   m_BuildRemoteCatalog: 0
   m_CatalogRequestsTimeout: 0
@@ -118,10 +118,10 @@ MonoBehaviour:
     - CharacterPrefabs
     - CharacterSprites
     - CrabdexEntries
-    - MutationPrefabs
     - Hats
     - Minis
     - CharacterPrefabsSpecial
+    - CharacterPrefabsMutated
     - Locale
     - Locale-zh-Hans
     - Locale-en

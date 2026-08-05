@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 
 using Special = CrabInfo.SpecialCharacter;
+using Mutant = CrabInfo.MutantType;
 public class Constants : MonoBehaviour
 {
     public static Constants instance { get; private set; }
@@ -9,7 +10,7 @@ public class Constants : MonoBehaviour
     public static int CLOCK_END_TIME = 24;
     public static float CLOCK_SPEED = 1f;//7.5f;
 
-    #region SPECIALS
+    #region CHARACTERS
     public Dictionary<Special, string> specialEnumToStringName = new Dictionary<Special, string>()
     {
         { Special.itty,             "Itty Bitty" },
@@ -42,6 +43,12 @@ public class Constants : MonoBehaviour
         { 18, new Special[] {Special.itty, Special.granny, Special.gramps, Special.horseshoe}},
         { 19, new Special[] {Special.seaStarDad, Special.gramps, Special.horseshoe, Special.protestorCatfish}}
     };
+
+    public Dictionary<int, Mutant[]> SELECTOR_dayToMutant = new Dictionary<int, Mutant[]>
+    {
+        
+    };
+
     #endregion
 
     #region LETTERS & FEEDBACK

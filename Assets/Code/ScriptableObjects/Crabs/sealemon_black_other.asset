@@ -10,20 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 78e9b5b3f91a34cb3b12441421826e1c, type: 3}
-  m_Name: sea_sheep
+  m_Name: sealemon_black_other
   m_EditorClassIdentifier: Assembly-CSharp::CrabInfo
-  sprite: {fileID: 21300000, guid: c07703af217bf4bdf8bed9ff8dc71444, type: 3}
+  sprite: {fileID: 21300000, guid: 475c87c4fa05546e9ba47762f043ce51, type: 3}
   kioskHeight: 595
   isLarge: 0
   crabName: 
-  type: 2
-  favoriteWeatherTypes: 02000000
-  crabdexName: seasheep
-  isVariant: 0
-  variantName: 
-  mini: {fileID: 11400000, guid: 7c1e73f643c974ac784e68a53077d23f, type: 2}
+  type: 23
+  favoriteWeatherTypes: 0100000002000000
+  crabdexName: sealemon
+  isVariant: 1
+  variantName: black
+  mini: {fileID: 11400000, guid: 222ebda12f34f452687ee2eed9fe008c, type: 2}
   isMultiple: 0
-  mutantType: 12
+  mutantType: 10
   plotLevel: 2
   hasResearchCoat: 0
   isImportantCharacter: 0

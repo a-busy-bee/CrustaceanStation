@@ -12,6 +12,7 @@ public class CrabSelector : MonoBehaviour
 
     public List<GameObject> prefabs;
     public List<GameObject> prefabsSpecial;
+    public List<GameObject> prefabsMutated;
     public List<Sprite> sprites;
 
     // for tutorial
@@ -20,12 +21,14 @@ public class CrabSelector : MonoBehaviour
     // for main game (not zen mode)
     private Queue<int> idxQueue = new Queue<int>();   // list of characters to be seen
     private Queue<int> specialQueue = new Queue<int>();   // list of specials to be seen
-                                                        // if not empty, next character is the first index of specialQueue
-                                                        // if empty, ignore
-                                                        // when adding special to queue (based on clock), push to back of specialQueue
-                                                        // ex. [itty, horseshoe, granny] [everyone else], so next character would be itty, 
-                                                        // and if another special gets added then they would appear after granny
+                                                          // if not empty, next character is the first index of specialQueue
+                                                          // if empty, ignore
+                                                          // when adding special to queue (based on clock), push to back of specialQueue
+                                                          // ex. [itty, horseshoe, granny] [everyone else], so next character would be itty, 
+                                                          // and if another special gets added then they would appear after granny
+    private Queue<int> mutantQueue = new Queue<int>();
     private Queue<int> specialsForToday = new Queue<int>(); // list of specials based on dayToCharacter, but remove specials as they're added to queue
+    private Queue<int> mutantsForToday = new Queue<int>();
     private Dictionary<int, bool> seenCharacters = new Dictionary<int, bool>(); // <idx of character, whether it was seen or not> (using dictionary for better performance)
     private int currIdx;
     private int maxQueueLength = 45;
@@ -54,6 +57,11 @@ public class CrabSelector : MonoBehaviour
         var prefabSpecialHandle = Addressables.LoadAssetsAsync<GameObject>("CharacterPrefabsSpecial", null);
         yield return prefabSpecialHandle;
         prefabsSpecial = new List<GameObject>(prefabSpecialHandle.Result);
+
+        prefabsMutated.Clear();
+        var prefabMutatedHandle = Addressables.LoadAssetsAsync<GameObject>("CharacterPrefabsMutated", null);
+        yield return prefabMutatedHandle;
+        prefabsMutated = new List<GameObject>(prefabMutatedHandle.Result);
 
         sprites.Clear();
         var spriteHandle = Addressables.LoadAssetsAsync<Sprite>("CharacterSprites", null);
