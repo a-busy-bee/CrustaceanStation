@@ -66,7 +66,7 @@ public class Clock : MonoBehaviour
 
             //LevelManager.instance.CheckTrains(currentTime);
             //WeatherManager.instance.ChangeWeather();
-            if (currentTime % 4 == 0) // chance to change weather every 4 hours
+            if (WeatherManager.instance != null && currentTime % 4 == 0) // chance to change weather every 4 hours
             {
                 WeatherManager.instance.ChangeWeather();
             }
