@@ -5,7 +5,7 @@ using UnityEngine.AddressableAssets;
 using System.Linq;
 
 using Special = CrabInfo.SpecialCharacter;
-using Unity.Burst.CompilerServices;
+using Mutant = CrabInfo.MutantType;
 public class CrabSelector : MonoBehaviour
 {
     public static CrabSelector instance { get; protected set; }
@@ -77,6 +77,16 @@ public class CrabSelector : MonoBehaviour
             specialsForToday.Enqueue(specialObj);
         }
 
+        // ADD TODAY'S MUTANTS
+        if (Constants.instance.SELECTOR_dayToMutant.ContainsKey(currDay + 1))
+        {
+            foreach (Mutant mutant in Constants.instance.SELECTOR_dayToMutant[currDay + 1])
+            {
+                int mutantObj = prefabsMutated.FindIndex(m => m.GetComponent<CrabController>().GetMutantType() == mutant);
+                mutantsForToday.Enqueue(mutantObj);
+            }
+        }
+
         // GENERATE GENERIC CHARACTERS
         int chosenCrabIdx;
         for (int i = 0; i < maxQueueLength; i++)
@@ -102,6 +112,14 @@ public class CrabSelector : MonoBehaviour
             GameObject specialObj = prefabsSpecial[specialIdx];
             return (specialObj, specialIdx);
         }
+
+        // if no special characters left, now prioritize mutants
+        if (mutantQueue.Count != 0)
+        {
+            int mutantIdx = mutantQueue.Dequeue();
+            GameObject mutantObj = prefabsMutated[mutantIdx];
+            return (mutantObj, mutantIdx);
+        }
         
         // otherwise choose generic character
         int idx = idxQueue.Dequeue();
@@ -115,6 +133,15 @@ public class CrabSelector : MonoBehaviour
         {
             int specialIdx = specialsForToday.Dequeue();
             specialQueue.Enqueue(specialIdx);
+        }
+    }
+
+    public void PushNextMutant()
+    {
+        if (mutantsForToday.Count != 0)
+        {
+            int mutantIdx = mutantsForToday.Dequeue();
+            mutantQueue.Enqueue(mutantIdx);
         }
     }
 
@@ -148,12 +175,6 @@ public class CrabSelector : MonoBehaviour
     public void AddToQueue(int idx)
     {
         idxsChosenRecently.Add(idx);
-    }
-
-    public int GetNumSpecialCharacters()
-    {
-        int currDay = SaveManager.instance.GetProgression_CurrDay();
-        return Constants.instance.SELECTOR_dayToCharacter[currDay + 1].Length;
     }
 
     public Sprite ChooseSprite()

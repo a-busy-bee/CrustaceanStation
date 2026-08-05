@@ -46,7 +46,17 @@ public class Constants : MonoBehaviour
 
     public Dictionary<int, Mutant[]> SELECTOR_dayToMutant = new Dictionary<int, Mutant[]>
     {
-        
+        { 7, new Mutant[] {Mutant.fishChoke}},
+        { 8, new Mutant[] {Mutant.axolotlLong}},
+        { 9, new Mutant[] {Mutant.nautilusPurple}},
+        {11, new Mutant[] {Mutant.horseshoeLegs, Mutant.axolotlGoldLong}},
+        {12, new Mutant[] {Mutant.sealemonBlackYellow, Mutant.sealemonYellowOrange}},
+        {13, new Mutant[] {Mutant.sealClaw, Mutant.sealemonBlackOrange}},
+        {14, new Mutant[] {Mutant.seasheepHorns, Mutant.nautilusYellow}},
+        {16, new Mutant[] {Mutant.sealemonYellowOrange, Mutant.sealemonBlackOrange, Mutant.fishChoke}},
+        {17, new Mutant[] {Mutant.fishGills, Mutant.axolotlLong, Mutant.nautilusPurple}},
+        {18, new Mutant[] {Mutant.fishChoke, Mutant.seasheepHorns, Mutant.horseshoeLegs}},
+        {19, new Mutant[] {Mutant.fishGills, Mutant.seagullLegs, Mutant.sealClaw}}
     };
 
     #endregion
