@@ -946,8 +946,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -178.02487, y: -2.61}
-  m_SizeDelta: {x: 200.4, y: 4.44}
+  m_AnchoredPosition: {x: -197.34068, y: -2.61}
+  m_SizeDelta: {x: 161.7683, y: 4.44}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &655903353
 MonoBehaviour:
@@ -1986,7 +1986,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Music
+  m_text: Music & SFX
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 70de6cc79cbad4df38b2f1103f140acc, type: 2}
   m_sharedMaterial: {fileID: 4528260393976695646, guid: 70de6cc79cbad4df38b2f1103f140acc, type: 2}
@@ -2100,7 +2100,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 8.8, y: -61.402}
+  m_AnchoredPosition: {x: 8.8, y: -81.4}
   m_SizeDelta: {x: 610.7004, y: 122.8035}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1172328893
@@ -2123,7 +2123,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lex Kornelis
+  m_text: 'Lex Kornelis
+
+    Lucy Hart
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d8a88f3c2685e4ef1951ddfc9bf574dd, type: 2}
   m_sharedMaterial: {fileID: -7453273119138983783, guid: d8a88f3c2685e4ef1951ddfc9bf574dd, type: 2}
@@ -2746,8 +2750,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 183.32812, y: -2.6101}
-  m_SizeDelta: {x: 216.586, y: 4.44}
+  m_AnchoredPosition: {x: 203.8703, y: -2.6101}
+  m_SizeDelta: {x: 175.5016, y: 4.4399}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1521839416
 MonoBehaviour:
@@ -3038,7 +3042,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 369, y: -152}
+  m_AnchoredPosition: {x: 369, y: -192.15}
   m_SizeDelta: {x: 618.1801, y: 106.1465}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1620384407
