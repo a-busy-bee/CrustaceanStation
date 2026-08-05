@@ -8,12 +8,19 @@ using UnityEngine.Rendering;
 public class SettingsData
 {
     public string language;     // TODO: to be implemented
+
+    // SCREEN SIZE
+    public int resolutionX;
+    public int resolutionY;
+
+    // OTHER
     public float volume_Master;
     public float volume_SFX;
     public float volume_Music;
     public float brightness;    // TODO: to be implemented
     public bool reduceMotion;   // TODO: to be implemented
-    //TODO: add more settings as needed
+
+
 }
 
 [Serializable]
@@ -74,7 +81,9 @@ public class SaveManager : MonoBehaviour
         volumeSFX,
         volumeMusic,
         brightness,
-        reduceMotion
+        reduceMotion,
+        screenResX,
+        screenResY
     }
 
     public enum ProgressionType
@@ -147,6 +156,14 @@ public class SaveManager : MonoBehaviour
                 data.settings.language = value;
                 break;
 
+            case SettingsType.screenResX:
+                data.settings.resolutionX = int.Parse(value);
+                break;
+
+            case SettingsType.screenResY:
+                data.settings.resolutionY = int.Parse(value);
+                break;    
+
             case SettingsType.volumeMaster:
                 data.settings.volume_Master = float.Parse(value, System.Globalization.CultureInfo.InvariantCulture);
                 break;
@@ -173,6 +190,14 @@ public class SaveManager : MonoBehaviour
     public string GetSettings_Language()
     {
         return data.settings.language;
+    }
+    public int GetSettings_ResolutionX()
+    {
+        return data.settings.resolutionX;
+    }
+    public int GetSettings_ResolutionY()
+    {
+        return data.settings.resolutionY;
     }
     public float GetSettings_VolumeMaster()
     {

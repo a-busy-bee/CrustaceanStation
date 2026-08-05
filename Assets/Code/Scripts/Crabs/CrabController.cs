@@ -233,7 +233,7 @@ public class CrabController : MonoBehaviour
         }
 
         // FIGURE OUT WHICH DOCUMENT IS FORGED
-        if (isValid || crabInfo.isImportantCharacter)
+        if (!isValid && !crabInfo.isImportantCharacter)
         {
             if (Random.Range(0, 10) > 8)                                       // FORGED ID
             {
