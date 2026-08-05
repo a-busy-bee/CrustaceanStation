@@ -9,16 +9,20 @@ public class Settings_ScreenResolution : MonoBehaviour
         new Vector2Int(1920, 1200),
         new Vector2Int(2560, 1440),
         new Vector2Int(2560, 1600),
-        new Vector2Int(3840, 2160)
+        new Vector2Int(3840, 2160),
+        new Vector2Int(3456, 2234)
     };
     private int currIdx = -1;
     private int currResolutionIdx;
     private bool isFullscreen = true;
 
     [SerializeField] private TextMeshProUGUI resolutionText;
+    [SerializeField] private Animator switchAnimator;
 
     private void Start()
     {
+        switchAnimator.enabled = false;
+
         int x = SaveManager.instance.GetSettings_ResolutionX();
         int y = SaveManager.instance.GetSettings_ResolutionY();
 
@@ -65,6 +69,11 @@ public class Settings_ScreenResolution : MonoBehaviour
     public void ToggleFullScreen()
     {
         isFullscreen = !isFullscreen;
+
+        switchAnimator.enabled = true;
+        if (isFullscreen) switchAnimator.Play("SwitchOff");
+        else switchAnimator.Play("SwitchOn");
+
         Screen.SetResolution(resolutions[currResolutionIdx].x, resolutions[currResolutionIdx].y, isFullscreen);
     }
 

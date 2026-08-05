@@ -73,6 +73,22 @@ public class Constants : MonoBehaviour
         {16, 3}
     };
 
+    public Dictionary<int, int> DIALOGUE_dayToIdxMailkeeper = new Dictionary<int, int>()
+    {
+        {2, 0},
+        {6, 1},
+        {7, 2},
+        {8, 3},
+        {11, 4},
+        {12, 5},
+        {14, 6},
+        {16, 7},
+        {17, 0},
+        {19, 1},
+        {20, 9}
+    };
+
+
     // FEEDBACK FORMS
     public Dictionary<Special, Dictionary<int, int>> FEEDBACK_characterToDayToIdx = new Dictionary<Special, Dictionary<int, int>>()
     {
