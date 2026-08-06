@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
 using NUnit.Framework;
+using System.Collections;
 public class Settings : MonoBehaviour
 {
     [SerializeField] private GameObject loadingScreenPanel;
@@ -15,6 +16,7 @@ public class Settings : MonoBehaviour
     private Vector2 currVelocity;
     private bool moving;
     private bool displayed;
+    private bool hideAnimRunning = false;
 
     private void Start()
     {
@@ -27,11 +29,32 @@ public class Settings : MonoBehaviour
         //Assert.IsTrue(displayed);
         //gameObject.SetActive(false);
 
-        if (SceneManager.GetActiveScene().name != "BaseArea") backgroundDisplay.SetActive(false);
+        if (SceneManager.GetActiveScene().name != "BaseArea") HideThing(backgroundDisplay);
 
-        if (areYouSurePanel != null) areYouSurePanel.SetActive(false);
+        if (areYouSurePanel.activeInHierarchy) HideThing(areYouSurePanel);
 
         moving = true;
+    }
+
+    private void HideThing(GameObject thing)
+    {
+        //print((thing.activeInHierarchy));
+        if ((thing != null) && (thing.activeInHierarchy))
+        {
+            hideAnimRunning = false;
+            Animator animator = thing.GetComponent<Animator>();
+            animator.enabled = true;
+            StartCoroutine(WaitForAnim(thing, animator));
+        }
+    }
+
+    private IEnumerator WaitForAnim(GameObject thing, Animator animator)
+    {
+
+        if (!hideAnimRunning) animator.SetTrigger("Hide");
+        hideAnimRunning = true;
+        yield return new WaitForSeconds(animator.GetCurrentAnimatorClipInfo(0).Length);
+        thing.SetActive(false);
     }
 
     public void Show()
@@ -90,11 +113,11 @@ public class Settings : MonoBehaviour
     {
         SaveManager.instance.ResetData();
 
-        areYouSurePanel.SetActive(false);
+        HideThing(areYouSurePanel);
     }
 
     public void OnResetNo()
     {
-        areYouSurePanel.SetActive(false);
+        HideThing(areYouSurePanel);
     }
 }
