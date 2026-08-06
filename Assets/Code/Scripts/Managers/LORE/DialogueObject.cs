@@ -89,13 +89,21 @@ public class DialogueObject : MonoBehaviour
 
     public void ClearDialogue()
     {
-        shortDialogueText.text = "";
-        shortDialogue.SetActive(false);
+        shortDialogue.GetComponent<Animator>().SetTrigger("Hide");
+        StartCoroutine(WaitForAnimAndHide(shortDialogue, shortDialogue.GetComponent<Animator>(), shortDialogueText));
 
-        longDialogueText.text = "";
-        longDialogue.SetActive(false);
+
+        longDialogue.GetComponent<Animator>().SetTrigger("Hide");
+        StartCoroutine(WaitForAnimAndHide(longDialogue, longDialogue.GetComponent<Animator>(), longDialogueText));
 
         skip = false;
+    }
+
+    IEnumerator WaitForAnimAndHide(GameObject thing, Animator anim, TextMeshProUGUI text)
+    {
+        yield return new WaitForSeconds(anim.GetCurrentAnimatorClipInfo(0).Length);
+        thing.SetActive(false);
+        text.text = "";
     }
 
     public void Skip()
