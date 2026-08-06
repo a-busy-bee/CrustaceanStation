@@ -19,7 +19,7 @@ public class TutorialManager : LevelManagerBase
         {
             instance = this;
         }
-
+        
         //goalRating.SetActive(false);
         //goalCrabCount.SetActive(false);
         summaryMenu.SetActive(false);
