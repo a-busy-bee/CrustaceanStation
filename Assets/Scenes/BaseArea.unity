@@ -606,7 +606,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e45d375213454749b925b03b2d1af2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Clock
-  rotDuration: 100
+  rotDuration: 1
   fill: {fileID: 1932063820}
   clockHand: {fileID: 2146684423}
   kiosk: {fileID: 728166980}
@@ -21847,6 +21847,7 @@ GameObject:
   - component: {fileID: 1650822138}
   - component: {fileID: 1650822140}
   - component: {fileID: 1650822139}
+  - component: {fileID: 1650822141}
   m_Layer: 0
   m_Name: BackgroundOverlay
   m_TagString: Untagged
@@ -21911,6 +21912,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1650822137}
   m_CullTransparentMesh: 1
+--- !u!95 &1650822141
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1650822137}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a6d550ba45f14424cb75a9441baca208, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 2
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1654342817
 GameObject:
   m_ObjectHideFlags: 0
@@ -29219,7 +29242,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 11277833411268905, guid: 4de3e27ee11244dfc8f80c9f950e5da8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 62
       objectReference: {fileID: 0}
     - target: {fileID: 11277833411268905, guid: 4de3e27ee11244dfc8f80c9f950e5da8, type: 3}
       propertyPath: m_AnchoredPosition.y
