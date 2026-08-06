@@ -89,15 +89,12 @@ public class DialogueObject : MonoBehaviour
 
     public void ClearDialogue()
     {
-        Animator shortAnimator = shortDialogue.GetComponent<Animator>();
-        Animator longAnimator = longDialogue.GetComponent<Animator>();
+        shortDialogue.GetComponent<Animator>().SetTrigger("Hide");
+        StartCoroutine(WaitForAnimAndHide(shortDialogue, shortDialogue.GetComponent<Animator>(), shortDialogueText));
 
-        shortAnimator.SetTrigger("Hide");
-        StartCoroutine(WaitForAnimAndHide(shortDialogue, shortAnimator, shortDialogueText));
-        
 
-        longAnimator.SetTrigger("Hide");
-        StartCoroutine(WaitForAnimAndHide(longDialogue, longAnimator, longDialogueText));
+        longDialogue.GetComponent<Animator>().SetTrigger("Hide");
+        StartCoroutine(WaitForAnimAndHide(longDialogue, longDialogue.GetComponent<Animator>(), longDialogueText));
 
         skip = false;
     }
