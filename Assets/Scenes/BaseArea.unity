@@ -606,7 +606,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e45d375213454749b925b03b2d1af2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Clock
-  rotDuration: 100
+  rotDuration: 1
   fill: {fileID: 1932063820}
   clockHand: {fileID: 2146684423}
   kiosk: {fileID: 728166980}
@@ -9644,6 +9644,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CrabSelector
   prefabs: []
   prefabsSpecial: []
+  prefabsMutated: []
   sprites: []
 --- !u!114 &728166980
 MonoBehaviour:
