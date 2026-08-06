@@ -2,14 +2,15 @@ using UnityEngine;
 using System.Collections.Generic;
 
 using Special = CrabInfo.SpecialCharacter;
+using Mutant = CrabInfo.MutantType;
 public class Constants : MonoBehaviour
 {
     public static Constants instance { get; private set; }
     public static string GAME_SCENE_NAME = "BaseArea";
     public static int CLOCK_END_TIME = 24;
-    public static float CLOCK_SPEED = 1f;//7.5f;
+    public static float CLOCK_SPEED = 10f;//7.5f;
 
-    #region SPECIALS
+    #region CHARACTERS
     public Dictionary<Special, string> specialEnumToStringName = new Dictionary<Special, string>()
     {
         { Special.itty,             "Itty Bitty" },
@@ -42,6 +43,22 @@ public class Constants : MonoBehaviour
         { 18, new Special[] {Special.itty, Special.granny, Special.gramps, Special.horseshoe}},
         { 19, new Special[] {Special.seaStarDad, Special.gramps, Special.horseshoe, Special.protestorCatfish}}
     };
+
+    public Dictionary<int, Mutant[]> SELECTOR_dayToMutant = new Dictionary<int, Mutant[]>
+    {
+        { 7, new Mutant[] {Mutant.fishChoke}},
+        { 8, new Mutant[] {Mutant.axolotlLong}},
+        { 9, new Mutant[] {Mutant.nautilusPurple}},
+        {11, new Mutant[] {Mutant.horseshoeLegs, Mutant.axolotlGoldLong}},
+        {12, new Mutant[] {Mutant.sealemonBlackYellow, Mutant.sealemonYellowOrange}},
+        {13, new Mutant[] {Mutant.sealClaw, Mutant.sealemonBlackOrange}},
+        {14, new Mutant[] {Mutant.seasheepHorns, Mutant.nautilusYellow}},
+        {16, new Mutant[] {Mutant.sealemonYellowOrange, Mutant.sealemonBlackOrange, Mutant.fishChoke}},
+        {17, new Mutant[] {Mutant.fishGills, Mutant.axolotlLong, Mutant.nautilusPurple}},
+        {18, new Mutant[] {Mutant.fishChoke, Mutant.seasheepHorns, Mutant.horseshoeLegs}},
+        {19, new Mutant[] {Mutant.fishGills, Mutant.seagullLegs, Mutant.sealClaw}}
+    };
+
     #endregion
 
     #region LETTERS & FEEDBACK

@@ -5,13 +5,14 @@ using UnityEngine.AddressableAssets;
 using System.Linq;
 
 using Special = CrabInfo.SpecialCharacter;
-using Unity.Burst.CompilerServices;
+using Mutant = CrabInfo.MutantType;
 public class CrabSelector : MonoBehaviour
 {
     public static CrabSelector instance { get; protected set; }
 
     public List<GameObject> prefabs;
     public List<GameObject> prefabsSpecial;
+    public List<GameObject> prefabsMutated;
     public List<Sprite> sprites;
 
     // for tutorial
@@ -20,12 +21,14 @@ public class CrabSelector : MonoBehaviour
     // for main game (not zen mode)
     private Queue<int> idxQueue = new Queue<int>();   // list of characters to be seen
     private Queue<int> specialQueue = new Queue<int>();   // list of specials to be seen
-                                                        // if not empty, next character is the first index of specialQueue
-                                                        // if empty, ignore
-                                                        // when adding special to queue (based on clock), push to back of specialQueue
-                                                        // ex. [itty, horseshoe, granny] [everyone else], so next character would be itty, 
-                                                        // and if another special gets added then they would appear after granny
+                                                          // if not empty, next character is the first index of specialQueue
+                                                          // if empty, ignore
+                                                          // when adding special to queue (based on clock), push to back of specialQueue
+                                                          // ex. [itty, horseshoe, granny] [everyone else], so next character would be itty, 
+                                                          // and if another special gets added then they would appear after granny
+    private Queue<int> mutantQueue = new Queue<int>();
     private Queue<int> specialsForToday = new Queue<int>(); // list of specials based on dayToCharacter, but remove specials as they're added to queue
+    private Queue<int> mutantsForToday = new Queue<int>();
     private Dictionary<int, bool> seenCharacters = new Dictionary<int, bool>(); // <idx of character, whether it was seen or not> (using dictionary for better performance)
     private int currIdx;
     private int maxQueueLength = 45;
@@ -55,6 +58,11 @@ public class CrabSelector : MonoBehaviour
         yield return prefabSpecialHandle;
         prefabsSpecial = new List<GameObject>(prefabSpecialHandle.Result);
 
+        prefabsMutated.Clear();
+        var prefabMutatedHandle = Addressables.LoadAssetsAsync<GameObject>("CharacterPrefabsMutated", null);
+        yield return prefabMutatedHandle;
+        prefabsMutated = new List<GameObject>(prefabMutatedHandle.Result);
+
         sprites.Clear();
         var spriteHandle = Addressables.LoadAssetsAsync<Sprite>("CharacterSprites", null);
         yield return spriteHandle;
@@ -67,6 +75,16 @@ public class CrabSelector : MonoBehaviour
             // find idx in special prefabs
             int specialObj = prefabsSpecial.FindIndex(s => s.GetComponent<CrabController>().GetSpecialType() == special);
             specialsForToday.Enqueue(specialObj);
+        }
+
+        // ADD TODAY'S MUTANTS
+        if (Constants.instance.SELECTOR_dayToMutant.ContainsKey(currDay + 1))
+        {
+            foreach (Mutant mutant in Constants.instance.SELECTOR_dayToMutant[currDay + 1])
+            {
+                int mutantObj = prefabsMutated.FindIndex(m => m.GetComponent<CrabController>().GetMutantType() == mutant);
+                mutantsForToday.Enqueue(mutantObj);
+            }
         }
 
         // GENERATE GENERIC CHARACTERS
@@ -94,6 +112,14 @@ public class CrabSelector : MonoBehaviour
             GameObject specialObj = prefabsSpecial[specialIdx];
             return (specialObj, specialIdx);
         }
+
+        // if no special characters left, now prioritize mutants
+        if (mutantQueue.Count != 0)
+        {
+            int mutantIdx = mutantQueue.Dequeue();
+            GameObject mutantObj = prefabsMutated[mutantIdx];
+            return (mutantObj, mutantIdx);
+        }
         
         // otherwise choose generic character
         int idx = idxQueue.Dequeue();
@@ -107,6 +133,15 @@ public class CrabSelector : MonoBehaviour
         {
             int specialIdx = specialsForToday.Dequeue();
             specialQueue.Enqueue(specialIdx);
+        }
+    }
+
+    public void PushNextMutant()
+    {
+        if (mutantsForToday.Count != 0)
+        {
+            int mutantIdx = mutantsForToday.Dequeue();
+            mutantQueue.Enqueue(mutantIdx);
         }
     }
 
@@ -140,12 +175,6 @@ public class CrabSelector : MonoBehaviour
     public void AddToQueue(int idx)
     {
         idxsChosenRecently.Add(idx);
-    }
-
-    public int GetNumSpecialCharacters()
-    {
-        int currDay = SaveManager.instance.GetProgression_CurrDay();
-        return Constants.instance.SELECTOR_dayToCharacter[currDay + 1].Length;
     }
 
     public Sprite ChooseSprite()

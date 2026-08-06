@@ -411,4 +411,9 @@ public class CrabController : MonoBehaviour
     {
         return crabInfo.specialCharacterType;
     }
+
+    public CrabInfo.MutantType GetMutantType()
+    {
+        return crabInfo.mutantType;
+    }
 }

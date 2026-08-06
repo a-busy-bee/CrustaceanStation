@@ -30,6 +30,10 @@ public class MenuButtons : MonoBehaviour
             {
                 LoadFile();
             }
+
+            AudioManager.instance.SwitchTheme(AudioManager.ThemeNames.Iso);
+            SceneManager.LoadScene("Cutscene");
+            return;
         }
 
         AudioManager.instance.SwitchTheme(AudioManager.ThemeNames.CheckingIntoStation);

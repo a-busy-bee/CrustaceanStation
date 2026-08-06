@@ -10,6 +10,7 @@ public class TransportPopup : MonoBehaviour
 {
     // TODO: IF YOU ARE ADDING A MINI TYPE, UPDATE RANDOM NUM UPPER BOUND IN GenerateNewSeats INNER LOOP
 
+    protected int currDay;
     protected Mini currMini;
     [SerializeField] protected Cart.Type type;
     [SerializeField] protected int maxID = 1;
@@ -67,6 +68,7 @@ public class TransportPopup : MonoBehaviour
         if (initialized) return;
 
         //seatObjects = new CartSeat[numRows, 4];
+        currDay = SaveManager.instance.GetProgression_CurrDay();
         InitPopup();
     }
 
@@ -209,15 +211,26 @@ public class TransportPopup : MonoBehaviour
         // check pred/prey relationships
         badness += currHowBad;
 
-        // if ticket info was wrong
-        Cart.Type ticketCartType = Kiosk.instance.GetCurrentCrabTicket();
-        if (ticketCartType != type) // if the crab chose the wrong cart
+        if (currDay + 1 >= 6 && KioskBase.instance.GetCrabInfo().plotLevel == CrabInfo.PlotLevel.predator)
         {
-            Kiosk.instance.WrongTransport();
+            PerformanceManager.instance.IncorrectHalf(PerformanceManager.MistakeType.plot);
+        }
+        else if (currDay + 1 >= 11 && KioskBase.instance.GetCrabInfo().plotLevel == CrabInfo.PlotLevel.nonCrustacean)
+        {
+            PerformanceManager.instance.IncorrectHalf(PerformanceManager.MistakeType.plot);
         }
         else
         {
-            Kiosk.instance.CorrectTransport();
+            // if ticket info was wrong
+            Cart.Type ticketCartType = Kiosk.instance.GetCurrentCrabTicket();
+            if (ticketCartType != type) // if the crab chose the wrong cart
+            {
+                Kiosk.instance.WrongTransport();
+            }
+            else
+            {
+                Kiosk.instance.CorrectTransport();
+            }
         }
 
         // tell kiosk to wait then summon new crab

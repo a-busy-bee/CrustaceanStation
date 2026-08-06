@@ -15,7 +15,7 @@ MonoBehaviour:
   m_DefaultGroup: 707c9a73fd72548fea7afe8fec8ab63e
   m_currentHash:
     serializedVersion: 2
-    Hash: dec42b0941c4f4af4db1a8d6f426868b
+    Hash: 81936cccbd8836c07ff9d1181d630136
   m_OptimizeCatalogSize: 0
   m_BuildRemoteCatalog: 0
   m_CatalogRequestsTimeout: 0
@@ -72,6 +72,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 906658cf44c8a49de99299a7b3d3a5a3, type: 2}
   - {fileID: 11400000, guid: 82847f94b826a4d80ad7e8075a009c9e, type: 2}
   - {fileID: 11400000, guid: 2ac8181bb97fe4df3a21314542341bbb, type: 2}
+  - {fileID: 11400000, guid: 68d46763554884f65bdfcfb6d93f7898, type: 2}
   - {fileID: 11400000, guid: 20e6910850b244835b912f360d25e5ea, type: 2}
   - {fileID: 11400000, guid: ca18cff08c51b47b88366e0fac91502c, type: 2}
   - {fileID: 11400000, guid: 6d6bb2991411842e9bdc8d39503cd1e2, type: 2}
@@ -120,6 +121,7 @@ MonoBehaviour:
     - Hats
     - Minis
     - CharacterPrefabsSpecial
+    - CharacterPrefabsMutated
     - Locale
     - Locale-zh-Hans
     - Locale-en

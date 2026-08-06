@@ -15,7 +15,8 @@ public class PerformanceManager : MonoBehaviour
     {
         {MistakeType.idTicket, 0},
         {MistakeType.transport, 0},
-        {MistakeType.seating, 0}
+        {MistakeType.seating, 0},
+        {MistakeType.plot, 0}
     };
     private int numHappy;
     private int correctCounter; // must get all three stages to be correct (idTicket, transport, and seating)
@@ -45,7 +46,8 @@ public class PerformanceManager : MonoBehaviour
     {
         idTicket,
         transport,
-        seating
+        seating,
+        plot
     }
 
     private void Awake()

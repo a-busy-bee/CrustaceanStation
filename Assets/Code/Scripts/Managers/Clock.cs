@@ -20,7 +20,6 @@ public class Clock : MonoBehaviour
 
     // CRABS
     [SerializeField] private KioskBase kiosk;
-    private int numSpecialCharacters = 2;
 
     // FILL COLOR
     [SerializeField] private Color red;
@@ -85,6 +84,13 @@ public class Clock : MonoBehaviour
                 CrabSelector.instance.PushNextSpecial();
             }
 
+            if (currentTime == 1 ||
+                currentTime == 10 ||
+                currentTime == 20)
+            {
+                CrabSelector.instance.PushNextMutant();
+            }
+
             if (currentTime == endTime)
             {
                 LevelManager.instance.SetState(LevelManager.LMState.Summary);
@@ -117,7 +123,6 @@ public class Clock : MonoBehaviour
     private IEnumerator WaitThenSummonCrabs()
     {
         yield return new WaitForSeconds(0.5f);
-        numSpecialCharacters = CrabSelector.instance.GetNumSpecialCharacters();
         kiosk.SetState(Kiosk.KioskState.Empty);
     }
 

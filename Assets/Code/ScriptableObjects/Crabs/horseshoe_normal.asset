@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78e9b5b3f91a34cb3b12441421826e1c, type: 3}
+  m_Name: horseshoe_normal
+  m_EditorClassIdentifier: Assembly-CSharp::CrabInfo
+  sprite: {fileID: 21300000, guid: bedc34cef839042a4bf5d4101ee200a3, type: 3}
+  kioskHeight: 595
+  isLarge: 0
+  crabName: 
+  type: 8
+  favoriteWeatherTypes: 00000000010000000200000003000000
+  crabdexName: horseshoe
+  isVariant: 0
+  variantName: 
+  mini: {fileID: 11400000, guid: 3cf03bf32c4af44ea823eee8cad509e5, type: 2}
+  isMultiple: 0
+  mutantType: 4
+  plotLevel: 2
+  hasResearchCoat: 0
+  isImportantCharacter: 0
+  characterNameID: 
+  specialCharacterType: 0

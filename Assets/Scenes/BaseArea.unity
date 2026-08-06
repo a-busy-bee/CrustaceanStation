@@ -9644,6 +9644,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CrabSelector
   prefabs: []
   prefabsSpecial: []
+  prefabsMutated: []
   sprites: []
 --- !u!114 &728166980
 MonoBehaviour:
@@ -9663,7 +9664,12 @@ MonoBehaviour:
   approveButton: {fileID: 534969239}
   rejectButton: {fileID: 1416969083}
   debugMode: 1
-  charactersToForce: []
+  charactersToForce:
+  - {fileID: 1918681812830035428, guid: 4a2b52b4d2ff64f64a8decf1d3b10082, type: 3}
+  - {fileID: 1918681812830035428, guid: d157655f42a714d7689fe98b7cad7d4b, type: 3}
+  - {fileID: 1918681812830035428, guid: e5a6e250509ab4953b4144733adc80db, type: 3}
+  - {fileID: 1918681812830035428, guid: 59a14dd0cc7204d1b8c33fa6f38c99c2, type: 3}
+  - {fileID: 1918681812830035428, guid: f1575823c3917496185dabeb83d7b7e5, type: 3}
 --- !u!1 &730704855
 GameObject:
   m_ObjectHideFlags: 0
