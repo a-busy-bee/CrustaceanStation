@@ -14,6 +14,7 @@ public class KioskBase : MonoBehaviour
     protected bool isCurrentCrabCrustacean = false;
     protected CrabSelector crabSelector;
     protected float crabPositionInKiosk = -470;
+    protected int currDay;
 
 
     [Header("Kiosk Objects")]
@@ -65,6 +66,11 @@ public class KioskBase : MonoBehaviour
         }
 
         SetState(KioskState.NotOpenYet);
+    }
+
+    private void Start()
+    {
+        currDay = SaveManager.instance.GetProgression_CurrDay();
     }
 
     // state machine go brrrrr

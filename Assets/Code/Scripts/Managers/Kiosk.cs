@@ -44,21 +44,33 @@ public class Kiosk : KioskBase
                 {
                     DisableButtons();
                     
-
                     LevelManager.instance.SetTrainsClickable(true);
 
-                    if (!currentCrab.GetComponent<CrabController>().IsValid())
+                    if (currDay + 1 >= 6 && KioskBase.instance.GetCrabInfo().plotLevel == CrabInfo.PlotLevel.predator)
                     {
-                        //wrong++;
-                        //Debug.Log("approved, incorrect");
-                        PerformanceManager.instance.Incorrect(PerformanceManager.MistakeType.idTicket);
+                        //do nothing
+                        PerformanceManager.instance.CorrectHalf();
+                    }
+                    else if (currDay + 1 >= 11 && KioskBase.instance.GetCrabInfo().plotLevel == CrabInfo.PlotLevel.nonCrustacean)
+                    {
+                        // do nothing
+                        PerformanceManager.instance.CorrectHalf();
                     }
                     else
                     {
-                        //Debug.Log("approved, correct");
-                        PerformanceManager.instance.Correct();
+                        if (!currentCrab.GetComponent<CrabController>().IsValid())
+                        {
+                            //wrong++;
+                            //Debug.Log("approved, incorrect");
+                            PerformanceManager.instance.Incorrect(PerformanceManager.MistakeType.idTicket);
+                        }
+                        else
+                        {
+                            //Debug.Log("approved, correct");
+                            PerformanceManager.instance.Correct();
+                        }
                     }
-
+                    
                     DialogueManager.instance.ClearDialogue();
                 }
                 break;
@@ -67,18 +79,30 @@ public class Kiosk : KioskBase
                 {
                     DisableButtons();
 
-                    if (currentCrab.GetComponent<CrabController>().IsValid())
+                    if (currDay + 1 >= 6 && GetCrabInfo().plotLevel == CrabInfo.PlotLevel.predator)
                     {
-                        //Debug.Log("rejected, incorrect");
-                        PerformanceManager.instance.Incorrect(PerformanceManager.MistakeType.idTicket);
-                        currentCrab.GetComponent<CrabController>().SetState(CrabController.CrabState.Emoting, "any and confused");
+                        PerformanceManager.instance.IncorrectHalf(PerformanceManager.MistakeType.plot);
+                    }
+                    else if (currDay + 1 >= 11 && GetCrabInfo().plotLevel == CrabInfo.PlotLevel.nonCrustacean)
+                    {
+                        PerformanceManager.instance.IncorrectHalf(PerformanceManager.MistakeType.plot);
                     }
                     else
                     {
-                        //Debug.Log("rejected, correct");
-                        PerformanceManager.instance.Correct();
-                        currentCrab.GetComponent<CrabController>().SetState(CrabController.CrabState.Emoting, "any");
+                        if (currentCrab.GetComponent<CrabController>().IsValid())
+                        {
+                            //Debug.Log("rejected, incorrect");
+                            PerformanceManager.instance.Incorrect(PerformanceManager.MistakeType.idTicket);
+                            currentCrab.GetComponent<CrabController>().SetState(CrabController.CrabState.Emoting, "any and confused");
+                        }
+                        else
+                        {
+                            //Debug.Log("rejected, correct");
+                            PerformanceManager.instance.Correct();
+                            currentCrab.GetComponent<CrabController>().SetState(CrabController.CrabState.Emoting, "any");
+                        }
                     }
+                    
 
                     StartCoroutine(WaitForAnimEnd());
                 }
