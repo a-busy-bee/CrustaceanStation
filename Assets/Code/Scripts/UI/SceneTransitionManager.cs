@@ -53,7 +53,7 @@ public class SceneTransitionManager : MonoBehaviour
 
     private IEnumerator WaitThenScene(SceneType scene)
     {
-        yield return new WaitForSeconds(0.25f);
+        yield return new WaitForSeconds(2f);
 
         SceneManager.LoadScene(scene.ToString());
     }

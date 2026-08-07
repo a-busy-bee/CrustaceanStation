@@ -49,7 +49,7 @@ public class FadeToBlack : MonoBehaviour
 
                 canvasGroup.alpha = Mathf.SmoothDamp(canvasGroup.alpha, 1.0f, ref currVelocity, speed);
 
-                if (1.0f - canvasGroup.alpha < 0.01f)
+                if (1.0f - canvasGroup.alpha < 0.0001f)
                 {
                     fadeState = FadeType.on;
                     currVelocity = 0.0f;
@@ -61,7 +61,7 @@ public class FadeToBlack : MonoBehaviour
 
                 canvasGroup.alpha = Mathf.SmoothDamp(canvasGroup.alpha, 0.0f, ref currVelocity, speed);
 
-                if (canvasGroup.alpha < 0.01)
+                if (canvasGroup.alpha < 0.0001)
                 {
                     fadeState = FadeType.off;
                     canvasGroup.blocksRaycasts = false;
