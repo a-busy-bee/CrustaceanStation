@@ -1,7 +1,5 @@
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class TutorialManager : LevelManagerBase
 {
@@ -142,7 +140,7 @@ public class TutorialManager : LevelManagerBase
         PlotManager.instance.AddMail("letter", "crustyCoIdx", 1);
         SaveManager.instance.SaveProgressionData(SaveManager.ProgressionType.newGame, false.ToString());
         AudioManager.instance.SwitchTheme(AudioManager.ThemeNames.CheckingIntoStation);
-        SceneManager.LoadScene("Home");
+        SceneTransitionManager.instance.TransitionToScene(SceneTransitionManager.SceneType.Home);
     }
 
     override public bool IsFirstCrabTutorial()

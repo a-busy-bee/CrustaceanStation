@@ -1,8 +1,5 @@
-using System.Collections.Generic;
-using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class VetManager : MonoBehaviour
 {

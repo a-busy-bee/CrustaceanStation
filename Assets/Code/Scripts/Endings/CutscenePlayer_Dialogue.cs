@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class CutscenePlayer_Dialogue : MonoBehaviour
@@ -217,7 +216,27 @@ public class CutscenePlayer_Dialogue : MonoBehaviour
             {
                 fading = false;
                 AudioManager.instance.SwitchTheme(AudioManager.ThemeNames.CheckingIntoStation);
-                SceneManager.LoadScene(nextScene.ToString());
+
+                SceneTransitionManager.SceneType scene = SceneTransitionManager.SceneType.TitleScreen;
+                switch (nextScene)
+                {
+                    case NextScene.TitleScreen:
+                        scene = SceneTransitionManager.SceneType.TitleScreen;
+                        break;
+
+                    case NextScene.Home:
+                        scene = SceneTransitionManager.SceneType.Home;
+                        break;
+
+                    case NextScene.EndingGood:
+                        scene = SceneTransitionManager.SceneType.EndingGood;
+                        break;
+
+                    case NextScene.EndingBad:
+                        scene = SceneTransitionManager.SceneType.EndingBad;
+                        break;
+                }
+                SceneTransitionManager.instance.TransitionToScene(scene);
             }
         }
 

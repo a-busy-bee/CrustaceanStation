@@ -1,6 +1,4 @@
 using UnityEngine;
-using UnityEngine.Rendering;
-using UnityEngine.SceneManagement;
 
 public class DisplayScrpt : MonoBehaviour
 {
@@ -134,7 +132,7 @@ public class DisplayScrpt : MonoBehaviour
     {
         Time.timeScale = 1f;
         AudioManager.instance.SwitchTheme(AudioManager.ThemeNames.CheckingIntoStation);
-        SceneManager.LoadScene("Home");
+        SceneTransitionManager.instance.TransitionToScene(SceneTransitionManager.SceneType.Home);
     }
 
     public void OnSettings()

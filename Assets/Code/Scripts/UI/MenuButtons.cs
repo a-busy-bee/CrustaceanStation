@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using System.IO;
 
 public class MenuButtons : MonoBehaviour
@@ -32,12 +31,12 @@ public class MenuButtons : MonoBehaviour
             }
 
             AudioManager.instance.SwitchTheme(AudioManager.ThemeNames.Iso);
-            SceneManager.LoadScene("Cutscene");
+            SceneTransitionManager.instance.TransitionToScene(SceneTransitionManager.SceneType.Cutscene);
             return;
         }
 
         AudioManager.instance.SwitchTheme(AudioManager.ThemeNames.CheckingIntoStation);
-        SceneManager.LoadScene("Home");
+        SceneTransitionManager.instance.TransitionToScene(SceneTransitionManager.SceneType.Home);
     }
 
     public void LoadFile()
@@ -75,7 +74,7 @@ public class MenuButtons : MonoBehaviour
     public void VisitVet()
     {
         AudioManager.instance.SwitchTheme(AudioManager.ThemeNames.CheckingIntoStation);
-        SceneManager.LoadScene("Vet");
+        SceneTransitionManager.instance.TransitionToScene(SceneTransitionManager.SceneType.Vet);
     }
 
     public void Settings()
@@ -89,12 +88,12 @@ public class MenuButtons : MonoBehaviour
     public void Credits()
     {
         AudioManager.instance.SwitchTheme(AudioManager.ThemeNames.CheckingIntoStation);
-        SceneManager.LoadScene("Credits");
+        SceneTransitionManager.instance.TransitionToScene(SceneTransitionManager.SceneType.Credits);
     }
 
     public void BackToMenu()
     {
         AudioManager.instance.SwitchTheme(AudioManager.ThemeNames.CheckingIntoStation);
-        SceneManager.LoadScene("TitleScreen");
+        SceneTransitionManager.instance.TransitionToScene(SceneTransitionManager.SceneType.TitleScreen);
     }
 }

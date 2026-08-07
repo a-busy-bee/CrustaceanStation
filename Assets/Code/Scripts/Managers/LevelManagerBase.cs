@@ -1,9 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class LevelManagerBase : MonoBehaviour
 {
@@ -144,19 +141,19 @@ public class LevelManagerBase : MonoBehaviour
 
     public void OnShop()
     {
-        SceneManager.LoadScene("Shop");
+        //SceneTransitionManager.instance.TransitionToScene(SceneTransitionManager.SceneType.Home);SceneTransitionManager.instance.TransitionToScene(SceneTransitionManager.SceneType.Home);
     }
 
     public void OnMenu()
     {
         AudioManager.instance.SwitchTheme(AudioManager.ThemeNames.CheckingIntoStation);
-        SceneManager.LoadScene("TitleScreen");
+        SceneTransitionManager.instance.TransitionToScene(SceneTransitionManager.SceneType.TitleScreen);
     }
 
     public void OnNewDay()
     {
         AudioManager.instance.SwitchTheme(AudioManager.ThemeNames.HermitWaltz, true);
-        SceneManager.LoadScene("BaseArea");
+        SceneTransitionManager.instance.TransitionToScene(SceneTransitionManager.SceneType.BaseArea);
     }
 
     protected void InitTrains()

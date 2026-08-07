@@ -1,11 +1,3 @@
-using System.Collections.Generic;
-using UnityEngine;
-using System.Collections;
-using UnityEngine.EventSystems;
-using UnityEngine.AddressableAssets;
-
-using miniPair = System.Tuple<Mini.Type, Mini.Strength>;
-using Unity.VisualScripting;
 public class VanPopup : TransportPopup
 {
     // TODO: IF YOU ARE ADDING A MINI TYPE, UPDATE RANDOM NUM UPPER BOUND IN GenerateNewSeats INNER LOOP

@@ -1,11 +1,8 @@
 using UnityEngine;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using Unity.Burst.Intrinsics;
 
 using Special = CrabInfo.SpecialCharacter;
-using UnityEditor.Localization.Plugins.XLIFF.V20;
 
 
 [Serializable]

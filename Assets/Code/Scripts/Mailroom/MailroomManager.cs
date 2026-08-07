@@ -1,13 +1,9 @@
-using System.Collections.Generic;
 using UnityEngine;
-using System;
 using System.IO;
 using System.Linq;
 using TMPro;
 using UnityEngine.UI;
-using Unity.VisualScripting;
 using System.Collections;
-using UnityEngine.SceneManagement;
 
 using Special = CrabInfo.SpecialCharacter;
 public class MailroomManager : MonoBehaviour
@@ -389,7 +385,7 @@ public class MailroomManager : MonoBehaviour
     public void Leave()
     {
         AudioManager.instance.SwitchTheme(AudioManager.ThemeNames.CheckingIntoStation);
-        SceneManager.LoadScene("Home");
+        SceneTransitionManager.instance.TransitionToScene(SceneTransitionManager.SceneType.Home);
     }
 
     public void ClickTrinketCeramic()

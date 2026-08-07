@@ -1,7 +1,6 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Summary : MonoBehaviour
@@ -10,7 +9,7 @@ public class Summary : MonoBehaviour
     private void Start()
     {
         screendim.SetActive(false);
-        
+
         GetComponent<RectTransform>().anchoredPosition = new Vector2(0, -1120);
         GetComponent<SmoothLerp>().Move(new Vector2(0, 0), 0.75f);
 
@@ -49,6 +48,6 @@ public class Summary : MonoBehaviour
     public void Continue()
     {
         AudioManager.instance.SwitchTheme(AudioManager.ThemeNames.CheckingIntoStation);
-        SceneManager.LoadScene("Home");
+        SceneTransitionManager.instance.TransitionToScene(SceneTransitionManager.SceneType.Home);
     }
 }

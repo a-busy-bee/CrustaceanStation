@@ -1,7 +1,5 @@
 using UnityEngine;
-using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
-using NUnit.Framework;
 using System.Collections;
 public class Settings : MonoBehaviour
 {
