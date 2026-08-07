@@ -94,8 +94,6 @@ public class MailroomManager : MonoBehaviour
         LoadJSON();
         plotData.inbox.OrderBy(m => m.timestamp).ToList();
         mailbox.SetSprite(plotData.inbox.Count);
-
-        SaveManager.instance.SaveProgressionData(SaveManager.ProgressionType.currDay, "2");
     }
 
     public void SetState(LetterState newState)
