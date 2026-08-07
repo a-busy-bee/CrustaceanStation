@@ -56,36 +56,41 @@ public class DialogueObject : MonoBehaviour
                 if (longDialogueHideRoutine != null) StopCoroutine(longDialogueHideRoutine);
                 if (waitAFrameRoutine != null) StopCoroutine(waitAFrameRoutine);
                 if (typewriteRoutine != null) StopCoroutine(typewriteRoutine);
+                shortDialogue.SetActive(false);
+                longDialogue.SetActive(false);
 
                 break;
 
             case DialogueState.Appearing:
                 if (shortDialogueHideRoutine != null) StopCoroutine(shortDialogueHideRoutine);
                 if (longDialogueHideRoutine != null) StopCoroutine(longDialogueHideRoutine);
+                if (waitAFrameRoutine != null) StopCoroutine(waitAFrameRoutine);
+                if (typewriteRoutine != null) StopCoroutine(typewriteRoutine);
 
                 if (shortDialogue.activeInHierarchy) shortDialogueAnimator.ResetTrigger("Hide");
                 if (longDialogue.activeInHierarchy) longDialogueAnimator.ResetTrigger("Hide");
 
                 shortDialogue.SetActive(false);
                 longDialogue.SetActive(false);
-
-                SetState(DialogueState.Typing);
+                waitAFrameRoutine = StartCoroutine(WaitAFrame());
                 break;
 
             case DialogueState.Typing:
-                waitAFrameRoutine = StartCoroutine(WaitAFrame(currText));
+                
                 break;
 
             case DialogueState.Idle:
                 if (longDialogue.activeSelf)
                 {
                     longDialogueText.maxVisibleCharacters = currText.Length;
-                    longDialogueAnimator.Play("Blob");
+                    longDialogue.GetComponent<CanvasGroup>().alpha = 1;
+                    //longDialogueAnimator.Play("Blob");
                 }
                 else if (shortDialogue.activeSelf)
                 {
                     shortDialogueText.maxVisibleCharacters = currText.Length;
-                    shortDialogueAnimator.Play("Blob");
+                    shortDialogue.GetComponent<CanvasGroup>().alpha = 1;
+                    //shortDialogueAnimator.Play("Blob");
                 }
 
                 break;
@@ -124,22 +129,22 @@ public class DialogueObject : MonoBehaviour
         SetState(DialogueState.Disappearing);
     }
 
-    IEnumerator WaitAFrame(string text)
+    IEnumerator WaitAFrame()
     {
-        yield return new WaitForEndOfFrame();
+        //yield return new WaitForEndOfFrame();
 
         shortDialogue.SetActive(true);
-        shortDialogue.GetComponent<CanvasGroup>().alpha = 0;
+        //shortDialogue.GetComponent<CanvasGroup>().alpha = 0;
         shortDialogueText.text = currText;
 
         yield return new WaitForEndOfFrame();
-        
-        AudioManager.instance.PlaySound(AudioManager.SoundNames.PopupSmall, true);
 
+        AudioManager.instance.PlaySound(AudioManager.SoundNames.PopupSmall, true);
+        
         if (shortDialogueText.gameObject.GetComponent<RectTransform>().rect.width > maxWidth)
         {
             longDialogue.SetActive(true);
-            longDialogueText.text = text;
+            longDialogueText.text = currText;
             longDialogueAnimator.Play("CalloutAppear", 0, 0f);
 
             typewriteRoutine = StartCoroutine(TypeWrite(false));
@@ -149,10 +154,13 @@ public class DialogueObject : MonoBehaviour
         }
         else
         {
+            Debug.Log("short");
+            //shortDialogue.GetComponent<CanvasGroup>().alpha = 1;
             shortDialogueAnimator.Play("CalloutAppear", 0, 0f);
-
             typewriteRoutine = StartCoroutine(TypeWrite(true));
         }
+        
+        SetState(DialogueState.Typing);
     }
 
     IEnumerator TypeWrite(bool isShort)
@@ -160,7 +168,6 @@ public class DialogueObject : MonoBehaviour
         if (isShort)
         {
             shortDialogueText.maxVisibleCharacters = 0;
-
             while (shortDialogueText.maxVisibleCharacters < currText.Length)
             {
                 shortDialogueText.maxVisibleCharacters++;
@@ -177,20 +184,18 @@ public class DialogueObject : MonoBehaviour
                 yield return new WaitForSeconds(typingSpeed);
             }
         }
-
         SetState(DialogueState.Idle);
     }
 
     IEnumerator WaitForAnimAndHide(GameObject dialogueObj, Animator animator, TextMeshProUGUI text)
     {
-        while (!animator.GetCurrentAnimatorStateInfo(0).IsName("Hide")) yield return null;
+        while (!animator.GetCurrentAnimatorStateInfo(0).IsName("CalloutHide")) yield return null;
 
-        yield return new WaitForSeconds(animator.GetCurrentAnimatorClipInfo(0).Length);
+        yield return new WaitForSeconds(animator.GetCurrentAnimatorClipInfo(0).Length / 2.0f);
         animator.ResetTrigger("Hide");
         text.text = "";
         dialogueObj.SetActive(false);
         
-
         SetState(DialogueState.NotAppeared);
     }
 

@@ -317,8 +317,8 @@ GameObject:
   - component: {fileID: 4960528679918608463}
   - component: {fileID: 4687008120916543091}
   - component: {fileID: 7207809526735516036}
-  - component: {fileID: 7845566661594851134}
   - component: {fileID: 8655813744328482091}
+  - component: {fileID: 7845566661594851134}
   m_Layer: 5
   m_Name: DialogueShort
   m_TagString: Untagged
@@ -344,7 +344,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 134.99998, y: 156.66496}
+  m_AnchoredPosition: {x: 134.99998, y: -12}
   m_SizeDelta: {x: 674.92, y: 143.61}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &4687008120916543091
@@ -387,6 +387,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.ContentSizeFitter
   m_HorizontalFit: 2
   m_VerticalFit: 2
+--- !u!95 &8655813744328482091
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1965339025483160850}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a3d0003ff4ee5924dbd199a6c2b95677, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!225 &7845566661594851134
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -399,28 +421,6 @@ CanvasGroup:
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
---- !u!95 &8655813744328482091
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1965339025483160850}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 88514920697346d4ba9c2689833930c7, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3501774988906058797
 GameObject:
   m_ObjectHideFlags: 0
@@ -459,7 +459,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 134.99998, y: -12.409973}
+  m_AnchoredPosition: {x: 134.99998, y: -12}
   m_SizeDelta: {x: 680, y: 316.41}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1446111121445525108
@@ -512,7 +512,7 @@ Animator:
   m_GameObject: {fileID: 3501774988906058797}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 88514920697346d4ba9c2689833930c7, type: 2}
+  m_Controller: {fileID: 9100000, guid: a3d0003ff4ee5924dbd199a6c2b95677, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -588,8 +588,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueObject
   longDialogue: {fileID: 3501774988906058797}
   longDialogueText: {fileID: 8798501167678831905}
+  longDialogueAnimator: {fileID: 7187266714851755466}
   shortDialogue: {fileID: 1965339025483160850}
   shortDialogueText: {fileID: 5005049334126764091}
+  shortDialogueAnimator: {fileID: 8655813744328482091}
 --- !u!1 &7954072690033859785
 GameObject:
   m_ObjectHideFlags: 0

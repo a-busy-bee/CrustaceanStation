@@ -189,13 +189,14 @@ public class CutscenePlayer_Dialogue : MonoBehaviour
         DialogueManager.instance.ClearDialogue();
 
         currDialogue++;
-        Dialogue(currDialogue);
+        StartCoroutine(WaitForHideThenShowNext());
+        
     }
 
-    private IEnumerator WaitBeforeContinuingDialogue()
+    private IEnumerator WaitForHideThenShowNext()
     {
-        yield return new WaitForSeconds(1);
-        
+        while (DialogueManager.instance.GetDialogueState() != DialogueObject.DialogueState.NotAppeared) yield return null;
+        Dialogue(currDialogue);
     }
 
     private IEnumerator WaitThenContinueNextScene()
