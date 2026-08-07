@@ -146,9 +146,14 @@ public class DialogueManager : MonoBehaviour
         saveManager.SaveCharacterData(characterNameString, dialgoueIdx + 1); // progress dialogue
     }
 
+    public DialogueObject.DialogueState GetDialogueState()
+    {
+        return dialogueObject.GetDialogueState();
+    }
+
     public void ClearDialogue()
     {
-        dialogueObject.ClearDialogue();
+        dialogueObject.Skip();
     }
 
     public void ShowCharacterLongDialogue(CutscenePlayer_Dialogue.DialogueType type, int idx)

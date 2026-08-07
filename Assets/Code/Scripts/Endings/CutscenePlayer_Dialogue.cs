@@ -173,6 +173,13 @@ public class CutscenePlayer_Dialogue : MonoBehaviour
 
     public void ClickToContinue() // button
     {
+        DialogueObject.DialogueState state = DialogueManager.instance.GetDialogueState();
+        if (state == DialogueObject.DialogueState.Typing)
+        {
+            DialogueManager.instance.ClearDialogue();
+            return;
+        }
+
         StopCoroutine(WaitClickToContinueTimer);
         clickToContinueText.alpha = 0;
         currVelocityClickToContinue = 0f;
@@ -185,11 +192,17 @@ public class CutscenePlayer_Dialogue : MonoBehaviour
         Dialogue(currDialogue);
     }
 
+    private IEnumerator WaitBeforeContinuingDialogue()
+    {
+        yield return new WaitForSeconds(1);
+        
+    }
+
     private IEnumerator WaitThenContinueNextScene()
     {
         if (scenes.Length == 0) yield return new WaitForSeconds(0);
         else yield return new WaitForSeconds(sceneLength);
-        
+
         ProgressScene();
     }
 
