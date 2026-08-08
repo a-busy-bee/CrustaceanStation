@@ -29,7 +29,7 @@ public class Settings : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name != "BaseArea") HideThing(backgroundDisplay);
 
-        if (areYouSurePanel.activeInHierarchy) HideThing(areYouSurePanel);
+        if (areYouSurePanel != null && areYouSurePanel.activeInHierarchy) HideThing(areYouSurePanel);
 
         moving = true;
     }
@@ -37,7 +37,7 @@ public class Settings : MonoBehaviour
     private void HideThing(GameObject thing)
     {
         //print((thing.activeInHierarchy));
-        if ((thing != null) && (thing.activeInHierarchy))
+        if ((thing != null) && thing.activeInHierarchy)
         {
             hideAnimRunning = false;
             Animator animator = thing.GetComponent<Animator>();

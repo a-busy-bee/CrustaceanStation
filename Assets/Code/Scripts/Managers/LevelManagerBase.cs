@@ -90,9 +90,6 @@ public class LevelManagerBase : MonoBehaviour
                 {
                     if (prevState == LMState.Paused)
                     {
-                        // hide overlay background
-                        transparentOverlay.SetActive(false);
-
                         // start clock & crabs & trains
                         Time.timeScale = 1f;
                     }
@@ -109,9 +106,6 @@ public class LevelManagerBase : MonoBehaviour
 
             case LMState.Paused:
                 {
-                    // show overlay background
-                    transparentOverlay.SetActive(true);
-
                     // stop clock & crabs & trains
                     Time.timeScale = 0f;
                 }

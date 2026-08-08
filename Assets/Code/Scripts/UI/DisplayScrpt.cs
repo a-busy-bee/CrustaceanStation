@@ -10,6 +10,7 @@ public class DisplayScrpt : MonoBehaviour
     private Vector2 onPosCrab = new Vector2(-292, 0);
     [SerializeField] private RectTransform rectTransformBoard;
     [SerializeField] private RectTransform rectTransformCrab;
+    [SerializeField] private GameObject backgroundOverlay;
     private Vector2 currVelocityBoard;
     private Vector2 currVelocityCrab;
 
@@ -57,7 +58,6 @@ public class DisplayScrpt : MonoBehaviour
                 {
                     moving = false;
                     displayed = false;
-
                     // resume the clock/everything else when it's done moving
                 }
             }
@@ -99,6 +99,9 @@ public class DisplayScrpt : MonoBehaviour
 
                     moving = false;
                     displayed = true;
+                    
+                    backgroundOverlay.SetActive(true);
+                    Time.timeScale = 0f;
 
                     // stop the clock! 
                     if (LevelManager.instance != null)
@@ -118,7 +121,9 @@ public class DisplayScrpt : MonoBehaviour
             //moving = true;
             crabMoving = true;
 
-            paused = false;
+            paused = false; 
+            backgroundOverlay.SetActive(false);
+            Time.timeScale = 1f;
 
             if (LevelManager.instance != null)
             {
@@ -133,6 +138,13 @@ public class DisplayScrpt : MonoBehaviour
         Time.timeScale = 1f;
         AudioManager.instance.SwitchTheme(AudioManager.ThemeNames.CheckingIntoStation);
         SceneTransitionManager.instance.TransitionToScene(SceneTransitionManager.SceneType.Home);
+    }
+
+    public void BackToTitle()
+    {
+        Time.timeScale = 1f;
+        AudioManager.instance.SwitchTheme(AudioManager.ThemeNames.CheckingIntoStation);
+        SceneTransitionManager.instance.TransitionToScene(SceneTransitionManager.SceneType.TitleScreen);
     }
 
     public void OnSettings()

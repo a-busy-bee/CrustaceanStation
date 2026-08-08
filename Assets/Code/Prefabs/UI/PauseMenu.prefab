@@ -388,7 +388,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 1d480f53350a52146a6b72c901e036c0, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -640,6 +640,7 @@ MonoBehaviour:
   speed: 2000
   rectTransformBoard: {fileID: 2591404405173831768}
   rectTransformCrab: {fileID: 8373499829130133054}
+  backgroundOverlay: {fileID: 0}
   settings: {fileID: 0}
 --- !u!1 &6683177109648266251
 GameObject:
