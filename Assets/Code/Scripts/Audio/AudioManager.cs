@@ -101,6 +101,7 @@ public class AudioManager : MonoBehaviour
         ChangeVolume(AudioSlider.VolumeType.SFX, sfxVol);
 
         SetTheme(ThemeNames.CheckingIntoStation);
+        PlaySound(SoundNames.Waves);
     }
 
     #region SFX
@@ -114,6 +115,8 @@ public class AudioManager : MonoBehaviour
         {
             s.source.pitch = UnityEngine.Random.Range(0.85f, 1.25f);
         }
+
+        s.source.loop = s.loop;
         s.source.Play();
     }
 

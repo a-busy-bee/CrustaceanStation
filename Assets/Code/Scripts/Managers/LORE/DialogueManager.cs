@@ -138,7 +138,7 @@ public class DialogueManager : MonoBehaviour
         }
 
         string text = characterToDialgoue[characterName][dialgoueIdx];
-        dialogueObject.ShowDialogue(text);
+        dialogueObject.ShowDialogue(text, true, characterName);
 
         saveManager.SaveCharacterData(characterNameString, dialgoueIdx + 1); // progress dialogue
     }

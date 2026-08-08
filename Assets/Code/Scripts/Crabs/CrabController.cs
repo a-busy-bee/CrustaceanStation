@@ -158,6 +158,7 @@ public class CrabController : MonoBehaviour
                         presented = true;
                         if (LevelManagerBase.instance.GetIsTutorial()) PresentTicketAndIDNoForgery();   // TODO: make this cleaner later
                         else PresentTicketAndID();
+
                         Dialogue();
 
                         AudioManager.instance.PlaySound(AudioManager.SoundNames.CharAppear, true);
