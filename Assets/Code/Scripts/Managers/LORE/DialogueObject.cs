@@ -91,7 +91,7 @@ public class DialogueObject : MonoBehaviour
     {
         shortDialogue.GetComponent<Animator>().SetTrigger("Hide");
         StartCoroutine(WaitForAnimAndHide(shortDialogue, shortDialogue.GetComponent<Animator>(), shortDialogueText));
-
+        
 
         longDialogue.GetComponent<Animator>().SetTrigger("Hide");
         StartCoroutine(WaitForAnimAndHide(longDialogue, longDialogue.GetComponent<Animator>(), longDialogueText));
