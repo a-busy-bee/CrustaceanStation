@@ -252,15 +252,18 @@ public class PerformanceManager : MonoBehaviour
         {
             sliderSummaryColor.color = sliderColors[0];
 
+            int currDay = SaveManager.instance.GetProgression_CurrDay();
+
             if (alreadyRedBefore)
             {
                 //second day having a red rating
                 // cue fired cutscene
+                currDay /= 5; // reset week
+                SaveManager.instance.SaveProgressionData(SaveManager.ProgressionType.currDay, currDay.ToString());
                 SceneTransitionManager.instance.TransitionToScene(SceneTransitionManager.SceneType.Fired);
                 return;
             }
 
-            int currDay = SaveManager.instance.GetProgression_CurrDay();
             if (currDay < 5)
             {
                 PlotManager.instance.AddMail("letter", "crustyCoID", 0);

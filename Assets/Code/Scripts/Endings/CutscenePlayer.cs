@@ -17,6 +17,9 @@ public class CutscenePlayer : MonoBehaviour
     private bool fading;
     private float currVelocity;
 
+    [SerializeField] private int maxSceneIdx = 4;
+    [SerializeField] private int animatedSceneIdx = 3;
+    [SerializeField] private SceneTransitionManager.SceneType nextScene = SceneTransitionManager.SceneType.TitleScreen;
 
     private void Awake()
     {
@@ -45,13 +48,13 @@ public class CutscenePlayer : MonoBehaviour
 
     public void ProgressScene()
     {
-        if (currSceneIdx < 4) 
+        if (currSceneIdx < maxSceneIdx) 
         {
             scenes[currSceneIdx].SetActive(false);
             currSceneIdx++;
             scenes[currSceneIdx].SetActive(true);
 
-            if (currSceneIdx == 3) // if a scene is animated, but we don't have that rn
+            if (currSceneIdx == animatedSceneIdx) // if a scene is animated, but we don't have that rn
             {
                 //scenes[currSceneIdx - 1].SetActive(true);
                 //sceneLength = animatedSceneLength;
@@ -61,7 +64,7 @@ public class CutscenePlayer : MonoBehaviour
 
             StartCoroutine(WaitThenContinueNextScene());
         }
-        else if (currSceneIdx == 4)
+        else if (currSceneIdx == maxSceneIdx)
         {
             fading = true;
         }
@@ -84,7 +87,7 @@ public class CutscenePlayer : MonoBehaviour
                 fading = false;
 
                 AudioManager.instance.SwitchTheme(AudioManager.ThemeNames.CheckingIntoStation);
-                SceneTransitionManager.instance.TransitionToScene(SceneTransitionManager.SceneType.TitleScreen);
+                SceneTransitionManager.instance.TransitionToScene(nextScene);
             }
         }
     }
