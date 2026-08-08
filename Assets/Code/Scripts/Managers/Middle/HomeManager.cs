@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using System.IO;
 using UnityEngine.UI;
 public class HomeManager : MonoBehaviour
@@ -81,19 +80,19 @@ public class HomeManager : MonoBehaviour
     public void GoToMailRoom()
     {
         AudioManager.instance.SwitchTheme(AudioManager.ThemeNames.Mailroom);
-        SceneManager.LoadScene("Mailroom");
+        SceneTransitionManager.instance.TransitionToScene(SceneTransitionManager.SceneType.Mailroom);
     }
 
     public void GoToIsoRoom()
     {
         AudioManager.instance.SwitchTheme(AudioManager.ThemeNames.Iso);
-        SceneManager.LoadScene("IsoRoom");
+        SceneTransitionManager.instance.TransitionToScene(SceneTransitionManager.SceneType.IsoRoom);
     }
 
     public void BackToMenu()
     {
         AudioManager.instance.SwitchTheme(AudioManager.ThemeNames.CheckingIntoStation);
-        SceneManager.LoadScene("TitleScreen");
+        SceneTransitionManager.instance.TransitionToScene(SceneTransitionManager.SceneType.TitleScreen);
     }
 
     public void SetIsoRoomButtonActive(bool isActive)

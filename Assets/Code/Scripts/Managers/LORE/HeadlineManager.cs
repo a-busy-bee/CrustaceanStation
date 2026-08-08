@@ -61,7 +61,7 @@ public class HeadlineManager : MonoBehaviour
     }
 
     public void GetPlotHeadline(PlotManager.Stage stage)
-    {
+    { 
         headlineObject.SetText(60, headlineData.nodesPlot[(int)stage].text[UnityEngine.Random.Range(0, headlineData.nodesPlot[(int)stage].text.Length)]);
     }
 

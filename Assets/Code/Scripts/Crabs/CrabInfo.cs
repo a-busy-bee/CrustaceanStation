@@ -72,11 +72,28 @@ public class CrabInfo : ScriptableObject
 		normal
 	}
 
+	
+	public enum MutantType
+	{
+		axolotlLong,
+		axolotlGoldLong,
+		fishChoke,
+		fishGills,
+		horseshoeLegs,
+		nautilusPurple,
+		nautilusYellow,
+		seagullLegs,
+		sealClaw,
+		sealemonBlackOrange,
+		sealemonBlackYellow,
+		sealemonYellowOrange,
+		seasheepHorns
+	}
 	[Header("Plot")]
+	public MutantType mutantType;
 	public PlotLevel plotLevel;
 	public bool hasResearchCoat;
-	public Sprite[] mutatedSprite;
-
+	//public Sprite[] mutatedSprite;
 
 	[Header("Specific Character")]
 	public bool isImportantCharacter;

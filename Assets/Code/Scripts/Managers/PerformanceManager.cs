@@ -1,9 +1,6 @@
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Numerics;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PerformanceManager : MonoBehaviour
@@ -15,7 +12,8 @@ public class PerformanceManager : MonoBehaviour
     {
         {MistakeType.idTicket, 0},
         {MistakeType.transport, 0},
-        {MistakeType.seating, 0}
+        {MistakeType.seating, 0},
+        {MistakeType.plot, 0}
     };
     private int numHappy;
     private int correctCounter; // must get all three stages to be correct (idTicket, transport, and seating)
@@ -45,7 +43,8 @@ public class PerformanceManager : MonoBehaviour
     {
         idTicket,
         transport,
-        seating
+        seating,
+        plot
     }
 
     private void Awake()
@@ -257,7 +256,7 @@ public class PerformanceManager : MonoBehaviour
             {
                 //second day having a red rating
                 // cue fired cutscene
-                SceneManager.LoadScene("Fired");
+                SceneTransitionManager.instance.TransitionToScene(SceneTransitionManager.SceneType.Fired);
                 return;
             }
 

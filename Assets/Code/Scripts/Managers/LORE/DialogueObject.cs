@@ -62,6 +62,7 @@ public class DialogueObject : MonoBehaviour
                 break;
 
             case DialogueState.Appearing:
+                AudioManager.instance.PlaySound(AudioManager.SoundNames.PopupSmall, true);
                 if (shortDialogueHideRoutine != null) StopCoroutine(shortDialogueHideRoutine);
                 if (longDialogueHideRoutine != null) StopCoroutine(longDialogueHideRoutine);
                 if (waitAFrameRoutine != null) StopCoroutine(waitAFrameRoutine);
@@ -96,6 +97,7 @@ public class DialogueObject : MonoBehaviour
                 break;
 
             case DialogueState.Disappearing:
+                AudioManager.instance.PlaySound(AudioManager.SoundNames.PopupClose, true);
                 if (waitAFrameRoutine != null) StopCoroutine(waitAFrameRoutine);
                 if (typewriteRoutine != null) StopCoroutine(typewriteRoutine);
 
@@ -139,7 +141,7 @@ public class DialogueObject : MonoBehaviour
 
         yield return new WaitForEndOfFrame();
 
-        AudioManager.instance.PlaySound(AudioManager.SoundNames.PopupSmall, true);
+        //AudioManager.instance.PlaySound(AudioManager.SoundNames.PopupSmall, true);
         
         if (shortDialogueText.gameObject.GetComponent<RectTransform>().rect.width > maxWidth)
         {

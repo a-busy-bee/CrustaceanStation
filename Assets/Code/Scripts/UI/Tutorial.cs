@@ -130,6 +130,8 @@ public class Tutorial : MonoBehaviour
     {
         texts[(int)tutorialState].SetActive(true);
 
+        AudioManager.instance.PlaySound(AudioManager.SoundNames.PopupBubble, true);
+
         if (tutorialState == TutorialState.approve || tutorialState == TutorialState.ticketType || tutorialState == TutorialState.preferences || tutorialState == TutorialState.trainSwitch) return;
         clickAnyWhereToContinue.SetActive(true);
     }
@@ -139,6 +141,8 @@ public class Tutorial : MonoBehaviour
         Animator animator = texts[finishedState].GetComponent<Animator>();
         animator.enabled = true;
         animator.SetTrigger("Hide");
+
+        AudioManager.instance.PlaySound(AudioManager.SoundNames.PopupClose, true);
 
         yield return new WaitForSeconds(animator.GetCurrentAnimatorClipInfo(0).Length);
 

@@ -1,10 +1,4 @@
-using System.Collections.Generic;
-using UnityEngine;
-using System.Collections;
-using UnityEngine.EventSystems;
-using UnityEngine.AddressableAssets;
 
-using miniPair = System.Tuple<Mini.Type, Mini.Strength>;
 
 public class ShuttlePopup : TransportPopup
 {
@@ -26,17 +20,28 @@ public class ShuttlePopup : TransportPopup
         }
 
         // check pred/prey relationships 
-        badness += currHowBad; 
-
-        // if ticket info was wrong
-        Cart.Type ticketCartType = KioskBase.instance.GetCurrentCrabTicket();
-        if (ticketCartType != type) // if the crab is otherwise valid, but chose the wrong cart
+        badness += currHowBad;
+        currDay = SaveManager.instance.GetProgression_CurrDay();
+        if (currDay + 1 >= 6 && KioskBase.instance.GetCrabInfo().plotLevel == CrabInfo.PlotLevel.predator)
         {
-            Kiosk.instance.WrongTransport();
+            PerformanceManager.instance.Correct();
+        }
+        else if (currDay + 1 >= 11 && KioskBase.instance.GetCrabInfo().plotLevel == CrabInfo.PlotLevel.nonCrustacean)
+        {
+            PerformanceManager.instance.Correct();
         }
         else
         {
-            Kiosk.instance.CorrectTransport();
+            // if ticket info was wrong
+            Cart.Type ticketCartType = KioskBase.instance.GetCurrentCrabTicket();
+            if (ticketCartType != type) // if the crab is otherwise valid, but chose the wrong cart
+            {
+                Kiosk.instance.WrongTransport();
+            }
+            else
+            {
+                Kiosk.instance.CorrectTransport();
+            }
         }
 
         // tell kiosk to wait then summon new crab

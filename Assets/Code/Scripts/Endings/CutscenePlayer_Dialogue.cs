@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class CutscenePlayer_Dialogue : MonoBehaviour
@@ -173,6 +172,13 @@ public class CutscenePlayer_Dialogue : MonoBehaviour
 
     public void ClickToContinue() // button
     {
+        DialogueObject.DialogueState state = DialogueManager.instance.GetDialogueState();
+        if (state == DialogueObject.DialogueState.Typing)
+        {
+            DialogueManager.instance.ClearDialogue();
+            return;
+        }
+
         StopCoroutine(WaitClickToContinueTimer);
         clickToContinueText.alpha = 0;
         currVelocityClickToContinue = 0f;
@@ -182,6 +188,13 @@ public class CutscenePlayer_Dialogue : MonoBehaviour
         DialogueManager.instance.ClearDialogue();
 
         currDialogue++;
+        StartCoroutine(WaitForHideThenShowNext());
+        
+    }
+
+    private IEnumerator WaitForHideThenShowNext()
+    {
+        while (DialogueManager.instance.GetDialogueState() != DialogueObject.DialogueState.NotAppeared) yield return null;
         Dialogue(currDialogue);
     }
 
@@ -189,7 +202,7 @@ public class CutscenePlayer_Dialogue : MonoBehaviour
     {
         if (scenes.Length == 0) yield return new WaitForSeconds(0);
         else yield return new WaitForSeconds(sceneLength);
-        
+
         ProgressScene();
     }
 
@@ -203,7 +216,27 @@ public class CutscenePlayer_Dialogue : MonoBehaviour
             {
                 fading = false;
                 AudioManager.instance.SwitchTheme(AudioManager.ThemeNames.CheckingIntoStation);
-                SceneManager.LoadScene(nextScene.ToString());
+
+                SceneTransitionManager.SceneType scene = SceneTransitionManager.SceneType.TitleScreen;
+                switch (nextScene)
+                {
+                    case NextScene.TitleScreen:
+                        scene = SceneTransitionManager.SceneType.TitleScreen;
+                        break;
+
+                    case NextScene.Home:
+                        scene = SceneTransitionManager.SceneType.Home;
+                        break;
+
+                    case NextScene.EndingGood:
+                        scene = SceneTransitionManager.SceneType.EndingGood;
+                        break;
+
+                    case NextScene.EndingBad:
+                        scene = SceneTransitionManager.SceneType.EndingBad;
+                        break;
+                }
+                SceneTransitionManager.instance.TransitionToScene(scene);
             }
         }
 

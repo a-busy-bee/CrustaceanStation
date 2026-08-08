@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class CutsceneManager : MonoBehaviour
@@ -133,7 +132,7 @@ public class CutsceneManager : MonoBehaviour
         else if (currSceneIdx == 7)
         {
             AudioManager.instance.SwitchTheme(AudioManager.ThemeNames.CheckingIntoStation);
-            SceneManager.LoadScene("Home");
+            SceneTransitionManager.instance.TransitionToScene(SceneTransitionManager.SceneType.Home);
         }
     }
 
