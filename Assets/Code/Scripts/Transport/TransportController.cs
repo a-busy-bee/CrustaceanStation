@@ -90,7 +90,7 @@ public class TransportController : MonoBehaviour
             case TransportState.Departed:
                 {
                     //LevelManager.instance.RemoveCurrentTrain(this);
-                    if (LevelManagerBase.instance != null && LevelManager.instance.lmState != LevelManagerBase.LMState.Summary) rail.Summon();
+                    if (LevelManagerBase.instance != null && LevelManagerBase.instance.lmState != LevelManagerBase.LMState.Summary) rail.Summon();
 
                     Destroy(gameObject);
                 }
