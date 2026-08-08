@@ -1,9 +1,6 @@
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Numerics;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PerformanceManager : MonoBehaviour
@@ -259,7 +256,7 @@ public class PerformanceManager : MonoBehaviour
             {
                 //second day having a red rating
                 // cue fired cutscene
-                SceneManager.LoadScene("Fired");
+                SceneTransitionManager.instance.TransitionToScene(SceneTransitionManager.SceneType.Fired);
                 return;
             }
 

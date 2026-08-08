@@ -1,11 +1,6 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UIElements.Experimental;
-using UnityEngine.UI;
-using Unity.VisualScripting;
-using NUnit.Framework.Interfaces;
 
 public class Decor : MonoBehaviour
 {

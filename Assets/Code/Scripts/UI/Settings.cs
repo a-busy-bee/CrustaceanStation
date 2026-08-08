@@ -1,7 +1,5 @@
 using UnityEngine;
-using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
-using NUnit.Framework;
 using System.Collections;
 public class Settings : MonoBehaviour
 {
@@ -29,9 +27,9 @@ public class Settings : MonoBehaviour
         //Assert.IsTrue(displayed);
         //gameObject.SetActive(false);
 
-        if (SceneManager.GetActiveScene().name != "BaseArea") HideThing(backgroundDisplay);
+        if (SceneManager.GetActiveScene().name == SceneTransitionManager.SceneType.TitleScreen.ToString()) HideThing(backgroundDisplay);
 
-        if (areYouSurePanel.activeInHierarchy) HideThing(areYouSurePanel);
+        if (areYouSurePanel != null && areYouSurePanel.activeInHierarchy) HideThing(areYouSurePanel);
 
         moving = true;
     }
@@ -39,7 +37,7 @@ public class Settings : MonoBehaviour
     private void HideThing(GameObject thing)
     {
         //print((thing.activeInHierarchy));
-        if ((thing != null) && (thing.activeInHierarchy))
+        if ((thing != null) && thing.activeInHierarchy)
         {
             hideAnimRunning = false;
             Animator animator = thing.GetComponent<Animator>();
@@ -66,6 +64,11 @@ public class Settings : MonoBehaviour
     public bool IsDisplayed()
     {
         return displayed;
+    }
+
+    public bool IsMoving()
+    {
+        return moving;
     }
 
     private void Update()

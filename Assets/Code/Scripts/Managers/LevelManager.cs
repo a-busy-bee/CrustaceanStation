@@ -1,6 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class LevelManager : LevelManagerBase
 {
@@ -8,7 +6,6 @@ public class LevelManager : LevelManagerBase
 
     override protected void Start()
     {
-        SaveManager.instance.SaveProgressionData(SaveManager.ProgressionType.currDay, "5");
         SetState(LMState.Setup);
     }
 

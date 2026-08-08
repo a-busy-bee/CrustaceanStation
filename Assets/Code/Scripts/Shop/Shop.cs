@@ -1,10 +1,7 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UIElements.Experimental;
 using UnityEngine.UI;
-using Unity.VisualScripting;
 
 public class Shop : MonoBehaviour
 {
@@ -156,7 +153,7 @@ public class Shop : MonoBehaviour
         if (menu == shopMenu.shopMain)
         {
             AudioManager.instance.SwitchTheme(AudioManager.ThemeNames.CheckingIntoStation);
-            SceneManager.LoadScene("Home");
+            SceneTransitionManager.instance.TransitionToScene(SceneTransitionManager.SceneType.Home);
         }
         else if (menu == shopMenu.Decor)
         {

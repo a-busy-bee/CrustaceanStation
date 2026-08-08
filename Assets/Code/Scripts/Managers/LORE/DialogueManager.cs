@@ -1,11 +1,8 @@
 using UnityEngine;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using Unity.Burst.Intrinsics;
 
 using Special = CrabInfo.SpecialCharacter;
-using UnityEditor.Localization.Plugins.XLIFF.V20;
 
 
 [Serializable]
@@ -146,9 +143,14 @@ public class DialogueManager : MonoBehaviour
         saveManager.SaveCharacterData(characterNameString, dialgoueIdx + 1); // progress dialogue
     }
 
+    public DialogueObject.DialogueState GetDialogueState()
+    {
+        return dialogueObject.GetDialogueState();
+    }
+
     public void ClearDialogue()
     {
-        dialogueObject.ClearDialogue();
+        dialogueObject.Skip();
     }
 
     public void ShowCharacterLongDialogue(CutscenePlayer_Dialogue.DialogueType type, int idx)

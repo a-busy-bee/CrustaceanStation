@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class CutscenePlayer : MonoBehaviour
@@ -85,7 +84,7 @@ public class CutscenePlayer : MonoBehaviour
                 fading = false;
 
                 AudioManager.instance.SwitchTheme(AudioManager.ThemeNames.CheckingIntoStation);
-                SceneManager.LoadScene("TitleScreen");
+                SceneTransitionManager.instance.TransitionToScene(SceneTransitionManager.SceneType.TitleScreen);
             }
         }
     }
