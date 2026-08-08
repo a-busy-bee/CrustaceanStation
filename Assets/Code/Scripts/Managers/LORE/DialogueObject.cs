@@ -3,17 +3,22 @@ using TMPro;
 using UnityEngine.UI;
 using UnityEngine;
 
+using Special = CrabInfo.SpecialCharacter;
 public class DialogueObject : MonoBehaviour
 {
+    [SerializeField] private Sprite[] characterCornerSprites;
+
     [Header("Long Dialogue")]
     [SerializeField] private GameObject longDialogue;
     [SerializeField] private TextMeshProUGUI longDialogueText;
     [SerializeField] private Animator longDialogueAnimator;
+    [SerializeField] private Image longCornerSprite;
 
     [Header("Short Dialogue")]
     [SerializeField] private GameObject shortDialogue;
     [SerializeField] private TextMeshProUGUI shortDialogueText;
     [SerializeField] private Animator shortDialogueAnimator;
+    [SerializeField] private Image shortCornerSprite;
 
     private Coroutine shortDialogueHideRoutine;
     private Coroutine longDialogueHideRoutine;
@@ -37,6 +42,8 @@ public class DialogueObject : MonoBehaviour
     {
         longDialogue.SetActive(false);
         shortDialogue.SetActive(false);
+        longCornerSprite.gameObject.SetActive(false);
+        shortCornerSprite.gameObject.SetActive(false);
     }
 
     public DialogueState GetDialogueState()
@@ -77,7 +84,7 @@ public class DialogueObject : MonoBehaviour
                 break;
 
             case DialogueState.Typing:
-                
+
                 break;
 
             case DialogueState.Idle:
@@ -120,9 +127,15 @@ public class DialogueObject : MonoBehaviour
         }
     }
 
-    public void ShowDialogue(string text)
+    private bool currIsSpecial;
+    private Special currSpecial; 
+
+    public void ShowDialogue(string text, bool isSpecial = false, Special special = Special.itty)
     {
         currText = text;
+        currIsSpecial = isSpecial;
+        currSpecial = special;
+
         SetState(DialogueState.Appearing);
     }
 
@@ -139,15 +152,36 @@ public class DialogueObject : MonoBehaviour
         //shortDialogue.GetComponent<CanvasGroup>().alpha = 0;
         shortDialogueText.text = currText;
 
+        Sprite cornerImage = null;
+        if (currIsSpecial)
+        {
+            if ((int)currSpecial == 5 || (int)currSpecial == 6)
+            {
+                cornerImage = characterCornerSprites[5];
+            }
+            else
+            {
+                cornerImage = characterCornerSprites[(int)currSpecial];
+            }
+        }
+
         yield return new WaitForEndOfFrame();
 
         //AudioManager.instance.PlaySound(AudioManager.SoundNames.PopupSmall, true);
-        
+
         if (shortDialogueText.gameObject.GetComponent<RectTransform>().rect.width > maxWidth)
         {
             longDialogue.SetActive(true);
             longDialogueText.text = currText;
             longDialogueAnimator.Play("CalloutAppear", 0, 0f);
+
+            shortCornerSprite.gameObject.SetActive(false);
+            if (cornerImage == null) longCornerSprite.gameObject.SetActive(false);
+            else
+            {
+                longCornerSprite.gameObject.SetActive(true);
+                longCornerSprite.sprite = cornerImage;
+            }
 
             typewriteRoutine = StartCoroutine(TypeWrite(false));
 
@@ -156,12 +190,21 @@ public class DialogueObject : MonoBehaviour
         }
         else
         {
-            Debug.Log("short");
+            longCornerSprite.gameObject.SetActive(false);
+            if (cornerImage == null)
+            {
+                shortCornerSprite.gameObject.SetActive(false);
+            }
+            else
+            {
+                shortCornerSprite.gameObject.SetActive(true);
+                shortCornerSprite.sprite = cornerImage;
+            }
             //shortDialogue.GetComponent<CanvasGroup>().alpha = 1;
             shortDialogueAnimator.Play("CalloutAppear", 0, 0f);
             typewriteRoutine = StartCoroutine(TypeWrite(true));
         }
-        
+
         SetState(DialogueState.Typing);
     }
 
@@ -197,7 +240,7 @@ public class DialogueObject : MonoBehaviour
         animator.ResetTrigger("Hide");
         text.text = "";
         dialogueObj.SetActive(false);
-        
+
         SetState(DialogueState.NotAppeared);
     }
 
