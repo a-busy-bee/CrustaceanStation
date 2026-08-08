@@ -32,7 +32,10 @@ public class AudioManager : MonoBehaviour
         IsoFood,
         CharPlace,
         ShuttleArrive,
-        ShuttleDepart
+        ShuttleDepart,
+        ObjectLift,
+        PillsInteraction,
+        FoodInteraction
     }
 
     public enum ThemeNames

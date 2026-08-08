@@ -25,6 +25,9 @@ public class Food : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler, I
         if (active) { return; }
         hoverAnimator.enabled = true;
         hoverAnimator.Play("OnHover");
+        
+        if (isMedication) AudioManager.instance.PlaySound(AudioManager.SoundNames.PillsInteraction, true);
+        else AudioManager.instance.PlaySound(AudioManager.SoundNames.FoodInteraction, true);
     }
 
     public void OnPointerClick(PointerEventData data)
@@ -40,6 +43,7 @@ public class Food : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler, I
     {
         active = true;
         animator.Play("Lift");
+        AudioManager.instance.PlaySound(AudioManager.SoundNames.ObjectLift, true);
         yield return new WaitForSeconds(0.75f);
 
         if (isMedication) AudioManager.instance.PlaySound(AudioManager.SoundNames.Pills);
@@ -60,6 +64,9 @@ public class Food : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler, I
         if (active) { return; }
         hoverAnimator.enabled = true;
         hoverAnimator.Play("StopHover");
+
+        if (isMedication) AudioManager.instance.PlaySound(AudioManager.SoundNames.PillsInteraction, true);
+        else AudioManager.instance.PlaySound(AudioManager.SoundNames.FoodInteraction, true);
     }
 
     public GameObject GetParticles()
