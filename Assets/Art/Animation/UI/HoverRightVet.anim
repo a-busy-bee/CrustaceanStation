@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: HoverRight
+  m_Name: HoverRightVet
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -23,7 +23,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0
+        value: 179
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -32,13 +32,22 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 1.2333333
-        value: 34.3
+        value: 223
         inSlope: -1.7322304
         outSlope: -1.7322304
         tangentMode: 0
         weightedMode: 3
         inWeight: 0.6676138
         outWeight: 0.68070835
+      - serializedVersion: 3
+        time: 2.1833334
+        value: 179
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -140,7 +149,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0
+        value: 179
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -149,13 +158,22 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 1.2333333
-        value: 34.3
+        value: 223
         inSlope: -1.7322304
         outSlope: -1.7322304
         tangentMode: 0
         weightedMode: 3
         inWeight: 0.6676138
         outWeight: 0.68070835
+      - serializedVersion: 3
+        time: 2.1833334
+        value: 179
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
