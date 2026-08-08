@@ -31,6 +31,7 @@ public class ShuttleController : TransportController
             case TransportState.Arriving:
                 {
                     // nothing to do here, all logic in Update()
+                    AudioManager.instance.PlaySound(AudioManager.SoundNames.ShuttleArrive);
                 }
                 break;
 
@@ -50,6 +51,8 @@ public class ShuttleController : TransportController
                 {
                     // give player coins
                     coins = 0;
+
+                    AudioManager.instance.PlaySound(AudioManager.SoundNames.ShuttleDepart);
 
                     foreach (TransportSelection ts in transportSelections)
                     {
