@@ -1,4 +1,6 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DisplayScrpt : MonoBehaviour
 {
@@ -11,6 +13,8 @@ public class DisplayScrpt : MonoBehaviour
     [SerializeField] private RectTransform rectTransformBoard;
     [SerializeField] private RectTransform rectTransformCrab;
     [SerializeField] private GameObject backgroundOverlay;
+
+    [SerializeField] private Button[] buttons;
     private Vector2 currVelocityBoard;
     private Vector2 currVelocityCrab;
 
@@ -19,20 +23,26 @@ public class DisplayScrpt : MonoBehaviour
     private bool paused; // pause the game when paused == true
     private bool crabMoving;
     private bool crabDisplayed;
+    private bool hideAnimRunning = false;
 
-    
     [SerializeField] private GameObject settings;
+
     void Start()
     {
         displayed = false;
         paused = false;
         rectTransformBoard.anchoredPosition = offPosBoard;
         rectTransformCrab.anchoredPosition = offPosCrab;
+
+        foreach (Button button in buttons)
+        {
+            button.interactable = false;
+        }
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && !settings.GetComponent<Settings>().IsDisplayed())
+        if (Input.GetKeyDown(KeyCode.Escape) && !settings.GetComponent<Settings>().IsDisplayed() && !settings.GetComponent<Settings>().IsMoving())
         {
             // pause
             if (!displayed && !paused)
@@ -92,6 +102,14 @@ public class DisplayScrpt : MonoBehaviour
             else
             {
                 rectTransformCrab.anchoredPosition = Vector2.SmoothDamp(rectTransformCrab.anchoredPosition, onPosCrab, ref currVelocityCrab, 0.2f);
+
+                if (Vector2.Distance(rectTransformCrab.anchoredPosition, onPosCrab) < 10f)
+                {
+                    foreach (Button button in buttons)
+                    {
+                        button.interactable = true;
+                    }
+                }
                 if (Vector2.Distance(rectTransformCrab.anchoredPosition, onPosCrab) < 1f)
                 {
                     crabMoving = false;
@@ -99,7 +117,7 @@ public class DisplayScrpt : MonoBehaviour
 
                     moving = false;
                     displayed = true;
-                    
+
                     backgroundOverlay.SetActive(true);
                     Time.timeScale = 0f;
 
@@ -118,11 +136,18 @@ public class DisplayScrpt : MonoBehaviour
     {
         if (displayed)
         {
+            foreach (Button button in buttons)
+            {
+                button.interactable = false;
+            }
+
+            HideThing(backgroundOverlay);
+
             //moving = true;
             crabMoving = true;
 
-            paused = false; 
-            backgroundOverlay.SetActive(false);
+            paused = false;
+            //backgroundOverlay.SetActive(false);
             Time.timeScale = 1f;
 
             if (LevelManager.instance != null)
@@ -130,6 +155,26 @@ public class DisplayScrpt : MonoBehaviour
                 LevelManager.instance.SetState(LevelManager.LMState.Game);
             }
         }
+    }
+
+    private void HideThing(GameObject thing)
+    {
+        //print((thing.activeInHierarchy));
+        if ((thing != null) && thing.activeInHierarchy)
+        {
+            hideAnimRunning = false;
+            Animator animator = thing.GetComponent<Animator>();
+            animator.enabled = true;
+            StartCoroutine(WaitForAnim(thing, animator));
+        }
+    }
+
+    private IEnumerator WaitForAnim(GameObject thing, Animator animator)
+    {
+        if (!hideAnimRunning) animator.SetTrigger("Hide");
+        hideAnimRunning = true;
+        yield return new WaitForSeconds(animator.GetCurrentAnimatorClipInfo(0).Length);
+        thing.SetActive(false);
     }
 
 
@@ -152,4 +197,7 @@ public class DisplayScrpt : MonoBehaviour
         settings.SetActive(true);
         settings.GetComponent<Settings>().Show();
     }
+
+
+
 }

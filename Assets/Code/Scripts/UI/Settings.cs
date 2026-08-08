@@ -27,7 +27,7 @@ public class Settings : MonoBehaviour
         //Assert.IsTrue(displayed);
         //gameObject.SetActive(false);
 
-        if (SceneManager.GetActiveScene().name != "BaseArea") HideThing(backgroundDisplay);
+        if (SceneManager.GetActiveScene().name == SceneTransitionManager.SceneType.TitleScreen.ToString()) HideThing(backgroundDisplay);
 
         if (areYouSurePanel != null && areYouSurePanel.activeInHierarchy) HideThing(areYouSurePanel);
 
@@ -64,6 +64,11 @@ public class Settings : MonoBehaviour
     public bool IsDisplayed()
     {
         return displayed;
+    }
+
+    public bool IsMoving()
+    {
+        return moving;
     }
 
     private void Update()
