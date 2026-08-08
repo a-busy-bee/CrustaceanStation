@@ -26,8 +26,8 @@ public class Food : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler, I
         hoverAnimator.enabled = true;
         hoverAnimator.Play("OnHover");
         
-        if (isMedication) AudioManager.instance.PlaySound(AudioManager.SoundNames.PillsInteraction, true);
-        else AudioManager.instance.PlaySound(AudioManager.SoundNames.FoodInteraction, true);
+        if (isMedication) AudioManager.instance.PlaySound(AudioManager.SoundNames.Pills, true);
+        else AudioManager.instance.PlaySound(AudioManager.SoundNames.IsoFood, true);
     }
 
     public void OnPointerClick(PointerEventData data)
@@ -46,14 +46,15 @@ public class Food : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler, I
         AudioManager.instance.PlaySound(AudioManager.SoundNames.ObjectLift, true);
         yield return new WaitForSeconds(0.75f);
 
-        if (isMedication) AudioManager.instance.PlaySound(AudioManager.SoundNames.Pills);
-        else AudioManager.instance.PlaySound(AudioManager.SoundNames.IsoFood);
+        if (isMedication) AudioManager.instance.PlaySound(AudioManager.SoundNames.PillsInteraction);
+        else AudioManager.instance.PlaySound(AudioManager.SoundNames.FoodInteraction);
             particlesObject.SetActive(true);
         particlesObjectAnimator.Play("Particles");
         yield return new WaitForSeconds(1f);
 
         animator.Play("PutDown");
         yield return new WaitForSeconds(0.2f);
+        AudioManager.instance.PlaySound(AudioManager.SoundNames.LightPlace);
         active = false;
 
         TankSceneManager.instance.FoodConsumed();
@@ -65,8 +66,8 @@ public class Food : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler, I
         hoverAnimator.enabled = true;
         hoverAnimator.Play("StopHover");
 
-        if (isMedication) AudioManager.instance.PlaySound(AudioManager.SoundNames.PillsInteraction, true);
-        else AudioManager.instance.PlaySound(AudioManager.SoundNames.FoodInteraction, true);
+        if (isMedication) AudioManager.instance.PlaySound(AudioManager.SoundNames.Pills, true);
+        else AudioManager.instance.PlaySound(AudioManager.SoundNames.IsoFood, true);
     }
 
     public GameObject GetParticles()

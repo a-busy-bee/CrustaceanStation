@@ -35,7 +35,8 @@ public class AudioManager : MonoBehaviour
         ShuttleDepart,
         ObjectLift,
         PillsInteraction,
-        FoodInteraction
+        FoodInteraction,
+        LightPlace
     }
 
     public enum ThemeNames
