@@ -26,9 +26,8 @@ public class DialogueData
     public string[] gramps_ending;
     public string[] vet1;
     public string[] vet2;
-    public string[] vet3Good;
+    public string[] vet3;
     public string[] vet4Good;
-    public string[] vet3Bad;
     public string[] vet4Bad;
     public string[] mailkeeper;
     public string[] mailkeeperGoodEnding;
@@ -167,14 +166,11 @@ public class DialogueManager : MonoBehaviour
             case CutscenePlayer_Dialogue.DialogueType.vet2:
                 text = dialogueData.vet2[idx];
                 break;
-            case CutscenePlayer_Dialogue.DialogueType.vet3good:
-                text = dialogueData.vet3Good[idx];
+            case CutscenePlayer_Dialogue.DialogueType.vet3:
+                text = dialogueData.vet3[idx];
                 break;
             case CutscenePlayer_Dialogue.DialogueType.vet4good:
                 text = dialogueData.vet4Good[idx];
-                break;
-            case CutscenePlayer_Dialogue.DialogueType.vet3bad:
-                text = dialogueData.vet3Bad[idx];
                 break;
             case CutscenePlayer_Dialogue.DialogueType.vet4bad:
                 text = dialogueData.vet4Bad[idx];
@@ -198,14 +194,11 @@ public class DialogueManager : MonoBehaviour
             case CutscenePlayer_Dialogue.DialogueType.vet2:
                 numDialogues = dialogueData.vet2.Length;
                 break;
-            case CutscenePlayer_Dialogue.DialogueType.vet3good:
-                numDialogues = dialogueData.vet3Good.Length;
+            case CutscenePlayer_Dialogue.DialogueType.vet3:
+                numDialogues = dialogueData.vet3.Length;
                 break;
             case CutscenePlayer_Dialogue.DialogueType.vet4good:
                 numDialogues = dialogueData.vet4Good.Length;
-                break;
-            case CutscenePlayer_Dialogue.DialogueType.vet3bad:
-                numDialogues = dialogueData.vet3Bad.Length;
                 break;
             case CutscenePlayer_Dialogue.DialogueType.vet4bad:
                 numDialogues = dialogueData.vet4Bad.Length;

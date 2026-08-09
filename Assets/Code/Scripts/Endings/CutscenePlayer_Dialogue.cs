@@ -38,9 +38,8 @@ public class CutscenePlayer_Dialogue : MonoBehaviour
         grampsEnding,
         vet1,
         vet2,
-        vet3good,
+        vet3,
         vet4good,
-        vet3bad,
         vet4bad
     }
     [Header("Instance-Specific")]

@@ -23,11 +23,7 @@ public class VetManager : MonoBehaviour
         currDay = 5;
         if (currDay / 5 == 1) CutscenePlayer_Dialogue.instance.SetDialogueType(CutscenePlayer_Dialogue.DialogueType.vet1);
         else if (currDay / 5 == 2) CutscenePlayer_Dialogue.instance.SetDialogueType(CutscenePlayer_Dialogue.DialogueType.vet2);
-        else if (currDay / 5 == 3)
-        {
-            if (PlotManager.instance.IsGoodEnding()) CutscenePlayer_Dialogue.instance.SetDialogueType(CutscenePlayer_Dialogue.DialogueType.vet3good);
-            else CutscenePlayer_Dialogue.instance.SetDialogueType(CutscenePlayer_Dialogue.DialogueType.vet3bad);
-        }
+        else if (currDay / 5 == 3) CutscenePlayer_Dialogue.instance.SetDialogueType(CutscenePlayer_Dialogue.DialogueType.vet3);
         else if (currDay / 5 == 4)
         {
             if (PlotManager.instance.IsGoodEnding())
