@@ -1,38 +1,34 @@
 {
-	"nodesGeneric":[
-		"Itty Bitty Loses Lollipop! Chaos Ensues.",
-		"Crustacean Corporation Starts New Carcinization Initiative",
-		"Predators Pose Danger to All. Report Suspicious Activity",
-		"Breaking News: Senator Fishman Accused of Insider Trading!",
-		"Cases of Predator on Prey Violence Continue to Rise at Alarming Rates",
-		"ShellCoin: Real Value or Rugpull?",
-		"What’s the Secret Behind Staying So Young and Healthy? Krusty Kaleb Reveals All…"
-
+	"headlines": [
+		"What Does a Biotechnology Company Even Need With a Train Station?",
+		"Breaking News: Senator Fishman Accused of Insider Trading! ",
+		"What’s the Secret Behind Staying So Young and Healthy? Krusty Kaleb Reveals All…",
+		"Child Found Dead Outside of Crustacean Corporation Lab, Appears to Have Been Eaten by a Predator",
+		"placeholder",
+		"Opinion: Crustacean Corporation Needs to Be Stopped",
+		"Opinion: Crustacean Corporation Might Be the Last Ethical Company Left",
+		"This Month’s Record-Breaking Number of Missing Creature Cases…",
+		"Crustaceans Are the Final Form of All Sea Life",
+		"placeholder",
+		"Is the New Hot Trend Taping Claws on Your Body? ",
+		"Whistleblower Reports on Crustacean Corporation’s New Revolutionary Research",
+		"Growing Claws is an Absolutely Normal Occurrence",
+		"Orange is Rated as the Top Color Mutation of All Time",
+		"placeholder"
 	],
 
-	"nodesPlot":[
-		{
-			"id":1, 
-		 	"text":[
-				"Crustacean Corporation Begins New Predator Study. Data Follows.",
-				"Is Crustacean-ification the Next Big Trend? How to Look More Like a Crab",
-				"Crustacean Mistakenly Put on Shuttle for “Research”, Crab Sues Corp for Billions",
-				"Researcher Accepted Bribes to Skew Data Reports—Sources Say",
-				"Is the New Hot Trend Taping Claws on Your Body?",
-				"Opinion: Crustacean Corporation Needs to Be Stopped",
-				"Opinion: Crustacean Corporation May Be Last Ethical Company Left",
-				"Sea Enforcement Department Continues to See Rising Number of Missing Creature Cases",
-				"Crustacean Corporation Reveals Development of New Revolutionary Drug"
-				]},
-			{
-			"id":2, 
-		 	"text":["Crustacean Corporation Testing on Live Subjects, First Mutations Arise!",
-					"Crustacean Corp Denies Responsibility for Recent Mutations in Research Subjects"]},
-			{
-			"id":3, 
-		 	"text":["COMPLY COMPLY COMPLY",
-					"Predators Pose Danger to Us All, Don’t Hesitate to Report Suspicious Characters"
-			]}
+	"headlinesGood": [
+		"Evolution Happened for a Reason, People!",
+		"Whistleblower Actually Reported Crustacean Corporation’s Shocking Experiments",
+		"A Deep Dive into Crustacean Corporation’s Corrupted Ideals",
+		"Top Ten Things You Can Do to Support the Anti-Crusty Movement"
+	],
+	
+	"headlinesBad": [
+		"Everybody Run.",
+		"Shed Your Old Exoskeletons and Embrace Carcinization.",
+		"The New World of Crustaceans and Crustacean-Like Crustaceans.",
+		"The Joy of Crab Raves Every Day."
 	]
 }
 

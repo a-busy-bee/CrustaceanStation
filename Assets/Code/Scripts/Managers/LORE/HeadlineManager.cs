@@ -4,15 +4,10 @@ using System;
 [Serializable]
 public class HeadlineData
 {
-    public string[] nodesGeneric;
-    public HeadlineNodePlot[] nodesPlot;
-}
-
-[Serializable]
-public class HeadlineNodePlot
-{
-    public int id;
-    public string[] text;
+    public string[] headlines;
+    public string[] headlinesGood;
+    public string[] headlinesBad;
+    
 }
 
 //TODO: add node for specific events like "headline after seeing itty bitty for the first time"
@@ -55,14 +50,15 @@ public class HeadlineManager : MonoBehaviour
         }
     }
 
-    public void GetGenericHeadline()
+    public void GetHeadline()
     {
-        headlineObject.SetText(60, headlineData.nodesGeneric[UnityEngine.Random.Range(0, headlineData.nodesGeneric.Length)]);
-    }
+        int currDay = SaveManager.instance.GetProgression_CurrDay();
+        string headline;
+        if (currDay < 15) headline = headlineData.headlines[currDay - 1];
+        else if (PlotManager.instance.IsGoodEnding()) headline = headlineData.headlinesGood[currDay - 16];
+        else headline = headlineData.headlinesBad[currDay - 16];
 
-    public void GetPlotHeadline(PlotManager.Stage stage)
-    { 
-        headlineObject.SetText(60, headlineData.nodesPlot[(int)stage].text[UnityEngine.Random.Range(0, headlineData.nodesPlot[(int)stage].text.Length)]);
+        SetSpecificText(60, headline);
     }
 
     public void SetSpecificText(int fontSize, string text)
