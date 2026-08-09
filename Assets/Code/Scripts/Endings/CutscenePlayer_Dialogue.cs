@@ -94,19 +94,7 @@ public class CutscenePlayer_Dialogue : MonoBehaviour
     {
         if (currSceneIdx < numScenesBeforeDialogue) // scenes before dialogue
         {
-            scenes[currSceneIdx].SetActive(false);
-            currSceneIdx++;
-            scenes[currSceneIdx].SetActive(true);
-
-            if (currSceneIdx == animatedScene) // if a scene is animated, but we don't have that rn
-            {
-                //scenes[currSceneIdx - 1].SetActive(true);
-                //sceneLength = animatedSceneLength;
-                sceneLength = normalSceneLength;
-            }
-            else sceneLength = normalSceneLength;
-
-            StartCoroutine(WaitThenContinueNextScene());
+            StartCoroutine(SwitchScenes());
         }
         else if (currSceneIdx == numScenesBeforeDialogue)
         {
@@ -114,6 +102,27 @@ public class CutscenePlayer_Dialogue : MonoBehaviour
             AppearCharacter();
         }
 
+    }
+
+    private IEnumerator SwitchScenes()
+    {
+        FadeToBlack.instance.FadeIn();
+        yield return new WaitForSeconds(0.5f);
+        scenes[currSceneIdx].SetActive(false);
+        currSceneIdx++;
+        scenes[currSceneIdx].SetActive(true);
+        FadeToBlack.instance.FadeOut();
+        yield return new WaitForSeconds(0.5f);
+
+        if (currSceneIdx == animatedScene) // if a scene is animated, but we don't have that rn
+        {
+            //scenes[currSceneIdx - 1].SetActive(true);
+            //sceneLength = animatedSceneLength;
+            sceneLength = normalSceneLength;
+        }
+        else sceneLength = normalSceneLength;
+
+        StartCoroutine(WaitThenContinueNextScene());
     }
 
     private void AppearCharacter()

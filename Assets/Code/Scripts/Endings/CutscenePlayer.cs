@@ -66,24 +66,33 @@ public class CutscenePlayer : MonoBehaviour
     {
         if (currSceneIdx < maxSceneIdx)
         {
-            scenes[currSceneIdx].SetActive(false);
-            currSceneIdx++;
-            scenes[currSceneIdx].SetActive(true);
-
-            if (currSceneIdx == animatedSceneIdx) // if a scene is animated, but we don't have that rn
-            {
-                //scenes[currSceneIdx - 1].SetActive(true);
-                //sceneLength = animatedSceneLength;
-                sceneLength = normalSceneLength;
-            }
-            else sceneLength = normalSceneLength;
-
-            StartCoroutine(WaitThenContinueNextScene());
+            StartCoroutine(SwitchScenes());
         }
         else if (currSceneIdx == maxSceneIdx)
         {
             fading = true;
         }
+    }
+
+    private IEnumerator SwitchScenes()
+    {
+        FadeToBlack.instance.FadeIn();
+        yield return new WaitForSeconds(0.5f);
+        scenes[currSceneIdx].SetActive(false);
+        currSceneIdx++;
+        scenes[currSceneIdx].SetActive(true);
+        FadeToBlack.instance.FadeOut();
+        yield return new WaitForSeconds(0.5f);
+
+        if (currSceneIdx == animatedSceneIdx) // if a scene is animated, but we don't have that rn
+        {
+            //scenes[currSceneIdx - 1].SetActive(true);
+            //sceneLength = animatedSceneLength;
+            sceneLength = normalSceneLength;
+        }
+        else sceneLength = normalSceneLength;
+
+        StartCoroutine(WaitThenContinueNextScene());
     }
 
     private IEnumerator WaitThenContinueNextScene()
