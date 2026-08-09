@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,8 +17,8 @@ public class VetManager : MonoBehaviour
     [SerializeField] private Image isoWalkSprite;
     [SerializeField] private Image isoRollSprite;
     [SerializeField] private Emotion isoEmotion;
-
-    private void Start()
+    
+	private void Start()
     {
         currDay = SaveManager.instance.GetProgression_CurrDay();
         currDay = 5;

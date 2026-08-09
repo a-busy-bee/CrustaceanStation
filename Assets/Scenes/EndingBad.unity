@@ -329,11 +329,26 @@ MonoBehaviour:
   scenes:
   - {fileID: 653852174}
   - {fileID: 1804044028}
+  - {fileID: 1545299202}
   - {fileID: 1891792962}
   - {fileID: 1946625849}
   firstBlackBkg: {fileID: 1298272933}
   fadeToBlack: {fileID: 805122}
-  maxSceneIdx: 3
+  isoCurledUp: {fileID: 114025084}
+  isoHealed: {fileID: 284455841}
+  curledUpSprites:
+  - {fileID: -887764521, guid: da2bc319e55f643799045cd25fe0136e, type: 3}
+  - {fileID: 15316465, guid: da2bc319e55f643799045cd25fe0136e, type: 3}
+  - {fileID: -1192416093, guid: da2bc319e55f643799045cd25fe0136e, type: 3}
+  - {fileID: -969329463, guid: da2bc319e55f643799045cd25fe0136e, type: 3}
+  - {fileID: -1597638969, guid: da2bc319e55f643799045cd25fe0136e, type: 3}
+  healedSprites:
+  - {fileID: -792891961, guid: da2bc319e55f643799045cd25fe0136e, type: 3}
+  - {fileID: -1480539972, guid: da2bc319e55f643799045cd25fe0136e, type: 3}
+  - {fileID: 924126866, guid: da2bc319e55f643799045cd25fe0136e, type: 3}
+  - {fileID: 1183937068, guid: da2bc319e55f643799045cd25fe0136e, type: 3}
+  - {fileID: -1691420647, guid: da2bc319e55f643799045cd25fe0136e, type: 3}
+  maxSceneIdx: 4
   animatedSceneIdx: 3
   nextScene: 9
 --- !u!1 &114025082
