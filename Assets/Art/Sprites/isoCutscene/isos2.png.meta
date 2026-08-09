@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -121,7 +121,227 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: isos2_0
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 1324
+        width: 430
+        height: 458
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 604e506061094463dadf868168fec837
+      internalID: -887764521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: isos2_1
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 1323
+        width: 430
+        height: 458
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76f4f20e8ed9d477093e60e82b878f90
+      internalID: -969329463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: isos2_2
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 844
+        width: 430
+        height: 458
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4f13a88277744207ae8e6c27d5d841f
+      internalID: 15316465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: isos2_3
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 848
+        width: 430
+        height: 458
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77760ad1d1cdc4a44b3a20375effb7a4
+      internalID: -1597638969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: isos2_4
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 382
+        width: 430
+        height: 458
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 181c38a3b2c644beeb37bc743b419bfa
+      internalID: -1192416093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: isos2_5
+      rect:
+        serializedVersion: 2
+        x: 1086
+        y: 1177
+        width: 497
+        height: 547
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 667f3dbec09d043d7814ac45e52505bb
+      internalID: -792891961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: isos2_6
+      rect:
+        serializedVersion: 2
+        x: 1619
+        y: 1197
+        width: 497
+        height: 547
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40e17f260d6d2492688880d665a15650
+      internalID: -1480539972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: isos2_7
+      rect:
+        serializedVersion: 2
+        x: 1625
+        y: 604
+        width: 497
+        height: 547
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81eebd45ac2f64df5ade0abdab74958b
+      internalID: -1691420647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: isos2_8
+      rect:
+        serializedVersion: 2
+        x: 1089
+        y: 589
+        width: 497
+        height: 547
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1dc9ce655720478db7c3edacbfe91e7
+      internalID: 924126866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: isos2_9
+      rect:
+        serializedVersion: 2
+        x: 1126
+        y: 26
+        width: 497
+        height: 547
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6757a3d13ef724129b1bfdfdc66804cb
+      internalID: 1183937068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -135,7 +355,17 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      isos2_0: -887764521
+      isos2_1: -969329463
+      isos2_2: 15316465
+      isos2_3: -1597638969
+      isos2_4: -1192416093
+      isos2_5: -792891961
+      isos2_6: -1480539972
+      isos2_7: -1691420647
+      isos2_8: 924126866
+      isos2_9: 1183937068
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

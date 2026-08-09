@@ -220,7 +220,9 @@
 		"I’m very sorry to be the bearer of such bad news.",
 		"I’ll prescribe some medicinal flakes for this week, and we’ll get that sample taken today.",
 		"Please trust that I will do my absolute best to save your beloved isopod.",
-		"Your total today comes up to about 800 dollars."
+		"Your total today comes up to about 800 dollars.",
+		"…What’s with that face?"
+
 	],
 
 	"vet2":[
@@ -231,51 +233,55 @@
 		"The bad news is the test results. ",
 		"From now on, your isopod will need regular booster shots and medication.",
 		"However, this won’t be enough. The best solution is artificial gills.",
-		"Unfortunately, the level of damage is too severe. Shots and medication are only temporary measures."
+		"Unfortunately, the level of damage is too severe. Shots and medication are only temporary measures.",
+		"The best solution is surgery to replace the gills.",
+		"Unfortunately, this is not covered under your company insurance plan.",
+		"You will need to pay out of pocket.",
+		"We’ll do a booster today, and I’ll prescribe some new medication.",
+		"Let me know if you plan to proceed with the surgery by next visit.",
+		"The cost? Well…",
+		"You should know it won’t be cheap."
 	],
 
-	"vet3Good":[
-		"Hey there, hope you’re both doing well!",
-		"I’ll first do a wellness checkup on your lil’ guy, and then we’ll discuss the test results.",
-		"Hmm…",
-		"Well, here’s the good news. Your isopod is relatively stable and doing much better than last week.",
-		"The bad news is the test results. ",
-		"From now on, your isopod will need regular booster shots and medication.",
-		"However, this won’t be enough. The best solution is artificial gills.",
-		"Unfortunately, the level of damage is too severe. Shots and medication are only temporary measures."
+	"vet3":[
+		"So, you’ve decided to proceed with the surgery? That’s good.",
+		"We’ll schedule it for next week.",
+		"The shot for today? Yeah yeah, we’ll get to that.",
+		"You’ll need to make a non-refundable deposit today.",
+		"Yes, today. And non-refundable. How else am I gonna pay off my-",
+		"Um. Anyways.",
+		"This is standard practice; I don’t know why you’re this upset...",
+		"You don’t have enough for the deposit and the usual treatment fees today? Well then…",
+		"If you’re committed to the surgery, we’ll skip the shot today.",
+		"Yes, skipping the booster today will be fine…",
+		"But taking your isopod off the meds means we have to go through with the surgery next week.",
+		"So, you had better scrounge up enough by next week."
 	],
 
 	"vet4Good":[
-		"Hey there, hope you’re both doing well!",
-		"I’ll first do a wellness checkup on your lil’ guy, and then we’ll discuss the test results.",
-		"Hmm…",
-		"Well, here’s the good news. Your isopod is relatively stable and doing much better than last week.",
-		"The bad news is the test results. ",
-		"From now on, your isopod will need regular booster shots and medication.",
-		"However, this won’t be enough. The best solution is artificial gills.",
-		"Unfortunately, the level of damage is too severe. Shots and medication are only temporary measures."
-	],
-
-	"vet3Bad":[
-		"Hey there, hope you’re both doing well!",
-		"I’ll first do a wellness checkup on your lil’ guy, and then we’ll discuss the test results.",
-		"Hmm…",
-		"Well, here’s the good news. Your isopod is relatively stable and doing much better than last week.",
-		"The bad news is the test results. ",
-		"From now on, your isopod will need regular booster shots and medication.",
-		"However, this won’t be enough. The best solution is artificial gills.",
-		"Unfortunately, the level of damage is too severe. Shots and medication are only temporary measures."
+		"Do you have the money?",
+		"…",
+		"This isn’t enough.",
+		"Sorry, do you think we’re a nonprofit? We have mouths to feed too.",
+		"According to our policy, we can’t conduct a procedure unless you’ve paid the amount in full.",
+		"…",
+		"Begging me won’t do anything. I’m not going to risk my job for this.",
+		"Can you have your money back? I thought this was clear…",
+		"The non-refundable deposit last week was non-refundable.",
+		"Today’s? Well…that’s the consultation fee. Guess what? You just had a consultation.",
+		"So no. ",
+		"Oh, you know what? Here. ",
+		"A complimentary gravestone, on the house, as part of our free aftercare package for all our patients.",
+		"Toodles!"
 	],
 
 	"vet4Bad":[
-		"Hey there, hope you’re both doing well!",
-		"I’ll first do a wellness checkup on your lil’ guy, and then we’ll discuss the test results.",
-		"Hmm…",
-		"Well, here’s the good news. Your isopod is relatively stable and doing much better than last week.",
-		"The bad news is the test results. ",
-		"From now on, your isopod will need regular booster shots and medication.",
-		"However, this won’t be enough. The best solution is artificial gills.",
-		"Unfortunately, the level of damage is too severe. Shots and medication are only temporary measures."
+		"Do you have the money?",
+		"…Wow. Even with your measly job, you actually got enough?",
+		"Uhhh…not that I know what your job is. The pay just kinda indicated it was bad.",
+		"Well, since you have the full amount today, we’ll put your isopod under.",
+		"Rest assured that we’ll do our absolute best.",
+		"They will pull through."
 	],
 
 	"mailkeeper":[
@@ -298,5 +304,15 @@
 	"mailkeeperbadEnding":[
 		"I guess you were just another pretty face after all, and I really did believe in you…",
 		"...well, I hope you’re at least having a good day."
+	],
+
+	"mutants":[
+		"drip…drip…drip",
+		"grrregghhhhh",
+		"let…me…go…",
+		"squawacklackclackclackclack",
+		"man these legs are nice! Right? RIGHT???",
+		"graaawwwwwrrrr",
+		"rrrrrgggghhhhh"
 	]
 }

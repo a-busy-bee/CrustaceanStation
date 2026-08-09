@@ -179,6 +179,13 @@ public class IsoMinigameManager : MonoBehaviour
         // save iso name and birthday and color
         SaveManager.instance.SaveIsoData(isoName, isoBirthMonth, isoBirthDay, (int)isoColor);
 
+        StartCoroutine(FadeThenContinue());
+    }
+
+    private IEnumerator FadeThenContinue()
+    {
+        FadeToBlack.instance.FadeIn();
+        yield return new WaitForSeconds(0.5f);
         CutsceneManager.instance.SetCertificateShown();
         CutsceneManager.instance.ProgressScene();
     }

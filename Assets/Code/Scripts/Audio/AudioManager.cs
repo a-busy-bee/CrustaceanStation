@@ -158,9 +158,9 @@ public class AudioManager : MonoBehaviour
             float t = currentTime / duration;
 
             if (oldTrack != null)
-                oldTrack.volume = Mathf.Lerp(1f, 0f, t);
+                oldTrack.source.volume = Mathf.Lerp(1f, 0f, t);
 
-            newTrack.volume = Mathf.Lerp(0f, 1f, t);
+            newTrack.source.volume = Mathf.Lerp(0f, 1f, t);
 
             yield return null;
         }
@@ -170,7 +170,8 @@ public class AudioManager : MonoBehaviour
             oldTrack.source.Stop();
         }
 
-        newTrack.volume = 1f;
+        newTrack.source.volume = 1f;
+        currentSFX = newTrack;
     }
 
     /*public void ChangeSFXVolume(float newVolume)

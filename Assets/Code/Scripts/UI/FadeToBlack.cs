@@ -15,6 +15,7 @@ public class FadeToBlack : MonoBehaviour
         on,
         fadingOut
     }
+
     private FadeType fadeState;
 
     private void Awake()
@@ -54,7 +55,7 @@ public class FadeToBlack : MonoBehaviour
                     fadeState = FadeType.on;
                     currVelocity = 0.0f;
                 }
-                
+
                 break;
 
             case FadeType.fadingOut:
@@ -67,7 +68,7 @@ public class FadeToBlack : MonoBehaviour
                     canvasGroup.blocksRaycasts = false;
                     currVelocity = 0.0f;
                 }
-                
+
                 break;
         }
     }

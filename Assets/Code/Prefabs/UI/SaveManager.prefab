@@ -468,32 +468,32 @@ MonoBehaviour:
     name: 26
   themes:
   - clip: {fileID: 8300000, guid: 7c681c700179c4c3db2046cbe2542e09, type: 3}
-    loop: 0
+    loop: 1
     volume: 1
     source: {fileID: 0}
     name: 0
   - clip: {fileID: 8300000, guid: a334a07d367a8294199d1851a752edca, type: 3}
-    loop: 0
+    loop: 1
     volume: 1
     source: {fileID: 0}
     name: 1
   - clip: {fileID: 8300000, guid: a3de5708c7027402485c746f1dfab272, type: 3}
-    loop: 0
+    loop: 1
     volume: 1
     source: {fileID: 0}
     name: 2
   - clip: {fileID: 8300000, guid: 9dea9d0f70468455da24c02285bfd3d0, type: 3}
-    loop: 0
+    loop: 1
     volume: 1
     source: {fileID: 0}
     name: 3
   - clip: {fileID: 8300000, guid: 38154e282a2ac44b2b766801f13ccc3f, type: 3}
-    loop: 0
+    loop: 1
     volume: 1
     source: {fileID: 0}
     name: 4
   - clip: {fileID: 8300000, guid: a80ea59325ed24b738b7ac1d571fe713, type: 3}
-    loop: 0
+    loop: 1
     volume: 1
     source: {fileID: 0}
     name: 5
@@ -619,8 +619,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.122641504, g: 0.108275354, b: 0.08735315, a: 1}
-  m_RaycastTarget: 1
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:

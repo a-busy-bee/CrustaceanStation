@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class CutscenePlayer : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class CutscenePlayer : MonoBehaviour
     private float sceneLength = 2;
 
     // scenes
+    [Header("Scenes")]
     [SerializeField] private GameObject[] scenes;
     [SerializeField] private GameObject firstBlackBkg;
     [SerializeField] private CanvasGroup fadeToBlack;
@@ -17,6 +19,13 @@ public class CutscenePlayer : MonoBehaviour
     private bool fading;
     private float currVelocity;
 
+    [Header("Ending-specific")]
+    [SerializeField] private Image isoCurledUp;
+    [SerializeField] private Image isoHealed;
+    [SerializeField] private Sprite[] curledUpSprites;
+    [SerializeField] private Sprite[] healedSprites;
+
+    [Header("Misc")]
     [SerializeField] private int maxSceneIdx = 4;
     [SerializeField] private int animatedSceneIdx = 3;
     [SerializeField] private SceneTransitionManager.SceneType nextScene = SceneTransitionManager.SceneType.TitleScreen;
@@ -46,28 +55,44 @@ public class CutscenePlayer : MonoBehaviour
         StartCoroutine(WaitThenContinueNextScene());
     }
 
+    private void Start()
+    {
+        int colorIdx = SaveManager.instance.GetIso_Color();
+        if (isoCurledUp != null) isoCurledUp.sprite = curledUpSprites[colorIdx];
+        if (isoHealed != null) isoHealed.sprite = healedSprites[colorIdx];
+    }
+
     public void ProgressScene()
     {
-        if (currSceneIdx < maxSceneIdx) 
+        if (currSceneIdx < maxSceneIdx)
         {
-            scenes[currSceneIdx].SetActive(false);
-            currSceneIdx++;
-            scenes[currSceneIdx].SetActive(true);
-
-            if (currSceneIdx == animatedSceneIdx) // if a scene is animated, but we don't have that rn
-            {
-                //scenes[currSceneIdx - 1].SetActive(true);
-                //sceneLength = animatedSceneLength;
-                sceneLength = normalSceneLength;
-            }
-            else sceneLength = normalSceneLength;
-
-            StartCoroutine(WaitThenContinueNextScene());
+            StartCoroutine(SwitchScenes());
         }
         else if (currSceneIdx == maxSceneIdx)
         {
             fading = true;
         }
+    }
+
+    private IEnumerator SwitchScenes()
+    {
+        FadeToBlack.instance.FadeIn();
+        yield return new WaitForSeconds(0.5f);
+        scenes[currSceneIdx].SetActive(false);
+        currSceneIdx++;
+        scenes[currSceneIdx].SetActive(true);
+        FadeToBlack.instance.FadeOut();
+        yield return new WaitForSeconds(0.5f);
+
+        if (currSceneIdx == animatedSceneIdx) // if a scene is animated, but we don't have that rn
+        {
+            //scenes[currSceneIdx - 1].SetActive(true);
+            //sceneLength = animatedSceneLength;
+            sceneLength = normalSceneLength;
+        }
+        else sceneLength = normalSceneLength;
+
+        StartCoroutine(WaitThenContinueNextScene());
     }
 
     private IEnumerator WaitThenContinueNextScene()
