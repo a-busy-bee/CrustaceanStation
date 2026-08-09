@@ -137,13 +137,22 @@ public class CutscenePlayer_Dialogue : MonoBehaviour
     {
         if (currDialogue == numDialogues)
         {
-            Debug.Log("aaaaaaaa");
             StartCoroutine(WaitThenFade());
             return;
         }
 
         // show dialogue at idx
         DialogueManager.instance.ShowCharacterLongDialogue(dialogueType, idx);
+
+        // if vet
+        if (dialogueType == DialogueType.vet1 && currDialogue == 18)
+        {
+            VetManager.instance.ShowMeds();
+        }
+        else if (dialogueType > DialogueType.grampsEnding && dialogueType < DialogueType.vet4bad && currDialogue == numDialogues - 1)
+        {
+            VetManager.instance.PlayIsoSad();
+        }
 
         // enable click to continue
         clickToContinue.SetActive(true);
@@ -233,14 +242,17 @@ public class CutscenePlayer_Dialogue : MonoBehaviour
                         break;
 
                     case NextScene.Home:
+                        SaveManager.instance.SetProgression_IncrementCurrDay();
                         scene = SceneTransitionManager.SceneType.Home;
                         break;
 
                     case NextScene.EndingGood:
+                        AchievementManager.instance.UnlockAchievementBool(AchievementManager.AchievementTypeBool.soLong);
                         scene = SceneTransitionManager.SceneType.EndingGood;
                         break;
 
                     case NextScene.EndingBad:
+                        AchievementManager.instance.UnlockAchievementBool(AchievementManager.AchievementTypeBool.whatHaveIDone);
                         scene = SceneTransitionManager.SceneType.EndingBad;
                         break;
                 }

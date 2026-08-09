@@ -23,9 +23,16 @@ public class Calendar : MonoBehaviour
             crosses[i].SetActive(false);
         }
 
+        if (currDay > 20)
+        {
+            HomeManager.instance.SetIsoRoomButtonActive(false);
+            HomeManager.instance.SetGoToWorkButtonActive(false);
+            return;
+        }
         // enable iso room button on sundays
         bool isIsoDay = (currDay + 1) % 5 == 0;
         HomeManager.instance.SetIsoRoomButtonActive(isIsoDay);
         HomeManager.instance.SetGoToWorkButtonActive(!isIsoDay);
+
     }
 }
