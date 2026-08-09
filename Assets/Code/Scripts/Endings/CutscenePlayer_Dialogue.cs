@@ -119,7 +119,7 @@ public class CutscenePlayer_Dialogue : MonoBehaviour
             //scenes[currSceneIdx - 1].SetActive(true);
             //sceneLength = animatedSceneLength;
             sceneLength = normalSceneLength;
-        }
+        } 
         else sceneLength = normalSceneLength;
 
         StartCoroutine(WaitThenContinueNextScene());
