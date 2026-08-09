@@ -65,7 +65,7 @@ public class Constants : MonoBehaviour
     // LETTERS MANAGER
     public Dictionary<int, int> LETTER_dayToIdxCrustyCo = new Dictionary<int, int>() // day -> idx in list
     {
-        {1, 0},
+        {0, 0},
         {5, 1},
         {6, 2},
         {11, 3}

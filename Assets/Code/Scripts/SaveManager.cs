@@ -411,6 +411,14 @@ public class SaveManager : MonoBehaviour
         data.settings.brightness = brightness;
         data.settings.reduceMotion = reduceMotion;
 
+        // reset inbox too
+        string defaultPathInbox = Application.dataPath + "/Data/Inbox.json";
+        string savePathInbox = Application.persistentDataPath + "/Inbox.json";
+
+        jsonText = File.ReadAllText(defaultPathInbox);
+        PlotData dataPlot = JsonUtility.FromJson<PlotData>(jsonText);
+        File.WriteAllText(savePathInbox, JsonUtility.ToJson(dataPlot, true));
+
         SaveData();
     }
     private void SaveData()
