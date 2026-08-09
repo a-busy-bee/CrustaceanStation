@@ -1,12 +1,11 @@
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class VetManager : MonoBehaviour
 {
-    //[SerializeField] private GameObject returnHomeButton;
-    //[SerializeField] private GameObject goodEndingButton;
-    //[SerializeField] private GameObject badEndingButton;
+    public static VetManager instance { get; private set; }
     [SerializeField] private GameObject vet;
     [SerializeField] private GameObject medicationBottle;
     private int currDay;
@@ -17,11 +16,24 @@ public class VetManager : MonoBehaviour
     [SerializeField] private Image isoWalkSprite;
     [SerializeField] private Image isoRollSprite;
     [SerializeField] private Emotion isoEmotion;
-    
+
+    private void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(this);
+            return;
+        }
+        else
+        {
+            instance = this;
+        }
+    }
 	private void Start()
     {
         currDay = SaveManager.instance.GetProgression_CurrDay();
         currDay = 5;
+        
         if (currDay / 5 == 1) CutscenePlayer_Dialogue.instance.SetDialogueType(CutscenePlayer_Dialogue.DialogueType.vet1);
         else if (currDay / 5 == 2) CutscenePlayer_Dialogue.instance.SetDialogueType(CutscenePlayer_Dialogue.DialogueType.vet2);
         else if (currDay / 5 == 3) CutscenePlayer_Dialogue.instance.SetDialogueType(CutscenePlayer_Dialogue.DialogueType.vet3);
@@ -46,73 +58,18 @@ public class VetManager : MonoBehaviour
         isoRollSprite.GetComponent<Image>().sprite = rollingSprites[colorIdx];
     }
 
-    /*private IEnumerator WaitThenContinue()
+    public void ShowMeds()
     {
-        yield return new WaitForSeconds(0.5f);
-
-        // show dialogue
-        //DialogueManager.instance.GetDialogueVet();
-
-        /*yield return new WaitForSeconds(1f);
-
-        
-        if (currDay / 5 == 1)
-        {
-            medicationBottle.SetActive(true);
-            SaveManager.instance.SaveProgressionData(SaveManager.ProgressionType.medsAvailable, "true");
-        }
-
-        yield return new WaitForSeconds(0.5f);
-
-
-        if (currDay / 5 != 3) // no emotion to play IF HE'S DEAD ;-;
-        {
-            // iso emotion
-            isoEmotion.PlaySad();
-        }
-
-        // show vet bill
-        //vetBill.GetComponent<SmoothLerp>().Move(new Vector2(), 0.25f);
-        yield return new WaitForSeconds(0.5f);
-
-        // show return button
-
-        if (currDay < 20)
-        {
-            returnHomeButton.SetActive(true);
-        }
-        else if (PlotManager.instance.IsGoodEnding())
-        {
-            goodEndingButton.SetActive(true);
-        }
-        else
-        {
-            badEndingButton.SetActive(true);
-        }
-        
-    }*/
-
-    /*public void ReturnHome()
-    {
-        SaveManager.instance.SetProgression_IncrementCurrDay();
-        AudioManager.instance.SwitchTheme(AudioManager.ThemeNames.CheckingIntoStation);
-        SceneManager.LoadScene("Home");
+        medicationBottle.SetActive(true);
+        SaveManager.instance.SaveProgressionData(SaveManager.ProgressionType.medsAvailable, "true");
     }
 
-    public void GoodEnding()
+    public void PlayIsoSad()
     {
-        AchievementManager.instance.UnlockAchievementBool(AchievementManager.AchievementTypeBool.soLong);
-        AudioManager.instance.SwitchTheme(AudioManager.ThemeNames.CheckingIntoStation);
-        SceneManager.LoadScene("EndingGood");
+        isoEmotion.PlaySad();
     }
 
-    public void BadEnding()
-    {
-        AchievementManager.instance.UnlockAchievementBool(AchievementManager.AchievementTypeBool.whatHaveIDone);
-        AudioManager.instance.SwitchTheme(AudioManager.ThemeNames.CheckingIntoStation);
-        SceneManager.LoadScene("EndingBad");
-    }*/
-
+   
     public void ClickMedBottle()
     {
         //todo: shake the bottle

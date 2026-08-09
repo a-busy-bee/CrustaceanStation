@@ -36,7 +36,10 @@ public class PerformanceManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI numIDTicketText;
     [SerializeField] private TextMeshProUGUI numTransportText;
     [SerializeField] private TextMeshProUGUI numSeatingText;
+    [SerializeField] private TextMeshProUGUI numShuttleText;
+    [SerializeField] private GameObject shuttleText;
     [SerializeField] private TextMeshProUGUI numHappyText;
+    
 
 
     public enum MistakeType
@@ -232,6 +235,17 @@ public class PerformanceManager : MonoBehaviour
         numIDTicketText.text = mistakes[MistakeType.idTicket].ToString();
         numTransportText.text = mistakes[MistakeType.transport].ToString();
         numSeatingText.text = mistakes[MistakeType.seating].ToString();
+
+        if (SaveManager.instance.GetProgression_CurrDay() >= 10)
+        {
+            numShuttleText.text = mistakes[MistakeType.plot].ToString();
+        }
+        else
+        {
+            numShuttleText.gameObject.SetActive(false);
+            shuttleText.SetActive(false);
+        }
+        
         numHappyText.text = numHappy.ToString();
 
         sliderSummary.value = barPercent;

@@ -173,8 +173,6 @@ public class MailroomManager : MonoBehaviour
         // show button to close letter
         GameObject chosen = null;
 
-        int currDay = SaveManager.instance.GetProgression_CurrDay();
-
         if (inboxItem.type == "letter")
         {
             letter.SetActive(true);
@@ -183,10 +181,15 @@ public class MailroomManager : MonoBehaviour
             string bottom = "";
             letterImage.sprite = letterSprites[0];
 
+            Debug.Log(inboxItem.type);
+            Debug.Log(inboxItem.subType);
+            Debug.Log(inboxItem.id);
+            Debug.Log(inboxItem.timestamp);
+
             switch (inboxItem.subType)
             {
                 case "crustyCoDay":
-                    FullStackLetterByDay letterByDay = lettersManager.GetCrustyCoLetterByDay(currDay);
+                    FullStackLetterByDay letterByDay = lettersManager.GetCrustyCoLetterByDay(inboxItem.id);
                     body = letterByDay.body;
                     top = letterByDay.top;
                     bottom = letterByDay.bottom;
@@ -194,7 +197,7 @@ public class MailroomManager : MonoBehaviour
                     letterImage.sprite = letterSprites[0];
                     break;
                 case "crustyCoDay_GoodEnding":
-                    letterByDay = lettersManager.GetCrustyCoLetterByDay(currDay, true, true);
+                    letterByDay = lettersManager.GetCrustyCoLetterByDay(inboxItem.id, true, true);
                     body = letterByDay.body;
                     top = letterByDay.top;
                     bottom = letterByDay.bottom;
@@ -202,7 +205,7 @@ public class MailroomManager : MonoBehaviour
                     letterImage.sprite = letterSprites[0];
                     break;
                 case "crustyCoDay_BadEnding":
-                    letterByDay = lettersManager.GetCrustyCoLetterByDay(currDay, true, false);
+                    letterByDay = lettersManager.GetCrustyCoLetterByDay(inboxItem.id, true, false);
                     body = letterByDay.body;
                     top = letterByDay.top;
                     bottom = letterByDay.bottom;
@@ -219,7 +222,7 @@ public class MailroomManager : MonoBehaviour
                     break;
 
                 case "family":
-                    FullStackLetter fullStackLetter = lettersManager.GetFamilyLetter(currDay);
+                    FullStackLetter fullStackLetter = lettersManager.GetFamilyLetter(inboxItem.id);
 
                     body = fullStackLetter.body;
                     top = fullStackLetter.top;
@@ -229,7 +232,7 @@ public class MailroomManager : MonoBehaviour
                     break;
 
                 case "mailkeeper":
-                    fullStackLetter = lettersManager.GetMailkeeperLetter(currDay);
+                    fullStackLetter = lettersManager.GetMailkeeperLetter(inboxItem.id);
 
                     body = fullStackLetter.body;
                     top = fullStackLetter.top;
