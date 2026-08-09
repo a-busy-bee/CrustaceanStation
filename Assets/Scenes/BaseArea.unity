@@ -1982,6 +1982,8 @@ MonoBehaviour:
   numIDTicketText: {fileID: 3748053639804197567}
   numTransportText: {fileID: 3748053639804197566}
   numSeatingText: {fileID: 3748053639804197565}
+  numShuttleText: {fileID: 3748053639804197569}
+  shuttleText: {fileID: 3748053639804197568}
   numHappyText: {fileID: 3748053639804197564}
 --- !u!114 &121998092
 MonoBehaviour:
@@ -28364,6 +28366,22 @@ MonoBehaviour:
 --- !u!114 &3748053639804197567 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3365645250982630410, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
+  m_PrefabInstance: {fileID: 3748053639804197563}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!1 &3748053639804197568 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3649328572378370662, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
+  m_PrefabInstance: {fileID: 3748053639804197563}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3748053639804197569 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1572491398188387129, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
   m_PrefabInstance: {fileID: 3748053639804197563}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
