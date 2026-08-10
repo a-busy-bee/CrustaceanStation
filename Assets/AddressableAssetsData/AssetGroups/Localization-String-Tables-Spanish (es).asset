@@ -15,6 +15,12 @@ MonoBehaviour:
   m_GroupName: Localization-String-Tables-Spanish (es)
   m_GUID: 4a9cc03c491304b61bca43f4b75e1d85
   m_SerializeEntries:
+  - m_GUID: 0c634c9c906194057acf06b3b75a8e25
+    m_Address: Names_Strings_es
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-es
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 0d4f26d39298a463aa3a6bb48c997770
     m_Address: Tutorial_Strings_es
     m_ReadOnly: 1
@@ -51,8 +57,26 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-es
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7b2592cc8813c4ed2aaa5062bc65a947
+    m_Address: Headlines_Strings_es
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-es
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: aeee7ed2e849f4f5db57f3ac77736748
     m_Address: Misc_Strings_es
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-es
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d88090585d53247d794bd46d1f8cb112
+    m_Address: Dialogue_Strings_es
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-es
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: de0118c66104b41ba9e27dc77ac91396
+    m_Address: Summary_Strings_es
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-es

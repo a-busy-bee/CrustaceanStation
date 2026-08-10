@@ -21,8 +21,20 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-it
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 37e78300fd9784e68b59c4331bcfcd80
+    m_Address: Dialogue_Strings_it
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-it
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 5a553b5b193d24e3c813b47334a8797f
     m_Address: Feedback_Strings_it
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-it
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6100001cdacc043f1a504de8a0c082ea
+    m_Address: Summary_Strings_it
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-it
@@ -51,6 +63,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-it
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a7fccceb04cf84df4a7cca61344d2c63
+    m_Address: Names_Strings_it
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-it
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ac3937c1c777e442d99ff7da335d04c0
     m_Address: TitleScreen_Strings_it
     m_ReadOnly: 1
@@ -59,6 +77,12 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: bf25c103a876941e5988844877c1bf8d
     m_Address: Tutorial_Strings_it
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-it
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ed1251126208d4f5c9aab84f02c95914
+    m_Address: Headlines_Strings_it
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-it
