@@ -50,6 +50,7 @@ public class CutscenePlayer_Dialogue : MonoBehaviour
     [SerializeField] private float charTargetX;
     [SerializeField] private float charTargetY;
     private int numDialogues = 0; // 39
+    private int[] scenesWithWhiteFade = new int[] { 2, 3, 4 };
 
     private void Awake()
     {
@@ -106,13 +107,30 @@ public class CutscenePlayer_Dialogue : MonoBehaviour
 
     private IEnumerator SwitchScenes()
     {
-        FadeToBlack.instance.FadeIn();
-        yield return new WaitForSeconds(0.5f);
-        scenes[currSceneIdx].SetActive(false);
-        currSceneIdx++;
-        scenes[currSceneIdx].SetActive(true);
-        FadeToBlack.instance.FadeOut();
-        yield return new WaitForSeconds(0.5f);
+        if (dialogueType == DialogueType.grampsEnding)
+        {
+            bool isWhite = currSceneIdx == 1 || currSceneIdx == 2 || currSceneIdx == 3 || currSceneIdx == 4;
+
+            FadeToBlack.instance.FadeIn(isWhite);
+            yield return new WaitForSeconds(0.5f);
+            scenes[currSceneIdx].SetActive(false);
+            currSceneIdx++;
+            scenes[currSceneIdx].SetActive(true);
+            FadeToBlack.instance.FadeOut(isWhite);
+            yield return new WaitForSeconds(0.5f);
+            
+        }
+        else
+        {
+            FadeToBlack.instance.FadeIn();
+            yield return new WaitForSeconds(0.5f);
+            scenes[currSceneIdx].SetActive(false);
+            currSceneIdx++;
+            scenes[currSceneIdx].SetActive(true);
+            FadeToBlack.instance.FadeOut();
+            yield return new WaitForSeconds(0.5f);
+        }
+        
 
         if (currSceneIdx == animatedScene) // if a scene is animated, but we don't have that rn
         {

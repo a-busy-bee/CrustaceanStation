@@ -5,6 +5,8 @@ public class FadeToBlack : MonoBehaviour
     public static FadeToBlack instance { get; private set; }
 
     [SerializeField] private CanvasGroup canvasGroup;
+    [SerializeField] private GameObject blackBkg;
+    [SerializeField] private GameObject whiteBkg;
     private float speed = 0.25f;
     private float currVelocity;
 
@@ -31,14 +33,36 @@ public class FadeToBlack : MonoBehaviour
         }
     }
 
-    public void FadeIn()
+    public void FadeIn(bool isWhite = false)
     {
+        if (isWhite)
+        {
+            whiteBkg.SetActive(true);
+            blackBkg.SetActive(false);
+        }
+        else
+        {
+            whiteBkg.SetActive(false);
+            blackBkg.SetActive(true);
+        }
+        
         canvasGroup.blocksRaycasts = true;
         fadeState = FadeType.fadingIn;
     }
 
-    public void FadeOut()
+    public void FadeOut(bool isWhite = false)
     {
+        if (isWhite)
+        {
+            whiteBkg.SetActive(true);
+            blackBkg.SetActive(false);
+        }
+        else
+        {
+            whiteBkg.SetActive(false);
+            blackBkg.SetActive(true);
+        }
+
         fadeState = FadeType.fadingOut;
     }
 
