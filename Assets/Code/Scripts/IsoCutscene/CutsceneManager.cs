@@ -17,6 +17,7 @@ public class CutsceneManager : MonoBehaviour
     private const int normalSceneLength = 2;
     private const int animatedSceneLength = 2;
     private float sceneLength = 2;
+    private int animatedSceneIdx = 3;
 
     // scenes
     [SerializeField] private GameObject[] scenes;
@@ -81,35 +82,12 @@ public class CutsceneManager : MonoBehaviour
         {
             case CutsceneState.sceneImage:
                 {
-                    scenes[currSceneIdx].SetActive(false);
-                    currSceneIdx++;
-                    scenes[currSceneIdx].SetActive(true);
-
-                    if (prevState == CutsceneState.minigame)
-                    {
-                        minigameParent.SetActive(false);
-                        certificateParent.SetActive(false);
-                        secondBlackBkg.SetActive(true);
-
-                        SetColorForLateCutsceneIsos();
-                    }
-
-                    if (currSceneIdx == 4)
-                    {
-                        scenes[currSceneIdx - 1].SetActive(true);
-                        sceneLength = animatedSceneLength;
-                    }
-                    else sceneLength = normalSceneLength;
-                    
-                    StartCoroutine(WaitThenContinueNextScene());
-
+                    StartCoroutine(SwitchScenes());
                 }
                 break;
             case CutsceneState.minigame:
                 {
-                    scenes[currSceneIdx].SetActive(false);
-                    scenes[currSceneIdx - 1].SetActive(false);
-                    minigameParent.SetActive(true);
+                    StartCoroutine(StartMinigame());
                 }
                 break;
         }
@@ -117,24 +95,65 @@ public class CutsceneManager : MonoBehaviour
 
     public void ProgressScene()
     {
-        if (currSceneIdx < 4) // scenes before minigame
+        if (currSceneIdx < animatedSceneIdx) // scenes before minigame
         {
             SetState(CutsceneState.sceneImage);
         }
-        else if (currSceneIdx < 7 && certificateShown)  // scenes after minigame
+        else if (currSceneIdx < 6 && certificateShown)  // scenes after minigame
         {
             SetState(CutsceneState.sceneImage);
         }
-        else if (currSceneIdx == 4) // scene exactly before minigame
+        else if (currSceneIdx == animatedSceneIdx) // scene exactly before minigame
         {
             SetState(CutsceneState.minigame);
         }
-        else if (currSceneIdx == 7)
+        else if (currSceneIdx == 6)
         {
             AudioManager.instance.SwitchTheme(AudioManager.ThemeNames.CheckingIntoStation);
             SceneTransitionManager.instance.TransitionToScene(SceneTransitionManager.SceneType.Home);
         }
     }
+
+    private IEnumerator SwitchScenes()
+    {
+        FadeToBlack.instance.FadeIn();
+        yield return new WaitForSeconds(0.5f);
+        scenes[currSceneIdx].SetActive(false);
+        currSceneIdx++;
+        scenes[currSceneIdx].SetActive(true);
+        FadeToBlack.instance.FadeOut();
+
+
+        if (prevState == CutsceneState.minigame)
+        {
+            SetColorForLateCutsceneIsos();
+            yield return new WaitForSeconds(0.5f);
+
+            minigameParent.SetActive(false);
+            certificateParent.SetActive(false);
+            secondBlackBkg.SetActive(true);
+
+        }
+        else
+        {
+            yield return new WaitForSeconds(0.5f);
+        }
+        
+
+        sceneLength = normalSceneLength;
+
+        StartCoroutine(WaitThenContinueNextScene());
+    }
+
+    private IEnumerator StartMinigame()
+    {
+        FadeToBlack.instance.FadeIn();
+        yield return new WaitForSeconds(0.5f);
+        scenes[currSceneIdx].SetActive(false);
+        minigameParent.SetActive(true);
+        FadeToBlack.instance.FadeOut();
+    }
+
 
     public void DebugNext()
     {

@@ -66,6 +66,7 @@ public class LevelManager : LevelManagerBase
                 {
 
                     Kiosk.instance.SetState(Kiosk.KioskState.EndOfDay);
+                    int currDay = SaveManager.instance.GetProgression_CurrDay() + 1;
                     SaveManager.instance.SetProgression_IncrementCurrDay();
 
                     foreach (Rail rail in rails)
@@ -81,21 +82,19 @@ public class LevelManager : LevelManagerBase
                     //summaryMenu.GetComponent<Summary>().SetCrabsProcessed(Kiosk.instance.GetTotalCrabs());
 
                     dayStarted = false;
-                    AddMail();
+                    AddMail(currDay);
                 }
                 break;
         }
     }
 
-    public void AddMail()
+    public void AddMail(int currDay)
     {
         //     string type = "generic";
         //     if (Random.Range(1, 4) == 2) type = "plot";
         //     PlotManager.instance.AddMail("feedbackForm", type, 1);
 
         Constants constants = Constants.instance;
-        int currDay = SaveManager.instance.GetProgression_CurrDay();
-
 
         // LETTERS
         if (constants.LETTER_dayToIdxCrustyCo.ContainsKey(currDay))

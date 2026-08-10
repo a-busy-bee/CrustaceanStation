@@ -38,9 +38,8 @@ public class CutscenePlayer_Dialogue : MonoBehaviour
         grampsEnding,
         vet1,
         vet2,
-        vet3good,
+        vet3,
         vet4good,
-        vet3bad,
         vet4bad
     }
     [Header("Instance-Specific")]
@@ -95,19 +94,7 @@ public class CutscenePlayer_Dialogue : MonoBehaviour
     {
         if (currSceneIdx < numScenesBeforeDialogue) // scenes before dialogue
         {
-            scenes[currSceneIdx].SetActive(false);
-            currSceneIdx++;
-            scenes[currSceneIdx].SetActive(true);
-
-            if (currSceneIdx == animatedScene) // if a scene is animated, but we don't have that rn
-            {
-                //scenes[currSceneIdx - 1].SetActive(true);
-                //sceneLength = animatedSceneLength;
-                sceneLength = normalSceneLength;
-            }
-            else sceneLength = normalSceneLength;
-
-            StartCoroutine(WaitThenContinueNextScene());
+            StartCoroutine(SwitchScenes());
         }
         else if (currSceneIdx == numScenesBeforeDialogue)
         {
@@ -115,6 +102,27 @@ public class CutscenePlayer_Dialogue : MonoBehaviour
             AppearCharacter();
         }
 
+    }
+
+    private IEnumerator SwitchScenes()
+    {
+        FadeToBlack.instance.FadeIn();
+        yield return new WaitForSeconds(0.5f);
+        scenes[currSceneIdx].SetActive(false);
+        currSceneIdx++;
+        scenes[currSceneIdx].SetActive(true);
+        FadeToBlack.instance.FadeOut();
+        yield return new WaitForSeconds(0.5f);
+
+        if (currSceneIdx == animatedScene) // if a scene is animated, but we don't have that rn
+        {
+            //scenes[currSceneIdx - 1].SetActive(true);
+            //sceneLength = animatedSceneLength;
+            sceneLength = normalSceneLength;
+        } 
+        else sceneLength = normalSceneLength;
+
+        StartCoroutine(WaitThenContinueNextScene());
     }
 
     private void AppearCharacter()
@@ -129,13 +137,22 @@ public class CutscenePlayer_Dialogue : MonoBehaviour
     {
         if (currDialogue == numDialogues)
         {
-            Debug.Log("aaaaaaaa");
             StartCoroutine(WaitThenFade());
             return;
         }
 
         // show dialogue at idx
         DialogueManager.instance.ShowCharacterLongDialogue(dialogueType, idx);
+
+        // if vet
+        if (dialogueType == DialogueType.vet1 && currDialogue == 18)
+        {
+            VetManager.instance.ShowMeds();
+        }
+        else if (dialogueType > DialogueType.grampsEnding && dialogueType < DialogueType.vet4bad && currDialogue == numDialogues - 1)
+        {
+            VetManager.instance.PlayIsoSad();
+        }
 
         // enable click to continue
         clickToContinue.SetActive(true);
@@ -225,14 +242,17 @@ public class CutscenePlayer_Dialogue : MonoBehaviour
                         break;
 
                     case NextScene.Home:
+                        SaveManager.instance.SetProgression_IncrementCurrDay();
                         scene = SceneTransitionManager.SceneType.Home;
                         break;
 
                     case NextScene.EndingGood:
+                        AchievementManager.instance.UnlockAchievementBool(AchievementManager.AchievementTypeBool.soLong);
                         scene = SceneTransitionManager.SceneType.EndingGood;
                         break;
 
                     case NextScene.EndingBad:
+                        AchievementManager.instance.UnlockAchievementBool(AchievementManager.AchievementTypeBool.whatHaveIDone);
                         scene = SceneTransitionManager.SceneType.EndingBad;
                         break;
                 }

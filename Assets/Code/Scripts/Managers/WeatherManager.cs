@@ -57,7 +57,10 @@ public class WeatherManager : MonoBehaviour
         {
             instance = this;
         }
+    }
 
+    private void Start()
+    {
         // reset in case something was left on
         startFogAlpha = fogOverlay.GetComponent<Image>().color.a;
         startGroundAlpha = groundClouds.GetComponent<Image>().color.a;
@@ -95,6 +98,9 @@ public class WeatherManager : MonoBehaviour
             Color color = backgroundMultiplyLayer.color;
             color.a = 0.67f;
             backgroundMultiplyLayer.color = color;
+
+            AudioManager.instance.StopSound(AudioManager.SoundNames.Waves);
+            AudioManager.instance.CrossfadeSFX(AudioManager.SoundNames.Rain, 1);
         }
     }
 

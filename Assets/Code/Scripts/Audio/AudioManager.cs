@@ -101,6 +101,7 @@ public class AudioManager : MonoBehaviour
         ChangeVolume(AudioSlider.VolumeType.SFX, sfxVol);
 
         SetTheme(ThemeNames.CheckingIntoStation);
+        PlaySound(SoundNames.Waves);
     }
 
     #region SFX
@@ -114,6 +115,8 @@ public class AudioManager : MonoBehaviour
         {
             s.source.pitch = UnityEngine.Random.Range(0.85f, 1.25f);
         }
+
+        s.source.loop = s.loop;
         s.source.Play();
     }
 
@@ -155,9 +158,9 @@ public class AudioManager : MonoBehaviour
             float t = currentTime / duration;
 
             if (oldTrack != null)
-                oldTrack.volume = Mathf.Lerp(1f, 0f, t);
+                oldTrack.source.volume = Mathf.Lerp(1f, 0f, t);
 
-            newTrack.volume = Mathf.Lerp(0f, 1f, t);
+            newTrack.source.volume = Mathf.Lerp(0f, 1f, t);
 
             yield return null;
         }
@@ -167,7 +170,8 @@ public class AudioManager : MonoBehaviour
             oldTrack.source.Stop();
         }
 
-        newTrack.volume = 1f;
+        newTrack.source.volume = 1f;
+        currentSFX = newTrack;
     }
 
     /*public void ChangeSFXVolume(float newVolume)

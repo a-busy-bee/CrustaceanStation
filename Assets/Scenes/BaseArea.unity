@@ -1982,6 +1982,8 @@ MonoBehaviour:
   numIDTicketText: {fileID: 3748053639804197567}
   numTransportText: {fileID: 3748053639804197566}
   numSeatingText: {fileID: 3748053639804197565}
+  numShuttleText: {fileID: 3748053639804197569}
+  shuttleText: {fileID: 3748053639804197568}
   numHappyText: {fileID: 3748053639804197564}
 --- !u!114 &121998092
 MonoBehaviour:
@@ -9589,12 +9591,7 @@ MonoBehaviour:
   approveButton: {fileID: 534969239}
   rejectButton: {fileID: 1416969083}
   debugMode: 1
-  charactersToForce:
-  - {fileID: 1918681812830035428, guid: 4a2b52b4d2ff64f64a8decf1d3b10082, type: 3}
-  - {fileID: 1918681812830035428, guid: d157655f42a714d7689fe98b7cad7d4b, type: 3}
-  - {fileID: 1918681812830035428, guid: e5a6e250509ab4953b4144733adc80db, type: 3}
-  - {fileID: 1918681812830035428, guid: 59a14dd0cc7204d1b8c33fa6f38c99c2, type: 3}
-  - {fileID: 1918681812830035428, guid: f1575823c3917496185dabeb83d7b7e5, type: 3}
+  charactersToForce: []
 --- !u!1 &730704855
 GameObject:
   m_ObjectHideFlags: 0
@@ -11057,7 +11054,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 859851641}
-  - component: {fileID: 859851645}
   - component: {fileID: 859851644}
   - component: {fileID: 859851643}
   - component: {fileID: 859851642}
@@ -11121,18 +11117,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
   dialogueObject: {fileID: 2095440328}
---- !u!114 &859851645
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 859851640}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d387b9a868604a668f94cadc850c5fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlotManager
 --- !u!1 &859859710
 GameObject:
   m_ObjectHideFlags: 0
@@ -20835,10 +20819,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1919419463518559971, guid: 7b5202ffaae054782b8f3eb9e083d27f, type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2690092314690391244, guid: 7b5202ffaae054782b8f3eb9e083d27f, type: 3}
       propertyPath: m_Name
       value: SaveManager
@@ -28256,6 +28236,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Summary
       objectReference: {fileID: 0}
+    - target: {fileID: 1639378932290881002, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6182215521950669315, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -28336,6 +28320,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7324326255910826115, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
+      propertyPath: m_text
+      value: "What\u2019s the Secret Behind Staying So Young and Healthy? Krusty
+        Kaleb Reveals All\u2026 "
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -28377,6 +28366,22 @@ MonoBehaviour:
 --- !u!114 &3748053639804197567 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3365645250982630410, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
+  m_PrefabInstance: {fileID: 3748053639804197563}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!1 &3748053639804197568 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3649328572378370662, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
+  m_PrefabInstance: {fileID: 3748053639804197563}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3748053639804197569 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1572491398188387129, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
   m_PrefabInstance: {fileID: 3748053639804197563}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}

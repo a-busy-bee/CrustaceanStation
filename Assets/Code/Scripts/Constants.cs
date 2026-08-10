@@ -8,7 +8,7 @@ public class Constants : MonoBehaviour
     public static Constants instance { get; private set; }
     public static string GAME_SCENE_NAME = "BaseArea";
     public static int CLOCK_END_TIME = 24;
-    public static float CLOCK_SPEED = 0.1f;//10f;//7.5f;
+    public static float CLOCK_SPEED = 0.1f;//2f;//0.1f;//10f;//7.5f;
 
     #region CHARACTERS
     public Dictionary<Special, string> specialEnumToStringName = new Dictionary<Special, string>()
@@ -65,7 +65,7 @@ public class Constants : MonoBehaviour
     // LETTERS MANAGER
     public Dictionary<int, int> LETTER_dayToIdxCrustyCo = new Dictionary<int, int>() // day -> idx in list
     {
-        {1, 0},
+        {0, 0},
         {5, 1},
         {6, 2},
         {11, 3}
