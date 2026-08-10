@@ -1631,7 +1631,7 @@ MonoBehaviour:
   numScenesBeforeDialogue: 0
   animatedScene: 0
   charTargetX: -437
-  charTargetY: 126
+  charTargetY: 462
 --- !u!1001 &457857781
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5047,11 +5047,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 414618967}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -437, y: -848}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: -437, y: -517.13464}
   m_SizeDelta: {x: 577.3373, y: 418.2692}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0.5, y: 0}
 --- !u!1 &1452894981716828262
 GameObject:
   m_ObjectHideFlags: 0
