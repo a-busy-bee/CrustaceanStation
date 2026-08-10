@@ -236,7 +236,7 @@ public class PerformanceManager : MonoBehaviour
         numTransportText.text = mistakes[MistakeType.transport].ToString();
         numSeatingText.text = mistakes[MistakeType.seating].ToString();
 
-        if (SaveManager.instance.GetProgression_CurrDay() >= 10)
+        if (SaveManager.instance.GetProgression_CurrDay() >= 6)
         {
             numShuttleText.text = mistakes[MistakeType.plot].ToString();
         }

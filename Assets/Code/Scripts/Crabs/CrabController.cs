@@ -213,6 +213,8 @@ public class CrabController : MonoBehaviour
         ticket.GetComponent<Ticket>().PushBack();
         id.GetComponent<ID>().BringForward();
 
+        #region FRAUD
+
         // SOMETIMES GENERATE MISMATCHING INFO
         string crabName = crabInfo.crabName;
         Sprite crabPhoto = crabInfo.sprite;
@@ -253,6 +255,9 @@ public class CrabController : MonoBehaviour
             id.GetComponent<ID>().SetName(crabName);
         }
 
+        #endregion
+
+        #region IMPORTANT CHARACTER
         if (crabInfo.isImportantCharacter) // no forgery if they're special
         {
             string name = Constants.instance.specialEnumToStringName[crabInfo.specialCharacterType];
@@ -266,6 +271,9 @@ public class CrabController : MonoBehaviour
             id.GetComponent<ID>().SetIDPhoto(crabPhoto);
         }
 
+        #endregion
+
+        #region SEAT TAG
         // seat number tag
         if (crabInfo.isMultiple || crabInfo.isLarge)
         {
@@ -276,9 +284,43 @@ public class CrabController : MonoBehaviour
             id.GetComponent<ID>().SetSeatType(ID.SeatType.singleSeat);
         }
 
+        #endregion
 
-        // TRAIN CART TYPE FORGERY (OR NOT)
-        cartType = LevelManagerBase.instance.GetRandomCurrentCartType();
+        #region NON CRUST TAG
+        int currDay = SaveManager.instance.GetProgression_CurrDay();
+
+        if (currDay > 10)
+        {
+            if (crabInfo.plotLevel == CrabInfo.PlotLevel.predator)
+            {
+                id.GetComponent<ID>().SetNonCrustType(ID.NonCrustType.pred);
+            }
+            else if (crabInfo.plotLevel == CrabInfo.PlotLevel.nonCrustacean)
+            {
+                id.GetComponent<ID>().SetNonCrustType(ID.NonCrustType.nonCrust);
+            }
+            else
+            {
+                id.GetComponent<ID>().SetNonCrustType(ID.NonCrustType.normal);
+            }
+        }
+        else if (currDay > 5)
+        {
+            if (crabInfo.plotLevel == CrabInfo.PlotLevel.predator)
+            {
+                id.GetComponent<ID>().SetNonCrustType(ID.NonCrustType.pred);
+            }
+            else
+            {
+                id.GetComponent<ID>().SetNonCrustType(ID.NonCrustType.normal);
+            }
+        }
+
+            #endregion
+
+
+            // TRAIN CART TYPE FORGERY (OR NOT)
+            cartType = LevelManagerBase.instance.GetRandomCurrentCartType();
 
         if (!isShuttle) ticket.GetComponent<Ticket>().SetSprite(cartType);
         else cartType = Cart.Type.Shuttle;
