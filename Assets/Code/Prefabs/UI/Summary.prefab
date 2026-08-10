@@ -482,6 +482,7 @@ GameObject:
   - component: {fileID: 3686856816882269869}
   - component: {fileID: 7319645172885260641}
   - component: {fileID: 771464754168403766}
+  - component: {fileID: 8555890394724006212}
   m_Layer: 5
   m_Name: Arrow
   m_TagString: Untagged
@@ -496,7 +497,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1137774449624342508}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -1.9311}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -505,8 +506,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -10, y: 5}
-  m_SizeDelta: {x: 90.4353, y: 75.0966}
+  m_AnchoredPosition: {x: -18.3, y: 5}
+  m_SizeDelta: {x: 152.2639, y: 114.4421}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!222 &7319645172885260641
 CanvasRenderer:
@@ -536,7 +537,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: da0e07dd1e39341fab3faf1827b06da4, type: 3}
+  m_Sprite: {fileID: 718383494, guid: a034ae1dabf6bd04abcc46c91e0f7a40, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -546,6 +547,28 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &8555890394724006212
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1137774449624342508}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 96150fd1a166bfd44ad62a63da778b1e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1291237190451174594
 GameObject:
   m_ObjectHideFlags: 0
@@ -3139,8 +3162,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1526, y: -288}
-  m_SizeDelta: {x: 407.8966, y: 138.6234}
+  m_AnchoredPosition: {x: 1330, y: -279}
+  m_SizeDelta: {x: 455.1526, y: 164.0261}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3207265230231349825
 CanvasRenderer:

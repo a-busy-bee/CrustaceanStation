@@ -449,6 +449,7 @@ GameObject:
   - component: {fileID: 152456078}
   - component: {fileID: 152456077}
   - component: {fileID: 152456079}
+  - component: {fileID: 152456080}
   m_Layer: 5
   m_Name: gramps
   m_TagString: Untagged
@@ -525,6 +526,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0774d8e40383e43aaae76fc9c55155a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SmoothLerp
+--- !u!95 &152456080
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 152456075}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8fde589fff324034182f61dfbe157500, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &241028610
 GameObject:
   m_ObjectHideFlags: 0
@@ -671,7 +694,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: aede3672c24fc43b0912273d7c1adaa6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f6bf42ee8ce4e1641b485774e71edf96, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -821,7 +844,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 09309efbe10b64cc59eff7a5ae12a534, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 21ad745d38a472a4cb004898f7668159, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2037,7 +2060,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f96e5a9486eac40dcb980b1cc1acb583, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 90ca85d35a820274c8581383292d1fa6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
