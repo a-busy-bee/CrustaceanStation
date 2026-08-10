@@ -15,8 +15,74 @@ MonoBehaviour:
   m_GroupName: Localization-String-Tables-Chinese (Simplified) (zh-Hans)
   m_GUID: 3f845306f83194578bcdcd1094901745
   m_SerializeEntries:
+  - m_GUID: 164aba7804d6b4e21a5e8873d945af99
+    m_Address: Misc_Strings_zh-Hans
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-zh-Hans
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1983647d1eed34f5b95a6125bb027c02
+    m_Address: UI_Strings_zh-Hans
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-zh-Hans
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 37e876f86993a4889b9137c0917e38d7
+    m_Address: Credits_Strings_zh-Hans
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-zh-Hans
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 55ef515a82b06489a84f8fb73be3c481
+    m_Address: Names_Strings_zh-Hans
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-zh-Hans
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 59a020e83bc494d68bdbb8bb5516f4c5
+    m_Address: Summary_Strings_zh-Hans
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-zh-Hans
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5dfb29eee509b45869a42a60693bed68
+    m_Address: Tutorial_Strings_zh-Hans
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-zh-Hans
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7d6ee8541e57f48129d6d9cf065855e2
+    m_Address: Feedback_Strings_zh-Hans
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-zh-Hans
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 824aa69ee19f248299d707625ce626f7
+    m_Address: Letter_Strings_zh-Hans
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-zh-Hans
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8810e6509f79b4bcda561850da0af7f3
+    m_Address: Headlines_Strings_zh-Hans
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-zh-Hans
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a97ebb56de70d4c46928a2b302534f87
+    m_Address: Dialogue_Strings_zh-Hans
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-zh-Hans
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ed2af60bbb02a44ae9939af0609e420b
     m_Address: TitleScreen_Strings_zh-Hans
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-zh-Hans
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fb0c571c3fc38482fb39c47bc4f709c0
+    m_Address: Cutscene_Strings_zh-Hans
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-zh-Hans

@@ -1,0 +1,783 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Names_Strings_es
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: es
+  m_SharedData: {fileID: 11400000, guid: 8f611dbcf137b464cb34febd56fef18d, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 1
+    m_Localized: 101001101000011
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2
+    m_Localized: Todopoderoso Lord Clawington III
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3
+    m_Localized: Amano
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4
+    m_Localized: Anfie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5
+    m_Localized: Ser antiguo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6
+    m_Localized: "\xC1ngel"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7
+    m_Localized: "R\xFAcula"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8
+    m_Localized: Arturo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9
+    m_Localized: Avogadro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10
+    m_Localized: axie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11
+    m_Localized: Axl
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12
+    m_Localized: Carnada
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13
+    m_Localized: Bartholocrab
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14
+    m_Localized: "Benjam\xEDn"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15
+    m_Localized: Berta
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16
+    m_Localized: Bethy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17
+    m_Localized: Brac
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18
+    m_Localized: Salvado
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19
+    m_Localized: Braxius
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20
+    m_Localized: Brian
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21
+    m_Localized: Burbujas
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22
+    m_Localized: Calli
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23
+    m_Localized: "Cal\xEDope"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24
+    m_Localized: Callum
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25
+    m_Localized: Calipso
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26
+    m_Localized: Cara
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27
+    m_Localized: Charlie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28
+    m_Localized: Chefferson
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29
+    m_Localized: Chester
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30
+    m_Localized: Krill tranquilo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31
+    m_Localized: Clark
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32
+    m_Localized: Clawdette
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33
+    m_Localized: Clawson
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34
+    m_Localized: Clawbert
+    m_Metadata:
+      m_Items: []
+  - m_Id: 35
+    m_Localized: Arcilla
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36
+    m_Localized: Clyde
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37
+    m_Localized: Palma de coco
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38
+    m_Localized: Barco apretado
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39
+    m_Localized: Crabanna
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40
+    m_Localized: Cangrejo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41
+    m_Localized: Cangrejo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42
+    m_Localized: Crabstopher
+    m_Metadata:
+      m_Items: []
+  - m_Id: 43
+    m_Localized: Cragglin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44
+    m_Localized: Craggler
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45
+    m_Localized: Craig
+    m_Metadata:
+      m_Items: []
+  - m_Id: 46
+    m_Localized: Cray
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47
+    m_Localized: Shawn Crusty
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48
+    m_Localized: Daniel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49
+    m_Localized: Darcy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 50
+    m_Localized: Darren
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51
+    m_Localized: "Dep\xF3sito"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52
+    m_Localized: Rociado
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53
+    m_Localized: Dimitrio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 54
+    m_Localized: Guapo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55
+    m_Localized: "Mu\xF1equita"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56
+    m_Localized: Dringle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 57
+    m_Localized: Eco
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58
+    m_Localized: Conde
+    m_Metadata:
+      m_Items: []
+  - m_Id: 59
+    m_Localized: Earl Gray
+    m_Metadata:
+      m_Items: []
+  - m_Id: 60
+    m_Localized: Edgar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61
+    m_Localized: El Crustashio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62
+    m_Localized: Elizabeth
+    m_Metadata:
+      m_Items: []
+  - m_Id: 63
+    m_Localized: Eloise
+    m_Metadata:
+      m_Items: []
+  - m_Id: 64
+    m_Localized: Elton
+    m_Metadata:
+      m_Items: []
+  - m_Id: 65
+    m_Localized: Fiddley
+    m_Metadata:
+      m_Items: []
+  - m_Id: 66
+    m_Localized: "finland\xE9s"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 67
+    m_Localized: Lana
+    m_Metadata:
+      m_Items: []
+  - m_Id: 68
+    m_Localized: Esponjoso
+    m_Metadata:
+      m_Items: []
+  - m_Id: 69
+    m_Localized: Jorge
+    m_Metadata:
+      m_Items: []
+  - m_Id: 70
+    m_Localized: Gobo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 71
+    m_Localized: Abuelo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72
+    m_Localized: Abuelita
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73
+    m_Localized: Gregory
+    m_Metadata:
+      m_Items: []
+  - m_Id: 74
+    m_Localized: Heathcliff
+    m_Metadata:
+      m_Items: []
+  - m_Id: 75
+    m_Localized: "H\xE9ctor"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 76
+    m_Localized: Enrique
+    m_Metadata:
+      m_Items: []
+  - m_Id: 77
+    m_Localized: Hermie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 78
+    m_Localized: Honshoo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 79
+    m_Localized: Iso
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80
+    m_Localized: Isobelle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 81
+    m_Localized: "Peque\xF1o peque\xF1ito"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 82
+    m_Localized: Jeemo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83
+    m_Localized: Jefferson
+    m_Metadata:
+      m_Items: []
+  - m_Id: 84
+    m_Localized: Jonnie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 85
+    m_Localized: Col rizada
+    m_Metadata:
+      m_Items: []
+  - m_Id: 86
+    m_Localized: Kelpie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 87
+    m_Localized: Rey Arturo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88
+    m_Localized: Kreydon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 89
+    m_Localized: Kreymer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90
+    m_Localized: Krillin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 91
+    m_Localized: Kris Tashen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 92
+    m_Localized: "Le\xF3n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93
+    m_Localized: Lilik
+    m_Metadata:
+      m_Items: []
+  - m_Id: 94
+    m_Localized: Limul
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95
+    m_Localized: Lanzador
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96
+    m_Localized: Loppester
+    m_Metadata:
+      m_Items: []
+  - m_Id: 97
+    m_Localized: Lottie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 98
+    m_Localized: Lord Clawington III
+    m_Metadata:
+      m_Items: []
+  - m_Id: 99
+    m_Localized: Loto
+    m_Metadata:
+      m_Items: []
+  - m_Id: 100
+    m_Localized: Luna
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101
+    m_Localized: Madeline
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102
+    m_Localized: Magister Cinus
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103
+    m_Localized: Margot
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104
+    m_Localized: "Marqu\xE9s Trit\xF3n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 105
+    m_Localized: Maxie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 106
+    m_Localized: Millie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 107
+    m_Localized: Mimimimimi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 108
+    m_Localized: Muda
+    m_Metadata:
+      m_Items: []
+  - m_Id: 109
+    m_Localized: Mona
+    m_Metadata:
+      m_Items: []
+  - m_Id: 110
+    m_Localized: Nefiro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 111
+    m_Localized: Nelly
+    m_Metadata:
+      m_Items: []
+  - m_Id: 112
+    m_Localized: Newton
+    m_Metadata:
+      m_Items: []
+  - m_Id: 113
+    m_Localized: Nikki
+    m_Metadata:
+      m_Items: []
+  - m_Id: 114
+    m_Localized: Odette
+    m_Metadata:
+      m_Items: []
+  - m_Id: 115
+    m_Localized: Oliver
+    m_Metadata:
+      m_Items: []
+  - m_Id: 116
+    m_Localized: Pinky
+    m_Metadata:
+      m_Items: []
+  - m_Id: 117
+    m_Localized: Pistacho
+    m_Metadata:
+      m_Items: []
+  - m_Id: 118
+    m_Localized: "Plat\xF3n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 119
+    m_Localized: Podrick
+    m_Metadata:
+      m_Items: []
+  - m_Id: 120
+    m_Localized: Portia
+    m_Metadata:
+      m_Items: []
+  - m_Id: 121
+    m_Localized: Langostinos
+    m_Metadata:
+      m_Items: []
+  - m_Id: 122
+    m_Localized: Prawnston
+    m_Metadata:
+      m_Items: []
+  - m_Id: 123
+    m_Localized: Prawtti
+    m_Metadata:
+      m_Items: []
+  - m_Id: 124
+    m_Localized: Quinn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 125
+    m_Localized: Rab
+    m_Metadata:
+      m_Items: []
+  - m_Id: 126
+    m_Localized: Rayo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 127
+    m_Localized: Rin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 128
+    m_Localized: Rocoso
+    m_Metadata:
+      m_Items: []
+  - m_Id: 129
+    m_Localized: Rosie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 130
+    m_Localized: Ryan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 131
+    m_Localized: s010100110p301010011r33p
+    m_Metadata:
+      m_Items: []
+  - m_Id: 132
+    m_Localized: Sallies
+    m_Metadata:
+      m_Items: []
+  - m_Id: 133
+    m_Localized: Salida
+    m_Metadata:
+      m_Items: []
+  - m_Id: 134
+    m_Localized: Scraggle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 135
+    m_Localized: sc0p3cr33p
+    m_Metadata:
+      m_Items: []
+  - m_Id: 136
+    m_Localized: sc0p3cr33p0101001101000011
+    m_Metadata:
+      m_Items: []
+  - m_Id: 137
+    m_Localized: Sean
+    m_Metadata:
+      m_Items: []
+  - m_Id: 138
+    m_Localized: Sharon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 139
+    m_Localized: Shawn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 140
+    m_Localized: Shelldon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 141
+    m_Localized: Shelly
+    m_Metadata:
+      m_Items: []
+  - m_Id: 142
+    m_Localized: Sheldon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 143
+    m_Localized: "Sim\xF3n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 144
+    m_Localized: "Se\xF1or Cull"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 145
+    m_Localized: "Se\xF1or Lob"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 146
+    m_Localized: "Se\xF1or Pin"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 147
+    m_Localized: Smolo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 148
+    m_Localized: Mancha
+    m_Metadata:
+      m_Items: []
+  - m_Id: 149
+    m_Localized: "S\xF3crates"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 150
+    m_Localized: Espardito
+    m_Metadata:
+      m_Items: []
+  - m_Id: 151
+    m_Localized: Spabloo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 152
+    m_Localized: Historia
+    m_Metadata:
+      m_Items: []
+  - m_Id: 153
+    m_Localized: Taxi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 154
+    m_Localized: Osito de peluche
+    m_Metadata:
+      m_Items: []
+  - m_Id: 155
+    m_Localized: El Trinchador
+    m_Metadata:
+      m_Items: []
+  - m_Id: 156
+    m_Localized: El juez de las profundidades
+    m_Metadata:
+      m_Items: []
+  - m_Id: 157
+    m_Localized: "El guardi\xE1n del tiempo"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 158
+    m_Localized: Los guardianes del tiempo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 159
+    m_Localized: Theo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 160
+    m_Localized: "Ver\xF3nica"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 161
+    m_Localized: Warner
+    m_Metadata:
+      m_Items: []
+  - m_Id: 162
+    m_Localized: Madriguera
+    m_Metadata:
+      m_Items: []
+  - m_Id: 163
+    m_Localized: Guillermo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 164
+    m_Localized: Crawlessandra
+    m_Metadata:
+      m_Items: []
+  - m_Id: 165
+    m_Localized: Tigre
+    m_Metadata:
+      m_Items: []
+  - m_Id: 166
+    m_Localized: Carl
+    m_Metadata:
+      m_Items: []
+  - m_Id: 167
+    m_Localized: Boba Walker
+    m_Metadata:
+      m_Items: []
+  - m_Id: 168
+    m_Localized: Billy, Willy y Milly
+    m_Metadata:
+      m_Items: []
+  - m_Id: 169
+    m_Localized: Todd
+    m_Metadata:
+      m_Items: []
+  - m_Id: 170
+    m_Localized: Isotodd
+    m_Metadata:
+      m_Items: []
+  - m_Id: 171
+    m_Localized: Invertibraeden
+    m_Metadata:
+      m_Items: []
+  - m_Id: 172
+    m_Localized: Mollysk
+    m_Metadata:
+      m_Items: []
+  - m_Id: 173
+    m_Localized: Philbug
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174
+    m_Localized: Los muchos
+    m_Metadata:
+      m_Items: []
+  - m_Id: 175
+    m_Localized: Scott
+    m_Metadata:
+      m_Items: []
+  - m_Id: 176
+    m_Localized: Madeja
+    m_Metadata:
+      m_Items: []
+  - m_Id: 177
+    m_Localized: John
+    m_Metadata:
+      m_Items: []
+  - m_Id: 178
+    m_Localized: Caracol performativo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 179
+    m_Localized: Cuerno
+    m_Metadata:
+      m_Items: []
+  - m_Id: 180
+    m_Localized: Hormiga
+    m_Metadata:
+      m_Items: []
+  - m_Id: 181
+    m_Localized: Penjamin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 182
+    m_Localized: Circe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 183
+    m_Localized: "Se\xF1ora Fishman"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 184
+    m_Localized: Caitlyn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 185
+    m_Localized: Goop
+    m_Metadata:
+      m_Items: []
+  - m_Id: 186
+    m_Localized: Pegajoso
+    m_Metadata:
+      m_Items: []
+  - m_Id: 187
+    m_Localized: Richard
+    m_Metadata:
+      m_Items: []
+  - m_Id: 188
+    m_Localized: Polly
+    m_Metadata:
+      m_Items: []
+  - m_Id: 189
+    m_Localized: Colita
+    m_Metadata:
+      m_Items: []
+  - m_Id: 190
+    m_Localized: Samuel
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

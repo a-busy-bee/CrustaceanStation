@@ -18,8 +18,20 @@ MonoBehaviour:
   m_Metadata:
     m_Items: []
   m_TableData:
-  - m_Id: 19515039744
-    m_Localized: Play
+  - m_Id: 1
+    m_Localized: PLAY
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2
+    m_Localized: SETTINGS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3
+    m_Localized: CREDITS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4
+    m_Localized: QUIT
     m_Metadata:
       m_Items: []
   references:

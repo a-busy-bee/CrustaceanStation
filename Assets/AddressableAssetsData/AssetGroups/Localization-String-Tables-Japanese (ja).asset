@@ -15,8 +15,74 @@ MonoBehaviour:
   m_GroupName: Localization-String-Tables-Japanese (ja)
   m_GUID: 9ec5d80d52d1e4b00b3de4c89f608e46
   m_SerializeEntries:
+  - m_GUID: 1c3e4244c413d4b028d6f4fc4597f3ba
+    m_Address: Names_Strings_ja
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ja
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 255ea2e425d724870b52abab15196fec
+    m_Address: Misc_Strings_ja
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ja
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2aaaf07fdd41e43cf8b95be2181ff1ef
+    m_Address: Feedback_Strings_ja
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ja
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4b97e72f2e1dd4d39b3de466fd216ec4
+    m_Address: Summary_Strings_ja
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ja
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 547cc1b4da62d4ae8a31715095e19bad
+    m_Address: Cutscene_Strings_ja
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ja
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6167091e9d61b4b649331922fd667bff
+    m_Address: Dialogue_Strings_ja
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ja
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7ab524881df2b41fdb66fc73fbe58b7f
+    m_Address: Headlines_Strings_ja
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ja
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9cefd4f945591435cb4e6755da35257c
+    m_Address: Letter_Strings_ja
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ja
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a73ad781f3fbf4e3ab3153731da493ac
+    m_Address: Credits_Strings_ja
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ja
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ae3f25dcac8db46ef83cc8ff1bc7e69a
+    m_Address: Tutorial_Strings_ja
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ja
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b80f4087508f6484d9c56ffc9cac68ec
     m_Address: TitleScreen_Strings_ja
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ja
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: df4e4f096d77647eea432ab89f1a0937
+    m_Address: UI_Strings_ja
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-ja

@@ -1,0 +1,110 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Headlines_Strings_it
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: it
+  m_SharedData: {fileID: 11400000, guid: feb04c4b14d9d4b9cbd860b3b50e0ee8, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 1
+    m_Localized: Che bisogno ha un'azienda biotecnologica di una stazione ferroviaria?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2
+    m_Localized: 'Ultime notizie: il senatore Fishman accusato di insider trading!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3
+    m_Localized: "Qual \xE8 il segreto per rimanere cos\xEC giovani e in salute?
+      Krusty Kaleb lo svela..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4
+    m_Localized: Bambino trovato morto fuori dal laboratorio della Crustacean Corporation,
+      apparentemente divorato da un predatore
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5
+    m_Localized: 'Opinione: La Crustacean Corporation deve essere fermata.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6
+    m_Localized: 'Opinione: Crustacean Corporation potrebbe essere l''ultima azienda
+      etica rimasta'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7
+    m_Localized: "Il numero record di casi di animali scomparsi registrati questo
+      mese\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8
+    m_Localized: I crostacei rappresentano la forma finale di tutta la vita marina.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9
+    m_Localized: La nuova tendenza consiste nell'applicare artigli adesivi sul corpo?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10
+    m_Localized: Un informatore denuncia la nuova ricerca rivoluzionaria di Crustacean
+      Corporation.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11
+    m_Localized: "La crescita degli artigli \xE8 un fenomeno assolutamente normale."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12
+    m_Localized: "L'arancione \xE8 considerato la migliore mutazione di colore di
+      tutti i tempi."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13
+    m_Localized: Tutti a correre.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14
+    m_Localized: Liberatevi dei vostri vecchi esoscheletri e abbracciate la carcinizzazione.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15
+    m_Localized: Il Nuovo Mondo dei Crostacei e dei Crostacei Simili ai Crostacei.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16
+    m_Localized: La gioia di mangiare granchi ogni giorno.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17
+    m_Localized: "L'evoluzione \xE8 avvenuta per un motivo, gente!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18
+    m_Localized: Un informatore ha effettivamente denunciato gli scioccanti esperimenti
+      della Crustacean Corporation.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19
+    m_Localized: Un'analisi approfondita degli ideali corrotti di Crustacean Corporation.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20
+    m_Localized: Dieci cose principali che puoi fare per sostenere il movimento anti-croccante
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
