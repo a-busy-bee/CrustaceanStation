@@ -1,0 +1,342 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Letter_Strings_it
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: it
+  m_SharedData: {fileID: 11400000, guid: dc9bf26741112408bafe847b9a4c6919, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 1
+    m_Localized: "Per chi \xE8 coinvolto,"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2
+    m_Localized: "Benvenuto nel tuo nuovo lavoro come operatore di chiosco di livello
+      base presso Crustacean Station! Il tuo ruolo \xE8 fondamentale per il funzionamento
+      di questa stazione e per la soddisfazione di ogni crostaceo. Siamo entusiasti
+      di darti il \u200B\u200Bbenvenuto a breve. Crustacean Corporation ti ricorda
+      ancora una volta che la sicurezza e la soddisfazione sono di primaria importanza.
+      Pertanto, assicurati di rispettare le normative e le disposizioni vigenti."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3
+    m_Localized: Vi auguriamo buona fortuna,\nCrustacean Corporation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4
+    m_Localized: All'operatore,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5
+    m_Localized: "Crustacean Corporation \xE8 lieta di annunciare un ulteriore servizio
+      navetta per i propri ospiti e dipendenti! I passeggeri della navetta dovranno
+      presentare i loro biglietti esclusivi al chiosco. Assicuratevi di assegnare
+      a questi passeggeri i posti corretti."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6
+    m_Localized: Cordiali saluti,\nCrustacean Corporation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7
+    m_Localized: A tutti i dipendenti,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8
+    m_Localized: "Molti di voi avranno sentito parlare di recente del tragico incidente
+      che ha coinvolto il figlio di un nostro dipendente. Alla luce del crescente
+      numero di casi di comportamenti cos\xEC inquietanti, il consiglio di amministrazione
+      ha deciso di rivedere le nostre politiche e i nostri obiettivi per rafforzare
+      la sicurezza pubblica. Tutti devono mangiare, ma questo non pu\xF2 estendersi
+      al divorare chi non \xE8 ancora nato. Nel frattempo, rimanete vigili contro
+      le creature pericolose e proteggetevi."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9
+    m_Localized: Cordiali saluti,\nCrustacean Corporation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10
+    m_Localized: All'operatore,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11
+    m_Localized: Oggi, quando vedete passeggeri dall'aspetto sospetto, vi preghiamo
+      di farli salire sulla navetta insieme ai dipendenti abituali, indipendentemente
+      dal tipo di biglietto. I passeggeri saranno risarciti adeguatamente per il
+      disagio subito, quindi non preoccupatevi di eventuali recensioni negative.
+      Ce ne occuperemo noi. Non deludeteci, Operatore.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12
+    m_Localized: Grazie per la collaborazione,\nCrustacean Corporation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13
+    m_Localized: "Questo avviso non \xE8 visibile al pubblico:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14
+    m_Localized: 'Si prega di prendere nota della nuova normativa: anche i passeggeri
+      non crostacei devono essere trasportati sulla navetta insieme ai dipendenti,
+      indipendentemente dal tipo di biglietto.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15
+    m_Localized: Grazie per la collaborazione,\nCrustacean Corporation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16
+    m_Localized: A tutti i dipendenti,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17
+    m_Localized: 'Molti di voi avranno sentito di recente notizie riguardanti creature
+      con arti anomali che accusano l''azienda di sperimentazione illegale. Queste
+      affermazioni sono false; si tratta di false accuse mosse da dipendenti scontenti
+      che non hanno soddisfatto le aspettative sui nostri recenti progetti e sono
+      stati successivamente licenziati. Prenderemo provvedimenti contro queste false
+      accuse e contro coloro che stanno cercando di screditare decenni di lavoro.
+
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18
+    m_Localized: Cordiali saluti,\nCrustacean Corporation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19
+    m_Localized: All'operatore,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20
+    m_Localized: "Congratulazioni! Grazie alle tue eccellenti prestazioni, hai diritto
+      al bonus salariale di questo mese. Crustacean Corporation ti ringrazia per
+      la dedizione e la lealt\xE0. Continua cos\xEC!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21
+    m_Localized: Cordiali saluti,\nCrustacean Corporation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22
+    m_Localized: A tutti i dipendenti,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23
+    m_Localized: "Dopo aver superato le sperimentazioni cliniche, siamo orgogliosi
+      di presentare finalmente il nostro nuovo farmaco riabilitativo. Questa \xE8
+      stata la nostra impresa pi\xF9 ambiziosa dalla fondazione dell'azienda e non
+      sarebbe stata possibile senza i sacrifici e il duro lavoro di tutti coloro
+      che vi hanno partecipato. Questo nuovo farmaco promette di migliorare tutti
+      gli aspetti del benessere dei crostacei e di sopprimere qualsiasi impulso \"basico\"
+      indesiderato. Come ultimo annuncio, i dipendenti saranno obbligati a sottoporsi
+      al trattamento entro la fine del mese prossimo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24
+    m_Localized: Che l'era dei crostacei sia gloriosa,\nCrustacean Corporation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25
+    m_Localized: All'operatore,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26
+    m_Localized: Ci congratuliamo con te per aver completato con successo il tuo
+      primo mese di lavoro. Tuttavia, abbiamo notato diverse discrepanze tra il numero
+      di ospiti che ci hai segnalato e il numero di ospiti che abbiamo effettivamente
+      ricevuto, in numerose occasioni. Pertanto, ti inseriremo in un piano di miglioramento
+      delle prestazioni, per garantire che tu rispetti costantemente le politiche
+      aziendali nello svolgimento del tuo lavoro.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27
+    m_Localized: Cordiali saluti, Crustacean Corporation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28
+    m_Localized: All'operatore,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29
+    m_Localized: "Crustacean Station si impegna a fornire un'esperienza di qualit\xE0
+      ai propri passeggeri. Tuttavia, di recente abbiamo ricevuto numerose lamentele
+      riguardo alla Sua condotta e al Suo servizio. Per soddisfare gli standard richiesti
+      per questa posizione, Le chiediamo di migliorare prestando maggiore attenzione
+      alle esigenze dei passeggeri. Il mancato miglioramento delle prestazioni potrebbe
+      comportare la risoluzione del Suo contratto."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30
+    m_Localized: Grazie per la collaborazione,\nCrustacean Corporation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31
+    m_Localized: All'operatore,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32
+    m_Localized: "In qualit\xE0 di dipendente di Crustacean Corporation, sei tenuto
+      a seguire le direttive aziendali. Il mancato rispetto delle direttive pu\xF2
+      comportare la risoluzione del rapporto di lavoro."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33
+    m_Localized: Grazie per la collaborazione,\nCrustacean Corporation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34
+    m_Localized: All'operatore,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 35
+    m_Localized: La Crustacean Corporation desidera congratularsi con Lei per le
+      eccellenti prestazioni finora dimostrate e La incoraggia a continuare su questa
+      strada. Le ricordiamo che, alla fine di ogni mese, i dipendenti con valutazioni
+      di rendimento esemplari hanno diritto a un bonus salariale.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36
+    m_Localized: Cordiali saluti,\nCrustacean Corporation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37
+    m_Localized: All'operatore,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38
+    m_Localized: Crustacean Station desidera ricordarvi l'importanza di garantire
+      la sicurezza di tutti i passeggeri. Siamo un servizio di trasporto, non un
+      ristorante. Abbiamo espresso le nostre condoglianze alla famiglia coinvolta.
+      Sebbene tale comportamento da parte del responsabile sia considerato "legale"
+      al giorno d'oggi, vi chiediamo di ridurre al minimo gli incidenti simili.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39
+    m_Localized: Cordiali saluti,\nCrustacean Corporation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40
+    m_Localized: Ehi amico!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41
+    m_Localized: Potresti trovarmi un biglietto del treno? Muoio dalla voglia di
+      andare a un concerto di (nome del gruppo), ma ho pochi soldi. Aiutami, fratello!
+      ;)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42
+    m_Localized: Il tuo migliore amico, Davey
+    m_Metadata:
+      m_Items: []
+  - m_Id: 43
+    m_Localized: Carissimo fratello,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44
+    m_Localized: "Abbiamo sistemato la mamma nella nuova casa di riposo. Ora sta
+      un po' meglio, quindi devi solo continuare a versare la retta e noi ci prenderemo
+      cura di lei.\\n\\nSo che non vuoi essere troppo coinvolto, ma questo \xE8 il
+      minimo che tu possa fare per la tua famiglia."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45
+    m_Localized: Tua (unica) sorella,\nKellie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 46
+    m_Localized: Salve signor direttore della stazione,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47
+    m_Localized: Grazie per aver protetto mio figlio. So che ti ha causato qualche
+      problema e mi scuso sinceramente. Con tutto il lavoro in laboratorio e suo
+      padre assente, non posso accompagnarlo a scuola personalmente. Gli ho detto
+      di rivolgersi a te in caso di domande, quindi ti prego di tenerlo d'occhio
+      in mia assenza.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48
+    m_Localized: Una madre affettuosa (ma stanca)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49
+    m_Localized: Ehi tesoro,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 50
+    m_Localized: "Ci siamo visti un paio di volte, ma non ho ancora avuto l'occasione
+      di presentarmi. Sono il postino e sono quello che consegna i vostri commenti
+      e le vostre lettere! \xC8 un lavoro duro, ma vedere il vostro sorriso ripaga
+      di tutto :) La vita pu\xF2 essere dura, vero? Quindi, qualunque cosa accada,
+      sappiate che potete contare su di me."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51
+    m_Localized: Con affetto, Mailkeeper
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52
+    m_Localized: Ehi tesoro,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53
+    m_Localized: "Oggi ho avuto fortuna con la bassa marea, quindi sono riuscita
+      a trovare la mia famiglia!\\n\\nMi hanno regalato un sacco di conchiglie. Ne
+      ho troppe, e siamo pi\xF9 o meno della stessa taglia, quindi pensavo che forse
+      ti sarebbero piaciute? Oh, comunque non puoi rifiutare, te le ho gi\xE0 portate
+      a casa!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 54
+    m_Localized: Con affetto, Mailkeeper
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55
+    m_Localized: Ehi, bellezza ;)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56
+    m_Localized: "Ha aperto una nuova salamoia nella vicina citt\xE0 costiera. Ti
+      va di andarla a vedere? Ho sentito dire che i loro nuovi cetrioli di mare sono
+      squisiti. E onestamente, se dovessi morire, vorrei farlo con te..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 57
+    m_Localized: Con affetto, il vostro postino
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58
+    m_Localized: EHI,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 59
+    m_Localized: "L'avete notato anche voi, vero? Tutti quei passeggeri...\\n\\nNelle
+      ultime settimane ho visto un sacco di creature con le bende. Pensavo che si
+      stessero coprendo solo per via del brutto tempo, ma ora... \xE8 semplicemente
+      terrificante. Com'\xE8 potuto succedere? Le forze dell'ordine staranno indagando,
+      no?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 60
+    m_Localized: Restate al sicuro, il vostro postino
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

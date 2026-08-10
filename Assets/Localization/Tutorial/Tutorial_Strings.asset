@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5be51871efa6c3e4eae1703925c8f5ac, type: 3}
+  m_Name: Tutorial_Strings
+  m_EditorClassIdentifier: Unity.Localization.Editor::UnityEditor.Localization.StringTableCollection
+  m_SharedTableData: {fileID: 11400000, guid: 27411ae6b6a0042869f8105d38ceb782, type: 2}
+  m_Tables:
+  - {fileID: 11400000, guid: 5dfb29eee509b45869a42a60693bed68, type: 2}
+  - {fileID: 11400000, guid: 61878e0aa5a2e4af783334aa318229af, type: 2}
+  - {fileID: 11400000, guid: 92b86bbbd2d944eb491dd67398d7b158, type: 2}
+  - {fileID: 11400000, guid: 7d231d92641ba411dba59d3610afc906, type: 2}
+  - {fileID: 11400000, guid: bf25c103a876941e5988844877c1bf8d, type: 2}
+  - {fileID: 11400000, guid: ae3f25dcac8db46ef83cc8ff1bc7e69a, type: 2}
+  - {fileID: 11400000, guid: 9750fd1975a6c4bcb90b8ff61b856048, type: 2}
+  - {fileID: 11400000, guid: 0d4f26d39298a463aa3a6bb48c997770, type: 2}
+  m_Extensions: []
+  m_Group: String Table
+  references:
+    version: 2
+    RefIds: []

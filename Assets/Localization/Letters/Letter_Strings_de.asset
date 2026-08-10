@@ -1,0 +1,346 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Letter_Strings_de
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: de
+  m_SharedData: {fileID: 11400000, guid: dc9bf26741112408bafe847b9a4c6919, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 1
+    m_Localized: Wen es angeht,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2
+    m_Localized: "Herzlich willkommen zu Ihrem neuen Job als Kioskbediener/in bei
+      Crustacean Station! Ihre Position ist entscheidend f\xFCr den reibungslosen
+      Betrieb der Station und das Wohlbefinden unserer Kunden. Wir freuen uns darauf,
+      Sie bald bei uns begr\xFC\xDFen zu d\xFCrfen.\\nCrustacean Corporation m\xF6chte
+      Sie nochmals daran erinnern, dass Sicherheit und Kundenzufriedenheit f\xFCr
+      uns oberste Priorit\xE4t haben. Bitte beachten Sie daher unbedingt alle geltenden
+      Vorschriften und Anweisungen."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3
+    m_Localized: "Wir w\xFCnschen Ihnen viel Erfolg, Crustacean Corporation"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4
+    m_Localized: An den Betreiber,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5
+    m_Localized: "Crustacean Corporation freut sich, eine zus\xE4tzliche Shuttlebuslinie
+      f\xFCr G\xE4ste und Mitarbeiter anzuk\xFCndigen! Fahrg\xE4ste zeigen ihre exklusiven
+      Shuttletickets am Kiosk vor. Bitte weisen Sie die Fahrg\xE4ste den richtigen
+      Sitzpl\xE4tzen zu."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6
+    m_Localized: "Mit freundlichen Gr\xFC\xDFen, Crustacean Corporation"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7
+    m_Localized: An alle Mitarbeiter,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8
+    m_Localized: "Viele von Ihnen haben vielleicht k\xFCrzlich von dem tragischen
+      Vorfall geh\xF6rt, der das Kind eines unserer Mitarbeiter ereilt hat. Angesichts
+      der zunehmenden F\xE4lle solch beunruhigenden Verhaltens hat der Vorstand beschlossen,
+      unsere Richtlinien und Ziele zum Schutz der \xD6ffentlichkeit zu \xFCberarbeiten.
+      Jeder muss essen, aber das darf nicht so weit gehen, dass man Ungeborene verspeist.\\nBieten
+      Sie in der Zwischenzeit Wachsamkeit gegen\xFCber gef\xE4hrlichen Kreaturen
+      an und sch\xFCtzen Sie sich."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9
+    m_Localized: "Mit freundlichen Gr\xFC\xDFen, Crustacean Corporation"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10
+    m_Localized: An den Betreiber,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11
+    m_Localized: "Bitte schicken Sie heute alle Fahrg\xE4ste, die sich auff\xE4llig
+      verhalten, unabh\xE4ngig von ihrem Ticket zusammen mit den anderen Mitarbeitern
+      in den Shuttlebus. Die Fahrg\xE4ste werden f\xFCr die entstandenen Unannehmlichkeiten
+      entsch\xE4digt, also brauchen Sie sich keine Sorgen um negative Bewertungen
+      zu machen. Wir k\xFCmmern uns darum.\\nBitte entt\xE4uschen Sie uns nicht,
+      Betreiber."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12
+    m_Localized: "Vielen Dank f\xFCr Ihre Kooperation, Crustacean Corporation"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13
+    m_Localized: "Diese Bekanntmachung ist nicht \xF6ffentlich einsehbar:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14
+    m_Localized: "Bitte beachten Sie die neue Richtlinien\xE4nderung: Auch Nicht-Krustentiere
+      m\xFCssen, unabh\xE4ngig von ihrem Ticket, zusammen mit den Mitarbeitern im
+      Shuttle bef\xF6rdert werden."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15
+    m_Localized: "Vielen Dank f\xFCr Ihre Kooperation, Crustacean Corporation"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16
+    m_Localized: An alle Mitarbeiter,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17
+    m_Localized: "Viele von Ihnen haben vielleicht in letzter Zeit von Kreaturen
+      mit abnormalen Gliedma\xDFen geh\xF6rt, die dem Unternehmen illegale Experimente
+      vorwerfen. Diese Behauptungen sind falsch; es handelt sich um haltlose Anschuldigungen
+      unzufriedener Mitarbeiter, die bei unseren j\xFCngsten Projekten nicht die
+      Erwartungen erf\xFCllten und daraufhin entlassen wurden. Wir werden gegen diese
+      falschen Behauptungen und gegen diejenigen vorgehen, die versuchen, unsere
+      jahrzehntelange Arbeit zunichtezumachen.\n..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18
+    m_Localized: "Mit freundlichen Gr\xFC\xDFen, Crustacean Corporation"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19
+    m_Localized: An den Betreiber,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20
+    m_Localized: "Herzlichen Gl\xFCckwunsch! Aufgrund Ihrer hervorragenden Leistungen
+      erhalten Sie den Gehaltsbonus f\xFCr diesen Monat. Die Crustacean Corporation
+      dankt Ihnen f\xFCr Ihren Einsatz und Ihre Treue. Machen Sie weiter so!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21
+    m_Localized: "Mit freundlichen Gr\xFC\xDFen, Crustacean Corporation"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22
+    m_Localized: An alle Mitarbeiter,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23
+    m_Localized: "Nach erfolgreichem Abschluss der klinischen Studien freuen wir
+      uns, Ihnen unser neues Rehabilitationsmedikament vorstellen zu d\xFCrfen. Dies
+      war unser bisher gr\xF6\xDFtes Projekt seit unserer Gr\xFCndung und w\xE4re
+      ohne den Einsatz und die harte Arbeit aller Beteiligten nicht m\xF6glich gewesen.
+      Das neue Medikament verspricht, das Wohlbefinden von Krustentieren in allen
+      Bereichen zu verbessern und unerw\xFCnschte Triebe zu unterdr\xFCcken.\\nAbschlie\xDFend
+      m\xF6chten wir darauf hinweisen, dass die Behandlung f\xFCr alle Mitarbeiter
+      bis Ende des n\xE4chsten Monats verpflichtend ist."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24
+    m_Localized: "M\xF6ge das Zeitalter der Krustentiere glorreich sein,\\nCrustacean
+      Corporation"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25
+    m_Localized: An den Betreiber,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26
+    m_Localized: "Wir gratulieren Ihnen zum erfolgreichen Abschluss Ihres ersten
+      Arbeitsmonats. Allerdings haben wir an mehreren Tagen Diskrepanzen zwischen
+      der Anzahl der von Ihnen vermittelten und der tats\xE4chlich empfangenen G\xE4ste
+      festgestellt. Um sicherzustellen, dass Sie zuk\xFCnftig die Unternehmensrichtlinien
+      in Ihrer Arbeit konsequent einhalten, werden wir Sie in ein Leistungsverbesserungsprogramm
+      aufnehmen."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27
+    m_Localized: "Mit freundlichen Gr\xFC\xDFen, Crustacean Corporation"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28
+    m_Localized: An den Betreiber,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29
+    m_Localized: "Crustacean Station ist stets bem\xFCht, seinen Fahrg\xE4sten ein
+      erstklassiges Reiseerlebnis zu bieten. Wir haben jedoch in letzter Zeit zahlreiche
+      Beschwerden \xFCber Ihr Verhalten und Ihren Service erhalten. Um den f\xFCr
+      diese Position erwarteten Standards gerecht zu werden, bitten wir Sie, Ihre
+      Leistungen zu verbessern und den Bed\xFCrfnissen der Fahrg\xE4ste mehr Aufmerksamkeit
+      zu schenken. Sollten Sie Ihre Leistung nicht verbessern, kann dies zu Ihrer
+      K\xFCndigung f\xFChren."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30
+    m_Localized: "Vielen Dank f\xFCr Ihre Kooperation, Crustacean Corporation"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31
+    m_Localized: An den Betreiber,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32
+    m_Localized: "Als Mitarbeiter der Crustacean Corporation sind Sie verpflichtet,
+      den Anweisungen des Unternehmens Folge zu leisten. Die Nichtbeachtung von Anweisungen
+      kann zur Beendigung Ihres Arbeitsverh\xE4ltnisses f\xFChren."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33
+    m_Localized: "Vielen Dank f\xFCr Ihre Kooperation, Crustacean Corporation"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34
+    m_Localized: An den Betreiber,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 35
+    m_Localized: "Die Crustacean Corporation m\xF6chte Ihnen f\xFCr Ihre bisher hervorragenden
+      Leistungen loben und Sie ermutigen, Ihre gute Arbeit fortzusetzen.\\nZur Erinnerung:
+      Mitarbeiter mit vorbildlichen Leistungsbeurteilungen haben am Ende jedes Monats
+      Anspruch auf einen Gehaltsbonus."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36
+    m_Localized: "Mit freundlichen Gr\xFC\xDFen, Crustacean Corporation"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37
+    m_Localized: An den Betreiber,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38
+    m_Localized: "Crustacean Station m\xF6chte Sie an die Wichtigkeit der Sicherheit
+      aller Fahrg\xE4ste erinnern. Wir sind ein Transportunternehmen, kein Gastronomiebetrieb.
+      Wir haben der betroffenen Familie unser Beileid ausgesprochen. Obwohl ein solches
+      Verhalten des T\xE4ters heutzutage als \u201Elegal\u201C gilt, bitten wir Sie,
+      solche Vorf\xE4lle so weit wie m\xF6glich zu vermeiden."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39
+    m_Localized: "Mit freundlichen Gr\xFC\xDFen, Crustacean Corporation"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40
+    m_Localized: Hey Mann!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41
+    m_Localized: "K\xF6nntest du mir vielleicht eine Zugfahrkarte besorgen? Ich w\xFCrde
+      wahnsinnig gerne zu einem Konzert von (Band) gehen, aber mir geht das Geld
+      aus.\\nHilf mir doch bitte aus ;)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42
+    m_Localized: Dein bester Kumpel, Davey
+    m_Metadata:
+      m_Items: []
+  - m_Id: 43
+    m_Localized: Liebster Bruder,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44
+    m_Localized: "Wir haben Mama im neuen Pflegeheim untergebracht. Ihr Zustand hat
+      sich etwas stabilisiert, Sie m\xFCssen also nur die Zahlungen weiterf\xFChren,
+      und wir k\xF6nnen uns um sie k\xFCmmern.\\n\\nIch wei\xDF, Sie m\xF6chten sich
+      nicht zu sehr einbringen, aber das ist das Mindeste, was Sie f\xFCr Ihre Familie
+      tun k\xF6nnen."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45
+    m_Localized: Deine (einzige) Schwester,\nKellie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 46
+    m_Localized: Hallo Herr Stationsleiter,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47
+    m_Localized: "Vielen Dank, dass Sie auf meinen Sohn aufgepasst haben. Ich wei\xDF,
+      er hat Ihnen Umst\xE4nde bereitet, und das tut mir aufrichtig leid. Da im Labor
+      viel los ist und sein Vater nicht da ist, kann ich ihn nicht selbst zur Schule
+      bringen. Ich habe ihm gesagt, er solle sich bei Fragen an Sie wenden, deshalb
+      bitte ich Sie inst\xE4ndig, in meiner Abwesenheit ein Auge auf ihn zu haben."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48
+    m_Localized: "Eine liebevolle (aber m\xFCde) Mutter"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49
+    m_Localized: "Hey S\xFC\xDFe,"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 50
+    m_Localized: "Wir haben uns jetzt schon ein paar Mal gesehen, aber ich hatte
+      noch keine Gelegenheit, mich vorzustellen. Ich bin die Postbotin und bringe
+      eure R\xFCckmeldungen und Briefe! Es ist zwar anstrengend, aber euer L\xE4cheln
+      macht alles wieder gut :)\\n\\nDas Leben kann manchmal hart sein, nicht wahr?
+      Deshalb k\xF6nnt ihr euch immer auf mich verlassen."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51
+    m_Localized: Mit Liebe,\nPostbote
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52
+    m_Localized: "Hey S\xFC\xDFe,"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53
+    m_Localized: "Ich hatte heute Gl\xFCck mit dem Gezeitenwechsel und konnte meine
+      Familie besuchen! Sie haben mir ganz viele Muscheln geschenkt. Ich habe selbst
+      viel zu viele, und wir sind ungef\xE4hr gleich gro\xDF. Deshalb dachte ich,
+      vielleicht h\xE4ttest du ja Lust darauf? Ach, du kannst sie \xFCbrigens nicht
+      ablehnen, ich habe sie schon bei dir vorbeigebracht!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 54
+    m_Localized: Mit Liebe,\nPostbote
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55
+    m_Localized: "Hey, du S\xFC\xDFer ;)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56
+    m_Localized: "In der nahegelegenen Riffstadt hat eine neue Salzlakenfabrik er\xF6ffnet.
+      Hast du Lust, mal vorbeizuschauen? Ich habe geh\xF6rt, deren neue Meeresgurken
+      sind himmlisch. Und ehrlich gesagt, wenn ich sterben m\xFCsste, dann m\xF6chte
+      ich es mit dir tun\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 57
+    m_Localized: "Mit herzlichen Gr\xFC\xDFen, Ihr Postbetreuer"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58
+    m_Localized: Hey,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 59
+    m_Localized: "Dir ist es doch auch aufgefallen, oder? All diese Passagiere\u2026\\n\\nIn
+      den letzten Wochen habe ich viele Kreaturen mit Verb\xE4nden gesehen. Ich dachte,
+      sie w\xFCrden sich wegen des tr\xFCben Wetters nur einwickeln, aber jetzt\u2026
+      ist es einfach nur entsetzlich. Wie konnte das passieren? Die Einsatzkr\xE4fte
+      m\xFCssen das doch untersuchen, oder?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 60
+    m_Localized: Bleiben Sie gesund, Ihr Postbote
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

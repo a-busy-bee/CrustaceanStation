@@ -15,8 +15,43 @@ MonoBehaviour:
   m_GroupName: Localization-Assets-Shared
   m_GUID: 0f0a8147e72844202a73fdf029901f5f
   m_SerializeEntries:
+  - m_GUID: 1cc745f6ad70042ac8edf889829c2b48
+    m_Address: Assets/Localization/Feedback/Feedback_Strings Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 27411ae6b6a0042869f8105d38ceb782
+    m_Address: Assets/Localization/Tutorial/Tutorial_Strings Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 33f34fa7b0e7c45e78896be179aeaf03
+    m_Address: Assets/Localization/Credits/Credits_Strings Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 3afa6393088ad49b6b847902fe1b00af
     m_Address: Assets/Localization/TitleScreen_Strings Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 46eeed09eb92e46be89eb4b0fe52fc8e
+    m_Address: Assets/Localization/UI/UI_Strings Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 64651aad8be1f4ba8bf9f9cc9c829dd5
+    m_Address: Assets/Localization/Cutscene/Cutscene_Strings Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 646a95002e9464c13a67bdae0548da85
+    m_Address: Assets/Localization/Misc/Misc_Strings Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dc9bf26741112408bafe847b9a4c6919
+    m_Address: Assets/Localization/Letters/Letter_Strings Shared Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

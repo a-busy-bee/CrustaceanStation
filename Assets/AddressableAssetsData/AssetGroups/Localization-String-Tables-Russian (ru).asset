@@ -15,8 +15,50 @@ MonoBehaviour:
   m_GroupName: Localization-String-Tables-Russian (ru)
   m_GUID: 7d2eca55033a64dac941d45ca4521779
   m_SerializeEntries:
+  - m_GUID: 1ae95540924c74c69a62611fb34112ac
+    m_Address: Cutscene_Strings_ru
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ru
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5c4c88f132a4345c4857249b03542c4d
+    m_Address: UI_Strings_ru
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ru
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8fc13e7c8171f4f12aa6f2de9c3edd9c
+    m_Address: Misc_Strings_ru
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ru
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9750fd1975a6c4bcb90b8ff61b856048
+    m_Address: Tutorial_Strings_ru
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ru
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dce916481d31445a4aad1dd0c75f5032
+    m_Address: Letter_Strings_ru
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ru
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ea0c50eedaefa47638ea0babcedac542
+    m_Address: Feedback_Strings_ru
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ru
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ed227fcebc91f46f2ae0d4c1aea1f17d
     m_Address: TitleScreen_Strings_ru
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ru
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fef70a30c757b458c875dfee25c511a5
+    m_Address: Credits_Strings_ru
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-ru

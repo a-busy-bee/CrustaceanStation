@@ -15,8 +15,20 @@ MonoBehaviour:
   m_TableCollectionName: TitleScreen_Strings
   m_TableCollectionNameGuidString: 3afa6393088ad49b6b847902fe1b00af
   m_Entries:
-  - m_Id: 19515039744
-    m_Key: button_play
+  - m_Id: 1
+    m_Key: title_play
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2
+    m_Key: title_settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3
+    m_Key: title_credits
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4
+    m_Key: title_quit
     m_Metadata:
       m_Items: []
   m_Metadata:

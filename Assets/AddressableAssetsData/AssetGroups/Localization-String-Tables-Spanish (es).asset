@@ -15,8 +15,50 @@ MonoBehaviour:
   m_GroupName: Localization-String-Tables-Spanish (es)
   m_GUID: 4a9cc03c491304b61bca43f4b75e1d85
   m_SerializeEntries:
+  - m_GUID: 0d4f26d39298a463aa3a6bb48c997770
+    m_Address: Tutorial_Strings_es
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-es
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1dc38cd54c1cc43f69cbd0f0e1f876b4
+    m_Address: Letter_Strings_es
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-es
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1e004ec94c6d3430cbc2b330191af4e4
+    m_Address: Feedback_Strings_es
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-es
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 36a1c80e32a174d3b9266b977d7968a9
+    m_Address: Cutscene_Strings_es
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-es
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6f21afecd49964f94a3108f985f10a2b
+    m_Address: Credits_Strings_es
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-es
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7a3ccc14d44b34f5c94b30ed69ff8d79
     m_Address: TitleScreen_Strings_es
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-es
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: aeee7ed2e849f4f5db57f3ac77736748
+    m_Address: Misc_Strings_es
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-es
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f92dadac946a64fe3a52dff1cbe6b964
+    m_Address: UI_Strings_es
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-es

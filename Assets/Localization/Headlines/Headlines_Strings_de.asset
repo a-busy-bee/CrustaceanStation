@@ -1,0 +1,110 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Headlines_Strings_de
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: de
+  m_SharedData: {fileID: 11400000, guid: feb04c4b14d9d4b9cbd860b3b50e0ee8, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 1
+    m_Localized: "Was braucht ein Biotechnologieunternehmen \xFCberhaupt an einem
+      Bahnhof?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2
+    m_Localized: 'Eilmeldung: Senator Fishman wegen Insiderhandel angeklagt!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3
+    m_Localized: "Was ist das Geheimnis seiner Jugend und Gesundheit? Krusty Kaleb
+      verr\xE4t alles\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4
+    m_Localized: Kind tot vor dem Labor der Crustacean Corporation aufgefunden, scheint
+      von einem Raubtier gefressen worden zu sein
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5
+    m_Localized: 'Meinung: Der Krustentierkonzern muss gestoppt werden'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6
+    m_Localized: "Meinung: Crustacean Corporation k\xF6nnte das letzte ethische Unternehmen
+      sein"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7
+    m_Localized: "Rekordverd\xE4chtige Anzahl an F\xE4llen vermisster Tiere in diesem
+      Monat\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8
+    m_Localized: Krebstiere sind die letzte Form allen Meereslebens.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9
+    m_Localized: "Ist der neue Trend, sich Krallen auf den K\xF6rper zu kleben?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10
+    m_Localized: "Whistleblower berichtet \xFCber revolution\xE4re neue Forschung
+      der Crustacean Corporation"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11
+    m_Localized: "Das Wachsen von Krallen ist ein v\xF6llig normales Ph\xE4nomen."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12
+    m_Localized: Orange wird als die beste Farbmutation aller Zeiten bewertet.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13
+    m_Localized: Alle rennen!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14
+    m_Localized: "Legt eure alten Exoskelette ab und begr\xFC\xDFt die Karzinisierung."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15
+    m_Localized: "Die Neue Welt der Krebstiere und krebstier\xE4hnlichen Krebstiere."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16
+    m_Localized: Die Freude an Krabben-Raves jeden Tag.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17
+    m_Localized: Die Evolution hat ihren Grund, Leute!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18
+    m_Localized: "Whistleblower enth\xFCllte schockierende Experimente des Krustentierkonzerns"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19
+    m_Localized: Ein genauer Blick auf die korrupten Ideale der Crustacean Corporation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20
+    m_Localized: "Die zehn besten Dinge, die Sie tun k\xF6nnen, um die Anti-Krustenbewegung
+      zu unterst\xFCtzen"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
