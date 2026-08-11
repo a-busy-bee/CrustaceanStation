@@ -19,6 +19,7 @@ public class CrabController : MonoBehaviour
     [SerializeField] private Sprite[] labCoats;
     [SerializeField] private Image labCoatBase;
     [SerializeField] private Badges badge;
+    [SerializeField] private bool isMutated;
     private bool isShuttle = false;
 
 
@@ -52,6 +53,7 @@ public class CrabController : MonoBehaviour
     }
     public CrabState crabState { get; private set; }
     private bool isWaiting = false;
+    
 
     void Awake()
     {
@@ -361,6 +363,11 @@ public class CrabController : MonoBehaviour
         if (crabInfo.isImportantCharacter)
         {
             DialogueManager.instance.GetSpecialCharacterDialogue(crabInfo.specialCharacterType);
+            return;
+        }
+        else if (isMutated)
+        {
+            DialogueManager.instance.GetMutantDialogue();
             return;
         }
 
