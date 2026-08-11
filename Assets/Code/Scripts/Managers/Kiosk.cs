@@ -33,6 +33,14 @@ public class Kiosk : KioskBase
 
             case KioskState.CrabPresent:
                 {
+                    if (currDay + 1 >= 6 && GetCrabInfo().plotLevel == CrabInfo.PlotLevel.predator)
+                    {
+                        SaveManager.instance.SetProgression_IncrementNonCrustiesSeen();
+                    }
+                    else if (currDay + 1 >= 11 && GetCrabInfo().plotLevel >= CrabInfo.PlotLevel.predator)
+                    {
+                        SaveManager.instance.SetProgression_IncrementNonCrustiesSeen();
+                    }
                     EnableButtons();
                 }
                 break;

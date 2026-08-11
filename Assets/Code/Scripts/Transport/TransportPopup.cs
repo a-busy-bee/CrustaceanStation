@@ -211,12 +211,12 @@ public class TransportPopup : MonoBehaviour
 
         if (currDay + 1 >= 6 && KioskBase.instance.GetCrabInfo().plotLevel == CrabInfo.PlotLevel.predator)
         {
-            Debug.Log("train, incorrect, plot 1");
+            //Debug.Log("train, incorrect, plot 1");
             PerformanceManager.instance.IncorrectHalf(PerformanceManager.MistakeType.plot);
         }
         else if (currDay + 1 >= 11 && KioskBase.instance.GetCrabInfo().plotLevel >= CrabInfo.PlotLevel.predator)
         {
-            Debug.Log("train, incorrect, plot 2");
+            //Debug.Log("train, incorrect, plot 2");
             PerformanceManager.instance.IncorrectHalf(PerformanceManager.MistakeType.plot);
         }
         else
@@ -226,14 +226,14 @@ public class TransportPopup : MonoBehaviour
             Cart.Type ticketCartType = Kiosk.instance.GetCurrentCrabTicket();
             if (ticketCartType != type) // if the crab chose the wrong cart
             {
-                Debug.Log("train, incorrect");
+                //Debug.Log("train, incorrect"); 
                 Kiosk.instance.WrongTransport();
             }
             else
             {
-                Debug.Log("currday " + currDay);
-                Debug.Log(KioskBase.instance.GetCrabInfo().plotLevel);
-                Debug.Log("train, correct");
+                //Debug.Log("currday " + currDay);
+                //Debug.Log(KioskBase.instance.GetCrabInfo().plotLevel);
+                //Debug.Log("train, correct");
                 Kiosk.instance.CorrectTransport();
             }
         }

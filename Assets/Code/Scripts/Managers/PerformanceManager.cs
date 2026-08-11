@@ -93,10 +93,9 @@ public class PerformanceManager : MonoBehaviour
     }
 
     [ContextMenu("Correct")]
-    public void Correct()
+    public void Correct(bool isPlotShuttle = false)
     {
-        //Debug.Log("correct");
-        barPercent += stepSize;
+        barPercent += stepSize / 2.0f;
         if (barPercent >= 1) barPercent = 1;
 
         correctCounter++;
@@ -108,8 +107,7 @@ public class PerformanceManager : MonoBehaviour
     [ContextMenu("Correct Half")]
     public void CorrectHalf() // for smaller increases
     {
-        //Debug.Log("correct");
-        barPercent += stepSize / 2.0f;
+        barPercent += stepSize / 4.0f;
         if (barPercent >= 1) barPercent = 1;
 
         correctCounter++;
@@ -128,7 +126,7 @@ public class PerformanceManager : MonoBehaviour
     {
         animator.SetTrigger("Rumble");
         numWrong++;
-        barPercent -= stepSize * 3.5f;
+        barPercent -= stepSize * 5f;
         if (barPercent <= 0)
         {
             barPercent = 0;
@@ -146,7 +144,7 @@ public class PerformanceManager : MonoBehaviour
     {
         animator.SetTrigger("Rumble");
         numWrong++;
-        barPercent -= stepSize;
+        barPercent -= stepSize * 2.0f;
         if (barPercent <= 0)
         {
             barPercent = 0;

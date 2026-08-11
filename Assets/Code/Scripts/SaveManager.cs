@@ -50,6 +50,12 @@ public class ProgressionData
 {
     public int currDay;
     public int tutorialState;
+
+    // shuttling
+    public int numNonCrustiesShuttled;
+    public int numNonCrustiesSeen;
+
+
     public float performanceBarPercent;
     public bool performanceBarSaved;
     public bool introMailSeen;
@@ -96,7 +102,9 @@ public class SaveManager : MonoBehaviour
         newGame,
         medsAvailable,
         eatenBeforeDay3,
-        red1
+        red1,
+        nonCrustySeen,
+        nonCrustyShuttled
     }
 
     private Dictionary<string, int> characterNameToIndex = new Dictionary<string, int>
@@ -333,6 +341,14 @@ public class SaveManager : MonoBehaviour
             case ProgressionType.red1:
                 data.progressionData.redOne = bool.Parse(value);
                 break;
+
+            case ProgressionType.nonCrustySeen:
+                data.progressionData.numNonCrustiesSeen = int.Parse(value);
+                break;
+
+            case ProgressionType.nonCrustyShuttled:
+                data.progressionData.numNonCrustiesShuttled = int.Parse(value);
+                break;
         }
 
         SaveData();
@@ -344,6 +360,22 @@ public class SaveManager : MonoBehaviour
     public void SetProgression_IncrementCurrDay()
     {
         SaveProgressionData(ProgressionType.currDay, (data.progressionData.currDay + 1).ToString());
+    }
+    public int GetProgression_NonCrustiesSeen()
+    {
+        return data.progressionData.numNonCrustiesSeen;
+    }
+    public void SetProgression_IncrementNonCrustiesSeen()
+    {
+        SaveProgressionData(ProgressionType.currDay, (data.progressionData.numNonCrustiesSeen + 1).ToString());
+    }
+    public int GetProgression_NonCrustiesShuttled()
+    {
+        return data.progressionData.numNonCrustiesShuttled;
+    }
+    public void SetProgression_IncrementNonCrustiesShuttled()
+    {
+        SaveProgressionData(ProgressionType.currDay, (data.progressionData.numNonCrustiesShuttled + 1).ToString());
     }
     public int GetProgression_TutorialState()
     {
