@@ -14,7 +14,7 @@ public class LocalizationManager : MonoBehaviour
         Dialogue,
         Feedback,
         Headlines,
-        Letters,
+        Letter,
         Misc,
         Names,
         Summary,
