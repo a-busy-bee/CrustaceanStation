@@ -213,7 +213,7 @@ public class TransportPopup : MonoBehaviour
         {
             PerformanceManager.instance.IncorrectHalf(PerformanceManager.MistakeType.plot);
         }
-        else if (currDay + 1 >= 11 && KioskBase.instance.GetCrabInfo().plotLevel == CrabInfo.PlotLevel.nonCrustacean)
+        else if (currDay + 1 >= 11 && KioskBase.instance.GetCrabInfo().plotLevel >= CrabInfo.PlotLevel.predator)
         {
             PerformanceManager.instance.IncorrectHalf(PerformanceManager.MistakeType.plot);
         }

@@ -54,8 +54,7 @@ public class CrabController : MonoBehaviour
     public CrabState crabState { get; private set; }
     private bool isWaiting = false;
     
-
-    void Awake()
+    private void Start()
     {
         rectTransform = GetComponent<RectTransform>();
         float xPos = 418;
@@ -69,13 +68,9 @@ public class CrabController : MonoBehaviour
 
         rectTransform.anchoredPosition = kioskStartPos;
 
-
         crabInfo.crabName = CrabNameGenerator.instance.GetNameByType(crabInfo.type);
         emotion = GetComponent<RectTransform>().Find("Emotions").GetComponent<Emotion>();
-    }
 
-    private void Start()
-    {
         if (labCoatBase != null) labCoatBase.gameObject.SetActive(false);
         if (badge != null) badge.gameObject.SetActive(false);
 
@@ -195,10 +190,6 @@ public class CrabController : MonoBehaviour
 
     }
 
-    private void PresentShuttleAndID()
-    {
-
-    }
     private void PresentTicketAndID()
     {
         //TODO: if has coat or is target species, have higher chance to show shuttle ticket instead of train ticket
@@ -206,14 +197,17 @@ public class CrabController : MonoBehaviour
         if (isShuttle) ticket = Instantiate(shuttleTicketPrefab, ticketAndIDParentObject.transform);
         else ticket = Instantiate(ticketPrefab, ticketAndIDParentObject.transform);
 
-        //ticket = Instantiate(ticketPrefab, ticketAndIDParentObject.transform);
         id = Instantiate(idPrefab, ticketAndIDParentObject.transform);
 
-        ticket.GetComponent<Ticket>().SetID(id.GetComponent<ID>());
-        id.GetComponent<ID>().SetTicket(ticket.GetComponent<Ticket>());
+        Ticket ticketComponent = ticket.GetComponent<Ticket>();
+        ID idComponent = id.GetComponent<ID>();
 
-        ticket.GetComponent<Ticket>().PushBack();
-        id.GetComponent<ID>().BringForward();
+
+        ticketComponent.SetID(idComponent);
+        idComponent.SetTicket(ticketComponent);
+
+        ticketComponent.PushBack();
+        idComponent.BringForward();
 
         #region FRAUD
 
@@ -225,6 +219,7 @@ public class CrabController : MonoBehaviour
             crabName = CrabNameGenerator.instance.GetAnyName();
             if (crabName != crabInfo.crabName)
             {
+                Debug.Log("crab name invalid");
                 isValid = false;
             }
         }
@@ -233,6 +228,7 @@ public class CrabController : MonoBehaviour
             crabPhoto = crabSelector.ChooseSprite();
             if (crabPhoto != crabInfo.sprite)
             {
+                Debug.Log("crab photo invalid");
                 isValid = false;
             }
         }
@@ -242,19 +238,22 @@ public class CrabController : MonoBehaviour
         {
             if (Random.Range(0, 10) > 8)                                       // FORGED ID
             {
-                ticket.GetComponent<Ticket>().SetName(crabName);
-                id.GetComponent<ID>().SetName(crabInfo.crabName);
+                Debug.Log("forged ID");
+                ticketComponent.SetName(crabName);
+                idComponent.SetName(crabInfo.crabName);
             }
             else                                                               // FORGED TICKET
             {
-                ticket.GetComponent<Ticket>().SetName(crabInfo.crabName);
-                id.GetComponent<ID>().SetName(crabName);
+                Debug.Log("forged ticket");
+                ticketComponent.SetName(crabInfo.crabName);
+                idComponent.SetName(crabName);
             }
         }
         else // if not forged
         {
-            ticket.GetComponent<Ticket>().SetName(crabName);
-            id.GetComponent<ID>().SetName(crabName);
+            Debug.Log("not forged at all");
+            ticketComponent.SetName(crabName);
+            idComponent.SetName(crabName);
         }
 
         #endregion
@@ -263,14 +262,14 @@ public class CrabController : MonoBehaviour
         if (crabInfo.isImportantCharacter) // no forgery if they're special
         {
             string name = Constants.instance.specialEnumToStringName[crabInfo.specialCharacterType];
-            ticket.GetComponent<Ticket>().SetName(name);
-            id.GetComponent<ID>().SetName(name);
-            id.GetComponent<ID>().SetIDPhoto(crabInfo.sprite);
+            ticketComponent.SetName(name);
+            idComponent.SetName(name);
+            idComponent.SetIDPhoto(crabInfo.sprite);
             isValid = true;
         }
         else
         {
-            id.GetComponent<ID>().SetIDPhoto(crabPhoto);
+            idComponent.SetIDPhoto(crabPhoto);
         }
 
         #endregion
@@ -279,11 +278,11 @@ public class CrabController : MonoBehaviour
         // seat number tag
         if (crabInfo.isMultiple || crabInfo.isLarge)
         {
-            id.GetComponent<ID>().SetSeatType(ID.SeatType.doubleSeat);
+            idComponent.SetSeatType(ID.SeatType.doubleSeat);
         }
         else
         {
-            id.GetComponent<ID>().SetSeatType(ID.SeatType.singleSeat);
+            idComponent.SetSeatType(ID.SeatType.singleSeat);
         }
 
         #endregion
@@ -295,36 +294,36 @@ public class CrabController : MonoBehaviour
         {
             if (crabInfo.plotLevel == CrabInfo.PlotLevel.predator)
             {
-                id.GetComponent<ID>().SetNonCrustType(ID.NonCrustType.pred);
+                idComponent.SetNonCrustType(ID.NonCrustType.pred);
             }
             else if (crabInfo.plotLevel == CrabInfo.PlotLevel.nonCrustacean)
             {
-                id.GetComponent<ID>().SetNonCrustType(ID.NonCrustType.nonCrust);
+                idComponent.SetNonCrustType(ID.NonCrustType.nonCrust);
             }
             else
             {
-                id.GetComponent<ID>().SetNonCrustType(ID.NonCrustType.normal);
+                idComponent.SetNonCrustType(ID.NonCrustType.normal);
             }
         }
         else if (currDay > 5)
         {
             if (crabInfo.plotLevel == CrabInfo.PlotLevel.predator)
             {
-                id.GetComponent<ID>().SetNonCrustType(ID.NonCrustType.pred);
+                idComponent.SetNonCrustType(ID.NonCrustType.pred);
             }
             else
             {
-                id.GetComponent<ID>().SetNonCrustType(ID.NonCrustType.normal);
+                idComponent.SetNonCrustType(ID.NonCrustType.normal);
             }
         }
 
-            #endregion
+        #endregion
 
 
-            // TRAIN CART TYPE FORGERY (OR NOT)
-            cartType = LevelManagerBase.instance.GetRandomCurrentCartType();
+        // TRAIN CART TYPE FORGERY (OR NOT)
+        cartType = LevelManagerBase.instance.GetRandomCurrentCartType();
 
-        if (!isShuttle) ticket.GetComponent<Ticket>().SetSprite(cartType);
+        if (!isShuttle) ticketComponent.SetSprite(cartType);
         else cartType = Cart.Type.Shuttle;
     }
 
@@ -341,7 +340,6 @@ public class CrabController : MonoBehaviour
         ticket.GetComponent<Ticket>().PushBack();
         id.GetComponent<ID>().BringForward();
 
-        // SOMETIMES GENERATE MISMATCHING INFO
         string crabName = crabInfo.crabName;
         Sprite crabPhoto = crabInfo.sprite;
 
