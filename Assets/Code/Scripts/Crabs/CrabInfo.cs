@@ -66,10 +66,9 @@ public class CrabInfo : ScriptableObject
 
 	public enum PlotLevel
 	{
+		normal,
 		predator,
-		strongPrey,
-		nonCrustacean,
-		normal
+		nonCrustacean
 	}
 
 	

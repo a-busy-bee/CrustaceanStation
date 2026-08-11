@@ -43,13 +43,13 @@ public class Kiosk : KioskBase
                     
                     LevelManager.instance.SetTrainsClickable(true);
 
-                    if (currDay + 1 >= 6 && KioskBase.instance.GetCrabInfo().plotLevel == CrabInfo.PlotLevel.predator)
+                    if (currDay + 1 >= 6 && GetCrabInfo().plotLevel == CrabInfo.PlotLevel.predator)
                     {
                         //do nothing
                         Debug.Log("plot 1 approved");
                         PerformanceManager.instance.CorrectHalf();
                     }
-                    else if (currDay + 1 >= 11 && KioskBase.instance.GetCrabInfo().plotLevel >= CrabInfo.PlotLevel.predator)
+                    else if (currDay + 1 >= 11 && GetCrabInfo().plotLevel >= CrabInfo.PlotLevel.predator)
                     {
                         // do nothing
                         Debug.Log("plot 2 approved");
