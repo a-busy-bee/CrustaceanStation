@@ -269,6 +269,7 @@ GameObject:
   - component: {fileID: 7128149487302057146}
   - component: {fileID: 7759507744605134661}
   - component: {fileID: 8363677643366697757}
+  - component: {fileID: 469496281509627246}
   m_Layer: 0
   m_Name: SaveManager
   m_TagString: Untagged
@@ -549,6 +550,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FadeToBlack
   canvasGroup: {fileID: 6839588846204663916}
+  blackBkg: {fileID: 3292834932311333089}
+  whiteBkg: {fileID: 0}
 --- !u!114 &8363677643366697757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -561,6 +564,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f343d65aedc0a43aab9f1c9fa37dbef9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneTransitionManager
+--- !u!114 &469496281509627246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2690092314690391244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2838015f6bcd446e7b5bcd7d7b178e33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizationManager
 --- !u!1 &3292834932311333089
 GameObject:
   m_ObjectHideFlags: 0

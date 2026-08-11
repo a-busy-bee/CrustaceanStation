@@ -181,11 +181,6 @@ public class MailroomManager : MonoBehaviour
             string bottom = "";
             letterImage.sprite = letterSprites[0];
 
-            Debug.Log(inboxItem.type);
-            Debug.Log(inboxItem.subType);
-            Debug.Log(inboxItem.id);
-            Debug.Log(inboxItem.timestamp);
-
             switch (inboxItem.subType)
             {
                 case "crustyCoDay":

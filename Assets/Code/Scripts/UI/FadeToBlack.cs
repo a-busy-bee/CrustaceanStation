@@ -37,12 +37,12 @@ public class FadeToBlack : MonoBehaviour
     {
         if (isWhite)
         {
-            whiteBkg.SetActive(true);
+            if (whiteBkg != null) whiteBkg.SetActive(true);
             blackBkg.SetActive(false);
         }
         else
         {
-            whiteBkg.SetActive(false);
+            if (whiteBkg != null) whiteBkg.SetActive(false);
             blackBkg.SetActive(true);
         }
         
@@ -54,12 +54,12 @@ public class FadeToBlack : MonoBehaviour
     {
         if (isWhite)
         {
-            whiteBkg.SetActive(true);
+            if (whiteBkg != null) whiteBkg.SetActive(true);
             blackBkg.SetActive(false);
         }
         else
         {
-            whiteBkg.SetActive(false);
+            if (whiteBkg != null) whiteBkg.SetActive(false);
             blackBkg.SetActive(true);
         }
 
