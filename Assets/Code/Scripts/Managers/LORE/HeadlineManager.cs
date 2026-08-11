@@ -53,13 +53,11 @@ public class HeadlineManager : MonoBehaviour
     public void GetHeadline()
     {
         int currDay = SaveManager.instance.GetProgression_CurrDay();
-        string key;
+        string headline;
+        if (currDay < 15) headline = headlineData.headlines[currDay - 1];
+        else if (PlotManager.instance.IsGoodEnding()) headline = headlineData.headlinesGood[currDay - 16];
+        else headline = headlineData.headlinesBad[currDay - 16];
 
-        if (currDay < 15) key = "headline_" + (currDay - 1);
-        else if (PlotManager.instance.IsGoodEnding()) key = "headline_good_" + (currDay - 16);
-        else key = "headline_bad_" + (currDay - 16);
-
-        string headline = LocalizationManager.instance.GetTextByStringKey(LocalizationManager.Table.Headlines, key);
         SetSpecificText(60, headline);
     }
 

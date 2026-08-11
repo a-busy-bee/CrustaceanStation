@@ -51,56 +51,37 @@ public class FeedbackManager : MonoBehaviour
     public string GetGenericFeedback()
     {
         int rand = UnityEngine.Random.Range(0, feedbackData.nodesGeneric.Length);
-
-        return LocalizationManager.instance.GetTextByStringKey(LocalizationManager.Table.Feedback, "feedback_nodesGeneric_" + rand);
-        //return feedbackData.nodesGeneric[rand].text;
+        return feedbackData.nodesGeneric[rand].text;
     }
 
     public string GetCharacterFeedback(Special special, int day)
     {
         Constants constants = Constants.instance;
-        int idx = constants.FEEDBACK_characterToDayToIdx[special][day];
-        string prefix = "feedback_nodesGeneric_";
         switch (special)
         {
             case Special.itty:
-                prefix = "feedback_ittyBitty_";
-                break;
-            //return feedbackData.ittyBitty[constants.FEEDBACK_characterToDayToIdx[special][day]];
+                return feedbackData.ittyBitty[constants.FEEDBACK_characterToDayToIdx[special][day]];
 
             case Special.protestorCatfish:
-                prefix =  "feedback_protestorCatfish_";
-                break;
-            //return feedbackData.protestorCatfish[constants.FEEDBACK_characterToDayToIdx[special][day]];
+                return feedbackData.protestorCatfish[constants.FEEDBACK_characterToDayToIdx[special][day]];
 
             case Special.horseshoe:
-                prefix =  "feedback_horseshoe_";
-                break;
-            //return feedbackData.horseshoe[constants.FEEDBACK_characterToDayToIdx[special][day]];
+                return feedbackData.horseshoe[constants.FEEDBACK_characterToDayToIdx[special][day]];
 
             case Special.isobelle:
-                prefix = "feedback_isobelle_";
-                break;
-            //return feedbackData.isobelle[constants.FEEDBACK_characterToDayToIdx[special][day]];
+                return feedbackData.isobelle[constants.FEEDBACK_characterToDayToIdx[special][day]];
 
             case Special.seaStarDad:
-                prefix = "feedback_seaStarDad_";
-                break;
-            //return feedbackData.seaStarDad[constants.FEEDBACK_characterToDayToIdx[special][day]];
+                return feedbackData.seaStarDad[constants.FEEDBACK_characterToDayToIdx[special][day]];
 
             case Special.granny:
-                prefix = "feedback_granny_";
-                break;
-            //return feedbackData.granny[constants.FEEDBACK_characterToDayToIdx[special][day]];
+                return feedbackData.granny[constants.FEEDBACK_characterToDayToIdx[special][day]];
 
             case Special.gramps:
-                prefix = "feedback_gramps_";
-                break;
-                //return feedbackData.gramps[constants.FEEDBACK_characterToDayToIdx[special][day]];
+                return feedbackData.gramps[constants.FEEDBACK_characterToDayToIdx[special][day]];
         }
 
-        return LocalizationManager.instance.GetTextByStringKey(LocalizationManager.Table.Feedback, prefix + idx);
-
+        return "Get Character Feedback";
     }
         
 }

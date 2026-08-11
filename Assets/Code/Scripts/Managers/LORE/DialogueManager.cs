@@ -100,10 +100,7 @@ public class DialogueManager : MonoBehaviour
     }
     public void GetDialogueGeneric()
     {
-        //string text = dialogueData.nodeGenericAnyChars[UnityEngine.Random.Range(0, dialogueData.nodeGenericAnyChars.Length)];
-        int idx = UnityEngine.Random.Range(0, dialogueData.nodeGenericAnyChars.Length);
-        string text = LocalizationManager.instance.GetTextByStringKey(LocalizationManager.Table.Dialogue, "dialouge_nodesGenericAnyChars_" + idx);
-
+        string text = dialogueData.nodeGenericAnyChars[UnityEngine.Random.Range(0, dialogueData.nodeGenericAnyChars.Length)];
         dialogueObject.ShowDialogue(text);
     }
 
@@ -114,11 +111,15 @@ public class DialogueManager : MonoBehaviour
 
     public void GetDialoguePlot(int stage)
     {
-        //string text = dialogueData.nodePlotAnyChars[stage].text[UnityEngine.Random.Range(0, dialogueData.nodePlotAnyChars[stage].text.Length)];
+        string text = dialogueData.nodePlotAnyChars[stage].text[UnityEngine.Random.Range(0, dialogueData.nodePlotAnyChars[stage].text.Length)];
+        dialogueObject.ShowDialogue(text);
+    }
 
-        int idx = UnityEngine.Random.Range(0, dialogueData.nodePlotAnyChars[stage].text.Length);
-        string text = LocalizationManager.instance.GetTextByStringKey(LocalizationManager.Table.Dialogue, "dialogue_nodePlotAnyChars_1_" + idx);
-        
+    public void GetDialogueVet()
+    {
+        int currDay = SaveManager.instance.GetProgression_CurrDay();
+        int stage = currDay / 5;
+        string text = dialogueData.nodesVet[stage];
         dialogueObject.ShowDialogue(text);
     }
 
@@ -135,42 +136,7 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        //string text = characterToDialgoue[characterName][dialgoueIdx];
-
-        string prefix = "";
-        switch (characterName)
-        {
-            case Special.itty:
-                prefix = "dialogue_ittyBitty_";
-                break;
-
-            case Special.protestorCatfish:
-                prefix =  "dialogue_protestorCatfish_";
-                break;
-
-            case Special.horseshoe:
-                prefix =  "dialogue_horseshoe_";
-                break;
-
-            case Special.isobelle:
-                prefix = "dialogue_isobelle_";
-                break;
-
-            case Special.seaStarDad:
-                prefix = "dialogue_seaStarDad_";
-                break;
-
-            case Special.granny:
-                prefix = "dialogue_granny_";
-                break;
-
-            case Special.gramps:
-                prefix = "dialogue_gramps_";
-                break;
-        }
-
-        string text = LocalizationManager.instance.GetTextByStringKey(LocalizationManager.Table.Dialogue, prefix + dialgoueIdx);
-
+        string text = characterToDialgoue[characterName][dialgoueIdx];
         dialogueObject.ShowDialogue(text, true, characterName);
 
         saveManager.SaveCharacterData(characterNameString, dialgoueIdx + 1); // progress dialogue
@@ -188,30 +154,29 @@ public class DialogueManager : MonoBehaviour
 
     public void ShowCharacterLongDialogue(CutscenePlayer_Dialogue.DialogueType type, int idx)
     {
-        string prefix = "";
+        string text = "";
         switch (type)
         {
             case CutscenePlayer_Dialogue.DialogueType.grampsEnding:
-                prefix = "dialogue_grampsEnding_";
+                text = dialogueData.gramps_ending[idx];
                 break;
             case CutscenePlayer_Dialogue.DialogueType.vet1:
-                prefix = "dialogue_visit1_";
+                text = dialogueData.vet1[idx];
                 break;
             case CutscenePlayer_Dialogue.DialogueType.vet2:
-                prefix = "dialogue_visit2_";
+                text = dialogueData.vet2[idx];
                 break;
             case CutscenePlayer_Dialogue.DialogueType.vet3:
-                prefix = "dialogue_visit3_";
+                text = dialogueData.vet3[idx];
                 break;
             case CutscenePlayer_Dialogue.DialogueType.vet4good:
-                prefix = "dialogue_visit4_good_";
+                text = dialogueData.vet4Good[idx];
                 break;
             case CutscenePlayer_Dialogue.DialogueType.vet4bad:
-                prefix = "dialogue_visit4_bad_";
+                text = dialogueData.vet4Bad[idx];
                 break;
         }
 
-        string text = LocalizationManager.instance.GetTextByStringKey(LocalizationManager.Table.Dialogue, prefix + idx);
         dialogueObject.ShowDialogue(text);
     }
 
@@ -247,26 +212,25 @@ public class DialogueManager : MonoBehaviour
     {
         if (!Constants.instance.DIALOGUE_dayToIdxMailkeeper.ContainsKey(currDay)) return;
 
-        string text;
+        string text = "";
         int idx = Constants.instance.DIALOGUE_dayToIdxMailkeeper[currDay];
         if (currDay == 17 || currDay == 19)
         {
             if (PlotManager.instance.IsGoodEnding())
             {
                 // access good dialogues
-                //text = dialogueData.mailkeeperGoodEnding[idx];
-                text = LocalizationManager.instance.GetTextByStringKey(LocalizationManager.Table.Dialogue, "dialogue_mailkeeperGood_" + idx);
+                text = dialogueData.mailkeeperGoodEnding[idx];
             }
             else
             {
                 // access bad dialogues
-                text = LocalizationManager.instance.GetTextByStringKey(LocalizationManager.Table.Dialogue, "dialogue_mailkeeperBad_" + idx);
+                text = dialogueData.mailkeeperBadEnding[idx];
             }
         }
         else
         {
             // get dialogue from day
-            text = LocalizationManager.instance.GetTextByStringKey(LocalizationManager.Table.Dialogue, "dialogue_mailkeeper_" + idx);
+            text = dialogueData.mailkeeper[idx];
         }
 
         dialogueObject.ShowDialogue(text);
