@@ -34,9 +34,9 @@ public class LocalizationManager : MonoBehaviour
         }
     }
 
-    public string GetTextByStringKey(Table table, string key)
+    /*public string GetTextByStringKey(Table table, string key)
     {
         return LocalizationSettings.StringDatabase.GetLocalizedString(table.ToString() + "_Strings", key);
-    }
+    }*/ 
 }
 

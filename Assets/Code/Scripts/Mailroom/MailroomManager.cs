@@ -184,7 +184,7 @@ public class MailroomManager : MonoBehaviour
             switch (inboxItem.subType)
             {
                 case "crustyCoDay":
-                    FullStackLetter letterByDay = lettersManager.GetCrustyCoLetterByDay(inboxItem.id);
+                    FullStackLetterByDay letterByDay = lettersManager.GetCrustyCoLetterByDay(inboxItem.id);
                     body = letterByDay.body;
                     top = letterByDay.top;
                     bottom = letterByDay.bottom;
@@ -208,14 +208,14 @@ public class MailroomManager : MonoBehaviour
                     letterImage.sprite = letterSprites[0];
                     break;
                 case "crustyCoID":
-                    FullStackLetter letterByID = lettersManager.GetCrustyCoLetterByID(inboxItem.id);
+                    FullStackLetterByID letterByID = lettersManager.GetCrustyCoLetterByID(inboxItem.id);
                     body = letterByID.body;
                     top = letterByID.top;
                     bottom = letterByID.bottom;
 
                     letterImage.sprite = letterSprites[0];
                     break;
-
+ 
                 case "family":
                     FullStackLetter fullStackLetter = lettersManager.GetFamilyLetter(inboxItem.id);
 
