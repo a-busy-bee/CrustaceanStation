@@ -290,22 +290,8 @@ public class CrabController : MonoBehaviour
         #region NON CRUST TAG
         int currDay = SaveManager.instance.GetProgression_CurrDay();
 
-        if (currDay > 10)
-        {
-            if (crabInfo.plotLevel == CrabInfo.PlotLevel.predator)
-            {
-                idComponent.SetNonCrustType(ID.NonCrustType.pred);
-            }
-            else if (crabInfo.plotLevel == CrabInfo.PlotLevel.nonCrustacean)
-            {
-                idComponent.SetNonCrustType(ID.NonCrustType.nonCrust);
-            }
-            else
-            {
-                idComponent.SetNonCrustType(ID.NonCrustType.normal);
-            }
-        }
-        else if (currDay > 5)
+        idComponent.SetNonCrustType(ID.NonCrustType.normal);
+        if (currDay >= 5)
         {
             if (crabInfo.plotLevel == CrabInfo.PlotLevel.predator)
             {
@@ -316,6 +302,11 @@ public class CrabController : MonoBehaviour
                 idComponent.SetNonCrustType(ID.NonCrustType.normal);
             }
         }
+        if (currDay >= 10 && crabInfo.plotLevel == CrabInfo.PlotLevel.nonCrustacean)
+        {
+            idComponent.SetNonCrustType(ID.NonCrustType.nonCrust);
+        }
+
 
         #endregion
 
