@@ -50,7 +50,7 @@ public class Kiosk : KioskBase
                     DisableButtons();
                     
                     LevelManager.instance.SetTrainsClickable(true);
-
+                    
                     if (currDay + 1 >= 6 && GetCrabInfo().plotLevel == CrabInfo.PlotLevel.predator)
                     {
                         //do nothing
@@ -88,13 +88,13 @@ public class Kiosk : KioskBase
 
                     if (currDay + 1 >= 6 && GetCrabInfo().plotLevel == CrabInfo.PlotLevel.predator)
                     {
-                        Debug.Log("plot 1");
-                        PerformanceManager.instance.IncorrectHalf(PerformanceManager.MistakeType.plot);
+                        Debug.Log("plot 1 rejected");
+                        PerformanceManager.instance.Incorrect(PerformanceManager.MistakeType.plot);
                     }
                     else if (currDay + 1 >= 11 && GetCrabInfo().plotLevel >= CrabInfo.PlotLevel.predator)
                     {
-                        Debug.Log("plot 2");
-                        PerformanceManager.instance.IncorrectHalf(PerformanceManager.MistakeType.plot);
+                        Debug.Log("plot 2 rejected");
+                        PerformanceManager.instance.Incorrect(PerformanceManager.MistakeType.plot);
                     }
                     else
                     {
