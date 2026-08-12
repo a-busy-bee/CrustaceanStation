@@ -266,11 +266,13 @@ public class CutscenePlayer_Dialogue : MonoBehaviour
 
                     case NextScene.EndingGood:
                         AchievementManager.instance.UnlockAchievementBool(AchievementManager.AchievementTypeBool.soLong);
+                        AudioManager.instance.SwitchTheme(AudioManager.ThemeNames.GoodEnding);
                         scene = SceneTransitionManager.SceneType.EndingGood;
                         break;
 
                     case NextScene.EndingBad:
                         AchievementManager.instance.UnlockAchievementBool(AchievementManager.AchievementTypeBool.whatHaveIDone);
+                        AudioManager.instance.SwitchTheme(AudioManager.ThemeNames.BadEnding);
                         scene = SceneTransitionManager.SceneType.EndingBad;
                         break;
                 }

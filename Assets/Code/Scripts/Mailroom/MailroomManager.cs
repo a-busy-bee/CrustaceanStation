@@ -41,6 +41,7 @@ public class MailroomManager : MonoBehaviour
     private LetterState letterState;
     private int objectIdxMoving;
     private GameObject currentLetter;
+    private bool isCurrentlyCrustyLetter = false;
 
     // POSITION
     private Vector2 letterYPos = new Vector2(-1423, 0);           // starting pos, ending pos
@@ -116,12 +117,15 @@ public class MailroomManager : MonoBehaviour
             case LetterState.letterMovingUp:
                 //mailbox.SetInteractable(false);
                 backgroundOverlay.SetActive(true);
+                if (isCurrentlyCrustyLetter) AudioManager.instance.SwitchTheme(AudioManager.ThemeNames.Fired);
                 break;
 
             case LetterState.letterMovingDown:
                 HideCrabdexNotif();
                 hideLetterButton.SetActive(false);
                 backgroundOverlay.SetActive(false);
+
+                if (isCurrentlyCrustyLetter) AudioManager.instance.SwitchTheme(AudioManager.ThemeNames.Mailroom);
                 break;
         }
     }
@@ -159,6 +163,7 @@ public class MailroomManager : MonoBehaviour
         // update json file
         InboxItem inboxItem = plotData.inbox[0];
         plotData.inbox[0].isRead = true;
+        isCurrentlyCrustyLetter = false;
 
         // save list w/o the topmost letter
         plotData.inbox.RemoveAt(0);
@@ -190,6 +195,8 @@ public class MailroomManager : MonoBehaviour
                     bottom = letterByDay.bottom;
 
                     letterImage.sprite = letterSprites[0];
+
+                    isCurrentlyCrustyLetter = true;
                     break;
                 case "crustyCoDay_GoodEnding":
                     letterByDay = lettersManager.GetCrustyCoLetterByDay(inboxItem.id, true, true);
@@ -198,6 +205,7 @@ public class MailroomManager : MonoBehaviour
                     bottom = letterByDay.bottom;
 
                     letterImage.sprite = letterSprites[0];
+                    isCurrentlyCrustyLetter = true;
                     break;
                 case "crustyCoDay_BadEnding":
                     letterByDay = lettersManager.GetCrustyCoLetterByDay(inboxItem.id, true, false);
@@ -206,6 +214,7 @@ public class MailroomManager : MonoBehaviour
                     bottom = letterByDay.bottom;
 
                     letterImage.sprite = letterSprites[0];
+                    isCurrentlyCrustyLetter = true;
                     break;
                 case "crustyCoID":
                     FullStackLetterByID letterByID = lettersManager.GetCrustyCoLetterByID(inboxItem.id);
@@ -214,6 +223,7 @@ public class MailroomManager : MonoBehaviour
                     bottom = letterByID.bottom;
 
                     letterImage.sprite = letterSprites[0];
+                    isCurrentlyCrustyLetter = true;
                     break;
  
                 case "family":

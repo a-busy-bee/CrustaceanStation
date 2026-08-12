@@ -272,6 +272,7 @@ public class PerformanceManager : MonoBehaviour
                 // cue fired cutscene
                 currDay /= 5; // reset week
                 SaveManager.instance.SaveProgressionData(SaveManager.ProgressionType.currDay, currDay.ToString());
+                AudioManager.instance.SwitchTheme(AudioManager.ThemeNames.Fired);
                 SceneTransitionManager.instance.TransitionToScene(SceneTransitionManager.SceneType.Fired);
                 return;
             }
