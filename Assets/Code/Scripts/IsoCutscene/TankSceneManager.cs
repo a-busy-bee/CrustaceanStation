@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,6 +13,7 @@ public class TankSceneManager : MonoBehaviour
     [SerializeField] private GameObject vetButton;
 
     [SerializeField] private Image tankOverlay;
+    [SerializeField] private TextMeshProUGUI isoName;
 
     private int foodsEaten = 0;
     private int goalFoodsEaten;
@@ -54,6 +56,8 @@ public class TankSceneManager : MonoBehaviour
         int currDay = SaveManager.instance.GetProgression_CurrDay();
         color.a = (currDay / 5.0f - 1.0f) * 0.25f;
         tankOverlay.color = color;
+
+        isoName.text = SaveManager.instance.GetIso_Name();
     }
 
     public void FoodConsumed()

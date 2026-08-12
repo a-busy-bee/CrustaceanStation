@@ -1,4 +1,4 @@
-
+using UnityEngine;
 
 public class ShuttlePopup : TransportPopup
 {
@@ -24,10 +24,14 @@ public class ShuttlePopup : TransportPopup
         currDay = SaveManager.instance.GetProgression_CurrDay();
         if (currDay + 1 >= 6 && KioskBase.instance.GetCrabInfo().plotLevel == CrabInfo.PlotLevel.predator)
         {
+            Debug.Log("shuttled, correct, plot 1");
+            SaveManager.instance.SetProgression_IncrementNonCrustiesShuttled();
             PerformanceManager.instance.Correct();
         }
-        else if (currDay + 1 >= 11 && KioskBase.instance.GetCrabInfo().plotLevel == CrabInfo.PlotLevel.nonCrustacean)
+        else if (currDay + 1 >= 11 && KioskBase.instance.GetCrabInfo().plotLevel >= CrabInfo.PlotLevel.predator)
         {
+            Debug.Log("shuttled, correct, plot 2");
+            SaveManager.instance.SetProgression_IncrementNonCrustiesShuttled();
             PerformanceManager.instance.Correct();
         }
         else
@@ -36,10 +40,12 @@ public class ShuttlePopup : TransportPopup
             Cart.Type ticketCartType = KioskBase.instance.GetCurrentCrabTicket();
             if (ticketCartType != type) // if the crab is otherwise valid, but chose the wrong cart
             {
+                Debug.Log("shuttled, incorrect");
                 Kiosk.instance.WrongTransport();
             }
             else
             {
+                Debug.Log("shuttled, correct");
                 Kiosk.instance.CorrectTransport();
             }
         }

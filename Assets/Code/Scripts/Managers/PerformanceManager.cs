@@ -95,8 +95,7 @@ public class PerformanceManager : MonoBehaviour
     [ContextMenu("Correct")]
     public void Correct()
     {
-        //Debug.Log("correct");
-        barPercent += stepSize;
+        barPercent += stepSize / 2.5f;
         if (barPercent >= 1) barPercent = 1;
 
         correctCounter++;
@@ -108,8 +107,7 @@ public class PerformanceManager : MonoBehaviour
     [ContextMenu("Correct Half")]
     public void CorrectHalf() // for smaller increases
     {
-        //Debug.Log("correct");
-        barPercent += stepSize / 2.0f;
+        barPercent += stepSize / 5.0f;
         if (barPercent >= 1) barPercent = 1;
 
         correctCounter++;
@@ -128,7 +126,7 @@ public class PerformanceManager : MonoBehaviour
     {
         animator.SetTrigger("Rumble");
         numWrong++;
-        barPercent -= stepSize * 3.5f;
+        barPercent -= stepSize * 5.0f;
         if (barPercent <= 0)
         {
             barPercent = 0;
@@ -146,7 +144,7 @@ public class PerformanceManager : MonoBehaviour
     {
         animator.SetTrigger("Rumble");
         numWrong++;
-        barPercent -= stepSize;
+        barPercent -= stepSize * 2.5f;
         if (barPercent <= 0)
         {
             barPercent = 0;
@@ -236,7 +234,7 @@ public class PerformanceManager : MonoBehaviour
         numTransportText.text = mistakes[MistakeType.transport].ToString();
         numSeatingText.text = mistakes[MistakeType.seating].ToString();
 
-        if (SaveManager.instance.GetProgression_CurrDay() >= 10)
+        if (SaveManager.instance.GetProgression_CurrDay() >= 6)
         {
             numShuttleText.text = mistakes[MistakeType.plot].ToString();
         }
@@ -274,6 +272,7 @@ public class PerformanceManager : MonoBehaviour
                 // cue fired cutscene
                 currDay /= 5; // reset week
                 SaveManager.instance.SaveProgressionData(SaveManager.ProgressionType.currDay, currDay.ToString());
+                AudioManager.instance.SwitchTheme(AudioManager.ThemeNames.Fired);
                 SceneTransitionManager.instance.TransitionToScene(SceneTransitionManager.SceneType.Fired);
                 return;
             }

@@ -28,6 +28,18 @@ public class ID : MonoBehaviour
     }
     private SeatType seatType;
 
+    [SerializeField] private Image nonCrustaceanImage;
+    [SerializeField] private Image nonCrustaceanImageMagnify;
+    [SerializeField] private Sprite[] nonCrustSprites;
+
+    public enum NonCrustType
+    {
+        pred,
+        nonCrust,
+        normal
+    }
+    private NonCrustType nonCrustType;
+
     public void SetSeatType(SeatType newSeatType)
     {
         seatType = newSeatType;
@@ -35,6 +47,24 @@ public class ID : MonoBehaviour
         Sprite sprite = seatTypeSprites[(int)seatType];
         seatTypeImage.sprite = sprite;
         seatTypeImageMagnify.sprite = sprite;
+    }
+
+    public void SetNonCrustType(NonCrustType newNonCrustType)
+    {
+        nonCrustType = newNonCrustType;
+
+        if (nonCrustType == NonCrustType.normal)
+        {
+            nonCrustaceanImage.gameObject.SetActive(false);
+            nonCrustaceanImageMagnify.gameObject.SetActive(false);
+            return;
+        }
+
+        nonCrustaceanImage.gameObject.SetActive(true);
+        nonCrustaceanImageMagnify.gameObject.SetActive(true);
+        Sprite sprite = nonCrustSprites[(int)nonCrustType];
+        nonCrustaceanImage.sprite = sprite;
+        nonCrustaceanImageMagnify.sprite = sprite;
     }
 
     public void SetName(string newName)

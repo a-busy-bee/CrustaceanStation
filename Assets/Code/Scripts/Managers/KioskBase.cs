@@ -314,7 +314,7 @@ public class KioskBase : MonoBehaviour
     {
         if (PerformanceManager.instance == null) return;
 
-        PerformanceManager.instance.IncorrectHalf(PerformanceManager.MistakeType.transport);
+        PerformanceManager.instance.Incorrect(PerformanceManager.MistakeType.transport);
     }
     public void CorrectTransport()
     {

@@ -35,8 +35,7 @@ public class PlotManager : MonoBehaviour
     }
 
     private Stage currStage;
-    private float crust = 1.0f;
-    private float endingThreshold = 0.75f;
+    private float endingThreshold = 0.5f;
 
     //JSON STUFF
     private PlotData plotData;
@@ -114,6 +113,8 @@ public class PlotManager : MonoBehaviour
 
     public bool IsGoodEnding()
     {
-        return crust > endingThreshold; 
+        int numSeen = SaveManager.instance.GetProgression_NonCrustiesSeen();
+        int numShuttled = SaveManager.instance.GetProgression_NonCrustiesShuttled();
+        return ((numShuttled * 1.0f) / (numSeen * 1.0f)) > endingThreshold;
     }
 }

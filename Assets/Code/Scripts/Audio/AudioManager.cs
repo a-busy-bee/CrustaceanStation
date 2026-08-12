@@ -46,7 +46,11 @@ public class AudioManager : MonoBehaviour
         HermitWaltz,
         Iso,
         Mailroom,
-        RidingInStyle
+        RidingInStyle,
+        BadEnding,
+        GoodEnding,
+        Fired, 
+        Vet
     }
     private ThemeNames[] gameplayThemes = new ThemeNames[] {
         ThemeNames.CheckingIntoStation,

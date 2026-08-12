@@ -32,6 +32,7 @@ public class DialogueData
     public string[] mailkeeper;
     public string[] mailkeeperGoodEnding;
     public string[] mailkeeperBadEnding;
+    public string[] mutants;
 }
 
 [Serializable]
@@ -233,6 +234,12 @@ public class DialogueManager : MonoBehaviour
             text = dialogueData.mailkeeper[idx];
         }
 
+        dialogueObject.ShowDialogue(text);
+    }
+
+    public void GetMutantDialogue()
+    {
+        string text = dialogueData.mutants[UnityEngine.Random.Range(0, dialogueData.mutants.Length)];
         dialogueObject.ShowDialogue(text);
     }
 }

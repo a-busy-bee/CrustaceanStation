@@ -67,6 +67,7 @@ public class LevelManager : LevelManagerBase
 
                     Kiosk.instance.SetState(Kiosk.KioskState.EndOfDay);
                     int currDay = SaveManager.instance.GetProgression_CurrDay() + 1;
+                    Debug.Log("level manager currDay: " + currDay);
                     SaveManager.instance.SetProgression_IncrementCurrDay();
 
                     foreach (Rail rail in rails)

@@ -73,7 +73,7 @@ public class MenuButtons : MonoBehaviour
 
     public void VisitVet()
     {
-        AudioManager.instance.SwitchTheme(AudioManager.ThemeNames.CheckingIntoStation);
+        AudioManager.instance.SwitchTheme(AudioManager.ThemeNames.Vet);
         SceneTransitionManager.instance.TransitionToScene(SceneTransitionManager.SceneType.Vet);
     }
 

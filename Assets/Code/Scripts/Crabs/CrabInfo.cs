@@ -66,10 +66,9 @@ public class CrabInfo : ScriptableObject
 
 	public enum PlotLevel
 	{
+		normal,
 		predator,
-		strongPrey,
-		nonCrustacean,
-		normal
+		nonCrustacean
 	}
 
 	
@@ -93,6 +92,7 @@ public class CrabInfo : ScriptableObject
 	public MutantType mutantType;
 	public PlotLevel plotLevel;
 	public bool hasResearchCoat;
+	public bool isMutated;
 	//public Sprite[] mutatedSprite;
 
 	[Header("Specific Character")]
