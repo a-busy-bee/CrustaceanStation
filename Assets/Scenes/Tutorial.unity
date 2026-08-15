@@ -31223,7 +31223,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &2005693314
@@ -33624,7 +33624,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1639378932290881002, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2426111981360602274, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
