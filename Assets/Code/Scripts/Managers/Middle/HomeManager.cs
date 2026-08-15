@@ -41,8 +41,8 @@ public class HomeManager : MonoBehaviour
 
     private void LoadJSON()
     {
-        defaultPath = Application.dataPath + "/Data/Inbox.json";
-        savePath = Application.persistentDataPath + "/Inbox.json";
+        defaultPath = Path.Combine(Application.streamingAssetsPath, "Data", "Inbox.json");
+        savePath = Path.Combine(Application.persistentDataPath, "Inbox.json");
 
         if (File.Exists(savePath))
         {

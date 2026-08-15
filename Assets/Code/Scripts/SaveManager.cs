@@ -139,8 +139,8 @@ public class SaveManager : MonoBehaviour
     }
     private void LoadJSON()
     {
-        defaultPath = Application.dataPath + "/Data/Data.json";
-        savePath = Application.persistentDataPath + "/Data.json";
+        defaultPath = Path.Combine(Application.streamingAssetsPath, "Data", "Data.json");
+        savePath = Path.Combine(Application.persistentDataPath, "Data.json");
 
         if (File.Exists(savePath))
         {
@@ -427,31 +427,47 @@ public class SaveManager : MonoBehaviour
         bool reduceMotion = data.settings.reduceMotion;
 
         // reset file
-        defaultPath = Application.dataPath + "/Data/Data.json";
-        savePath = Application.persistentDataPath + "/Data.json";
+        defaultPath = Path.Combine(Application.streamingAssetsPath, "Data", "Data.json");
+        savePath = Path.Combine(Application.persistentDataPath, "Data.json");
 
-        string jsonText = File.ReadAllText(defaultPath);
-        data = JsonUtility.FromJson<Data>(jsonText);
-        File.WriteAllText(savePath, JsonUtility.ToJson(data, true));
+        try
+        {
+            string jsonText = File.ReadAllText(defaultPath);
+            data = JsonUtility.FromJson<Data>(jsonText);
+            File.WriteAllText(savePath, JsonUtility.ToJson(data, true));
 
-        // restore settings
-        data.settings.language = language;
-        data.settings.volume_Master = volumeMaster;
-        data.settings.volume_SFX = volumeSFX;
-        data.settings.volume_Music = volumeMusic;
+            // restore settings
+            data.settings.language = language;
+            data.settings.volume_Master = volumeMaster;
+            data.settings.volume_SFX = volumeSFX;
+            data.settings.volume_Music = volumeMusic;
 
-        data.settings.brightness = brightness;
-        data.settings.reduceMotion = reduceMotion;
+            data.settings.brightness = brightness;
+            data.settings.reduceMotion = reduceMotion;
+            SaveData();
+
+        }
+        catch
+        {
+            Debug.Log("oops no file");
+        }
+
 
         // reset inbox too
-        string defaultPathInbox = Application.dataPath + "/Data/Inbox.json";
-        string savePathInbox = Application.persistentDataPath + "/Inbox.json";
+        string defaultPathInbox = Path.Combine(Application.streamingAssetsPath, "Data", "Inbox.json");
+        string savePathInbox = Path.Combine(Application.persistentDataPath, "Inbox.json");
 
-        jsonText = File.ReadAllText(defaultPathInbox);
-        PlotData dataPlot = JsonUtility.FromJson<PlotData>(jsonText);
-        File.WriteAllText(savePathInbox, JsonUtility.ToJson(dataPlot, true));
-
-        SaveData();
+        try
+        {
+            string jsonText = File.ReadAllText(defaultPathInbox);
+            PlotData dataPlot = JsonUtility.FromJson<PlotData>(jsonText);
+            File.WriteAllText(savePathInbox, JsonUtility.ToJson(dataPlot, true));
+        }
+        catch
+        {
+            Debug.Log("whoops no file");
+        }
+        
     }
     private void SaveData()
     {

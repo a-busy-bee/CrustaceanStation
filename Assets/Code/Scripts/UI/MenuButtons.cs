@@ -41,7 +41,7 @@ public class MenuButtons : MonoBehaviour
 
     public void LoadFile()
     {
-        savePath = Application.persistentDataPath + "/Inbox.json";
+        savePath = Path.Combine(Application.persistentDataPath, "Inbox.json");
 
         // Always reset to default — wipes any existing save
         TextAsset defaultFile = Resources.Load<TextAsset>("Inbox");
@@ -58,7 +58,7 @@ public class MenuButtons : MonoBehaviour
 
     public void ReadFile()
     {
-        savePath = Application.persistentDataPath + "/Inbox.json";
+        savePath = Path.Combine(Application.persistentDataPath, "Inbox.json");
 
         if (File.Exists(savePath))
         {

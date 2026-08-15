@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CrabController : MonoBehaviour
 {
@@ -349,6 +350,8 @@ public class CrabController : MonoBehaviour
     {
         if (DialogueManager.instance == null) return;
 
+        if (SceneManager.GetActiveScene().name == "Tutorial") return; 
+        
         if (crabInfo.isImportantCharacter)
         {
             DialogueManager.instance.GetSpecialCharacterDialogue(crabInfo.specialCharacterType);
