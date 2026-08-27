@@ -326,24 +326,28 @@ public class CrabController : MonoBehaviour
         //ticket = Instantiate(ticketPrefab, ticketAndIDParentObject.transform);
         id = Instantiate(idPrefab, ticketAndIDParentObject.transform);
 
-        ticket.GetComponent<Ticket>().SetID(id.GetComponent<ID>());
-        id.GetComponent<ID>().SetTicket(ticket.GetComponent<Ticket>());
+        Ticket ticketComponent = ticket.GetComponent<Ticket>();
+        ID idComponent = id.GetComponent<ID>();
 
-        ticket.GetComponent<Ticket>().PushBack();
-        id.GetComponent<ID>().BringForward();
+        ticketComponent.SetID(idComponent);
+        idComponent.SetTicket(ticketComponent);
+
+        ticketComponent.PushBack();
+        idComponent.BringForward();
 
         string crabName = crabInfo.crabName;
         Sprite crabPhoto = crabInfo.sprite;
 
-        ticket.GetComponent<Ticket>().SetName(crabName);
-        id.GetComponent<ID>().SetName(crabName);
+        ticketComponent.SetName(crabName);
+        idComponent.SetName(crabName);
 
-        id.GetComponent<ID>().SetIDPhoto(crabPhoto);
+        idComponent.SetIDPhoto(crabPhoto);
+
+        idComponent.SetNonCrustType(ID.NonCrustType.normal);
 
         // TRAIN CART TYPE FORGERY (OR NOT)
-        if (LevelManagerBase.instance.IsFirstCrabTutorial()) cartType = Cart.Type.Economy;
-        else cartType = LevelManagerBase.instance.GetRandomCurrentCartType();
-        ticket.GetComponent<Ticket>().SetSprite(cartType);
+        cartType = Cart.Type.Economy;
+        ticketComponent.SetSprite(cartType);
     }
 
     private void Dialogue()
