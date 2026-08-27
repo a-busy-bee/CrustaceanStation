@@ -91,6 +91,7 @@ public class PlotManager : MonoBehaviour
 
     public void AddMail(string newType, string newSubtype = "", int newId = 0)
     {
+
         InboxItem newItem = new InboxItem
         {
             type = newType,
@@ -103,6 +104,12 @@ public class PlotManager : MonoBehaviour
 
         plotData.nextTimeStamp++;
         plotData.inbox.Add(newItem);
+        SaveData();
+    }
+
+    public void UpdatePlotData(PlotData newData)
+    {
+        plotData = newData;
         SaveData();
     }
 

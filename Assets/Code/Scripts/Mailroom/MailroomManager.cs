@@ -89,7 +89,7 @@ public class MailroomManager : MonoBehaviour
         backgroundOverlay.SetActive(false);
 
         LoadJSON();
-        plotData.inbox.OrderBy(m => m.timestamp).ToList();
+        plotData.inbox = plotData.inbox.OrderBy(m => m.timestamp).ToList();
         mailbox.SetSprite(plotData.inbox.Count);
     }
 
@@ -167,7 +167,7 @@ public class MailroomManager : MonoBehaviour
 
         // save list w/o the topmost letter
         plotData.inbox.RemoveAt(0);
-        File.WriteAllText(savePath, JsonUtility.ToJson(plotData, true));
+        PlotManager.instance.UpdatePlotData(plotData);   
 
         // figure out what letter type to show
         // set that object active
