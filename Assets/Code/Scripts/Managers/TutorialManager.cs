@@ -35,6 +35,7 @@ public class TutorialManager : LevelManagerBase
                     //Kiosk.instance.ShowDecor();
                     InitTrains();
 
+                    SaveManager.instance.SaveProgressionData(SaveManager.ProgressionType.tutorialState, "0");
                     tutorialState = SaveManager.instance.GetProgression_TutorialState();
                     SetState(LMState.Goal);
                 }
@@ -61,7 +62,7 @@ public class TutorialManager : LevelManagerBase
                     }
                     else if (prevState == LMState.Goal)
                     {
-                        if (tutorialState > 6)
+                        /*if (tutorialState > 6)
                         {
                             // start the clock
                             clock.gameObject.SetActive(true);
@@ -71,7 +72,8 @@ public class TutorialManager : LevelManagerBase
                         else
                         {
                             StartCoroutine(WaitThenSummonCrabs());
-                        }
+                        }*/
+                        StartCoroutine(WaitThenSummonCrabs());
 
                         dayStarted = true;
                     }

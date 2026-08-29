@@ -141,6 +141,12 @@ public class Clock : MonoBehaviour
 
             fill.color = grey;
         }
-        
+
+    }
+
+    public void OnEnable()
+    {
+        string currentTrace = System.Environment.StackTrace;
+        Debug.Log(currentTrace);
     }
 }

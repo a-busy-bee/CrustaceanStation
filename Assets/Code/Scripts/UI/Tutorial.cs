@@ -54,6 +54,7 @@ public class Tutorial : MonoBehaviour
 	{
         Kiosk.instance.DisableButtons();
 
+        SaveManager.instance.SaveProgressionData(SaveManager.ProgressionType.tutorialState, "0");
         int inProgress = SaveManager.instance.GetProgression_TutorialState();
 		if (inProgress != 0) return;
         isFirstCrab = true;
