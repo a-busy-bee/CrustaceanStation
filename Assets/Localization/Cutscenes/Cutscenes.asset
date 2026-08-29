@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5be51871efa6c3e4eae1703925c8f5ac, type: 3}
+  m_Name: Cutscenes
+  m_EditorClassIdentifier: Unity.Localization.Editor::UnityEditor.Localization.StringTableCollection
+  m_SharedTableData: {fileID: 11400000, guid: 27d27c941ae954bca9c332f83fb1746a, type: 2}
+  m_Tables:
+  - {fileID: 11400000, guid: 85d49de9ce8e649b2a9a5f649261f5fa, type: 2}
+  - {fileID: 11400000, guid: 890bae67a6fae4edfad114f81ea7d8d0, type: 2}
+  - {fileID: 11400000, guid: 5b088cbdbb34b482982b665584120411, type: 2}
+  - {fileID: 11400000, guid: e60da7c59b7b645f0bd045c00c66d2e1, type: 2}
+  - {fileID: 11400000, guid: 7440c79788b3b4b14b1a581469aa9124, type: 2}
+  - {fileID: 11400000, guid: 183c4746a427a44609f2e89160be96d7, type: 2}
+  - {fileID: 11400000, guid: 45b0e4948dda848d5912269cef30a130, type: 2}
+  - {fileID: 11400000, guid: 02fe16d68d818432db932ff9c3259896, type: 2}
+  m_Extensions: []
+  m_Group: String Table
+  references:
+    version: 2
+    RefIds: []

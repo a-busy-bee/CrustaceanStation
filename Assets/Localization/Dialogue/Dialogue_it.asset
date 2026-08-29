@@ -1,0 +1,1046 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Dialogue_it
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: it
+  m_SharedData: {fileID: 11400000, guid: 25e982df099754116b3863808eae6c55, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 1
+    m_Localized: Ciao!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2
+    m_Localized: Spero che tu stia passando una bella giornata.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3
+    m_Localized: Sembri esausto.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4
+    m_Localized: Come stanno i bambini?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5
+    m_Localized: Quando andrai in pensione?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6
+    m_Localized: Bel tempo che stiamo avendo!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7
+    m_Localized: "C \" \xE8 stato un pesce qui di recente? Puzza!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8
+    m_Localized: Speriamo in un po ' di pioggia questo fine settimana.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9
+    m_Localized: Hai sentito che ci stanno aumentando le tasse?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10
+    m_Localized: Vado a trovare il mio amico a distanza! Non ci vediamo da anni.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11
+    m_Localized: Sto andando alla mia prima vacanza in un decennio!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12
+    m_Localized: Sto scappando dal mio passato.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13
+    m_Localized: "Lo sapevate che il treno raggiunge velocit\xE0 fino a 57 leghe
+      all'ora?! E 'cosi' veloce!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14
+    m_Localized: Sbrigati a prendere a pugni il mio biglietto, stai davvero controllando
+      il mio documento??!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15
+    m_Localized: Hai visto il mio cappello a elica? Devo averlo lasciato su un treno
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16
+    m_Localized: Hai visto il mio cappello a cilindro? Devo averlo lasciato su un
+      treno
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17
+    m_Localized: Hai visto il mio cappello verde? Devo averlo lasciato su un treno
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18
+    m_Localized: Cosa cerchi sul mio documento? Ti piace la mia foto, bello?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19
+    m_Localized: Sono io nella foto, fatemi passare!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20
+    m_Localized: "\xC8 cos\xEC difficile tenere traccia di questi biglietti, ai miei
+      tempi abbiamo appena baciato il direttore d'orchestra"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21
+    m_Localized: "E ' cos\xEC difficile tenere traccia di questi biglietti, ai miei
+      tempi abbiamo appena pagato alla porta"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22
+    m_Localized: "\xC8 cos\xEC difficile tenere traccia di questi biglietti, ai miei
+      tempi chiedevamo solo perdono, non permesso"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23
+    m_Localized: Ho aspettato in fila per sempre
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24
+    m_Localized: Lo chiami treno o tram?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25
+    m_Localized: "Il mio vicino mi ha detto che quelle navette ti portano via per
+      sempre, \xE8 vero?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26
+    m_Localized: "C'\xE8 qualcosa fuori con quei ricercatori."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27
+    m_Localized: Le persone che tornano da quel laboratorio hanno un odore strano.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28
+    m_Localized: A volte sento delle urla di notte.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29
+    m_Localized: Ho sentito che la Crustacean Corporation sta sperimentando su quelle
+      povere persone!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30
+    m_Localized: Dovresti votare per i diritti dei pesci anche se non sei un pesce.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31
+    m_Localized: Ehi, almeno tutti i predatori lo stanno facendo volontariamente.
+      E vengono pagati per questo!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32
+    m_Localized: Pensi che ci siano posizioni di ricerca ancora aperte?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33
+    m_Localized: "La Crustacean corp mi ha offerto un lavoro, ma c'\xE8 qualcosa
+      che non va in quei tizi"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34
+    m_Localized: Faccio volontariato per il nuovo progetto di ricerca!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 35
+    m_Localized: "Il mio lecca-lecca where dove \xE8 andato where ;("
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36
+    m_Localized: Il mio migliore amico si chiama Samuel! Come si chiama il tuo migliore
+      amico?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37
+    m_Localized: "Samuel sembrava divertente oggi\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38
+    m_Localized: "Mamma sembra sempre cos\xEC cool nella sua giacca bianca!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39
+    m_Localized: Mamma fa il miglior cibo in tutto il mare!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40
+    m_Localized: La scuola e 'cosi' noiosa mister signore, vuoi giocare con me e
+      Samuel? - Ok.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41
+    m_Localized: Quali caramelle mi piacciono? Mm, mi piacciono i jawbreakers e le
+      caramelle rock, ma i lecca-lecca sono i miei preferiti!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42
+    m_Localized: Signore! Ho preso il mio preferito fragola-banana lecca-lecca oggi!
+      Ne vuoi anche tu?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 43
+    m_Localized: "Non hanno avuto fragola-banana al negozio oggi's Che \xE8 il mio
+      preferito\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44
+    m_Localized: Mi piace mia madre, mi piace Samuel, mi piacciono i lecca-lecca
+      alla fragola e banana...e mi piaci anche tu!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45
+    m_Localized: Adoro la pioggia, vero?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 46
+    m_Localized: Non ho bisogno di comprare un biglietto per una pianta, giusto?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47
+    m_Localized: Posso portare il mio cartello sul treno, giusto?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48
+    m_Localized: La mia pianta Shelldon sembra un po appassita oggi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49
+    m_Localized: Ho messo tutti i miei vasi fuori oggi per prendere l'acqua
+    m_Metadata:
+      m_Items: []
+  - m_Id: 50
+    m_Localized: Posso portare la parmigiana di melanzane sul treno?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51
+    m_Localized: Dovresti venire alla mia prossima protesta!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52
+    m_Localized: Hai mai pensato che le nuvole tenebrose stessero cercando di dirci
+      qualcosa?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53
+    m_Localized: I nuovi laboratori stanno solo ulteriormente emarginando il pesce
+      degli Stati Uniti
+    m_Metadata:
+      m_Items: []
+  - m_Id: 54
+    m_Localized: Se mi incatenassi alla parte anteriore del laboratorio, pensi che
+      cesserebbero le operazioni?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55
+    m_Localized: "Ah, questo mio guscio invecchiato scricchiola cos\xEC. Mandare
+      un'anima vecchia per la sua strada, giovanotto?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56
+    m_Localized: "C'\xE8 stato un tempo in cui tutti gli esseri vagavano sul fondo
+      del mare. In effetti, si perdono quei giorni lontani."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 57
+    m_Localized: Coloro che una volta hanno viaggiato con sono ormai lontani, le
+      loro tracce sono scomparse da questo mondo.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58
+    m_Localized: "Hmph! Rispetto al passato, i cacciatori di questa et\xE0 sono esseri
+      magri."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 59
+    m_Localized: "Perdonate il torpore di questo corpo; uno \xE8 stato legato a questa
+      sedia a rotelle per molto tempo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 60
+    m_Localized: Giovanotto, non fare gli stessi errori che uno ha fatto. Se riesci
+      a salvare qualcuno, non stare a guardare e mandarlo alla morte.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61
+    m_Localized: "Si sentono ancora le loro voci urlare cannot non si pu\xF2 dire
+      se provengono da sogni vecchi o da sofferenze del presente."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62
+    m_Localized: "La tecnologia e i trasporti sono cos\xEC avanzati in questi giorni
+      one non si pu\xF2 fare a meno di sentirsi come uno straniero in questa epoca."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 63
+    m_Localized: Giovanotto, dovresti uscire e goderti questa vita con i tuoi cari.
+      Non dedicare la tua vita alla sopravvivenza e finisci per essere l'ultimo solitario.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 64
+    m_Localized: ... I miei amici? Erano conosciuti nei libri di storia come coraggiosi
+      guerrieri, ma si desidera ricordarli al di fuori delle descrizioni assegnate.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 65
+    m_Localized: ... non esitare.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 66
+    m_Localized: "Ho bisogno di pi\xF9 soldi per permettermi tutti i miei archi"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 67
+    m_Localized: "Vorrei che fosse un po pi\xF9 freddo oggi"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 68
+    m_Localized: "Sembreresti pi\xF9 carino anche con un fiocco!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 69
+    m_Localized: Non vedo l'ora di rannicchiarmi sul treno e leggere
+    m_Metadata:
+      m_Items: []
+  - m_Id: 70
+    m_Localized: Non dovresti vestirti di blu oggi, sai
+    m_Metadata:
+      m_Items: []
+  - m_Id: 71
+    m_Localized: Pensi che parli troppo in silenzio?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72
+    m_Localized: Non mi piace il contatto visivo. Potresti non guardarmi quando io
+      guardo te?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73
+    m_Localized: Spero che al nuovo laboratorio serva una segretaria... Faccio domanda
+      da sempre.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 74
+    m_Localized: Ehi ragazzo! Sono fresco di battute, se ne hai, lascia che minnow!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 75
+    m_Localized: Spero che Billie e Millie stiano andando bene a scuola n nah, sono
+      stelle come te e me ragazzo!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 76
+    m_Localized: "Psst ehi, sai dove si trova il miglior campo di fiori qui? No,
+      questo non \xE8 un lead-up per una battuta finale, sto dicendo sul serio!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 77
+    m_Localized: "Sono cos\xEC pompato in questo momento! Sono riuscito a rubare
+      gli ultimi biglietti per il concerto dei Basalt prima di scendere dal lavoro!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 78
+    m_Localized: "Oh, sei proprio fresco oggi! Hai un appuntamento? Hai bisogno di
+      qualche consiglio? Non preoccuparti, sono gratuiti! A differenza di questi
+      prezzi dei biglietti\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 79
+    m_Localized: Questo bouquet di fiori selvatici? Ne faccio uno per mia moglie
+      ogni volta che torno a casa.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80
+    m_Localized: "Cosa si sono detti i due oceani? Niente, hanno appena salutato!
+      HAHA! oh, immagino che tu l'abbia sentito troppo, hmm\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 81
+    m_Localized: Voglio solo che la mia famiglia sia al sicuro e viva felicemente.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 82
+    m_Localized: "Penso che lascer\xF2 presto. E 'solo che can posso trovare un lavoro
+      piu 'sicuro la' fuori, piu ' vicino alla mia famiglia."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83
+    m_Localized: Il nonno mi ha detto che eri bello e che aveva ragione!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 84
+    m_Localized: Hai visto qualche crostaceo?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 85
+    m_Localized: "Oggi \xE8 una bella giornata, vero?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 86
+    m_Localized: Mi piace prendere il treno in questo periodo dell'anno
+    m_Metadata:
+      m_Items: []
+  - m_Id: 87
+    m_Localized: "Ieri era il 50 \xB0 anniversario di me e Gramps!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88
+    m_Localized: Lascia che ti organizzi con mia nipote... La ameresti!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 89
+    m_Localized: "Ho trovato un marito per quella nipote di cui ho parlato e sono
+      cos\xEC felici"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90
+    m_Localized: Ho sentito che potresti avere un ammiratore segreto
+    m_Metadata:
+      m_Items: []
+  - m_Id: 91
+    m_Localized: "Vedo il modo in cui il postino ti guarda, \xE8 colpito"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 92
+    m_Localized: Se ti capita di avere un appuntamento con quel postino in futuro,
+      indosserei qualcos'altro.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93
+    m_Localized: Spero che ti diano abbastanza pause qui
+    m_Metadata:
+      m_Items: []
+  - m_Id: 94
+    m_Localized: Assicurati di fermarti e annusare la brezza del mare
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95
+    m_Localized: Quante volte puoi lasciare che la stessa cosa ti abbassi?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96
+    m_Localized: Ricordati di dire agli altri che li ami
+    m_Metadata:
+      m_Items: []
+  - m_Id: 97
+    m_Localized: Non dimenticare mai che puoi sempre ricominciare da capo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 98
+    m_Localized: "I giorni di sole e i giorni di pioggia sono entrambi giorni in
+      cui tutto \xE8 possibile"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 99
+    m_Localized: "Non aspettare nuove opportunit\xE0 vai a trovarle"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 100
+    m_Localized: Nei momenti brutti, le cose buone sono sempre in attesa appena oltre
+      l'orizzonte
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101
+    m_Localized: "Prendersi cura di qualcos'altro ti d\xE0 motivo di andare avanti"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102
+    m_Localized: Stai bene, ragazzo?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103
+    m_Localized: Hai qualcosa in mente?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104
+    m_Localized: "\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 105
+    m_Localized: "Un sacco di gente l\xE0 fuori ti deve i loro mezzi di sussistenza,
+      sai."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 106
+    m_Localized: Molte vite sarebbero state rovinate, se non fosse stato per te.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 107
+    m_Localized: "Ma questo \xE8 freddo conforto, non \xE8 vero?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 108
+    m_Localized: "\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 109
+    m_Localized: Mi dispiace per il tuo animale domestico, ragazzo.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 110
+    m_Localized: Ho iniziato a notare un po ' di tempo fa che l'hai tolto sempre
+      meno, e ultimamente non l'ho visto affatto.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 111
+    m_Localized: Qualcosa mi dice che hai dovuto rinunciare.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 112
+    m_Localized: "\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 113
+    m_Localized: Posso raccontarti una storia?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 114
+    m_Localized: Quando ero giovane ho incontrato una ragazza. L'ho amata con tutto
+      il cuore.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 115
+    m_Localized: Ci siamo precipitati attraverso le cose, ci siamo sposati, e ho
+      finito con una famiglia prima che potessi davvero gestirlo.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 116
+    m_Localized: "Abbiamo avuto difficolt\xE0 a sbarcare il lunario, anche con entrambi
+      i lavori di lavoro."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 117
+    m_Localized: Uno di noi aveva bisogno di ottenere un'istruzione se volevamo dare
+      ai nostri figli la vita che meritavano.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 118
+    m_Localized: "Cos\xEC mi sono arruolato nella marina. Ha pagato bene e ha fatto
+      in modo che potessi superare il college entro la fine delle cose."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 119
+    m_Localized: "Ho trascorso due anni l\xEC, durante la guerra degli Ammoniti,
+      solo caricando imbarcazioni. Armandoli con siluri."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 120
+    m_Localized: Non ho mai messo piede su una nave.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 121
+    m_Localized: "Beh, la guerra \xE8 finita, mi sono laureata in ingegneria e ho
+      iniziato a lavorare per una compagnia ferroviaria."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 122
+    m_Localized: Un piccolo, una filiale di un posto chiamato \"Crustacean Corporation.\"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 123
+    m_Localized: Stavano facendo alcune cose imprecise, ma non ci ho pensato molto.
+      Il lavoro era pagare per i miei figli per andare al college, dopo tutto.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 124
+    m_Localized: Mi ha permesso di permettermi un viaggio intorno al mondo ogni anno.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 125
+    m_Localized: Poi un anno, ho fatto un viaggio ad Ammonatia.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 126
+    m_Localized: "Mi sono imbattuto in uno dei luoghi visitati dalla marina e ho
+      visto fossili dopo fossili sporcare il terreno\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 127
+    m_Localized: surrounded tutto circondato da vecchi proiettili di siluro.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 128
+    m_Localized: E ho capito, come hai fatto tu, che ero responsabile.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 129
+    m_Localized: Non ho mai comandato le navi.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 130
+    m_Localized: Non ho mai sparato i siluri.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 131
+    m_Localized: Ma uno qualsiasi dei siluri potrebbe essere stato caricato da me.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 132
+    m_Localized: "E forse se non fossi stato l\xEC, qualche altro ammonite sarebbe
+      vissuto."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 133
+    m_Localized: "\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 134
+    m_Localized: Ho lasciato il mio lavoro come ingegnere ferroviario nel momento
+      in cui sono tornato.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 135
+    m_Localized: Ho iniziato a lavorare in un negozio di mamma e pop meccanico invece.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 136
+    m_Localized: Non sono andato in vacanza per trent'anni.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 137
+    m_Localized: "Ma posso dormire bene ogni notte, sapendo che ho lasciato quella
+      compagnia di treni prima\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 138
+    m_Localized: happened e ' successo.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 139
+    m_Localized: "\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 140
+    m_Localized: Saranno settimane difficili, ragazzo. E pochi anni dopo, mentre
+      ti rimetti in piedi.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 141
+    m_Localized: Ma spero che non te ne pentirai neanche un secondo.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 142
+    m_Localized: Dovresti farti qualcosa di carino deserve te lo meriti.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 143
+    m_Localized: Hai letto la mia lettera?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 144
+    m_Localized: "Pensi che amerai mai qualcuno pi\xF9 del tuo isopod?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 145
+    m_Localized: "Hai ricevuto pi\xF9 mail del solito questa settimana, hai un ammiratore
+      che non conosco?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 146
+    m_Localized: Spendi soldi per cose oltre al tuo isopod, giusto...?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 147
+    m_Localized: "Dovremmo pranzare quando siamo entrambi in pausa, prometto che
+      non ti annoier\xF2\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 148
+    m_Localized: Hai mai pensato di andartene da qui..? Si', ma tu rendi il soggiorno
+      utile.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 149
+    m_Localized: "Sai, ho iniziato a chiedermi se ti vedo meno del tuo veterinario\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 150
+    m_Localized: Ho visto il nonno chiacchierare con te you ti stava dicendo di aprire
+      di nuovo un Roth IRA?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 151
+    m_Localized: "Sapevo che eri pi\xF9 di un bel viso, hai anche una morale forte.
+      Mi piace in una persona."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 152
+    m_Localized: Molte persone vogliono ringraziarti, sai.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 153
+    m_Localized: "Immagino che tu fossi solo un altro bel viso, dopo tutto, e ho
+      davvero creduto in te\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 154
+    m_Localized: ...beh, spero che almeno tu stia passando una buona giornata.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 155
+    m_Localized: Ehi, come va oggi?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 156
+    m_Localized: "Solo qui per un controllo regolare per il tuo piccolo qui? Lo vedremo\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 157
+    m_Localized: "Ohhhh hmm hmm\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 158
+    m_Localized: Beh, il tuo amico qui non sta facendo troppo caldo in questo momento!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 159
+    m_Localized: "Guardalo! Una delle sue gambe \xE8 pi\xF9 corta dell'altra; questo
+      \xE8 chiaramente un segno di malnutrizione!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 160
+    m_Localized: No, no, non sto dicendo che non stai facendo un buon lavoro nel
+      crescerli.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 161
+    m_Localized: Il tuo isopod semplicemente non riceve abbastanza nutrienti.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 162
+    m_Localized: Sai come sono oggi i marchi dei negozi, sempre elaborati e pieni
+      di riempitivi.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 163
+    m_Localized: Qui, personalmente consiglio questo marchio proprio qui.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 164
+    m_Localized: "\xC8 un po ' pi\xF9 costoso, s\xEC, ma prometto che \xE8 molto
+      pi\xF9 nutriente e naturale."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 165
+    m_Localized: "Ti consiglio vivamente di cambiare alimentazione al pi\xF9 presto,
+      altrimenti il \u200B\u200Btuo isopode correr\xE0 un rischio considerevole di
+      ammalarsi."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 166
+    m_Localized: "Cosa intendo? Vedete\u2026 non si tratta solo del cibo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 167
+    m_Localized: Sembra che il tuo isopode soffra di una grave malattia respiratoria
+      cronica.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 168
+    m_Localized: Sembra trattarsi di un problema genetico; le branchie del tuo isopode
+      non sono in grado di assorbire correttamente l'ossigeno.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 169
+    m_Localized: "Col tempo, ci\xF2 causer\xE0 gravi problemi e porter\xE0 certamente
+      a una morte prematura."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 170
+    m_Localized: "Dovremo prelevare un campione di tessuto per le analisi, in modo
+      da capire quale farmaco sar\xE0 pi\xF9 efficace."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 171
+    m_Localized: Nella peggiore delle ipotesi, potrebbe essere necessario un intervento
+      chirurgico per sostituire le branchie del tuo isopode con delle branchie artificiali.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 172
+    m_Localized: "Mi dispiace molto essere portatore di una notizia cos\xEC brutta."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 173
+    m_Localized: "Prescriver\xF2 delle compresse medicinali per questa settimana
+      e faremo il prelievo del campione oggi stesso."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174
+    m_Localized: "Vi prego di avere fiducia: far\xF2 del mio meglio per salvare il
+      vostro amato isopode."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 175
+    m_Localized: Il totale odierno ammonta a circa 800 dollari.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 176
+    m_Localized: "\u2026Che cos'ha quella faccia?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 177
+    m_Localized: Ciao a tutti, spero stiate bene!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 178
+    m_Localized: "Per prima cosa far\xF2 un controllo generale al tuo piccolo, e
+      poi discuteremo dei risultati degli esami."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 179
+    m_Localized: "Hmm\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 180
+    m_Localized: "Bene, ecco la buona notizia. Il tuo isopode \xE8 relativamente
+      stabile e sta molto meglio rispetto alla settimana scorsa."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 181
+    m_Localized: La cattiva notizia sono i risultati del test.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 182
+    m_Localized: "D'ora in poi, il tuo isopode avr\xE0 bisogno di richiami vaccinali
+      e farmaci periodici."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 183
+    m_Localized: "Tuttavia, questo non baster\xE0. La soluzione migliore sono le
+      branchie artificiali."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 184
+    m_Localized: "Purtroppo, il livello di danno \xE8 troppo grave. Iniezioni e farmaci
+      sono solo rimedi temporanei."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 185
+    m_Localized: "La soluzione migliore \xE8 un intervento chirurgico per sostituire
+      le branchie."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 186
+    m_Localized: "Purtroppo, questa spesa non \xE8 coperta dall'assicurazione aziendale."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 187
+    m_Localized: Dovrai pagare di tasca tua.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 188
+    m_Localized: "Oggi faremo una dose di richiamo e vi prescriver\xF2 dei nuovi
+      farmaci."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 189
+    m_Localized: Fammi sapere se intendi procedere con l'intervento chirurgico entro
+      la prossima visita.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 190
+    m_Localized: "Il costo? Beh\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 191
+    m_Localized: "Dovresti sapere che non sar\xE0 economico."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 192
+    m_Localized: Quindi, hai deciso di procedere con l'intervento chirurgico? Bene.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 193
+    m_Localized: Lo programmeremo per la prossima settimana.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 194
+    m_Localized: "Lo scatto di oggi? S\xEC, s\xEC, ci arriveremo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 195
+    m_Localized: Oggi dovrai versare un acconto non rimborsabile.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 196
+    m_Localized: "S\xEC, oggi. E non rimborsabile. Come altro far\xF2 a pagare il
+      mio-"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 197
+    m_Localized: Ehm. Comunque.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 198
+    m_Localized: "Questa \xE8 una prassi standard; non capisco perch\xE9 tu sia cos\xEC
+      turbato..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 199
+    m_Localized: "Non hai abbastanza per l'acconto e le normali spese di trattamento
+      oggi? Beh, allora\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 200
+    m_Localized: Se hai deciso di sottoporti all'intervento, oggi salteremo l'iniezione.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 201
+    m_Localized: "S\xEC, saltare la dose di richiamo oggi non sar\xE0 un problema\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 202
+    m_Localized: Ma interrompere la terapia con l'isopode significa che dovremo procedere
+      con l'intervento chirurgico la prossima settimana.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 203
+    m_Localized: Quindi, faresti meglio a racimolare abbastanza soldi entro la prossima
+      settimana.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 204
+    m_Localized: Hai i soldi?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205
+    m_Localized: "\u2026Wow. Persino con un lavoro cos\xEC modesto, hai guadagnato
+      abbastanza?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 206
+    m_Localized: Ehm... non che io sappia che lavoro fai. La paga lasciava intendere
+      che fosse un lavoro pessimo.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 207
+    m_Localized: Bene, visto che oggi hai l'importo completo, metteremo il tuo isopode
+      sotto.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 208
+    m_Localized: Vi assicuriamo che faremo del nostro meglio.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 209
+    m_Localized: Ce la faranno.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 210
+    m_Localized: Hai i soldi?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 211
+    m_Localized: "\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 212
+    m_Localized: Questo non basta.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 213
+    m_Localized: Scusate, pensate forse che siamo un'organizzazione no-profit? Anche
+      noi abbiamo delle bocche da sfamare.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 214
+    m_Localized: Secondo le nostre norme, non possiamo procedere con la procedura
+      se non hai pagato l'intero importo.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 215
+    m_Localized: "\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 216
+    m_Localized: "Supplicarmi non servir\xE0 a niente. Non ho intenzione di rischiare
+      il mio lavoro per questo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 217
+    m_Localized: "Posso riavere i miei soldi? Pensavo fosse chiaro\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 218
+    m_Localized: La caparra non rimborsabile versata la settimana scorsa non era
+      rimborsabile.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 219
+    m_Localized: "Oggi? Beh... \xE8 la tariffa della consulenza. Indovina un po'?
+      Hai appena avuto una consulenza."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 220
+    m_Localized: Quindi no.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 221
+    m_Localized: Oh, sai cosa? Ecco.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 222
+    m_Localized: Una lapide in omaggio, offerta dalla casa, come parte del nostro
+      pacchetto di assistenza post-mortem gratuito per tutti i nostri pazienti.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 223
+    m_Localized: Ciao!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 224
+    m_Localized: "goccia\u2026goccia\u2026goccia"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 225
+    m_Localized: grrregghhhhh
+    m_Metadata:
+      m_Items: []
+  - m_Id: 226
+    m_Localized: lasciami andare...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 227
+    m_Localized: squawacklackclackclackclack
+    m_Metadata:
+      m_Items: []
+  - m_Id: 228
+    m_Localized: '*schiocco* (effetto sonoro)'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 229
+    m_Localized: amico, queste gambe sono fantastiche! Vero? VERO???
+    m_Metadata:
+      m_Items: []
+  - m_Id: 230
+    m_Localized: graaawwwwwrrrr
+    m_Metadata:
+      m_Items: []
+  - m_Id: 231
+    m_Localized: rrrrrrgggghhhhh
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

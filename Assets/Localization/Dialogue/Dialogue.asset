@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5be51871efa6c3e4eae1703925c8f5ac, type: 3}
+  m_Name: Dialogue
+  m_EditorClassIdentifier: Unity.Localization.Editor::UnityEditor.Localization.StringTableCollection
+  m_SharedTableData: {fileID: 11400000, guid: 25e982df099754116b3863808eae6c55, type: 2}
+  m_Tables:
+  - {fileID: 11400000, guid: c745ffbdd92984509bc3929a88104104, type: 2}
+  - {fileID: 11400000, guid: 8685ac8dbbf5e4dcab266488b940ae28, type: 2}
+  - {fileID: 11400000, guid: 8225211580b804df99cdc18ba7cc41ea, type: 2}
+  - {fileID: 11400000, guid: e86cbad666bd04d19819057901608a21, type: 2}
+  - {fileID: 11400000, guid: 4cfa8306692a74df98e83fa07658cca7, type: 2}
+  - {fileID: 11400000, guid: bc7edf7e8dd5b4bc5a26f4138d6ecf71, type: 2}
+  - {fileID: 11400000, guid: 3163738fc8ed7452fb427144f9e3b82b, type: 2}
+  - {fileID: 11400000, guid: bd8acd36f1ba64d8bbdc7d501549b849, type: 2}
+  m_Extensions: []
+  m_Group: String Table
+  references:
+    version: 2
+    RefIds: []

@@ -1,0 +1,783 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Names_fr
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: fr
+  m_SharedData: {fileID: 11400000, guid: 4b7f2ee6aa4d84aeabc3ea6646ba35e8, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 1
+    m_Localized: 101001101000011
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2
+    m_Localized: Tout-Puissant Clawington III
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3
+    m_Localized: Amano
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4
+    m_Localized: Amphie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5
+    m_Localized: "\xCAtre Ancien"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6
+    m_Localized: Ange
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7
+    m_Localized: Roquette
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8
+    m_Localized: Arthur
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9
+    m_Localized: Avogadrome
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10
+    m_Localized: Axie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11
+    m_Localized: Axle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12
+    m_Localized: "App\xE2ts"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13
+    m_Localized: "Barth\xE9l\xE9my"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14
+    m_Localized: Benjamin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15
+    m_Localized: Berthe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16
+    m_Localized: Bethy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17
+    m_Localized: Brac
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18
+    m_Localized: Son
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19
+    m_Localized: Braxius
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20
+    m_Localized: "Andr\xE9"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21
+    m_Localized: Bulles
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22
+    m_Localized: Calli
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23
+    m_Localized: Calliope
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24
+    m_Localized: "Callosit\xE9s"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25
+    m_Localized: Calypso
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26
+    m_Localized: Cara
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27
+    m_Localized: Charlie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28
+    m_Localized: "Chefferson, \xC9tats-Unis"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29
+    m_Localized: Chester
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30
+    m_Localized: "Krill R\xE9frig\xE9r\xE9"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31
+    m_Localized: Clark
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32
+    m_Localized: Griffe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33
+    m_Localized: Griffon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34
+    m_Localized: Clovis
+    m_Metadata:
+      m_Items: []
+  - m_Id: 35
+    m_Localized: Argile
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36
+    m_Localized: Clyde
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37
+    m_Localized: Noix de Coco
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38
+    m_Localized: Crabe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39
+    m_Localized: Crabelle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40
+    m_Localized: Crabier
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41
+    m_Localized: Crabe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42
+    m_Localized: Crabstopher
+    m_Metadata:
+      m_Items: []
+  - m_Id: 43
+    m_Localized: Cragglins
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44
+    m_Localized: Escarpin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45
+    m_Localized: Pierre
+    m_Metadata:
+      m_Items: []
+  - m_Id: 46
+    m_Localized: Crayon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47
+    m_Localized: Shawn Croustillant
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48
+    m_Localized: Daniel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49
+    m_Localized: Darcie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 50
+    m_Localized: Darren
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51
+    m_Localized: "D\xE9p\xF4t"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52
+    m_Localized: "Ros\xE9e"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53
+    m_Localized: Dimitrius
+    m_Metadata:
+      m_Items: []
+  - m_Id: 54
+    m_Localized: Plat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55
+    m_Localized: Chariot
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56
+    m_Localized: "Dringl\xE9"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 57
+    m_Localized: "\xC9cho"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58
+    m_Localized: Comte
+    m_Metadata:
+      m_Items: []
+  - m_Id: 59
+    m_Localized: Comte Gris
+    m_Metadata:
+      m_Items: []
+  - m_Id: 60
+    m_Localized: Edgar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61
+    m_Localized: "Le Crustac\xE9"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62
+    m_Localized: "\xC9lisabeth"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 63
+    m_Localized: "\xC9lo\xEFse"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 64
+    m_Localized: "\xC9lton"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 65
+    m_Localized: Violon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 66
+    m_Localized: Finn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 67
+    m_Localized: Molleton
+    m_Metadata:
+      m_Items: []
+  - m_Id: 68
+    m_Localized: Moelleux
+    m_Metadata:
+      m_Items: []
+  - m_Id: 69
+    m_Localized: Georges
+    m_Metadata:
+      m_Items: []
+  - m_Id: 70
+    m_Localized: Gobo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 71
+    m_Localized: "Gramin\xE9es"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72
+    m_Localized: Mamie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73
+    m_Localized: "Gr\xE9goire"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 74
+    m_Localized: Heathcliff
+    m_Metadata:
+      m_Items: []
+  - m_Id: 75
+    m_Localized: Hector
+    m_Metadata:
+      m_Items: []
+  - m_Id: 76
+    m_Localized: Henri
+    m_Metadata:
+      m_Items: []
+  - m_Id: 77
+    m_Localized: Hermie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 78
+    m_Localized: Honshou
+    m_Metadata:
+      m_Items: []
+  - m_Id: 79
+    m_Localized: ISO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80
+    m_Localized: Isobelle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 81
+    m_Localized: Tout Petit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 82
+    m_Localized: "Je\xE9mo"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83
+    m_Localized: Jefferson
+    m_Metadata:
+      m_Items: []
+  - m_Id: 84
+    m_Localized: Jonie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 85
+    m_Localized: "Chou Fris\xE9"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 86
+    m_Localized: Kelpie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 87
+    m_Localized: Le Roi Arthur
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88
+    m_Localized: "Kr\xE9ydon"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 89
+    m_Localized: "Kr\xE9ym\xE8re"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90
+    m_Localized: Krillien
+    m_Metadata:
+      m_Items: []
+  - m_Id: 91
+    m_Localized: "Kris Tashen a \xE9crit:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 92
+    m_Localized: "L\xE9o"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93
+    m_Localized: Lili
+    m_Metadata:
+      m_Items: []
+  - m_Id: 94
+    m_Localized: Limule
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95
+    m_Localized: Homard
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96
+    m_Localized: Loppeur
+    m_Metadata:
+      m_Items: []
+  - m_Id: 97
+    m_Localized: Lottie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 98
+    m_Localized: Le Seigneur Clawington III
+    m_Metadata:
+      m_Items: []
+  - m_Id: 99
+    m_Localized: Loto
+    m_Metadata:
+      m_Items: []
+  - m_Id: 100
+    m_Localized: Lune
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101
+    m_Localized: Madeleine
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102
+    m_Localized: "Ma\xEEtre Cinus"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103
+    m_Localized: Margotte
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104
+    m_Localized: Marquis Triton
+    m_Metadata:
+      m_Items: []
+  - m_Id: 105
+    m_Localized: Maxime
+    m_Metadata:
+      m_Items: []
+  - m_Id: 106
+    m_Localized: Millie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 107
+    m_Localized: Mimimimime
+    m_Metadata:
+      m_Items: []
+  - m_Id: 108
+    m_Localized: Mue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 109
+    m_Localized: Mona
+    m_Metadata:
+      m_Items: []
+  - m_Id: 110
+    m_Localized: "N\xE9phyre"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 111
+    m_Localized: Nelly
+    m_Metadata:
+      m_Items: []
+  - m_Id: 112
+    m_Localized: Le Newton
+    m_Metadata:
+      m_Items: []
+  - m_Id: 113
+    m_Localized: Nikki d
+    m_Metadata:
+      m_Items: []
+  - m_Id: 114
+    m_Localized: Monique
+    m_Metadata:
+      m_Items: []
+  - m_Id: 115
+    m_Localized: Olivier
+    m_Metadata:
+      m_Items: []
+  - m_Id: 116
+    m_Localized: Petit Doigt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 117
+    m_Localized: Pistache
+    m_Metadata:
+      m_Items: []
+  - m_Id: 118
+    m_Localized: Platon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 119
+    m_Localized: Podrique
+    m_Metadata:
+      m_Items: []
+  - m_Id: 120
+    m_Localized: Portia
+    m_Metadata:
+      m_Items: []
+  - m_Id: 121
+    m_Localized: Crevettes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 122
+    m_Localized: Crevette
+    m_Metadata:
+      m_Items: []
+  - m_Id: 123
+    m_Localized: Crevettes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 124
+    m_Localized: Quinn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 125
+    m_Localized: Rab
+    m_Metadata:
+      m_Items: []
+  - m_Id: 126
+    m_Localized: Rayon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 127
+    m_Localized: Rin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 128
+    m_Localized: Rocheux
+    m_Metadata:
+      m_Items: []
+  - m_Id: 129
+    m_Localized: Rose
+    m_Metadata:
+      m_Items: []
+  - m_Id: 130
+    m_Localized: Jean
+    m_Metadata:
+      m_Items: []
+  - m_Id: 131
+    m_Localized: "mod\xE8le: s010100110p301010011r33p"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 132
+    m_Localized: Sorties
+    m_Metadata:
+      m_Items: []
+  - m_Id: 133
+    m_Localized: Sortie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 134
+    m_Localized: Griffonner
+    m_Metadata:
+      m_Items: []
+  - m_Id: 135
+    m_Localized: sc0p3c33p-l
+    m_Metadata:
+      m_Items: []
+  - m_Id: 136
+    m_Localized: "num\xE9ro de pi\xE8ce sc0p3cr33p0101001101000011"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 137
+    m_Localized: Sean
+    m_Metadata:
+      m_Items: []
+  - m_Id: 138
+    m_Localized: Sharon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 139
+    m_Localized: Shawne
+    m_Metadata:
+      m_Items: []
+  - m_Id: 140
+    m_Localized: Elldon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 141
+    m_Localized: Shelly
+    m_Metadata:
+      m_Items: []
+  - m_Id: 142
+    m_Localized: "\xC0 Sheldon"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 143
+    m_Localized: Pierre
+    m_Metadata:
+      m_Items: []
+  - m_Id: 144
+    m_Localized: Monsieur Cull
+    m_Metadata:
+      m_Items: []
+  - m_Id: 145
+    m_Localized: Monsieur Lob
+    m_Metadata:
+      m_Items: []
+  - m_Id: 146
+    m_Localized: Monsieur Pin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 147
+    m_Localized: Petit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 148
+    m_Localized: Bavures
+    m_Metadata:
+      m_Items: []
+  - m_Id: 149
+    m_Localized: Socrate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 150
+    m_Localized: Picotement
+    m_Metadata:
+      m_Items: []
+  - m_Id: 151
+    m_Localized: Bavardage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 152
+    m_Localized: "Sto\xEF"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 153
+    m_Localized: Taxi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 154
+    m_Localized: Nounours
+    m_Metadata:
+      m_Items: []
+  - m_Id: 155
+    m_Localized: La Trancheuse
+    m_Metadata:
+      m_Items: []
+  - m_Id: 156
+    m_Localized: Le Juge de La Profondeur
+    m_Metadata:
+      m_Items: []
+  - m_Id: 157
+    m_Localized: Le Gardien du Temps
+    m_Metadata:
+      m_Items: []
+  - m_Id: 158
+    m_Localized: Les Gardiens du Temps
+    m_Metadata:
+      m_Items: []
+  - m_Id: 159
+    m_Localized: "Th\xE9o"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 160
+    m_Localized: "V\xE9ronique"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 161
+    m_Localized: Avertisseur
+    m_Metadata:
+      m_Items: []
+  - m_Id: 162
+    m_Localized: Garenne
+    m_Metadata:
+      m_Items: []
+  - m_Id: 163
+    m_Localized: Guillaume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 164
+    m_Localized: "L\xE9pidopt\xE8re"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 165
+    m_Localized: Tigre
+    m_Metadata:
+      m_Items: []
+  - m_Id: 166
+    m_Localized: Carl
+    m_Metadata:
+      m_Items: []
+  - m_Id: 167
+    m_Localized: Boba Walker
+    m_Metadata:
+      m_Items: []
+  - m_Id: 168
+    m_Localized: Billy, Willy et Milly
+    m_Metadata:
+      m_Items: []
+  - m_Id: 169
+    m_Localized: Toutd
+    m_Metadata:
+      m_Items: []
+  - m_Id: 170
+    m_Localized: Isotode
+    m_Metadata:
+      m_Items: []
+  - m_Id: 171
+    m_Localized: "Invert\xE9br\xE9s"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 172
+    m_Localized: Mollysque
+    m_Metadata:
+      m_Items: []
+  - m_Id: 173
+    m_Localized: Phillbug
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174
+    m_Localized: Les Nombreux
+    m_Metadata:
+      m_Items: []
+  - m_Id: 175
+    m_Localized: Jacques
+    m_Metadata:
+      m_Items: []
+  - m_Id: 176
+    m_Localized: Hank
+    m_Metadata:
+      m_Items: []
+  - m_Id: 177
+    m_Localized: Jean
+    m_Metadata:
+      m_Items: []
+  - m_Id: 178
+    m_Localized: Escargot Performatif
+    m_Metadata:
+      m_Items: []
+  - m_Id: 179
+    m_Localized: Croissant
+    m_Metadata:
+      m_Items: []
+  - m_Id: 180
+    m_Localized: Fourmi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 181
+    m_Localized: "P\xE9njamin"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 182
+    m_Localized: "Circ\xE9"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 183
+    m_Localized: Mme Fishman
+    m_Metadata:
+      m_Items: []
+  - m_Id: 184
+    m_Localized: Caitlyn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 185
+    m_Localized: Goop
+    m_Metadata:
+      m_Items: []
+  - m_Id: 186
+    m_Localized: Glouglou
+    m_Metadata:
+      m_Items: []
+  - m_Id: 187
+    m_Localized: Pierre
+    m_Metadata:
+      m_Items: []
+  - m_Id: 188
+    m_Localized: Polly
+    m_Metadata:
+      m_Items: []
+  - m_Id: 189
+    m_Localized: Willy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 190
+    m_Localized: Samuel
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

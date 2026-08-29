@@ -14,7 +14,79 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
   m_GroupName: Localization-String-Tables-Italian (it)
   m_GUID: 27f8e5705366b467c8ce81b3ac4dbef9
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 1fa54ded0dab44835b084a063b1ce1d3
+    m_Address: Letters_it
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-it
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2ed349beaa47f440fbcc6ae69ffa58bf
+    m_Address: Credits_it
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-it
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4cfa8306692a74df98e83fa07658cca7
+    m_Address: Dialogue_it
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-it
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 688623154dfce467e962a73cdfa3db7e
+    m_Address: Headlines_it
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-it
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7440c79788b3b4b14b1a581469aa9124
+    m_Address: Cutscenes_it
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-it
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 756814557aa0d494e9066900adefb515
+    m_Address: Names_it
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-it
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8da94d274b7ff41989897d2189b939d1
+    m_Address: Tutorial_it
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-it
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cbd497dd1a8ff439c9473f308b963c5c
+    m_Address: Misc_it
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-it
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d5683444d968d47c6896f6a0dee5fbd1
+    m_Address: TitleScreen_it
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-it
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: eefe664240f7641119808e670b656820
+    m_Address: UI_it
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-it
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f6b1125653f8e4973be26f5d8a2b82bb
+    m_Address: Summary_it
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-it
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fdb50c74c0e9847fd843ffd25c93372c
+    m_Address: FeedbackForms_it
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-it
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 68f053f7e443b4f2383ac9aa604bb6bd, type: 2}
   m_SchemaSet:

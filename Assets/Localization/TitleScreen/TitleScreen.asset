@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5be51871efa6c3e4eae1703925c8f5ac, type: 3}
+  m_Name: TitleScreen
+  m_EditorClassIdentifier: Unity.Localization.Editor::UnityEditor.Localization.StringTableCollection
+  m_SharedTableData: {fileID: 11400000, guid: 68967bb71aafa4e878d8e94cfc34e218, type: 2}
+  m_Tables:
+  - {fileID: 11400000, guid: a159ec5fb7ad5432ba79111968ae8e64, type: 2}
+  - {fileID: 11400000, guid: 7e8573cd4bd96466d87b06d9ca1f0603, type: 2}
+  - {fileID: 11400000, guid: a08692e7e6fe4475da94b33608e14453, type: 2}
+  - {fileID: 11400000, guid: 85fd744c8dd62433b9ed6c870af3b767, type: 2}
+  - {fileID: 11400000, guid: b65c834a4c9e4457ebb2383043799e80, type: 2}
+  - {fileID: 11400000, guid: d5683444d968d47c6896f6a0dee5fbd1, type: 2}
+  - {fileID: 11400000, guid: 5e450b219ed3542858d116ffdabdcca3, type: 2}
+  - {fileID: 11400000, guid: 672a5e8ca20c643088e3cd28afd35de0, type: 2}
+  m_Extensions: []
+  m_Group: String Table
+  references:
+    version: 2
+    RefIds: []

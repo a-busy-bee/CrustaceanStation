@@ -1,0 +1,445 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: FeedbackForms_es
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: es
+  m_SharedData: {fileID: 11400000, guid: 5ec38919bd39245b98c3ec338c7f7f5e, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 1
+    m_Localized: apestas
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2
+    m_Localized: 0 estrellas me enviaron al tren equivocado
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3
+    m_Localized: "Deber\xEDas afeitarte"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4
+    m_Localized: "Te ve\xEDas linda hoy... ll\xE1mame si quieres un descanso de los
+      trenes (800) 8135"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5
+    m_Localized: TQM
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6
+    m_Localized: "\xBFUsas lo mismo todos los d\xEDas?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7
+    m_Localized: 0 estrellas, me hicieron pagar individualmente por mis 20 millones
+      de hijos
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8
+    m_Localized: "Desear\xEDa que hicieras un poco m\xE1s que sellar mi boleto"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9
+    m_Localized: "Revis\xE9 mi foto por mucho tiempo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10
+    m_Localized: "\xBFTienes hijos?.. \xBFadoptar\xE1s la m\xEDa?..?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11
+    m_Localized: Publicidad falsa, no eres tan rudo como dicen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12
+    m_Localized: Me gustan mis hombres mayores ;)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13
+    m_Localized: "\xBFQuieres invertir en mi ajetreo secundario? Podr\xEDamos ganar
+      mucho dinero juntos ;)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14
+    m_Localized: "\xA1Compre ShellCoin ahora y recupere el 110% en los pr\xF3ximos
+      5 a\xF1os!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15
+    m_Localized: "\xA1Compre ClawCoin ahora y recupere el 68% en los pr\xF3ximos
+      2 a\xF1os!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16
+    m_Localized: "Tiene una deuda pendiente de 7 75,600. Llame al (800) 5201 para
+      obtener una resoluci\xF3n."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17
+    m_Localized: "\xBFPor qu\xE9 rompiste conmigo? \xA1No puedes hacerme esto!!!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18
+    m_Localized: servicio de 0 estrellas, pero apariencia de 5 estrellas
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19
+    m_Localized: apariencia de 0 estrellas, pero servicio de 5 estrellas
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20
+    m_Localized: Vine a ver al legendario gerente atractivo del que todo el mundo
+      ha estado hablando, pero realmente no eres tan impresionante tbh
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21
+    m_Localized: "Vine a ver al legendario gerente atractivo del que todo el mundo
+      ha estado hablando. Eres enough lo suficientemente decente. \xBFQuieres salir?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22
+    m_Localized: "AHHHHHH NO PUEDO CREER QUE CONOC\xCD A MI \xCDDOLO HOY, INCLUSO
+      \xC9L MISMO PERFOR\xD3 MI BOLETO AAAAAAA"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23
+    m_Localized: "nunca conozcas a tus \xEDdolos,  fuiste tan decepcionante."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24
+    m_Localized: "\xBFSer\xEDa raro si dijera que so\xF1\xE9 contigo anoche?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25
+    m_Localized: "oh savior mi salvador, la verdadera luz de mi vida\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26
+    m_Localized: "El tren que tom\xE9 hoy ten\xEDa los asientos muy sucios, \xBFquiz\xE1s
+      podr\xEDan contratar m\xE1s limpiadores?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27
+    m_Localized: "La lanzadera que tom\xE9 hoy ten\xEDa las ventanas muy sucias,
+      \xBFdeber\xEDan limpiarlas todos con m\xE1s regularidad?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28
+    m_Localized: "Gran servicio,volver\xEDa a montar! : D"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29
+    m_Localized: "Incre\xEDble servicio de comida, \xA1el boleto de lujo realmente
+      vali\xF3 la pena el precio!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30
+    m_Localized: "\xA1Los asistentes del tren fueron tan serviciales y amables que
+      incluso le dieron a mi hijo una piruleta gratis cuando perdi\xF3 la suya! \xA1No
+      puedo agradecerles lo suficiente!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31
+    m_Localized: "Super amable y servicial! \xA1Me ayud\xF3 a encontrar el tren correcto
+      cuando estaba perdido!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32
+    m_Localized: ayuda
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33
+    m_Localized: "ellos est\xE1n viniendo"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34
+    m_Localized: "Alg\xFAn d\xEDa te har\xE9 pagar el precio por lo que le hiciste
+      a mi familia."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 35
+    m_Localized: palitos de pescado y rollos de langosta
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36
+    m_Localized: "Como viajero frecuente, es realmente decepcionante c\xF3mo sigues
+      dejando p\xE1jaros en el tren. Presentar\xE9 una queja a la corporaci\xF3n
+      si no se esfuerzan por mantener el tren m\xE1s seguro para nosotros."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37
+    m_Localized: "Como viajero frecuente, es realmente decepcionante c\xF3mo sigues
+      dejando que los leones marinos suban al tren. Presentar\xE9 una queja a la
+      corporaci\xF3n si no se esfuerzan por mantener el tren m\xE1s seguro para nosotros."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38
+    m_Localized: "Ya no me siento segura viajando en el tren; simplemente siento
+      que estoy rodeada de pasajeros que quieren comerme\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39
+    m_Localized: "Deber\xEDa haber un tren solo para crust\xE1ceos"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40
+    m_Localized: Terrible servicio.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41
+    m_Localized: "\xA1Sal mientras puedas!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42
+    m_Localized: "Mant\xE9ngase alejado de crustacean corp"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 43
+    m_Localized: Siempre estamos observando
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44
+    m_Localized: "Ponga fin a la comercializaci\xF3n de crust\xE1ceos, deje de ir
+      y venir"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45
+    m_Localized: Si ves algo, di algo.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 46
+    m_Localized: "Demasiados no crust\xE1ceos en mi tren"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47
+    m_Localized: "Parec\xEDas triste hoy."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48
+    m_Localized: "Tu familia no est\xE1 a salvo"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49
+    m_Localized: "S\xE9 lo de tu is\xF3podo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 50
+    m_Localized: "Deber\xEDas irte de la ciudad."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51
+    m_Localized: "me com\xED mi lolypop en el tren y desapareci\xF3 where \xBFa d\xF3nde
+      fue?: ("
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52
+    m_Localized: "\xA1mam\xE1 dice que Samuel es tard\xEDgrado y Urs es un eyesopod!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53
+    m_Localized: "mam\xE1 dijo que ten\xEDa que llevar a Sameul al veterinario y
+      que no le diera lolypops de ninguna manera. se\xF1or, \xBFlastim\xE9 a Sameul?
+      pero me encantan los lolypops\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 54
+    m_Localized: "mam\xE1 volvi\xF3 a casa tarde de agan but \xA1pero compr\xF3 toneladas
+      de piruletas! amo mucho a mi mam\xE1"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55
+    m_Localized: "mam\xE1 dijo que skool es muy importante, \xA1pero no me gusta!
+      se\xF1or, \xBFtengo que ir a skool?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56
+    m_Localized: "\xA15 estrellas! \xA1No, 6 estrellas! \xA1100 estrellas! \xA1mil
+      millones de estrellas! \xA1Estrellas infinitas!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 57
+    m_Localized: "se\xF1or, cuando hablas de ti y de tu eyesopod, me hace muy feliz.
+      \xBFhablar\xE1s m\xE1s conmigo?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58
+    m_Localized: "No me dej\xF3 llevar todas mis plantas a bordo. 0 estrellas."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 59
+    m_Localized: "Deber\xEDan hacer que los trenes sean m\xE1s amigables con los
+      peces."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 60
+    m_Localized: "No estaba lo suficientemente mojado a pesar de que llovi\xF3."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61
+    m_Localized: "Aqu\xED est\xE1 la direcci\xF3n de mi pr\xF3xima protesta be s\xE9
+      discreto. \\ n1823 Sandy Shore Drive Bring Traiga cinta adhesiva."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62
+    m_Localized: Muchacho, debo agradecerte por escuchar las divagaciones de esta
+      vieja alma.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 63
+    m_Localized: "\xBFDesea escuchar cuentos de anta\xF1o? Es raro que alguien como
+      t\xFA est\xE9 dispuesto a escuchar a old un viejo tonto."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 64
+    m_Localized: "Aunque los compatriotas ya no caminan por el mismo camino, las
+      corrientes y el suelo a\xFAn susurran sus voces, mientras se llaman unos a
+      otros a la orilla."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 65
+    m_Localized: "En \xE9pocas pasadas, nad\xE1bamos con garras que se extend\xEDan
+      desde el abismo y fauces que pod\xEDan tragarnos enteros. A\xFAn as\xED, uno
+      debe corregir sus palabras. Esas garras y fauces han desaparecido del mundo
+      tangible, pero a\xFAn viven dentro de nuestros corazones."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 66
+    m_Localized: "\xBFSabe uno c\xF3mo hacer un \"caballito enfermo\"? Of Por supuesto
+      que uno alguna vez lo hizo,uno es solo un viejo loco con artritis ahora, \xBFest\xE1
+      bien?!?!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 67
+    m_Localized: "Los escorpiones marinos se han ido, pero tambi\xE9n sus compa\xF1eros
+      m\xE1s cercanos Coral Coral, Pearl, Finn, \xBFd\xF3nde est\xE1n todos ahora?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 68
+    m_Localized: "Para cuando se encontr\xF3 la cueva del escorpi\xF3n, todo lo que
+      quedaba eran sus exoesqueletos. Si uno no los hubiera abandonado ese d\xEDa
+      maybe tal vez no estar\xEDa tan solo en este momento."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 69
+    m_Localized: "Uno personalmente cree que esos fr\xEDos arrecifes corporativos
+      no son tan diferentes de esas cuevas de escorpiones. Es solo que un depredador
+      diferente acecha en las sombras\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 70
+    m_Localized: "Uno deber\xEDa haberse saltado el entrenamiento con m\xE1s frecuencia
+      y haber visto sus actuaciones. Jovencito, no desperdicies tu vida en este quiosco,
+      especialmente por un poder ingrato."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 71
+    m_Localized: "Mis recuerdos Pearl Pearl sol\xEDa bailar como un trabajo secundario
+      en el atol\xF3n cercano, y Coral tocaba los tubos en la sinfon\xEDa del mar.
+      El combate garra a garra de Finn fue indiscutible but pero \xE9l y sus pinturas
+      de arena eran m\xE1s hermosos. Aseg\xFArate de atesorar a los que amas."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72
+    m_Localized: "Jovencito, no llores por m\xED. Este era un destino largamente
+      destinado del que hab\xEDa huido durante demasiado tiempo. Ya que has escuchado
+      las confesiones de este pecador, sabes que debo expiar mis pecados."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73
+    m_Localized: "Me despert\xE9 de un hermoso sue\xF1o esta ma\xF1ana. No hab\xEDa
+      corales blanqueados, sino viejos arrecifes y caras conocidas llam\xE1ndome.
+      Por lo tanto, partir\xE9 hacia la otra orilla."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 74
+    m_Localized: Buen chico, pero se niega a comprar lazos a juego conmigo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 75
+    m_Localized: "El tren estaba demasiado ruidoso que no pod\xEDa leer."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 76
+    m_Localized: No me dijo que mi voz era demasiado baja, lo cual fue genial.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 77
+    m_Localized: "Ni\xF1o incre\xEDble, \xA1me recuerda mucho a mis propios hijos!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 78
+    m_Localized: "Bien vestidos, buenos modales, trabajadores hope espero que mis
+      hijos se conviertan en alguien como t\xFA cuando crezcan"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 79
+    m_Localized: "Gran servicio, solo the los precios de las entradas son un poco
+      altos. \xBFNo crees que podr\xEDas hablar con la gerencia para que estos boletos
+      tengan un precio un poco m\xE1s bajo?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80
+    m_Localized: "Honestamente, mi esposo sigue mencion\xE1ndote como un buen chico
+      cada vez que regresa a casa. \xBFCrees que podr\xEDas darle una peque\xF1a
+      pista para que devuelva menos flores? \xA1Realmente amo su gran coraz\xF3n
+      tonto, pero ya no hay espacio en casa!!!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 81
+    m_Localized: "\xBFQu\xE9 tal estawe \xBFc\xF3mo contestan las algas al tel\xE9fono? 
+      \"Hola, \xBFc\xF3mo puedo hacerte algas?\"\xA1Jaja! Gracioso, \xBFverdad? (dame
+      una calificaci\xF3n de 5 estrellas en este chiste y te dar\xE9 una calificaci\xF3n
+      de 5 estrellas en la plataforma de servicio al cliente"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 82
+    m_Localized: "\xBFCuando veas al abuelo a continuaci\xF3n, puedes asegurarte
+      de darle un buen asiento?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83
+    m_Localized: "Escucha, pero nunca contesta mis preguntas. Podr\xEDa ser m\xE1s
+      educado."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 84
+    m_Localized: "Muy guapo, pero no saldr\xE1s con mi nieta."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 85
+    m_Localized: "Usa lo mismo todos los d\xEDas, deber\xEDa comprar ropa nueva."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 86
+    m_Localized: "Podr\xEDa usar un pa\xF1uelo de bolsillo nuevo, se ve un poco polvoriento."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 87
+    m_Localized: "Buen apret\xF3n de manos firme, apuesto joven."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88
+    m_Localized: Siempre me escucha. Amo a este tipo.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 89
+    m_Localized: "Si alguna vez necesitas un poco de sabidur\xEDa en particular,
+      aqu\xED est\xE1 mi n\xFAmero. Tengo mucho de eso. 921-8564"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

@@ -1,0 +1,788 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Names Shared Data
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
+  m_TableCollectionName: Names
+  m_TableCollectionNameGuidString: 4b7f2ee6aa4d84aeabc3ea6646ba35e8
+  m_Entries:
+  - m_Id: 1
+    m_Key: names_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2
+    m_Key: names_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3
+    m_Key: names_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4
+    m_Key: names_3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5
+    m_Key: names_4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6
+    m_Key: names_5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7
+    m_Key: names_6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8
+    m_Key: names_7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9
+    m_Key: names_8
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10
+    m_Key: names_9
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11
+    m_Key: names_10
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12
+    m_Key: names_11
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13
+    m_Key: names_12
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14
+    m_Key: names_13
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15
+    m_Key: names_14
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16
+    m_Key: names_15
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17
+    m_Key: names_16
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18
+    m_Key: names_17
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19
+    m_Key: names_18
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20
+    m_Key: names_19
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21
+    m_Key: names_20
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22
+    m_Key: names_21
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23
+    m_Key: names_22
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24
+    m_Key: names_23
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25
+    m_Key: names_24
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26
+    m_Key: names_25
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27
+    m_Key: names_26
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28
+    m_Key: names_27
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29
+    m_Key: names_28
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30
+    m_Key: names_29
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31
+    m_Key: names_30
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32
+    m_Key: names_31
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33
+    m_Key: names_32
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34
+    m_Key: names_33
+    m_Metadata:
+      m_Items: []
+  - m_Id: 35
+    m_Key: names_34
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36
+    m_Key: names_35
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37
+    m_Key: names_36
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38
+    m_Key: names_37
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39
+    m_Key: names_38
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40
+    m_Key: names_39
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41
+    m_Key: names_40
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42
+    m_Key: names_41
+    m_Metadata:
+      m_Items: []
+  - m_Id: 43
+    m_Key: names_42
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44
+    m_Key: names_43
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45
+    m_Key: names_44
+    m_Metadata:
+      m_Items: []
+  - m_Id: 46
+    m_Key: names_45
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47
+    m_Key: names_46
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48
+    m_Key: names_47
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49
+    m_Key: names_48
+    m_Metadata:
+      m_Items: []
+  - m_Id: 50
+    m_Key: names_49
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51
+    m_Key: names_50
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52
+    m_Key: names_51
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53
+    m_Key: names_52
+    m_Metadata:
+      m_Items: []
+  - m_Id: 54
+    m_Key: names_53
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55
+    m_Key: names_54
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56
+    m_Key: names_55
+    m_Metadata:
+      m_Items: []
+  - m_Id: 57
+    m_Key: names_56
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58
+    m_Key: names_57
+    m_Metadata:
+      m_Items: []
+  - m_Id: 59
+    m_Key: names_58
+    m_Metadata:
+      m_Items: []
+  - m_Id: 60
+    m_Key: names_59
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61
+    m_Key: names_60
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62
+    m_Key: names_61
+    m_Metadata:
+      m_Items: []
+  - m_Id: 63
+    m_Key: names_62
+    m_Metadata:
+      m_Items: []
+  - m_Id: 64
+    m_Key: names_63
+    m_Metadata:
+      m_Items: []
+  - m_Id: 65
+    m_Key: names_64
+    m_Metadata:
+      m_Items: []
+  - m_Id: 66
+    m_Key: names_65
+    m_Metadata:
+      m_Items: []
+  - m_Id: 67
+    m_Key: names_66
+    m_Metadata:
+      m_Items: []
+  - m_Id: 68
+    m_Key: names_67
+    m_Metadata:
+      m_Items: []
+  - m_Id: 69
+    m_Key: names_68
+    m_Metadata:
+      m_Items: []
+  - m_Id: 70
+    m_Key: names_69
+    m_Metadata:
+      m_Items: []
+  - m_Id: 71
+    m_Key: names_70
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72
+    m_Key: names_71
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73
+    m_Key: names_72
+    m_Metadata:
+      m_Items: []
+  - m_Id: 74
+    m_Key: names_73
+    m_Metadata:
+      m_Items: []
+  - m_Id: 75
+    m_Key: names_74
+    m_Metadata:
+      m_Items: []
+  - m_Id: 76
+    m_Key: names_75
+    m_Metadata:
+      m_Items: []
+  - m_Id: 77
+    m_Key: names_76
+    m_Metadata:
+      m_Items: []
+  - m_Id: 78
+    m_Key: names_77
+    m_Metadata:
+      m_Items: []
+  - m_Id: 79
+    m_Key: names_78
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80
+    m_Key: names_79
+    m_Metadata:
+      m_Items: []
+  - m_Id: 81
+    m_Key: names_80
+    m_Metadata:
+      m_Items: []
+  - m_Id: 82
+    m_Key: names_81
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83
+    m_Key: names_82
+    m_Metadata:
+      m_Items: []
+  - m_Id: 84
+    m_Key: names_83
+    m_Metadata:
+      m_Items: []
+  - m_Id: 85
+    m_Key: names_84
+    m_Metadata:
+      m_Items: []
+  - m_Id: 86
+    m_Key: names_85
+    m_Metadata:
+      m_Items: []
+  - m_Id: 87
+    m_Key: names_86
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88
+    m_Key: names_87
+    m_Metadata:
+      m_Items: []
+  - m_Id: 89
+    m_Key: names_88
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90
+    m_Key: names_89
+    m_Metadata:
+      m_Items: []
+  - m_Id: 91
+    m_Key: names_90
+    m_Metadata:
+      m_Items: []
+  - m_Id: 92
+    m_Key: names_91
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93
+    m_Key: names_92
+    m_Metadata:
+      m_Items: []
+  - m_Id: 94
+    m_Key: names_93
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95
+    m_Key: names_94
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96
+    m_Key: names_95
+    m_Metadata:
+      m_Items: []
+  - m_Id: 97
+    m_Key: names_96
+    m_Metadata:
+      m_Items: []
+  - m_Id: 98
+    m_Key: names_97
+    m_Metadata:
+      m_Items: []
+  - m_Id: 99
+    m_Key: names_98
+    m_Metadata:
+      m_Items: []
+  - m_Id: 100
+    m_Key: names_99
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101
+    m_Key: names_100
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102
+    m_Key: names_101
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103
+    m_Key: names_102
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104
+    m_Key: names_103
+    m_Metadata:
+      m_Items: []
+  - m_Id: 105
+    m_Key: names_104
+    m_Metadata:
+      m_Items: []
+  - m_Id: 106
+    m_Key: names_105
+    m_Metadata:
+      m_Items: []
+  - m_Id: 107
+    m_Key: names_106
+    m_Metadata:
+      m_Items: []
+  - m_Id: 108
+    m_Key: names_107
+    m_Metadata:
+      m_Items: []
+  - m_Id: 109
+    m_Key: names_108
+    m_Metadata:
+      m_Items: []
+  - m_Id: 110
+    m_Key: names_109
+    m_Metadata:
+      m_Items: []
+  - m_Id: 111
+    m_Key: names_110
+    m_Metadata:
+      m_Items: []
+  - m_Id: 112
+    m_Key: names_111
+    m_Metadata:
+      m_Items: []
+  - m_Id: 113
+    m_Key: names_112
+    m_Metadata:
+      m_Items: []
+  - m_Id: 114
+    m_Key: names_113
+    m_Metadata:
+      m_Items: []
+  - m_Id: 115
+    m_Key: names_114
+    m_Metadata:
+      m_Items: []
+  - m_Id: 116
+    m_Key: names_115
+    m_Metadata:
+      m_Items: []
+  - m_Id: 117
+    m_Key: names_116
+    m_Metadata:
+      m_Items: []
+  - m_Id: 118
+    m_Key: names_117
+    m_Metadata:
+      m_Items: []
+  - m_Id: 119
+    m_Key: names_118
+    m_Metadata:
+      m_Items: []
+  - m_Id: 120
+    m_Key: names_119
+    m_Metadata:
+      m_Items: []
+  - m_Id: 121
+    m_Key: names_120
+    m_Metadata:
+      m_Items: []
+  - m_Id: 122
+    m_Key: names_121
+    m_Metadata:
+      m_Items: []
+  - m_Id: 123
+    m_Key: names_122
+    m_Metadata:
+      m_Items: []
+  - m_Id: 124
+    m_Key: names_123
+    m_Metadata:
+      m_Items: []
+  - m_Id: 125
+    m_Key: names_124
+    m_Metadata:
+      m_Items: []
+  - m_Id: 126
+    m_Key: names_125
+    m_Metadata:
+      m_Items: []
+  - m_Id: 127
+    m_Key: names_126
+    m_Metadata:
+      m_Items: []
+  - m_Id: 128
+    m_Key: names_127
+    m_Metadata:
+      m_Items: []
+  - m_Id: 129
+    m_Key: names_128
+    m_Metadata:
+      m_Items: []
+  - m_Id: 130
+    m_Key: names_129
+    m_Metadata:
+      m_Items: []
+  - m_Id: 131
+    m_Key: names_130
+    m_Metadata:
+      m_Items: []
+  - m_Id: 132
+    m_Key: names_131
+    m_Metadata:
+      m_Items: []
+  - m_Id: 133
+    m_Key: names_132
+    m_Metadata:
+      m_Items: []
+  - m_Id: 134
+    m_Key: names_133
+    m_Metadata:
+      m_Items: []
+  - m_Id: 135
+    m_Key: names_134
+    m_Metadata:
+      m_Items: []
+  - m_Id: 136
+    m_Key: names_135
+    m_Metadata:
+      m_Items: []
+  - m_Id: 137
+    m_Key: names_136
+    m_Metadata:
+      m_Items: []
+  - m_Id: 138
+    m_Key: names_137
+    m_Metadata:
+      m_Items: []
+  - m_Id: 139
+    m_Key: names_138
+    m_Metadata:
+      m_Items: []
+  - m_Id: 140
+    m_Key: names_139
+    m_Metadata:
+      m_Items: []
+  - m_Id: 141
+    m_Key: names_140
+    m_Metadata:
+      m_Items: []
+  - m_Id: 142
+    m_Key: names_141
+    m_Metadata:
+      m_Items: []
+  - m_Id: 143
+    m_Key: names_142
+    m_Metadata:
+      m_Items: []
+  - m_Id: 144
+    m_Key: names_143
+    m_Metadata:
+      m_Items: []
+  - m_Id: 145
+    m_Key: names_144
+    m_Metadata:
+      m_Items: []
+  - m_Id: 146
+    m_Key: names_145
+    m_Metadata:
+      m_Items: []
+  - m_Id: 147
+    m_Key: names_146
+    m_Metadata:
+      m_Items: []
+  - m_Id: 148
+    m_Key: names_147
+    m_Metadata:
+      m_Items: []
+  - m_Id: 149
+    m_Key: names_148
+    m_Metadata:
+      m_Items: []
+  - m_Id: 150
+    m_Key: names_149
+    m_Metadata:
+      m_Items: []
+  - m_Id: 151
+    m_Key: names_150
+    m_Metadata:
+      m_Items: []
+  - m_Id: 152
+    m_Key: names_151
+    m_Metadata:
+      m_Items: []
+  - m_Id: 153
+    m_Key: names_152
+    m_Metadata:
+      m_Items: []
+  - m_Id: 154
+    m_Key: names_153
+    m_Metadata:
+      m_Items: []
+  - m_Id: 155
+    m_Key: names_154
+    m_Metadata:
+      m_Items: []
+  - m_Id: 156
+    m_Key: names_155
+    m_Metadata:
+      m_Items: []
+  - m_Id: 157
+    m_Key: names_156
+    m_Metadata:
+      m_Items: []
+  - m_Id: 158
+    m_Key: names_157
+    m_Metadata:
+      m_Items: []
+  - m_Id: 159
+    m_Key: names_158
+    m_Metadata:
+      m_Items: []
+  - m_Id: 160
+    m_Key: names_159
+    m_Metadata:
+      m_Items: []
+  - m_Id: 161
+    m_Key: names_160
+    m_Metadata:
+      m_Items: []
+  - m_Id: 162
+    m_Key: names_161
+    m_Metadata:
+      m_Items: []
+  - m_Id: 163
+    m_Key: names_162
+    m_Metadata:
+      m_Items: []
+  - m_Id: 164
+    m_Key: names_163
+    m_Metadata:
+      m_Items: []
+  - m_Id: 165
+    m_Key: names_164
+    m_Metadata:
+      m_Items: []
+  - m_Id: 166
+    m_Key: names_165
+    m_Metadata:
+      m_Items: []
+  - m_Id: 167
+    m_Key: names_166
+    m_Metadata:
+      m_Items: []
+  - m_Id: 168
+    m_Key: names_167
+    m_Metadata:
+      m_Items: []
+  - m_Id: 169
+    m_Key: names_168
+    m_Metadata:
+      m_Items: []
+  - m_Id: 170
+    m_Key: names_169
+    m_Metadata:
+      m_Items: []
+  - m_Id: 171
+    m_Key: names_170
+    m_Metadata:
+      m_Items: []
+  - m_Id: 172
+    m_Key: names_171
+    m_Metadata:
+      m_Items: []
+  - m_Id: 173
+    m_Key: names_172
+    m_Metadata:
+      m_Items: []
+  - m_Id: 174
+    m_Key: names_173
+    m_Metadata:
+      m_Items: []
+  - m_Id: 175
+    m_Key: names_174
+    m_Metadata:
+      m_Items: []
+  - m_Id: 176
+    m_Key: names_175
+    m_Metadata:
+      m_Items: []
+  - m_Id: 177
+    m_Key: names_176
+    m_Metadata:
+      m_Items: []
+  - m_Id: 178
+    m_Key: names_177
+    m_Metadata:
+      m_Items: []
+  - m_Id: 179
+    m_Key: names_178
+    m_Metadata:
+      m_Items: []
+  - m_Id: 180
+    m_Key: names_179
+    m_Metadata:
+      m_Items: []
+  - m_Id: 181
+    m_Key: names_180
+    m_Metadata:
+      m_Items: []
+  - m_Id: 182
+    m_Key: names_181
+    m_Metadata:
+      m_Items: []
+  - m_Id: 183
+    m_Key: names_182
+    m_Metadata:
+      m_Items: []
+  - m_Id: 184
+    m_Key: names_183
+    m_Metadata:
+      m_Items: []
+  - m_Id: 185
+    m_Key: names_184
+    m_Metadata:
+      m_Items: []
+  - m_Id: 186
+    m_Key: names_185
+    m_Metadata:
+      m_Items: []
+  - m_Id: 187
+    m_Key: names_186
+    m_Metadata:
+      m_Items: []
+  - m_Id: 188
+    m_Key: names_187
+    m_Metadata:
+      m_Items: []
+  - m_Id: 189
+    m_Key: names_188
+    m_Metadata:
+      m_Items: []
+  - m_Id: 190
+    m_Key: names_189
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 8104775745801552163
+  references:
+    version: 2
+    RefIds:
+    - rid: 8104775745801552163
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1788016521531

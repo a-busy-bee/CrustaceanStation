@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5be51871efa6c3e4eae1703925c8f5ac, type: 3}
+  m_Name: FeedbackForms
+  m_EditorClassIdentifier: Unity.Localization.Editor::UnityEditor.Localization.StringTableCollection
+  m_SharedTableData: {fileID: 11400000, guid: 5ec38919bd39245b98c3ec338c7f7f5e, type: 2}
+  m_Tables:
+  - {fileID: 11400000, guid: 8e5bef6ae28e947c084f3c586f0be0da, type: 2}
+  - {fileID: 11400000, guid: 4a0d584e4f23f430984da6bcfc8e65cf, type: 2}
+  - {fileID: 11400000, guid: 0a159b29c40184e438fe8041fd890237, type: 2}
+  - {fileID: 11400000, guid: 546fea72f304c410d94bf23271c2993a, type: 2}
+  - {fileID: 11400000, guid: fdb50c74c0e9847fd843ffd25c93372c, type: 2}
+  - {fileID: 11400000, guid: 89d8f886ef28b485da5cdab3bfbae6f0, type: 2}
+  - {fileID: 11400000, guid: f4ae7575a9f9946c4a11f7d33bf86e2c, type: 2}
+  - {fileID: 11400000, guid: d3f75d7bc42134d9193d760e9e0d9873, type: 2}
+  m_Extensions: []
+  m_Group: String Table
+  references:
+    version: 2
+    RefIds: []

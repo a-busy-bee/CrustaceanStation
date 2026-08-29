@@ -1,0 +1,348 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Letters_fr
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: fr
+  m_SharedData: {fileID: 11400000, guid: 490755d025cf9474bbd6d42c4b4b1516, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 1
+    m_Localized: "\xC0 qui de droit,"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2
+    m_Localized: "Bienvenue dans votre nouvel emploi d'op\xE9rateur de kiosque d'entr\xE9e
+      de gamme \xE0 Crustacean Station! Votre position est essentielle au fonctionnement
+      de cette station et \xE0 la satisfaction de chaque crustac\xE9. Nous sommes
+      ravis de vous accueillir bient\xF4t.\\ nCrustacean Corporation vous rappelle
+      une fois de plus que la s\xE9curit\xE9 et la satisfaction sont primordiales.
+      En tant que tel, veuillez vous assurer de suivre les r\xE9glementations et
+      ordonnances pertinentes."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3
+    m_Localized: Nous vous souhaitons la meilleure des chances,\nCrustacean Corporation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4
+    m_Localized: "\xC0 l'Op\xE9rateur,"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5
+    m_Localized: "Crustacean Corporation est ravie d'annoncer un itin\xE9raire de
+      navette suppl\xE9mentaire pour les invit\xE9s et les employ\xE9s de Crustacean
+      Corporation! Les passagers de la navette pr\xE9senteront leurs billets de navette
+      exclusifs au kiosque. Assurez-vous d'assigner ces passagers aux bons si\xE8ges."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6
+    m_Localized: Cordialement, \ nCrustacean Corporation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7
+    m_Localized: "\xC0 tous les employ\xE9s,"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8
+    m_Localized: "Beaucoup d'entre vous ont peut-\xEAtre r\xE9cemment entendu parler
+      de l'incident tragique qui a frapp\xE9 l'enfant d'un de nos employ\xE9s. \xC0
+      la lumi\xE8re de l'augmentation des cas de comportements aussi inqui\xE9tants,
+      le conseil a d\xE9cid\xE9 de r\xE9viser nos politiques et nos objectifs pour
+      renforcer la s\xE9curit\xE9 publique. Tout le monde doit manger, mais cela
+      ne peut pas s'\xE9tendre \xE0 d\xE9vorer ceux qui n'ont m\xEAme pas encore
+      v\xE9cu.\\nEn attendant, restez vigilant contre les cr\xE9atures dangereuses
+      et prot\xE9gez-vous."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9
+    m_Localized: Cordialement, \ nCrustacean Corporation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10
+    m_Localized: "\xC0 l'Op\xE9rateur,"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11
+    m_Localized: "Pour aujourd'hui, lorsque vous voyez des passagers de type pr\xE9dateur,
+      veuillez les envoyer dans la navette avec les employ\xE9s habituels, quel que
+      soit leur billet. Les passagers seront indemnis\xE9s en cons\xE9quence pour
+      leurs ennuis, alors ne vous inqui\xE9tez pas des critiques n\xE9gatives. On
+      va s'en occuper.Ne nous d\xE9\xE7ois pas, Op\xE9rateur ."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12
+    m_Localized: "Merci de votre coop\xE9ration, \\ nCrustacean Corporation"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13
+    m_Localized: 'Cet avis est interdit au public:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14
+    m_Localized: "Veuillez noter la nouvelle r\xE9vision de la politique: les passagers
+      non crustac\xE9s doivent \xE9galement \xEAtre envoy\xE9s dans la navette avec
+      les employ\xE9s, quel que soit leur billet."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15
+    m_Localized: "Merci de votre coop\xE9ration, \\ nCrustacean Corporation"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16
+    m_Localized: "\xC0 tous les employ\xE9s,"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17
+    m_Localized: "Beaucoup d'entre vous ont peut-\xEAtre r\xE9cemment entendu parler
+      de cr\xE9atures avec des appendices anormaux accusant l'entreprise d'exp\xE9rimentation
+      ill\xE9gale. Ces affirmations ne sont pas vraies; ce sont de fausses accusations
+      port\xE9es par des employ\xE9s m\xE9contents qui n'ont pas r\xE9pondu aux attentes
+      sur nos r\xE9cents projets et qui ont ensuite \xE9t\xE9 lib\xE9r\xE9s. Nous
+      prendrons des mesures contre ces fausses d\xE9clarations et ceux qui tentent
+      de r\xE9duire nos d\xE9cennies de travail.\n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18
+    m_Localized: Cordialement, \ nCrustacean Corporation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19
+    m_Localized: "\xC0 l'Op\xE9rateur,"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20
+    m_Localized: "Bravo! Pour votre excellente performance, vous \xEAtes \xE9ligible
+      pour recevoir la prime salariale de ce mois. Crustacean Corporation vous remercie
+      pour votre d\xE9vouement et votre fid\xE9lit\xE9. Continuez votre bon travail."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21
+    m_Localized: Cordialement, \ nCrustacean Corporation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22
+    m_Localized: "\xC0 tous les employ\xE9s,"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23
+    m_Localized: "Apr\xE8s avoir pass\xE9 les essais cliniques, nous sommes fiers
+      de d\xE9voiler enfin notre nouveau m\xE9dicament de r\xE9adaptation. Cela a
+      \xE9t\xE9 notre plus grande entreprise depuis notre fondation, et cela n'aurait
+      pas pu \xEAtre r\xE9alis\xE9 sans les sacrifices et le travail acharn\xE9 de
+      toutes les personnes impliqu\xE9es. Ce nouveau m\xE9dicament promet d'am\xE9liorer
+      tous les aspects du bien-\xEAtre des crustac\xE9s et de supprimer toute envie
+      ind\xE9sirable de \u201Cbase\u201D.\\ nEn guise d'annonce finale, les employ\xE9s
+      seront mandat\xE9s pour subir le traitement d'ici la fin du mois prochain."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24
+    m_Localized: "Que l'\xE8re des crustac\xE9s soit glorieuse, \\ nCrustacean Corporation"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25
+    m_Localized: "\xC0 l'Op\xE9rateur,"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26
+    m_Localized: "Nous vous f\xE9licitons d'avoir termin\xE9 votre premier mois au
+      travail. Cependant, nous avons remarqu\xE9 de nombreuses divergences dans le
+      nombre d'invit\xE9s que vous avez envoy\xE9s et le nombre d'invit\xE9s que
+      nous avons r\xE9ellement re\xE7us, sur de nombreux jours. \xC0 l'avenir, nous
+      vous placerons sur un plan d'am\xE9lioration des performances, afin de vous
+      assurer que vous suivez syst\xE9matiquement les politiques de l'entreprise
+      dans votre travail."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27
+    m_Localized: Meilleur, \ nCrustacean Corporation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28
+    m_Localized: "\xC0 l'Op\xE9rateur,"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29
+    m_Localized: "Crustacean Station s'efforce d'offrir une exp\xE9rience de qualit\xE9
+      \xE0 nos passagers. Cependant, nous avons r\xE9cemment re\xE7u de nombreuses
+      plaintes concernant votre conduite et votre service. Pour r\xE9pondre aux normes
+      attendues de vous pour ce poste, nous vous demandons de vous am\xE9liorer en
+      accordant une plus grande attention aux besoins des passagers. Le fait de ne
+      pas am\xE9liorer les performances peut entra\xEEner votre r\xE9siliation."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30
+    m_Localized: "Merci de votre coop\xE9ration, \\ nCrustacean Corporation"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31
+    m_Localized: "\xC0 l'Op\xE9rateur,"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32
+    m_Localized: "En tant qu'employ\xE9 de Crustacean Corporation, vous \xEAtes oblig\xE9
+      de suivre les instructions de l'entreprise. Le non-respect des ordres peut
+      entra\xEEner la cessation de votre emploi."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33
+    m_Localized: "Merci de votre coop\xE9ration, \\ nCrustacean Corporation"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34
+    m_Localized: "\xC0 l'Op\xE9rateur,"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 35
+    m_Localized: "Crustacean Corporation tient \xE0 vous f\xE9liciter pour votre
+      excellente performance jusqu'\xE0 pr\xE9sent et vous encourage \xE0 poursuivre
+      votre bon travail.Pour rappel, \xE0 la fin de chaque mois, les employ\xE9s
+      ayant des \xE9valuations de rendement exemplaires sont admissibles \xE0 recevoir
+      une prime salariale."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36
+    m_Localized: Cordialement, \ nCrustacean Corporation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37
+    m_Localized: "\xC0 l'Op\xE9rateur,"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38
+    m_Localized: "Crustacean Station tient \xE0 vous rappeler l'importance d'assurer
+      la s\xE9curit\xE9 de tous les passagers. Nous sommes un service de transport,
+      pas un \xE9tablissement de restauration.\\nNous avons pr\xE9sent\xE9 nos condol\xE9ances
+      \xE0 la famille touch\xE9e. Bien qu'un tel comportement du d\xE9linquant soit
+      consid\xE9r\xE9 comme \u201Cl\xE9gal\u201D \xE0 l'heure actuelle, nous vous
+      demandons de minimiser autant que possible les incidents."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39
+    m_Localized: Cordialement, \ nCrustacean Corporation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40
+    m_Localized: "H\xE9 mec!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41
+    m_Localized: "Trouvez - moi un billet de train, d'accord? Je mourais d'envie
+      d'aller \xE0 l'un des concerts (du groupe), mais je manque d'argent.\\ naidez
+      un fr\xE8re ;)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42
+    m_Localized: Ton meilleur bourgeon, \ nDavey
+    m_Metadata:
+      m_Items: []
+  - m_Id: 43
+    m_Localized: "Tr\xE8s Cher Fr\xE8re,"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44
+    m_Localized: "Nous avons install\xE9 maman dans la nouvelle maison de retraite.
+      Elle est un peu plus stable maintenant, il vous suffit donc de continuer \xE0
+      recevoir les paiements, et nous pourrons nous occuper d'elle.\\ n \\ nI sais
+      que tu ne veux pas vraiment trop t'impliquer, mais c'est le moins que tu puisses
+      faire pour ta famille."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45
+    m_Localized: "Ta (seule) s\u0153ur, \\ nKellie"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 46
+    m_Localized: Bonjour Monsieur le Directeur de la Gare,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47
+    m_Localized: "Merci d'avoir gard\xE9 mon fils en s\xE9curit\xE9. Je sais qu'il
+      vous a caus\xE9 des ennuis, et je m'excuse sinc\xE8rement. Avec l'occupation
+      du laboratoire et son p\xE8re hors de cause, je ne peux l'emmener moi-m\xEAme
+      \xE0 l'\xE9cole. Je lui ai dit de te parler s'il avait des questions, alors
+      je te supplie de bien vouloir le surveiller en mon absence."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48
+    m_Localized: "Une m\xE8re aimante (mais fatigu\xE9e)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49
+    m_Localized: "H\xE9 ch\xE9rie,"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 50
+    m_Localized: "Nous nous sommes vus plusieurs fois maintenant, mais je n'ai pas
+      eu l'occasion de me pr\xE9senter. Je suis le gardien du courrier, et je suis
+      celui qui livre vos commentaires et lettres sur la station! C'est un travail
+      difficile, mais voir votre sourire en vaut la peine:) \\ n \\ nLa vie peut
+      \xEAtre dure, non? Alors quoi qu'il arrive, sache juste que tu as un alli\xE9
+      en moi."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51
+    m_Localized: Avec amour, Gardien de poste
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52
+    m_Localized: "H\xE9 ch\xE9rie,"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53
+    m_Localized: "J'ai eu de la chance avec un changement de mar\xE9e basse aujourd'hui,
+      alors j'ai pu rendre visite \xE0 ma famille!\\n \\ Nils m'ont offert beaucoup
+      de coquillages. J'en ai trop, et nous sommes \xE0 peu pr\xE8s de la m\xEAme
+      taille, alors je pensais que tu les aimerais peut-\xEAtre? Oh, vous ne pouvez
+      pas refuser d'ailleurs, je les ai d\xE9j\xE0 d\xE9pos\xE9s chez vous!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 54
+    m_Localized: Avec amour, Gardien de poste
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55
+    m_Localized: "H\xE9 trucs chauds ;)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56
+    m_Localized: "Une nouvelle saumerie a ouvert ses portes dans le reeftown voisin.
+      Tu veux aller voir \xE7a? Il para\xEEt que leurs nouveaux cornichons de mer
+      sont \xE0 tomber par terre. Et honn\xEAtement, si je devais mourir, je voudrais
+      que ce soit avec toi\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 57
+    m_Localized: Avec amour,Notre Facteur
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58
+    m_Localized: Tiens,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 59
+    m_Localized: "Tu l'as remarqu\xE9 aussi, non? Tous ces passagers\\\\n \\ npendant
+      les derni\xE8res semaines, j'ai vu beaucoup de cr\xE9atures portant des bandages.
+      Je pensais qu'ils se terminaient juste \xE0 cause du temps maussade, mais now...it
+      c'est tout simplement horrible. Comment est-ce arriv\xE9? Le corps des forces
+      de l'ordre doit enqu\xEAter l\xE0-dessus, n'est-ce pas?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 60
+    m_Localized: "Veuillez rester en s\xE9curit\xE9, Votre Facteur"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

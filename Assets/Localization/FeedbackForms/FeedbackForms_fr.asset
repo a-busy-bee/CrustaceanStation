@@ -1,0 +1,452 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: FeedbackForms_fr
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: fr
+  m_SharedData: {fileID: 11400000, guid: 5ec38919bd39245b98c3ec338c7f7f5e, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 1
+    m_Localized: tu suces
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2
+    m_Localized: "0 \xE9toiles m'a envoy\xE9 dans le mauvais train"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3
+    m_Localized: Tu devrais te raser
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4
+    m_Localized: "Tu \xE9tais mignonne aujourd'hui... appelez-moi si vous voulez
+      faire une pause dans les trains (800) 8135"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5
+    m_Localized: xoxo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6
+    m_Localized: "Portez-vous la m\xEAme chose tous les jours?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7
+    m_Localized: "0 \xE9toiles, m'a fait payer individuellement pour mes 20 milliards
+      d'enfants"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8
+    m_Localized: J'aimerais que tu fasses un peu plus que tamponner mon billet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9
+    m_Localized: "J'ai v\xE9rifi\xE9 ma photo trop longtemps"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10
+    m_Localized: Avez-vous des enfants?.. allez-vous adopter le mien...?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11
+    m_Localized: "Fausse publicit\xE9, vous n'\xEAtes pas aussi robuste qu'on le
+      dit"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12
+    m_Localized: "J'aime mes hommes plus \xE2g\xE9s ;)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13
+    m_Localized: "Tu veux investir dans mon c\xF4t\xE9 agitation? On pourrait gagner
+      beaucoup d'argent ensemble ;)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14
+    m_Localized: "Achetez ShellCoin maintenant et gagnez 110% au cours des 5 prochaines
+      ann\xE9es!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15
+    m_Localized: "Achetez ClawCoin maintenant et gagnez 68% au cours des 2 prochaines
+      ann\xE9es!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16
+    m_Localized: "Vous avez une dette impay\xE9e de 75 600$. Veuillez appeler le
+      (800) 5201 pour une r\xE9solution."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17
+    m_Localized: "Pourquoi as-tu rompu avec moi? Tu ne peux pas me faire \xE7a!!!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18
+    m_Localized: "service 0 \xE9toile, carte faciale 5 \xE9toiles cependant"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19
+    m_Localized: "look 0 \xE9toile, service 5 \xE9toiles cependant"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20
+    m_Localized: "Je suis venu voir le l\xE9gendaire manager chaud dont tout le monde
+      parle, mais tu n'es vraiment pas si impressionnant tbh"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21
+    m_Localized: "Je suis venu voir le l\xE9gendaire manager chaud dont tout le monde
+      parlait. Tu es enough assez d\xE9cent. Tu veux sortir?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22
+    m_Localized: "AHHHHHH JE N'ARRIVE PAS \xC0 CROIRE QUE J'AI RENCONTR\xC9 MON IDOLE
+      AUJOURD'HUI IL A M\xCAME POIN\xC7ONN\xC9 MON BILLET LUI-M\xCAME AAAAAAA"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23
+    m_Localized: "ne jamais rencontrer vos idoles bruh vous \xE9tiez si d\xE9cevant."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24
+    m_Localized: "Serait-ce bizarre si je disais que j'ai r\xEAv\xE9 de toi la nuit
+      derni\xE8re?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25
+    m_Localized: "oh savior mon sauveur, la vraie lumi\xE8re de ma vie\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26
+    m_Localized: "Le train que j'ai pris aujourd'hui avait des si\xE8ges vraiment
+      sales, peut-\xEAtre que vous pourriez tous embaucher d'autres nettoyeurs?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27
+    m_Localized: "La navette que j'ai prise aujourd'hui avait des vitres vraiment
+      sales, vous devriez tous nettoyer plus r\xE9guli\xE8rement?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28
+    m_Localized: "Excellent service, je roulerais \xE0 nouveau! : D"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29
+    m_Localized: "Service de restauration g\xE9nial, le billet de luxe valait vraiment
+      le prix!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30
+    m_Localized: "Les agents de train \xE9taient si serviables et gentils, ils ont
+      m\xEAme donn\xE9 une sucette gratuite \xE0 mon fils quand il a perdu la sienne!
+      Je ne les remercierai jamais assez!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31
+    m_Localized: "Super gentil et serviable! M'a aid\xE9 \xE0 trouver le bon train
+      quand j'\xE9tais perdu!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32
+    m_Localized: aide
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33
+    m_Localized: ils arrivent
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34
+    m_Localized: "Un jour, je te ferai payer le prix de ce que tu as fait \xE0 ma
+      famille."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 35
+    m_Localized: "b\xE2tonnets de poisson et rouleaux de homard"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36
+    m_Localized: "En tant que navetteur fr\xE9quent, c'est vraiment d\xE9cevant de
+      voir comment vous continuez \xE0 laisser des oiseaux dans le train. Je d\xE9poserai
+      une plainte aupr\xE8s de la soci\xE9t\xE9 si vous ne faites pas d'efforts pour
+      que le train soit plus s\xFBr pour nous."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37
+    m_Localized: "En tant que navetteur fr\xE9quent, c'est vraiment d\xE9cevant de
+      voir comment vous continuez \xE0 laisser des otaries monter dans le train.
+      Je d\xE9poserai une plainte aupr\xE8s de la soci\xE9t\xE9 si vous ne faites
+      pas d'efforts pour que le train soit plus s\xFBr pour nous."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38
+    m_Localized: "Je ne me sens plus en s\xE9curit\xE9 dans le train; j'ai juste
+      l'impression d'\xEAtre entour\xE9 de passagers qui veulent me manger\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39
+    m_Localized: "Il devrait y avoir un train r\xE9serv\xE9 aux crustac\xE9s"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40
+    m_Localized: Service terrible.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41
+    m_Localized: Sors tant que tu peux!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42
+    m_Localized: "\xC9loignez-vous de crustacean corp"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 43
+    m_Localized: Nous surveillons toujours
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44
+    m_Localized: "Arr\xEAtez la production de crustac\xE9s, arr\xEAtez de faire la
+      navette"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45
+    m_Localized: Si tu vois quelque chose, dis quelque chose.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 46
+    m_Localized: "Trop de non-crustac\xE9s dans mon train"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47
+    m_Localized: Tu avais l'air triste aujourd'hui
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48
+    m_Localized: "Votre famille n'est pas en s\xE9curit\xE9"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49
+    m_Localized: Je sais pour votre isopode.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 50
+    m_Localized: Tu devrais quitter la ville
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51
+    m_Localized: "j'ai mang\xE9 mon lolypop dans le train et il a disparu where o\xF9
+      est-il all\xE9 :("
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52
+    m_Localized: maman dit que Samuel est un retardataire, et urs est un oeilopode!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53
+    m_Localized: "maman a dit qu'elle devait prendre sameul chez le v\xE9t\xE9rinaire,
+      et de ne pas lui donner de sucettes sans mouflon. monsieur, ai-je bless\xE9
+      sameul? mais j'adore les sucettes\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 54
+    m_Localized: "maman est rentr\xE9e tard \xE0 la maison ag mais elle a achet\xE9
+      des foudres de sucettes! j'aime tellement ma m\xE8re"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55
+    m_Localized: "maman a dit que l'\xE9cole \xE9tait tr\xE8s importante, mais je
+      n'aime pas \xE7a! monsieur, dois-je aller \xE0 l'\xE9cole?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56
+    m_Localized: "5 \xE9toiles! Non, 6 \xE9toiles! 100 \xE9toiles! 1 milliard d'\xE9toiles!
+      \xC9toiles \xE0 l'infini!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 57
+    m_Localized: "monsieur, quand vous parlez de vous et de votre \u0153illeton,
+      \xE7a me rend si heureux. veux-tu me parler plus?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58
+    m_Localized: "Ne m'a pas laiss\xE9 apporter toutes mes plantes \xE0 bord. 0 \xE9toiles."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 59
+    m_Localized: Ils devraient rendre les trains plus respectueux des poissons.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 60
+    m_Localized: "Pas assez mouill\xE9 m\xEAme s'il a plu."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61
+    m_Localized: "Voici l'adresse de ma prochaine manifestation be soyez discret.
+      \\n1823 Sandy Shore Drive Bring Apportez du ruban adh\xE9sif."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62
+    m_Localized: "Gar\xE7on, je dois te remercier d'avoir \xE9cout\xE9 les divagations
+      de cette vieille \xE2me."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 63
+    m_Localized: "Voulez-vous entendre des histoires d'autrefois? Il est rare que
+      quelqu'un comme vous soit pr\xEAt \xE0 \xE9couter an un vieil imb\xE9cile."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 64
+    m_Localized: "Bien que ses compatriotes ne suivent plus le m\xEAme chemin, les
+      courants et le sol murmurent encore leurs voix, alors qu'ils s'appellent l'un
+      vers l'autre rive."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 65
+    m_Localized: "Dans les \xE2ges pass\xE9s, nous nagions \xE0 partir de griffes
+      qui sortaient de l'ab\xEEme et de gueules qui pouvaient nous avaler tout entiers.
+      Pourtant, il faut corriger ses mots. Ces griffes et ces m\xE2choires ont disparu
+      du monde tangible, mais elles vivent toujours dans nos c\u0153urs."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 66
+    m_Localized: "Sait - on faire un \u201Cwheelie malade\u201D? Of Bien s\xFBr,
+      on l'a fait une fois, on est juste un vieux con avec de l'arthrite maintenant
+      \xE7a va?!?!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 67
+    m_Localized: "Les scorpions de mer ont disparu, mais les compagnons les plus
+      proches aussi Coral Corail, Perle, Finlandais, o\xF9 \xEAtes - vous tous maintenant?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 68
+    m_Localized: "Au moment o\xF9 on a trouv\xE9 la grotte des scorpions, il ne restait
+      plus que leurs exosquelettes. Si on ne les avait pas abandonn\xE9s ce jour-l\xE0
+      maybe peut-\xEAtre qu'on ne serait pas si seul en ce moment."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 69
+    m_Localized: "On croit personnellement que ces r\xE9cifs corporatifs froids ne
+      sont pas si diff\xE9rents de ces grottes de scorpions. C'est juste qu'un pr\xE9dateur
+      diff\xE9rent se cache dans l'ombre\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 70
+    m_Localized: "On aurait d\xFB sauter l'entra\xEEnement plus souvent et regarder
+      leurs performances. Jeune gar\xE7on, ne g\xE2che pas ta vie dans ce kiosque,
+      surtout pour un pouvoir ingrat."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 71
+    m_Localized: "Mes souvenirs Pearl Pearl dansait en parall\xE8le sur l'atoll voisin,
+      et Coral jouait des tubes dans la symphonie de la mer. Le combat griffe contre
+      griffe de Finn \xE9tait incontest\xE9 but mais lui et ses peintures sur sable
+      \xE9taient plus belles. Assurez-vous de ch\xE9rir ceux que vous aimez."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72
+    m_Localized: "Jeune gar\xE7on, ne pleure pas pour moi. C'\xE9tait un destin destin\xE9
+      depuis longtemps que j'avais fui depuis trop longtemps. Puisque vous avez entendu
+      les confessions de ce p\xE9cheur, vous savez que je dois expier mes p\xE9ch\xE9s."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73
+    m_Localized: "Je me suis r\xE9veill\xE9 d'un beau r\xEAve ce matin. Il n'y avait
+      pas de coraux blanchis, mais de vieux r\xE9cifs et des visages familiers m'appelaient.
+      Par cons\xE9quent, je partirai pour l'autre rive."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 74
+    m_Localized: "Gentil gars, mais refuse d'acheter des n\u0153uds assortis avec
+      moi"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 75
+    m_Localized: "Le train \xE9tait trop bruyant, je ne pouvais pas lire."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 76
+    m_Localized: "Ne m'a pas dit que ma voix \xE9tait trop calme, ce qui \xE9tait
+      g\xE9nial"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 77
+    m_Localized: "G\xE9nial gamin, \xE7a me rappelle beaucoup mes propres enfants!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 78
+    m_Localized: "Bien habill\xE9, bonnes mani\xE8res, travailleur... j'esp\xE8re
+      que mes enfants deviendront quelqu'un comme toi quand ils seront grands"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 79
+    m_Localized: "Excellent service, juste the les prix des billets sont un peu \xE9lev\xE9s.
+      Vous ne pensez pas que vous pourriez mettre un mot avec la direction pour que
+      ces billets soient un peu moins chers?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80
+    m_Localized: "Honn\xEAtement, mon mari ne cesse de vous mentionner comme un bon
+      enfant chaque fois qu'il rentre \xE0 la maison. Tu penses que tu pourrais lui
+      donner un petit indice pour ramener moins de fleurs? J'aime vraiment son grand
+      c\u0153ur stupide, mais il n'y a plus de place \xE0 la maison!!!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 81
+    m_Localized: "Que diriez-vous de celui - ci how comment les algues r\xE9pondent-elles
+      au t\xE9l\xE9phone? \"Bonjour, comment puis-je vous varecher?\"Haha! C'est
+      dr\xF4le, non? (donnez-moi une note de 5 \xE9toiles sur cette blague et je
+      vous donnerai une note de 5 \xE9toiles sur la plateforme de service client"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 82
+    m_Localized: Quand tu verras gramps ensuite, peux-tu t'assurer de lui donner
+      une bonne place?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83
+    m_Localized: "\xC9coute, mais ne r\xE9pond jamais \xE0 mes questions. Pourrait
+      \xEAtre plus poli."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 84
+    m_Localized: "Tr\xE8s beau, mais ne sortira pas avec ma petite-fille."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 85
+    m_Localized: "Porte la m\xEAme chose tous les jours, devrait obtenir de nouveaux
+      v\xEAtements."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 86
+    m_Localized: "Pourrait utiliser un nouveau mouchoir de poche, a l'air un peu
+      poussi\xE9reux."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 87
+    m_Localized: "Bonne poign\xE9e de main ferme, beau jeune homme."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88
+    m_Localized: "Il m'\xE9coute toujours. J'adore ce type."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 89
+    m_Localized: "Si jamais vous avez besoin d'une sagesse particuli\xE8re, voici
+      mon num\xE9ro. J'en ai beaucoup. 921-8564"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

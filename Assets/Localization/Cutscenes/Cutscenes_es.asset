@@ -1,0 +1,107 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Cutscenes_es
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: es
+  m_SharedData: {fileID: 11400000, guid: 27d27c941ae954bca9c332f83fb1746a, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 1
+    m_Localized: Adoptar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2
+    m_Localized: "Liberaci\xF3n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3
+    m_Localized: "Certificado de Adopci\xF3n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4
+    m_Localized: "Nombre del Is\xF3podo"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5
+    m_Localized: "Cumplea\xF1os"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6
+    m_Localized: "\xA1Gracias por jugar!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7
+    m_Localized: Haga clic para continuar...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8
+    m_Localized: Ingrese el nombre...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9
+    m_Localized: Enero
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10
+    m_Localized: Febrero
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11
+    m_Localized: Marzo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12
+    m_Localized: Abril
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13
+    m_Localized: Mayo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14
+    m_Localized: Junio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15
+    m_Localized: Julio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16
+    m_Localized: Agosto
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17
+    m_Localized: Septiembre
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18
+    m_Localized: Octubre
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19
+    m_Localized: Noviembre
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20
+    m_Localized: Diciembre
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21
+    m_Localized: "\xA1Elige un is\xF3podo!"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

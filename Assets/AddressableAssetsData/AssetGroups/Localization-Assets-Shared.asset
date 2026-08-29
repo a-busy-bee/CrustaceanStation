@@ -14,7 +14,67 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
   m_GroupName: Localization-Assets-Shared
   m_GUID: 0f0a8147e72844202a73fdf029901f5f
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 25e982df099754116b3863808eae6c55
+    m_Address: Assets/Localization/Dialogue/Dialogue Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 27d27c941ae954bca9c332f83fb1746a
+    m_Address: Assets/Localization/Cutscenes/Cutscenes Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3c5e32324664d4ba3b67f0930a40faad
+    m_Address: Assets/Localization/Credits/Credits Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 44da958ea56854660a88a49c88970c8b
+    m_Address: Assets/Localization/Tutorial/Tutorial Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 490755d025cf9474bbd6d42c4b4b1516
+    m_Address: Assets/Localization/Letters/Letters Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4b7f2ee6aa4d84aeabc3ea6646ba35e8
+    m_Address: Assets/Localization/Names/Names Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5c28477a140fa45dbbbc33824da31b05
+    m_Address: Assets/Localization/Summary/Summary Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5ec38919bd39245b98c3ec338c7f7f5e
+    m_Address: Assets/Localization/FeedbackForms/FeedbackForms Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 653da702ad6d444a7856c166859f1f15
+    m_Address: Assets/Localization/Misc/Misc Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 68967bb71aafa4e878d8e94cfc34e218
+    m_Address: Assets/Localization/TitleScreen/TitleScreen Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8c410724b70454c4fa428d0a22c3f0e9
+    m_Address: Assets/Localization/UI/UI Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cb6b811ec48994e63ac1d53100b2badf
+    m_Address: Assets/Localization/Headlines/Headlines Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 68f053f7e443b4f2383ac9aa604bb6bd, type: 2}
   m_SchemaSet:

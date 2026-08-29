@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: UI_de
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: de
+  m_SharedData: {fileID: 11400000, guid: 8c410724b70454c4fa428d0a22c3f0e9, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 1
+    m_Localized: Vorherigen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2
+    m_Localized: Weiterhin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3
+    m_Localized: Einstellungen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4
+    m_Localized: "Hauptmen\xFC"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5
+    m_Localized: Weiterhin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6
+    m_Localized: Pausieren
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7
+    m_Localized: Gesamtvolumen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8
+    m_Localized: Musik
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9
+    m_Localized: SFX
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10
+    m_Localized: Sprachlich
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11
+    m_Localized: "Spiel Zur\xFCcksetzen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12
+    m_Localized: Bist du dir sicher?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13
+    m_Localized: Stornieren
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14
+    m_Localized: "L\xF6schen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15
+    m_Localized: "Gel\xF6schte Spielst\xE4nde k\xF6nnen nicht wiederhergestellt werden."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16
+    m_Localized: Neustart
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17
+    m_Localized: Ja
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18
+    m_Localized: Nein
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19
+    m_Localized: "Bildschirmaufl\xF6sung"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20
+    m_Localized: Vollbildmodus umschalten
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21
+    m_Localized: An
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22
+    m_Localized: Aus
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

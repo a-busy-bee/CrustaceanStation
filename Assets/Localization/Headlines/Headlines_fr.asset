@@ -1,0 +1,117 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Headlines_fr
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: fr
+  m_SharedData: {fileID: 11400000, guid: cb6b811ec48994e63ac1d53100b2badf, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 1
+    m_Localized: "De Quoi une Entreprise De Biotechnologie A-T-Elle M\xEAme Besoin
+      Avec une Gare?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2
+    m_Localized: "Derni\xE8res nouvelles: Le s\xE9nateur Fishman Accus\xE9 de d\xE9lit
+      d'initi\xE9!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3
+    m_Localized: "Quel est le Secret Pour Rester Si Jeune et en bonne sant\xE9? Krusty
+      Kaleb R\xE9v\xE8le Tout\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4
+    m_Localized: "Un enfant Retrouv\xE9 Mort \xE0 l'ext\xE9rieur du laboratoire de
+      Crustacean Corporation Semble Avoir \xE9t\xE9 Mang\xE9 par un Pr\xE9dateur"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5
+    m_Localized: "Opinion: La Corporation des Crustac\xE9s Doit \xEAtre Arr\xEAt\xE9e"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6
+    m_Localized: "Opinion: Crustacean Corporation Pourrait \xCAtre la Derni\xE8re
+      Entreprise \xC9thique Restante"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7
+    m_Localized: "Le Nombre record de Cas de Cr\xE9atures disparues de ce mois-ci\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8
+    m_Localized: "Les Crustac\xE9s Sont la Forme Finale de Toute Vie Marine"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9
+    m_Localized: "La Nouvelle Tendance en Vogue Consiste-t-elle \xE0 Coller des Griffes
+      sur Votre Corps?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10
+    m_Localized: "Un d\xE9nonciateur rend compte de la nouvelle recherche r\xE9volutionnaire
+      de Crustacean Corporation"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11
+    m_Localized: "La Croissance des Griffes est un ph\xE9nom\xE8ne Tout \xE0 fait
+      Normal"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12
+    m_Localized: "L'orange est consid\xE9r\xE9 comme la Meilleure Mutation de couleur
+      de Tous les Temps"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13
+    m_Localized: Tout le monde Court.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14
+    m_Localized: "D\xE9barrassez-vous de Vos Anciens Exosquelettes et Adoptez la
+      carcinisation."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15
+    m_Localized: "Le Nouveau Monde des Crustac\xE9s et des Crustac\xE9s Ressemblant
+      \xE0 des Crustac\xE9s."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16
+    m_Localized: La Joie du Crabe Ravit Tous les jours.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17
+    m_Localized: "L'\xE9volution s'est produite pour une raison, les gens!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18
+    m_Localized: "Un Lanceur D'alerte A En Fait Rapport\xE9 Les Exp\xE9riences Choquantes
+      De Crustacean Corporation"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19
+    m_Localized: "Une plong\xE9e profonde dans les Id\xE9aux corrompus de Crustacean
+      Corporation"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20
+    m_Localized: "Les Dix Principales Choses Que Vous Pouvez Faire pour Soutenir
+      le Mouvement Anti-Cro\xFBte"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

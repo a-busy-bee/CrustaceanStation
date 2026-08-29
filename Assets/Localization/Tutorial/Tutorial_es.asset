@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Tutorial_es
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: es
+  m_SharedData: {fileID: 11400000, guid: 44da958ea56854660a88a49c88970c8b, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 1
+    m_Localized: Saltar Tutorial
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2
+    m_Localized: "\xA1Mira, un posible pasajero!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3
+    m_Localized: "Primero, inspeccione su identificaci\xF3n para verificar si su
+      foto es correcta..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4
+    m_Localized: "y que el nombre en la identificaci\xF3n coincida con el nombre
+      en el boleto..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5
+    m_Localized: "Para finalizar el procesamiento, presione el bot\xF3n verde."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6
+    m_Localized: "Cangrejo-tastic! Este pasajero tiene un billete de tren de clase
+      econ\xF3mica. Seleccione el carrito econ\xF3mico."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7
+    m_Localized: Atendemos a todo tipo de pasajeros. Tenga especial cuidado al asignar
+      pasajeros a sus asientos.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8
+    m_Localized: Cuando el tren se llena, puedes enviarlo con este interruptor.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9
+    m_Localized: "\xA1Ahora intente procesar algunos usted mismo!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10
+    m_Localized: "\xA1Felicidades por aprender lo b\xE1sico!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11
+    m_Localized: (Haga clic en cualquier lugar para continuar)
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
