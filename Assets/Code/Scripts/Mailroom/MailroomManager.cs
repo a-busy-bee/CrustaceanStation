@@ -17,6 +17,8 @@ public class MailroomManager : MonoBehaviour
     [SerializeField] private GameObject letter;
     [SerializeField] private GameObject feedbackForm;
     [SerializeField] private TextMeshProUGUI feedbackFormName;
+    [SerializeField] private Image feedbackFormSpecialTag;
+    [SerializeField] private Sprite[] specialTags;
     [SerializeField] private GameObject largeNote;
     [SerializeField] private GameObject smallNote;
     private GameObject[] notes;
@@ -89,7 +91,7 @@ public class MailroomManager : MonoBehaviour
         backgroundOverlay.SetActive(false);
 
         LoadJSON();
-        plotData.inbox.OrderBy(m => m.timestamp).ToList();
+        plotData.inbox = plotData.inbox.OrderBy(m => m.timestamp).ToList();
         mailbox.SetSprite(plotData.inbox.Count);
     }
 
@@ -167,7 +169,7 @@ public class MailroomManager : MonoBehaviour
 
         // save list w/o the topmost letter
         plotData.inbox.RemoveAt(0);
-        File.WriteAllText(savePath, JsonUtility.ToJson(plotData, true));
+        PlotManager.instance.UpdatePlotData(plotData);   
 
         // figure out what letter type to show
         // set that object active
@@ -259,6 +261,7 @@ public class MailroomManager : MonoBehaviour
         else if (inboxItem.type == "feedbackForm")
         {
             feedbackForm.SetActive(true);
+            feedbackFormSpecialTag.gameObject.SetActive(false);
             string text;
 
             if (inboxItem.subType == "generic")
@@ -268,6 +271,7 @@ public class MailroomManager : MonoBehaviour
             }
             else
             {
+                feedbackFormSpecialTag.gameObject.SetActive(true);
                 Special special = Special.itty;
                 switch (inboxItem.subType)
                 {
@@ -294,6 +298,7 @@ public class MailroomManager : MonoBehaviour
                         break;
                 }
 
+                feedbackFormSpecialTag.sprite = specialTags[(int)special];
                 text = GetComponent<FeedbackManager>().GetCharacterFeedback(special, inboxItem.id);
                 feedbackFormName.text = Constants.instance.specialEnumToStringName[special];
             }

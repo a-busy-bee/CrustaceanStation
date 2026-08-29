@@ -32,7 +32,6 @@ public class VetManager : MonoBehaviour
 	private void Start()
     {
         currDay = SaveManager.instance.GetProgression_CurrDay();
-        currDay = 5;
         
         if (currDay / 5 == 1) CutscenePlayer_Dialogue.instance.SetDialogueType(CutscenePlayer_Dialogue.DialogueType.vet1);
         else if (currDay / 5 == 2) CutscenePlayer_Dialogue.instance.SetDialogueType(CutscenePlayer_Dialogue.DialogueType.vet2);

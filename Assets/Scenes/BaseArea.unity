@@ -2488,8 +2488,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 28.26712, y: 0.000024795532}
-  m_SizeDelta: {x: 1052.9, y: 1342.27}
+  m_AnchoredPosition: {x: 120.61, y: 0.000024795532}
+  m_SizeDelta: {x: 1239.3823, y: 1342.27}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &163693170
 MonoBehaviour:
@@ -9594,7 +9594,7 @@ MonoBehaviour:
   ticketParentObject: {fileID: 1931240438}
   approveButton: {fileID: 534969239}
   rejectButton: {fileID: 1416969083}
-  debugMode: 1
+  debugMode: 0
   charactersToForce: []
 --- !u!1 &730704855
 GameObject:
