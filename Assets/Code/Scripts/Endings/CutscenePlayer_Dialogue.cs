@@ -63,7 +63,11 @@ public class CutscenePlayer_Dialogue : MonoBehaviour
             instance = this;
         }
 
-        for (int i = 0; i < scenes.Length; i++)
+    }
+
+	private void Start()
+	{
+		for (int i = 0; i < scenes.Length; i++)
         {
             scenes[i].SetActive(false);
         }
@@ -78,9 +82,9 @@ public class CutscenePlayer_Dialogue : MonoBehaviour
         {
             StartCoroutine(WaitThenContinueNextScene());
         }
-    }
+	}
 
-    public void SetDialogueType(DialogueType newType)
+	public void SetDialogueType(DialogueType newType)
     {
         dialogueType = newType;
         StartCoroutine(WaitThenContinueNextScene());
