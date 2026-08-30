@@ -188,66 +188,49 @@ public class MailroomManager : MonoBehaviour
             string bottom = "";
             letterImage.sprite = letterSprites[0];
 
+            FullStackLetter fullStackLetter = null;
+
             switch (inboxItem.subType)
             {
                 case "crustyCoDay":
-                    FullStackLetter letterByDay = lettersManager.GetCrustyCoLetterByDay(inboxItem.id);
-                    body = letterByDay.body;
-                    top = letterByDay.top;
-                    bottom = letterByDay.bottom;
-
+                    fullStackLetter = lettersManager.GetCrustyCoLetterByDay(inboxItem.id);
                     letterImage.sprite = letterSprites[0];
 
                     isCurrentlyCrustyLetter = true;
                     break;
                 case "crustyCoDay_GoodEnding":
-                    letterByDay = lettersManager.GetCrustyCoLetterByDay(inboxItem.id, true, true);
-                    body = letterByDay.body;
-                    top = letterByDay.top;
-                    bottom = letterByDay.bottom;
-
+                    fullStackLetter = lettersManager.GetCrustyCoLetterByDay(inboxItem.id, true, true);
                     letterImage.sprite = letterSprites[0];
+
                     isCurrentlyCrustyLetter = true;
                     break;
                 case "crustyCoDay_BadEnding":
-                    letterByDay = lettersManager.GetCrustyCoLetterByDay(inboxItem.id, true, false);
-                    body = letterByDay.body;
-                    top = letterByDay.top;
-                    bottom = letterByDay.bottom;
-
+                    fullStackLetter = lettersManager.GetCrustyCoLetterByDay(inboxItem.id, true, false);
                     letterImage.sprite = letterSprites[0];
+
                     isCurrentlyCrustyLetter = true;
                     break;
                 case "crustyCoID":
-                    FullStackLetter letterByID = lettersManager.GetCrustyCoLetterByID(inboxItem.id);
-                    body = letterByID.body;
-                    top = letterByID.top;
-                    bottom = letterByID.bottom;
-
+                    fullStackLetter = lettersManager.GetCrustyCoLetterByID(inboxItem.id);
                     letterImage.sprite = letterSprites[0];
+
                     isCurrentlyCrustyLetter = true;
                     break;
- 
+
                 case "family":
-                    FullStackLetter fullStackLetter = lettersManager.GetFamilyLetter(inboxItem.id);
-
-                    body = fullStackLetter.body;
-                    top = fullStackLetter.top;
-                    bottom = fullStackLetter.bottom;
-
+                    fullStackLetter = lettersManager.GetFamilyLetter(inboxItem.id);
                     letterImage.sprite = letterSprites[1];
                     break;
 
                 case "mailkeeper":
                     fullStackLetter = lettersManager.GetMailkeeperLetter(inboxItem.id);
-
-                    body = fullStackLetter.body;
-                    top = fullStackLetter.top;
-                    bottom = fullStackLetter.bottom;
-
                     letterImage.sprite = letterSprites[1];
                     break;
             }
+
+            body = fullStackLetter.body;
+            top = fullStackLetter.top;
+            bottom = fullStackLetter.bottom;
 
             letter.GetComponent<RectTransform>().GetChild(0).GetComponent<TextMeshProUGUI>().text = body;
             letter.GetComponent<RectTransform>().GetChild(1).GetComponent<TextMeshProUGUI>().text = top;

@@ -50,7 +50,8 @@ public class LettersManager : MonoBehaviour
         firstRed,
         secondRed,
         day3NoEaten,
-        day3Eaten
+        day3Eaten,
+        pretutorial
     }
 
     private void Start()

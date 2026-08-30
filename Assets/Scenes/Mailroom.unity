@@ -2965,6 +2965,11 @@ MonoBehaviour:
     is excited to assist you in restoring this station to its former glory.\n\nWe
     have partnered with the station to start a new shuttle route that exclusively
     transports Crustacean Corporation\u2019s guests and employees to the worksites.
+    Shuttle passengers will present their exclusive shuttle tickets when arriving.
+    \n\nCongratulations on making it through your first day! Crustacean Corporation
+    is excited to assist you in restoring this station to its former glory.\n\nWe
+    have partnered with the station to start a new shuttle route that exclusively
+    transports Crustacean Corporation\u2019s guests and employees to the worksites.
     Shuttle passengers will present their exclusive shuttle tickets when arriving. "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d8a88f3c2685e4ef1951ddfc9bf574dd, type: 2}
@@ -2992,7 +2997,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
+  m_fontSize: 28
   m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3031,7 +3036,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: -320.23798}
+  m_margin: {x: 0, y: 31.901672, z: 0, w: -285.26874}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -6040,8 +6045,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 13.518, y: 0}
-  m_SizeDelta: {x: 808.47, y: 211.898}
+  m_AnchoredPosition: {x: 11.184998, y: -22.3973}
+  m_SizeDelta: {x: 865.3965, y: 256.6925}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1808016986
 MonoBehaviour:
@@ -6063,8 +6068,19 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Put a stop to crustacean-ification, stop shuttling, if you see something
-    say something
+  m_text: "\u041C\u043E\u0438 \u0432\u043E\u0441\u043F\u043E\u043C\u0438\u043D\u0430\u043D\u0438\u044F\u2026
+    \u041F\u0451\u0440\u043B \u043F\u043E\u0434\u0440\u0430\u0431\u0430\u0442\u044B\u0432\u0430\u043B\u0430
+    \u0442\u0430\u043D\u0446\u0430\u043C\u0438 \u043D\u0430 \u0441\u043E\u0441\u0435\u0434\u043D\u0435\u043C
+    \u0430\u0442\u043E\u043B\u043B\u0435, \u0430 \u041A\u043E\u0440\u0430\u043B \u0438\u0433\u0440\u0430\u043B\u0430
+    \u043D\u0430 \u0442\u0440\u0443\u0431\u0430\u0445 \u0432 \u043C\u043E\u0440\u0441\u043A\u043E\u043C
+    \u0441\u0438\u043C\u0444\u043E\u043D\u0438\u0447\u0435\u0441\u043A\u043E\u043C
+    \u043E\u0440\u043A\u0435\u0441\u0442\u0440\u0435. \u0424\u0438\u043D\u043D\u0443
+    \u043D\u0435 \u0431\u044B\u043B\u043E \u0440\u0430\u0432\u043D\u044B\u0445 \u0432
+    \u0431\u043E\u044E \u043A\u043B\u0435\u0448\u043D\u044F \u043A \u043A\u043B\u0435\u0448\u043D\u0435\u2026
+    \u043D\u043E \u043E\u043D \u0438 \u0435\u0433\u043E \u043A\u0430\u0440\u0442\u0438\u043D\u044B
+    \u043D\u0430 \u043F\u0435\u0441\u043A\u0435 \u0431\u044B\u043B\u0438 \u0435\u0449\u0451
+    \u043F\u0440\u0435\u043A\u0440\u0430\u0441\u043D\u0435\u0435. \u0411\u0435\u0440\u0435\u0433\u0438
+    \u0442\u0435\u0445, \u043A\u043E\u0433\u043E \u043B\u044E\u0431\u0438\u0448\u044C."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 810688fb9806246dc9e032533b42ba12, type: 2}
   m_sharedMaterial: {fileID: 5319759042648124347, guid: 810688fb9806246dc9e032533b42ba12, type: 2}
@@ -6091,10 +6107,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
+  m_fontSize: 37.15
   m_fontSizeBase: 50
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -6104,7 +6120,7 @@ MonoBehaviour:
   m_characterSpacing: 0
   m_characterHorizontalScale: 1
   m_wordSpacing: 0
-  m_lineSpacing: 64.2
+  m_lineSpacing: 14.81
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
