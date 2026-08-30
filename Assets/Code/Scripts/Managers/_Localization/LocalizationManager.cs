@@ -19,7 +19,7 @@ public class LocalizationManager : MonoBehaviour
         Names,
         Summary,
         Tutorial,
-        UI
+        UI // TODO: make sure localization tables have the same name as these enums
     }
     private void Awake()
     {
@@ -34,9 +34,9 @@ public class LocalizationManager : MonoBehaviour
         }
     }
 
-    /*public string GetTextByStringKey(Table table, string key)
+    public string GetTextByStringKey(Table table, string key)
     {
         return LocalizationSettings.StringDatabase.GetLocalizedString(table.ToString() + "_Strings", key);
-    }*/ 
+    } 
 }
 

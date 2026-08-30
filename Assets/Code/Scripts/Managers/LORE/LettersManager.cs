@@ -45,6 +45,13 @@ public class LettersManager : MonoBehaviour
 {
     private LetterData letterData;
 
+    public enum IDToKey
+    {
+        firstRed,
+        secondRed,
+        day3NoEaten,
+        day3Eaten
+    }
 
     private void Start()
     {
@@ -67,38 +74,74 @@ public class LettersManager : MonoBehaviour
         }
     }
 
-    public FullStackLetterByDay GetCrustyCoLetterByDay(int day, bool isEndingDependent = false, bool isGoodEnding = false)
+    public FullStackLetter GetCrustyCoLetterByDay(int day, bool isEndingDependent = false, bool isGoodEnding = false)
     {
+        // if (isEndingDependent)
+        // {
+        //     int idx = Constants.instance.LETTER_dayToIdxCrustyCoEndings[day];
+
+        //     if (isGoodEnding)
+        //     {
+        //         return letterData.letterNodesCrustyCoByDay_GoodEnding[idx];
+        //     }
+        //     else
+        //     {
+        //         return letterData.letterNodesCrustyCoByDay_BadEnding[idx];
+        //     }
+        // }
+
+        // int regIdx = Constants.instance.LETTER_dayToIdxCrustyCo[day];
+        // return letterData.letterNodesCrustyCoByDay[regIdx];
+
+        string prefix = "letter_crustyco";
+
         if (isEndingDependent)
         {
-            int idx = Constants.instance.LETTER_dayToIdxCrustyCoEndings[day];
-
             if (isGoodEnding)
             {
-                return letterData.letterNodesCrustyCoByDay_GoodEnding[idx];
+                prefix += "Good_day_" + day;
+                return GetFullStackLetter(prefix);
             }
             else
             {
-                return letterData.letterNodesCrustyCoByDay_BadEnding[idx];
+                prefix += "Bad_day_" + day;
+                return GetFullStackLetter(prefix);
             }
         }
 
-        int regIdx = Constants.instance.LETTER_dayToIdxCrustyCo[day];
-        return letterData.letterNodesCrustyCoByDay[regIdx];
+        prefix += "_day_" + day;
+        return GetFullStackLetter(prefix);
     }
 
-    public FullStackLetterByID GetCrustyCoLetterByID(int id)
+    public FullStackLetter GetCrustyCoLetterByID(int id)
     {
-        return letterData.letterNodesCrustyCoByID[id];
+        string key = "letter_crustyco_id_" + (IDToKey)id;
+        return GetFullStackLetter(key);
     }
 
     public FullStackLetter GetFamilyLetter(int day)
     {
-        return letterData.letterNodesFamily[Constants.instance.LETTER_dayToIdxFamily[day]];
+        int idx = Constants.instance.LETTER_dayToIdxFamily[day];
+        string prefix = "letter_family_" + idx;
+
+        return GetFullStackLetter(prefix);
     }
 
     public FullStackLetter GetMailkeeperLetter(int day)
     {
-        return letterData.letterNodesMailkeeper[Constants.instance.LETTER_dayToIdxMailkeeper[day]];
+        int idx = Constants.instance.LETTER_dayToIdxMailkeeper[day];
+        string prefix = "letter_mailkeeper_" + idx;
+
+        return GetFullStackLetter(prefix);
+    }
+
+    private FullStackLetter GetFullStackLetter(string prefix)
+    {
+        FullStackLetter fullStackLetter = new FullStackLetter();
+        fullStackLetter.top = LocalizationManager.instance.GetTextByStringKey(LocalizationManager.Table.Letter, prefix + "_top");
+        fullStackLetter.body = LocalizationManager.instance.GetTextByStringKey(LocalizationManager.Table.Letter, prefix + "_body");
+        fullStackLetter.bottom = LocalizationManager.instance.GetTextByStringKey(LocalizationManager.Table.Letter, prefix + "_bottom");
+
+        return fullStackLetter;
     }
 }
