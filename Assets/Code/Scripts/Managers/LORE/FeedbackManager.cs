@@ -52,7 +52,7 @@ public class FeedbackManager : MonoBehaviour
     {
         int rand = UnityEngine.Random.Range(0, feedbackData.nodesGeneric.Length);
 
-        return LocalizationManager.instance.GetTextByStringKey(LocalizationManager.Table.Feedback, "feedback_nodesGeneric_" + rand);
+        return LocalizationManager.instance.GetTextByStringKey(LocalizationManager.Table.FeedbackForms, "feedback_nodesGeneric_" + rand);
     }
 
     public string GetCharacterFeedback(Special special, int day)
@@ -98,7 +98,7 @@ public class FeedbackManager : MonoBehaviour
                 //return feedbackData.gramps[constants.FEEDBACK_characterToDayToIdx[special][day]];
         }
 
-        return LocalizationManager.instance.GetTextByStringKey(LocalizationManager.Table.Feedback, prefix + idx);
+        return LocalizationManager.instance.GetTextByStringKey(LocalizationManager.Table.FeedbackForms, prefix + idx);
 
     }
         

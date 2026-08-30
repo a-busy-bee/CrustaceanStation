@@ -12,14 +12,14 @@ public class LocalizationManager : MonoBehaviour
         Credits,
         Cutscene,
         Dialogue,
-        Feedback,
+        FeedbackForms,
         Headlines,
-        Letter,
+        Letters,
         Misc,
         Names,
         Summary,
         Tutorial,
-        UI // TODO: make sure localization tables have the same name as these enums
+        UI
     }
     private void Awake()
     {
@@ -36,7 +36,7 @@ public class LocalizationManager : MonoBehaviour
 
     public string GetTextByStringKey(Table table, string key)
     {
-        return LocalizationSettings.StringDatabase.GetLocalizedString(table.ToString() + "_Strings", key);
+        return LocalizationSettings.StringDatabase.GetLocalizedString(table.ToString(), key);
     } 
 }
 

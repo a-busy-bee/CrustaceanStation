@@ -138,9 +138,9 @@ public class LettersManager : MonoBehaviour
     private FullStackLetter GetFullStackLetter(string prefix)
     {
         FullStackLetter fullStackLetter = new FullStackLetter();
-        fullStackLetter.top = LocalizationManager.instance.GetTextByStringKey(LocalizationManager.Table.Letter, prefix + "_top");
-        fullStackLetter.body = LocalizationManager.instance.GetTextByStringKey(LocalizationManager.Table.Letter, prefix + "_body");
-        fullStackLetter.bottom = LocalizationManager.instance.GetTextByStringKey(LocalizationManager.Table.Letter, prefix + "_bottom");
+        fullStackLetter.top = LocalizationManager.instance.GetTextByStringKey(LocalizationManager.Table.Letters, prefix + "_top");
+        fullStackLetter.body = LocalizationManager.instance.GetTextByStringKey(LocalizationManager.Table.Letters, prefix + "_body");
+        fullStackLetter.bottom = LocalizationManager.instance.GetTextByStringKey(LocalizationManager.Table.Letters, prefix + "_bottom");
 
         return fullStackLetter;
     }
