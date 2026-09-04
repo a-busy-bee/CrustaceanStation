@@ -5,8 +5,10 @@ using System.Text;
 public class CrabNameGenerator : MonoBehaviour
 {
     public static CrabNameGenerator instance { get; private set; }
-    private Dictionary<CrabInfo.CrabType, List<string>> nameDictionary; // species-specific names (ie Crabstopher)
-    private List<string> general = new List<string>(); // general names (ie Max)
+    private Dictionary<CrabInfo.CrabType, List<int>> nameDictionary; // species-specific names (ie Crabstopher)
+    private List<int> general = new List<int>(); // general names (ie Max)
+    private int nameIdxCounter = 0;
+
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -17,7 +19,7 @@ public class CrabNameGenerator : MonoBehaviour
 
         instance = this;
 
-        nameDictionary = new Dictionary<CrabInfo.CrabType, List<string>>();
+        nameDictionary = new Dictionary<CrabInfo.CrabType, List<int>>();
 
         LoadNameFile();
     }
@@ -28,17 +30,18 @@ public class CrabNameGenerator : MonoBehaviour
         if (nameDictionary.ContainsKey(type) && Random.Range(0, 3) <= 1)
         {
             var list = nameDictionary[type];
-            int idx = Random.Range(0, list.Count);
-            return list[idx];
+            int idx = list[Random.Range(0, list.Count)];
+            return LocalizationManager.instance.GetTextByStringKey(LocalizationManager.Table.Names, "names_" + idx);
         }
 
         // fallback
-        return general[Random.Range(0, general.Count)];
+        return GetAnyName();
     }
 
     public string GetAnyName()
     {
-        return general[Random.Range(0, general.Count)];
+        int idx = general[Random.Range(0, general.Count)];
+        return LocalizationManager.instance.GetTextByStringKey(LocalizationManager.Table.Names, "names_" + idx);
     }
 
     private void LoadNameFile()
@@ -64,7 +67,6 @@ public class CrabNameGenerator : MonoBehaviour
 
             if (fields.Count < 2) continue;
 
-            string name = fields[0];
             List<string> speciesList = ParseCsvLine(fields[1]);
 
             foreach (string rawSpecies in speciesList)
@@ -74,7 +76,7 @@ public class CrabNameGenerator : MonoBehaviour
                 // fallback list
                 if (species.Equals("Generic", System.StringComparison.OrdinalIgnoreCase))
                 {
-                    general.Add(name);
+                    general.Add(nameIdxCounter);
                     continue;
                 }
 
@@ -83,10 +85,10 @@ public class CrabNameGenerator : MonoBehaviour
                 {
                     if (!nameDictionary.ContainsKey(crabType))
                     {
-                        nameDictionary[crabType] = new List<string>();
+                        nameDictionary[crabType] = new List<int>();
                     }
 
-                    nameDictionary[crabType].Add(name);
+                    nameDictionary[crabType].Add(nameIdxCounter);
                 }
                 else
                 {
@@ -94,6 +96,8 @@ public class CrabNameGenerator : MonoBehaviour
                         $"Unknown CrabType '{species}' for name '{name}'");
                 }
             }
+
+            nameIdxCounter++;
         }
     }
     private List<string> ParseCsvLine(string line)

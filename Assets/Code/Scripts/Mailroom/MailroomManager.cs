@@ -283,7 +283,7 @@ public class MailroomManager : MonoBehaviour
 
                 feedbackFormSpecialTag.sprite = specialTags[(int)special];
                 text = GetComponent<FeedbackManager>().GetCharacterFeedback(special, inboxItem.id);
-                feedbackFormName.text = Constants.instance.specialEnumToStringName[special];
+                feedbackFormName.text = LocalizationManager.instance.GetTextByStringKey(LocalizationManager.Table.Cutscenes, "special_" + inboxItem.subType);
             }
             feedbackForm.GetComponent<RectTransform>().GetChild(0).GetComponent<TextMeshProUGUI>().text = text;
 

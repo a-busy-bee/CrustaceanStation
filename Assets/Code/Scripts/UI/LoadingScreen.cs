@@ -51,7 +51,7 @@ public class LoadingScreen : MonoBehaviour
     {
         sliderParent.SetActive(true);
         slider.value = 0;
-        tooltipText.text = tooltips[Random.Range(0, tooltips.Length)];
+        tooltipText.text = LocalizationManager.instance.GetTextByStringKey(LocalizationManager.Table.Misc, "misc_loading_" + Random.Range(0, tooltips.Length));
 
         while (slider.value < 0.67f) // fake some loading because we're evil and want people to look at the fire splash art
         {

@@ -10,7 +10,7 @@ public class LocalizationManager : MonoBehaviour
     {
         TitleScreen,
         Credits,
-        Cutscene,
+        Cutscenes,
         Dialogue,
         FeedbackForms,
         Headlines,

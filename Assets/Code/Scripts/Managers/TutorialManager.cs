@@ -116,7 +116,7 @@ public class TutorialManager : LevelManagerBase
         summaryMenu.SetActive(true);
 
         dayStarted = false;
-        PlotManager.instance.AddMail("letter", "crustyCoDay", 0); 
+        PlotManager.instance.AddMail("letter", "crustyCoDay", 2); 
         SaveManager.instance.SaveProgressionData(SaveManager.ProgressionType.newGame, false.ToString());
     }
 
@@ -139,7 +139,7 @@ public class TutorialManager : LevelManagerBase
 
     public void OnSkip()
     {
-        PlotManager.instance.AddMail("letter", "crustyCoDay", 0); 
+        PlotManager.instance.AddMail("letter", "crustyCoDay", 2); 
         SaveManager.instance.SaveProgressionData(SaveManager.ProgressionType.newGame, false.ToString());
         AudioManager.instance.SwitchTheme(AudioManager.ThemeNames.CheckingIntoStation);
         SceneTransitionManager.instance.TransitionToScene(SceneTransitionManager.SceneType.Home);

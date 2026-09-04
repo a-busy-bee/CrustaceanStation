@@ -262,7 +262,7 @@ public class CrabController : MonoBehaviour
         #region IMPORTANT CHARACTER
         if (crabInfo.isImportantCharacter) // no forgery if they're special
         {
-            string name = Constants.instance.specialEnumToStringName[crabInfo.specialCharacterType];
+            string name = LocalizationManager.instance.GetTextByStringKey(LocalizationManager.Table.Cutscenes, "special_" + crabInfo.specialCharacterType);
             ticketComponent.SetName(name);
             idComponent.SetName(name);
             idComponent.SetIDPhoto(crabInfo.sprite);
