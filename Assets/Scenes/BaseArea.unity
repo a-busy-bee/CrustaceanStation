@@ -9760,12 +9760,8 @@ MonoBehaviour:
   rejectButton: {fileID: 1416969083}
   debugMode: 1
   charactersToForce:
-  - {fileID: 1918681812830035428, guid: e5a6e250509ab4953b4144733adc80db, type: 3}
-  - {fileID: 1918681812830035428, guid: 59a14dd0cc7204d1b8c33fa6f38c99c2, type: 3}
-  - {fileID: 1918681812830035428, guid: f50522c7b487d4802960b3908c74faf3, type: 3}
-  - {fileID: 1918681812830035428, guid: f1575823c3917496185dabeb83d7b7e5, type: 3}
-  - {fileID: 1918681812830035428, guid: a56348eeec240457480bca73e1151c32, type: 3}
-  - {fileID: 1918681812830035428, guid: 4a5e41442a6c54a14a5850afcd577edb, type: 3}
+  - {fileID: 1918681812830035428, guid: d34c46f22bcbd4530b7a0018142a8796, type: 3}
+  - {fileID: 6693412573292941667, guid: f5bab76335ad0455cb17b24676ef1913, type: 3}
 --- !u!1 &730704855
 GameObject:
   m_ObjectHideFlags: 0
@@ -29039,7 +29035,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1565294495826610535, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
       propertyPath: m_fontSize
-      value: 18
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 1565294495826610535, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
       propertyPath: m_fontSizeMax
@@ -29087,7 +29083,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3092955646856891542, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
       propertyPath: m_fontSize
-      value: 18
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 3092955646856891542, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
       propertyPath: m_fontSizeMax
@@ -29139,7 +29135,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5973269900369922292, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
       propertyPath: m_fontSize
-      value: 18
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 5973269900369922292, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
       propertyPath: m_fontSizeMax
@@ -29300,7 +29296,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8825004341799521386, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
       propertyPath: m_fontSize
-      value: 36.75
+      value: 63
       objectReference: {fileID: 0}
     - target: {fileID: 8825004341799521386, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
       propertyPath: m_fontSizeMax

@@ -19,19 +19,19 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 1
-    m_Localized: Sintesi
+    m_Localized: Riepilogo
     m_Metadata:
       m_Items: []
   - m_Id: 2
-    m_Localized: Prestazione
+    m_Localized: Prestazioni
     m_Metadata:
       m_Items: []
   - m_Id: 3
-    m_Localized: Errore
+    m_Localized: Errori
     m_Metadata:
       m_Items: []
   - m_Id: 4
-    m_Localized: "d\u2019identit\xE0 / Biglietto"
+    m_Localized: Documento/Biglietto
     m_Metadata:
       m_Items: []
   - m_Id: 5
@@ -39,15 +39,15 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 6
-    m_Localized: Salotto
+    m_Localized: Posti
     m_Metadata:
       m_Items: []
   - m_Id: 7
-    m_Localized: Non ha fatto lo shuttle
+    m_Localized: Mancato invio in navetta
     m_Metadata:
       m_Items: []
   - m_Id: 8
-    m_Localized: Viaggiatori felici
+    m_Localized: Viaggiatori soddisfatti
     m_Metadata:
       m_Items: []
   references:

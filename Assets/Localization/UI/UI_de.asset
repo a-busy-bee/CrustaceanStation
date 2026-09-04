@@ -19,11 +19,11 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 1
-    m_Localized: Vorherigen
+    m_Localized: "Zur\xFCck"
     m_Metadata:
       m_Items: []
   - m_Id: 2
-    m_Localized: Weiterhin
+    m_Localized: Fortsetzen
     m_Metadata:
       m_Items: []
   - m_Id: 3
@@ -31,19 +31,19 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 4
-    m_Localized: "Hauptmen\xFC"
+    m_Localized: "Men\xFC"
     m_Metadata:
       m_Items: []
   - m_Id: 5
-    m_Localized: Weiterhin
+    m_Localized: Fortfahren
     m_Metadata:
       m_Items: []
   - m_Id: 6
-    m_Localized: Pausieren
+    m_Localized: Pausiert
     m_Metadata:
       m_Items: []
   - m_Id: 7
-    m_Localized: Gesamtvolumen
+    m_Localized: "Gesamtlautst\xE4rke"
     m_Metadata:
       m_Items: []
   - m_Id: 8
@@ -51,23 +51,23 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 9
-    m_Localized: SFX
+    m_Localized: Soundeffekte
     m_Metadata:
       m_Items: []
   - m_Id: 10
-    m_Localized: Sprachlich
+    m_Localized: Sprache
     m_Metadata:
       m_Items: []
   - m_Id: 11
-    m_Localized: "Spiel Zur\xFCcksetzen"
+    m_Localized: "Fortschritt zur\xFCcksetzen"
     m_Metadata:
       m_Items: []
   - m_Id: 12
-    m_Localized: Bist du dir sicher?
+    m_Localized: Bist du sicher?
     m_Metadata:
       m_Items: []
   - m_Id: 13
-    m_Localized: Stornieren
+    m_Localized: Abbrechen
     m_Metadata:
       m_Items: []
   - m_Id: 14
@@ -75,11 +75,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 15
-    m_Localized: "Gel\xF6schte Spielst\xE4nde k\xF6nnen nicht wiederhergestellt werden."
+    m_Localized: "Gel\xF6schter Fortschritt kann nicht wiederhergestellt werden."
     m_Metadata:
       m_Items: []
   - m_Id: 16
-    m_Localized: Neustart
+    m_Localized: Neu starten
     m_Metadata:
       m_Items: []
   - m_Id: 17
@@ -95,7 +95,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 20
-    m_Localized: Vollbildmodus umschalten
+    m_Localized: Vollbildmodus
     m_Metadata:
       m_Items: []
   - m_Id: 21

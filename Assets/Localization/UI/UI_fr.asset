@@ -23,7 +23,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 2
-    m_Localized: Continuer
+    m_Localized: Reprendre
     m_Metadata:
       m_Items: []
   - m_Id: 3
@@ -31,7 +31,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 4
-    m_Localized: Le Menu
+    m_Localized: Menu
     m_Metadata:
       m_Items: []
   - m_Id: 5
@@ -39,11 +39,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 6
-    m_Localized: En Pause
+    m_Localized: Pause
     m_Metadata:
       m_Items: []
   - m_Id: 7
-    m_Localized: "Volume Ma\xEEtre"
+    m_Localized: "Volume g\xE9n\xE9ral"
     m_Metadata:
       m_Items: []
   - m_Id: 8
@@ -51,7 +51,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 9
-    m_Localized: Effets
+    m_Localized: Effets sonores
     m_Metadata:
       m_Items: []
   - m_Id: 10
@@ -59,11 +59,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 11
-    m_Localized: "R\xE9initialiser la Progression"
+    m_Localized: "R\xE9initialiser la progression"
     m_Metadata:
       m_Items: []
   - m_Id: 12
-    m_Localized: "\xCAtes-vous s\xFBre?"
+    m_Localized: Confirmer ?
     m_Metadata:
       m_Items: []
   - m_Id: 13
@@ -75,11 +75,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 15
-    m_Localized: "La progression supprim\xE9e ne peut pas \xEAtre restaur\xE9e"
+    m_Localized: "La progression supprim\xE9e ne pourra pas \xEAtre restaur\xE9e"
     m_Metadata:
       m_Items: []
   - m_Id: 16
-    m_Localized: "Red\xE9marrer"
+    m_Localized: Recommencer
     m_Metadata:
       m_Items: []
   - m_Id: 17
@@ -91,19 +91,19 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 19
-    m_Localized: "R\xE9solution D'\xC9cran"
+    m_Localized: "R\xE9solution de l'\xE9cran"
     m_Metadata:
       m_Items: []
   - m_Id: 20
-    m_Localized: "Basculer en Plein \xC9cran"
+    m_Localized: "Mode plein \xE9cran"
     m_Metadata:
       m_Items: []
   - m_Id: 21
-    m_Localized: Sur
+    m_Localized: "Activ\xE9"
     m_Metadata:
       m_Items: []
   - m_Id: 22
-    m_Localized: "\xC9teint"
+    m_Localized: "D\xE9sactiv\xE9"
     m_Metadata:
       m_Items: []
   references:

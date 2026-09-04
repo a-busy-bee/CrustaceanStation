@@ -19,11 +19,11 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 1
-    m_Localized: "R\xE9sum\xE9"
+    m_Localized: "R\xE9capitulatif"
     m_Metadata:
       m_Items: []
   - m_Id: 2
-    m_Localized: Performances
+    m_Localized: Performance
     m_Metadata:
       m_Items: []
   - m_Id: 3
@@ -31,23 +31,23 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 4
-    m_Localized: "carte d'identit\xE9 / Billet"
+    m_Localized: "Pi\xE8ce d'identit\xE9 / billet"
     m_Metadata:
       m_Items: []
   - m_Id: 5
-    m_Localized: Transports
+    m_Localized: Transport
     m_Metadata:
       m_Items: []
   - m_Id: 6
-    m_Localized: "Si\xE8ges"
+    m_Localized: Placement
     m_Metadata:
       m_Items: []
   - m_Id: 7
-    m_Localized: N'a pas fait la navette
+    m_Localized: "Navette non utilis\xE9e"
     m_Metadata:
       m_Items: []
   - m_Id: 8
-    m_Localized: Voyageurs heureux
+    m_Localized: Voyageurs satisfaits
     m_Metadata:
       m_Items: []
   references:

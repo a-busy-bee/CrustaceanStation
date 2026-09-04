@@ -19,19 +19,19 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 1
-    m_Localized: Annehmen
+    m_Localized: Adoptieren
     m_Metadata:
       m_Items: []
   - m_Id: 2
-    m_Localized: "Ver\xF6ffentlichen"
+    m_Localized: Freilassen
     m_Metadata:
       m_Items: []
   - m_Id: 3
-    m_Localized: Adoptionsbescheinigung
+    m_Localized: Adoptionsurkunde
     m_Metadata:
       m_Items: []
   - m_Id: 4
-    m_Localized: Asselbezeichnung
+    m_Localized: Name der Assel
     m_Metadata:
       m_Items: []
   - m_Id: 5
@@ -43,11 +43,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 7
-    m_Localized: Klicken Sie, um fortzufahren...
+    m_Localized: Zum Fortfahren klicken ...
     m_Metadata:
       m_Items: []
   - m_Id: 8
-    m_Localized: Geben Sie den Namen ein...
+    m_Localized: Namen eingeben ...
     m_Metadata:
       m_Items: []
   - m_Id: 9
@@ -67,7 +67,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 13
-    m_Localized: "K\xF6nnen"
+    m_Localized: Mai
     m_Metadata:
       m_Items: []
   - m_Id: 14
@@ -99,7 +99,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 21
-    m_Localized: "W\xE4hl eine Kellerassel aus!"
+    m_Localized: "W\xE4hle deine Assel!"
     m_Metadata:
       m_Items: []
   - m_Id: 22
@@ -119,7 +119,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 26
-    m_Localized: Strang
+    m_Localized: Hank
     m_Metadata:
       m_Items: []
   - m_Id: 27
