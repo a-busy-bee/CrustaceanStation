@@ -103,7 +103,7 @@ public class DialogueManager : MonoBehaviour
     {
         //string text = dialogueData.nodeGenericAnyChars[UnityEngine.Random.Range(0, dialogueData.nodeGenericAnyChars.Length)];
         int idx = UnityEngine.Random.Range(0, dialogueData.nodeGenericAnyChars.Length);
-        string text = LocalizationManager.instance.GetTextByStringKey(LocalizationManager.Table.Dialogue, "dialogue_nodesGenericAnyChars_" + idx);
+        string text = LocalizationManager.instance.GetTextByStringKey(LocalizationManager.Table.Dialogue, "dialogue_nodeGenericAnyChars_" + idx);
         dialogueObject.ShowDialogue(text);
     }
 
