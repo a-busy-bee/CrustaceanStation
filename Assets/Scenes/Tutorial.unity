@@ -656,13 +656,105 @@ PrefabInstance:
     - {fileID: 578752923048615713, guid: 619a19cf8b084b14badb6a03bd352f25, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4034364516785505688, guid: 619a19cf8b084b14badb6a03bd352f25, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 37188049}
+    - targetCorrespondingSourceObject: {fileID: 7675003895907789160, guid: 619a19cf8b084b14badb6a03bd352f25, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 37188048}
+    - targetCorrespondingSourceObject: {fileID: 8571242929255580234, guid: 619a19cf8b084b14badb6a03bd352f25, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 37188047}
+    - targetCorrespondingSourceObject: {fileID: 2027971047548534721, guid: 619a19cf8b084b14badb6a03bd352f25, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 37188046}
   m_SourcePrefab: {fileID: 100100000, guid: 619a19cf8b084b14badb6a03bd352f25, type: 3}
 --- !u!224 &37188041 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6677387456148224092, guid: 619a19cf8b084b14badb6a03bd352f25, type: 3}
   m_PrefabInstance: {fileID: 37188040}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &37188042 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2027971047548534721, guid: 619a19cf8b084b14badb6a03bd352f25, type: 3}
+  m_PrefabInstance: {fileID: 37188040}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &37188043 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8571242929255580234, guid: 619a19cf8b084b14badb6a03bd352f25, type: 3}
+  m_PrefabInstance: {fileID: 37188040}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &37188044 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7675003895907789160, guid: 619a19cf8b084b14badb6a03bd352f25, type: 3}
+  m_PrefabInstance: {fileID: 37188040}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &37188045 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4034364516785505688, guid: 619a19cf8b084b14badb6a03bd352f25, type: 3}
+  m_PrefabInstance: {fileID: 37188040}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &37188046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 37188042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d060c9d24ff84620983eb7d987057ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizationFontSwapper
+  mainFont: {fileID: 11400000, guid: ecd6bbbe8eeec4e2585ba8bf726a0752, type: 2}
+  chineseFont: {fileID: 11400000, guid: 1e6769daeec4a4a15801a1ef503e5eae, type: 2}
+  japaneseFont: {fileID: 11400000, guid: acc541a240d184127a18e34c5ca4c040, type: 2}
+--- !u!114 &37188047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 37188043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d060c9d24ff84620983eb7d987057ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizationFontSwapper
+  mainFont: {fileID: 11400000, guid: ecd6bbbe8eeec4e2585ba8bf726a0752, type: 2}
+  chineseFont: {fileID: 11400000, guid: 1e6769daeec4a4a15801a1ef503e5eae, type: 2}
+  japaneseFont: {fileID: 11400000, guid: acc541a240d184127a18e34c5ca4c040, type: 2}
+--- !u!114 &37188048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 37188044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d060c9d24ff84620983eb7d987057ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizationFontSwapper
+  mainFont: {fileID: 11400000, guid: ecd6bbbe8eeec4e2585ba8bf726a0752, type: 2}
+  chineseFont: {fileID: 11400000, guid: 1e6769daeec4a4a15801a1ef503e5eae, type: 2}
+  japaneseFont: {fileID: 11400000, guid: acc541a240d184127a18e34c5ca4c040, type: 2}
+--- !u!114 &37188049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 37188045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d060c9d24ff84620983eb7d987057ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizationFontSwapper
+  mainFont: {fileID: 11400000, guid: ecd6bbbe8eeec4e2585ba8bf726a0752, type: 2}
+  chineseFont: {fileID: 11400000, guid: 1e6769daeec4a4a15801a1ef503e5eae, type: 2}
+  japaneseFont: {fileID: 11400000, guid: acc541a240d184127a18e34c5ca4c040, type: 2}
 --- !u!1 &45479194
 GameObject:
   m_ObjectHideFlags: 0
@@ -1805,6 +1897,7 @@ GameObject:
   - component: {fileID: 105111653}
   - component: {fileID: 105111652}
   - component: {fileID: 105111654}
+  - component: {fileID: 105111655}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -1854,7 +1947,7 @@ MonoBehaviour:
   m_text: We serve all kinds of passengers. Take special care when assigning passengers
     to their seats.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d8a88f3c2685e4ef1951ddfc9bf574dd, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ecd6bbbe8eeec4e2585ba8bf726a0752, type: 2}
   m_sharedMaterial: {fileID: -7453273119138983783, guid: d8a88f3c2685e4ef1951ddfc9bf574dd, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1921,7 +2014,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &105111653
@@ -1972,6 +2065,21 @@ MonoBehaviour:
   references:
     version: 2
     RefIds: []
+--- !u!114 &105111655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105111650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d060c9d24ff84620983eb7d987057ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizationFontSwapper
+  mainFont: {fileID: 11400000, guid: ecd6bbbe8eeec4e2585ba8bf726a0752, type: 2}
+  chineseFont: {fileID: 11400000, guid: 1e6769daeec4a4a15801a1ef503e5eae, type: 2}
+  japaneseFont: {fileID: 11400000, guid: acc541a240d184127a18e34c5ca4c040, type: 2}
 --- !u!1 &118689019
 GameObject:
   m_ObjectHideFlags: 0
@@ -4766,6 +4874,7 @@ GameObject:
   - component: {fileID: 319597174}
   - component: {fileID: 319597173}
   - component: {fileID: 319597175}
+  - component: {fileID: 319597176}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -4932,6 +5041,21 @@ MonoBehaviour:
   references:
     version: 2
     RefIds: []
+--- !u!114 &319597176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 319597169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d060c9d24ff84620983eb7d987057ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizationFontSwapper
+  mainFont: {fileID: 11400000, guid: ecd6bbbe8eeec4e2585ba8bf726a0752, type: 2}
+  chineseFont: {fileID: 11400000, guid: 1e6769daeec4a4a15801a1ef503e5eae, type: 2}
+  japaneseFont: {fileID: 11400000, guid: acc541a240d184127a18e34c5ca4c040, type: 2}
 --- !u!1 &333319396
 GameObject:
   m_ObjectHideFlags: 0
@@ -6736,6 +6860,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 474495234}
   m_CullTransparentMesh: 1
+--- !u!114 &485438615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 899892693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d060c9d24ff84620983eb7d987057ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizationFontSwapper
+  mainFont: {fileID: 11400000, guid: ecd6bbbe8eeec4e2585ba8bf726a0752, type: 2}
+  chineseFont: {fileID: 11400000, guid: 1e6769daeec4a4a15801a1ef503e5eae, type: 2}
+  japaneseFont: {fileID: 11400000, guid: acc541a240d184127a18e34c5ca4c040, type: 2}
 --- !u!1 &488043211
 GameObject:
   m_ObjectHideFlags: 0
@@ -6823,6 +6962,7 @@ GameObject:
   - component: {fileID: 489574002}
   - component: {fileID: 489574001}
   - component: {fileID: 489574003}
+  - component: {fileID: 489574004}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -6871,7 +7011,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Now try processing a few yourself!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d8a88f3c2685e4ef1951ddfc9bf574dd, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ecd6bbbe8eeec4e2585ba8bf726a0752, type: 2}
   m_sharedMaterial: {fileID: -7453273119138983783, guid: d8a88f3c2685e4ef1951ddfc9bf574dd, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -6938,7 +7078,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &489574002
@@ -6989,6 +7129,21 @@ MonoBehaviour:
   references:
     version: 2
     RefIds: []
+--- !u!114 &489574004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 489573999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d060c9d24ff84620983eb7d987057ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizationFontSwapper
+  mainFont: {fileID: 11400000, guid: ecd6bbbe8eeec4e2585ba8bf726a0752, type: 2}
+  chineseFont: {fileID: 11400000, guid: 1e6769daeec4a4a15801a1ef503e5eae, type: 2}
+  japaneseFont: {fileID: 11400000, guid: acc541a240d184127a18e34c5ca4c040, type: 2}
 --- !u!1 &499062934
 GameObject:
   m_ObjectHideFlags: 0
@@ -9659,13 +9814,59 @@ PrefabInstance:
     - {fileID: 7392381017082789976, guid: 8e354d16cd784472f9702c019590d42f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 480124909609989127, guid: 8e354d16cd784472f9702c019590d42f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 678422082}
+    - targetCorrespondingSourceObject: {fileID: 9178462787423540824, guid: 8e354d16cd784472f9702c019590d42f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 678422083}
   m_SourcePrefab: {fileID: 100100000, guid: 8e354d16cd784472f9702c019590d42f, type: 3}
 --- !u!224 &678422079 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6530686145522743809, guid: 8e354d16cd784472f9702c019590d42f, type: 3}
   m_PrefabInstance: {fileID: 678422078}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &678422080 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 480124909609989127, guid: 8e354d16cd784472f9702c019590d42f, type: 3}
+  m_PrefabInstance: {fileID: 678422078}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &678422081 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9178462787423540824, guid: 8e354d16cd784472f9702c019590d42f, type: 3}
+  m_PrefabInstance: {fileID: 678422078}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &678422082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 678422080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d060c9d24ff84620983eb7d987057ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizationFontSwapper
+  mainFont: {fileID: 11400000, guid: ecd6bbbe8eeec4e2585ba8bf726a0752, type: 2}
+  chineseFont: {fileID: 11400000, guid: 1e6769daeec4a4a15801a1ef503e5eae, type: 2}
+  japaneseFont: {fileID: 11400000, guid: acc541a240d184127a18e34c5ca4c040, type: 2}
+--- !u!114 &678422083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 678422081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d060c9d24ff84620983eb7d987057ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizationFontSwapper
+  mainFont: {fileID: 11400000, guid: ecd6bbbe8eeec4e2585ba8bf726a0752, type: 2}
+  chineseFont: {fileID: 11400000, guid: 1e6769daeec4a4a15801a1ef503e5eae, type: 2}
+  japaneseFont: {fileID: 11400000, guid: acc541a240d184127a18e34c5ca4c040, type: 2}
 --- !u!1 &687831681
 GameObject:
   m_ObjectHideFlags: 0
@@ -12388,6 +12589,7 @@ GameObject:
   - component: {fileID: 848168462}
   - component: {fileID: 848168461}
   - component: {fileID: 848168463}
+  - component: {fileID: 848168464}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -12436,7 +12638,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'When the train fills up, you can send it off with this switch. '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d8a88f3c2685e4ef1951ddfc9bf574dd, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ecd6bbbe8eeec4e2585ba8bf726a0752, type: 2}
   m_sharedMaterial: {fileID: -7453273119138983783, guid: d8a88f3c2685e4ef1951ddfc9bf574dd, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -12503,7 +12705,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &848168462
@@ -12554,6 +12756,21 @@ MonoBehaviour:
   references:
     version: 2
     RefIds: []
+--- !u!114 &848168464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 848168459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d060c9d24ff84620983eb7d987057ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizationFontSwapper
+  mainFont: {fileID: 11400000, guid: ecd6bbbe8eeec4e2585ba8bf726a0752, type: 2}
+  chineseFont: {fileID: 11400000, guid: 1e6769daeec4a4a15801a1ef503e5eae, type: 2}
+  japaneseFont: {fileID: 11400000, guid: acc541a240d184127a18e34c5ca4c040, type: 2}
 --- !u!1 &851220882
 GameObject:
   m_ObjectHideFlags: 0
@@ -13181,6 +13398,7 @@ GameObject:
   - component: {fileID: 875394015}
   - component: {fileID: 875394014}
   - component: {fileID: 875394016}
+  - component: {fileID: 875394017}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -13347,6 +13565,21 @@ MonoBehaviour:
   references:
     version: 2
     RefIds: []
+--- !u!114 &875394017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 875394012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d060c9d24ff84620983eb7d987057ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizationFontSwapper
+  mainFont: {fileID: 11400000, guid: 810688fb9806246dc9e032533b42ba12, type: 2}
+  chineseFont: {fileID: 11400000, guid: adc60f900a657461fa7469281537aaeb, type: 2}
+  japaneseFont: {fileID: 11400000, guid: e95f1a4c7e03641e693ce2f082297e70, type: 2}
 --- !u!1 &876685987
 GameObject:
   m_ObjectHideFlags: 0
@@ -13855,7 +14088,40 @@ PrefabInstance:
     - {fileID: 2678244803684324108, guid: 4de3e27ee11244dfc8f80c9f950e5da8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5970212951115132848, guid: 4de3e27ee11244dfc8f80c9f950e5da8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 899892705}
+    - targetCorrespondingSourceObject: {fileID: 228060686085895998, guid: 4de3e27ee11244dfc8f80c9f950e5da8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 899892704}
+    - targetCorrespondingSourceObject: {fileID: 4711819897191210191, guid: 4de3e27ee11244dfc8f80c9f950e5da8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 899892703}
+    - targetCorrespondingSourceObject: {fileID: 4821945005854189251, guid: 4de3e27ee11244dfc8f80c9f950e5da8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 899892702}
+    - targetCorrespondingSourceObject: {fileID: 3076115288126262502, guid: 4de3e27ee11244dfc8f80c9f950e5da8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 899892701}
+    - targetCorrespondingSourceObject: {fileID: 5913450338249176491, guid: 4de3e27ee11244dfc8f80c9f950e5da8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1634011883}
+    - targetCorrespondingSourceObject: {fileID: 8069101546257621322, guid: 4de3e27ee11244dfc8f80c9f950e5da8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 485438615}
+    - targetCorrespondingSourceObject: {fileID: 6013119874837018102, guid: 4de3e27ee11244dfc8f80c9f950e5da8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1476692445}
+    - targetCorrespondingSourceObject: {fileID: 4246526594256742027, guid: 4de3e27ee11244dfc8f80c9f950e5da8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 991652271}
+    - targetCorrespondingSourceObject: {fileID: 6180593063988460741, guid: 4de3e27ee11244dfc8f80c9f950e5da8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1755677011}
+    - targetCorrespondingSourceObject: {fileID: 2355361276411623994, guid: 4de3e27ee11244dfc8f80c9f950e5da8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1160043290}
   m_SourcePrefab: {fileID: 100100000, guid: 4de3e27ee11244dfc8f80c9f950e5da8, type: 3}
 --- !u!224 &899892686 stripped
 RectTransform:
@@ -13867,6 +14133,136 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3179002064093147093, guid: 4de3e27ee11244dfc8f80c9f950e5da8, type: 3}
   m_PrefabInstance: {fileID: 899892685}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &899892688 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2355361276411623994, guid: 4de3e27ee11244dfc8f80c9f950e5da8, type: 3}
+  m_PrefabInstance: {fileID: 899892685}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &899892689 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6180593063988460741, guid: 4de3e27ee11244dfc8f80c9f950e5da8, type: 3}
+  m_PrefabInstance: {fileID: 899892685}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &899892691 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4246526594256742027, guid: 4de3e27ee11244dfc8f80c9f950e5da8, type: 3}
+  m_PrefabInstance: {fileID: 899892685}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &899892692 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6013119874837018102, guid: 4de3e27ee11244dfc8f80c9f950e5da8, type: 3}
+  m_PrefabInstance: {fileID: 899892685}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &899892693 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8069101546257621322, guid: 4de3e27ee11244dfc8f80c9f950e5da8, type: 3}
+  m_PrefabInstance: {fileID: 899892685}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &899892694 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5913450338249176491, guid: 4de3e27ee11244dfc8f80c9f950e5da8, type: 3}
+  m_PrefabInstance: {fileID: 899892685}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &899892696 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3076115288126262502, guid: 4de3e27ee11244dfc8f80c9f950e5da8, type: 3}
+  m_PrefabInstance: {fileID: 899892685}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &899892697 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4821945005854189251, guid: 4de3e27ee11244dfc8f80c9f950e5da8, type: 3}
+  m_PrefabInstance: {fileID: 899892685}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &899892698 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4711819897191210191, guid: 4de3e27ee11244dfc8f80c9f950e5da8, type: 3}
+  m_PrefabInstance: {fileID: 899892685}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &899892699 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 228060686085895998, guid: 4de3e27ee11244dfc8f80c9f950e5da8, type: 3}
+  m_PrefabInstance: {fileID: 899892685}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &899892700 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5970212951115132848, guid: 4de3e27ee11244dfc8f80c9f950e5da8, type: 3}
+  m_PrefabInstance: {fileID: 899892685}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &899892701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 899892696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d060c9d24ff84620983eb7d987057ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizationFontSwapper
+  mainFont: {fileID: 11400000, guid: ecd6bbbe8eeec4e2585ba8bf726a0752, type: 2}
+  chineseFont: {fileID: 11400000, guid: 1e6769daeec4a4a15801a1ef503e5eae, type: 2}
+  japaneseFont: {fileID: 11400000, guid: acc541a240d184127a18e34c5ca4c040, type: 2}
+--- !u!114 &899892702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 899892697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d060c9d24ff84620983eb7d987057ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizationFontSwapper
+  mainFont: {fileID: 11400000, guid: ecd6bbbe8eeec4e2585ba8bf726a0752, type: 2}
+  chineseFont: {fileID: 11400000, guid: 1e6769daeec4a4a15801a1ef503e5eae, type: 2}
+  japaneseFont: {fileID: 11400000, guid: acc541a240d184127a18e34c5ca4c040, type: 2}
+--- !u!114 &899892703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 899892698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d060c9d24ff84620983eb7d987057ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizationFontSwapper
+  mainFont: {fileID: 11400000, guid: ecd6bbbe8eeec4e2585ba8bf726a0752, type: 2}
+  chineseFont: {fileID: 11400000, guid: 1e6769daeec4a4a15801a1ef503e5eae, type: 2}
+  japaneseFont: {fileID: 11400000, guid: acc541a240d184127a18e34c5ca4c040, type: 2}
+--- !u!114 &899892704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 899892699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d060c9d24ff84620983eb7d987057ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizationFontSwapper
+  mainFont: {fileID: 11400000, guid: ecd6bbbe8eeec4e2585ba8bf726a0752, type: 2}
+  chineseFont: {fileID: 11400000, guid: 1e6769daeec4a4a15801a1ef503e5eae, type: 2}
+  japaneseFont: {fileID: 11400000, guid: acc541a240d184127a18e34c5ca4c040, type: 2}
+--- !u!114 &899892705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 899892700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d060c9d24ff84620983eb7d987057ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizationFontSwapper
+  mainFont: {fileID: 11400000, guid: ecd6bbbe8eeec4e2585ba8bf726a0752, type: 2}
+  chineseFont: {fileID: 11400000, guid: 1e6769daeec4a4a15801a1ef503e5eae, type: 2}
+  japaneseFont: {fileID: 11400000, guid: acc541a240d184127a18e34c5ca4c040, type: 2}
 --- !u!1 &909348442
 GameObject:
   m_ObjectHideFlags: 0
@@ -14821,6 +15217,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 991410519}
   m_CullTransparentMesh: 1
+--- !u!114 &991652271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 899892691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d060c9d24ff84620983eb7d987057ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizationFontSwapper
+  mainFont: {fileID: 11400000, guid: ecd6bbbe8eeec4e2585ba8bf726a0752, type: 2}
+  chineseFont: {fileID: 11400000, guid: 1e6769daeec4a4a15801a1ef503e5eae, type: 2}
+  japaneseFont: {fileID: 11400000, guid: acc541a240d184127a18e34c5ca4c040, type: 2}
 --- !u!1 &1012089312
 GameObject:
   m_ObjectHideFlags: 0
@@ -15460,13 +15871,36 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3105068172318148832, guid: a38a60880f48f4610b91ac0addda84c3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1029031654}
   m_SourcePrefab: {fileID: 100100000, guid: a38a60880f48f4610b91ac0addda84c3, type: 3}
 --- !u!224 &1029031652 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 9019425930988651157, guid: a38a60880f48f4610b91ac0addda84c3, type: 3}
   m_PrefabInstance: {fileID: 1029031651}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1029031653 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3105068172318148832, guid: a38a60880f48f4610b91ac0addda84c3, type: 3}
+  m_PrefabInstance: {fileID: 1029031651}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1029031654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029031653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d060c9d24ff84620983eb7d987057ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizationFontSwapper
+  mainFont: {fileID: 11400000, guid: ecd6bbbe8eeec4e2585ba8bf726a0752, type: 2}
+  chineseFont: {fileID: 11400000, guid: 1e6769daeec4a4a15801a1ef503e5eae, type: 2}
+  japaneseFont: {fileID: 11400000, guid: acc541a240d184127a18e34c5ca4c040, type: 2}
 --- !u!1 &1029995112
 GameObject:
   m_ObjectHideFlags: 0
@@ -16134,6 +16568,7 @@ GameObject:
   - component: {fileID: 1087616480}
   - component: {fileID: 1087616479}
   - component: {fileID: 1087616482}
+  - component: {fileID: 1087616483}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -16163,7 +16598,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: First, inspect their ID to check if their photo is correct...
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d8a88f3c2685e4ef1951ddfc9bf574dd, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ecd6bbbe8eeec4e2585ba8bf726a0752, type: 2}
   m_sharedMaterial: {fileID: -7453273119138983783, guid: d8a88f3c2685e4ef1951ddfc9bf574dd, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -16230,7 +16665,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1087616480
@@ -16300,6 +16735,21 @@ MonoBehaviour:
   references:
     version: 2
     RefIds: []
+--- !u!114 &1087616483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1087616478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d060c9d24ff84620983eb7d987057ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizationFontSwapper
+  mainFont: {fileID: 11400000, guid: ecd6bbbe8eeec4e2585ba8bf726a0752, type: 2}
+  chineseFont: {fileID: 11400000, guid: 1e6769daeec4a4a15801a1ef503e5eae, type: 2}
+  japaneseFont: {fileID: 11400000, guid: acc541a240d184127a18e34c5ca4c040, type: 2}
 --- !u!1 &1092379896
 GameObject:
   m_ObjectHideFlags: 0
@@ -17134,6 +17584,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1146778077}
   m_CullTransparentMesh: 1
+--- !u!114 &1160043290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 899892688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d060c9d24ff84620983eb7d987057ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizationFontSwapper
+  mainFont: {fileID: 11400000, guid: ecd6bbbe8eeec4e2585ba8bf726a0752, type: 2}
+  chineseFont: {fileID: 11400000, guid: 1e6769daeec4a4a15801a1ef503e5eae, type: 2}
+  japaneseFont: {fileID: 11400000, guid: acc541a240d184127a18e34c5ca4c040, type: 2}
 --- !u!1 &1164846260
 GameObject:
   m_ObjectHideFlags: 0
@@ -19341,13 +19806,36 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5883035952734697667, guid: 58fa304155b9c4e8d92b41f70a7e0a79, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1314888895}
   m_SourcePrefab: {fileID: 100100000, guid: 58fa304155b9c4e8d92b41f70a7e0a79, type: 3}
 --- !u!224 &1314888893 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 758509952620349891, guid: 58fa304155b9c4e8d92b41f70a7e0a79, type: 3}
   m_PrefabInstance: {fileID: 1314888892}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1314888894 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5883035952734697667, guid: 58fa304155b9c4e8d92b41f70a7e0a79, type: 3}
+  m_PrefabInstance: {fileID: 1314888892}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1314888895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1314888894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d060c9d24ff84620983eb7d987057ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizationFontSwapper
+  mainFont: {fileID: 11400000, guid: ecd6bbbe8eeec4e2585ba8bf726a0752, type: 2}
+  chineseFont: {fileID: 11400000, guid: 1e6769daeec4a4a15801a1ef503e5eae, type: 2}
+  japaneseFont: {fileID: 11400000, guid: acc541a240d184127a18e34c5ca4c040, type: 2}
 --- !u!1 &1317461607
 GameObject:
   m_ObjectHideFlags: 0
@@ -19827,6 +20315,7 @@ GameObject:
   - component: {fileID: 1367597356}
   - component: {fileID: 1367597355}
   - component: {fileID: 1367597357}
+  - component: {fileID: 1367597358}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -19875,8 +20364,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Look, a prospective passenger! '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d8a88f3c2685e4ef1951ddfc9bf574dd, type: 2}
-  m_sharedMaterial: {fileID: -7453273119138983783, guid: d8a88f3c2685e4ef1951ddfc9bf574dd, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ecd6bbbe8eeec4e2585ba8bf726a0752, type: 2}
+  m_sharedMaterial: {fileID: -1044476724647722075, guid: ecd6bbbe8eeec4e2585ba8bf726a0752, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -19993,6 +20482,21 @@ MonoBehaviour:
   references:
     version: 2
     RefIds: []
+--- !u!114 &1367597358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1367597353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d060c9d24ff84620983eb7d987057ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizationFontSwapper
+  mainFont: {fileID: 11400000, guid: ecd6bbbe8eeec4e2585ba8bf726a0752, type: 2}
+  chineseFont: {fileID: 11400000, guid: 1e6769daeec4a4a15801a1ef503e5eae, type: 2}
+  japaneseFont: {fileID: 11400000, guid: acc541a240d184127a18e34c5ca4c040, type: 2}
 --- !u!1 &1372099966
 GameObject:
   m_ObjectHideFlags: 0
@@ -20307,13 +20811,59 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6530686145522743809, guid: 8e354d16cd784472f9702c019590d42f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1557462830}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 480124909609989127, guid: 8e354d16cd784472f9702c019590d42f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1380835541}
+    - targetCorrespondingSourceObject: {fileID: 9178462787423540824, guid: 8e354d16cd784472f9702c019590d42f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1380835542}
   m_SourcePrefab: {fileID: 100100000, guid: 8e354d16cd784472f9702c019590d42f, type: 3}
 --- !u!224 &1380835538 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6530686145522743809, guid: 8e354d16cd784472f9702c019590d42f, type: 3}
   m_PrefabInstance: {fileID: 1380835537}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1380835539 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 480124909609989127, guid: 8e354d16cd784472f9702c019590d42f, type: 3}
+  m_PrefabInstance: {fileID: 1380835537}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1380835540 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9178462787423540824, guid: 8e354d16cd784472f9702c019590d42f, type: 3}
+  m_PrefabInstance: {fileID: 1380835537}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1380835541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1380835539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d060c9d24ff84620983eb7d987057ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizationFontSwapper
+  mainFont: {fileID: 11400000, guid: ecd6bbbe8eeec4e2585ba8bf726a0752, type: 2}
+  chineseFont: {fileID: 11400000, guid: 1e6769daeec4a4a15801a1ef503e5eae, type: 2}
+  japaneseFont: {fileID: 11400000, guid: acc541a240d184127a18e34c5ca4c040, type: 2}
+--- !u!114 &1380835542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1380835540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d060c9d24ff84620983eb7d987057ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizationFontSwapper
+  mainFont: {fileID: 11400000, guid: ecd6bbbe8eeec4e2585ba8bf726a0752, type: 2}
+  chineseFont: {fileID: 11400000, guid: 1e6769daeec4a4a15801a1ef503e5eae, type: 2}
+  japaneseFont: {fileID: 11400000, guid: acc541a240d184127a18e34c5ca4c040, type: 2}
 --- !u!1 &1390165554
 GameObject:
   m_ObjectHideFlags: 0
@@ -20892,6 +21442,7 @@ GameObject:
   - component: {fileID: 1427392574}
   - component: {fileID: 1427392573}
   - component: {fileID: 1427392575}
+  - component: {fileID: 1427392576}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -20940,7 +21491,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: To finish processing, press the green button.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d8a88f3c2685e4ef1951ddfc9bf574dd, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ecd6bbbe8eeec4e2585ba8bf726a0752, type: 2}
   m_sharedMaterial: {fileID: -7453273119138983783, guid: d8a88f3c2685e4ef1951ddfc9bf574dd, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -21007,7 +21558,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1427392574
@@ -21058,6 +21609,21 @@ MonoBehaviour:
   references:
     version: 2
     RefIds: []
+--- !u!114 &1427392576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1427392571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d060c9d24ff84620983eb7d987057ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizationFontSwapper
+  mainFont: {fileID: 11400000, guid: ecd6bbbe8eeec4e2585ba8bf726a0752, type: 2}
+  chineseFont: {fileID: 11400000, guid: 1e6769daeec4a4a15801a1ef503e5eae, type: 2}
+  japaneseFont: {fileID: 11400000, guid: acc541a240d184127a18e34c5ca4c040, type: 2}
 --- !u!1 &1437270099
 GameObject:
   m_ObjectHideFlags: 0
@@ -21643,6 +22209,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1474332154}
   m_CullTransparentMesh: 1
+--- !u!114 &1476692445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 899892692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d060c9d24ff84620983eb7d987057ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizationFontSwapper
+  mainFont: {fileID: 11400000, guid: ecd6bbbe8eeec4e2585ba8bf726a0752, type: 2}
+  chineseFont: {fileID: 11400000, guid: 1e6769daeec4a4a15801a1ef503e5eae, type: 2}
+  japaneseFont: {fileID: 11400000, guid: acc541a240d184127a18e34c5ca4c040, type: 2}
 --- !u!1 &1490070897
 GameObject:
   m_ObjectHideFlags: 0
@@ -23038,6 +23619,7 @@ GameObject:
   - component: {fileID: 1580107256}
   - component: {fileID: 1580107255}
   - component: {fileID: 1580107254}
+  - component: {fileID: 1580107257}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -23204,6 +23786,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1580107252}
   m_CullTransparentMesh: 1
+--- !u!114 &1580107257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1580107252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d060c9d24ff84620983eb7d987057ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizationFontSwapper
+  mainFont: {fileID: 11400000, guid: ecd6bbbe8eeec4e2585ba8bf726a0752, type: 2}
+  chineseFont: {fileID: 11400000, guid: 1e6769daeec4a4a15801a1ef503e5eae, type: 2}
+  japaneseFont: {fileID: 11400000, guid: acc541a240d184127a18e34c5ca4c040, type: 2}
 --- !u!1 &1602406475
 GameObject:
   m_ObjectHideFlags: 0
@@ -23525,6 +24122,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1629576520}
   m_CullTransparentMesh: 1
+--- !u!114 &1634011883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 899892694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d060c9d24ff84620983eb7d987057ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizationFontSwapper
+  mainFont: {fileID: 11400000, guid: ecd6bbbe8eeec4e2585ba8bf726a0752, type: 2}
+  chineseFont: {fileID: 11400000, guid: 1e6769daeec4a4a15801a1ef503e5eae, type: 2}
+  japaneseFont: {fileID: 11400000, guid: acc541a240d184127a18e34c5ca4c040, type: 2}
 --- !u!1 &1637347324
 GameObject:
   m_ObjectHideFlags: 0
@@ -24677,6 +25289,7 @@ GameObject:
   - component: {fileID: 1734599160}
   - component: {fileID: 1734599159}
   - component: {fileID: 1734599161}
+  - component: {fileID: 1734599162}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -24843,6 +25456,21 @@ MonoBehaviour:
   references:
     version: 2
     RefIds: []
+--- !u!114 &1734599162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1734599157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d060c9d24ff84620983eb7d987057ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizationFontSwapper
+  mainFont: {fileID: 11400000, guid: ecd6bbbe8eeec4e2585ba8bf726a0752, type: 2}
+  chineseFont: {fileID: 11400000, guid: 1e6769daeec4a4a15801a1ef503e5eae, type: 2}
+  japaneseFont: {fileID: 11400000, guid: acc541a240d184127a18e34c5ca4c040, type: 2}
 --- !u!1 &1735903848
 GameObject:
   m_ObjectHideFlags: 0
@@ -25177,6 +25805,21 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &1755677011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 899892689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d060c9d24ff84620983eb7d987057ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizationFontSwapper
+  mainFont: {fileID: 11400000, guid: ecd6bbbe8eeec4e2585ba8bf726a0752, type: 2}
+  chineseFont: {fileID: 11400000, guid: 1e6769daeec4a4a15801a1ef503e5eae, type: 2}
+  japaneseFont: {fileID: 11400000, guid: acc541a240d184127a18e34c5ca4c040, type: 2}
 --- !u!1 &1760698973
 GameObject:
   m_ObjectHideFlags: 0
@@ -25810,6 +26453,7 @@ GameObject:
   - component: {fileID: 1815538977}
   - component: {fileID: 1815538976}
   - component: {fileID: 1815538978}
+  - component: {fileID: 1815538979}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -25859,7 +26503,7 @@ MonoBehaviour:
   m_text: Crab-tastic! This passenger has an economy-class train ticket. Select the
     economy cart.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d8a88f3c2685e4ef1951ddfc9bf574dd, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ecd6bbbe8eeec4e2585ba8bf726a0752, type: 2}
   m_sharedMaterial: {fileID: -7453273119138983783, guid: d8a88f3c2685e4ef1951ddfc9bf574dd, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -25926,7 +26570,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1815538977
@@ -25977,6 +26621,21 @@ MonoBehaviour:
   references:
     version: 2
     RefIds: []
+--- !u!114 &1815538979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1815538974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d060c9d24ff84620983eb7d987057ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizationFontSwapper
+  mainFont: {fileID: 11400000, guid: ecd6bbbe8eeec4e2585ba8bf726a0752, type: 2}
+  chineseFont: {fileID: 11400000, guid: 1e6769daeec4a4a15801a1ef503e5eae, type: 2}
+  japaneseFont: {fileID: 11400000, guid: acc541a240d184127a18e34c5ca4c040, type: 2}
 --- !u!1 &1832071771
 GameObject:
   m_ObjectHideFlags: 0
@@ -26687,13 +27346,36 @@ PrefabInstance:
     - {fileID: 2130623887440705696, guid: a38a60880f48f4610b91ac0addda84c3, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3105068172318148832, guid: a38a60880f48f4610b91ac0addda84c3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1879949597}
   m_SourcePrefab: {fileID: 100100000, guid: a38a60880f48f4610b91ac0addda84c3, type: 3}
 --- !u!224 &1879949595 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 9019425930988651157, guid: a38a60880f48f4610b91ac0addda84c3, type: 3}
   m_PrefabInstance: {fileID: 1879949594}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1879949596 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3105068172318148832, guid: a38a60880f48f4610b91ac0addda84c3, type: 3}
+  m_PrefabInstance: {fileID: 1879949594}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1879949597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1879949596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d060c9d24ff84620983eb7d987057ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizationFontSwapper
+  mainFont: {fileID: 11400000, guid: ecd6bbbe8eeec4e2585ba8bf726a0752, type: 2}
+  chineseFont: {fileID: 11400000, guid: 1e6769daeec4a4a15801a1ef503e5eae, type: 2}
+  japaneseFont: {fileID: 11400000, guid: acc541a240d184127a18e34c5ca4c040, type: 2}
 --- !u!1 &1896385745
 GameObject:
   m_ObjectHideFlags: 0
@@ -28788,6 +29470,7 @@ GameObject:
   - component: {fileID: 2005693312}
   - component: {fileID: 2005693314}
   - component: {fileID: 2005693313}
+  - component: {fileID: 2005693315}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -28836,7 +29519,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: short dialogue blah blah
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d8a88f3c2685e4ef1951ddfc9bf574dd, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ecd6bbbe8eeec4e2585ba8bf726a0752, type: 2}
   m_sharedMaterial: {fileID: -7453273119138983783, guid: d8a88f3c2685e4ef1951ddfc9bf574dd, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -28903,7 +29586,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &2005693314
@@ -28914,6 +29597,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2005693311}
   m_CullTransparentMesh: 1
+--- !u!114 &2005693315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2005693311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d060c9d24ff84620983eb7d987057ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizationFontSwapper
+  mainFont: {fileID: 11400000, guid: ecd6bbbe8eeec4e2585ba8bf726a0752, type: 2}
+  chineseFont: {fileID: 11400000, guid: 1e6769daeec4a4a15801a1ef503e5eae, type: 2}
+  japaneseFont: {fileID: 11400000, guid: acc541a240d184127a18e34c5ca4c040, type: 2}
 --- !u!1 &2009285509
 GameObject:
   m_ObjectHideFlags: 0
@@ -29563,6 +30261,7 @@ GameObject:
   - component: {fileID: 2024434955}
   - component: {fileID: 2024434957}
   - component: {fileID: 2024434956}
+  - component: {fileID: 2024434958}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -29611,7 +30310,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: super long and rambly text yippee isnt gamedev so fun and neat
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d8a88f3c2685e4ef1951ddfc9bf574dd, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ecd6bbbe8eeec4e2585ba8bf726a0752, type: 2}
   m_sharedMaterial: {fileID: -7453273119138983783, guid: d8a88f3c2685e4ef1951ddfc9bf574dd, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -29678,7 +30377,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &2024434957
@@ -29689,6 +30388,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2024434954}
   m_CullTransparentMesh: 1
+--- !u!114 &2024434958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2024434954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d060c9d24ff84620983eb7d987057ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizationFontSwapper
+  mainFont: {fileID: 11400000, guid: ecd6bbbe8eeec4e2585ba8bf726a0752, type: 2}
+  chineseFont: {fileID: 11400000, guid: 1e6769daeec4a4a15801a1ef503e5eae, type: 2}
+  japaneseFont: {fileID: 11400000, guid: acc541a240d184127a18e34c5ca4c040, type: 2}
 --- !u!1 &2055758796
 GameObject:
   m_ObjectHideFlags: 0
@@ -30389,6 +31103,7 @@ GameObject:
   - component: {fileID: 2107038370}
   - component: {fileID: 2107038369}
   - component: {fileID: 2107038371}
+  - component: {fileID: 2107038372}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -30437,7 +31152,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: and that the name on the ID matches the name on the ticket...
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d8a88f3c2685e4ef1951ddfc9bf574dd, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ecd6bbbe8eeec4e2585ba8bf726a0752, type: 2}
   m_sharedMaterial: {fileID: -7453273119138983783, guid: d8a88f3c2685e4ef1951ddfc9bf574dd, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -30504,7 +31219,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &2107038370
@@ -30555,6 +31270,21 @@ MonoBehaviour:
   references:
     version: 2
     RefIds: []
+--- !u!114 &2107038372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2107038367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d060c9d24ff84620983eb7d987057ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizationFontSwapper
+  mainFont: {fileID: 11400000, guid: ecd6bbbe8eeec4e2585ba8bf726a0752, type: 2}
+  chineseFont: {fileID: 11400000, guid: 1e6769daeec4a4a15801a1ef503e5eae, type: 2}
+  japaneseFont: {fileID: 11400000, guid: acc541a240d184127a18e34c5ca4c040, type: 2}
 --- !u!1 &2121807192
 GameObject:
   m_ObjectHideFlags: 0
@@ -31517,6 +32247,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2785970462724144582, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1374278388}
+    - targetCorrespondingSourceObject: {fileID: 2785970462724144582, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3748053639804197566}
   m_SourcePrefab: {fileID: 100100000, guid: a871086c597c44c50ad0b5e516df5ac0, type: 3}
 --- !u!1 &3748053639804197564 stripped
 GameObject:
@@ -31534,6 +32267,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!114 &3748053639804197566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3748053639804197564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d060c9d24ff84620983eb7d987057ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizationFontSwapper
+  mainFont: {fileID: 11400000, guid: ecd6bbbe8eeec4e2585ba8bf726a0752, type: 2}
+  chineseFont: {fileID: 11400000, guid: 1e6769daeec4a4a15801a1ef503e5eae, type: 2}
+  japaneseFont: {fileID: 11400000, guid: acc541a240d184127a18e34c5ca4c040, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

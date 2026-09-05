@@ -6,7 +6,7 @@ using System.IO;
 [Serializable]
 public class SettingsData
 {
-    public string language;     // TODO: to be implemented
+    public int language;     // map to enum in Settings_Languages.cs
 
     // SCREEN SIZE
     public int resolutionX;
@@ -160,7 +160,7 @@ public class SaveManager : MonoBehaviour
         switch (settingsType)
         {
             case SettingsType.language:
-                data.settings.language = value;
+                data.settings.language = int.Parse(value);
                 break;
 
             case SettingsType.screenResX:
@@ -194,7 +194,7 @@ public class SaveManager : MonoBehaviour
 
         SaveData();
     }
-    public string GetSettings_Language()
+    public int GetSettings_Language()
     {
         return data.settings.language;
     }
@@ -419,7 +419,7 @@ public class SaveManager : MonoBehaviour
     public void ResetData()
     {
         // save settings
-        string language = data.settings.language;
+        int language = data.settings.language;
         float volumeMaster = data.settings.volume_Master;
         float volumeSFX = data.settings.volume_SFX;
         float volumeMusic = data.settings.volume_Music;

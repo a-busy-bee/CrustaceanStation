@@ -2,6 +2,9 @@ using UnityEngine;
 using System;
 using System.Collections.Generic;
 
+using UnityEngine.Localization.Settings;
+using UnityEngine.Localization;
+
 using Special = CrabInfo.SpecialCharacter;
 
 [Serializable]
@@ -26,12 +29,32 @@ public class FeedbackData
 public class FeedbackManager : MonoBehaviour
 {
     private FeedbackData feedbackData;
+    private string currIdx;
+    private string currText;
+    private bool isSubscribed;
 
     private void Start()
     {
         LoadJson();
+        LocalizationSettings.SelectedLocaleChanged += RefreshCurrDialogue;
+        isSubscribed = true;
+        currIdx = "";
     }
- 
+
+    private void OnDisable()
+    {
+        if (!isSubscribed) return;
+        LocalizationSettings.SelectedLocaleChanged -= RefreshCurrDialogue;
+        isSubscribed = false;
+    }
+
+    private void OnDestroy()
+    {
+        if (!isSubscribed) return;
+        LocalizationSettings.SelectedLocaleChanged -= RefreshCurrDialogue;
+        isSubscribed = false;
+    }
+
     private void LoadJson()
     {
         TextAsset jsonFile = Resources.Load<TextAsset>("Feedback");
@@ -51,8 +74,8 @@ public class FeedbackManager : MonoBehaviour
     public string GetGenericFeedback()
     {
         int rand = UnityEngine.Random.Range(0, feedbackData.nodesGeneric.Length);
-
-        return LocalizationManager.instance.GetTextByStringKey(LocalizationManager.Table.FeedbackForms, "feedback_nodesGeneric_" + rand);
+        currIdx = "feedback_nodesGeneric_" + rand;
+        return LocalizationManager.instance.GetTextByStringKey(LocalizationManager.Table.FeedbackForms, currIdx);
     }
 
     public string GetCharacterFeedback(Special special, int day)
@@ -68,12 +91,12 @@ public class FeedbackManager : MonoBehaviour
             //return feedbackData.ittyBitty[constants.FEEDBACK_characterToDayToIdx[special][day]];
 
             case Special.protestorCatfish:
-                prefix =  "feedback_protestorCatfish_";
+                prefix = "feedback_protestorCatfish_";
                 break;
             //return feedbackData.protestorCatfish[constants.FEEDBACK_characterToDayToIdx[special][day]];
 
             case Special.horseshoe:
-                prefix =  "feedback_horseshoe_";
+                prefix = "feedback_horseshoe_";
                 break;
             //return feedbackData.horseshoe[constants.FEEDBACK_characterToDayToIdx[special][day]];
 
@@ -98,8 +121,24 @@ public class FeedbackManager : MonoBehaviour
                 //return feedbackData.gramps[constants.FEEDBACK_characterToDayToIdx[special][day]];
         }
 
-        return LocalizationManager.instance.GetTextByStringKey(LocalizationManager.Table.FeedbackForms, prefix + idx);
+        currIdx = prefix + idx;
+        return LocalizationManager.instance.GetTextByStringKey(LocalizationManager.Table.FeedbackForms, currIdx);
 
     }
-        
+
+    public void ResetIdx()
+    {
+        currIdx = "";
+    }
+
+    public void RefreshCurrDialogue(Locale l)
+    {
+        if (currIdx == "") return;
+        currText = LocalizationManager.instance.GetTextByStringKey(LocalizationManager.Table.FeedbackForms, currIdx);
+    }
+
+    public string GetFeedbackFormLocalized()
+    {
+        return currText;
+    }
 }

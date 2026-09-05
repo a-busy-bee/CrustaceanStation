@@ -3,6 +3,8 @@ using System;
 using System.Collections.Generic;
 
 using Special = CrabInfo.SpecialCharacter;
+using UnityEngine.Localization.Settings;
+using UnityEngine.Localization;
 
 
 [Serializable]
@@ -52,6 +54,9 @@ public class DialogueManager : MonoBehaviour
 
     private Dictionary<Special, string[]> characterToDialgoue;
 
+    private bool isSubscribed = false;
+    private string currIdx;
+
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -77,6 +82,24 @@ public class DialogueManager : MonoBehaviour
             {Special.granny,           dialogueData.granny},
             {Special.gramps,           dialogueData.gramps},
         };
+
+        LocalizationSettings.SelectedLocaleChanged += RefreshCurrDialogue;
+        isSubscribed = true;
+        currIdx = "";
+    }
+
+    private void OnDisable()
+    {
+        if (!isSubscribed) return;
+        LocalizationSettings.SelectedLocaleChanged -= RefreshCurrDialogue;
+        isSubscribed = false;
+    }
+
+    private void OnDestroy()
+    {
+        if (!isSubscribed) return;
+        LocalizationSettings.SelectedLocaleChanged -= RefreshCurrDialogue;
+        isSubscribed = false;
     }
 
     private void LoadJson()
@@ -95,28 +118,30 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    #region Dialogue Getters
     public void GetDialogueGeneric(string character)
     {
         GetDialogueGeneric();
     }
-    public void GetDialogueGeneric()
-    {
-        //string text = dialogueData.nodeGenericAnyChars[UnityEngine.Random.Range(0, dialogueData.nodeGenericAnyChars.Length)];
-        int idx = UnityEngine.Random.Range(0, dialogueData.nodeGenericAnyChars.Length);
-        string text = LocalizationManager.instance.GetTextByStringKey(LocalizationManager.Table.Dialogue, "dialogue_nodeGenericAnyChars_" + idx);
-        dialogueObject.ShowDialogue(text);
-    }
-
     public void GetDialoguePlot(string character, int stage)
     {
         GetDialogueGeneric();
     }
 
+    public void GetDialogueGeneric()
+    {
+        //string text = dialogueData.nodeGenericAnyChars[UnityEngine.Random.Range(0, dialogueData.nodeGenericAnyChars.Length)];
+        int idx = UnityEngine.Random.Range(0, dialogueData.nodeGenericAnyChars.Length);
+        currIdx = "dialogue_nodeGenericAnyChars_" + idx;
+        string text = LocalizationManager.instance.GetTextByStringKey(LocalizationManager.Table.Dialogue, currIdx);
+        dialogueObject.ShowDialogue(text);
+    }
+
     public void GetDialoguePlot(int stage)
     {
         int idx = UnityEngine.Random.Range(0, dialogueData.nodePlotAnyChars[stage].text.Length);
-        string text = LocalizationManager.instance.GetTextByStringKey(LocalizationManager.Table.Dialogue, "dialogue_nodePlotAnyChars_1_" + idx);
-        
+        currIdx = "dialogue_nodePlotAnyChars_1_" + idx;
+        string text = LocalizationManager.instance.GetTextByStringKey(LocalizationManager.Table.Dialogue, currIdx);
         dialogueObject.ShowDialogue(text);
     }
 
@@ -166,11 +191,11 @@ public class DialogueManager : MonoBehaviour
                 break;
 
             case Special.protestorCatfish:
-                prefix =  "dialogue_protestorCatfish_";
+                prefix = "dialogue_protestorCatfish_";
                 break;
 
             case Special.horseshoe:
-                prefix =  "dialogue_horseshoe_";
+                prefix = "dialogue_horseshoeCrab_";
                 break;
 
             case Special.isobelle:
@@ -190,12 +215,14 @@ public class DialogueManager : MonoBehaviour
                 break;
         }
 
-        string text = LocalizationManager.instance.GetTextByStringKey(LocalizationManager.Table.Dialogue, prefix + dialgoueIdx);
+        currIdx = prefix + dialgoueIdx;
+
+        string text = LocalizationManager.instance.GetTextByStringKey(LocalizationManager.Table.Dialogue, currIdx);
 
         dialogueObject.ShowDialogue(text, true, characterName);
 
         saveManager.SaveCharacterData(characterNameString, dialgoueIdx + 1); // progress dialogue
-    
+
     }
 
     public DialogueObject.DialogueState GetDialogueState()
@@ -205,6 +232,7 @@ public class DialogueManager : MonoBehaviour
 
     public void ClearDialogue()
     {
+        currIdx = "";
         dialogueObject.Skip();
     }
 
@@ -233,7 +261,8 @@ public class DialogueManager : MonoBehaviour
                 break;
         }
 
-        string text = LocalizationManager.instance.GetTextByStringKey(LocalizationManager.Table.Dialogue, prefix + idx);
+        currIdx = prefix + idx;
+        string text = LocalizationManager.instance.GetTextByStringKey(LocalizationManager.Table.Dialogue, currIdx);
         dialogueObject.ShowDialogue(text);
     }
 
@@ -269,35 +298,43 @@ public class DialogueManager : MonoBehaviour
     {
         if (!Constants.instance.DIALOGUE_dayToIdxMailkeeper.ContainsKey(currDay)) return;
 
-        string text;
         int idx = Constants.instance.DIALOGUE_dayToIdxMailkeeper[currDay];
         if (currDay == 17 || currDay == 19)
         {
             if (PlotManager.instance.IsGoodEnding())
             {
                 // access good dialogues
-                //text = dialogueData.mailkeeperGoodEnding[idx];
-                text = LocalizationManager.instance.GetTextByStringKey(LocalizationManager.Table.Dialogue, "dialogue_mailkeeperGood_" + idx);
+                currIdx = "dialogue_mailkeeperGood_" + idx;
             }
             else
             {
                 // access bad dialogues
-                text = LocalizationManager.instance.GetTextByStringKey(LocalizationManager.Table.Dialogue, "dialogue_mailkeeperBad_" + idx);
+                currIdx = "dialogue_mailkeeperBad_" + idx;
             }
         }
         else
         {
             // get dialogue from day
-            text = LocalizationManager.instance.GetTextByStringKey(LocalizationManager.Table.Dialogue, "dialogue_mailkeeper_" + idx);
+            currIdx = "dialogue_mailkeeper_" + idx;
         }
-
+        string text = LocalizationManager.instance.GetTextByStringKey(LocalizationManager.Table.Dialogue, currIdx);
         dialogueObject.ShowDialogue(text);
     }
 
     public void GetMutantDialogue()
     {
         int idx = UnityEngine.Random.Range(0, 8);
-        string text = LocalizationManager.instance.GetTextByStringKey(LocalizationManager.Table.Dialogue, "dialogue_mutant_" + idx);
+        currIdx = "dialogue_mutant_" + idx;
+        string text = LocalizationManager.instance.GetTextByStringKey(LocalizationManager.Table.Dialogue, currIdx);
+        dialogueObject.ShowDialogue(text);
+    }
+
+    #endregion
+
+    public void RefreshCurrDialogue(Locale l)
+    {
+        if (currIdx == "") return;
+        string text = LocalizationManager.instance.GetTextByStringKey(LocalizationManager.Table.Dialogue, currIdx);
         dialogueObject.ShowDialogue(text);
     }
 }

@@ -1,7 +1,11 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+
+using UnityEngine.Localization.Settings;
+using UnityEngine.Localization;
 
 public class CrabController : MonoBehaviour
 {
@@ -54,7 +58,9 @@ public class CrabController : MonoBehaviour
     }
     public CrabState crabState { get; private set; }
     private bool isWaiting = false;
-    
+    private string nameLocalizationID;
+    private bool isSubscribed;
+
     private void Start()
     {
         rectTransform = GetComponent<RectTransform>();
@@ -91,6 +97,24 @@ public class CrabController : MonoBehaviour
         {
             isShuttle = true;
         }
+
+        LocalizationSettings.SelectedLocaleChanged += RefreshCurrDialogue;
+        isSubscribed = true;
+        nameLocalizationID = "";
+    }
+
+    private void OnDisable()
+    {
+        if (!isSubscribed) return;
+        LocalizationSettings.SelectedLocaleChanged -= RefreshCurrDialogue;
+        isSubscribed = false;
+    }
+
+    private void OnDestroy()
+    {
+        if (!isSubscribed) return;
+        LocalizationSettings.SelectedLocaleChanged -= RefreshCurrDialogue;
+        isSubscribed = false;
     }
 
     // State machine go brrrrr
@@ -262,7 +286,8 @@ public class CrabController : MonoBehaviour
         #region IMPORTANT CHARACTER
         if (crabInfo.isImportantCharacter) // no forgery if they're special
         {
-            string name = LocalizationManager.instance.GetTextByStringKey(LocalizationManager.Table.Cutscenes, "special_" + crabInfo.specialCharacterType);
+            nameLocalizationID = "special_" + crabInfo.specialCharacterType;
+            string name = LocalizationManager.instance.GetTextByStringKey(LocalizationManager.Table.Cutscenes, nameLocalizationID);
             ticketComponent.SetName(name);
             idComponent.SetName(name);
             idComponent.SetIDPhoto(crabInfo.sprite);
@@ -354,8 +379,8 @@ public class CrabController : MonoBehaviour
     {
         if (DialogueManager.instance == null) return;
 
-        if (SceneManager.GetActiveScene().name == "Tutorial") return; 
-        
+        if (SceneManager.GetActiveScene().name == "Tutorial") return;
+
         if (crabInfo.isImportantCharacter)
         {
             DialogueManager.instance.GetSpecialCharacterDialogue(crabInfo.specialCharacterType);
@@ -400,6 +425,7 @@ public class CrabController : MonoBehaviour
 
     private void RemoveTicketAndID()
     {
+        CrabNameGenerator.instance.ResetIdx();
         Destroy(ticket);
         Destroy(id);
     }
@@ -461,5 +487,30 @@ public class CrabController : MonoBehaviour
     public CrabInfo.MutantType GetMutantType()
     {
         return crabInfo.mutantType;
+    }
+
+    public void RefreshCurrDialogue(Locale l)
+    {
+        if (nameLocalizationID == "") return;
+
+        StartCoroutine(WaitThenLoadName());
+    }
+
+    private IEnumerator WaitThenLoadName()
+    {
+        yield return new WaitForEndOfFrame();
+
+        string text;
+        if (!crabInfo.isImportantCharacter)
+        {
+            text = CrabNameGenerator.instance.GetLocalizedName();
+        }
+        else
+        {
+            text = LocalizationManager.instance.GetTextByStringKey(LocalizationManager.Table.Cutscenes, nameLocalizationID);
+        }
+
+        id.GetComponent<ID>().SetName(text);
+        ticket.GetComponent<Ticket>().SetName(text);
     }
 }

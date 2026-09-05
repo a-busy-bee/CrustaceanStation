@@ -23,7 +23,7 @@ public class Kiosk : KioskBase
                     if (prevState != KioskState.NotOpenYet)
                     {
                         StartCoroutine(WaitBeforeSummon());
-                    } 
+                    }
                     else
                     {
                         SummonCrab();
@@ -48,9 +48,9 @@ public class Kiosk : KioskBase
             case KioskState.CrabApproved:
                 {
                     DisableButtons();
-                    
+
                     LevelManager.instance.SetTrainsClickable(true);
-                    
+
                     if (currDay + 1 >= 6 && GetCrabInfo().plotLevel == CrabInfo.PlotLevel.predator)
                     {
                         //do nothing
@@ -77,11 +77,11 @@ public class Kiosk : KioskBase
                             PerformanceManager.instance.Correct();
                         }
                     }
-                    
+
                     DialogueManager.instance.ClearDialogue();
                 }
                 break;
- 
+
             case KioskState.CrabRejected:
                 {
                     DisableButtons();
@@ -111,7 +111,7 @@ public class Kiosk : KioskBase
                             currentCrab.GetComponent<CrabController>().SetState(CrabController.CrabState.Emoting, "any");
                         }
                     }
-                    
+
 
                     StartCoroutine(WaitForAnimEnd());
                 }

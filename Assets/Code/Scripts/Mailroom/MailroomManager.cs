@@ -5,6 +5,10 @@ using TMPro;
 using UnityEngine.UI;
 using System.Collections;
 
+using UnityEngine.Localization.Settings;
+using UnityEngine.Localization;
+
+
 using Special = CrabInfo.SpecialCharacter;
 public class MailroomManager : MonoBehaviour
 {
@@ -61,6 +65,10 @@ public class MailroomManager : MonoBehaviour
     private string defaultPath;
     private string savePath;
 
+    private bool isSubscribed;
+    private string currIdx;
+    private string currItem;
+
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -93,6 +101,24 @@ public class MailroomManager : MonoBehaviour
         LoadJSON();
         plotData.inbox = plotData.inbox.OrderBy(m => m.timestamp).ToList();
         mailbox.SetSprite(plotData.inbox.Count);
+
+        LocalizationSettings.SelectedLocaleChanged += RefreshCurrDialogue;
+        isSubscribed = true;
+        currIdx = "";
+    }
+
+    private void OnDisable()
+    {
+        if (!isSubscribed) return;
+        LocalizationSettings.SelectedLocaleChanged -= RefreshCurrDialogue;
+        isSubscribed = false;
+    }
+
+    private void OnDestroy()
+    {
+        if (!isSubscribed) return;
+        LocalizationSettings.SelectedLocaleChanged -= RefreshCurrDialogue;
+        isSubscribed = false;
     }
 
     public void SetState(LetterState newState)
@@ -169,7 +195,7 @@ public class MailroomManager : MonoBehaviour
 
         // save list w/o the topmost letter
         plotData.inbox.RemoveAt(0);
-        PlotManager.instance.UpdatePlotData(plotData);   
+        PlotManager.instance.UpdatePlotData(plotData);
 
         // figure out what letter type to show
         // set that object active
@@ -179,6 +205,8 @@ public class MailroomManager : MonoBehaviour
         // show note that the letter/note/wtvr was saved in the crabdex
         // show button to close letter
         GameObject chosen = null;
+
+        currItem = inboxItem.type;
 
         if (inboxItem.type == "letter")
         {
@@ -283,7 +311,9 @@ public class MailroomManager : MonoBehaviour
 
                 feedbackFormSpecialTag.sprite = specialTags[(int)special];
                 text = GetComponent<FeedbackManager>().GetCharacterFeedback(special, inboxItem.id);
-                feedbackFormName.text = LocalizationManager.instance.GetTextByStringKey(LocalizationManager.Table.Cutscenes, "special_" + inboxItem.subType);
+
+                currIdx = "special_" + inboxItem.subType;
+                feedbackFormName.text = LocalizationManager.instance.GetTextByStringKey(LocalizationManager.Table.Cutscenes, currIdx);
             }
             feedbackForm.GetComponent<RectTransform>().GetChild(0).GetComponent<TextMeshProUGUI>().text = text;
 
@@ -353,6 +383,9 @@ public class MailroomManager : MonoBehaviour
                 if (Mathf.Abs(yPos[objectIdxMoving].x - currentLetter.GetComponent<RectTransform>().anchoredPosition.y) < 150f)
                 {
                     rect.anchoredPosition = new Vector2(rect.anchoredPosition.x, yPos[objectIdxMoving].x);
+                    lettersManager.ResetIdx();
+                    GetComponent<FeedbackManager>().ResetIdx();
+                    currIdx = "";
                     SetState(LetterState.noLetter);
                 }
                 break;
@@ -392,5 +425,36 @@ public class MailroomManager : MonoBehaviour
     public void ClickTrinketSoft()
     {
         AudioManager.instance.PlaySound(AudioManager.SoundNames.Ticket, true);
+    }
+
+    public void RefreshCurrDialogue(Locale l)
+    {
+        StartCoroutine(WaitBeforeRefreshingLocalization());
+    }
+
+    private IEnumerator WaitBeforeRefreshingLocalization()
+    {
+        yield return new WaitForEndOfFrame();
+        
+        if (currItem == "feedbackForm")
+        {
+            if (currIdx != "")
+            {
+                string name = LocalizationManager.instance.GetTextByStringKey(LocalizationManager.Table.Cutscenes, currIdx);
+                feedbackFormName.text = name;
+
+                string text = GetComponent<FeedbackManager>().GetFeedbackFormLocalized();
+                feedbackForm.GetComponent<RectTransform>().GetChild(0).GetComponent<TextMeshProUGUI>().text = text;
+            }
+            
+
+        }
+        else
+        {
+            FullStackLetter letterLocalized = lettersManager.GetFullStackLetterLocalized();
+            letter.GetComponent<RectTransform>().GetChild(0).GetComponent<TextMeshProUGUI>().text = letterLocalized.body;
+            letter.GetComponent<RectTransform>().GetChild(1).GetComponent<TextMeshProUGUI>().text = letterLocalized.top;
+            letter.GetComponent<RectTransform>().GetChild(2).GetComponent<TextMeshProUGUI>().text = letterLocalized.bottom;
+        }
     }
 }

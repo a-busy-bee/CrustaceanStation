@@ -4,6 +4,9 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 using TMPro;
 
+using UnityEngine.Localization.Settings;
+using UnityEngine.Localization;
+
 public class LoadingScreen : MonoBehaviour
 {
 
@@ -15,7 +18,8 @@ public class LoadingScreen : MonoBehaviour
     [SerializeField] private GameObject sliderParent;
     [SerializeField] private TextMeshProUGUI tooltipText;
     private float sinFreq = 20f;
-
+    private string currIdx;
+    private bool isSubscribed;
     private string[] tooltips = {
         "Summoning crabs...",
         "Fighting off seagulls...",
@@ -28,6 +32,24 @@ public class LoadingScreen : MonoBehaviour
     {
         group.alpha = 0;
         group.blocksRaycasts = false;
+
+        LocalizationSettings.SelectedLocaleChanged += RefreshCurrDialogue;
+        isSubscribed = true;
+        currIdx = "";
+    }
+
+    private void OnDisable()
+    {
+        if (!isSubscribed) return;
+        LocalizationSettings.SelectedLocaleChanged -= RefreshCurrDialogue;
+        isSubscribed = false;
+    }
+
+    private void OnDestroy()
+    {
+        if (!isSubscribed) return;
+        LocalizationSettings.SelectedLocaleChanged -= RefreshCurrDialogue;
+        isSubscribed = false;
     }
 
     public void PlayLoad(string sceneName)
@@ -41,7 +63,7 @@ public class LoadingScreen : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         group.blocksRaycasts = true;
         group.alpha = 1;
-        
+
         FadeToBlack.instance.FadeOut();
         yield return new WaitForSeconds(0.5f);
         StartCoroutine(LoadSceneCoroutine(sceneName));
@@ -51,7 +73,8 @@ public class LoadingScreen : MonoBehaviour
     {
         sliderParent.SetActive(true);
         slider.value = 0;
-        tooltipText.text = LocalizationManager.instance.GetTextByStringKey(LocalizationManager.Table.Misc, "misc_loading_" + Random.Range(0, tooltips.Length));
+        currIdx = "misc_loading_" + Random.Range(0, tooltips.Length);
+        tooltipText.text = LocalizationManager.instance.GetTextByStringKey(LocalizationManager.Table.Misc, currIdx);
 
         while (slider.value < 0.67f) // fake some loading because we're evil and want people to look at the fire splash art
         {
@@ -75,5 +98,11 @@ public class LoadingScreen : MonoBehaviour
         slider.value = 1f;
 
     }
-
+    
+    public void RefreshCurrDialogue(Locale l)
+    {
+        if (currIdx == "") return;
+        string text = LocalizationManager.instance.GetTextByStringKey(LocalizationManager.Table.Misc, currIdx);
+        tooltipText.text = text;
+    }
 }

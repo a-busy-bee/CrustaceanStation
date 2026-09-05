@@ -44,6 +44,7 @@ public class LetterData
 public class LettersManager : MonoBehaviour
 {
     private LetterData letterData;
+    private string currPrefix;
 
     public enum IDToKey
     {
@@ -77,23 +78,6 @@ public class LettersManager : MonoBehaviour
 
     public FullStackLetter GetCrustyCoLetterByDay(int day, bool isEndingDependent = false, bool isGoodEnding = false)
     {
-        // if (isEndingDependent)
-        // {
-        //     int idx = Constants.instance.LETTER_dayToIdxCrustyCoEndings[day];
-
-        //     if (isGoodEnding)
-        //     {
-        //         return letterData.letterNodesCrustyCoByDay_GoodEnding[idx];
-        //     }
-        //     else
-        //     {
-        //         return letterData.letterNodesCrustyCoByDay_BadEnding[idx];
-        //     }
-        // }
-
-        // int regIdx = Constants.instance.LETTER_dayToIdxCrustyCo[day];
-        // return letterData.letterNodesCrustyCoByDay[regIdx];
-
         string prefix = "letter_crustyco";
 
         if (isEndingDependent)
@@ -138,11 +122,23 @@ public class LettersManager : MonoBehaviour
 
     private FullStackLetter GetFullStackLetter(string prefix)
     {
+        currPrefix = prefix;
         FullStackLetter fullStackLetter = new FullStackLetter();
+
         fullStackLetter.top = LocalizationManager.instance.GetTextByStringKey(LocalizationManager.Table.Letters, prefix + "_top");
         fullStackLetter.body = LocalizationManager.instance.GetTextByStringKey(LocalizationManager.Table.Letters, prefix + "_body");
         fullStackLetter.bottom = LocalizationManager.instance.GetTextByStringKey(LocalizationManager.Table.Letters, prefix + "_bottom");
 
         return fullStackLetter;
     }
+
+    public FullStackLetter GetFullStackLetterLocalized()
+    {
+        return GetFullStackLetter(currPrefix);
+    }
+
+	public void ResetIdx()
+	{
+        currPrefix = "";
+	} 
 }

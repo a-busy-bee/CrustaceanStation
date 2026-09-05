@@ -10,6 +10,7 @@ public class MenuButtons : MonoBehaviour
     private string savePath;
     private PlotData plotData;
     
+
     public void quitGame()
     {
         Application.Quit();

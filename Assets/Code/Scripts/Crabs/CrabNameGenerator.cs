@@ -2,12 +2,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Text;
 
+using UnityEngine.Localization.Settings;
+using UnityEngine.Localization;
+
 public class CrabNameGenerator : MonoBehaviour
 {
     public static CrabNameGenerator instance { get; private set; }
     private Dictionary<CrabInfo.CrabType, List<int>> nameDictionary; // species-specific names (ie Crabstopher)
     private List<int> general = new List<int>(); // general names (ie Max)
     private int nameIdxCounter = 0;
+
+    private string currIdx;
+    private bool isSubscribed;
+    private string currName;
 
     private void Awake()
     {
@@ -24,6 +31,29 @@ public class CrabNameGenerator : MonoBehaviour
         LoadNameFile();
     }
 
+    private void Start()
+    {
+        LocalizationSettings.SelectedLocaleChanged += RefreshCurrDialogue;
+        isSubscribed = true;
+        currIdx = "";
+    }
+
+    private void OnDisable()
+    {
+        if (!isSubscribed) return;
+        LocalizationSettings.SelectedLocaleChanged -= RefreshCurrDialogue;
+        isSubscribed = false;
+    }
+
+    private void OnDestroy()
+    {
+        if (!isSubscribed) return;
+        LocalizationSettings.SelectedLocaleChanged -= RefreshCurrDialogue;
+        isSubscribed = false;
+    }
+
+
+
     public string GetNameByType(CrabInfo.CrabType type)
     {
         // 2/3 chance to use species name if available
@@ -31,7 +61,8 @@ public class CrabNameGenerator : MonoBehaviour
         {
             var list = nameDictionary[type];
             int idx = list[Random.Range(0, list.Count)];
-            return LocalizationManager.instance.GetTextByStringKey(LocalizationManager.Table.Names, "names_" + idx);
+            currIdx = "names_" + idx;
+            return LocalizationManager.instance.GetTextByStringKey(LocalizationManager.Table.Names, currIdx);
         }
 
         // fallback
@@ -41,7 +72,8 @@ public class CrabNameGenerator : MonoBehaviour
     public string GetAnyName()
     {
         int idx = general[Random.Range(0, general.Count)];
-        return LocalizationManager.instance.GetTextByStringKey(LocalizationManager.Table.Names, "names_" + idx);
+        currIdx = "names_" + idx;
+        return LocalizationManager.instance.GetTextByStringKey(LocalizationManager.Table.Names, currIdx);
     }
 
     private void LoadNameFile()
@@ -138,5 +170,21 @@ public class CrabNameGenerator : MonoBehaviour
         fields.Add(current.ToString().Trim());
 
         return fields;
+    }
+
+    public void RefreshCurrDialogue(Locale l)
+    {
+        if (currIdx == "") return;
+        currName = LocalizationManager.instance.GetTextByStringKey(LocalizationManager.Table.Names, currIdx);
+    }
+
+    public string GetLocalizedName()
+    {
+        return currName;
+    }
+
+    public void ResetIdx()
+    {
+        currIdx = "";
     }
 }
