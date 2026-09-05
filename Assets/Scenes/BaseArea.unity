@@ -9850,10 +9850,9 @@ MonoBehaviour:
   ticketParentObject: {fileID: 1931240438}
   approveButton: {fileID: 534969239}
   rejectButton: {fileID: 1416969083}
-  debugMode: 1
+  debugMode: 0
   charactersToForce:
-  - {fileID: 1918681812830035428, guid: d34c46f22bcbd4530b7a0018142a8796, type: 3}
-  - {fileID: 6693412573292941667, guid: f5bab76335ad0455cb17b24676ef1913, type: 3}
+  - {fileID: 5528657572708563784, guid: 8cb538142c00c4950aff110ac31539a8, type: 3}
 --- !u!1 &730704855
 GameObject:
   m_ObjectHideFlags: 0
